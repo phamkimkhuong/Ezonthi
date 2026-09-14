@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { newsService } from '../../services/newsService';
 import { notificationService } from '../../services/notificationService';
@@ -33,7 +33,7 @@ export const NewsPage: React.FC = () => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   // Tải danh sách bài viết
-  const loadPosts = async () => {
+  const loadPosts = useCallback(async () => {
     setLoadingPosts(true);
     try {
       const list = await newsService.fetchPosts(user?.uid, selectedGrade);
@@ -65,11 +65,11 @@ export const NewsPage: React.FC = () => {
     } finally {
       setLoadingPosts(false);
     }
-  };
+  }, [user, selectedGrade, searchParams]);
 
   useEffect(() => {
     loadPosts();
-  }, [user, selectedGrade]);
+  }, [loadPosts]);
 
   const toggleExpand = (postId: string) => {
     setExpandedPostIds((prev) => {

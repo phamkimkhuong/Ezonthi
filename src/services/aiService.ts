@@ -10,6 +10,8 @@ interface CallGeminiParams {
   systemInstruction?: string;
   useRag?: boolean;
   subjectId?: string;
+  gradeId?: string;
+  ragVersion?: string;
   image?: { data: string; mimeType: string };
   responseMimeType?: string;
   responseSchema?: any;
@@ -17,6 +19,7 @@ interface CallGeminiParams {
   skipDiagnosis?: boolean;
   topicName?: string;
   chatId?: string;
+  taskType?: 'tutor' | 'proof_grading';
 }
 
 const normalizeAiEvaluation = (parsed: any): AiEvaluation => {
@@ -143,6 +146,7 @@ Bạn phải trả về kết quả dưới định dạng JSON chính xác theo
     const textResponse = await this.callGemini({
       prompt,
       image,
+      taskType: 'proof_grading',
       responseMimeType: 'application/json',
       responseSchema: {
         type: 'OBJECT',
@@ -216,7 +220,7 @@ Bạn phải trả về kết quả dưới định dạng JSON chính xác theo
         functions,
         'diagnoseSession'
       );
-      await diagnoseSessionFn({ chatHistory, subjectId });
+      await diagnoseSessionFn({ chatHistory: chatHistory.slice(-20), subjectId });
       logger.debug(`[diagnoseSession] Session diagnosis triggered successfully for ${subjectId}`);
     } catch (err) {
       logger.error('Thực thi diagnoseSession', err);

@@ -61,7 +61,7 @@ export const GrammarSentenceBuildingView: React.FC<GrammarSentenceBuildingViewPr
     setIsCompleted(false);
     setShowAnswer(false);
     setHistory([]);
-  }, [lesson.id]);
+  }, [lesson]);
 
   const currentSentence = sentences[currentIndex];
   const totalSentences = sentences.length;

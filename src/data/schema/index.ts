@@ -6,6 +6,7 @@ export {
   toSubjectRuntimeData
 } from './defineCourse';
 export { COURSE_DATA_SCHEMA_VERSION } from './types';
+export { subjectSchemaFor } from './subjectProfiles';
 export type {
   AssessmentBundle,
   CourseDataBundle,
@@ -26,6 +27,8 @@ export type {
   OfficialRequirement,
   OutcomeManifestEntry,
   SubjectRuntimeData,
+  SubjectSchemaProfile,
+  StudentDataCompatibility,
   TheoryBlock,
   TheoryCheckpoint,
   TheoryFormula,

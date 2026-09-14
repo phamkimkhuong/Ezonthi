@@ -1,4 +1,10 @@
 import { db } from "../config.js";
+import { fetchWithTimeout, recordAuxiliaryAiUsage } from './aiControl.js';
+
+const PROFILE_MODEL = 'gemini-3.1-flash-lite';
+const boundedProfileItems = (value: unknown): string[] => Array.isArray(value)
+  ? value.map(item => String(item).trim().slice(0, 160)).filter(Boolean).slice(-50)
+  : [];
 
 export async function updateStudentProfile(
   uid: string,
@@ -9,15 +15,15 @@ export async function updateStudentProfile(
   apiKey: string
 ): Promise<void> {
   const subProfile = currentProfile?.[subjectId] || {};
-  let oldStrengths: string[] = subProfile.strengths || [];
-  let oldWeaknesses: string[] = subProfile.weaknesses || [];
-  let oldSummary: string = subProfile.learningSummary || "";
+  let oldStrengths = boundedProfileItems(subProfile.strengths);
+  let oldWeaknesses = boundedProfileItems(subProfile.weaknesses);
+  let oldSummary: string = String(subProfile.learningSummary || '').slice(0, 1000);
 
   // Tự động di trú dữ liệu cũ từ cấu trúc phẳng sang cấu trúc môn học mới
   if (!currentProfile?.[subjectId] && subjectId === "math") {
-    if (currentProfile?.strengths) oldStrengths = currentProfile.strengths;
-    if (currentProfile?.weaknesses) oldWeaknesses = currentProfile.weaknesses;
-    if (currentProfile?.learningSummary) oldSummary = currentProfile.learningSummary;
+    if (currentProfile?.strengths) oldStrengths = boundedProfileItems(currentProfile.strengths);
+    if (currentProfile?.weaknesses) oldWeaknesses = boundedProfileItems(currentProfile.weaknesses);
+    if (currentProfile?.learningSummary) oldSummary = String(currentProfile.learningSummary).slice(0, 1000);
   }
 
   const subjectNameMap: Record<string, string> = {
@@ -57,7 +63,8 @@ Kết quả JSON:`;
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
   try {
-    const response = await fetch(url, {
+    const startedAt = Date.now();
+    const response = await fetchWithTimeout(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +72,7 @@ Kết quả JSON:`;
       body: JSON.stringify({
         contents: [{ role: "user", parts: [{ text: prompt }] }],
       }),
-    });
+    }, 15_000);
 
     if (!response.ok) {
       console.warn("LLM updateStudentProfile trả về lỗi HTTP:", response.status);
@@ -73,6 +80,9 @@ Kết quả JSON:`;
     }
 
     const data = (await response.json()) as any;
+    if (data?.usageMetadata) {
+      await recordAuxiliaryAiUsage(`profile-${uid}-${Date.now()}`, uid, 'diagnose', 'gemini', PROFILE_MODEL, data.usageMetadata, Date.now() - startedAt);
+    }
     let rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "";
 
     // Clean JSON wrappers if any
@@ -88,13 +98,13 @@ Kết quả JSON:`;
 
     // Merge strengths and weaknesses (remove duplicates and empty values)
     const mergeAndUnique = (oldArr: string[], newArr: any[]) => {
-      const combined = [...oldArr, ...newArr.map((s) => String(s).trim())].filter(Boolean);
-      return [...new Set(combined)];
+      const combined = [...oldArr, ...newArr.map((s) => String(s).trim().slice(0, 160))].filter(Boolean);
+      return [...new Set(combined)].slice(-50);
     };
 
     const updatedStrengths = mergeAndUnique(oldStrengths, newStrengths);
     const updatedWeaknesses = mergeAndUnique(oldWeaknesses, newWeaknesses);
-    const finalSummary = learningSummary || oldSummary;
+    const finalSummary = String(learningSummary || oldSummary).slice(0, 1000);
 
     // Cập nhật lên Firestore
     await db.collection("student_profiles").doc(uid).set(
@@ -124,22 +134,23 @@ export async function updateStudentProfileFromSession(
   uid: string,
   subjectId: string,
   chatHistory: Array<{ role: "user" | "model"; text: string }>,
-  apiKey: string
+  apiKey: string,
+  parentRequestId: string
 ): Promise<void> {
   try {
     const profileDoc = await db.collection("student_profiles").doc(uid).get();
     const currentProfile = profileDoc.exists ? profileDoc.data() : null;
 
     const subProfile = currentProfile?.[subjectId] || {};
-    let oldStrengths: string[] = subProfile.strengths || [];
-    let oldWeaknesses: string[] = subProfile.weaknesses || [];
-    let oldSummary: string = subProfile.learningSummary || "";
+    let oldStrengths = boundedProfileItems(subProfile.strengths);
+    let oldWeaknesses = boundedProfileItems(subProfile.weaknesses);
+    let oldSummary: string = String(subProfile.learningSummary || '').slice(0, 1000);
 
     // Tự động di trú dữ liệu cũ từ cấu trúc phẳng sang cấu trúc môn học mới
     if (!currentProfile?.[subjectId] && subjectId === "math") {
-      if (currentProfile?.strengths) oldStrengths = currentProfile.strengths;
-      if (currentProfile?.weaknesses) oldWeaknesses = currentProfile.weaknesses;
-      if (currentProfile?.learningSummary) oldSummary = currentProfile.learningSummary;
+      if (currentProfile?.strengths) oldStrengths = boundedProfileItems(currentProfile.strengths);
+      if (currentProfile?.weaknesses) oldWeaknesses = boundedProfileItems(currentProfile.weaknesses);
+      if (currentProfile?.learningSummary) oldSummary = String(currentProfile.learningSummary).slice(0, 1000);
     }
 
     // Định dạng lịch sử chat thành văn bản đọc được
@@ -185,7 +196,8 @@ Yêu cầu trích xuất:
 Kết quả JSON:`;
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
-    const response = await fetch(url, {
+    const startedAt = Date.now();
+    const response = await fetchWithTimeout(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -193,29 +205,17 @@ Kết quả JSON:`;
       body: JSON.stringify({
         contents: [{ role: "user", parts: [{ text: prompt }] }],
       }),
-    });
+    }, 15_000);
 
     if (!response.ok) {
       console.warn("LLM updateStudentProfileFromSession trả về lỗi HTTP:", response.status);
-      return;
+      throw new Error(`Gemini diagnose HTTP ${response.status}`);
     }
 
     const data = (await response.json()) as any;
     const usage = data?.usageMetadata;
     if (usage) {
-      db.collection("ai_usage_logs").add({
-        userId: uid,
-        email: "system-diagnosis",
-        promptTokens: usage.promptTokenCount || 0,
-        candidatesTokens: usage.candidatesTokenCount || 0,
-        totalTokens: usage.totalTokenCount || 0,
-        timestamp: new Date(),
-        type: "diagnose",
-        model: "gemini-3.1-flash-lite",
-        provider: "gemini"
-      }).catch((err) => {
-        console.error("Lỗi khi ghi log diagnose:", err);
-      });
+      await recordAuxiliaryAiUsage(parentRequestId, uid, 'diagnose', 'gemini', PROFILE_MODEL, usage, Date.now() - startedAt);
     }
 
     let rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "";
@@ -231,13 +231,13 @@ Kết quả JSON:`;
     const { newStrengths = [], newWeaknesses = [], learningSummary = "" } = parsed;
 
     const mergeAndUnique = (oldArr: string[], newArr: any[]) => {
-      const combined = [...oldArr, ...newArr.map((s) => String(s).trim())].filter(Boolean);
-      return [...new Set(combined)];
+      const combined = [...oldArr, ...newArr.map((s) => String(s).trim().slice(0, 160))].filter(Boolean);
+      return [...new Set(combined)].slice(-50);
     };
 
     const updatedStrengths = mergeAndUnique(oldStrengths, newStrengths);
     const updatedWeaknesses = mergeAndUnique(oldWeaknesses, newWeaknesses);
-    const finalSummary = learningSummary || oldSummary;
+    const finalSummary = String(learningSummary || oldSummary).slice(0, 1000);
 
     await db.collection("student_profiles").doc(uid).set(
       {
@@ -259,13 +259,15 @@ Kết quả JSON:`;
     );
   } catch (err) {
     console.error("Lỗi khi cập nhật hồ sơ học sinh từ phiên hội thoại:", err);
+    throw err;
   }
 }
 
 export async function consolidateProfile(
   uid: string,
   subjectId: string,
-  apiKey: string
+  apiKey: string,
+  parentRequestId: string
 ): Promise<void> {
   try {
     // 1. Tải hồ sơ học sinh hiện tại
@@ -277,9 +279,9 @@ export async function consolidateProfile(
 
     const currentProfile = profileDoc.data();
     const subProfile = currentProfile?.[subjectId] || {};
-    const strengths: string[] = subProfile.strengths || [];
-    const weaknesses: string[] = subProfile.weaknesses || [];
-    const learningSummary: string = subProfile.learningSummary || "";
+    const strengths = boundedProfileItems(subProfile.strengths);
+    const weaknesses = boundedProfileItems(subProfile.weaknesses);
+    const learningSummary: string = String(subProfile.learningSummary || '').slice(0, 1000);
 
     if (strengths.length === 0 && weaknesses.length === 0) {
       console.log(`[Consolidation] Hồ sơ trống cho uid: ${uid}. Bỏ qua.`);
@@ -287,7 +289,8 @@ export async function consolidateProfile(
     }
 
     // 2. Tải các attempts của học sinh từ Firestore subcollection
-    const attemptsSnap = await db.collection("users").doc(uid).collection("attempts").get();
+    const attemptsSnap = await db.collection("users").doc(uid).collection("learning_attempts")
+      .orderBy('createdAt', 'desc').limit(500).get();
 
     // Gom nhóm attempts theo questionTypeId
     const attemptsMap: Record<string, any[]> = {};
@@ -370,7 +373,8 @@ Yêu cầu thực hiện:
 Kết quả JSON:`;
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
-    const response = await fetch(url, {
+    const startedAt = Date.now();
+    const response = await fetchWithTimeout(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -378,29 +382,17 @@ Kết quả JSON:`;
       body: JSON.stringify({
         contents: [{ role: "user", parts: [{ text: prompt }] }],
       }),
-    });
+    }, 15_000);
 
     if (!response.ok) {
       console.warn("[Consolidation] LLM consolidation trả về lỗi HTTP:", response.status);
-      return;
+      throw new Error(`Gemini consolidate HTTP ${response.status}`);
     }
 
     const data = (await response.json()) as any;
     const usage = data?.usageMetadata;
     if (usage) {
-      db.collection("ai_usage_logs").add({
-        userId: uid,
-        email: "system-consolidation",
-        promptTokens: usage.promptTokenCount || 0,
-        candidatesTokens: usage.candidatesTokenCount || 0,
-        totalTokens: usage.totalTokenCount || 0,
-        timestamp: new Date(),
-        type: "consolidate",
-        model: "gemini-3.1-flash-lite",
-        provider: "gemini"
-      }).catch((err) => {
-        console.error("Lỗi khi ghi log consolidate:", err);
-      });
+      await recordAuxiliaryAiUsage(parentRequestId, uid, 'consolidate', 'gemini', PROFILE_MODEL, usage, Date.now() - startedAt);
     }
 
     let rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "";
@@ -419,9 +411,9 @@ Kết quả JSON:`;
     await db.collection("student_profiles").doc(uid).set(
       {
         [subjectId]: {
-          strengths: newStrengths,
-          weaknesses: newWeaknesses,
-          learningSummary: newSummary || learningSummary,
+          strengths: boundedProfileItems(newStrengths),
+          weaknesses: boundedProfileItems(newWeaknesses),
+          learningSummary: String(newSummary || learningSummary).slice(0, 1000),
           lastUpdated: new Date(),
         },
         lastUpdated: new Date(),
@@ -433,5 +425,6 @@ Kết quả JSON:`;
 
   } catch (err) {
     console.error("[Consolidation] Lỗi khi làm sạch bộ nhớ học sinh:", err);
+    throw err;
   }
 }

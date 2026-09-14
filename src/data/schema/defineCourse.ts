@@ -7,6 +7,7 @@ import type {
   SubjectRuntimeData,
   TheoryBlock
 } from './types';
+import { subjectSchemaFor } from './subjectProfiles';
 
 export const emptyAssessmentBundle = (): AssessmentBundle => ({
   exams: [],
@@ -37,10 +38,18 @@ export const defineCourseModule = (
 });
 
 export const defineCourse = (
-  course: Omit<CourseDataBundle, 'schemaVersion'>
+  course: Omit<CourseDataBundle, 'schemaVersion' | 'subjectSchema' | 'studentDataCompatibility'>
 ): CourseDataBundle => ({
   ...course,
-  schemaVersion: COURSE_DATA_SCHEMA_VERSION
+  schemaVersion: COURSE_DATA_SCHEMA_VERSION,
+  subjectSchema: subjectSchemaFor(course.course.subject),
+  studentDataCompatibility: {
+    studentDataVersion: 2,
+    identityStrategy: 'stable-question-id',
+    legacyRuntimeAdapter: true,
+    preservesAttemptIds: true,
+    preservesQuestionIds: true,
+  },
 });
 
 const theoryBlockToParagraphs = (block: TheoryBlock): string[] => {
@@ -143,7 +152,12 @@ export const toSubjectRuntimeData = (
     ],
     learningOutcomes: bundle.modules.flatMap(module => module.outcomes),
     learningMisconceptions: bundle.modules.flatMap(module => module.misconceptions),
-    courseBundle: bundle
+    courseBundle: bundle,
+    dataContract: {
+      schemaVersion: bundle.schemaVersion,
+      studentDataVersion: bundle.studentDataCompatibility.studentDataVersion,
+      identityStrategy: bundle.studentDataCompatibility.identityStrategy,
+    },
   };
 };
 
@@ -153,5 +167,10 @@ export const normalizeLegacySubjectData = (
   ...legacy,
   assessmentBlueprints: legacy.assessmentBlueprints ?? [],
   learningOutcomes: legacy.learningOutcomes ?? [],
-  learningMisconceptions: legacy.learningMisconceptions ?? []
+  learningMisconceptions: legacy.learningMisconceptions ?? [],
+  dataContract: {
+    schemaVersion: COURSE_DATA_SCHEMA_VERSION,
+    studentDataVersion: 2,
+    identityStrategy: 'stable-question-id'
+  }
 });

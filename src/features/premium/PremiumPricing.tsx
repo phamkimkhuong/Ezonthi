@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAppStore } from '../../services/store';
-import { functions, db } from '../../services/firebase';
+import { functions } from '../../services/firebase';
+import { trackProductEvent } from '../../services/productAnalytics';
 import { httpsCallable } from 'firebase/functions';
-import { doc, setDoc } from 'firebase/firestore';
 import { authService } from '../../services/authService';
 import { AffiliateValidationResult } from '../../types';
 import {
@@ -21,12 +21,16 @@ import {
 export const PremiumPricing: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { isPremium, user, trialActivated, premiumUntil } = useAppStore();
+  const { isPremium, user, userData, trialActivated, premiumUntil } = useAppStore();
 
   const [selectedPlanId, setSelectedPlanId] = useState<'plan_3m' | 'plan_12m'>('plan_12m');
   const [loading, setLoading] = useState(false);
   const [trialLoading, setTrialLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    trackProductEvent('paywall_viewed');
+  }, []);
 
   // Toast thông báo tùy chỉnh
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
@@ -130,6 +134,10 @@ export const PremiumPricing: React.FC = () => {
     setSelectedPlanId(planToUpgrade);
 
     try {
+      trackProductEvent('checkout_started', {
+        plan_id: planToUpgrade,
+        price_vnd: getPriceForPlan(planToUpgrade).final,
+      });
       const createPaymentLinkFn = httpsCallable<{ returnUrl: string; cancelUrl: string; affiliateCode?: string; planId: string }, { checkoutUrl: string; orderCode: number }>(
         functions,
         'createPaymentLink'
@@ -146,7 +154,7 @@ export const PremiumPricing: React.FC = () => {
       });
 
       if (result.data?.checkoutUrl) {
-        window.location.href = result.data.checkoutUrl;
+        window.location.assign(result.data.checkoutUrl);
       } else {
         throw new Error('Không nhận được liên kết thanh toán từ máy chủ.');
       }
@@ -171,19 +179,8 @@ export const PremiumPricing: React.FC = () => {
     setError(null);
 
     try {
-      const trialDurationDays = 30;
-      const premiumUntilDate = new Date(Date.now() + trialDurationDays * 24 * 60 * 60 * 1000);
-
-      const userRef = doc(db, 'users', user.uid);
-      await setDoc(userRef, {
-        isPremium: true,
-        role: 'premium',
-        trialActivated: true,
-        premiumPlan: 'Gói Dùng Thử (Trial 30 ngày)',
-        planName: 'Gói Dùng Thử (Trial 30 ngày)',
-        premiumUntil: premiumUntilDate.toISOString(),
-        trialStartDate: new Date().toISOString()
-      }, { merge: true });
+      await httpsCallable(functions, 'activatePremiumTrial')({});
+      trackProductEvent('trial_activated');
 
       import('canvas-confetti').then((confetti) => {
         confetti.default({
@@ -399,7 +396,7 @@ export const PremiumPricing: React.FC = () => {
             >
               Đã nâng cấp Premium
             </button>
-          ) : trialActivated ? (
+          ) : (trialActivated || userData?.trialConsumed === true) ? (
             <button
               disabled={true}
               className="w-full py-3 bg-secondary text-muted-foreground font-bold text-xs rounded-xl cursor-not-allowed text-center"
@@ -562,5 +559,3 @@ export const PremiumPricing: React.FC = () => {
 };
 
 export default PremiumPricing;
-
-

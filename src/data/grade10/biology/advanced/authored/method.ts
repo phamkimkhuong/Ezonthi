@@ -140,8 +140,8 @@ export const methodProblems = [
   }),
   bioProblem(topicId, {
     content: 'Dịch nuôi cấy được pha loãng liên tiếp 10 lần. Ở độ pha loãng \(10^{-5}\), cấy 0,1 mL thu được 64 khuẩn lạc. Mật độ ban đầu gần nhất là bao nhiêu?',
-    correct: '\(6,4\times10^7\) CFU/mL.',
-    distractors: ['\(6,4\times10^5\) CFU/mL.', '\(6,4\times10^6\) CFU/mL.', '\(6,4\times10^8\) CFU/mL.'],
+    correct: '\(6,4\\times10^7\) CFU/mL.',
+    distractors: ['\(6,4\\times10^5\) CFU/mL.', '\(6,4\\times10^6\) CFU/mL.', '\(6,4\\times10^8\) CFU/mL.'],
     insight: 'Phải hiệu chỉnh đồng thời hệ số pha loãng và thể tích cấy 0,1 mL.',
     evidence: '64 khuẩn lạc nằm trên đĩa nhận 0,1 mL của mẫu đã loãng \(10^5\) lần.',
     mechanism: 'CFU/mL ban đầu = số khuẩn lạc / (thể tích cấy × độ pha loãng).',

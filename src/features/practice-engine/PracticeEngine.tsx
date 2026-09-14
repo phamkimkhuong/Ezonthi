@@ -373,7 +373,7 @@ export const PracticeEngine: React.FC = () => {
     }
   }, [selectedSubTense, resetQuestionState]);
 
-  // Khi người dùng mới vào một dạng bài, nếu LocalStorage trống (máy mới), tự động tải 1 Read từ topic_attempts/{questionTypeId}
+  // Khi LocalStorage trống (máy mới), tải attempt của dạng bài từ nguồn chuẩn.
   useEffect(() => {
     if (!user || !questionTypeId || isExamMode) return;
 

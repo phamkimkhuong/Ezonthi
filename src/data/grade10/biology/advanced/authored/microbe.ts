@@ -15,11 +15,11 @@ export const microbeProblems = [
     tags: ['đường cong sinh trưởng', 'phương pháp định lượng']
   }),
   bioProblem(topicId, {
-    content: 'Một quần thể vi khuẩn tăng từ \(2,5\times10^5\) lên \(8,0\times10^6\) tế bào trong 150 phút ở pha log. Thời gian thế hệ gần nhất là bao nhiêu?',
+    content: 'Một quần thể vi khuẩn tăng từ \(2,5\\times10^5\) lên \(8,0\\times10^6\) tế bào trong 150 phút ở pha log. Thời gian thế hệ gần nhất là bao nhiêu?',
     correct: '30 phút.',
     distractors: ['15 phút.', '25 phút.', '50 phút.'],
     insight: 'Tỉ số 32 tương ứng \(2^5\), tức năm thế hệ trong 150 phút.',
-    evidence: '\(8,0\times10^6 /(2,5\times10^5)=32\).',
+    evidence: '\(8,0\\times10^6 /(2,5\\times10^5)=32\).',
     mechanism: 'Ở pha log lý tưởng, N = N₀ × \(2^n\); thời gian thế hệ g = t/n.',
     reasoning: ['n = 5.', 'g = 150/5 = 30 phút.'],
     distractorReasons: ['chia cho mười thế hệ không có.', 'chia trực tiếp 150 cho 6.', 'coi số thế hệ là ba.'],

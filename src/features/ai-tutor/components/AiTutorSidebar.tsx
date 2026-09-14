@@ -6,7 +6,9 @@ export interface ChatSession {
   id: string;
   title: string;
   subjectId: string;
-  messages: any[];
+  messages?: any[];
+  messageCount?: number;
+  storageVersion?: number;
   createdAt: string;
   updatedAt: string;
 }

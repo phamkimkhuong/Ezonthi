@@ -1,6 +1,7 @@
-import { doc, setDoc, serverTimestamp, increment, arrayUnion } from 'firebase/firestore';
-import { db, auth } from './firebase';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { db, auth, functions } from './firebase';
 import type { UnifiedSurveyResponse, UserSurveyState } from '../types/surveyTypes';
+import { httpsCallable } from 'firebase/functions';
 import { logger } from '../utils/logger';
 
 const STORAGE_KEYS = {
@@ -67,7 +68,7 @@ class SurveyService {
 
   /**
    * Lưu kết quả Khảo sát (Local + Sync Firestore)
-   * Tối ưu O(1) Read cho Admin: Đồng thời cập nhật dồn vào 1-Read Aggregated Directory Document
+   * Server tổng hợp từ bản ghi cá nhân; client không sửa số đếm chung.
    */
   public async saveSurvey(data: Omit<UnifiedSurveyResponse, 'completedAt'>): Promise<void> {
     const fullData: UnifiedSurveyResponse = {
@@ -102,79 +103,15 @@ class SurveyService {
         logger.error('Không thể đồng bộ survey_responses lên Firestore', userDocError);
       }
 
-      // 2. ⭐ TỐI ƯU O(1) READ CHO ADMIN: Cập nhật dồn vào 1-Read Aggregated Directory Document
-      try {
-        const { getDoc, updateDoc } = await import('firebase/firestore');
-        const summaryRef = doc(db, 'system_metrics', 'survey_directory');
-        const uiRatingObj = typeof fullData.uiRating === 'object' && fullData.uiRating !== null
-          ? (fullData.uiRating as { rating?: number; reason?: string })
-          : null;
-        const ratingVal = typeof fullData.uiRating === 'number' ? fullData.uiRating : uiRatingObj?.rating;
-        const ratingReason = uiRatingObj?.reason || null;
-        const deviceVal = fullData.primaryDevice ? (fullData.primaryDevice.startsWith('other:') ? 'other' : fullData.primaryDevice) : null;
-
-        const feedbackItem = sanitizeForFirestore({
-          userId: user.uid,
-          userEmail: user.email || 'Học sinh',
-          grade: fullData.grade || null,
-          goal: fullData.goal || null,
-          preferredSubject: fullData.preferredSubject || null,
-          primaryDevice: fullData.primaryDevice || null,
-          uiRating: fullData.uiRating || null,
-          wishedFeatures: fullData.wishedFeatures || [],
-          studyHurdles: fullData.studyHurdles || null,
-          npsScore: fullData.npsScore ?? null,
-          comments: fullData.additionalComments || ratingReason || null,
-          submittedAt: fullData.completedAt,
-          fullSurvey: fullData,
-        });
-
-        const snap = await getDoc(summaryRef);
-        if (snap.exists()) {
-          const updatePayload: Record<string, any> = {
-            totalResponses: increment(1),
-            updatedAt: serverTimestamp(),
-            latestFeedbacks: arrayUnion(feedbackItem),
-          };
-          if (fullData.grade) {
-            updatePayload[`grades.${fullData.grade}`] = increment(1);
-          }
-          if (ratingVal) {
-            updatePayload[`uiRatings.${ratingVal}`] = increment(1);
-          }
-          if (deviceVal) {
-            updatePayload[`devices.${deviceVal}`] = increment(1);
-          }
-          await updateDoc(summaryRef, updatePayload);
-        } else {
-          const initialPayload: Record<string, any> = {
-            totalResponses: 1,
-            updatedAt: serverTimestamp(),
-            grades: fullData.grade ? { [fullData.grade]: 1 } : {},
-            uiRatings: ratingVal ? { [ratingVal]: 1 } : {},
-            devices: deviceVal ? { [deviceVal]: 1 } : {},
-            latestFeedbacks: [feedbackItem],
-          };
-          await setDoc(summaryRef, initialPayload);
-        }
-      } catch (summaryError) {
-        logger.info('Không thể cập nhật system_metrics/survey_directory:', summaryError);
-      }
     }
   }
 
   /**
-   * ⭐ Tối ưu O(1) Read cho Admin: Đọc toàn bộ báo cáo khảo sát chỉ tốn ĐÚNG 1 FIRESTORE READ
+   * Báo cáo khảo sát được server tính lại, chỉ giáo viên có quyền gọi.
    */
   public async getAdminSurveySummary(): Promise<any> {
     try {
-      const { getDoc } = await import('firebase/firestore');
-      const summaryRef = doc(db, 'system_metrics', 'survey_directory');
-      const snap = await getDoc(summaryRef);
-      if (snap.exists()) {
-        return snap.data();
-      }
-      return null;
+      return (await httpsCallable(functions, 'getSurveySummary')({})).data;
     } catch (e) {
       console.error('Lỗi khi đọc survey summary O(1) read:', e);
       return null;

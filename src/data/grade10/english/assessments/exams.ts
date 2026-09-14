@@ -128,7 +128,7 @@ export const g10EnglishAssessmentExams: MockExam[] = [
       'eng10-q373', 'eng10-q376', 'eng10-q382', 'eng10-q385', 'eng10-q388', 'eng10-q397', 'eng10-q400',
       'eng10-skill-u10-r1', 'eng10-skill-u10-r2', 'eng10-skill-u10-r3',
       'eng10-skill-u10-r4', 'eng10-skill-u10-r5',
-      'eng10-skill-u9-r1', 'eng10-skill-u9-r2', 'eng10-skill-u9-r3', 'eng10-skill-u9-r4',
+      'eng10-deep-u8-r1', 'eng10-deep-u8-r2', 'eng10-deep-u8-r3', 'eng10-deep-u8-r4',
       'eng10-skill-u10-w3'
     ],
     createdAt: '2026-07-16T00:00:00.000Z'

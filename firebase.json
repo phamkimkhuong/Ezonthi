@@ -25,6 +25,12 @@
   "hosting": {
     "public": "dist",
     "trailingSlash": true,
+    "rewrites": [
+      {
+        "source": "/app/**",
+        "destination": "/index.html"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",

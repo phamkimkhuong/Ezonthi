@@ -1,4 +1,5 @@
 import { ChatContent } from "../types.js";
+import { fetchWithTimeout } from './aiControl.js';
 
 
 export async function callGroqAiApi(
@@ -8,7 +9,8 @@ export async function callGroqAiApi(
   finalSystemInstruction: string,
   temperature: number | undefined,
   responseMimeType: string | undefined,
-  image: { mimeType: string; data: string } | undefined
+  image: { mimeType: string; data: string } | undefined,
+  timeoutMs = 15_000
 ): Promise<{ text: string; usage: any }> {
   const messages: Array<{ role: string; content: any }> = [];
 
@@ -87,14 +89,14 @@ export async function callGroqAiApi(
     payload.response_format = { type: "json_object" };
   }
 
-  const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+  const response = await fetchWithTimeout("https://api.groq.com/openai/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${apiKey}`
     },
     body: JSON.stringify(payload)
-  });
+  }, timeoutMs);
 
   if (!response.ok) {
     const errText = await response.text();
@@ -124,7 +126,8 @@ export async function callMistralAiApi(
   finalSystemInstruction: string,
   temperature: number | undefined,
   responseMimeType: string | undefined,
-  image: { mimeType: string; data: string } | undefined
+  image: { mimeType: string; data: string } | undefined,
+  timeoutMs = 15_000
 ): Promise<{ text: string; usage: any }> {
   const messages: Array<{ role: string; content: any }> = [];
 
@@ -196,14 +199,14 @@ export async function callMistralAiApi(
     payload.response_format = { type: "json_object" };
   }
 
-  const response = await fetch("https://api.mistral.ai/v1/chat/completions", {
+  const response = await fetchWithTimeout("https://api.mistral.ai/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${apiKey}`
     },
     body: JSON.stringify(payload)
-  });
+  }, timeoutMs);
 
   if (!response.ok) {
     const errText = await response.text();

@@ -12,10 +12,7 @@ service cloud.firestore {
     function isBootstrapTeacher() {
       return signedIn()
         && (
-          request.auth.uid in [
-            'hzSKwkaroTR1LKcXp09E5wL7F6f1'
-          ]
-          || request.auth.token.email == 'phamkhuong436@gmail.com'
+          request.auth.uid == 'hzSKwkaroTR1LKcXp09E5wL7F6f1'
         );
     }
 
@@ -28,21 +25,8 @@ service cloud.firestore {
           signedIn()
           && exists(/databases/$(database)/documents/teachers/$(request.auth.uid))
           && get(/databases/$(database)/documents/teachers/$(request.auth.uid)).data.active == true
+          && get(/databases/$(database)/documents/teachers/$(request.auth.uid)).data.role == 'teacher'
         );
-    }
-
-    function isTeacherAttemptReview(userId) {
-      return isTeacher()
-        && resource.data.userId == userId
-        && request.resource.data.userId == userId
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
-          'isCorrect',
-          'gradingMode',
-          'teacherFeedback',
-          'syncedAt'
-        ])
-        && request.resource.data.isCorrect is bool
-        && request.resource.data.gradingMode == 'auto';
     }
 
     function isTeacherProgressWrite() {
@@ -57,39 +41,6 @@ service cloud.firestore {
         && request.resource.data.masteryLevel <= 100
         && request.resource.data.isCompleted is bool
         && request.resource.data.updatedAt is string;
-    }
-
-    function isTeacherMistakeCreate(userId) {
-      return isTeacher()
-        && request.resource.data.userId == userId
-        && request.resource.data.keys().hasOnly([
-          'id',
-          'userId',
-          'questionId',
-          'questionTypeId',
-          'wrongAnswer',
-          'proofImages',
-          'reviewStatus',
-          'reviewCount',
-          'lastAttemptedAt',
-          'nextReviewAt',
-          'teacherFeedback',
-          'syncedAt'
-        ])
-        && request.resource.data.reviewStatus in ['new', 'reviewing', 'fixed'];
-    }
-
-    function isTeacherMistakeUpdate(userId) {
-      return isTeacher()
-        && resource.data.userId == userId
-        && request.resource.data.userId == userId
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
-          'reviewStatus',
-          'nextReviewAt',
-          'teacherFeedback',
-          'syncedAt'
-        ])
-        && request.resource.data.reviewStatus in ['new', 'reviewing', 'fixed'];
     }
 
     match /teachers/{teacherId} {
@@ -108,17 +59,22 @@ service cloud.firestore {
       allow create: if isTeacher() || (
         signedIn()
         && request.resource.data.sellerUid == request.auth.uid
+        && request.resource.data.keys().hasOnly(['code', 'sellerUid', 'sellerName', 'discountPercent', 'commissionPercent', 'isActive', 'usageCount'])
+        && request.resource.data.code == code
+        && request.resource.data.usageCount == 0
+        && request.resource.data.isActive is bool
+        && request.resource.data.discountPercent is int
+        && request.resource.data.commissionPercent is int
         && request.resource.data.discountPercent >= 0
         && request.resource.data.discountPercent <= 75
         && request.resource.data.discountPercent + request.resource.data.commissionPercent == 75
       );
-      allow update: if isTeacher() || (
-        signedIn()
-        && resource.data.sellerUid == request.auth.uid
+      allow update: if (
+        (isTeacher() || (signedIn() && resource.data.sellerUid == request.auth.uid))
         && request.resource.data.discountPercent >= 0
         && request.resource.data.discountPercent <= 75
         && request.resource.data.discountPercent + request.resource.data.commissionPercent == 75
-        && request.resource.data.diff(resource.data).affectedKeys().hasAny(['isActive', 'discountPercent', 'commissionPercent'])
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['isActive', 'discountPercent', 'commissionPercent'])
       );
       allow delete: if isTeacher();
     }
@@ -126,14 +82,16 @@ service cloud.firestore {
     match /affiliateWallets/{sellerUid} {
       allow get: if isTeacher() || (signedIn() && request.auth.uid == sellerUid);
       allow list: if isTeacher();
-      allow create: if isTeacher() || (
+      allow create: if (
         signedIn()
         && request.auth.uid == sellerUid
+        && request.resource.data.keys().hasOnly(['sellerUid', 'balance', 'totalEarned', 'pendingBalance', 'bankAccount'])
+        && request.resource.data.sellerUid == sellerUid
         && request.resource.data.balance == 0
         && request.resource.data.totalEarned == 0
         && request.resource.data.pendingBalance == 0
       );
-      allow update: if isTeacher() || (
+      allow update: if (
         signedIn()
         && request.auth.uid == sellerUid
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['bankAccount'])
@@ -143,7 +101,7 @@ service cloud.firestore {
 
     match /payoutRequests/{requestId} {
       allow get, list: if isTeacher() || (signedIn() && resource.data.sellerUid == request.auth.uid);
-      allow write: if isTeacher();
+      allow write: if false;
     }
 
     match /student_profiles/{userId} {
@@ -157,17 +115,60 @@ service cloud.firestore {
     }
 
     match /system_stats/{docId} {
-      allow read: if docId == 'leaderboard' || signedIn();
+      allow read: if docId == 'leaderboard_public' || isTeacher();
       allow write: if false;
     }
 
     match /users/{userId} {
       allow get: if isOwner(userId) || isTeacher();
       allow list: if isTeacher();
-      allow create: if isOwner(userId);
-      allow update: if isOwner(userId) || (isTeacher() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['completedCount']));
+      function profileFields() {
+        return ['id', 'name', 'avatar', 'email', 'birthYear', 'gender', 'province', 'updatedAt', 'lastActiveAt', 'readLessons', 'passedCheckpoints', 'activeExamSessions'];
+      }
+      function validIdentity() {
+        return request.resource.data.get('id', userId) == userId
+          && request.resource.data.get('email', null) == request.auth.token.get('email', null);
+      }
+      allow create: if isOwner(userId) && request.resource.data.keys().hasOnly(profileFields()) && validIdentity();
+      allow update: if isOwner(userId)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(profileFields())
+        && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['id', 'email']) || validIdentity());
       allow delete: if false;
 
+      // Trusted teacher reviews are stored separately from student-owned answer drafts.
+      match /teacher_reviews/{attemptId} {
+        allow read: if isOwner(userId) || isTeacher();
+        allow write: if false;
+      }
+
+      match /learning_attempts/{attemptId} {
+        allow read: if isOwner(userId) || isTeacher();
+        allow write: if false;
+      }
+
+      match /learning_mistakes/{mistakeId} {
+        allow read: if isOwner(userId) || isTeacher();
+        allow write: if false;
+      }
+
+      match /learning_reviews/{attemptId} {
+        allow read: if isOwner(userId) || isTeacher();
+        allow write: if false;
+      }
+
+      match /learning_migrations/{migrationId} {
+        allow read: if isOwner(userId) || isTeacher();
+        allow write: if false;
+      }
+
+      match /learning_sync_ops/{operationId} {
+        allow read: if isOwner(userId);
+        allow write: if false;
+      }
+      match /ai_quota_days/{dayId} {
+        allow read: if isOwner(userId);
+        allow write: if false;
+      }
       match /progress/{progressId} {
         allow read, write: if isOwner(userId);
         allow read: if isTeacher();
@@ -181,28 +182,23 @@ service cloud.firestore {
       }
 
       match /attempts/{attemptId} {
-        allow read, write: if isOwner(userId);
-        allow read: if isTeacher();
-        allow update: if isTeacherAttemptReview(userId);
-        allow create, delete: if false;
+        allow read: if isOwner(userId) || isTeacher();
+        allow write: if false;
       }
 
       match /topic_attempts/{questionTypeId} {
-        allow read, write: if isOwner(userId);
-        allow read: if isTeacher();
+        allow read: if isOwner(userId) || isTeacher();
+        allow write: if false;
       }
 
       match /mistakes/{mistakeId} {
-        allow read, write: if isOwner(userId);
-        allow read: if isTeacher();
-        allow create: if isTeacherMistakeCreate(userId);
-        allow update: if isTeacherMistakeUpdate(userId);
-        allow delete: if false;
+        allow read: if isOwner(userId) || isTeacher();
+        allow write: if false;
       }
 
       match /active_mistakes/{docId} {
-        allow read, write: if isOwner(userId);
-        allow read: if isTeacher();
+        allow read: if isOwner(userId) || isTeacher();
+        allow write: if false;
       }
 
       match /exam_results/{examResultId} {
@@ -218,12 +214,51 @@ service cloud.firestore {
       }
 
       match /general_chats/{chatId} {
-        allow read, write: if isOwner(userId);
+        allow read: if isOwner(userId);
         allow read: if isTeacher();
+        allow create, update: if false;
+        allow delete: if isOwner(userId);
 
         match /sessions/{sessionId} {
-          allow read, write: if isOwner(userId);
+          function validSession() {
+            return request.resource.data.keys().hasOnly([
+                'title', 'subjectId', 'gradeId', 'createdAt', 'updatedAt',
+                'messageCount', 'storageVersion', 'historySummary',
+                'summarizedMessageCount', 'legacyMigrationTruncated'
+              ])
+              && request.resource.data.title is string
+              && request.resource.data.title.size() <= 120
+              && request.resource.data.subjectId in ['math', 'english', 'physics', 'chemistry', 'biology', 'history']
+              && request.resource.data.gradeId in ['grade9', 'grade10', 'grade11']
+              && request.resource.data.messageCount is int
+              && request.resource.data.messageCount >= 0
+              && request.resource.data.messageCount <= 100000
+              && request.resource.data.storageVersion == 2
+              && request.resource.data.createdAt is string
+              && request.resource.data.updatedAt is string
+              && request.resource.data.get('historySummary', '').size() <= 1000;
+          }
+          allow read: if isOwner(userId);
           allow read: if isTeacher();
+          allow create, update: if isOwner(userId) && validSession();
+          allow delete: if isOwner(userId);
+
+          match /messages/{messageId} {
+            function validMessage() {
+              return request.resource.data.keys().hasOnly(['role', 'text', 'imageUrl', 'sequence', 'createdAt'])
+                && request.resource.data.role in ['user', 'model']
+                && request.resource.data.text is string
+                && request.resource.data.text.size() <= 12000
+                && request.resource.data.sequence is int
+                && request.resource.data.sequence > 0
+                && request.resource.data.createdAt is string
+                && request.resource.data.get('imageUrl', '').size() <= 2000;
+            }
+            allow read: if isOwner(userId) || isTeacher();
+            allow create: if isOwner(userId) && validMessage();
+            allow update: if false;
+            allow delete: if isOwner(userId);
+          }
         }
       }
 
@@ -243,24 +278,56 @@ service cloud.firestore {
     }
 
     match /system_metrics/{docId} {
-      allow read: if signedIn();
-      allow write: if signedIn();
+      allow read: if isTeacher() || (docId == 'notification_directory' && signedIn());
+      allow write: if isTeacher() && docId == 'notification_directory';
+    }
+
+    match /product_user_days/{docId} {
+      allow read: if isTeacher();
+      allow write: if false;
+    }
+
+    match /product_metrics_daily/{dayId} {
+      allow read: if isTeacher();
+      allow write: if false;
     }
 
     match /system_notifications/{docId} {
+      function validSystemNotification() {
+        return request.resource.data.keys().hasOnly([
+            'id', 'title', 'body', 'type', 'targetGrade', 'actionUrl',
+            'createdByEmail', 'createdAt', 'updatedAt'
+          ])
+          && request.resource.data.id == docId
+          && request.resource.data.title is string
+          && request.resource.data.title.size() > 0
+          && request.resource.data.title.size() <= 160
+          && request.resource.data.body is string
+          && request.resource.data.body.size() <= 5000
+          && request.resource.data.type in ['system', 'achievement', 'reminder', 'premium']
+          && request.resource.data.targetGrade in ['all', 'grade9', 'grade10', 'grade11', 'grade12']
+          && request.resource.data.createdAt is string
+          && request.resource.data.createdByEmail is string
+          && request.resource.data.createdByEmail.size() <= 254
+          && (
+            !request.resource.data.keys().hasAny(['actionUrl'])
+            || request.resource.data.actionUrl == null
+            || (request.resource.data.actionUrl is string && request.resource.data.actionUrl.size() <= 2000)
+          );
+      }
       allow read: if signedIn();
-      allow write: if signedIn();
+      allow create, update: if isTeacher() && validSystemNotification();
+      allow delete: if isTeacher();
     }
 
     match /manual_attempts/{attemptId} {
-      allow read, delete: if isTeacher();
-      allow create: if signedIn() && request.resource.data.userId == request.auth.uid;
-      allow update: if false;
+      allow read: if isTeacher();
+      allow write: if false;
     }
 
     match /announcement_posts/{postId} {
       allow read: if true;
-      allow create, update: if signedIn();
+      allow create, update: if isTeacher();
       allow delete: if isTeacher();
     }
 

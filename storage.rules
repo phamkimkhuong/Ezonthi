@@ -23,6 +23,7 @@ service firebase.storage {
           signedIn()
           && firestore.exists(/databases/(default)/documents/teachers/$(request.auth.uid))
           && firestore.get(/databases/(default)/documents/teachers/$(request.auth.uid)).data.active == true
+          && firestore.get(/databases/(default)/documents/teachers/$(request.auth.uid)).data.role == 'teacher'
         );
     }
 
@@ -31,7 +32,7 @@ service firebase.storage {
 
       allow write: if isOwner(userId)
         && request.resource.size < 5 * 1024 * 1024
-        && request.resource.contentType.matches('image/.*');
+        && request.resource.contentType.matches('image/(jpeg|png|webp|gif)');
     }
 
     match /users/{userId}/chats/{questionId}/{fileName} {
@@ -39,7 +40,7 @@ service firebase.storage {
 
       allow write: if isOwner(userId)
         && request.resource.size < 5 * 1024 * 1024
-        && request.resource.contentType.matches('image/.*');
+        && request.resource.contentType.matches('image/(jpeg|png|webp|gif)');
     }
 
     match /users/{userId}/general_chats/{subjectId}/{fileName} {
@@ -47,7 +48,7 @@ service firebase.storage {
 
       allow write: if isOwner(userId)
         && request.resource.size < 5 * 1024 * 1024
-        && request.resource.contentType.matches('image/.*');
+        && request.resource.contentType.matches('image/(jpeg|png|webp|gif)');
     }
 
     match /users/{userId}/tickets/{ticketId}/{fileName} {
@@ -55,15 +56,15 @@ service firebase.storage {
 
       allow write: if (userId == 'guests' || isOwner(userId))
         && request.resource.size < 5 * 1024 * 1024
-        && request.resource.contentType.matches('image/.*');
+        && request.resource.contentType.matches('image/(jpeg|png|webp|gif)');
     }
 
     match /chat_images/{studentId}/{fileName} {
-      allow read: if signedIn();
+      allow read, delete: if isOwner(studentId) || isTeacher();
 
-      allow write: if signedIn()
+      allow create, update: if (isOwner(studentId) || isTeacher())
         && request.resource.size < 10 * 1024 * 1024
-        && request.resource.contentType.matches('image/.*');
+        && request.resource.contentType.matches('image/(jpeg|png|webp|gif)');
     }
   }
 }

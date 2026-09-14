@@ -219,10 +219,11 @@ Grade (grade9 | grade10)
 
 ```
 Công thức tính điểm mastery (0-100):
-  - Lấy 8 lần làm bài gần nhất
-  - accuracy = correctCount / totalCount → tối đa 70 điểm
-  - streak bonus: +10 điểm cho mỗi câu đúng liên tiếp (tối đa +30)
-  - streak penalty: -15 điểm cho mỗi câu sai liên tiếp (tối đa -30)
+  - Chỉ lấy kết quả đã chấm mới nhất của từng questionId khác nhau
+  - Bỏ qua bài manual còn pending
+  - accuracy = correctCount / evidenceCount → 0-100
+  - Cần đủ 5 câu có bằng chứng, hoặc toàn bộ câu nếu dạng có ít hơn 5
+  - XP và streak không tham gia mastery
 
 Chuyển đổi sang sao (getStarsFromScore):
   - 0-39 → 0 sao
@@ -268,16 +269,16 @@ getLearningMisconceptions(grade, subject): any[]
 | Path | Component | Mô tả |
 |---|---|---|
 | `/auth` | `AuthPage` | Đăng nhập / Đăng ký |
-| `/dashboard` | `Dashboard` | Trang chủ (XP, tiến độ, dạng yếu) |
-| `/roadmap` | `Roadmap` | Bản đồ lộ trình học (Tier 1→2→3) |
-| `/question-types/:id` | `QuestionTypeDetail` | Chi tiết dạng bài (lý thuyết + ví dụ) |
-| `/practice` | `PracticeEngine` | Luyện tập tự do |
-| `/practice/:questionTypeId` | `PracticeEngine` | Luyện tập dạng bài cụ thể |
-| `/mistakes` | `MistakeNotebook` | Sổ lỗi sai |
-| `/exam` | `ExamEngine` | Thi thử |
+| `/app/:grade/:subject/dashboard` | `Dashboard` | Trang chủ (XP, tiến độ, dạng yếu) |
+| `/app/:grade/:subject/roadmap` | `Roadmap` | Bản đồ lộ trình học (Tier 1→2→3) |
+| `/app/:grade/:subject/question-types/:id` | `QuestionTypeDetail` | Chi tiết dạng bài (lý thuyết + ví dụ) |
+| `/app/:grade/:subject/practice` | `PracticeEngine` | Luyện tập tự do |
+| `/app/:grade/:subject/practice/:questionTypeId` | `PracticeEngine` | Luyện tập dạng bài cụ thể |
+| `/app/:grade/:subject/mistakes` | `MistakeNotebook` | Sổ lỗi sai |
+| `/app/:grade/:subject/exam` | `ExamEngine` | Thi thử |
 | `/teacher` | `TeacherDashboard` | Dashboard giáo viên |
 | `/premium` | `PremiumPricing` | Nâng cấp Premium |
-| `/ai-tutor` | `GeneralAiTutor` | Chat AI gia sư |
+| `/app/:grade/:subject/ai-tutor` | `GeneralAiTutor` | Chat AI gia sư |
 
 ### 5.2 Context Dropdown (Lớp + Môn)
 
@@ -614,7 +615,7 @@ npm run deploy     # Build + Firebase deploy hosting
 
 ### 12.11 Chuyên Đề Nâng Cao Vật Lí 10
 
-- **Route riêng:** `/advanced-physics-10`, chỉ hiện trong sidebar khi ngữ cảnh là `grade10/physics`.
+- **Route chuẩn:** `/app/grade10/physics/advanced`, chỉ hiện trong sidebar khi ngữ cảnh là `grade10/physics`.
 - **Dữ liệu riêng:** `src/data/grade10/physics/advanced/` chứa 7 mảng, 168 câu A–D độc lập và 168 lời giải trọn bài (24 câu/mảng). Không đưa câu nâng cao vào ngân hàng Luyện tập nền tảng.
 - **Mức thử thách:** `hard | very_hard | extreme`; trường `difficulty` lõi vẫn là `hard` để tương thích kiểu `Question` hiện có.
 - **Nguyên tắc nội dung:** không chia một bài thành chuỗi câu dẫn dắt; không dùng input tự luận; không lưu nguồn, năm hoặc đơn vị ra đề trong dữ liệu phát hành.
@@ -625,7 +626,7 @@ npm run deploy     # Build + Firebase deploy hosting
 
 ### 12.12 Chuyên Đề Nâng Cao Toán 10
 
-- **Route riêng:** `/advanced-math-10`, chỉ hiện trong sidebar khi ngữ cảnh là `grade10/math`.
+- **Route chuẩn:** `/app/grade10/math/advanced`, chỉ hiện trong sidebar khi ngữ cảnh là `grade10/math`.
 - **Dữ liệu riêng:** `src/data/grade10/math/advanced/authored/` chứa 8 mảng, 192 câu A–D được biên soạn theo từng cấu trúc độc lập và 192 lời giải trọn bài (24 câu/mảng). Ngân hàng này tách hoàn toàn khỏi Luyện tập nền tảng; không dùng một khuôn rồi nhân bản bằng cách thay số.
 - **Phân tầng:** 48 câu Khó, 80 câu Rất khó và 64 câu Cực khó; đồng thời gồm 96 bài cô đọng, 64 bài tổng hợp dài và 32 bài Olympic.
 - **Phạm vi:** đại số–đa thức; hàm số–tham số; bất đẳng thức; số học; tổ hợp; hình học Euclid; vectơ–tọa độ–lượng giác; xác suất–mô hình hóa.
@@ -638,7 +639,7 @@ npm run deploy     # Build + Firebase deploy hosting
 
 ### 12.13 Chuyên Đề Nâng Cao Sinh học 10
 
-- **Route riêng:** `/advanced-biology-10`, chỉ hiện trong sidebar khi ngữ cảnh là `grade10/biology`.
+- **Route chuẩn:** `/app/grade10/biology/advanced`, chỉ hiện trong sidebar khi ngữ cảnh là `grade10/biology`.
 - **Dữ liệu riêng:** `src/data/grade10/biology/advanced/` chứa 8 mảng, 144 câu A–D độc lập và 144 lời giải theo bằng chứng–cơ chế–loại phương án nhiễu; không đưa câu nâng cao vào ngân hàng Luyện tập nền tảng.
 - **Phân tầng:** 48 câu Khó, 64 câu Rất khó và 32 câu Cực khó; đồng thời gồm 48 bài cô đọng, 64 bài tổng hợp và 32 bài kiểu Olympic.
 - **Phạm vi:** phương pháp nghiên cứu; phân tử sinh học; tế bào–kính hiển vi; vận chuyển–truyền tin; enzyme–chuyển hóa; phân bào–công nghệ tế bào; vi sinh; virus.
@@ -658,3 +659,21 @@ npm run deploy     # Build + Firebase deploy hosting
 - [ ] Cập nhật `AppLayout.tsx courseGroups` nếu thêm môn/lớp mới
 - [ ] Cập nhật `AGENT.md` nếu thay đổi kiến trúc hoặc data model
 - [ ] Cập nhật `README.md` nếu thay đổi hướng dẫn sử dụng hoặc deploy
+
+### Đợt bảo mật 1 (12/09/2026)
+
+- Client chỉ sửa trường hồ sơ/dấu đọc cá nhân trong `users/{uid}`; quyền Premium/trial và stats/mastery/completed do backend quản lý.
+- Các callable `activatePremiumTrial`, `refreshLearningSummary`, `getSurveySummary` là đường tương thích mới. `teacher_reviews` chỉ giáo viên ghi, tách khỏi bài làm học sinh.
+- `scripts/buildServerLearningCatalog.mjs` sinh catalog đáp án và validator/hàm Premium dùng chung trước mỗi build Functions; không sửa file generated.
+- Email dùng quyền giáo viên thống nhất, Firebase Auth directory, quota transaction và idempotency. PayOS và rút tiền cập nhật tài chính trong transaction.
+- Public leaderboard chuyển sang `system_stats/leaderboard_public`, không xuất email và chỉ sử dụng stats do server kiểm tra.
+- Kiểm thử/ràng buộc chuyển đổi dữ liệu: `docs/security-phase1.md`; lệnh `npm run test:security`.
+
+### Đợt mở rộng có số liệu 4 (13/09/2026)
+
+- Attempt có `historyBucket` và API đọc theo con trỏ; chat/message và notification chuyển sang document độc lập có giới hạn thay vì mảng tăng vô hạn.
+- Quota AI được giữ bằng transaction trước khi gọi provider. Mọi tác vụ AI có giới hạn payload/timeout và log token, chi phí ước tính theo `taskType`.
+- RAG V2 bắt buộc lớp, môn, `contentVersion`, trạng thái published và provenance. Seed tri thức trước khi deploy function RAG; kiểm chứng bằng `npm --prefix functions run verify:knowledge`.
+- Schema khóa học V4 có profile bằng chứng riêng cho sáu môn nhưng giữ `studentDataVersion: 2` và ID cũ qua adapter.
+- Metric backend đo retention D1/D7, kết quả học, conversion PayOS và chi phí AI. `expansionGate phase4-v1` là điều kiện kỹ thuật trước khi mở lớp 12 hoặc thêm chức năng ngoài trọng tâm.
+- Thiết kế, ngưỡng và thứ tự phát hành: `docs/phase4-scale-and-metrics.md`.

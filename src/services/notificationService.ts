@@ -1,5 +1,5 @@
 import { db } from './firebase';
-import { doc, getDoc, setDoc, updateDoc, arrayUnion, serverTimestamp } from 'firebase/firestore';
+import { collection, deleteDoc, doc, getDoc, getDocs, limit, orderBy, query, setDoc, serverTimestamp } from 'firebase/firestore';
 import { AppNotification, NotificationType, TargetGrade } from '../types/notificationTypes';
 import { logger } from '../utils/logger';
 
@@ -28,7 +28,7 @@ class NotificationService {
     if (!userId || !notificationId) return [];
     const current = this.getReadIds(userId);
     if (!current.includes(notificationId)) {
-      const updated = [...current, notificationId];
+      const updated = [...current, notificationId].slice(-500);
       try {
         localStorage.setItem(this.getStorageKey(userId), JSON.stringify(updated));
       } catch (err) {
@@ -45,7 +45,7 @@ class NotificationService {
   public markAllAsRead(userId: string, allIds: string[]): string[] {
     if (!userId || !allIds.length) return [];
     const current = this.getReadIds(userId);
-    const updated = Array.from(new Set([...current, ...allIds]));
+    const updated = Array.from(new Set([...current, ...allIds])).slice(-500);
     try {
       localStorage.setItem(this.getStorageKey(userId), JSON.stringify(updated));
     } catch (err) {
@@ -55,25 +55,25 @@ class NotificationService {
   }
 
   /**
-   * ⭐ TỐI ƯU O(1) READ: Tải toàn bộ thông báo hệ thống chỉ tốn ĐÚNG 1 FIRESTORE READ
+   * Tải trang thông báo gần nhất và đọc thêm danh sách cũ trong thời gian chuyển đổi.
    */
   public async fetchNotifications(userId: string, userGrade?: string): Promise<AppNotification[]> {
     try {
-      const notifRef = doc(db, 'system_metrics', 'notification_directory');
-      const snap = await getDoc(notifRef);
-
-      if (!snap.exists()) {
-        return [];
+      const [snapshot, legacySnapshot] = await Promise.all([
+        getDocs(query(collection(db, 'system_notifications'), orderBy('createdAt', 'desc'), limit(100))),
+        getDoc(doc(db, 'system_metrics', 'notification_directory')),
+      ]);
+      const rawList: any[] = snapshot.docs.map(item => ({ id: item.id, ...item.data() }));
+      if (legacySnapshot.exists() && Array.isArray(legacySnapshot.data().notificationsList)) {
+        rawList.push(...legacySnapshot.data().notificationsList.slice(-100));
       }
-
-      const data = snap.data();
-      const rawList: any[] = data.notificationsList || [];
       const readIds = new Set(this.getReadIds(userId));
 
       const list: AppNotification[] = [];
 
       // Sắp xếp thông báo mới nhất lên đầu
-      const sortedRaw = rawList.slice().sort((a, b) => {
+      const uniqueRaw = [...new Map(rawList.filter(item => item?.id).map(item => [item.id, item])).values()];
+      const sortedRaw = uniqueRaw.slice().sort((a, b) => {
         const timeA = new Date(a.createdAt || 0).getTime();
         const timeB = new Date(b.createdAt || 0).getTime();
         return timeB - timeA;
@@ -98,13 +98,13 @@ class NotificationService {
 
       return list;
     } catch (err) {
-      logger.error('Lỗi khi nạp thông báo O(1) Read từ Firestore:', err);
+      logger.error('Lỗi khi nạp thông báo từ Firestore:', err);
       return [];
     }
   }
 
   /**
-   * Gửi thông báo hệ thống mới (Tối ưu gom dồn 1 Document duy nhất)
+   * Gửi thông báo thành một tài liệu độc lập để không tăng vô hạn một tài liệu chung.
    */
   public async sendBroadcastNotification(payload: {
     title: string;
@@ -115,8 +115,6 @@ class NotificationService {
     createdByEmail?: string;
   }): Promise<boolean> {
     try {
-      const notifRef = doc(db, 'system_metrics', 'notification_directory');
-
       const notifId = `notif_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
 
       const newNotifItem = {
@@ -130,24 +128,15 @@ class NotificationService {
         createdAt: new Date().toISOString(),
       };
 
-      const snap = await getDoc(notifRef);
+      await setDoc(doc(db, 'system_notifications', notifId), {
+        ...newNotifItem,
+        updatedAt: serverTimestamp(),
+      });
 
-      if (snap.exists()) {
-        await updateDoc(notifRef, {
-          notificationsList: arrayUnion(newNotifItem),
-          updatedAt: serverTimestamp(),
-        });
-      } else {
-        await setDoc(notifRef, {
-          notificationsList: [newNotifItem],
-          updatedAt: serverTimestamp(),
-        });
-      }
-
-      logger.info('Đã phát hành thông báo hệ thống O(1) Read thành công');
+      logger.info('Đã phát hành thông báo hệ thống thành công');
       return true;
     } catch (err) {
-      logger.error('Không thể phát hành thông báo O(1) Read:', err);
+      logger.error('Không thể phát hành thông báo:', err);
       return false;
     }
   }
@@ -157,17 +146,7 @@ class NotificationService {
    */
   public async deleteNotification(notificationId: string): Promise<boolean> {
     try {
-      const notifRef = doc(db, 'system_metrics', 'notification_directory');
-      const snap = await getDoc(notifRef);
-      if (!snap.exists()) return false;
-
-      const rawList: any[] = snap.data().notificationsList || [];
-      const filtered = rawList.filter((item: any) => item.id !== notificationId);
-
-      await updateDoc(notifRef, {
-        notificationsList: filtered,
-        updatedAt: serverTimestamp(),
-      });
+      await deleteDoc(doc(db, 'system_notifications', notificationId));
 
       logger.info('Đã xóa thông báo hệ thống thành công:', notificationId);
       return true;

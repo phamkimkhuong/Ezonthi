@@ -1546,7 +1546,9 @@ const unitSpecs: EnglishSkillUnitSpec[] = [
   }
 ];
 
-const makeQuestionTypes = (spec: EnglishSkillUnitSpec): QuestionType[] => [
+const makeQuestionTypes = (
+  spec: Pick<EnglishSkillUnitSpec, 'unit' | 'topicId' | 'theme'>
+): QuestionType[] => [
   {
     id: `eng10-skill-qt-u${spec.unit}-reading`,
     topicId: spec.topicId,
@@ -1832,9 +1834,47 @@ const openSolution = (
       ]
 });
 
-export const g10EnglishSkillQuestionTypes: QuestionType[] = unitSpecs
+const unit9QuestionTypeSpec = {
+  unit: 9,
+  topicId: 'eng10-t9',
+  theme: 'Protecting the Environment'
+} as const;
+
+export const g10EnglishSkillQuestionTypes: QuestionType[] = [...unitSpecs, unit9QuestionTypeSpec]
   .flatMap(makeQuestionTypes)
-  .filter(type => !type.id.endsWith('-speaking') && !type.id.endsWith('-writing') && !type.name.startsWith('Viết'));
+  .filter(type => !type.id.endsWith('-speaking'))
+  .map(type => {
+    if (!type.id.startsWith('eng10-skill-qt-u9-')) return type;
+    if (type.id.endsWith('-reading')) {
+      return {
+        ...type,
+        exampleQuestionId: 'eng10-deep-u9-r1',
+        subTypes: type.subTypes
+          ?.filter(subType => !subType.id?.endsWith('-reference'))
+          .map(subType => ({
+            ...subType,
+            targetQuestionCount: subType.id?.endsWith('-detail') || subType.id?.endsWith('-inference') ? 2 : 1
+          })),
+        practiceCoverage: type.practiceCoverage
+          ? { ...type.practiceCoverage, targetQuestionCount: 6 }
+          : undefined
+      };
+    }
+    if (type.id.endsWith('-listening')) {
+      return {
+        ...type,
+        exampleQuestionId: 'eng10-deep-u9-l1',
+        subTypes: type.subTypes?.map(subType => ({
+          ...subType,
+          targetQuestionCount: subType.id?.endsWith('-inference') ? 2 : subType.targetQuestionCount
+        })),
+        practiceCoverage: type.practiceCoverage
+          ? { ...type.practiceCoverage, targetQuestionCount: 5 }
+          : undefined
+      };
+    }
+    return { ...type, exampleQuestionId: 'eng10-deep-u9-w1' };
+  });
 
 export const g10EnglishSkillQuestions: Question[] = unitSpecs.flatMap(spec => [
   ...spec.readingQuestions.map((item, index) => choiceQuestion(spec, 'r', index, item)),

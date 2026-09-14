@@ -144,47 +144,53 @@ export const getStarsFromScore = (score: number): number => {
   return 3;
 };
 
+export const MIN_MASTERY_EVIDENCE = 5;
+
+export interface MasteryEvidence {
+  score: number;
+  accuracy: number;
+  evidenceCount: number;
+  requiredEvidence: number;
+  hasEnoughEvidence: boolean;
+}
+
+/**
+ * Mastery is based only on the latest graded result for each distinct question.
+ * Rewards and streaks are intentionally excluded from this measure.
+ */
+export const calculateMasteryEvidence = (
+  attempts: UserAttempt[],
+  availableQuestionCount?: number
+): MasteryEvidence => {
+  const latestByQuestion = new Map<string, UserAttempt>();
+  for (const attempt of attempts) {
+    const gradingStatus = (attempt as UserAttempt & { gradingStatus?: string }).gradingStatus;
+    if (!attempt?.questionId || gradingStatus === 'pending' || (attempt.gradingMode === 'manual' && gradingStatus !== 'graded')) continue;
+    const current = latestByQuestion.get(attempt.questionId);
+    const currentTime = current ? Date.parse(current.createdAt) : Number.NEGATIVE_INFINITY;
+    const nextTime = Date.parse(attempt.createdAt);
+    if (!current || nextTime > currentTime || (nextTime === currentTime && attempt.id.localeCompare(current.id) > 0)) {
+      latestByQuestion.set(attempt.questionId, attempt);
+    }
+  }
+
+  const evidence = [...latestByQuestion.values()];
+  const correctCount = evidence.filter(attempt => attempt.isCorrect).length;
+  const accuracy = evidence.length ? correctCount / evidence.length : 0;
+  const capacity = Number.isFinite(availableQuestionCount) && (availableQuestionCount ?? 0) > 0
+    ? Math.floor(availableQuestionCount!)
+    : MIN_MASTERY_EVIDENCE;
+  const requiredEvidence = Math.max(1, Math.min(MIN_MASTERY_EVIDENCE, capacity));
+
+  return {
+    score: Math.round(accuracy * 100),
+    accuracy,
+    evidenceCount: evidence.length,
+    requiredEvidence,
+    hasEnoughEvidence: evidence.length >= requiredEvidence,
+  };
+};
+
 export const calculateMasteryScore = (attempts: UserAttempt[]): number => {
-  if (attempts.length === 0) return 0;
-  
-  // Sắp xếp các attempts theo thời gian tăng dần
-  const sorted = [...attempts].sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
-  
-  // Lấy tối đa 8 attempts gần nhất
-  const recent = sorted.slice(-8);
-  const correctCount = recent.filter(a => a.isCorrect).length;
-  const accuracy = correctCount / recent.length;
-  
-  // Tính chuỗi đúng/sai liên tiếp từ cuối danh sách
-  let streak = 0;
-  const lastAttempt = sorted[sorted.length - 1];
-  
-  if (lastAttempt.isCorrect) {
-    for (let i = sorted.length - 1; i >= 0; i--) {
-      if (sorted[i].isCorrect) {
-        streak++;
-      } else {
-        break;
-      }
-    }
-  } else {
-    for (let i = sorted.length - 1; i >= 0; i--) {
-      if (!sorted[i].isCorrect) {
-        streak--;
-      } else {
-        break;
-      }
-    }
-  }
-  
-  // Điểm số = độ chính xác (tối đa 70 điểm) + điểm thưởng/phạt streak (tối đa +/- 30 điểm)
-  let score = Math.round(accuracy * 70);
-  
-  if (streak > 0) {
-    score += Math.min(3, streak) * 10;
-  } else if (streak < 0) {
-    score += Math.max(-2, streak) * 15; // Phạt -15 hoặc -30 điểm
-  }
-  
-  return Math.max(0, Math.min(100, score));
+  return calculateMasteryEvidence(attempts).score;
 };

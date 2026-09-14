@@ -1,17 +1,58 @@
-import { db } from './firebase';
-import { doc, setDoc, collection, writeBatch, getDocs, query, getDoc, arrayUnion, updateDoc, deleteField } from 'firebase/firestore';
+import { db, functions } from './firebase';
+import { doc, setDoc, collection, getDocs, query, getDoc, arrayUnion, updateDoc, deleteField, orderBy, limit, startAfter, documentId, where } from 'firebase/firestore';
 import { UserAttempt, UserMistake, UserProgress, ExamResult, ActiveExamSession } from '../types';
 import { User } from 'firebase/auth';
 import { storageService } from './storage';
 import { useAppStore } from './store';
-import { calculateStudentStats } from '../utils/stats';
+import { httpsCallable } from 'firebase/functions';
 import { logger } from '../utils/logger';
+import { mergeMistakes, pendingAttemptsForAccount, reconcileAttempts } from '../utils/learningSync';
 
 const authMergePromises = new Map<string, Promise<void>>();
 
 const safeDocId = (rawId: string, fallback: string): string => {
   const id = rawId.trim() || fallback;
   return encodeURIComponent(id).replace(/\./g, '%2E');
+};
+
+const SYNC_BATCH_SIZE = 50;
+
+interface LearningSyncResult {
+  acknowledgedIds: string[];
+  conflictIds: string[];
+  rejectedCount: number;
+}
+
+export interface AttemptHistoryCursor {
+  createdAt: string;
+  id: string;
+}
+
+export interface AttemptHistoryPage {
+  items: UserAttempt[];
+  nextCursor: AttemptHistoryCursor | null;
+}
+
+const syncAttemptChunks = async (userId: string, attempts: UserAttempt[]): Promise<string[]> => {
+  const acknowledged: string[] = [];
+  for (let index = 0; index < attempts.length; index += SYNC_BATCH_SIZE) {
+    const chunk = attempts.slice(index, index + SYNC_BATCH_SIZE).map(attempt => {
+      const payload = { ...attempt, userId };
+      delete payload.synced;
+      return payload;
+    });
+    const response = await httpsCallable<{ attempts: UserAttempt[]; operationId: string }, LearningSyncResult>(functions, 'syncLearningData')({
+      attempts: chunk,
+      operationId: `sync-${Date.now()}-${index}`,
+    });
+    const result = response.data;
+    if (result.rejectedCount > 0 || result.conflictIds.length > 0) {
+      throw new Error(`Sync rejected=${result.rejectedCount}, conflicts=${result.conflictIds.length}`);
+    }
+    acknowledged.push(...result.acknowledgedIds);
+    storageService.markAttemptsAsSyncedLocal(userId, result.acknowledgedIds);
+  }
+  return acknowledged;
 };
 
 export const progressService = {
@@ -63,115 +104,85 @@ export const progressService = {
 
   async syncUserDataInternal(userId: string): Promise<void> {
     try {
-      // 1. Đọc dữ liệu profile & progress hiện tại trên Server (1 Read)
-      const userRef = doc(db, 'users', userId);
-      const userSnap = await getDoc(userRef);
-      logger.dbRead('Đọc thông tin học sinh để check sync (users/{userId})', 1);
-
-      if (!userSnap.exists()) {
-        return;
-      }
-
-      const remoteData = userSnap.data();
-      const serverLastActive = remoteData.lastActiveAt || '';
-
-      // 2. Lấy dữ liệu LocalStorage hiện tại của user này
-      const localProgress = storageService.getProgress(userId);
+      // Snapshot the outbox before any server hydration. Guest attempts are
+      // reassigned only in the upload payload and remain local until all steps pass.
       const localAttempts = storageService.getAttempts(userId);
+      const guestAttempts = storageService.getAttempts('guest');
+      const pending = pendingAttemptsForAccount(userId, localAttempts, guestAttempts);
       const localReadLessons = storageService.getReadLessons(userId);
+      const guestReadLessons = storageService.getReadLessons('guest');
       const localCheckpoints = storageService.getPassedTheoryCheckpoints(userId);
-      const localLastActive = localProgress?.lastUpdatedAt || '';
+      const guestCheckpoints = storageService.getPassedTheoryCheckpoints('guest');
+      const localExams = storageService.getExamResults(userId);
+      const guestExams = storageService.getExamResults('guest');
 
-      const isLocalEmpty =
-        localAttempts.length === 0 &&
-        localReadLessons.length === 0 &&
-        localCheckpoints.length === 0 &&
-        Object.keys(localProgress.masteryLevels || {}).length === 0;
+      await httpsCallable(functions, 'migrateLearningData')({});
+      await syncAttemptChunks(userId, pending);
 
-      // 3. Nếu LocalStorage đã có dữ liệu thực và timestamp trùng/mới hơn server, ta bỏ qua (Tiết kiệm hàng trăm Reads!)
-      if (!isLocalEmpty && localLastActive && serverLastActive && localLastActive >= serverLastActive) {
-        logger.debug(`[Smart Sync] Dữ liệu Local của user ${userId} đã mới nhất. Bỏ qua tải chi tiết.`);
-        return;
-      }
+      const mergedReadLessons = Array.from(new Set([...localReadLessons, ...guestReadLessons]));
+      const mergedPassedCheckpoints = Array.from(new Set([...localCheckpoints, ...guestCheckpoints]));
+      const mergedExams = Array.from(new Map([...localExams, ...guestExams].map(exam => [exam.examId, exam])).values());
+      const syncedAt = new Date().toISOString();
+      const authenticatedUser = useAppStore.getState().user;
 
-      // 4. Nếu LocalStorage trống hoặc cũ hơn server, tải toàn bộ dữ liệu mới nhất từ Firestore xuống Local
-      logger.debug(`[Smart Sync] Đồng bộ dữ liệu mới nhất từ Firestore cho user ${userId}...`);
-      const [
-        remoteAttempts,
-        remoteMistakes,
-        remoteExams
-      ] = await Promise.all([
+      await setDoc(doc(db, 'users', userId), {
+        ...(authenticatedUser ? {
+          id: userId,
+          email: authenticatedUser.email,
+          name: authenticatedUser.displayName || 'Học sinh mới',
+          avatar: authenticatedUser.photoURL || `https://api.dicebear.com/7.x/adventurer/svg?seed=${userId}`,
+        } : {}),
+        ...(mergedReadLessons.length ? { readLessons: arrayUnion(...mergedReadLessons) } : {}),
+        ...(mergedPassedCheckpoints.length ? { passedCheckpoints: arrayUnion(...mergedPassedCheckpoints) } : {}),
+        lastActiveAt: syncedAt
+      }, { merge: true });
+      await Promise.all(mergedExams.map(result => setDoc(
+        doc(db, `users/${userId}/exam_results`, safeDocId(result.examId, `exam-${Date.now()}`)),
+        { ...result, syncedAt },
+        { merge: true }
+      )));
+
+      // Hydrate only after the upload has been acknowledged. A second device
+      // therefore receives the same canonical documents and pending never vanishes.
+      const [userSnap, remoteAttempts, remoteMistakes, remoteExams] = await Promise.all([
+        getDoc(doc(db, 'users', userId)),
         this.getAttempts(userId),
         this.getMistakes(userId),
         this.getExamResults(userId)
       ]);
-
-      const guestReadLessons = storageService.getReadLessons('guest');
-      const guestCheckpoints = storageService.getPassedTheoryCheckpoints('guest');
-      const guestAttempts = storageService.getAttempts('guest');
-      const guestMistakes = storageService.getMistakes('guest');
-      const guestExams = storageService.getExamResults('guest');
-
-      const remoteReadLessons: string[] = Array.isArray(remoteData.readLessons) ? remoteData.readLessons : [];
-      const remotePassedCheckpoints: string[] = Array.isArray(remoteData.passedCheckpoints) ? remoteData.passedCheckpoints : [];
-
-      // Hợp nhất dữ liệu local (kèm guest nếu vừa đăng nhập) với remote
-      const mergedReadLessons = Array.from(new Set([...localReadLessons, ...guestReadLessons, ...remoteReadLessons]));
-      const mergedPassedCheckpoints = Array.from(new Set([...localCheckpoints, ...guestCheckpoints, ...remotePassedCheckpoints]));
-
-      // Hợp nhất attempts (deduplicate theo ID)
-      const attemptsMap = new Map<string, UserAttempt>();
-      remoteAttempts.forEach(a => attemptsMap.set(a.id, a));
-      localAttempts.forEach(a => attemptsMap.set(a.id, a));
-      guestAttempts.forEach(a => attemptsMap.set(a.id, { ...a, userId }));
-      const mergedAttempts = Array.from(attemptsMap.values());
-
-      // Hợp nhất mistakes
-      const mistakesMap = new Map<string, UserMistake>();
-      remoteMistakes.forEach(m => mistakesMap.set(m.id || m.questionId, m));
-      storageService.getMistakes(userId).forEach(m => mistakesMap.set(m.id || m.questionId, m));
-      guestMistakes.forEach(m => mistakesMap.set(m.id || m.questionId, { ...m, userId }));
-      const mergedMistakes = Array.from(mistakesMap.values());
-
-      // Hợp nhất exams
-      const examsMap = new Map<string, ExamResult>();
-      remoteExams.forEach(e => examsMap.set(e.examId, e));
-      storageService.getExamResults(userId).forEach(e => examsMap.set(e.examId, e));
-      guestExams.forEach(e => examsMap.set(e.examId, e));
-      const mergedExams = Array.from(examsMap.values());
-
-      const userProgress: UserProgress = {
+      const remoteData = userSnap.exists() ? userSnap.data() : {};
+      const currentLocal = storageService.getAttempts(userId);
+      const reassignedGuest = guestAttempts.map(attempt => ({ ...attempt, userId, synced: false }));
+      storageService.replaceAttemptsLocal(userId, reconcileAttempts([...currentLocal, ...reassignedGuest], remoteAttempts));
+      storageService.saveMistakesLocal(userId, mergeMistakes(remoteMistakes));
+      storageService.saveExamResultsLocal(userId, remoteExams);
+      storageService.saveReadLessonsLocal(userId, Array.from(new Set([
+        ...mergedReadLessons,
+        ...(Array.isArray(remoteData.readLessons) ? remoteData.readLessons : [])
+      ])));
+      storageService.savePassedTheoryCheckpointsLocal(userId, Array.from(new Set([
+        ...mergedPassedCheckpoints,
+        ...(Array.isArray(remoteData.passedCheckpoints) ? remoteData.passedCheckpoints : [])
+      ])));
+      storageService.saveProgressLocal(userId, {
         userId,
-        masteryLevels: remoteData.masteryLevels || localProgress.masteryLevels || {},
-        completedLessons: remoteData.completedLessons || localProgress.completedLessons || [],
-        readLessons: mergedReadLessons,
-        passedCheckpoints: mergedPassedCheckpoints,
-        lastUpdatedAt: serverLastActive || new Date().toISOString()
-      };
+        masteryLevels: remoteData.masteryLevels || {},
+        completedLessons: remoteData.completedLessons || [],
+        readLessons: remoteData.readLessons || mergedReadLessons,
+        passedCheckpoints: remoteData.passedCheckpoints || mergedPassedCheckpoints,
+        lastUpdatedAt: remoteData.lastActiveAt || syncedAt
+      });
 
-      // Ghi đè vào LocalStorage
-      storageService.saveAttemptsLocal(userId, mergedAttempts);
-      storageService.saveMistakesLocal(userId, mergedMistakes);
-      storageService.saveProgressLocal(userId, userProgress);
-      storageService.saveExamResultsLocal(userId, mergedExams);
-      storageService.saveReadLessonsLocal(userId, mergedReadLessons);
-      storageService.savePassedTheoryCheckpointsLocal(userId, mergedPassedCheckpoints);
-
-      // Xóa dữ liệu guest sau khi đã merge thành công
-      if (guestAttempts.length > 0 || guestReadLessons.length > 0 || guestMistakes.length > 0) {
-        storageService.clearGuestData();
-      }
-
-      // Kích hoạt cập nhật Store & re-render toàn bộ UI
+      // Guest data is cleared only after upload, profile merge and hydration all pass.
+      storageService.clearGuestData();
       useAppStore.setState({ userData: remoteData });
       useAppStore.getState().refreshProgress();
-
-      logger.debug(`[Smart Sync] Hoàn tất đồng bộ dữ liệu Firestore xuống LocalStorage cho user: ${userId}`);
+      logger.debug(`[Learning Sync v2] Hoàn tất đồng bộ cho user ${userId}`);
     } catch (e) {
-      logger.error('Lỗi đồng bộ dữ liệu người dùng:', e);
+      // Keep local and guest outboxes untouched so the next login/focus can retry.
+      logger.error('Lỗi đồng bộ dữ liệu người dùng; dữ liệu pending được giữ lại:', e);
     }
   },
-
   // Tải dữ liệu từ Firestore về và ghi đè vào LocalStorage (Hydration)
   async hydrateFirestoreDataToLocal(userId: string): Promise<void> {
     try {
@@ -212,98 +223,37 @@ export const progressService = {
     }
   },
 
-  // Gom tất cả các câu làm chưa sync dưới LocalStorage đẩy gộp 1 lần lên Firestore (Tốn đúng 2 Writes cho cả phiên)
+  // Upload the durable local outbox in small idempotent batches.
   async flushPendingAttempts(userId: string, targetQuestionTypeId?: string): Promise<void> {
     try {
       let pendingAttempts = storageService.getPendingAttemptsLocal(userId);
       if (targetQuestionTypeId) {
-        pendingAttempts = pendingAttempts.filter(a => a.questionTypeId === targetQuestionTypeId);
+        pendingAttempts = pendingAttempts.filter(attempt => attempt.questionTypeId === targetQuestionTypeId);
       }
       if (pendingAttempts.length === 0) return;
 
+      const acknowledged = await syncAttemptChunks(userId, pendingAttempts);
       const syncedAt = new Date().toISOString();
-      const byTopic: Record<string, UserAttempt[]> = {};
-
-      pendingAttempts.forEach(att => {
-        const topicId = att.questionTypeId;
-        if (!byTopic[topicId]) byTopic[topicId] = [];
-        const cleanAttempt = { ...att };
-        delete cleanAttempt.synced;
-        byTopic[topicId].push({
-          ...cleanAttempt,
-          userId,
-          syncedAt
-        });
-      });
-
-      // Đẩy từng topic_attempts lên Firestore
-      for (const [topicId, attemptsList] of Object.entries(byTopic)) {
-        const topicRef = doc(db, `users/${userId}/topic_attempts`, topicId);
-        await setDoc(topicRef, {
-          questionTypeId: topicId,
-          updatedAt: syncedAt,
-          attempts: arrayUnion(...attemptsList)
-        }, { merge: true });
-        logger.dbWrite(`Sync gộp phiên dạng ${topicId} (${attemptsList.length} câu làm mới)`, 1);
-      }
-
-      // Cập nhật tiến độ tổng hợp lên doc cha users/{userId}
-      const userProg = storageService.getProgress(userId);
-      const allAttempts = storageService.getAttempts(userId);
-      const stats = calculateStudentStats(allAttempts);
-      const readLessons = storageService.getReadLessons(userId);
-      const passedCheckpoints = storageService.getPassedTheoryCheckpoints(userId);
-      const userRef = doc(db, 'users', userId);
-
-      await setDoc(userRef, {
-        masteryLevels: userProg.masteryLevels || {},
-        completedLessons: userProg.completedLessons || [],
-        completedCount: (userProg.completedLessons || []).length,
-        readLessons,
-        passedCheckpoints,
-        stats,
+      await setDoc(doc(db, 'users', userId), {
+        readLessons: storageService.getReadLessons(userId),
+        passedCheckpoints: storageService.getPassedTheoryCheckpoints(userId),
         lastActiveAt: syncedAt
       }, { merge: true });
-      logger.dbWrite('Cập nhật tiến độ tổng hợp lên doc cha users/{userId}', 1);
 
-      // Đổi trạng thái các câu này thành synced: true dưới LocalStorage
-      const syncedIds = pendingAttempts.map(a => a.id);
-      storageService.markAttemptsAsSyncedLocal(userId, syncedIds);
-
-      // Lưu progress mới nhất dưới local
-      userProg.lastUpdatedAt = syncedAt;
-      storageService.saveProgressLocal(userId, userProg);
-
-      logger.debug(`[Session Sync] Đã sync gộp ${pendingAttempts.length} câu làm phiên vừa rồi của user ${userId} lên Firestore thành công!`);
+      const progress = storageService.getProgress(userId);
+      progress.lastUpdatedAt = syncedAt;
+      storageService.saveProgressLocal(userId, progress);
+      logger.dbWrite(`Đồng bộ ${acknowledged.length} bài làm vào learning_attempts`, acknowledged.length);
     } catch (e) {
-      logger.error('Lỗi khi sync gộp bài làm phiên', e);
+      logger.error('Đồng bộ chưa hoàn tất; dữ liệu pending được giữ để thử lại', e);
     }
   },
 
-  // Lưu một Attempt lên Firestore (Dành cho tự luận chờ GV chấm, hoặc gọi lẻ)
   async saveAttempt(userId: string, attempt: UserAttempt): Promise<void> {
-    try {
-      const syncedAt = new Date().toISOString();
-
-      if (attempt.gradingMode === 'manual') {
-        const manualRef = doc(db, 'manual_attempts', attempt.id);
-        const state = useAppStore.getState();
-        await setDoc(manualRef, {
-          ...attempt,
-          userId,
-          studentName: state.userData?.name || state.user?.displayName || 'Học sinh mới',
-          studentAvatar: state.userData?.avatar || state.user?.photoURL || `https://api.dicebear.com/7.x/adventurer/svg?seed=${userId}`,
-          studentEmail: state.userData?.email || state.user?.email || '',
-          syncedAt
-        });
-        logger.dbWrite('Nhúng bài tự luận vào hàng đợi (manual_attempts)', 1);
-      }
-
-      // Các bài làm trắc nghiệm thông thường sẽ được nạp vào LocalStorage và gộp sync khi kết thúc phiên/rời trang
-      storageService.saveAttempt(userId, attempt);
-
-    } catch (e) {
-      logger.error('Lưu bài làm học sinh', e);
+    // Local first is the durability boundary. Network failure cannot lose the answer.
+    storageService.saveAttempt(userId, attempt);
+    if (userId !== 'guest' && attempt.gradingMode === 'manual') {
+      await this.flushPendingAttempts(userId);
     }
   },
 
@@ -314,106 +264,21 @@ export const progressService = {
     mistakes: UserMistake[]
   ): Promise<void> {
     try {
-      const batch = writeBatch(db);
-      const syncedAt = new Date().toISOString();
-
-      attempts.forEach(attempt => {
-        const attemptRef = doc(db, `users/${userId}/attempts`, attempt.id);
-        batch.set(attemptRef, {
-          ...attempt,
-          userId,
-          syncedAt
-        }, { merge: true });
-
-        if (attempt.gradingMode === 'manual') {
-          const manualRef = doc(db, 'manual_attempts', attempt.id);
-          const state = useAppStore.getState();
-          batch.set(manualRef, {
-            ...attempt,
-            userId,
-            studentName: state.userData?.name || state.user?.displayName || 'Học sinh mới',
-            studentAvatar: state.userData?.avatar || state.user?.photoURL || `https://api.dicebear.com/7.x/adventurer/svg?seed=${userId}`,
-            studentEmail: state.userData?.email || state.user?.email || '',
-            syncedAt
-          }, { merge: true });
-        }
-      });
-
-      const progress = storageService.getProgress(userId);
-      const allAttempts = storageService.getAttempts(userId);
-      const stats = calculateStudentStats(allAttempts);
-      const userRef = doc(db, 'users', userId);
-      batch.set(userRef, {
-        masteryLevels: progress.masteryLevels || {},
-        completedLessons: progress.completedLessons || [],
-        completedCount: (progress.completedLessons || []).length,
-        stats,
-        lastActiveAt: syncedAt
-      }, { merge: true });
-
-      mistakes.forEach(mistake => {
-        const mistakeRef = doc(db, `users/${userId}/mistakes`, mistake.id);
-        batch.set(mistakeRef, {
-          ...mistake,
-          userId,
-          syncedAt
-        }, { merge: true });
-      });
-
-      const examRef = doc(db, `users/${userId}/exam_results`, safeDocId(result.examId, `exam-${Date.now()}`));
-      batch.set(examRef, {
-        ...result,
-        syncedAt
-      }, { merge: true });
-
-      const manualAttemptsCount = attempts.filter(a => a.gradingMode === 'manual').length;
-      const writeCount = attempts.length + manualAttemptsCount + 1 + mistakes.length + 1;
-      await batch.commit();
-      logger.dbWrite('Nộp bài thi thử lên Firestore (Batch)', writeCount);
-
-      // Cập nhật LocalStorage khớp hoàn toàn với Server
-      progress.lastUpdatedAt = syncedAt;
-      storageService.saveProgressLocal(userId, progress);
+      void mistakes;
+      for (const attempt of attempts) storageService.saveAttempt(userId, attempt);
+      storageService.saveExamResult(userId, result);
+      await this.flushPendingAttempts(userId);
+      await this.saveExamResult(userId, result);
     } catch (e) {
-      logger.error('Nộp bài thi thử lên Firestore (Batch)', e);
+      logger.error('Nộp bài thi thử chưa hoàn tất; bản local vẫn được giữ', e);
     }
   },
 
-  // Lưu hoặc cập nhật một Mistake lên Firestore (Vào active_mistakes/current)
+  // Mistakes are a projection derived by the backend from canonical attempts.
   async saveMistake(userId: string, mistake: UserMistake): Promise<void> {
-    try {
-      const activeRef = doc(db, `users/${userId}/active_mistakes`, 'current');
-      const docSnap = await getDoc(activeRef);
-      let mistakesList: UserMistake[] = docSnap.exists() ? (docSnap.data().mistakes || []) : [];
-
-      const syncedAt = new Date().toISOString();
-      const updatedMistake = { ...mistake, userId, syncedAt };
-
-      if (mistake.reviewStatus === 'fixed') {
-        // Loại bỏ câu đã fixed khỏi danh sách active mistakes
-        mistakesList = mistakesList.filter(m => m.id !== mistake.id && m.questionId !== mistake.questionId);
-      } else {
-        // Thêm mới hoặc cập nhật câu sai
-        const index = mistakesList.findIndex(m => m.id === mistake.id || m.questionId === mistake.questionId);
-        if (index > -1) {
-          mistakesList[index] = updatedMistake;
-        } else {
-          mistakesList.push(updatedMistake);
-        }
-      }
-
-      await setDoc(activeRef, {
-        updatedAt: syncedAt,
-        totalActiveCount: mistakesList.length,
-        mistakes: mistakesList
-      }, { merge: true });
-
-      logger.dbWrite('Lưu/Cập nhật Sổ lỗi sai (active_mistakes/current)', 1);
-    } catch (e) {
-      logger.error('Lưu Mistake lỗi sai', e);
-    }
+    const current = storageService.getMistakes(userId);
+    storageService.saveMistakesLocal(userId, mergeMistakes(current, [{ ...mistake, userId }]));
   },
-
   // Lưu kết quả thi thử lên Firestore
   async saveExamResult(userId: string, result: ExamResult): Promise<void> {
     try {
@@ -428,58 +293,56 @@ export const progressService = {
     }
   },
 
-  // Lấy bài làm của một Dạng bài cụ thể từ Firestore (Tốn đúng 1 Read)
+  // Canonical source: one immutable document per attempt.
   async getTopicAttempts(userId: string, questionTypeId: string): Promise<UserAttempt[]> {
-    try {
-      const topicRef = doc(db, `users/${userId}/topic_attempts`, questionTypeId);
-      const docSnap = await getDoc(topicRef);
-      logger.dbRead(`Tải bài làm dạng ${questionTypeId} (topic_attempts)`, 1);
-
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        return (data.attempts || []) as UserAttempt[];
-      }
-      return [];
-    } catch (e) {
-      logger.error(`Tải bài làm dạng ${questionTypeId}`, e);
-      return [];
-    }
+    return (await this.getAttempts(userId)).filter(attempt => attempt.questionTypeId === questionTypeId);
   },
 
-  // Lấy toàn bộ Attempts của người dùng từ Firestore (Gom theo topic_attempts)
+  async getAttemptsPage(userId: string, cursor: AttemptHistoryCursor | null = null, pageSize = 100, historyBucket?: string): Promise<AttemptHistoryPage> {
+    const safeSize = Math.max(1, Math.min(100, Math.round(pageSize)));
+    const base = collection(db, `users/${userId}/learning_attempts`);
+    const constraints = [
+      ...(historyBucket ? [where('historyBucket', '==', historyBucket)] : []),
+      orderBy('createdAt', 'desc'),
+      orderBy(documentId(), 'desc'),
+      ...(cursor ? [startAfter(cursor.createdAt, cursor.id)] : []),
+      limit(safeSize),
+    ];
+    const snapshot = await getDocs(query(base, ...constraints));
+    const items = snapshot.docs.map(item => ({ ...item.data(), id: item.id, synced: true } as UserAttempt));
+    const last = snapshot.docs.at(-1);
+    return {
+      items,
+      nextCursor: snapshot.size === safeSize && last ? { createdAt: String(last.data().createdAt), id: last.id } : null,
+    };
+  },
+
+  // Hydration tải theo trang và giữ trần 500 bài gần nhất; lịch sử cũ vẫn còn trên server và có cursor riêng.
   async getAttempts(userId: string): Promise<UserAttempt[]> {
     try {
-      const q = query(collection(db, `users/${userId}/topic_attempts`));
-      const querySnapshot = await getDocs(q);
-      logger.dbRead('Tải toàn bộ bài làm dạng gộp (topic_attempts)', querySnapshot.size || 1);
-      const allAttempts: UserAttempt[] = [];
-      querySnapshot.forEach(docSnap => {
-        const data = docSnap.data();
-        if (Array.isArray(data.attempts)) {
-          allAttempts.push(...data.attempts);
-        }
-      });
-      return allAttempts;
+      const items: UserAttempt[] = [];
+      let cursor: AttemptHistoryCursor | null = null;
+      do {
+        const page = await this.getAttemptsPage(userId, cursor, 100);
+        items.push(...page.items);
+        cursor = page.nextCursor;
+      } while (cursor && items.length < 500);
+      logger.dbRead('Tải bài làm chuẩn theo trang (learning_attempts)', Math.max(1, items.length));
+      return items;
     } catch (e) {
-      logger.error('Tải toàn bộ bài làm dạng gộp (topic_attempts)', e);
+      logger.error('Tải bài làm chuẩn (learning_attempts)', e);
       return [];
     }
   },
 
-  // Lấy toàn bộ Mistakes CHƯA FIXED của người dùng từ Firestore (Tốn đúng 1 Read)
+  // Mistakes are the backend-derived canonical projection.
   async getMistakes(userId: string): Promise<UserMistake[]> {
     try {
-      const activeRef = doc(db, `users/${userId}/active_mistakes`, 'current');
-      const docSnap = await getDoc(activeRef);
-      logger.dbRead('Tải Sổ lỗi sai (active_mistakes/current)', 1);
-
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        return (data.mistakes || []) as UserMistake[];
-      }
-      return [];
+      const snapshot = await getDocs(query(collection(db, `users/${userId}/learning_mistakes`)));
+      logger.dbRead('Tải Sổ lỗi sai chuẩn (learning_mistakes)', snapshot.size || 1);
+      return snapshot.docs.map(item => item.data() as UserMistake);
     } catch (e) {
-      logger.error('Tải Sổ lỗi sai (active_mistakes/current)', e);
+      logger.error('Tải Sổ lỗi sai chuẩn (learning_mistakes)', e);
       return [];
     }
   },
@@ -505,27 +368,15 @@ export const progressService = {
   async saveUserProfile(user: User, name?: string): Promise<void> {
     try {
       const syncedAt = new Date().toISOString();
-      const progress = storageService.getProgress(user.uid);
-      const completedCount = progress ? (progress.completedLessons || []).length : 0;
-      
-      const attempts = storageService.getAttempts(user.uid);
-      const stats = calculateStudentStats(attempts);
-
       await setDoc(doc(db, 'users', user.uid), {
         id: user.uid,
         name: user.displayName || name || 'Học sinh mới',
         avatar: user.photoURL || `https://api.dicebear.com/7.x/adventurer/svg?seed=${user.uid}`,
         email: user.email,
-        completedCount,
-        stats,
         lastActiveAt: syncedAt
       }, { merge: true });
 
-      // Cập nhật LocalStorage khớp hoàn toàn với Server
-      if (progress) {
-        progress.lastUpdatedAt = syncedAt;
-        storageService.saveProgressLocal(user.uid, progress);
-      }
+
     } catch (e) {
       console.error('Lỗi khi lưu thông tin user lên Firestore:', e);
     }

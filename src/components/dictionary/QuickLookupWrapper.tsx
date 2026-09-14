@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDictionaryStore } from '../../stores/useDictionaryStore';
 
 interface QuickLookupWrapperProps {
@@ -7,13 +7,12 @@ interface QuickLookupWrapperProps {
 }
 
 export const QuickLookupWrapper: React.FC<QuickLookupWrapperProps> = ({ children, className = '' }) => {
-  const { openPopover, initDictionary, isInitialized } = useDictionaryStore();
+  const { initDictionary, isInitialized } = useDictionaryStore();
 
-  useEffect(() => {
-    if (!isInitialized) {
-      initDictionary();
-    }
-  }, [initDictionary, isInitialized]);
+  const openAfterInit = async (term: string, position: { x: number; y: number }) => {
+    if (!isInitialized) await initDictionary();
+    useDictionaryStore.getState().openPopover(term, position);
+  };
 
   const handleMouseUp = (e: React.MouseEvent) => {
     const selection = window.getSelection();
@@ -24,7 +23,7 @@ export const QuickLookupWrapper: React.FC<QuickLookupWrapperProps> = ({ children
       // Bắt từ đầu tiên nếu người dùng bôi đen nhiều từ
       const firstWord = selectedText.split(/\s+/)[0].replace(/[^a-zA-Z]/g, '');
       if (firstWord && firstWord.length >= 2) {
-        openPopover(firstWord, { x: e.clientX, y: e.clientY });
+        void openAfterInit(firstWord, { x: e.clientX, y: e.clientY });
       }
     }
   };
@@ -37,7 +36,7 @@ export const QuickLookupWrapper: React.FC<QuickLookupWrapperProps> = ({ children
     if (selectedText) {
       const cleanWord = selectedText.replace(/[^a-zA-Z]/g, '');
       if (cleanWord && cleanWord.length >= 2) {
-        openPopover(cleanWord, { x: e.clientX, y: e.clientY });
+        void openAfterInit(cleanWord, { x: e.clientX, y: e.clientY });
       }
     }
   };

@@ -1,5 +1,5 @@
 import type { UserAttempt, UserMistake, UserProgress, ExamResult, ActiveExamSession } from '../types';
-import { calculateMasteryScore } from '../utils/theme';
+import { calculateMasteryEvidence } from '../utils/theme';
 
 const KEYS = {
   ATTEMPTS: 'otv10_attempts',
@@ -161,7 +161,17 @@ export const storageService = {
       ...attempt,
       synced: attempt.synced !== undefined ? attempt.synced : false
     };
-    map[userId].push(attemptWithSyncFlag);
+    const existingIndex = map[userId].findIndex(item => item.id === attempt.id);
+    if (existingIndex >= 0) {
+      // Stable attempt IDs make local retries idempotent. Keep an acknowledged
+      // flag when the same attempt is saved again after a successful sync.
+      map[userId][existingIndex] = {
+        ...map[userId][existingIndex],
+        ...(map[userId][existingIndex].synced === true ? { synced: true } : attemptWithSyncFlag),
+      };
+    } else {
+      map[userId].push(attemptWithSyncFlag);
+    }
     writeToStorage(KEYS.ATTEMPTS, map);
 
     // Tự động cập nhật tiến độ học tập và sổ lỗi sai tương ứng với các bài làm được chấm tự động
@@ -178,8 +188,15 @@ export const storageService = {
 
   saveAttemptsLocal(userId: string, attempts: UserAttempt[]): void {
     const map = readAttemptsMap();
-    // Đánh dấu các attempt tải từ Firestore về là đã synced
-    map[userId] = attempts.map(a => ({ ...a, synced: true }));
+    const remote = new Map(attempts.map(attempt => [attempt.id, { ...attempt, synced: true }]));
+    const pending = (map[userId] || []).filter(attempt => attempt.synced === false && !remote.has(attempt.id));
+    map[userId] = [...remote.values(), ...pending];
+    writeToStorage(KEYS.ATTEMPTS, map);
+  },
+
+  replaceAttemptsLocal(userId: string, attempts: UserAttempt[]): void {
+    const map = readAttemptsMap();
+    map[userId] = attempts;
     writeToStorage(KEYS.ATTEMPTS, map);
   },
 
@@ -191,8 +208,9 @@ export const storageService = {
   saveTopicAttemptsLocal(userId: string, questionTypeId: string, topicAttempts: UserAttempt[]): void {
     const allAttempts = this.getAttempts(userId);
     const otherAttempts = allAttempts.filter(a => a.questionTypeId !== questionTypeId);
-    const merged = [...otherAttempts, ...topicAttempts.map(a => ({ ...a, synced: true }))];
-    this.saveAttemptsLocal(userId, merged);
+    const remote = new Map(topicAttempts.map(attempt => [attempt.id, { ...attempt, synced: true }]));
+    const pendingForTopic = allAttempts.filter(attempt => attempt.questionTypeId === questionTypeId && attempt.synced === false && !remote.has(attempt.id));
+    this.replaceAttemptsLocal(userId, [...otherAttempts, ...remote.values(), ...pendingForTopic]);
   },
 
   getPendingAttemptsLocal(userId: string): UserAttempt[] {
@@ -324,12 +342,12 @@ export const storageService = {
 
     // Lấy danh sách attempts của user cho dạng bài này
     const attempts = this.getAttempts(userId).filter(a => a.questionTypeId === questionTypeId);
-    const newScore = calculateMasteryScore(attempts);
+    const evidence = calculateMasteryEvidence(attempts);
+    const newScore = evidence.score;
 
     progressMap[userId].masteryLevels[questionTypeId] = newScore;
 
-    // Xem như hoàn thành (completed) nếu masteryScore đạt >= 60 (tương đương 2 sao trở lên)
-    const isCompleted = newScore >= 60;
+    const isCompleted = evidence.hasEnoughEvidence && newScore >= 70;
     const completedIndex = progressMap[userId].completedLessons.indexOf(questionTypeId);
 
     if (isCompleted && completedIndex === -1) {

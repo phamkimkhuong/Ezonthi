@@ -230,3 +230,18 @@ export const g11EnglishAssessmentExams: MockExam[] = [
 // Đề tái sử dụng câu core đã được kiểm định; đáp án/lời giải lấy từ ngân hàng module.
 export const g11EnglishAssessmentQuestions: Question[] = [];
 export const g11EnglishAssessmentSolutions: Solution[] = [];
+
+export const g11EnglishAssessmentPlan = {
+  status: 'interim-core-bank' as const,
+  currentVersions: ['2026.4', '2026.6'],
+  currentExamCount: 8,
+  currentItemModel: 'Các đề dùng lại câu core đã qua validator và lấy lời giải từ module.',
+  targetVersion: '2027.1',
+  targetIndependentQuestionCount: 320,
+  releaseGates: [
+    'Mỗi kỳ có đúng hai mã A/B, 40 câu và không trùng câu giữa hai mã.',
+    'Mỗi đề giữ tỷ lệ 24 Language/Communication, 8 Reading và 8 Indirect Writing.',
+    'Đáp án A/B/C/D cân bằng 10/10/10/10; độ khó 14 easy, 16 medium, 10 hard.',
+    'Toàn bộ câu có lời giải độc lập, dẫn chứng đọc hiểu và qua biên tập chéo.'
+  ]
+} as const;

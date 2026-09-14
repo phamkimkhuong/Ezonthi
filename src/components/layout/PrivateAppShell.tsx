@@ -1,3 +1,4 @@
+import { hasActivePremium } from '../../utils/premium';
 import React, { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { doc, onSnapshot } from 'firebase/firestore';
@@ -27,6 +28,13 @@ const PrivateAppShell: React.FC = () => {
   const { authLoading, setUser, setAuthLoading, refreshProgress, setPremium } = useAppStore();
 
   useEffect(() => {
+    const check = () => setPremium(hasActivePremium(useAppStore.getState().userData));
+    const timer = window.setInterval(check, 30_000);
+    window.addEventListener('focus', check);
+    return () => { window.clearInterval(timer); window.removeEventListener('focus', check); };
+  }, [setPremium]);
+
+  useEffect(() => {
     scheduleAfterPageLoad(() => {
       void initializeFirebaseTelemetry();
       void import('../../sentry');
@@ -42,19 +50,13 @@ const PrivateAppShell: React.FC = () => {
         const isTeacher = await teacherAccessService.isTeacher(user);
         if (!isTeacher) {
           await progressService.syncUserData(user.uid);
-          progressService.flushPendingAttempts(user.uid);
           refreshProgress();
         }
 
         unsubscribeUserDoc = onSnapshot(doc(db, 'users', user.uid), (docSnap) => {
           if (docSnap.exists()) {
             const data = docSnap.data();
-            let premiumStatus = data.isPremium === true || data.role === 'premium';
-
-            if (data.premiumUntil) {
-              const expiry = new Date(data.premiumUntil);
-              if (expiry < new Date()) premiumStatus = false;
-            }
+            const premiumStatus = hasActivePremium(data);
 
             const prevPremium = useAppStore.getState().isPremium;
             if (premiumStatus && !prevPremium) {
@@ -127,6 +129,15 @@ const PrivateAppShell: React.FC = () => {
       unsubscribeUserDoc?.();
     };
   }, [setUser, setAuthLoading, refreshProgress, setPremium]);
+
+  useEffect(() => {
+    const retryLearningOutbox = () => {
+      const currentUser = useAppStore.getState().user;
+      if (currentUser) void progressService.syncUserData(currentUser.uid).then(refreshProgress);
+    };
+    window.addEventListener('online', retryLearningOutbox);
+    return () => window.removeEventListener('online', retryLearningOutbox);
+  }, [refreshProgress]);
 
   if (authLoading) {
     return (

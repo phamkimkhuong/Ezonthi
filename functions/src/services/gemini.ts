@@ -1,4 +1,5 @@
 import { ChatContent } from "../types.js";
+import { fetchWithTimeout } from './aiControl.js';
 
 // Models prioritized by the user
 export const FALLBACK_MODELS = [
@@ -11,7 +12,7 @@ export const FALLBACK_MODELS = [
 
 export async function getEmbedding(text: string, apiKey: string): Promise<number[]> {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:embedContent?key=${apiKey}`;
-  const response = await fetch(url, {
+  const response = await fetchWithTimeout(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,7 +24,7 @@ export async function getEmbedding(text: string, apiKey: string): Promise<number
       },
       outputDimensionality: 1536,
     }),
-  });
+  }, 15_000);
 
   if (!response.ok) {
     const errText = await response.text();
@@ -83,7 +84,7 @@ Câu tóm tắt duy nhất:`;
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
   try {
-    const response = await fetch(url, {
+    const response = await fetchWithTimeout(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -91,7 +92,7 @@ Câu tóm tắt duy nhất:`;
       body: JSON.stringify({
         contents: [{ role: "user", parts: [{ text: prompt }] }],
       }),
-    });
+    }, 15_000);
 
     if (!response.ok) {
       console.warn("LLM summarizeHistory trả về lỗi HTTP:", response.status);
@@ -139,7 +140,7 @@ Câu truy vấn tìm kiếm tri thức được viết lại (hoặc "NONE"):`;
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
   try {
-    const response = await fetch(url, {
+    const response = await fetchWithTimeout(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -147,7 +148,7 @@ Câu truy vấn tìm kiếm tri thức được viết lại (hoặc "NONE"):`;
       body: JSON.stringify({
         contents: [{ role: "user", parts: [{ text: prompt }] }],
       }),
-    });
+    }, 15_000);
 
     if (!response.ok) {
       console.warn("LLM rewriteQuery trả về lỗi HTTP:", response.status);

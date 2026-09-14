@@ -8,13 +8,37 @@ import {
   removeAccents,
   FALLBACK_MODELS,
 } from "../services/gemini.js";
+import { hasActivePremium } from "../services/entitlements.js";
 import { createHash } from "crypto";
 import { callGroqAiApi, callMistralAiApi } from "../services/aiProviders.js";
 import { determineScaffoldingLevel, getScaffoldingInstruction, detectUserIntent, getIntentOverrideInstruction } from "../services/scaffolding.js";
 import { isRelevantToTopic, shouldRewriteQuery } from "../services/relevance.js";
+import {
+  AiQuotaExceededError,
+  AiRequestValidationError,
+  estimateAiCostUsd,
+  fetchWithTimeout,
+  finalizeAiUsage,
+  recordAuxiliaryAiUsage,
+  reserveAiQuota,
+  validateAiRequest,
+  type AiTaskType,
+} from '../services/aiControl.js';
+import {
+  buildRagProvenance,
+  candidateMatchesScope,
+  DEFAULT_RAG_CONTENT_VERSION,
+  RAG_CONTRACT_VERSION,
+  type RagCandidate,
+  type RagProvenance,
+} from '../services/ragPolicy.js';
+import { recordProductMetric } from '../services/productMetrics.js';
 
 export const callGeminiProxy = onCall({
   cors: true,
+  timeoutSeconds: 60,
+  memory: '1GiB',
+  maxInstances: 40,
 }, async (request) => {
   // 1. Kiểm tra xác thực (chỉ cho phép user đã đăng nhập hệ thống của chúng ta)
   if (!request.auth) {
@@ -22,32 +46,40 @@ export const callGeminiProxy = onCall({
   }
 
   const uid = request.auth.uid;
-  const email = request.auth.token?.email || "";
-
   // Lấy API Key từ biến môi trường của server
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new HttpsError("failed-precondition", "API Key chưa được cấu hình ở phía máy chủ.");
   }
 
-  const data = request.data as GeminiProxyRequest;
+  let data: GeminiProxyRequest;
+  try {
+    data = validateAiRequest(request.data);
+  } catch (error) {
+    if (error instanceof AiRequestValidationError) throw new HttpsError('invalid-argument', error.message);
+    throw error;
+  }
   const {
     prompt,
     contents,
     systemInstruction,
     useRag,
     subjectId,
+    gradeId,
+    ragVersion = DEFAULT_RAG_CONTENT_VERSION,
     image,
     responseMimeType,
     responseSchema,
     temperature,
     topicName,
     chatId,
+    taskType: requestedTaskType,
   } = data;
-
-  if (!prompt && !contents) {
-    throw new HttpsError("invalid-argument", "Thiếu tham số prompt hoặc contents.");
-  }
+  const taskType: AiTaskType = requestedTaskType ?? (responseMimeType ? 'proof_grading' : 'tutor');
+  const requestStartedAt = Date.now();
+  const providerDeadlineAt = requestStartedAt + 52_000;
+  const hasProviderBudget = () => Date.now() < providerDeadlineAt - 1_000;
+  const providerTimeout = (cap = 15_000) => Math.max(1_000, Math.min(cap, providerDeadlineAt - Date.now()));
 
   // 1.15 Tải hồ sơ năng lực học sinh (Long-term Memory)
   let studentProfile: any = null;
@@ -59,15 +91,15 @@ export const callGeminiProxy = onCall({
       const cleanSubjectId = subjectId || "math";
       const subProfile = studentProfile[cleanSubjectId] || {};
 
-      let strengths: string[] = subProfile.strengths || [];
-      let weaknesses: string[] = subProfile.weaknesses || [];
-      let summary: string = subProfile.learningSummary || "";
+      let strengths: string[] = Array.isArray(subProfile.strengths) ? subProfile.strengths.map(String).slice(-50) : [];
+      let weaknesses: string[] = Array.isArray(subProfile.weaknesses) ? subProfile.weaknesses.map(String).slice(-50) : [];
+      let summary: string = String(subProfile.learningSummary || '').slice(0, 1_000);
 
       // Di trú nếu chưa có cấu trúc môn học mới
       if (!studentProfile[cleanSubjectId] && cleanSubjectId === "math") {
-        if (studentProfile.strengths) strengths = studentProfile.strengths;
-        if (studentProfile.weaknesses) weaknesses = studentProfile.weaknesses;
-        if (studentProfile.learningSummary) summary = studentProfile.learningSummary;
+        if (studentProfile.strengths) strengths = Array.isArray(studentProfile.strengths) ? studentProfile.strengths.map(String).slice(-50) : [];
+        if (studentProfile.weaknesses) weaknesses = Array.isArray(studentProfile.weaknesses) ? studentProfile.weaknesses.map(String).slice(-50) : [];
+        if (studentProfile.learningSummary) summary = String(studentProfile.learningSummary).slice(0, 1_000);
       }
 
       // Lọc điểm mạnh/yếu theo độ liên quan ngữ nghĩa (Semantic/Keyword Relevance) của chuyên đề (Topic)
@@ -114,46 +146,29 @@ export const callGeminiProxy = onCall({
     const userDoc = await db.collection("users").doc(uid).get();
     if (userDoc.exists) {
       const userData = userDoc.data();
-      isPremium = userData?.isPremium === true || userData?.role === "premium";
+      isPremium = hasActivePremium(userData);
     }
   } catch (err) {
     console.error("Lỗi khi tải thông tin user để check Premium:", err);
   }
 
-  // 1.1 Kiểm tra hạn mức sử dụng ngày hôm nay
+  // 1.1 Giữ chỗ quota bằng transaction trước khi gọi bất kỳ provider nào.
   const dailyLimit = isPremium ? DAILY_REQUEST_LIMIT : 20;
-  const startOfDay = new Date();
-  startOfDay.setHours(0, 0, 0, 0);
-
+  let quotaReservation;
   try {
-    const logsSnap = await db.collection("ai_usage_logs")
-      .where("userId", "==", uid)
-      .where("timestamp", ">=", startOfDay)
-      .get();
-
-    const todayRequests = logsSnap.size;
-
-    if (todayRequests >= dailyLimit) {
-      if (!isPremium) {
-        throw new HttpsError(
-          "resource-exhausted",
-          "Hôm nay bạn đã dùng hết hạn mức 20 câu hỏi miễn phí. Hãy nâng cấp tài khoản Premium để không giới hạn ôn luyện cùng AI!"
-        );
-      } else {
-        throw new HttpsError(
-          "resource-exhausted",
-          `Tài khoản của bạn đã dùng hết hạn mức AI hàng ngày (${dailyLimit} câu hỏi). Vui lòng quay lại vào ngày mai nhé!`
-        );
-      }
+    quotaReservation = await reserveAiQuota(uid, dailyLimit, taskType);
+  } catch (error) {
+    if (error instanceof AiQuotaExceededError) {
+      throw new HttpsError('resource-exhausted', `Bạn đã dùng hết hạn mức AI hàng ngày (${dailyLimit} lượt).`);
     }
-  } catch (err) {
-    if (err instanceof HttpsError) throw err;
-    console.error("Lỗi truy vấn logs sử dụng:", err);
+    console.error('Không thể giữ chỗ quota AI:', error);
+    throw new HttpsError('unavailable', 'Chưa thể xác nhận hạn mức AI. Vui lòng thử lại.');
   }
 
   // 1.2 Thực hiện RAG (Retrieval-Augmented Generation) nếu được yêu cầu
   let ragContext = "";
   let queryText = "";
+  const ragProvenance: RagProvenance[] = [];
 
   // Lấy câu hỏi hiện tại để phân tích
   if (contents && contents.length > 0) {
@@ -184,23 +199,16 @@ export const callGeminiProxy = onCall({
         let rewrittenQuery = queryText;
 
         if (shouldRewriteQuery(queryText, chatHistory)) {
+          const rewriteStartedAt = Date.now();
           const rewriteResult = await rewriteQuery(chatHistory, queryText, apiKey);
           rewrittenQuery = rewriteResult.rewrittenQuery;
           console.log(`[RAG] LLM rewritten query (context dependent): "${rewrittenQuery}"`);
 
           if (rewriteResult.usageMetadata) {
-            db.collection("ai_usage_logs").add({
-              userId: uid,
-              email: email,
-              promptTokens: rewriteResult.usageMetadata.promptTokenCount || 0,
-              candidatesTokens: rewriteResult.usageMetadata.candidatesTokenCount || 0,
-              cachedTokens: rewriteResult.usageMetadata.cachedContentTokenCount || 0,
-              totalTokens: rewriteResult.usageMetadata.totalTokenCount || 0,
-              timestamp: new Date(),
-              type: "rewrite",
-              model: "gemini-3.1-flash-lite",
-              provider: "gemini"
-            }).catch((err) => {
+            await recordAuxiliaryAiUsage(
+              quotaReservation.requestId, uid, 'rewrite', 'gemini', 'gemini-3.1-flash-lite',
+              rewriteResult.usageMetadata, Date.now() - rewriteStartedAt
+            ).catch((err) => {
               console.error("Lỗi khi ghi log rewriteQuery:", err);
             });
           }
@@ -218,7 +226,10 @@ export const callGeminiProxy = onCall({
 
             // 1. Tạo Promise 1: Semantic Vector Search
             const vectorQuery = db.collection("knowledge_base")
+              .where("gradeId", "==", gradeId)
               .where("subjectId", "==", subjectId)
+              .where("contentVersion", "==", ragVersion)
+              .where("status", "==", "published")
               .findNearest({
                 vectorField: "embedding",
                 queryVector: queryEmbedding,
@@ -234,7 +245,10 @@ export const callGeminiProxy = onCall({
             if (queryKeywords.length > 0) {
               console.log(`[RAG] Keyword Search query tokens: ${JSON.stringify(queryKeywords)}`);
               keywordQueryPromise = db.collection("knowledge_base")
+                .where("gradeId", "==", gradeId)
                 .where("subjectId", "==", subjectId)
+                .where("contentVersion", "==", ragVersion)
+                .where("status", "==", "published")
                 .where("keywords", "array-contains-any", queryKeywords)
                 .limit(4)
                 .get()
@@ -256,8 +270,16 @@ export const callGeminiProxy = onCall({
             vectorSnap.forEach((doc: any) => {
               const data = doc.data();
               const uniqueId = doc.id;
-              mergedDocsMap.set(uniqueId, {
+              const candidate = {
                 id: uniqueId,
+                gradeId: data.gradeId,
+                subjectId: data.subjectId,
+                contentVersion: data.contentVersion,
+                status: data.status,
+                sourceId: data.sourceId,
+                sourceTitle: data.sourceTitle,
+                sourceUrl: data.sourceUrl,
+                sourceLocator: data.sourceLocator,
                 title: data.title,
                 parentTitle: data.parentTitle,
                 content: data.content,
@@ -265,7 +287,10 @@ export const callGeminiProxy = onCall({
                 difficulty: data.difficulty || "medium",
                 source: "vector",
                 score: 1.0, // Điểm cơ sở cho vector search
-              });
+              };
+              if (candidateMatchesScope(candidate, { gradeId: gradeId!, subjectId: subjectId!, contentVersion: ragVersion })) {
+                mergedDocsMap.set(uniqueId, candidate);
+              }
             });
 
             // Đọc kết quả từ Keyword Search
@@ -278,8 +303,16 @@ export const callGeminiProxy = onCall({
                 docObj.source += "+keyword";
                 docObj.score += 0.5; // Điểm bonus nếu khớp cả hai
               } else {
-                mergedDocsMap.set(uniqueId, {
+                const candidate = {
                   id: uniqueId,
+                  gradeId: data.gradeId,
+                  subjectId: data.subjectId,
+                  contentVersion: data.contentVersion,
+                  status: data.status,
+                  sourceId: data.sourceId,
+                  sourceTitle: data.sourceTitle,
+                  sourceUrl: data.sourceUrl,
+                  sourceLocator: data.sourceLocator,
                   title: data.title,
                   parentTitle: data.parentTitle,
                   content: data.content,
@@ -287,7 +320,10 @@ export const callGeminiProxy = onCall({
                   difficulty: data.difficulty || "medium",
                   source: "keyword",
                   score: 0.7, // Điểm cơ sở cho keyword search
-                });
+                };
+                if (candidateMatchesScope(candidate, { gradeId: gradeId!, subjectId: subjectId!, contentVersion: ragVersion })) {
+                  mergedDocsMap.set(uniqueId, candidate);
+                }
               }
             });
 
@@ -340,7 +376,11 @@ export const callGeminiProxy = onCall({
             console.log(`[RAG] Reranked ${candidateDocs.length} candidates. Selected: ${mergedDocuments.map(d => `${d.id}(score:${d.score.toFixed(1)}, source:${d.source}, type:${d.chunkType})`).join(", ")}`);
 
             if (mergedDocuments.length > 0) {
-              ragContext = "\n\nTÀI LIỆU THAM KHẢO LIÊN QUAN:\n" + mergedDocuments.map((d) => `---
+              for (const document of mergedDocuments) {
+                ragProvenance.push(buildRagProvenance(document as RagCandidate, document.source));
+              }
+              ragContext = `\n\nTÀI LIỆU THAM KHẢO ${RAG_CONTRACT_VERSION} — chỉ dùng các đoạn có provenance dưới đây:\n` + mergedDocuments.map((d, index) => `---
+[Nguồn ${index + 1}: ${d.sourceTitle}; locator: ${d.sourceLocator}; phiên bản: ${d.contentVersion}]
 [Chủ đề: ${d.parentTitle ? `${d.parentTitle} -> ${d.title}` : d.title}]
 Nội dung: ${d.content}`).join("\n") + "\n---";
             } else {
@@ -354,124 +394,55 @@ Nội dung: ${d.content}`).join("\n") + "\n---";
     }
   }
 
-  // 1.25 Thực hiện nén lịch sử chat định kỳ (Batch Summarization + Firestore Caching)
+  // 1.25 Session chỉ giữ metadata; nội dung nằm trong các document message cố định kích thước.
   let historySummary = "";
-  let finalContents: ChatContent[] | undefined;
-
+  let finalContents: ChatContent[] | undefined = contents?.slice(-8);
   try {
-    // Định vị tài liệu chat tương ứng để đọc/ghi lịch sử tóm tắt
-    let chatDocRef;
-    if (chatId && chatId !== "general") {
-      chatDocRef = db.collection("users").doc(uid).collection("chats").doc(chatId);
-    } else {
-      chatDocRef = db.collection("users").doc(uid).collection("general_chats").doc(subjectId || "math");
-    }
-
-    // Đọc tóm tắt đã lưu trong Firestore
-    const chatDoc = await chatDocRef.get();
-    const chatData = chatDoc.exists ? chatDoc.data() : null;
-    let existingSummary = chatData?.historySummary || "";
-    const fullHistory = chatData?.messages || [];
-
-    // Nếu số lượng tin nhắn trong Firestore (lịch sử đầy đủ) đạt chặng >= 10
-    if (fullHistory.length >= 10) {
-      // Nếu số lượng tin nhắn đạt điểm chốt (checkpoint chia hết cho 5, ví dụ 10, 15, 20...)
-      if (fullHistory.length % 5 === 0) {
-        // Ta cần tóm tắt toàn bộ phần lịch sử cũ trừ 5 tin nhắn gần nhất
-        const messagesToSummarize = fullHistory.slice(0, -5);
-        let textToCompress = "";
-
-        if (existingSummary) {
-          // Gộp tóm tắt cũ với các tin nhắn mới phát sinh từ checkpoint cũ đến nay
-          const newMessagesText = messagesToSummarize.slice(5).map((m: any) => {
-            const roleName = m.role === "user" ? "Học sinh" : "Gia sư";
-            const text = m.text || "";
-            return `${roleName}: ${text}`;
-          }).join("\n");
-
-          textToCompress = `Tóm tắt hội thoại trước đó: ${existingSummary}\nCác lượt hội thoại mới:\n${newMessagesText}`;
-        } else {
-          // Nếu chưa có tóm tắt cũ, tóm tắt toàn bộ
-          textToCompress = messagesToSummarize.map((m: any) => {
-            const roleName = m.role === "user" ? "Học sinh" : "Gia sư";
-            const text = m.text || "";
-            return `${roleName}: ${text}`;
-          }).join("\n");
-        }
-
-        console.log(`[Compression] Generating new batch summary at checkpoint length: ${fullHistory.length}`);
-
-        // Gọi LLM tóm tắt phần text này
-        const prompt = `Bạn là một trợ lý AI hỗ trợ tóm tắt hội thoại học tập.
-Hãy đọc phần lịch sử và tóm tắt cũ dưới đây để tạo ra 1 câu tóm tắt mới duy nhất (dưới 30 từ), chỉ rõ học sinh hiện tại đã hiểu được kiến thức gì và đang thắc mắc ở chỗ nào.
-Không ghi lời dẫn, chỉ trả về đúng 1 câu tóm tắt bằng tiếng Việt.
-
-Nội dung cần tóm tắt:
-${textToCompress}
-
-Câu tóm tắt duy nhất:`;
-
-        const summarizeUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
-        const summaryResponse = await fetch(summarizeUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            contents: [{ role: "user", parts: [{ text: prompt }] }],
-          }),
-        });
-
-        let newSummary = "";
-        let summaryUsage: any = null;
-        if (summaryResponse.ok) {
-          const summaryData = await summaryResponse.json() as any;
-          newSummary = summaryData?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "";
-          summaryUsage = summaryData?.usageMetadata;
-        }
-
-        if (newSummary) {
-          console.log(`[Compression] Updated batch summary: "${newSummary}"`);
-          existingSummary = newSummary;
-          // Lưu ngược lại Firestore
-          await chatDocRef.set({ historySummary: newSummary }, { merge: true });
-
-          if (summaryUsage) {
-            db.collection("ai_usage_logs").add({
-              userId: uid,
-              email: email,
-              promptTokens: summaryUsage.promptTokenCount || 0,
-              candidatesTokens: summaryUsage.candidatesTokenCount || 0,
-              cachedTokens: summaryUsage.cachedContentTokenCount || 0,
-              totalTokens: summaryUsage.totalTokenCount || 0,
-              timestamp: new Date(),
-              type: "summary",
-              model: "gemini-3.1-flash-lite",
-              provider: "gemini"
-            }).catch((err) => {
-              console.error("Lỗi khi ghi log summary:", err);
-            });
+    if (chatId && gradeId && subjectId) {
+      const chatDocRef = db.collection('users').doc(uid)
+        .collection('general_chats').doc(`${gradeId}_${subjectId}`)
+        .collection('sessions').doc(chatId);
+      const chatDoc = await chatDocRef.get();
+      const chatData = chatDoc.data() ?? {};
+      historySummary = typeof chatData.historySummary === 'string' ? chatData.historySummary.slice(0, 1_000) : '';
+      const messageCount = Math.max(0, Number(chatData.messageCount) || 0);
+      const summarizedMessageCount = Math.max(0, Number(chatData.summarizedMessageCount) || 0);
+      if (messageCount - summarizedMessageCount >= 10 && Date.now() - requestStartedAt < 25_000) {
+        const recentSnapshot = await chatDocRef.collection('messages')
+          .orderBy('sequence', 'desc').limit(12).get();
+        const recentMessages = recentSnapshot.docs.reverse().map(document => document.data());
+        const textToCompress = recentMessages.map(message =>
+          `${message.role === 'user' ? 'Học sinh' : 'Gia sư'}: ${String(message.text ?? '').slice(0, 4_000)}`
+        ).join('\n');
+        if (textToCompress) {
+          const summaryPrompt = `Tóm tắt hội thoại học tập sau trong một câu tiếng Việt dưới 30 từ, nêu điều đã hiểu và chỗ còn vướng.\n${historySummary ? `Tóm tắt trước: ${historySummary}\n` : ''}${textToCompress}`;
+          const summaryStartedAt = Date.now();
+          const summaryResponse = await fetchWithTimeout(
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`,
+            { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: summaryPrompt }] }] }) },
+            15_000
+          );
+          if (summaryResponse.ok) {
+            const summaryData = await summaryResponse.json() as any;
+            const newSummary = String(summaryData?.candidates?.[0]?.content?.parts?.[0]?.text ?? '').trim().slice(0, 1_000);
+            if (newSummary) {
+              historySummary = newSummary;
+              await chatDocRef.set({ historySummary: newSummary, summarizedMessageCount: messageCount }, { merge: true });
+              if (summaryData.usageMetadata) {
+                await recordAuxiliaryAiUsage(
+                  quotaReservation.requestId, uid, 'summary', 'gemini', 'gemini-3.1-flash-lite',
+                  summaryData.usageMetadata, Date.now() - summaryStartedAt
+                );
+              }
+            }
           }
         }
       }
     }
-
-    historySummary = existingSummary;
-
-    // Để đảm bảo an toàn và tương thích ngược (Backward Compatibility):
-    // - Nếu Client mới gửi lên sliding window rút gọn (contents <= 9), ta dùng nguyên contents.
-    // - Nếu Client cũ gửi lên toàn bộ history dài (> 9), ta tự động cắt lát lấy 8 tin nhắn gần nhất.
-    if (contents && contents.length > 9) {
-      finalContents = contents.slice(-8);
-    } else {
-      finalContents = contents;
-    }
-
-    console.log(`[Compression] Sending cached history summary + ${finalContents?.length || 0} messages context.`);
-
+    console.log(`[Compression] Sending summary + ${finalContents?.length || 0} bounded messages.`);
   } catch (err) {
-    console.error("Lỗi khi thực hiện Batch Summarization (sẽ gửi toàn bộ):", err);
-    finalContents = contents;
+    console.error('Không thể cập nhật tóm tắt phiên; tiếp tục với cửa sổ hội thoại bị giới hạn:', err);
+    finalContents = contents?.slice(-8);
   }
 
   // 1.3 Thiết lập cấu trúc contents & systemInstruction gửi đi
@@ -575,6 +546,7 @@ Chú ý:
   if (groqApiKey) {
     const groqModels = ["qwen/qwen3.6-27b", "openai/gpt-oss-120b", "openai/gpt-oss-20b"];
     for (const gModel of groqModels) {
+      if (!hasProviderBudget()) break;
       try {
         console.log(`[Groq AI] Thử kết nối model: ${gModel}...`);
         const result = await callGroqAiApi(
@@ -584,7 +556,8 @@ Chú ý:
           finalSystemInstruction,
           temperature,
           responseMimeType,
-          image
+          image,
+          providerTimeout()
         );
         responseText = result.text;
 
@@ -614,6 +587,7 @@ Chú ý:
     console.log("[Fallback] Đang chuyển sang gọi các model Gemini...");
     // Chạy vòng lặp thử từng model
     for (const model of FALLBACK_MODELS) {
+      if (!hasProviderBudget()) break;
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
       let cachedContentName = "";
@@ -642,7 +616,7 @@ Chú ý:
           const fullModelName = model.startsWith("models/") ? model : `models/${model}`;
           const cacheCreateUrl = `https://generativelanguage.googleapis.com/v1beta/cachedContents?key=${apiKey}`;
 
-          const cacheResponse = await fetch(cacheCreateUrl, {
+          const cacheResponse = await fetchWithTimeout(cacheCreateUrl, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -657,7 +631,7 @@ Chú ý:
               ],
               ttl: "600s" // 10 minutes cache
             }),
-          });
+          }, providerTimeout(8_000));
 
           if (cacheResponse.ok) {
             const cacheResult = await cacheResponse.json() as any;
@@ -731,13 +705,13 @@ Chú ý:
       }
 
       try {
-        const response = await fetch(url, {
+        const response = await fetchWithTimeout(url, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(reqPayload),
-        });
+        }, providerTimeout());
 
         // Nếu gặp lỗi quá tần suất gọi (429), ghi log và tiếp tục thử model tiếp theo
         if (response.status === 429) {
@@ -780,6 +754,7 @@ Chú ý:
   if (!groqSuccess && !geminiSuccess && mistralApiKey) {
     const mistralModels = ["mistral-medium-latest", "mistral-small-2603"];
     for (const mModel of mistralModels) {
+      if (!hasProviderBudget()) break;
       try {
         console.log(`[Mistral AI] Thử kết nối model: ${mModel}...`);
         const result = await callMistralAiApi(
@@ -789,7 +764,8 @@ Chú ý:
           finalSystemInstruction,
           temperature,
           responseMimeType,
-          image
+          image,
+          providerTimeout()
         );
         responseText = result.text;
 
@@ -813,6 +789,11 @@ Chú ý:
 
   // Nếu duyệt qua toàn bộ danh sách mà vẫn không lấy được kết quả
   if (!responseText) {
+    await finalizeAiUsage(quotaReservation.requestId, {
+      status: 'failed', taskType, durationMs: Date.now() - requestStartedAt,
+      errorCode: lastError instanceof Error ? lastError.name : 'provider_failure',
+      provenanceCount: ragProvenance.length,
+    }).catch(error => console.error('Không thể hoàn tất log AI thất bại:', error));
     throw new HttpsError(
       "internal",
       `Tất cả các model AI dự phòng đều đang bận hoặc hết hạn mức. Chi tiết lỗi cuối: ${lastError?.message}`
@@ -852,8 +833,8 @@ Chú ý:
           const oldSummary = subProfile.learningSummary || "";
 
           const mergeAndUnique = (oldArr: string[], newArr: any[]) => {
-            const combined = [...oldArr, ...newArr.map((s) => String(s).trim())].filter(Boolean);
-            return [...new Set(combined)];
+            const combined = [...oldArr, ...newArr.map((s) => String(s).trim().slice(0, 100))].filter(Boolean);
+            return [...new Set(combined)].slice(-50);
           };
 
           const updatedStrengths = mergeAndUnique(oldStrengths, parsed.newStrengths || []);
@@ -879,23 +860,21 @@ Chú ý:
   }
 
   try {
-    // 3. Ghi nhận nhật ký sử dụng vào Firestore nếu gọi thành công
-    if (successUsage) {
-      await db.collection("ai_usage_logs").add({
-        userId: uid,
-        email: email,
-        promptTokens: successUsage.promptTokenCount || 0,
-        candidatesTokens: successUsage.candidatesTokenCount || 0,
-        cachedTokens: successUsage.cachedContentTokenCount || 0,
-        totalTokens: successUsage.totalTokenCount || 0,
-        timestamp: new Date(),
-        type: responseMimeType ? "proof_grading" : "tutor",
-        model: selectedModel,
-        provider: selectedProvider
-      });
-    }
+    await finalizeAiUsage(quotaReservation.requestId, {
+      status: 'succeeded', taskType, provider: selectedProvider, model: selectedModel,
+      usage: successUsage, durationMs: Date.now() - requestStartedAt,
+      provenanceCount: ragProvenance.length,
+    });
+    await recordProductMetric(uid, {
+      ai: true,
+      aiCostUsd: estimateAiCostUsd(
+        selectedProvider,
+        Number(successUsage?.promptTokenCount) || 0,
+        Number(successUsage?.candidatesTokenCount) || 0
+      ),
+    });
   } catch (err) {
-    console.error("Lỗi ghi nhật ký sử dụng token:", err);
+    console.error("Lỗi ghi telemetry AI:", err);
   }
 
   return {
@@ -906,5 +885,8 @@ Chú ý:
       cachedTokens: successUsage.cachedContentTokenCount || 0,
       totalTokens: successUsage.totalTokenCount || 0,
     } : null,
+    requestId: quotaReservation.requestId,
+    quota: { day: quotaReservation.day, remaining: quotaReservation.remaining },
+    rag: { contractVersion: RAG_CONTRACT_VERSION, contentVersion: ragVersion, provenance: ragProvenance },
   };
 });

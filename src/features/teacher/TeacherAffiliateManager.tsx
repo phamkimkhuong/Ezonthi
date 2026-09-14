@@ -71,7 +71,7 @@ export const TeacherAffiliateManager: React.FC = () => {
     if (!req.id) return;
     setActionLoadingId(req.id);
     try {
-      await affiliateService.updatePayoutRequestStatus(req.id, req.sellerUid, req.amount, status);
+      await affiliateService.updatePayoutRequestStatus(req.id, status);
       setPayoutRequests(prev => prev.map(p => p.id === req.id ? { ...p, status } : p));
       showToast(status === 'approved' ? `Đã duyệt yêu cầu rút ${req.amount.toLocaleString('vi-VN')}đ thành công!` : 'Đã từ chối và hoàn lại tiền vào ví Seller.', status === 'approved' ? 'success' : 'error');
     } catch (err: any) {

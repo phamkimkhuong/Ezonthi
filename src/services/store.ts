@@ -2,22 +2,16 @@ import { create } from 'zustand';
 import type { User } from 'firebase/auth';
 import type { SubjectCode } from '../types';
 import type { AppNotification } from '../types/notificationTypes';
+import { AVAILABLE_SUBJECTS_BY_GRADE } from '../utils/courseRoutes';
 
 type GradeCode = 'grade9' | 'grade10' | 'grade11' | 'grade12';
-
-const availableSubjectsByGrade: Record<GradeCode, SubjectCode[]> = {
-  grade9: ['math', 'english'],
-  grade10: ['math', 'english', 'physics', 'chemistry', 'biology', 'history'],
-  grade11: ['chemistry', 'physics', 'math', 'english', 'biology'],
-  grade12: []
-};
 
 const getInitialCourseSelection = (): { grade: GradeCode; subject: SubjectCode } => {
   if (typeof localStorage === 'undefined') return { grade: 'grade9', subject: 'math' };
 
   const storedGrade = localStorage.getItem('otv10_selected_grade') as GradeCode | null;
-  const grade = storedGrade && storedGrade in availableSubjectsByGrade ? storedGrade : 'grade9';
-  const availableSubjects = availableSubjectsByGrade[grade];
+  const grade = storedGrade && storedGrade in AVAILABLE_SUBJECTS_BY_GRADE ? storedGrade : 'grade9';
+  const availableSubjects = AVAILABLE_SUBJECTS_BY_GRADE[grade];
 
   // Lớp chưa phát hành không được trở thành ngữ cảnh khởi động sau khi tải lại trang.
   if (availableSubjects.length === 0) return { grade: 'grade9', subject: 'math' };
@@ -60,6 +54,7 @@ interface AppState {
   setDarkMode: (dark: boolean) => void;
   setSubject: (subject: SubjectCode) => void;
   setGrade: (grade: 'grade9' | 'grade10' | 'grade11' | 'grade12') => void;
+  setCourse: (grade: GradeCode, subject: SubjectCode) => void;
   refreshProgress: () => void;
   setIsLoadingData: (loading: boolean) => void;
   setNotifications: (list: AppNotification[]) => void;
@@ -182,6 +177,13 @@ export const useAppStore = create<AppState>((set, get) => {
         localStorage.setItem('otv10_selected_grade', grade);
       }
       set({ selectedGrade: grade });
+    },
+    setCourse: (grade, subject) => {
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('otv10_selected_grade', grade);
+        localStorage.setItem('otv10_selected_subject', subject);
+      }
+      set({ selectedGrade: grade, selectedSubject: subject });
     },
     refreshProgress: () => set((state) => ({ progressVersion: state.progressVersion + 1 })),
     setIsLoadingData: (loading) => set({ isLoadingData: loading }),

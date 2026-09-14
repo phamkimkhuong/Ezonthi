@@ -1,20 +1,18 @@
-import { db } from './firebase';
+import { db, functions } from './firebase';
 import { 
   collection, 
   query, 
   getDocs, 
   getDoc, 
   doc, 
-  setDoc, 
-  deleteDoc, 
   orderBy, 
   limit, 
   startAfter,
-  where,
   getCountFromServer 
 } from 'firebase/firestore';
 import { UserAttempt, SimulatedStudent } from '../types';
-import { calculateMasteryScore } from '../utils/theme';
+import { httpsCallable } from 'firebase/functions';
+import { hasActivePremium } from '../utils/premium';
 import { logger } from '../utils/logger';
 
 export const teacherService = {
@@ -52,7 +50,7 @@ export const teacherService = {
             name: data.name || 'Học sinh mới',
             avatar: data.avatar || `https://api.dicebear.com/7.x/adventurer/svg?seed=${docRef.id}`,
             email: data.email || '',
-            isPremium: data.isPremium === true || data.role === 'premium',
+            isPremium: hasActivePremium(data),
             premiumUntil: data.premiumUntil || null,
             premiumPlan: data.premiumPlan || data.planName || (data.trialActivated ? 'Gói Dùng Thử (Trial)' : 'Gói Premium VIP'),
             trialActivated: data.trialActivated === true,
@@ -111,7 +109,7 @@ export const teacherService = {
           name: data.studentName || 'Học sinh mới',
           avatar: data.studentAvatar || `https://api.dicebear.com/7.x/adventurer/svg?seed=${attempt.userId}`,
           email: data.studentEmail || '',
-          isPremium: data.isPremium === true || data.role === 'premium',
+          isPremium: hasActivePremium(data),
           premiumUntil: data.premiumUntil || null,
           premiumPlan: data.premiumPlan || data.planName || (data.trialActivated ? 'Gói Dùng Thử (Trial)' : 'Gói Premium VIP'),
           trialActivated: data.trialActivated === true,
@@ -136,134 +134,16 @@ export const teacherService = {
    */
   async gradeRealAttempt(studentId: string, attempt: UserAttempt, isCorrect: boolean, feedback?: string): Promise<void> {
     try {
-      const attemptId = attempt.id;
-      const attemptRef = doc(db, `users/${studentId}/attempts`, attemptId);
-      const syncedAt = new Date().toISOString();
-      
-      const reviewPatch = {
+      await httpsCallable(functions, 'gradeManualAttempt')({
+        userId: studentId,
+        attemptId: attempt.id,
         isCorrect,
-        gradingMode: 'auto' as const,
-        teacherFeedback: feedback,
-        syncedAt
-      };
-
-      const updatedAttempt = {
-        ...attempt,
-        ...reviewPatch
-      };
-      
-      await setDoc(attemptRef, reviewPatch, { merge: true });
-      logger.dbWrite('Cập nhật trạng thái bài làm (attempts)', 1);
-
-      try {
-        await deleteDoc(doc(db, 'manual_attempts', attemptId));
-        logger.dbWrite('Xóa bài làm khỏi hàng đợi (manual_attempts)', 1);
-      } catch (err) {
-        logger.error('Xóa bài làm khỏi hàng đợi', err);
-      }
-
-      // Chỉ tải attempts của CHUYÊN ĐỀ NÀY để recalculate mastery (thay vì tải toàn bộ lịch sử)
-      const typeQuery = query(
-        collection(db, `users/${studentId}/attempts`),
-        where('questionTypeId', '==', attempt.questionTypeId)
-      );
-      const typeSnapshot = await getDocs(typeQuery);
-      logger.dbRead(`Tải attempts chuyên đề ${attempt.questionTypeId} để tính mastery`, typeSnapshot.size || 1);
-
-      const typeAttempts: UserAttempt[] = [];
-      typeSnapshot.forEach(docRef => {
-        const data = docRef.data() as UserAttempt;
-        // Nếu attempt vừa chấm đã có trong query, dùng phiên bản đã cập nhật
-        if (data.id === attemptId) {
-          typeAttempts.push(updatedAttempt);
-        } else {
-          typeAttempts.push(data);
-        }
+        feedback: feedback || ''
       });
-      // Nếu attempt vừa chấm chưa có trong query (edge case), thêm vào
-      if (!typeAttempts.some(a => a.id === attemptId)) {
-        typeAttempts.push(updatedAttempt);
-      }
-
-      const newScore = calculateMasteryScore(typeAttempts);
-
-      // Cập nhật progress và completedCount trực tiếp trên doc cha users/{studentId}
-      try {
-        const userRef = doc(db, 'users', studentId);
-        const userSnap = await getDoc(userRef);
-        logger.dbRead('Lọc lấy tiến độ cũ (users/{studentId})', 1);
-        const userData = userSnap.exists() ? userSnap.data() : {};
-        
-        const masteryLevels = userData.masteryLevels || {};
-        const completedLessons = userData.completedLessons || [];
-        
-        masteryLevels[attempt.questionTypeId] = newScore;
-        
-        const isCompleted = newScore >= 60;
-        const lessonIndex = completedLessons.indexOf(attempt.questionTypeId);
-        
-        if (isCompleted) {
-          if (lessonIndex === -1) {
-            completedLessons.push(attempt.questionTypeId);
-          }
-        } else {
-          if (lessonIndex > -1) {
-            completedLessons.splice(lessonIndex, 1);
-          }
-        }
-        
-        // Cập nhật stats incremental từ dữ liệu trên doc cha (thay vì recalculate toàn bộ)
-        const existingStats = userData.stats || {};
-        const stats = {
-          ...existingStats,
-          lastActiveAt: syncedAt
-        };
-
-        await setDoc(userRef, {
-          masteryLevels,
-          completedLessons,
-          completedCount: completedLessons.length,
-          stats,
-          lastActiveAt: syncedAt
-        }, { merge: true });
-        logger.dbWrite('Cập nhật tiến độ & stats tổng hợp (users/{studentId})', 1);
-      } catch (err) {
-        logger.error('Cập nhật tiến độ học sinh sau khi chấm', err);
-      }
-
-      // Cập nhật Sổ lỗi sai trên Firestore thông qua progressService
-      const mistakeId = `mistake-${attempt.questionId}`;
-      const mistakeRef = doc(db, `users/${studentId}/mistakes`, mistakeId);
-
-      if (!isCorrect) {
-        await setDoc(mistakeRef, {
-          id: mistakeId,
-          userId: studentId,
-          questionId: attempt.questionId,
-          questionTypeId: attempt.questionTypeId,
-          wrongAnswer: attempt.userAnswer,
-          reviewStatus: 'new',
-          reviewCount: 1,
-          lastAttemptedAt: attempt.createdAt,
-          nextReviewAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
-          teacherFeedback: feedback,
-          syncedAt
-        }, { merge: true });
-        logger.dbWrite('Cập nhật Sổ lỗi sai (mistakes) - Báo lỗi mới', 1);
-      } else {
-        const existingMistake = await getDoc(mistakeRef);
-        logger.dbRead('Đọc kiểm tra lỗi cũ (mistakes)', 1);
-        if (existingMistake.exists()) {
-          await setDoc(mistakeRef, {
-            reviewStatus: 'fixed',
-            nextReviewAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-            syncedAt
-          }, { merge: true });
-          logger.dbWrite('Cập nhật Sổ lỗi sai (mistakes) - Đánh dấu Đã sửa', 1);
-        }
-      }
+      logger.dbWrite('Chấm bài nguyên tử qua gradeManualAttempt', 1);
     } catch (e) {
       logger.error('Chấm điểm bài tự luận', e);
+      throw e;
     }
   },
 
@@ -497,4 +377,3 @@ export interface StudentAdvancedSubjectData {
     correctAnswer?: string;
   }>;
 }
-

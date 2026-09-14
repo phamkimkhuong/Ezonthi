@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { newsService } from '../../../services/newsService';
 import { notificationService } from '../../../services/notificationService';
 import { useAppStore } from '../../../services/store';
@@ -18,15 +18,15 @@ const CATEGORY_OPTIONS: { value: AnnouncementCategory | NotificationType; label:
 
 const GRADE_OPTIONS: { value: TargetGrade; label: string }[] = [
   { value: 'all', label: '🌐 Tất cả học sinh (Toàn bộ ứng dụng)' },
-  { value: 'grade9', label: '🎓 Chỉ riêng Học sinh Lớp 9 (Ôn thi 10)' },
-  { value: 'grade10', label: '🎓 Chỉ riêng Học sinh Lớp 10' },
-  { value: 'grade11', label: '🎓 Chỉ riêng Học sinh Lớp 11' },
-  { value: 'grade12', label: '🎓 Chỉ riêng Học sinh Lớp 12 (Thi THPT & ĐH)' },
+  { value: 'grade9', label: '🎒 Học sinh Lớp 9' },
+  { value: 'grade10', label: '🎯 Học sinh Lớp 10' },
+  { value: 'grade11', label: '🔬 Học sinh Lớp 11' },
+  { value: 'grade12', label: '🏆 Học sinh Lớp 12' },
 ];
 
 export const TeacherNotificationManager: React.FC = () => {
-  const { user } = useAppStore();
   const navigate = useNavigate();
+  const { user } = useAppStore();
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -40,7 +40,7 @@ export const TeacherNotificationManager: React.FC = () => {
   const [recentSent, setRecentSent] = useState<AppNotification[]>([]);
   const [loadingRecent, setLoadingRecent] = useState(true);
 
-  const loadSentList = async () => {
+  const loadSentList = useCallback(async () => {
     setLoadingRecent(true);
     try {
       const list = await notificationService.fetchNotifications(user?.uid || 'admin', 'all');
@@ -50,11 +50,11 @@ export const TeacherNotificationManager: React.FC = () => {
     } finally {
       setLoadingRecent(false);
     }
-  };
+  }, [user?.uid]);
 
   useEffect(() => {
     loadSentList();
-  }, [user]);
+  }, [loadSentList]);
 
   const handleDeleteNotification = async (notifId: string) => {
     if (!window.confirm('Bạn có chắc chắn muốn xóa thông báo này khỏi hệ thống?')) {

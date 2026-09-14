@@ -62,7 +62,8 @@ async function getEmbedding(text, apiKey, retries = 5, delayMs = 3000) {
             parts: [{ text }]
           },
           outputDimensionality: 1536
-        })
+        }),
+        signal: AbortSignal.timeout(20_000)
       });
 
       if (response.status === 429) {
@@ -128,7 +129,7 @@ const readNodeValue = (node) => {
   return node.getText().replace(/["']/g, '');
 };
 
-const readQuestionTypesFromTs = (filePath) => {
+const readQuestionTypesFromTs = async (filePath) => {
   const fileContent = fs.readFileSync(filePath, 'utf8');
   const source = ts.createSourceFile(filePath, fileContent, ts.ScriptTarget.Latest, true);
   const items = [];
@@ -151,7 +152,21 @@ const readQuestionTypesFromTs = (filePath) => {
     }
   });
   
-  return items.length > 0 ? items : null;
+  if (items.length > 0) return items;
+
+  const transpiled = ts.transpileModule(fileContent, {
+    compilerOptions: {
+      module: ts.ModuleKind.ES2022,
+      target: ts.ScriptTarget.ES2023,
+      importsNotUsedAsValues: ts.ImportsNotUsedAsValues.Remove,
+    },
+    fileName: filePath,
+  }).outputText;
+  if (/^\s*import\s/m.test(transpiled)) return null;
+  const encoded = Buffer.from(transpiled).toString('base64');
+  const loaded = await import(`data:text/javascript;base64,${encoded}#${encodeURIComponent(filePath)}`);
+  const generated = Object.values(loaded).find(value => Array.isArray(value) && value.every(item => item && typeof item === 'object'));
+  return Array.isArray(generated) ? generated.filter(item => item.id && item.name) : null;
 };
 
 async function run() {
@@ -182,10 +197,14 @@ async function run() {
   console.log("\n--- BẮT ĐẦU ĐỌC DỮ LIỆU TỪ SRC/DATA ---");
   
   const rawQuestionTypes = [];
+  const contentVersion = process.env.RAG_CONTENT_VERSION || "2026.09";
+  const gradeFilter = process.env.RAG_GRADE_FILTER || "";
+  const subjectFilter = process.env.RAG_SUBJECT_FILTER || "";
 
   // 1. Grade 9
   const grade9Subjects = ['math', 'english'];
   for (const sub of grade9Subjects) {
+    if ((gradeFilter && gradeFilter !== 'grade9') || (subjectFilter && subjectFilter !== sub)) continue;
     const jsonPath = path.resolve(root, `src/data/grade9/${sub}/questionTypes.json`);
     if (fs.existsSync(jsonPath)) {
       const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
@@ -199,7 +218,9 @@ async function run() {
   const subjects = ['math', 'english', 'chemistry', 'biology', 'physics', 'history'];
 
   for (const grade of grades) {
+    if (gradeFilter && gradeFilter !== grade) continue;
     for (const sub of subjects) {
+      if (subjectFilter && subjectFilter !== sub) continue;
       const subDir = path.resolve(root, `src/data/${grade}/${sub}`);
       if (!fs.existsSync(subDir)) continue;
 
@@ -210,7 +231,7 @@ async function run() {
         for (const mod of modules) {
           const qTypesPath = path.join(modulesDir, mod, 'questionTypes.ts');
           if (fs.existsSync(qTypesPath)) {
-            const data = readQuestionTypesFromTs(qTypesPath);
+            const data = await readQuestionTypesFromTs(qTypesPath);
             if (data && Array.isArray(data)) {
               rawQuestionTypes.push(...data.map(q => ({ ...q, subjectId: sub, grade: grade })));
               count += data.length;
@@ -223,7 +244,7 @@ async function run() {
       // Quét thêm tệp đơn nếu có
       const qTypesPath = path.join(subDir, 'questionTypes.ts');
       if (fs.existsSync(qTypesPath)) {
-        const data = readQuestionTypesFromTs(qTypesPath);
+        const data = await readQuestionTypesFromTs(qTypesPath);
         if (data && Array.isArray(data)) {
           rawQuestionTypes.push(...data.map(q => ({ ...q, subjectId: sub, grade: grade })));
           console.log(`[Loaded] ${grade} ${sub} (tệp đơn): ${data.length} dạng bài`);
@@ -237,8 +258,9 @@ async function run() {
   const allQuestionTypes = [];
 
   for (const q of rawQuestionTypes) {
-    if (q && typeof q === 'object' && q.id && q.name && !seenIds.has(q.id)) {
-      seenIds.add(q.id);
+    const scopedId = q && `${q.grade}:${q.subjectId}:${q.id}`;
+    if (q && typeof q === 'object' && q.id && q.name && !seenIds.has(scopedId)) {
+      seenIds.add(scopedId);
       allQuestionTypes.push(q);
     }
   }
@@ -253,6 +275,11 @@ async function run() {
   };
 
   console.log(`\nTổng số dạng bài tìm thấy: ${allQuestionTypes.length}`);
+
+  if (process.env.RAG_DRY_RUN === '1') {
+    console.log(`[Dry-run] Không ghi Firestore. Bộ lọc: grade=${gradeFilter || 'all'}, subject=${subjectFilter || 'all'}, version=${contentVersion}.`);
+    return;
+  }
 
   for (const qType of allQuestionTypes) {
     const subjectName = subjectNameMap[qType.subjectId] || qType.subjectId;
@@ -270,6 +297,17 @@ async function run() {
         if (docSnap.exists) {
           const existingData = docSnap.data();
           if (existingData && existingData.contentHash === currentHash) {
+            await collectionRef.doc(chunkId).set({
+              subjectId: qType.subjectId,
+              grade: qType.grade,
+              gradeId: qType.grade,
+              contentVersion,
+              status: "published",
+              sourceId: `course:${qType.grade}:${qType.subjectId}`,
+              sourceTitle: `${subjectName} ${gradeLabel} — dữ liệu khóa học nội bộ`,
+              sourceLocator: `${qType.id}/${chunkType}`,
+              updatedAt: admin.firestore.FieldValue.serverTimestamp()
+            }, { merge: true });
             console.log(`  - Bỏ qua: Chunk [${chunkType}] đã tồn tại và không thay đổi (${chunkId})`);
             return;
           }
@@ -291,6 +329,12 @@ async function run() {
         await collectionRef.doc(chunkId).set({
           subjectId: qType.subjectId,
           grade: qType.grade,
+          gradeId: qType.grade,
+          contentVersion,
+          status: "published",
+          sourceId: `course:${qType.grade}:${qType.subjectId}`,
+          sourceTitle: `${subjectName} ${gradeLabel} — dữ liệu khóa học nội bộ`,
+          sourceLocator: `${qType.id}/${chunkType}`,
           parentId: qType.id,
           parentTitle: qType.name,
           chunkType: chunkType,
@@ -316,7 +360,7 @@ Dấu hiệu nhận biết dạng bài này:
 ${qType.recognitionSigns && qType.recognitionSigns.length > 0 ? qType.recognitionSigns.map(s => `- ${s}`).join("\n") : "- Không có"}`;
     
     await saveChunk(
-      `${qType.subjectId}_${qType.id}_overview`,
+      `${qType.grade}_${qType.subjectId}_${qType.id}_overview`,
       "overview",
       `[Tổng quan] ${qType.name}`,
       overviewContent
@@ -329,7 +373,7 @@ Các bước giải chi tiết:
 ${qType.solvingSteps.map((s, idx) => `${idx + 1}. ${s}`).join("\n")}`;
 
       await saveChunk(
-        `${qType.subjectId}_${qType.id}_method`,
+        `${qType.grade}_${qType.subjectId}_${qType.id}_method`,
         "method",
         `[Phương pháp giải] ${qType.name}`,
         methodContent
@@ -343,7 +387,7 @@ Các lỗi học sinh dễ mắc sai lầm:
 ${qType.commonMistakes.map(s => `- ${s}`).join("\n")}`;
 
       await saveChunk(
-        `${qType.subjectId}_${qType.id}_mistakes`,
+        `${qType.grade}_${qType.subjectId}_${qType.id}_mistakes`,
         "mistakes",
         `[Cảnh báo lỗi sai] ${qType.name}`,
         mistakesContent
@@ -359,7 +403,7 @@ Ví dụ mẫu: ${sub.example}
 Hướng dẫn/Lưu ý đặc biệt: ${sub.note || "Không có"}`;
 
         await saveChunk(
-          `${qType.subjectId}_${qType.id}_sub_${idx}`,
+          `${qType.grade}_${qType.subjectId}_${qType.id}_sub_${idx}`,
           "example",
           `[Ví dụ & Phân dạng] ${qType.name} -> ${sub.name}`,
           exampleContent

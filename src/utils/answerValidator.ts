@@ -68,9 +68,10 @@ const matchesNormalizedCandidate = (question: Question, userAnswer: string): boo
   return answerCandidates(question).some(candidate => normalizeAnswerText(candidate) === normalizedUser);
 };
 
-const parseNumber = (rawValue: string): number | null => {
-  const value = rawValue.replace(',', '.');
-  const fractionMatch = value.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
+export const parseStrictNumber = (rawValue: string): number | null => {
+  const value = normalizeAnswerText(rawValue).replace(',', '.');
+  const atom = '[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:e[+-]?\\d+)?';
+  const fractionMatch = value.match(new RegExp(`^(${atom})\/(${atom})$`, 'i'));
 
   if (fractionMatch) {
     const numerator = Number(fractionMatch[1]);
@@ -81,6 +82,7 @@ const parseNumber = (rawValue: string): number | null => {
     return numerator / denominator;
   }
 
+  if (!new RegExp(`^${atom}$`, 'i').test(value)) return null;
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : null;
 };
@@ -92,7 +94,7 @@ const extractNumericValues = (value: string): number[] => {
 
   const fractionPattern = /-?\d+(?:[.,]\d+)?\/-?\d+(?:[.,]\d+)?/g;
   for (const match of normalized.matchAll(fractionPattern)) {
-    const numeric = parseNumber(match[0]);
+    const numeric = parseStrictNumber(match[0]);
     if (numeric !== null) {
       values.push(numeric);
       consumedRanges.push([match.index ?? 0, (match.index ?? 0) + match[0].length]);
@@ -108,7 +110,7 @@ const extractNumericValues = (value: string): number[] => {
     const index = match.index ?? 0;
     if (isInsideConsumedRange(index)) continue;
 
-    const numeric = parseNumber(match[0]);
+    const numeric = parseStrictNumber(match[0]);
     if (numeric !== null) {
       values.push(numeric);
     }
@@ -122,24 +124,37 @@ const numbersEqual = (left: number, right: number): boolean => {
 };
 
 const extractSingleNumber = (value: string): number | null => {
-  const values = extractNumericValues(value);
-  return values.length === 1 ? values[0] : null;
+  return parseStrictNumber(value);
 };
 
 const validateNumberAnswer = (question: Question, userAnswer: string): boolean => {
   if (matchesNormalizedCandidate(question, userAnswer)) return true;
 
-  const userNumbers = extractNumericValues(userAnswer);
-  if (userNumbers.length !== 1) return false;
-
+  const userNumber = extractSingleNumber(userAnswer);
+  if (userNumber === null) return false;
   return answerCandidates(question).some(candidate => {
-    const candidateNumbers = extractNumericValues(candidate);
-    return candidateNumbers.length === 1 && numbersEqual(userNumbers[0], candidateNumbers[0]);
+    const number = extractSingleNumber(candidate);
+    return number !== null && numbersEqual(userNumber, number);
   });
 };
 
 const validateMultiNumberAnswer = (question: Question, userAnswer: string): boolean => {
-  if (matchesNormalizedCandidate(question, userAnswer)) return true;
+  const numericLexemes = (value: string): string[] => value.match(/[+-]?(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:e[+-]?\d+)?(?:\/[+-]?(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:e[+-]?\d+)?)?/gi) ?? [];
+  const exactCandidate = answerCandidates(question).some(candidate => {
+    if (normalizeAnswerText(candidate) !== normalizeAnswerText(userAnswer)) return false;
+    const expected = numericLexemes(candidate);
+    const actual = numericLexemes(userAnswer);
+    return expected.length === actual.length && expected.every((item, index) => parseStrictNumber(item) === parseStrictNumber(actual[index]));
+  });
+  if (exactCandidate) return true;
+
+  // Numeric lists may contain numbers and separators only. This prevents an
+  // expression such as "sqrt(2)" or "2+3" from being accepted by extraction.
+  const strictList = normalizeAnswerText(userAnswer);
+  if (/(?:\d|\.)[+-](?:\d|\.)/.test(strictList)) return false;
+  const token = /[+-]?(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:e[+-]?\d+)?(?:\/[+-]?(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:e[+-]?\d+)?)?/gi;
+  const remainder = strictList.replace(token, '').replace(/[;|,]/g, '');
+  if (remainder.length > 0) return false;
 
   const userNumbers = extractNumericValues(userAnswer);
   if (userNumbers.length === 0) return false;
@@ -260,8 +275,8 @@ const compareFieldValue = (
     return compareChoiceValue(userValue, candidateValue);
   }
 
-  if (mode === 'keyed-numeric' || mode === 'numeric' || field.valueType === 'number' || field.valueType === 'fraction') {
-    return compareNumericValue(userValue, candidateValue);
+  if (mode === 'numeric' || field.valueType === 'number' || field.valueType === 'fraction') {
+    return compareNumericValue(normalizeStructuredFieldText(field, userValue), normalizeStructuredFieldText(field, candidateValue));
   }
 
   return compareTextValue(field, userValue, candidateValue);

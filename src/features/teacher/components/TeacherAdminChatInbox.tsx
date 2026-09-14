@@ -102,9 +102,7 @@ export const TeacherAdminChatInbox: React.FC = () => {
       setLoadingRooms(false);
 
       // Nếu chưa chọn phòng nào và có phòng chat, chọn phòng đầu tiên
-      if (!selectedRoom && roomList.length > 0) {
-        setSelectedRoom(roomList[0]);
-      }
+      setSelectedRoom((prev) => prev || (roomList.length > 0 ? roomList[0] : null));
     });
 
     return () => unsubscribe();
@@ -130,13 +128,13 @@ export const TeacherAdminChatInbox: React.FC = () => {
     });
 
     return () => unsubscribe();
-  }, [selectedRoom?.id]);
+  }, [selectedRoom]);
 
   useEffect(() => {
     if (selectedRoom) {
       scrollToBottom();
     }
-  }, [messages.length]);
+  }, [messages.length, selectedRoom]);
 
   const [isCreatingRoom, setIsCreatingRoom] = useState(false);
 

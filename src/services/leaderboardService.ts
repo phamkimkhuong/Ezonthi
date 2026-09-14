@@ -6,7 +6,6 @@ export interface LeaderboardItem {
   rank: number;
   userId: string;
   name: string;
-  email: string;
   avatar: string;
   totalAttempts: number;
   totalMinutes: number;
@@ -28,7 +27,7 @@ export const leaderboardService = {
    */
   async getLeaderboard(): Promise<LeaderboardData> {
     try {
-      const summaryRef = doc(db, 'system_stats', 'leaderboard');
+      const summaryRef = doc(db, 'system_stats', 'leaderboard_public');
       const docSnap = await getDoc(summaryRef);
       if (docSnap.exists()) {
         return docSnap.data() as LeaderboardData;

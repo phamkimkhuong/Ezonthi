@@ -48,6 +48,8 @@ import { cn } from '../../utils/cn';
 import { getQuestionTypes, loadSubjectData } from '../../data';
 import { getSubjectName, getSubjectIcon, getSubjectFromQuestionTypeId } from '../../utils/subject';
 import { ROUTES } from '../../constants/routes';
+import { changeCourseContext, COURSE_ROUTES, parseCoursePath } from '../../utils/courseRoutes';
+import type { GradeCode, SubjectCode } from '../../types';
 
 export const AppLayout: React.FC = () => {
   const navigate = useNavigate();
@@ -56,9 +58,8 @@ export const AppLayout: React.FC = () => {
     darkMode,
     toggleDarkMode,
     selectedSubject,
-    setSubject,
     selectedGrade,
-    setGrade,
+    setCourse,
     user,
     progressVersion,
     isPremium,
@@ -70,6 +71,8 @@ export const AppLayout: React.FC = () => {
     setNotifications
   } = useAppStore();
   void progressVersion;
+  const courseRoute = parseCoursePath(location.pathname);
+  const courseSection = courseRoute?.section;
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(() => {
@@ -137,17 +140,11 @@ export const AppLayout: React.FC = () => {
     return `${icon} ${subjectLabel} - ${gradeLabel}`;
   };
 
-  const handleContextChange = (grade: any, subject: any) => {
-    setGrade(grade);
-    setSubject(subject);
+  const handleContextChange = (grade: GradeCode, subject: SubjectCode) => {
+    const nextPath = changeCourseContext(location.pathname, grade, subject);
+    setCourse(grade, subject);
     setIsContextDropdownOpen(false);
-
-    const path = location.pathname;
-    const stayPaths: string[] = [ROUTES.DASHBOARD, ROUTES.ROADMAP, ROUTES.PRACTICE, ROUTES.AI_TUTOR, ROUTES.MISTAKES, ROUTES.EXAM];
-
-    if (!stayPaths.includes(path)) {
-      navigate(ROUTES.ROADMAP);
-    }
+    navigate(nextPath);
   };
 
   const courseGroups = [
@@ -238,13 +235,7 @@ export const AppLayout: React.FC = () => {
       path.startsWith('/on-thi-vao-10') ||
       path.startsWith('/lop-10') ||
       path.startsWith(ROUTES.ABOUT) ||
-      path.startsWith(ROUTES.ROADMAP) ||
-      path.startsWith('/question-types') ||
-      path.startsWith(ROUTES.PRACTICE) ||
-      path.startsWith(ROUTES.ADVANCED_PHYSICS_10) ||
-      path.startsWith(ROUTES.ADVANCED_MATH_10) ||
-      path.startsWith(ROUTES.ADVANCED_CHEMISTRY_10) ||
-      path.startsWith(ROUTES.ADVANCED_BIOLOGY_10)
+      (courseSection && ['roadmap', 'question-types', 'practice', 'advanced'].includes(courseSection))
     ) {
       return;
     }
@@ -265,24 +256,24 @@ export const AppLayout: React.FC = () => {
       document.title = `Hỗ Trợ & Góp Ý | ${brandName}`;
       return;
     }
-    if (path.startsWith(ROUTES.MISTAKES)) {
+    if (courseSection === 'mistakes' || path.startsWith(ROUTES.MISTAKES)) {
       document.title = `Sổ Tay Sửa Lỗi Sai | ${brandName}`;
       return;
     }
-    if (path.startsWith(ROUTES.EXAM)) {
+    if (courseSection === 'exam' || path.startsWith(ROUTES.EXAM)) {
       const gradeLabel = selectedGrade === 'grade9' ? 'Lớp 9' : selectedGrade === 'grade10' ? 'Lớp 10' : selectedGrade === 'grade11' ? 'Lớp 11' : '9 - 12';
       document.title = `Thi Thử & Kiểm Tra ${gradeLabel} | ${brandName}`;
       return;
     }
-    if (path.startsWith(ROUTES.AI_TUTOR)) {
+    if (courseSection === 'ai-tutor' || path.startsWith(ROUTES.AI_TUTOR)) {
       document.title = `Gia Sư Socratic | ${brandName}`;
       return;
     }
-    if (path.startsWith(ROUTES.VOCABULARY)) {
+    if (courseSection === 'vocabulary' || path.startsWith(ROUTES.VOCABULARY)) {
       document.title = `Từ Vựng Tiếng Anh Lớp 10 | ${brandName}`;
       return;
     }
-    if (path.startsWith(ROUTES.GRAMMAR)) {
+    if (courseSection === 'grammar' || path.startsWith(ROUTES.GRAMMAR)) {
       document.title = `Cẩm Nang Ngữ Pháp Tiếng Anh (Lớp 9 - 12) | ${brandName}`;
       return;
     }
@@ -300,7 +291,7 @@ export const AppLayout: React.FC = () => {
     } else {
       document.title = `${brandName} | Nền tảng Học tốt & Luyện thi Lớp 9 - 12`;
     }
-  }, [selectedGrade, selectedSubject, location.pathname]);
+  }, [selectedGrade, selectedSubject, location.pathname, courseSection]);
 
   useEffect(() => {
     let cancelled = false;
@@ -350,34 +341,28 @@ export const AppLayout: React.FC = () => {
 
 
   const menuItems = [
-    { path: ROUTES.DASHBOARD, label: 'Bảng điều khiển', icon: GraduationCap },
-    { path: ROUTES.ROADMAP, label: 'Lộ trình học', icon: Map },
-    { path: ROUTES.PRACTICE, label: 'Luyện tập', icon: BookOpen },
+    { path: COURSE_ROUTES.dashboard(selectedGrade, selectedSubject), label: 'Bảng điều khiển', icon: GraduationCap },
+    { path: COURSE_ROUTES.roadmap(selectedGrade, selectedSubject), label: 'Lộ trình học', icon: Map },
+    { path: COURSE_ROUTES.practice(selectedGrade, selectedSubject), label: 'Luyện tập', icon: BookOpen },
     ...(selectedGrade === 'grade10' && (selectedSubject === 'physics' || selectedSubject === 'math' || selectedSubject === 'chemistry' || selectedSubject === 'biology')
       ? [{
-          path: selectedSubject === 'physics'
-            ? ROUTES.ADVANCED_PHYSICS_10
-            : selectedSubject === 'chemistry'
-              ? ROUTES.ADVANCED_CHEMISTRY_10
-              : selectedSubject === 'biology'
-                ? ROUTES.ADVANCED_BIOLOGY_10
-              : ROUTES.ADVANCED_MATH_10,
+          path: COURSE_ROUTES.advanced(selectedGrade, selectedSubject),
           label: 'Chuyên đề nâng cao',
           icon: Target
         }]
       : []),
     ...(selectedSubject === 'english'
       ? [
-          { path: ROUTES.GRAMMAR, label: 'Ngữ pháp', icon: BookText },
+          { path: COURSE_ROUTES.grammar(selectedGrade, selectedSubject), label: 'Ngữ pháp', icon: BookText },
           ...(selectedGrade === 'grade10'
-            ? [{ path: ROUTES.VOCABULARY, label: 'Từ vựng 10', icon: BookMarked }]
+            ? [{ path: COURSE_ROUTES.vocabulary(selectedGrade, selectedSubject), label: 'Từ vựng 10', icon: BookMarked }]
             : [])
         ]
       : []),
-    { path: ROUTES.AI_TUTOR, label: 'Gia sư', icon: Sparkles },
-    { path: ROUTES.MISTAKES, label: 'Sổ lỗi sai', icon: Bookmark },
+    { path: COURSE_ROUTES.aiTutor(selectedGrade, selectedSubject), label: 'Gia sư', icon: Sparkles },
+    { path: COURSE_ROUTES.mistakes(selectedGrade, selectedSubject), label: 'Sổ lỗi sai', icon: Bookmark },
     {
-      path: ROUTES.EXAM,
+      path: COURSE_ROUTES.exam(selectedGrade, selectedSubject),
       label: selectedGrade === 'grade9' ? 'Thi thử vào 10' : 'Thi thử & Kiểm tra',
       icon: Award
     },
@@ -394,6 +379,16 @@ export const AppLayout: React.FC = () => {
 
   const getHeaderTitle = () => {
     const path = location.pathname;
+    if (courseSection === 'dashboard') return 'Bảng điều khiển';
+    if (courseSection === 'roadmap') return 'Lộ trình học';
+    if (courseSection === 'question-types') return 'Dạng bài chi tiết';
+    if (courseSection === 'practice') return 'Luyện tập';
+    if (courseSection === 'advanced') return 'Chuyên đề nâng cao';
+    if (courseSection === 'grammar') return 'Ngữ pháp Tiếng Anh';
+    if (courseSection === 'vocabulary') return 'Từ vựng Tiếng Anh 10';
+    if (courseSection === 'ai-tutor') return 'Gia sư Socratic';
+    if (courseSection === 'mistakes') return 'Sổ lỗi sai';
+    if (courseSection === 'exam') return selectedGrade === 'grade9' ? 'Thi thử vào 10' : 'Thi thử & Kiểm tra';
     if (path.startsWith('/dashboard')) return 'Bảng điều khiển';
     if (path.startsWith('/roadmap')) return 'Lộ trình học';
     if (path.startsWith('/question-types')) return 'Dạng bài chi tiết';
@@ -417,7 +412,7 @@ export const AppLayout: React.FC = () => {
 
   const logoPng = darkMode ? '/logo-removebg.png' : '/logo.png';
   const logoWebp = darkMode ? '/logo-removebg.png' : '/logo.webp';
-  const shouldNoIndex = [
+  const shouldNoIndex = Boolean(courseRoute) || [
     ROUTES.DASHBOARD,
     ROUTES.ROADMAP,
     ROUTES.PRACTICE,
@@ -574,7 +569,7 @@ export const AppLayout: React.FC = () => {
                               aria-label={`Chọn môn ${course.name} - ${group.gradeTitle} ${course.isLocked ? '(Đã khóa)' : ''}`}
                               onClick={() => {
                                 if (course.isLocked) return;
-                                handleContextChange(group.grade, course.code);
+                                handleContextChange(group.grade as GradeCode, course.code as SubjectCode);
                               }}
                               className={cn(
                                 "w-full flex items-center gap-2 px-3 py-2 rounded-xl text-left text-xs font-extrabold transition-all cursor-pointer relative",
@@ -849,7 +844,7 @@ export const AppLayout: React.FC = () => {
                                   aria-label={`Chọn môn ${course.name} - ${group.gradeTitle} ${course.isLocked ? '(Đã khóa)' : ''}`}
                                   onClick={() => {
                                     if (course.isLocked) return;
-                                    handleContextChange(group.grade, course.code);
+                                    handleContextChange(group.grade as GradeCode, course.code as SubjectCode);
                                   }}
                                   className={cn(
                                     "w-full flex items-center gap-2 px-3 py-2 rounded-xl text-left text-xs font-extrabold transition-all cursor-pointer relative",
@@ -978,7 +973,7 @@ export const AppLayout: React.FC = () => {
         {/* ⚡ Content Wrapper */}
         <div className={cn(
           "flex-1 animate-fade-in",
-          location.pathname.startsWith(ROUTES.AI_TUTOR) ? "p-2 md:p-3" : "p-4 md:p-8"
+          courseSection === 'ai-tutor' || location.pathname.startsWith(ROUTES.AI_TUTOR) ? "p-2 md:p-3" : "p-4 md:p-8"
         )}>
           {isLoadingData ? (
             <div className="flex h-[60vh] w-full items-center justify-center">

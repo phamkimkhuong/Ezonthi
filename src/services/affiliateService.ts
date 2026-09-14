@@ -264,22 +264,7 @@ export const affiliateService = {
   /**
    * [ADMIN/TEACHER] Duyệt hoặc Từ chối yêu cầu rút tiền của Seller
    */
-  async updatePayoutRequestStatus(requestId: string, sellerUid: string, amount: number, newStatus: 'approved' | 'rejected'): Promise<void> {
-    const reqRef = doc(db, 'payoutRequests', requestId);
-    await updateDoc(reqRef, { status: newStatus, updatedAt: new Date().toISOString() });
-
-    const wallet = await this.getWallet(sellerUid);
-    const walletRef = doc(db, 'affiliateWallets', sellerUid);
-
-    if (newStatus === 'approved') {
-      await setDoc(walletRef, {
-        pendingBalance: Math.max(0, (wallet.pendingBalance || 0) - amount)
-      }, { merge: true });
-    } else {
-      await setDoc(walletRef, {
-        balance: wallet.balance + amount,
-        pendingBalance: Math.max(0, (wallet.pendingBalance || 0) - amount)
-      }, { merge: true });
-    }
+  async updatePayoutRequestStatus(requestId: string, newStatus: 'approved' | 'rejected'): Promise<void> {
+    await this.processPayoutRequest(requestId, newStatus === 'approved' ? 'approve' : 'reject');
   }
 };

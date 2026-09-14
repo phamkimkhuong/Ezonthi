@@ -22,6 +22,9 @@ interface AiTutorMessageListProps {
   isLoggedIn?: boolean;
   onRequireLogin?: () => void;
   subjectName?: string;
+  hasOlderMessages?: boolean;
+  isLoadingOlderMessages?: boolean;
+  onLoadOlderMessages?: () => void;
 }
 
 export const AiTutorMessageList: React.FC<AiTutorMessageListProps> = ({
@@ -36,12 +39,27 @@ export const AiTutorMessageList: React.FC<AiTutorMessageListProps> = ({
   messagesEndRef,
   isLoggedIn = true,
   onRequireLogin,
-  subjectName = 'môn học'
+  subjectName = 'môn học',
+  hasOlderMessages = false,
+  isLoadingOlderMessages = false,
+  onLoadOlderMessages,
 }) => {
   return (
     <>
       {/* Chat Messages Container */}
       <div className="flex-grow overflow-y-auto p-3 space-y-3 bg-slate-50/20 dark:bg-slate-900/5">
+        {hasOlderMessages && onLoadOlderMessages && (
+          <div className="flex justify-center">
+            <button
+              type="button"
+              onClick={onLoadOlderMessages}
+              disabled={isLoadingOlderMessages}
+              className="px-3 py-1.5 rounded-lg border border-border bg-card text-[10px] font-bold text-muted-foreground hover:text-foreground disabled:opacity-50"
+            >
+              {isLoadingOlderMessages ? 'Đang tải...' : 'Tải tin nhắn cũ hơn'}
+            </button>
+          </div>
+        )}
         {messages.length === 0 && !isLoading && (
           <div className="max-w-2xl mx-auto py-6 sm:py-10 px-4 text-center space-y-6 animate-fade-in">
             <div className="mx-auto w-16 h-16 rounded-3xl bg-gradient-to-tr from-amber-500/20 via-orange-500/15 to-amber-500/5 border border-amber-500/30 text-amber-600 dark:text-amber-400 flex items-center justify-center shadow-lg shadow-amber-500/10 ring-4 ring-amber-500/10">

@@ -78,8 +78,7 @@ export function isRelevantToTopic(item: string, topicName: string): boolean {
 export function getPersonalizedGreeting(
   displayName: string | null | undefined,
   profile: StudentProfile | null | undefined,
-  subject: SubjectCode,
-  _topicName?: string
+  subject: SubjectCode
 ): string {
   // Extract student's first name
   let name = 'em';

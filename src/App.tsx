@@ -1,11 +1,14 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ErrorBoundary } from './components/common/ErrorBoundary';
 import { ROUTES } from './constants/routes';
 import { seoLandingPages } from './seo/landingPages';
 import PublicLayout from './components/layout/PublicLayout';
 import SeoLandingPage from './features/seo-landing/SeoLandingPage';
+import CourseContextRoute from './components/routing/CourseContextRoute';
+import AdvancedCourseRoute from './components/routing/AdvancedCourseRoute';
+import LegacyCourseRedirect, { DefaultCourseRedirect } from './components/routing/LegacyCourseRedirect';
 
 function lazyWithRetry<T extends React.ComponentType<any>>(
   factory: () => Promise<{ default: T }>
@@ -77,31 +80,59 @@ const router = createBrowserRouter([
       </ErrorBoundary>
     ),
     children: [
-      { path: ROUTES.DASHBOARD.substring(1), element: <Dashboard /> },
-      { path: ROUTES.ROADMAP.substring(1), element: <Roadmap /> },
-      { path: 'question-types/:questionTypeId', element: <QuestionTypeDetail /> },
-      { path: ROUTES.PRACTICE.substring(1), element: <PracticeEngine /> },
-      { path: 'practice/:questionTypeId', element: <PracticeEngine /> },
-      { path: ROUTES.ADVANCED_PHYSICS_10.substring(1), element: <AdvancedPhysics10 /> },
-      { path: ROUTES.ADVANCED_MATH_10.substring(1), element: <AdvancedMath10 /> },
-      { path: ROUTES.ADVANCED_CHEMISTRY_10.substring(1), element: <AdvancedChemistry10 /> },
-      { path: ROUTES.ADVANCED_BIOLOGY_10.substring(1), element: <AdvancedBiology10 /> },
-      { path: ROUTES.MISTAKES.substring(1), element: <MistakeNotebook /> },
-      { path: ROUTES.EXAM.substring(1), element: <ExamEngine /> },
+      {
+        path: 'app/:grade/:subject',
+        element: <CourseContextRoute />,
+        children: [
+          { index: true, element: <DefaultCourseRedirect /> },
+          { path: 'dashboard', element: <Dashboard /> },
+          { path: 'roadmap', element: <Roadmap /> },
+          { path: 'question-types/:questionTypeId', element: <QuestionTypeDetail /> },
+          { path: 'practice', element: <PracticeEngine /> },
+          { path: 'practice/:questionTypeId', element: <PracticeEngine /> },
+          {
+            path: 'advanced',
+            element: (
+              <AdvancedCourseRoute
+                math={<AdvancedMath10 />}
+                physics={<AdvancedPhysics10 />}
+                chemistry={<AdvancedChemistry10 />}
+                biology={<AdvancedBiology10 />}
+              />
+            )
+          },
+          { path: 'mistakes', element: <MistakeNotebook /> },
+          { path: 'exam', element: <ExamEngine /> },
+          { path: 'ai-tutor', element: <GeneralAiTutor /> },
+          { path: 'vocabulary', element: <VocabularyPage /> },
+          { path: 'grammar', element: <GrammarPage /> }
+        ]
+      },
+      { path: ROUTES.DASHBOARD.substring(1), element: <LegacyCourseRedirect section="dashboard" /> },
+      { path: ROUTES.ROADMAP.substring(1), element: <LegacyCourseRedirect section="roadmap" /> },
+      { path: 'question-types/:questionTypeId', element: <LegacyCourseRedirect section="question-types" useQuestionTypeSubject /> },
+      { path: ROUTES.PRACTICE.substring(1), element: <LegacyCourseRedirect section="practice" /> },
+      { path: 'practice/:questionTypeId', element: <LegacyCourseRedirect section="practice" useQuestionTypeSubject /> },
+      { path: ROUTES.ADVANCED_PHYSICS_10.substring(1), element: <LegacyCourseRedirect section="advanced" grade="grade10" subject="physics" /> },
+      { path: ROUTES.ADVANCED_MATH_10.substring(1), element: <LegacyCourseRedirect section="advanced" grade="grade10" subject="math" /> },
+      { path: ROUTES.ADVANCED_CHEMISTRY_10.substring(1), element: <LegacyCourseRedirect section="advanced" grade="grade10" subject="chemistry" /> },
+      { path: ROUTES.ADVANCED_BIOLOGY_10.substring(1), element: <LegacyCourseRedirect section="advanced" grade="grade10" subject="biology" /> },
+      { path: ROUTES.MISTAKES.substring(1), element: <LegacyCourseRedirect section="mistakes" /> },
+      { path: ROUTES.EXAM.substring(1), element: <LegacyCourseRedirect section="exam" /> },
       { path: ROUTES.TEACHER.substring(1), element: <TeacherDashboard /> },
       { path: ROUTES.PREMIUM.substring(1), element: <PremiumPricing /> },
-      { path: ROUTES.AI_TUTOR.substring(1), element: <GeneralAiTutor /> },
+      { path: ROUTES.AI_TUTOR.substring(1), element: <LegacyCourseRedirect section="ai-tutor" /> },
       { path: ROUTES.SUPPORT.substring(1), element: <SupportPage /> },
       { path: ROUTES.AFFILIATE.substring(1), element: <AffiliateDashboard /> },
-      { path: ROUTES.VOCABULARY.substring(1), element: <VocabularyPage /> },
-      { path: ROUTES.GRAMMAR.substring(1), element: <GrammarPage /> },
+      { path: ROUTES.VOCABULARY.substring(1), element: <LegacyCourseRedirect section="vocabulary" /> },
+      { path: ROUTES.GRAMMAR.substring(1), element: <LegacyCourseRedirect section="grammar" /> },
       { path: ROUTES.NEWS.substring(1), element: <NewsPage /> },
     ]
   },
 
   {
     path: '*',
-    element: <Navigate to={ROUTES.DASHBOARD} replace />
+    element: <DefaultCourseRedirect />
   }
 ]);
 

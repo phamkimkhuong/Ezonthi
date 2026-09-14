@@ -134,7 +134,6 @@ const createDemoMistakes = (
 
 export const MistakeNotebook: React.FC = () => {
   const { selectedSubject, selectedGrade, user, progressVersion, refreshProgress } = useAppStore();
-  void progressVersion;
 
   const [mistakes, setMistakes] = useState<EnrichedMistake[]>([]);
   const [selectedTypeId, setSelectedTypeId] = useState<string | null>(null);
@@ -193,13 +192,13 @@ export const MistakeNotebook: React.FC = () => {
       .filter((m): m is EnrichedMistake => m.question !== undefined); // Loại bỏ các câu không tìm thấy câu hỏi gốc
 
     setMistakes(filtered);
-  }, [user, questions, questionTypes, progressVersion]);
+  }, [user, questions, questionTypes]);
 
   useEffect(() => {
     loadMistakes();
     setSelectedTypeId(null);
     setActiveMistake(null);
-  }, [selectedSubject, loadMistakes]);
+  }, [selectedSubject, loadMistakes, progressVersion]);
 
   const startReview = (mistake: EnrichedMistake) => {
     revokeLocalProofImages(reProofImages);

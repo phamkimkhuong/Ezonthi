@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../../services/store';
 import { aiService } from '../../services/aiService';
 import { db, firebaseStorage } from '../../services/firebase';
-import { doc, onSnapshot, setDoc, deleteDoc, collection, query, orderBy, getDoc, getDocs } from 'firebase/firestore';
+import { doc, onSnapshot, setDoc, deleteDoc, collection, query, orderBy, getDoc, getDocs, limit } from 'firebase/firestore';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { MathLoginRequired } from '../../components/common/MathLoginRequired';
 import { getSubjectName } from '../../utils/subject';
@@ -16,6 +16,12 @@ import { AiTutorMessageList, type Message } from './components/AiTutorMessageLis
 import { AiTutorInput } from './components/AiTutorInput';
 import { AiTutorDiagnostics } from './components/AiTutorDiagnostics';
 import { ImageLightboxModal } from './components/ImageLightboxModal';
+import {
+  appendChatMessages,
+  deleteChatSession,
+  loadChatMessagesPage,
+  migrateLegacyChatMessages,
+} from '../../services/chatHistoryService';
 
 interface SubjectProfile {
   strengths?: string[];
@@ -40,6 +46,14 @@ const generateChatStoragePath = (userId: string, chatPathKey: string, fileName: 
   const fileExtension = fileName.split('.').pop() || 'jpg';
   const timestamp = Date.now();
   return `users/${userId}/general_chats/${chatPathKey}/msg_img_${timestamp}.${fileExtension}`;
+};
+
+const legacyDateToIso = (value: unknown): string => {
+  if (typeof value === 'string' && Number.isFinite(Date.parse(value))) return new Date(value).toISOString();
+  if (value && typeof value === 'object' && 'toDate' in value && typeof value.toDate === 'function') {
+    return value.toDate().toISOString();
+  }
+  return new Date().toISOString();
 };
 
 export const GeneralAiTutor: React.FC = () => {
@@ -68,6 +82,8 @@ export const GeneralAiTutor: React.FC = () => {
   };
 
   const [messages, setMessages] = useState<Message[]>([]);
+  const [nextMessageCursor, setNextMessageCursor] = useState<number | null>(null);
+  const [isLoadingOlderMessages, setIsLoadingOlderMessages] = useState(false);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -225,7 +241,7 @@ export const GeneralAiTutor: React.FC = () => {
 
     setIsLoadingSessions(true);
     const sessionsCollectionRef = collection(db, 'users', user.uid, 'general_chats', chatPathKey, 'sessions');
-    const q = query(sessionsCollectionRef, orderBy('updatedAt', 'desc'));
+    const q = query(sessionsCollectionRef, orderBy('updatedAt', 'desc'), limit(50));
 
     const unsubscribe = onSnapshot(q, async (querySnapshot) => {
       const loadedSessions: ChatSession[] = [];
@@ -251,12 +267,14 @@ export const GeneralAiTutor: React.FC = () => {
 
               await setDoc(newSessionDocRef, {
                 title,
-                messages: legacyData.messages,
+                messageCount: 0,
+                storageVersion: 2,
                 subjectId: subject,
                 gradeId: selectedGrade,
-                createdAt: legacyData.updatedAt || new Date().toISOString(),
-                updatedAt: legacyData.updatedAt || new Date().toISOString()
+                createdAt: legacyDateToIso(legacyData.updatedAt),
+                updatedAt: legacyDateToIso(legacyData.updatedAt)
               });
+              await migrateLegacyChatMessages(user.uid, chatPathKey, newSessionDocRef.id, legacyData.messages);
 
               await deleteDoc(legacyDocRef);
               return;
@@ -271,11 +289,18 @@ export const GeneralAiTutor: React.FC = () => {
               for (const legacySnap of legacySnapshot.docs) {
                 const legacySessionData = legacySnap.data();
                 const targetDocRef = doc(sessionsCollectionRef, legacySnap.id);
+                const legacyMessages = Array.isArray(legacySessionData.messages) ? legacySessionData.messages : [];
+                const legacyTimestamp = legacyDateToIso(legacySessionData.updatedAt || legacySessionData.createdAt);
                 await setDoc(targetDocRef, {
-                  ...legacySessionData,
+                  title: String(legacySessionData.title || 'Cuộc trò chuyện cũ').slice(0, 120),
+                  messageCount: 0,
+                  storageVersion: 2,
                   gradeId: selectedGrade || 'grade9',
-                  subjectId: subject
+                  subjectId: subject,
+                  createdAt: legacyDateToIso(legacySessionData.createdAt || legacyTimestamp),
+                  updatedAt: legacyTimestamp,
                 });
+                if (legacyMessages.length > 0) await migrateLegacyChatMessages(user.uid, chatPathKey, legacySnap.id, legacyMessages);
                 await deleteDoc(doc(legacySessionsRef, legacySnap.id));
               }
               return;
@@ -316,41 +341,45 @@ export const GeneralAiTutor: React.FC = () => {
       return;
     }
     const currentSession = sessions.find((s) => s.id === activeSessionId);
-    if (currentSession && Array.isArray(currentSession.messages)) {
-      setMessages(currentSession.messages);
-    } else {
-      setMessages([]);
+    let cancelled = false;
+    const loadMessages = async () => {
+      try {
+        if (currentSession && Array.isArray(currentSession.messages) && currentSession.messages.length > 0 && user?.uid) {
+          await migrateLegacyChatMessages(user.uid, chatPathKey, activeSessionId, currentSession.messages);
+        }
+        if (!user?.uid) return;
+        const page = await loadChatMessagesPage(user.uid, chatPathKey, activeSessionId);
+        if (!cancelled) {
+          setMessages(page.messages);
+          setNextMessageCursor(page.nextCursor);
+        }
+      } catch (error) {
+        console.error('Lỗi khi tải trang lịch sử chat:', error);
+        if (!cancelled) setMessages([]);
+      }
+    };
+    void loadMessages();
+    return () => { cancelled = true; };
+  }, [activeSessionId, sessions, isNewSessionDraft, user?.uid, chatPathKey]);
+
+  const handleLoadOlderMessages = async () => {
+    if (!user?.uid || !activeSessionId || nextMessageCursor === null || isLoadingOlderMessages) return;
+    setIsLoadingOlderMessages(true);
+    try {
+      const page = await loadChatMessagesPage(user.uid, chatPathKey, activeSessionId, nextMessageCursor);
+      setMessages(current => [...page.messages, ...current]);
+      setNextMessageCursor(page.nextCursor);
+    } catch (error) {
+      console.error('Lỗi khi tải thêm lịch sử chat:', error);
+    } finally {
+      setIsLoadingOlderMessages(false);
     }
-  }, [activeSessionId, sessions, isNewSessionDraft]);
+  };
 
   // Cuộn xuống tin nhắn cuối
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isLoading]);
-
-  const saveChatHistory = async (sessionIdToSave: string, updatedMsgs: Message[], newTitle?: string) => {
-    if (!user?.uid) return;
-
-    try {
-      const sessionDocRef = doc(db, 'users', user.uid, 'general_chats', chatPathKey, 'sessions', sessionIdToSave);
-
-      const updateData: any = {
-        messages: updatedMsgs,
-        updatedAt: new Date().toISOString()
-      };
-
-      if (newTitle) {
-        updateData.title = newTitle;
-        updateData.subjectId = subject;
-        updateData.gradeId = selectedGrade;
-        updateData.createdAt = new Date().toISOString();
-      }
-
-      await setDoc(sessionDocRef, updateData, { merge: true });
-    } catch (err) {
-      console.error("Lỗi khi lưu lịch sử chat:", err);
-    }
-  };
 
   const handleClearHistory = async () => {
     if (!user?.uid || !activeSessionId) {
@@ -361,8 +390,7 @@ export const GeneralAiTutor: React.FC = () => {
 
     if (window.confirm("Bạn có chắc chắn muốn xóa cuộc trò chuyện này không?")) {
       try {
-        const sessionDocRef = doc(db, 'users', user.uid, 'general_chats', chatPathKey, 'sessions', activeSessionId);
-        await deleteDoc(sessionDocRef);
+        await deleteChatSession(user.uid, chatPathKey, activeSessionId);
         setMessages([]);
         setActiveSessionId(null);
         setIsNewSessionDraft(true);
@@ -379,8 +407,7 @@ export const GeneralAiTutor: React.FC = () => {
 
     if (window.confirm("Bạn có chắc chắn muốn xóa cuộc trò chuyện này không?")) {
       try {
-        const sessionDocRef = doc(db, 'users', user.uid, 'general_chats', chatPathKey, 'sessions', sessionIdToDelete);
-        await deleteDoc(sessionDocRef);
+        await deleteChatSession(user.uid, chatPathKey, sessionIdToDelete);
         if (activeSessionId === sessionIdToDelete) {
           setActiveSessionId(null);
           setIsNewSessionDraft(true);
@@ -417,6 +444,7 @@ export const GeneralAiTutor: React.FC = () => {
     let currentSessionId = activeSessionId;
     let isNewSession = false;
     let sessionTitle = "";
+    let persistedUserMessage = false;
 
     if (isNewSessionDraft || !currentSessionId) {
       if (user?.uid) {
@@ -457,12 +485,16 @@ export const GeneralAiTutor: React.FC = () => {
       const updatedMessages = isNewSession ? [newUserMsg] : [...messages, newUserMsg];
       setMessages(updatedMessages);
 
+      await appendChatMessages(user.uid, chatPathKey, currentSessionId, [newUserMsg], isNewSession ? {
+        title: sessionTitle,
+        subjectId: subject,
+        gradeId: selectedGrade,
+      } : undefined);
+      persistedUserMessage = true;
+
       if (isNewSession) {
-        await saveChatHistory(currentSessionId, updatedMessages, sessionTitle);
         setActiveSessionId(currentSessionId);
         setIsNewSessionDraft(false);
-      } else {
-        await saveChatHistory(currentSessionId, updatedMessages);
       }
 
       hasNewMessages.current = true;
@@ -480,6 +512,9 @@ export const GeneralAiTutor: React.FC = () => {
         systemInstruction,
         useRag: true,
         subjectId: subject,
+        gradeId: selectedGrade,
+        ragVersion: '2026.09',
+        taskType: 'tutor',
         temperature: 0.7,
         skipDiagnosis: true,
         chatId: currentSessionId,
@@ -488,7 +523,7 @@ export const GeneralAiTutor: React.FC = () => {
 
       const finalMessages = [...updatedMessages, { role: 'model', text: reply } as Message];
       setMessages(finalMessages);
-      await saveChatHistory(currentSessionId, finalMessages);
+      await appendChatMessages(user.uid, chatPathKey, currentSessionId, [{ role: 'model', text: reply }]);
     } catch (err: any) {
       console.error("Lỗi khi gửi tin nhắn cho AI:", err);
       setIsUploadingImage(false);
@@ -510,7 +545,17 @@ export const GeneralAiTutor: React.FC = () => {
 
       const finalMessages = [...messages, newUserMsg, { role: 'model', text: errorText } as Message];
       setMessages(finalMessages);
-      await saveChatHistory(currentSessionId, finalMessages);
+      if (currentSessionId && user?.uid) {
+        const failureMessages: Message[] = [
+          ...(persistedUserMessage ? [] : [newUserMsg]),
+          { role: 'model', text: errorText },
+        ];
+        await appendChatMessages(user.uid, chatPathKey, currentSessionId, failureMessages, isNewSession && !persistedUserMessage ? {
+          title: sessionTitle,
+          subjectId: subject,
+          gradeId: selectedGrade,
+        } : undefined);
+      }
     } finally {
       setIsLoading(false);
       setIsUploadingImage(false);
@@ -584,6 +629,9 @@ export const GeneralAiTutor: React.FC = () => {
             onSendSuggestion={(s) => handleSend(undefined, s)}
             onImageClick={(url) => setActiveLightboxUrl(url)}
             onUpgradeClick={() => navigate('/premium')}
+            hasOlderMessages={nextMessageCursor !== null}
+            isLoadingOlderMessages={isLoadingOlderMessages}
+            onLoadOlderMessages={handleLoadOlderMessages}
             messagesEndRef={messagesEndRef}
             isLoggedIn={!!user}
             onRequireLogin={() => setShowAuthModal(true)}

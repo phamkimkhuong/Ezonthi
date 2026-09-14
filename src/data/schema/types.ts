@@ -23,6 +23,20 @@ export type CurriculumReviewStatus =
   | 'approved'
   | 'retired';
 
+export interface SubjectSchemaProfile {
+  kind: 'mathematics' | 'language' | 'science' | 'humanities';
+  dimensions: string[];
+  supportedEvidence: string[];
+}
+
+export interface StudentDataCompatibility {
+  studentDataVersion: 2;
+  identityStrategy: 'stable-question-id';
+  legacyRuntimeAdapter: true;
+  preservesAttemptIds: true;
+  preservesQuestionIds: true;
+}
+
 export interface CourseManifest {
   id: CourseId;
   grade: GradeCode;
@@ -227,6 +241,8 @@ export interface CourseModuleData {
 
 export interface CourseDataBundle {
   schemaVersion: CourseDataSchemaVersion;
+  subjectSchema: SubjectSchemaProfile;
+  studentDataCompatibility: StudentDataCompatibility;
   course: CourseManifest;
   curriculum: CurriculumBundle;
   modules: CourseModuleData[];
@@ -248,6 +264,11 @@ export interface SubjectRuntimeData {
   learningOutcomes: LearningOutcome[];
   learningMisconceptions: LearningMisconception[];
   courseBundle?: CourseDataBundle;
+  dataContract?: {
+    schemaVersion: CourseDataSchemaVersion;
+    studentDataVersion: 2;
+    identityStrategy: 'stable-question-id';
+  };
 }
 
 export type LegacySubjectDataInput = Pick<

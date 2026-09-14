@@ -3,7 +3,6 @@ import { Trophy, RefreshCw, Zap, MapPin } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '../ui/card';
 import { leaderboardService, LeaderboardItem } from '../../services/leaderboardService';
 import { useAppStore } from '../../services/store';
-import { storageService } from '../../services/storage';
 import { cn } from '../../utils/cn';
 
 export const LeaderboardWidget: React.FC = () => {
@@ -33,21 +32,11 @@ export const LeaderboardWidget: React.FC = () => {
       return { isTop20: true };
     }
 
-    // Nếu người dùng chưa lọt vào Top 20, lấy tiến độ local của họ để tính điểm XP
-    const userProgress = storageService.getProgress(currentUserId);
-    const userAttempts = storageService.getAttempts(currentUserId);
-    const totalAttempts = userAttempts.length;
-
-    let totalStudySeconds = 0;
-    userAttempts.forEach(a => {
-      totalStudySeconds += (a.timeSpent || 0);
-    });
-
-    const correctAttempts = userAttempts.filter(a => a.isCorrect).length;
-    const totalMinutes = Math.round(totalStudySeconds / 60);
-    const masteredCount = userProgress.completedLessons.length;
-    const timeXp = Math.min(totalMinutes * 2, 100);
-    const xpScore = (correctAttempts * 15) + (masteredCount * 100) + timeXp;
+    const verified = userData?.stats?.source === 'server-checked-v1' ? userData.stats : {};
+    const totalAttempts = verified.totalAttempts || 0;
+    const totalMinutes = Math.round((verified.totalStudySeconds || 0) / 60);
+    const masteredCount = verified.source ? (userData?.completedCount || 0) : 0;
+    const xpScore = verified.xpScore || 0;
 
     // Tính khoảng cách XP tới vị trí #20
     const rank20 = rankings[rankings.length - 1];
@@ -58,7 +47,6 @@ export const LeaderboardWidget: React.FC = () => {
       isTop20: false,
       userId: currentUserId,
       name: user.displayName || 'Bạn',
-      email: user.email || '',
       avatar: user.photoURL || `https://api.dicebear.com/7.x/adventurer/svg?seed=${currentUserId}`,
       totalAttempts,
       totalMinutes,
@@ -66,7 +54,7 @@ export const LeaderboardWidget: React.FC = () => {
       xpScore,
       xpNeeded
     };
-  }, [user, rankings]);
+  }, [user, userData, rankings]);
 
   return (
     <Card className="border border-border/50 bg-card rounded-3xl shadow-lg overflow-hidden">

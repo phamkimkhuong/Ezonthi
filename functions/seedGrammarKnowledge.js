@@ -155,6 +155,7 @@ async function run() {
 
   const db = admin.firestore();
   const collectionRef = db.collection("knowledge_base");
+  const contentVersion = process.env.RAG_CONTENT_VERSION || '2026.09';
 
   const topics = loadGrammarTopics();
   console.log(`✓ Đã nạp ${topics.length} Chủ điểm ngữ pháp từ mã nguồn.`);
@@ -218,6 +219,14 @@ ${exceptionBlocks.map(b => formatBlockToText(b)).join("\n\n")}`;
           if (docSnap.exists) {
             const existingData = docSnap.data();
             if (existingData && existingData.contentHash === currentHash) {
+              await collectionRef.doc(chunk.chunkId).set({
+                grade: 'grade9', gradeId: 'grade9', subjectId: 'english',
+                contentVersion, status: 'published',
+                sourceId: 'course:grade9:english',
+                sourceTitle: 'Tiếng Anh Lớp 9 — dữ liệu ngữ pháp nội bộ',
+                sourceLocator: `${lesson.id}/${chunk.chunkType}`,
+                updatedAt: admin.firestore.FieldValue.serverTimestamp()
+              }, { merge: true });
               console.log(`  - [Bỏ qua] Đã tồn tại & không đổi: ${chunk.title}`);
               totalSkipped++;
               continue;
@@ -242,6 +251,12 @@ ${exceptionBlocks.map(b => formatBlockToText(b)).join("\n\n")}`;
           await collectionRef.doc(chunk.chunkId).set({
             subjectId: "english",
             grade: "grade9",
+            gradeId: 'grade9',
+            contentVersion,
+            status: 'published',
+            sourceId: 'course:grade9:english',
+            sourceTitle: 'Tiếng Anh Lớp 9 — dữ liệu ngữ pháp nội bộ',
+            sourceLocator: `${lesson.id}/${chunk.chunkType}`,
             parentId: lesson.id,
             parentTitle: `${topic.title} - ${lesson.title}`,
             chunkType: chunk.chunkType,

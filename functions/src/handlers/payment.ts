@@ -1,6 +1,11 @@
+import { getAuth } from 'firebase-admin/auth';
+import { randomInt } from 'node:crypto';
 import { onCall, onRequest, HttpsError } from "firebase-functions/v2/https";
 import { db, payOS } from "../config.js";
 import { FieldValue } from "firebase-admin/firestore";
+import { requireTeacher } from "../services/access.js";
+import { premiumPatch, trialPatch } from "../services/entitlements.js";
+import { settleVerifiedPayment } from "../services/paymentSettlement.js";
 
 export const validateAffiliateCode = onCall({
   cors: true,
@@ -99,7 +104,7 @@ export const createPaymentLink = onCall({
   let affiliateCode: string | null = null;
 
   const description = planId === "plan_3m" ? "Premium ezonthi 3M" : "Premium ezonthi 12M";
-  const orderCode = Number(String(Date.now()).slice(-7) + String(Math.floor(Math.random() * 900 + 100)));
+  const orderCode = Date.now() * 1000 + randomInt(1000);
 
   // Tra cứu và kiểm tra mã giảm giá nếu người dùng nhập
   if (rawAffiliateCode && typeof rawAffiliateCode === "string") {
@@ -109,7 +114,7 @@ export const createPaymentLink = onCall({
     if (codeDoc.exists) {
       const codeData = codeDoc.data() || {};
       const isExpired = codeData.expiresAt && new Date(codeData.expiresAt) < new Date();
-      const isMaxed = typeof codeData.maxUsage === "number" && (codeData.usageCount || 0) >= codeData.maxUsage;
+      const isMaxed = typeof codeData.maxUsage === "number" && codeData.maxUsage > 0 && (codeData.usageCount || 0) >= codeData.maxUsage;
 
       if (codeData.isActive !== false && !isExpired && !isMaxed) {
         affiliateCode = cleanCode;
@@ -142,7 +147,7 @@ export const createPaymentLink = onCall({
   try {
     const response = await payOS.paymentRequests.create(paymentData);
 
-    await db.collection("transactions").doc(String(orderCode)).set({
+    await db.collection("transactions").doc(String(orderCode)).create({
       orderCode,
       userId: uid,
       email,
@@ -173,142 +178,29 @@ export const createPaymentLink = onCall({
   }
 });
 
-export const payosWebhook = onRequest({
-  cors: true,
-}, async (req, res) => {
-  if (!payOS) {
-    res.status(500).json({
-      success: false,
-      message: "PayOS is not configured on the server",
-    });
+export const payosWebhook = onRequest({ cors: false }, async (req, res) => {
+  if (req.method !== 'POST') { res.status(405).send('Method not allowed'); return; }
+  if (!payOS) { res.status(503).json({ success: false }); return; }
+  let payment;
+  try {
+    payment = await payOS.webhooks.verify(req.body);
+  } catch {
+    res.status(400).json({ success: false, message: 'Invalid webhook signature or payload' });
     return;
   }
-
   try {
-    const body = req.body;
-
-    if (!body || !body.data || !body.signature) {
-      res.status(200).json({
-        success: true,
-        message: "Webhook ping received successfully",
-      });
-      return;
-    }
-
-    const verifiedData = (await payOS.webhooks.verify(body)) as any;
-    const { orderCode, status } = verifiedData;
-
-    if (status === "PAID") {
-      const txRef = db.collection("transactions").doc(String(orderCode));
-      const txDoc = await txRef.get();
-
-      if (txDoc.exists) {
-        const txData = txDoc.data();
-        if (txData && txData.status !== "completed") {
-          const batch = db.batch();
-
-          batch.update(txRef, {
-            status: "completed",
-            commissionStatus: txData.sellerUid ? "credited" : null,
-            updatedAt: new Date(),
-          });
-
-          // Tính toán số ngày cộng thêm vào hạn dùng Premium
-          const durationMonths = txData.durationMonths || (txData.planId === "plan_3m" ? 3 : 12);
-          const userRef = db.collection("users").doc(txData.userId);
-          const userDoc = await userRef.get();
-          let currentExpiry = new Date();
-
-          if (userDoc.exists && userDoc.data()?.premiumUntil) {
-            const existingExpiry = new Date(userDoc.data()?.premiumUntil);
-            if (existingExpiry > currentExpiry) {
-              currentExpiry = existingExpiry;
-            }
-          }
-
-          const addedMs = durationMonths === 3 ? 90 * 24 * 60 * 60 * 1000 : 365 * 24 * 60 * 60 * 1000;
-          const newExpiryDate = new Date(currentExpiry.getTime() + addedMs);
-
-          const planName = durationMonths === 12 ? "Gói 12 Tháng (VIP 1 Năm)" : "Gói 3 Tháng";
-
-          batch.set(userRef, {
-            isPremium: true,
-            role: "premium",
-            trialActivated: false,
-            premiumPlan: planName,
-            planName: planName,
-            premiumUntil: newExpiryDate.toISOString(),
-            premiumUpdatedAt: new Date(),
-          }, { merge: true });
-
-          // Cộng tiền hoa hồng cho Seller nguyên tử (atomic)
-          if (txData.sellerUid && txData.commissionAmount > 0) {
-            const walletRef = db.collection("affiliateWallets").doc(txData.sellerUid);
-            batch.set(walletRef, {
-              sellerUid: txData.sellerUid,
-              balance: FieldValue.increment(txData.commissionAmount),
-              totalEarned: FieldValue.increment(txData.commissionAmount),
-              updatedAt: new Date(),
-            }, { merge: true });
-          }
-
-          // Tăng lượt sử dụng cho mã giảm giá
-          if (txData.affiliateCode) {
-            const codeRef = db.collection("affiliateCodes").doc(txData.affiliateCode);
-            batch.update(codeRef, {
-              usageCount: FieldValue.increment(1),
-            });
-          }
-
-          await batch.commit();
-          console.log(`[Webhook] Nâng cấp Premium (${durationMonths}M - Hạn tới ${newExpiryDate.toISOString()}) cho user: ${txData.userId}, orderCode: ${orderCode}`);
-        }
-      } else {
-        console.warn(`[Webhook] Không tìm thấy bản ghi giao dịch cho orderCode: ${orderCode}`);
-      }
-    }
-
-    res.status(200).json({
-      success: true,
-      message: "Webhook processed successfully",
-    });
-  } catch (error: any) {
-    console.error("Lỗi xử lý webhook PayOS:", error);
-    res.status(400).json({
-      success: false,
-      message: `Invalid signature or error: ${error.message}`,
-    });
+    const status = await settleVerifiedPayment(db, payment);
+    res.status(200).json({ success: true, status });
+  } catch (error) {
+    console.error('Payment settlement failed', error);
+    res.status(500).json({ success: false, message: 'Payment could not be settled' });
   }
 });
-
 
 export const grantPremiumByEmail = onCall({
   cors: true,
 }, async (request) => {
-  if (!request.auth) {
-    throw new HttpsError("unauthenticated", "Yêu cầu đăng nhập để thực hiện tác vụ này.");
-  }
-
-  const callerUid = request.auth.uid;
-
-  // Kiểm tra quyền giáo viên
-  const isBootstrap = callerUid === "hzSKwkaroTR1LKcXp09E5wL7F6f1";
-  let isAuthorizedTeacher = isBootstrap;
-
-  if (!isAuthorizedTeacher) {
-    const teacherDoc = await db.collection("teachers").doc(callerUid).get();
-    if (
-      teacherDoc.exists &&
-      teacherDoc.data()?.active === true &&
-      teacherDoc.data()?.role === "teacher"
-    ) {
-      isAuthorizedTeacher = true;
-    }
-  }
-
-  if (!isAuthorizedTeacher) {
-    throw new HttpsError("permission-denied", "Chỉ giáo viên mới có quyền thực hiện tác vụ này.");
-  }
+  const callerUid = await requireTeacher(request);
 
   const { studentEmail, packageType = "plan_12m" } = request.data;
   if (!studentEmail || typeof studentEmail !== "string") {
@@ -317,20 +209,11 @@ export const grantPremiumByEmail = onCall({
 
   const targetEmail = studentEmail.trim().toLowerCase();
 
-  // Tìm học sinh theo email
-  const usersRef = db.collection("users");
-  const querySnapshot = await usersRef.where("email", "==", targetEmail).get();
-
-  if (querySnapshot.empty) {
-    throw new HttpsError(
-      "not-found",
-      `Không tìm thấy tài khoản học sinh với email: ${studentEmail}. Học sinh cần đăng nhập vào hệ thống ít nhất một lần để tạo tài khoản trước.`
-    );
-  }
-
-  const userDoc = querySnapshot.docs[0];
-  const userRef = userDoc.ref;
-  const userData = userDoc.data();
+  // Firebase Auth owns identity; profile email is never used as grant authority.
+  const identity = await getAuth().getUserByEmail(targetEmail).catch(() => null);
+  if (!identity || identity.disabled) throw new HttpsError('not-found', 'Không tìm thấy tài khoản đang hoạt động với email này.');
+  const userRef = db.collection('users').doc(identity.uid);
+  const userData = (await userRef.get()).data() || {};
 
   // Xác định thời hạn & tên gói dựa vào packageType
   let durationMs: number;
@@ -356,25 +239,24 @@ export const grantPremiumByEmail = onCall({
     isTrial = false;
   }
 
-  let currentExpiry = new Date();
-  if (userData.premiumUntil && !isTrial) {
-    const existingExpiry = new Date(userData.premiumUntil);
-    if (existingExpiry > currentExpiry) {
-      currentExpiry = existingExpiry;
-    }
-  }
-  const newExpiryDate = new Date(currentExpiry.getTime() + durationMs);
-
-  await userRef.set({
-    isPremium: true,
-    role: "premium",
-    trialActivated: isTrial,
-    premiumPlan: planName,
-    planName: planName,
-    premiumUntil: packageType === "permanent" ? null : newExpiryDate.toISOString(),
-    premiumUpdatedAt: new Date(),
-    grantedByTeacher: callerUid,
-  }, { merge: true });
+  await db.runTransaction(async transaction => {
+    const current = (await transaction.get(userRef)).data();
+    const now = Date.now();
+    const entitlement = isTrial
+      ? trialPatch(current, now)
+      : packageType === 'permanent'
+        ? { isPremium: true, premiumPermanent: true, premiumUntil: null }
+        : premiumPatch(current, durationMs / 86_400_000, now);
+    transaction.set(userRef, {
+      ...entitlement,
+      trialConsumed: isTrial || current?.trialConsumed === true || current?.trialActivated === true || Boolean(current?.trialStartDate),
+      trialActivated: isTrial,
+      premiumPlan: planName,
+      planName,
+      premiumUpdatedAt: new Date(now),
+      grantedByTeacher: callerUid,
+    }, { merge: true });
+  });
 
   return {
     success: true,
@@ -397,7 +279,7 @@ export const requestPayout = onCall({
   const amount = Number(request.data?.amount);
   const bankAccount = request.data?.bankAccount;
 
-  if (!amount || isNaN(amount) || amount < 100000) {
+  if (!Number.isSafeInteger(amount) || amount < 100000) {
     throw new HttpsError("invalid-argument", "Số tiền rút tối thiểu là 100.000 VNĐ.");
   }
 
@@ -469,28 +351,7 @@ export const requestPayout = onCall({
 export const processPayoutRequest = onCall({
   cors: true,
 }, async (request) => {
-  if (!request.auth) {
-    throw new HttpsError("unauthenticated", "Yêu cầu đăng nhập.");
-  }
-
-  const callerUid = request.auth.uid;
-  const isBootstrap = callerUid === "hzSKwkaroTR1LKcXp09E5wL7F6f1";
-  let isAuthorizedTeacher = isBootstrap;
-
-  if (!isAuthorizedTeacher) {
-    const teacherDoc = await db.collection("teachers").doc(callerUid).get();
-    if (
-      teacherDoc.exists &&
-      teacherDoc.data()?.active === true &&
-      teacherDoc.data()?.role === "teacher"
-    ) {
-      isAuthorizedTeacher = true;
-    }
-  }
-
-  if (!isAuthorizedTeacher) {
-    throw new HttpsError("permission-denied", "Chỉ giáo viên mới có quyền duyệt yêu cầu rút tiền.");
-  }
+  const callerUid = await requireTeacher(request);
 
   const { requestId, action, rejectReason } = request.data || {};
   if (!requestId || (action !== "approve" && action !== "reject")) {
@@ -523,7 +384,11 @@ export const processPayoutRequest = onCall({
     const currentPending = Number(walletData.pendingBalance || 0);
     const currentBalance = Number(walletData.balance || 0);
 
-    const newPendingBalance = Math.max(0, currentPending - amount);
+    if (!Number.isSafeInteger(amount) || amount <= 0 || !Number.isSafeInteger(currentPending) || currentPending < amount ||
+        !Number.isSafeInteger(currentBalance) || currentBalance < 0 || !Number.isSafeInteger(currentBalance + amount)) {
+      throw new HttpsError('failed-precondition', 'Số dư hoặc yêu cầu rút tiền không hợp lệ; cần đối soát.');
+    }
+    const newPendingBalance = currentPending - amount;
 
     if (action === "approve") {
       // Admin đã chuyển khoản thành công -> Trừ pendingBalance
@@ -560,4 +425,3 @@ export const processPayoutRequest = onCall({
     }
   });
 });
-

@@ -12,6 +12,8 @@ Nền tảng công nghệ giáo dục (EdTech) học tập và ôn luyện cá n
 🔗 **Website chính thức**: [ezonthi.com](https://ezonthi.com)  
 🔗 **Live Hosting**: [on-thi-vao-10.web.app](https://on-thi-vao-10.web.app)
 
+Runtime chuẩn của dự án là **Node.js 22 + npm 10.9**. Cài đặt bằng `npm ci` ở root và `npm --prefix functions ci`; xem [hướng dẫn phát triển và phát hành](docs/development-and-release.md). Route học chuẩn mang đủ lớp và môn, ví dụ `/app/grade11/english/roadmap`.
+
 ---
 
 ## ✨ Điểm Nổi Bật
@@ -45,14 +47,14 @@ Hệ thống được biên soạn bám sát **Chương trình GDPT 2018** (các
 
 ### 2. Khối Lớp 10 — Nền Tảng & Chuyên Đề Nâng Cao
 - **Toán học 10**: Mệnh đề, Tập hợp, Bất phương trình, Lượng giác, Vectơ, Thống kê, Bất đẳng thức.
-  - ⭐ **Chuyên đề Toán 10 Nâng cao** (`/advanced-math-10`): 192 bài tập nâng cao phân hóa, bao gồm 32 bài mức độ Olympic.
+  - ⭐ **Chuyên đề Toán 10 Nâng cao** (`/app/grade10/math/advanced`): 192 bài tập nâng cao phân hóa, bao gồm 32 bài mức độ Olympic.
 - **Tiếng Anh 10**: Từ vựng & Ngữ pháp nâng cao, Kỹ năng đọc hiểu theo chủ điểm GDPT 2018.
 - **Hóa học 10**: 9 Module toàn diện từ Cầu nối THCS đến Cấu tạo nguyên tử, Bảng tuần hoàn, Liên kết hóa học, Phản ứng Oxi hóa - Khử, Tốc độ phản ứng, Năng lượng hóa học và Nhóm Halogen.
-  - ⭐ **Chuyên đề Hóa 10 Nâng cao** (`/advanced-chemistry-10`): Chuyên đề nâng cao chuyên sâu.
+  - ⭐ **Chuyên đề Hóa 10 Nâng cao** (`/app/grade10/chemistry/advanced`): Chuyên đề nâng cao chuyên sâu.
 - **Vật lý 10**: Động học chất điểm, Lực và chuyển động, Năng lượng, Động lượng, Chuyển động tròn.
-  - ⭐ **Chuyên đề Vật lý 10 Nâng cao** (`/advanced-physics-10`): 168 bài tập chuyên sâu phân hóa, bao gồm 28 bài Olympic.
+  - ⭐ **Chuyên đề Vật lý 10 Nâng cao** (`/app/grade10/physics/advanced`): 168 bài tập chuyên sâu phân hóa, bao gồm 28 bài Olympic.
 - **Sinh học 10**: Sinh học tế bào, Vi sinh vật và Virus, Cấu tạo & Chức năng bào quan.
-  - ⭐ **Chuyên đề Sinh 10 Nâng cao** (`/advanced-biology-10`): Các chuyên đề sinh học nâng cao.
+  - ⭐ **Chuyên đề Sinh 10 Nâng cao** (`/app/grade10/biology/advanced`): Các chuyên đề sinh học nâng cao.
 - **Lịch sử 10**: Lịch sử thế giới và Lịch sử Việt Nam theo định hướng phát triển năng lực.
 
 ### 3. Khối Lớp 11 — Toàn Diện 5 Môn Học Cốt Lõi
@@ -113,7 +115,7 @@ Grade (grade9 | grade10 | grade11)
 
 ### 3. Công Thức Đánh Giá Năng Lực (Gamification)
 
-- **Mastery Score (0 - 100)**: `(Tỷ lệ đúng 8 lần làm gần nhất × 70) + (Điểm thưởng/phạt chuỗi Streak ± 30)`.
+- **Mastery Score (0 - 100)**: tỷ lệ đúng trên kết quả đã chấm mới nhất của từng câu khác nhau. Cần đủ 5 câu có bằng chứng (hoặc toàn bộ câu nếu dạng bài có ít hơn 5); XP và streak không tham gia mastery.
 - **Xếp hạng Sao**: `0-39` → 0⭐ | `40-59` → 1⭐ | `60-79` → 2⭐ | `80-100` → 3⭐.
 - **Hệ thống XP & Cấp độ**: Cộng XP tức thì khi làm đúng theo độ khó câu hỏi, tự động thăng cấp (Level) và duy trì chuỗi ngày học liên tục (Streak).
 
@@ -214,14 +216,14 @@ on-thi-vao-10/
 ## ⚡ Hướng Dẫn Cài Đặt & Phát Triển
 
 ### Yêu Cầu Môi Trường
-- **Node.js**: Phiên bản 18.x hoặc 20.x trở lên
-- **npm**: Phiên bản 9.x trở lên (hoặc **pnpm**)
+- **Node.js**: Phiên bản 22.x
+- **npm**: Phiên bản 10.9.x
 
 ### Các Lệnh Phát Triển Thường Dùng
 
 ```bash
 # 1. Cài đặt các thư viện phụ thuộc
-npm install
+npm ci
 
 # 2. Khởi chạy máy chủ phát triển (Dev Server)
 npm run dev
@@ -234,41 +236,34 @@ npm run lint
 
 # 5. Xem trước bản build production tại local
 npm run preview
+
+# 6. Chạy toàn bộ cổng phát hành
+npm run validate:release
 ```
 
 ---
 
 ## 🧪 Hệ Thống Scripts Kiểm Tra Dữ Liệu (QA & Validation)
 
-Dự án sở hữu bộ scripts tự động hóa giúp kiểm định tính toàn vẹn dữ liệu trước khi phát hành:
+Dự án sở hữu bộ scripts tự động hóa Master Validator giúp kiểm định toàn diện chất lượng mã nguồn và tính toàn vẹn dữ liệu:
 
 ```bash
-# Kiểm tra cú pháp công thức Toán KaTeX/LaTeX toàn hệ thống
-npm run validate:latex
+# 1. Kiểm tra chất lượng mã (type-check + lint)
+npm run check
 
-# Kiểm định dữ liệu khối Lớp 10
-npm run validate:math10               # Toán 10 nền tảng & nâng cao
-npm run validate:english10            # Tiếng Anh 10
-npm run validate:chemistry10          # Hóa học 10 nền tảng & nâng cao
-npm run validate:physics10            # Vật lý 10 nền tảng & nâng cao
-npm run validate:biology10            # Sinh học 10 nền tảng & nâng cao
-npm run validate:history10            # Lịch sử 10
+# 2. Kiểm định toàn bộ 14 bộ dữ liệu môn học & quy tắc (Dashboard Runner)
+npm run validate:content
 
-# Kiểm định dữ liệu khối Lớp 11
-npm run validate:math11               # Toán 11
-npm run validate:english11            # Tiếng Anh 11
-npm run validate:chemistry11          # Hóa học 11
-npm run validate:physics11            # Vật lý 11
-npm run validate:biology11            # Sinh học 11
+# Lọc nhanh theo khối lớp hoặc môn học:
+npm run validate:grade10              # Kiểm định toàn bộ môn Lớp 10
+npm run validate:grade11              # Kiểm định toàn bộ môn Lớp 11
+npm run validate:content -- --subject=math   # Kiểm định riêng môn Toán
 
-# Audit & sinh phương án trắc nghiệm Toán
-npm run generate:math10-choices
-npm run audit:math10-practice
-npm run generate:math11-choices
-npm run audit:math11-practice
+# 3. Kiểm thử logic hệ thống (Routes, đồng bộ tiến độ, thanh toán)
+npm run test
 
-# Kiểm tra chất lượng SEO trước khi phát hành
-npm run audit:seo
+# 4. Kiểm tra trước khi phát hành (Gatekeeper: Check + Test + Content + Build)
+npm run validate:release
 ```
 
 ---
@@ -315,6 +310,7 @@ Khi bổ sung một môn học mới tại `src/data/grade{X}/{subject}/`, cần
 - [question-authoring-guide.md](file:///d:/a_duan/on-thi-vao-10/docs/question-authoring-guide.md): Cẩm nang soạn thảo câu hỏi trắc nghiệm và tự luận.
 - [learning-roadmap.md](file:///d:/a_duan/on-thi-vao-10/docs/learning-roadmap.md): Khung lộ trình học tập 3 chặng.
 - [student-learning-flow.md](file:///d:/a_duan/on-thi-vao-10/docs/student-learning-flow.md): Sơ đồ luồng trải nghiệm người học.
+- [phase4-scale-and-metrics.md](docs/phase4-scale-and-metrics.md): Hợp đồng phân trang, quota AI, RAG V2, schema V4 và cổng số liệu trước khi mở rộng.
 
 ---
 
@@ -323,3 +319,16 @@ Khi bổ sung một môn học mới tại `src/data/grade{X}/{subject}/`, cần
 
 > [!IMPORTANT]
 > Khi soạn thảo nội dung môn **Hóa học** theo chuẩn **GDPT 2018**: Thể tích mol của chất khí ở điều kiện chuẩn (đkc: 25°C, 1 bar) là **$24,79\text{ lít/mol}$**, tuyệt đối không dùng hằng số cũ $22,4\text{ lít/mol}$.
+
+### Kiểm thử và phát hành bảo mật
+
+Chi tiết thay đổi và giới hạn dữ liệu cũ: [docs/security-phase1.md](docs/security-phase1.md).
+
+- `npm run test:security`: build Functions và chạy kiểm thử quyền/giao dịch trên Firebase Emulator (cần Java, cổng 8180 và 9299 trống).
+- `npm run type-check` và `npm run lint`: kiểm tra TypeScript/ESLint.
+- `npm run build`: build giao diện, sitemap và trang SEO.
+- `npm --prefix functions run build`: sinh catalog đáp án từ dữ liệu dự án và biên dịch backend. Cần cài dependency ở cả thư mục gốc lẫn `functions`.
+- Phát hành backend trước: `firebase deploy --only functions --project on-thi-vao-10-7d87c`.
+- Sau đó phát hành rules/indexes và giao diện: `firebase deploy --only firestore,storage,hosting --project on-thi-vao-10-7d87c`.
+
+Không đưa API key Resend/PayOS vào frontend. Backend nhận cấu hình qua môi trường Functions. Không khôi phục rules cũ để xử lý lỗi tương thích; xem hướng dẫn dữ liệu cũ trong tài liệu bảo mật.

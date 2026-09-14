@@ -17,6 +17,8 @@ export interface GeminiProxyRequest {
   systemInstruction?: string;
   useRag?: boolean;
   subjectId?: string;
+  gradeId?: string;
+  ragVersion?: string;
   image?: {
     mimeType: string;
     data: string;
@@ -27,6 +29,7 @@ export interface GeminiProxyRequest {
   skipDiagnosis?: boolean;
   topicName?: string;
   chatId?: string;
+  taskType?: "tutor" | "proof_grading" | "rewrite" | "summary" | "diagnose" | "consolidate";
 }
 
 export interface Transaction {

@@ -93,7 +93,7 @@ export const GrammarQuizView: React.FC<GrammarQuizViewProps> = ({
     setScore(0);
     setIsCompleted(false);
     setUserAnswers([]);
-  }, [lesson.id]);
+  }, [lesson]);
 
   const currentQ = questions[currentIndex];
   const totalQ = questions.length;

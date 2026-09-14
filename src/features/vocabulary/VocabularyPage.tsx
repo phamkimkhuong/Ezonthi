@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../../services/store';
 import { ROUTES } from '../../constants/routes';
@@ -125,15 +125,15 @@ export const VocabularyPage: React.FC = () => {
     dictionaryService.playAudio(word);
   };
 
-  const handleNextCard = () => {
+  const handleNextCard = useCallback(() => {
     setIsFlipped(false);
     setCurrentIndex(prev => (prev + 1) % (filteredVocab.length || 1));
-  };
+  }, [filteredVocab.length]);
 
-  const handlePrevCard = () => {
+  const handlePrevCard = useCallback(() => {
     setIsFlipped(false);
     setCurrentIndex(prev => (prev - 1 + filteredVocab.length) % (filteredVocab.length || 1));
-  };
+  }, [filteredVocab.length]);
 
   // Keyboard navigation for Flashcards (ArrowLeft, ArrowRight, Space)
   useEffect(() => {
@@ -152,7 +152,7 @@ export const VocabularyPage: React.FC = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedUnit, mode, filteredVocab.length]);
+  }, [selectedUnit, mode, handleNextCard, handlePrevCard]);
 
   const handleQuizAnswer = (option: string) => {
     if (selectedQuizOption !== null || !currentQuizItem) return;

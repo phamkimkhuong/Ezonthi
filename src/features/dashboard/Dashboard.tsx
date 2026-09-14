@@ -26,7 +26,7 @@ import { calculateStudentStats } from '../../utils/stats';
 
 export const Dashboard: React.FC = () => {
   const navigate = useNavigate();
-  const { selectedSubject, selectedGrade, user, progressVersion, isPremium, trialActivated, premiumUntil } = useAppStore();
+  const { selectedSubject, selectedGrade, user, userData, progressVersion, isPremium, trialActivated, premiumUntil } = useAppStore();
   const subjectTheme = getSubjectTheme(selectedSubject);
   void progressVersion;
 
@@ -232,7 +232,7 @@ export const Dashboard: React.FC = () => {
       {user && (
         <>
           {/* Chưa Premium & Chưa dùng thử */}
-          {!isPremium && !trialActivated && (
+          {!isPremium && !trialActivated && !userData?.trialConsumed && (
             <div className="bg-brand-action/7 border border-brand-action/20 border-l-4 border-l-brand-action rounded-xl p-5 flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="space-y-1 text-left">
                 <h3 className="text-sm font-black text-foreground flex items-center gap-1.5">

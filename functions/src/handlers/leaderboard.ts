@@ -5,7 +5,6 @@ export interface LeaderboardItem {
   rank: number;
   userId: string;
   name: string;
-  email: string;
   avatar: string;
   totalAttempts: number;
   totalMinutes: number;
@@ -38,19 +37,16 @@ export const updateLeaderboardDaily = onSchedule({
       const data = docSnap.data();
       const stats = data.stats || {};
       const totalAttempts = stats.totalAttempts || 0;
-      const correctAttempts = typeof stats.correctAttempts === 'number' ? stats.correctAttempts : Math.round(totalAttempts * 0.7);
       const totalStudySeconds = stats.totalStudySeconds || 0;
       const totalMinutes = Math.round(totalStudySeconds / 60);
       const completedLessons = Array.isArray(data.completedLessons) ? data.completedLessons : [];
-      const masteredCount = completedLessons.length;
-      const timeXp = Math.min(totalMinutes * 2, 100);
-      const xpScore = stats.xpScore || ((correctAttempts * 15) + (masteredCount * 100) + timeXp);
+      const masteredCount = typeof data.completedCount === "number" ? data.completedCount : completedLessons.length;
+      const xpScore = stats.xpScore || 0;
 
       if (totalAttempts > 0 || totalMinutes > 0 || masteredCount > 0 || xpScore > 0) {
         rawList.push({
           userId: docSnap.id,
           name: data.name || data.displayName || "Học sinh",
-          email: data.email || "",
           avatar: data.avatar || `https://api.dicebear.com/7.x/adventurer/svg?seed=${docSnap.id}`,
           totalAttempts,
           totalMinutes,
@@ -68,12 +64,13 @@ export const updateLeaderboardDaily = onSchedule({
       rank: index + 1
     }));
 
-    await db.collection("system_stats").doc("leaderboard").set({
+    await db.collection("system_stats").doc("leaderboard_public").set({
       lastUpdated: new Date().toISOString(),
       period: "daily",
       rankings: top20
     });
   } catch (e) {
     console.error("❌ Lỗi khi cập nhật Bảng Xếp Hạng:", e);
+    throw e;
   }
 });
