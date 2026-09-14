@@ -32,12 +32,8 @@ jobs:
           java-version: 21
       - run: npm ci
       - run: npm --prefix functions ci
-      - run: npm run type-check
-      - run: npm run lint
-      - run: npm run test:learning
-      - run: npm run test:routes
-      - run: npm run test:phase4
-      - run: npm run validate:content-phase3
-      - run: npm run validate:latex
+      - run: npm run check
+      - run: npm run test
+      - run: npm run validate:content
       - run: npm run test:security
       - run: npm run build
