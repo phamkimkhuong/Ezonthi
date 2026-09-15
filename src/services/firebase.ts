@@ -1,5 +1,11 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import {
+  initializeAuth,
+  getAuth,
+  indexedDBLocalPersistence,
+  browserLocalPersistence,
+  browserSessionPersistence
+} from 'firebase/auth';
 import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getFunctions } from 'firebase/functions';
@@ -19,8 +25,38 @@ const firebaseConfig = {
 // Khởi tạo Firebase
 export const app = initializeApp(firebaseConfig);
 
-// Khởi tạo Auth
-export const auth = getAuth(app);
+// Khởi tạo Auth với multi-tier persistence (IndexedDB -> LocalStorage -> SessionStorage)
+// Giúp tự động fallback nếu IndexedDB bị trình duyệt đóng hoặc ẩn.
+let authInstance: ReturnType<typeof getAuth>;
+try {
+  authInstance = initializeAuth(app, {
+    persistence: [
+      indexedDBLocalPersistence,
+      browserLocalPersistence,
+      browserSessionPersistence
+    ]
+  });
+} catch {
+  authInstance = getAuth(app);
+}
+export const auth = authInstance;
+
+// Tự động hấp thụ và triệt tiêu lỗi transient IndexedDB của trình duyệt (Database is closing/hidden)
+// ngăn chặn lỗi này làm vỡ unhandled rejection hoặc làm kẹt promise auth của React SPA.
+if (typeof window !== 'undefined') {
+  window.addEventListener('unhandledrejection', (event) => {
+    const reason = event?.reason;
+    const msg = reason?.message || String(reason || '');
+    if (
+      msg.includes('Database is closing') ||
+      msg.includes('The database connection is closing') ||
+      (reason?.name === 'InvalidStateError' && msg.includes('closing'))
+    ) {
+      event.preventDefault();
+      console.warn('[Firebase Auth] Đã hấp thụ lỗi IndexedDB closing/hidden từ trình duyệt:', msg);
+    }
+  });
+}
 
 // Khởi tạo Firebase Storage để lưu ảnh bài làm tự luận
 export const firebaseStorage = getStorage(app);
@@ -95,4 +131,3 @@ export const logCustomEvent = (eventName: string, params?: Record<string, any>) 
     analyticsApi.logEvent(analytics, eventName, params);
   }
 };
-

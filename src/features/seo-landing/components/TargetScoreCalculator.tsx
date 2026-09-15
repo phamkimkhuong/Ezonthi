@@ -365,7 +365,7 @@ export const TargetScoreCalculator: React.FC = () => {
                   onClick={() => setSubject('math')}
                   className={`p-3 rounded-2xl border text-center transition-all cursor-pointer ${
                     subject === 'math'
-                      ? 'border-blue-500 bg-blue-500/10 text-primary font-black ring-1 ring-blue-500/30'
+                      ? 'border-blue-500/40 bg-blue-500/10 text-blue-600 dark:text-blue-400 font-black ring-1 ring-blue-500/30'
                       : 'border-border bg-secondary/40 hover:bg-secondary/70 text-foreground font-bold'
                   }`}
                 >
@@ -376,7 +376,7 @@ export const TargetScoreCalculator: React.FC = () => {
                   onClick={() => setSubject('english')}
                   className={`p-3 rounded-2xl border text-center transition-all cursor-pointer ${
                     subject === 'english'
-                      ? 'border-amber-500 bg-amber-500/10 text-amber-600 dark:text-amber-400 font-black ring-1 ring-amber-500/30'
+                      ? 'border-amber-500/40 bg-amber-500/10 text-amber-600 dark:text-amber-400 font-black ring-1 ring-amber-500/30'
                       : 'border-border bg-secondary/40 hover:bg-secondary/70 text-foreground font-bold'
                   }`}
                 >

@@ -41,90 +41,148 @@ const PrivateAppShell: React.FC = () => {
     });
 
     let unsubscribeUserDoc: (() => void) | null = null;
+    let isSettled = false;
 
-    const unsubscribeAuth = onAuthStateChanged(auth, async (user) => {
-      setUser(user);
-      if (user) {
-        setAnalyticsUser(user.uid);
+    const markAuthSettled = () => {
+      if (isSettled) return;
+      isSettled = true;
+      setAuthLoading(false);
+    };
 
-        const isTeacher = await teacherAccessService.isTeacher(user);
-        if (!isTeacher) {
-          await progressService.syncUserData(user.uid);
-          refreshProgress();
+    // Watchdog timer: Nếu Firebase Auth hoặc IndexedDB bị treo/chậm quá 3.5s,
+    // tự động giải phóng loading để học sinh vào học ngay bằng dữ liệu cache cục bộ.
+    const watchdogTimer = window.setTimeout(() => {
+      if (useAppStore.getState().authLoading) {
+        console.warn('[PrivateAppShell] Auth resolution watchdog kích hoạt (>3.5s). Mở khóa giao diện an toàn.');
+        if (auth.currentUser && !useAppStore.getState().user) {
+          setUser(auth.currentUser);
         }
+        markAuthSettled();
+      }
+    }, 3500);
 
-        unsubscribeUserDoc = onSnapshot(doc(db, 'users', user.uid), (docSnap) => {
-          if (docSnap.exists()) {
-            const data = docSnap.data();
-            const premiumStatus = hasActivePremium(data);
+    const unsubscribeAuth = onAuthStateChanged(
+      auth,
+      async (user) => {
+        try {
+          setUser(user);
+          if (user) {
+            setAnalyticsUser(user.uid);
 
-            const prevPremium = useAppStore.getState().isPremium;
-            if (premiumStatus && !prevPremium) {
-              void import('canvas-confetti').then((confetti) => {
-                confetti.default({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
-              });
+            // Kiểm tra quyền giáo viên với timeout bảo vệ 2s (không làm nghẽn luồng học sinh)
+            let isTeacher = false;
+            try {
+              isTeacher = await Promise.race([
+                teacherAccessService.isTeacher(user),
+                new Promise<boolean>((resolve) => setTimeout(() => resolve(false), 2000))
+              ]);
+            } catch (err) {
+              console.warn('[PrivateAppShell] Kiểm tra quyền giáo viên gặp lỗi (fallback học sinh):', err);
             }
 
-            setPremium(premiumStatus);
-            useAppStore.setState({
-              userData: data,
-              trialActivated: data.trialActivated === true,
-              premiumUntil: data.premiumUntil || null
-            });
-
-            let hasProgressChanges = false;
-            if (Array.isArray(data.readLessons)) {
-              const currentRead = storageService.getReadLessons(user.uid);
-              const mergedRead = Array.from(new Set([...currentRead, ...data.readLessons]));
-              if (mergedRead.length !== currentRead.length) {
-                storageService.saveReadLessonsLocal(user.uid, mergedRead);
-                hasProgressChanges = true;
-              }
-            }
-            if (Array.isArray(data.passedCheckpoints)) {
-              const currentCheckpoints = storageService.getPassedTheoryCheckpoints(user.uid);
-              const mergedCheckpoints = Array.from(new Set([...currentCheckpoints, ...data.passedCheckpoints]));
-              if (mergedCheckpoints.length !== currentCheckpoints.length) {
-                storageService.savePassedTheoryCheckpointsLocal(user.uid, mergedCheckpoints);
-                hasProgressChanges = true;
-              }
-            }
-            if (data.masteryLevels || data.completedLessons) {
-              const currentProg = storageService.getProgress(user.uid);
-              const updatedProg: UserProgress = {
-                ...currentProg,
-                masteryLevels: { ...(currentProg.masteryLevels || {}), ...(data.masteryLevels || {}) },
-                completedLessons: Array.from(new Set([...(currentProg.completedLessons || []), ...(data.completedLessons || [])])),
-                lastUpdatedAt: data.lastActiveAt || currentProg.lastUpdatedAt
-              };
-              storageService.saveProgressLocal(user.uid, updatedProg);
-              hasProgressChanges = true;
+            if (!isTeacher) {
+              // Đồng bộ dữ liệu nền (non-blocking) - không bắt học sinh chờ xong sync mới được vào giao diện
+              void progressService.syncUserData(user.uid)
+                .then(refreshProgress)
+                .catch((err) => console.warn('[PrivateAppShell] Đồng bộ tiến trình nền (non-fatal):', err));
             }
 
-            if (hasProgressChanges) refreshProgress();
+            // Đăng ký realtime listener cho hồ sơ người dùng kèm callback xử lý lỗi
+            try {
+              unsubscribeUserDoc?.();
+              unsubscribeUserDoc = onSnapshot(
+                doc(db, 'users', user.uid),
+                (docSnap) => {
+                  if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    const premiumStatus = hasActivePremium(data);
 
-            if (typeof sessionStorage !== 'undefined') {
-              const hasAutoOpened = sessionStorage.getItem('ezonthi_profile_auto_opened');
-              if (!hasAutoOpened && (!data.birthYear || !data.gender || !data.province)) {
-                sessionStorage.setItem('ezonthi_profile_auto_opened', 'true');
-                useAppStore.setState({ isProfileModalOpen: true, isAutoProfileModal: true });
-              }
+                    const prevPremium = useAppStore.getState().isPremium;
+                    if (premiumStatus && !prevPremium) {
+                      void import('canvas-confetti').then((confetti) => {
+                        confetti.default({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
+                      });
+                    }
+
+                    setPremium(premiumStatus);
+                    useAppStore.setState({
+                      userData: data,
+                      trialActivated: data.trialActivated === true,
+                      premiumUntil: data.premiumUntil || null
+                    });
+
+                    let hasProgressChanges = false;
+                    if (Array.isArray(data.readLessons)) {
+                      const currentRead = storageService.getReadLessons(user.uid);
+                      const mergedRead = Array.from(new Set([...currentRead, ...data.readLessons]));
+                      if (mergedRead.length !== currentRead.length) {
+                        storageService.saveReadLessonsLocal(user.uid, mergedRead);
+                        hasProgressChanges = true;
+                      }
+                    }
+                    if (Array.isArray(data.passedCheckpoints)) {
+                      const currentCheckpoints = storageService.getPassedTheoryCheckpoints(user.uid);
+                      const mergedCheckpoints = Array.from(new Set([...currentCheckpoints, ...data.passedCheckpoints]));
+                      if (mergedCheckpoints.length !== currentCheckpoints.length) {
+                        storageService.savePassedTheoryCheckpointsLocal(user.uid, mergedCheckpoints);
+                        hasProgressChanges = true;
+                      }
+                    }
+                    if (data.masteryLevels || data.completedLessons) {
+                      const currentProg = storageService.getProgress(user.uid);
+                      const updatedProg: UserProgress = {
+                        ...currentProg,
+                        masteryLevels: { ...(currentProg.masteryLevels || {}), ...(data.masteryLevels || {}) },
+                        completedLessons: Array.from(new Set([...(currentProg.completedLessons || []), ...(data.completedLessons || [])])),
+                        lastUpdatedAt: data.lastActiveAt || currentProg.lastUpdatedAt
+                      };
+                      storageService.saveProgressLocal(user.uid, updatedProg);
+                      hasProgressChanges = true;
+                    }
+
+                    if (hasProgressChanges) refreshProgress();
+
+                    if (typeof sessionStorage !== 'undefined') {
+                      const hasAutoOpened = sessionStorage.getItem('ezonthi_profile_auto_opened');
+                      if (!hasAutoOpened && (!data.birthYear || !data.gender || !data.province)) {
+                        sessionStorage.setItem('ezonthi_profile_auto_opened', 'true');
+                        useAppStore.setState({ isProfileModalOpen: true, isAutoProfileModal: true });
+                      }
+                    }
+                  } else {
+                    setPremium(false);
+                    useAppStore.setState({ userData: null, trialActivated: false, premiumUntil: null });
+                  }
+                },
+                (snapshotError) => {
+                  console.warn('[PrivateAppShell] Lỗi lắng nghe snapshot userDoc:', snapshotError);
+                }
+              );
+            } catch (err) {
+              console.warn('[PrivateAppShell] Không thể đăng ký snapshot userDoc:', err);
             }
           } else {
+            setAnalyticsUser(null);
             setPremium(false);
-            useAppStore.setState({ userData: null, trialActivated: false, premiumUntil: null });
+            unsubscribeUserDoc?.();
+            unsubscribeUserDoc = null;
           }
-        });
-      } else {
-        setAnalyticsUser(null);
-        setPremium(false);
-        unsubscribeUserDoc?.();
-        unsubscribeUserDoc = null;
+        } catch (error) {
+          console.error('[PrivateAppShell] Lỗi trong quá trình xử lý auth state:', error);
+        } finally {
+          window.clearTimeout(watchdogTimer);
+          markAuthSettled();
+        }
+      },
+      (authError) => {
+        console.error('[PrivateAppShell] onAuthStateChanged báo lỗi:', authError);
+        window.clearTimeout(watchdogTimer);
+        markAuthSettled();
       }
-      setAuthLoading(false);
-    });
+    );
 
     return () => {
+      window.clearTimeout(watchdogTimer);
       unsubscribeAuth();
       unsubscribeUserDoc?.();
     };
@@ -141,9 +199,16 @@ const PrivateAppShell: React.FC = () => {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground gap-4">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground gap-4 px-4 text-center">
         <Loader size={42} className="animate-spin text-primary" />
         <h2 className="text-xs font-bold text-muted-foreground">Đang thiết lập phòng học trực tuyến…</h2>
+        <button
+          type="button"
+          onClick={() => setAuthLoading(false)}
+          className="text-xs font-semibold text-primary/80 hover:text-primary underline cursor-pointer transition-colors mt-2"
+        >
+          Nếu chờ lâu, bấm vào đây để vào học ngay
+        </button>
       </div>
     );
   }

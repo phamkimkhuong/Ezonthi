@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, BookOpen, Calculator, Globe, Atom, FlaskConical, Dna, ScrollText } from 'lucide-react';
+import { ArrowRight, BookOpen, Calculator, Globe, Atom, FlaskConical, Dna, ScrollText, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface SubjectItem {
@@ -51,6 +51,18 @@ const GRADE_DATA: GradeTabConfig[] = [
         icon: <Globe size={22} />,
         description: 'Ngữ pháp, từ vựng theo chủ đề, phát âm - trọng âm, đọc hiểu và dạng bài viết gián tiếp.',
         colorClass: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20'
+      },
+      {
+        id: 'mock-exam-9',
+        name: 'Đề thi thử Tuyển sinh 63 Tỉnh',
+        slug: 'de-thi-thu',
+        href: '/exam/',
+        badge: 'Có lời giải chi tiết',
+        sgkBadge: 'Chuẩn cấu trúc đề Sở GD&ĐT',
+        curriculumDepth: '120+ Bộ đề • Bấm giờ & Phổ điểm tức thì',
+        icon: <GraduationCap size={22} />,
+        description: 'Tổng hợp đề thi thử chính thức mới nhất từ các Sở GD&ĐT và trường Chuyên, rèn luyện tốc độ làm bài.',
+        colorClass: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20'
       }
     ]
   },
@@ -81,7 +93,7 @@ const GRADE_DATA: GradeTabConfig[] = [
         curriculumDepth: '10 Units • 80 Dạng bài • 1,500+ Câu',
         icon: <Globe size={22} />,
         description: 'Hệ thống ngữ pháp nâng cao, từ vựng chuyên sâu theo chủ điểm đời sống và xã hội.',
-        colorClass: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20'
+        colorClass: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20'
       },
       {
         id: 'physics-10',
@@ -160,7 +172,7 @@ const GRADE_DATA: GradeTabConfig[] = [
         curriculumDepth: '10 Units • 82 Dạng bài • 1,500+ Câu',
         icon: <Globe size={22} />,
         description: 'Mệnh đề phân từ, câu chẻ, câu điều kiện hỗn hợp và đọc hiểu văn bản nâng cao.',
-        colorClass: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20'
+        colorClass: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20'
       },
       {
         id: 'physics-11',

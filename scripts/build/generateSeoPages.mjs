@@ -91,7 +91,22 @@ function injectSeo(html, { title, description, canonicalUrl, robots = 'index, fo
     result = result.replace('</head>', `${staticStyle}\n</head>`);
   }
 
-  return result.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+  const initialLoader = `<div id="app-initial-loader" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fafaf9;color:#0f172a;font-family:'Be Vietnam Pro',sans-serif;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <img src="/favicon.svg" alt="ezonthi" width="40" height="40" style="border-radius:12px;" />
+      <span style="font-size:24px;font-weight:900;letter-spacing:-0.03em;color:#0f172a;">ezonthi</span>
+    </div>
+    <div style="width:36px;height:36px;border:3px solid rgba(37,99,235,0.15);border-top-color:#2563EB;border-radius:50%;animation:ez-spin 0.8s linear infinite;"></div>
+    <style>
+      @keyframes ez-spin{to{transform:rotate(360deg)}}
+      @media (prefers-color-scheme: dark){
+        #app-initial-loader{background:#0b0f17!important;color:#f8fafc!important}
+        #app-initial-loader span{color:#f8fafc!important}
+      }
+    </style>
+  </div>`;
+
+  return result.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root"><noscript><style>#app-initial-loader{display:none!important}</style>${body}</noscript>${initialLoader}</div>`);
 }
 
 function writePage(route, html) {

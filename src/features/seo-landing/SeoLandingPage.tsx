@@ -1,11 +1,11 @@
 import React from 'react';
-import { ArrowRight, ArrowUpRight, BookOpenCheck, CheckCircle2, Sparkles, Trophy, Flame, Layers, Compass, HelpCircle } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BookOpenCheck, CheckCircle2, Sparkles, Layers, Compass, HelpCircle } from 'lucide-react';
 import { Link, Navigate, useLocation } from 'react-router-dom';
 import { SeoHead } from '@/components/common/SeoHead';
 import { createBreadcrumbSchema } from '@/utils/seoSchemas';
 import { getSeoLandingPage } from '@/seo/landingPages';
 import { InteractiveQuizHero } from './components/InteractiveQuizHero';
-import { BentoFeatureGrid } from './components/BentoFeatureGrid';
+import { GuidedLearningJourney } from './components/GuidedLearningJourney';
 import { GradeSubjectTabs } from './components/GradeSubjectTabs';
 import { LiveActivityTicker } from './components/LiveActivityTicker';
 import { TargetScoreCalculator } from './components/TargetScoreCalculator';
@@ -79,19 +79,40 @@ const SeoLandingPage: React.FC = () => {
                 </Link>
               </div>
 
-              {/* Social Proof & Trust Metrics Ticker */}
-              <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6 text-xs font-extrabold text-muted-foreground">
-                <div className="flex items-center gap-1.5">
-                  <Flame size={16} className="text-amber-500" />
-                  <span>13,000+ Câu hỏi có giải thích</span>
+              {/* Social Proof Faces & School Badges (Cân bằng thị giác Hero) */}
+              <div className="pt-2 space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex -space-x-2">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white text-[11px] font-black ring-2 ring-background shadow-xs">
+                      HL
+                    </span>
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-amber-500 to-rose-500 text-white text-[11px] font-black ring-2 ring-background shadow-xs">
+                      TV
+                    </span>
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-emerald-500 to-teal-600 text-white text-[11px] font-black ring-2 ring-background shadow-xs">
+                      QB
+                    </span>
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-purple-500 to-indigo-500 text-white text-[10px] font-black ring-2 ring-background shadow-xs">
+                      +15k
+                    </span>
+                  </div>
+                  <div className="text-xs">
+                    <div className="flex items-center gap-1 text-amber-500 font-black">
+                      <span>★★★★★</span>
+                      <span className="text-foreground ml-1">4.9/5</span>
+                    </div>
+                    <p className="text-[11px] text-muted-foreground font-semibold">
+                      Được tin dùng bởi hơn 15,200+ học sinh & phụ huynh toàn quốc
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <Trophy size={16} className="text-emerald-500" />
-                  <span>98.4% Đỗ đúng nguyện vọng</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-amber-500 font-black">★ 4.9/5</span>
-                  <span>Học sinh yêu thích</span>
+
+                {/* Target Admission Schools Tags */}
+                <div className="flex flex-wrap items-center gap-1.5 pt-0.5 text-[11px] font-bold text-muted-foreground">
+                  <span className="text-foreground font-black">Trúng tuyển tiêu biểu:</span>
+                  <span className="px-2.5 py-0.5 rounded-md bg-secondary/80 border border-border/80 text-foreground font-extrabold">✦ Chuyên Hà Nội - Amsterdam</span>
+                  <span className="px-2.5 py-0.5 rounded-md bg-secondary/80 border border-border/80 text-foreground font-extrabold">✦ Chu Văn An</span>
+                  <span className="px-2.5 py-0.5 rounded-md bg-secondary/80 border border-border/80 text-foreground font-extrabold">✦ Chuyên Lê Hồng Phong</span>
                 </div>
               </div>
             </div>
@@ -115,11 +136,11 @@ const SeoLandingPage: React.FC = () => {
               <p className="text-xs sm:text-sm text-muted-foreground font-bold">Dạng bài trọng tâm GDPT</p>
             </div>
             <div className="text-center sm:text-left space-y-1 border-l border-border/80 pl-4 sm:pl-6">
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-600 dark:text-emerald-400">100%</p>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-black gradient-text">100%</p>
               <p className="text-xs sm:text-sm text-muted-foreground font-bold">Lời giải chi tiết từng bước</p>
             </div>
             <div className="text-center sm:text-left space-y-1 border-l border-border/80 pl-4 sm:pl-6">
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-amber-500">24/7</p>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-black gradient-text">24/7</p>
               <p className="text-xs sm:text-sm text-muted-foreground font-bold">Gia sư AI đồng hành</p>
             </div>
           </div>
@@ -127,8 +148,8 @@ const SeoLandingPage: React.FC = () => {
           <LiveActivityTicker />
         </section>
 
-      {/* BENTO GRID (Chỉ hiển thị trên Trang Chủ hoặc Trang Cấp Lớn) */}
-      <BentoFeatureGrid />
+      {/* THE GUIDED LEARNING JOURNEY (Thay thế hoàn toàn Bento Grid cũ) */}
+      <GuidedLearningJourney />
 
       {/* GRADE & SUBJECT EXPLORER */}
       <GradeSubjectTabs />
@@ -220,7 +241,7 @@ const SeoLandingPage: React.FC = () => {
                   <ul className="mt-4 space-y-2 pt-3 border-t border-border/70">
                     {section.bullets.map(item => (
                       <li key={item} className="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-foreground">
-                        <CheckCircle2 className="mt-0.5 shrink-0 text-emerald-500" size={16} />
+                        <CheckCircle2 className="mt-0.5 shrink-0 text-primary" size={16} />
                         <span>{item}</span>
                       </li>
                     ))}
