@@ -1,5 +1,4 @@
 import type { Solution } from '@/types';
-import { g10MathModule8SolutionExpansion } from './practiceExpansion';
 
 export const g10MathModule8Solutions: Solution[] = [
   {
@@ -44,182 +43,7 @@ export const g10MathModule8Solutions: Solution[] = [
         "result": "2x -y -4 = 0"
       }
     ],
-    "finalAnswer": "B. $2x -y -4 = 0$",
-    "commonMistakes": [
-      "Dùng vectơ pháp tuyến như vectơ chỉ phương hoặc đổi sai dấu khi khai triển."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại lập phương trình đường thẳng."
-    ]
-  },
-  {
-    "id": "math10-m8-s003",
-    "questionId": "math10-m8-q003",
-    "recognition": "Dạng: lập phương trình đường thẳng. Dấu hiệu là đề cho một điểm và vectơ pháp tuyến.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Dùng phương trình điểm–pháp tuyến",
-        "explanation": "Viết −(x−2)+3(y+2)=0."
-      },
-      {
-        "order": 2,
-        "title": "Khai triển và thu gọn",
-        "explanation": "Phương trình nhận được là -x +3y +8 = 0.",
-        "result": "-x +3y +8 = 0"
-      }
-    ],
-    "finalAnswer": "C. $-x +3y +8 = 0$",
-    "commonMistakes": [
-      "Dùng vectơ pháp tuyến như vectơ chỉ phương hoặc đổi sai dấu khi khai triển."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại lập phương trình đường thẳng."
-    ]
-  },
-  {
-    "id": "math10-m8-s004",
-    "questionId": "math10-m8-q004",
-    "recognition": "Dạng: lập phương trình đường thẳng. Dấu hiệu là đề cho một điểm và vectơ pháp tuyến.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Dùng phương trình điểm–pháp tuyến",
-        "explanation": "Viết 3(x+1)+2(y−4)=0."
-      },
-      {
-        "order": 2,
-        "title": "Khai triển và thu gọn",
-        "explanation": "Phương trình nhận được là 3x +2y -5 = 0.",
-        "result": "3x +2y -5 = 0"
-      }
-    ],
-    "finalAnswer": "D. $3x +2y -5 = 0$",
-    "commonMistakes": [
-      "Dùng vectơ pháp tuyến như vectơ chỉ phương hoặc đổi sai dấu khi khai triển."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại lập phương trình đường thẳng."
-    ]
-  },
-  {
-    "id": "math10-m8-s005",
-    "questionId": "math10-m8-q005",
-    "recognition": "Dạng: lập phương trình đường thẳng. Dấu hiệu là đề cho một điểm và vectơ pháp tuyến.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Dùng phương trình điểm–pháp tuyến",
-        "explanation": "Viết 2(x−2)+5(y+1)=0."
-      },
-      {
-        "order": 2,
-        "title": "Khai triển và thu gọn",
-        "explanation": "Phương trình nhận được là 2x +5y +1 = 0.",
-        "result": "2x +5y +1 = 0"
-      }
-    ],
-    "finalAnswer": "A. $2x +5y +1 = 0$",
-    "commonMistakes": [
-      "Dùng vectơ pháp tuyến như vectơ chỉ phương hoặc đổi sai dấu khi khai triển."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại lập phương trình đường thẳng."
-    ]
-  },
-  {
-    "id": "math10-m8-s006",
-    "questionId": "math10-m8-q006",
-    "recognition": "Dạng: lập phương trình đường thẳng. Dấu hiệu là đề cho một điểm và vectơ pháp tuyến.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Dùng phương trình điểm–pháp tuyến",
-        "explanation": "Viết 4(x+2)−3(y−3)=0."
-      },
-      {
-        "order": 2,
-        "title": "Khai triển và thu gọn",
-        "explanation": "Phương trình nhận được là 4x -3y +17 = 0.",
-        "result": "4x -3y +17 = 0"
-      }
-    ],
-    "finalAnswer": "B. $4x -3y +17 = 0$",
-    "commonMistakes": [
-      "Dùng vectơ pháp tuyến như vectơ chỉ phương hoặc đổi sai dấu khi khai triển."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại lập phương trình đường thẳng."
-    ]
-  },
-  {
-    "id": "math10-m8-s007",
-    "questionId": "math10-m8-q007",
-    "recognition": "Dạng: lập phương trình đường thẳng. Dấu hiệu là đề cho một điểm và vectơ pháp tuyến.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Dùng phương trình điểm–pháp tuyến",
-        "explanation": "Viết 5(x−1)+(y+4)=0."
-      },
-      {
-        "order": 2,
-        "title": "Khai triển và thu gọn",
-        "explanation": "Phương trình nhận được là 5x +y -1 = 0.",
-        "result": "5x +y -1 = 0"
-      }
-    ],
-    "finalAnswer": "C. $5x +y -1 = 0$",
-    "commonMistakes": [
-      "Dùng vectơ pháp tuyến như vectơ chỉ phương hoặc đổi sai dấu khi khai triển."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại lập phương trình đường thẳng."
-    ]
-  },
-  {
-    "id": "math10-m8-s008",
-    "questionId": "math10-m8-q008",
-    "recognition": "Dạng: lập phương trình đường thẳng. Dấu hiệu là đề cho một điểm và vectơ pháp tuyến.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Dùng phương trình điểm–pháp tuyến",
-        "explanation": "Viết 3(x−4)−4(y−2)=0."
-      },
-      {
-        "order": 2,
-        "title": "Khai triển và thu gọn",
-        "explanation": "Phương trình nhận được là 3x -4y -4 = 0.",
-        "result": "3x -4y -4 = 0"
-      }
-    ],
-    "finalAnswer": "D. $3x -4y -4 = 0$",
-    "commonMistakes": [
-      "Dùng vectơ pháp tuyến như vectơ chỉ phương hoặc đổi sai dấu khi khai triển."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại lập phương trình đường thẳng."
-    ]
-  },
-  {
-    "id": "math10-m8-s009",
-    "questionId": "math10-m8-q009",
-    "recognition": "Dạng: lập phương trình đường thẳng. Dấu hiệu là đề cho một điểm và vectơ pháp tuyến.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Dùng phương trình điểm–pháp tuyến",
-        "explanation": "Viết 7(x+3)+2(y−5)=0."
-      },
-      {
-        "order": 2,
-        "title": "Khai triển và thu gọn",
-        "explanation": "Phương trình nhận được là 7x +2y +11 = 0.",
-        "result": "7x +2y +11 = 0"
-      }
-    ],
-    "finalAnswer": "A. $7x +2y +11 = 0$",
+    "finalAnswer": "D. $2x -y -4 = 0$",
     "commonMistakes": [
       "Dùng vectơ pháp tuyến như vectơ chỉ phương hoặc đổi sai dấu khi khai triển."
     ],
@@ -245,31 +69,6 @@ export const g10MathModule8Solutions: Solution[] = [
       }
     ],
     "finalAnswer": "B. $5x -6y +32 = 0$",
-    "commonMistakes": [
-      "Dùng vectơ pháp tuyến như vectơ chỉ phương hoặc đổi sai dấu khi khai triển."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại lập phương trình đường thẳng."
-    ]
-  },
-  {
-    "id": "math10-m8-s011",
-    "questionId": "math10-m8-q011",
-    "recognition": "Dạng: lập phương trình đường thẳng. Dấu hiệu là đề cho một điểm và vectơ pháp tuyến.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Dùng phương trình điểm–pháp tuyến",
-        "explanation": "Viết 8(x+4)+3(y+5)=0."
-      },
-      {
-        "order": 2,
-        "title": "Khai triển và thu gọn",
-        "explanation": "Phương trình nhận được là 8x +3y +47 = 0.",
-        "result": "8x +3y +47 = 0"
-      }
-    ],
-    "finalAnswer": "C. $8x +3y +47 = 0$",
     "commonMistakes": [
       "Dùng vectơ pháp tuyến như vectơ chỉ phương hoặc đổi sai dấu khi khai triển."
     ],
@@ -2821,7 +2620,1055 @@ export const g10MathModule8Solutions: Solution[] = [
     "reviewSuggestions": [
       "Ôn lại tiêu điểm và đường chuẩn của parabol."
     ]
+  },
+  {
+    "id": "math10-m8x-s001",
+    "questionId": "math10-m8x-q001",
+    "recognition": "Dạng mở rộng math10-qt14-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Thay $M(1;2)$ vào phương trình: $3-8+c=0$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Suy ra $c=5$.",
+        "result": "5"
+      }
+    ],
+    "finalAnswer": "5",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s002",
+    "questionId": "math10-m8x-q002",
+    "recognition": "Dạng mở rộng math10-qt14-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Thay A hoặc B vào được $-2-2+c=0$, nên $c=4$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Tổng hệ số là $1-2+4=3$.",
+        "result": "3"
+      }
+    ],
+    "finalAnswer": "3",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s003",
+    "questionId": "math10-m8x-q003",
+    "recognition": "Dạng mở rộng math10-qt14-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Đường song song giữ cùng cặp hệ số pháp tuyến $(2;-3)$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Thay điểm: $2\\cdot3-3(-1)+c=0$, suy ra $c=-9$.",
+        "result": "-9"
+      }
+    ],
+    "finalAnswer": "-9",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s004",
+    "questionId": "math10-m8x-q004",
+    "recognition": "Dạng mở rộng math10-qt14-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Pháp tuyến $(2;-1)$ của đường mới vuông góc với pháp tuyến $(1;2)$ của đường đã cho."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Thay $(2;5)$: $4-5+c=0$, nên $c=1$.",
+        "result": "1"
+      }
+    ],
+    "finalAnswer": "1",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s005",
+    "questionId": "math10-m8x-q005",
+    "recognition": "Dạng mở rộng math10-qt14-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Thay biểu thức tham số vào đường thứ hai: $2(1+3t)-(-2+4t)-8=0$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Rút gọn được $2t-4=0$, nên $t=2$.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s006",
+    "questionId": "math10-m8x-q006",
+    "recognition": "Dạng mở rộng math10-qt14-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Trung điểm BC là $(2;-1)$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Trung tuyến qua A và trung điểm có phương trình $x=2$, tức $x-2=0$, nên $|c|=2$.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s007",
+    "questionId": "math10-m8x-q007",
+    "recognition": "Dạng mở rộng math10-qt14-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Tử số là $|3+8-10|=1$, mẫu là $\\sqrt{3^2+4^2}=5$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Khoảng cách bằng $1/5=0{,}2$.",
+        "result": "0.2"
+      }
+    ],
+    "finalAnswer": "0.2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s008",
+    "questionId": "math10-m8x-q008",
+    "recognition": "Dạng mở rộng math10-qt14-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Hai phương trình đã có cùng hệ số x, y."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Khoảng cách là $|-2-8|/5=2$.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s009",
+    "questionId": "math10-m8x-q009",
+    "recognition": "Dạng mở rộng math10-qt14-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$d(O,d)=|k|/5=2$ nên $|k|=10$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Có hai giá trị $k=10$ và $k=-10$.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s010",
+    "questionId": "math10-m8x-q010",
+    "recognition": "Dạng mở rộng math10-qt14-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Điều kiện là $|t+2|=|t-6|$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "M nằm trên đường trung trực giữa hai đường, nên $t=(-2+6)/2=2$.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s011",
+    "questionId": "math10-m8x-q011",
+    "recognition": "Dạng mở rộng math10-qt14-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Trung điểm BC là $(4;2)$, nên trung tuyến từ A có phương trình $x-2y=0$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Khoảng cách từ C đến trung tuyến là $6/\\sqrt5$, nên bình phương khoảng cách bằng $36/5=7{,}2$.",
+        "result": "7.2"
+      }
+    ],
+    "finalAnswer": "7.2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s012",
+    "questionId": "math10-m8x-q012",
+    "recognition": "Dạng mở rộng math10-qt14-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Giải hệ được giao điểm $(3;1)$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Khoảng cách là $|9+4-8|/5=1$.",
+        "result": "1"
+      }
+    ],
+    "finalAnswer": "1",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s013",
+    "questionId": "math10-m8x-q013",
+    "recognition": "Dạng mở rộng math10-qt15-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$R^2=IM^2=(5-2)^2+(1+3)^2$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$R^2=9+16=25$.",
+        "result": "25"
+      }
+    ],
+    "finalAnswer": "25",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s014",
+    "questionId": "math10-m8x-q014",
+    "recognition": "Dạng mở rộng math10-qt15-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Tâm là trung điểm $(1;3)$ và $R^2=IA^2=3^2+2^2=13$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$a+b+R^2=1+3+13=17$.",
+        "result": "17"
+      }
+    ],
+    "finalAnswer": "17",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s015",
+    "questionId": "math10-m8x-q015",
+    "recognition": "Dạng mở rộng math10-qt15-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Thay ba điểm lần lượt được $F=0$, $D=-4$, $E=-6$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Do đó $D+E+F=-10$.",
+        "result": "-10"
+      }
+    ],
+    "finalAnswer": "-10",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s016",
+    "questionId": "math10-m8x-q016",
+    "recognition": "Dạng mở rộng math10-qt15-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Tâm nằm trên trung trực AB là $x=3$, nên tâm $(3;0)$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$R^2=(3-1)^2+(0-2)^2=8$, tổng bằng 11.",
+        "result": "11"
+      }
+    ],
+    "finalAnswer": "11",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s017",
+    "questionId": "math10-m8x-q017",
+    "recognition": "Dạng mở rộng math10-qt15-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Đặt tâm $(r;r)$, bán kính r. Điều kiện đi qua M cho $(6-r)^2+(3-r)^2=r^2$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Suy ra $r^2-18r+45=0$, có hai nghiệm dương $r=3,15$, nên có hai đường tròn.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s018",
+    "questionId": "math10-m8x-q018",
+    "recognition": "Dạng mở rộng math10-qt15-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Tâm thuộc trung trực $x=1$ của OA và thuộc $y=x$, nên tâm $(1;1)$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$R^2=2$, tổng cần tìm là $1+1+2=4$.",
+        "result": "4"
+      }
+    ],
+    "finalAnswer": "4",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s019",
+    "questionId": "math10-m8x-q019",
+    "recognition": "Dạng mở rộng math10-qt15-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Bán kính OM nằm ngang nên tiếp tuyến thẳng đứng."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Tiếp tuyến là $x=5$, tức $x-5=0$, nên $c=-5$.",
+        "result": "-5"
+      }
+    ],
+    "finalAnswer": "-5",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s020",
+    "questionId": "math10-m8x-q020",
+    "recognition": "Dạng mở rộng math10-qt15-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Tiếp tuyến ngang phía trên cách tung độ tâm 3 đơn vị."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$k=-1+3=2$.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s021",
+    "questionId": "math10-m8x-q021",
+    "recognition": "Dạng mở rộng math10-qt15-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$IA\\perp PA$ nên $PA=\\sqrt{PI^2-R^2}=\\sqrt{25-9}=4$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Hai tiếp tuyến xuất phát từ P có độ dài bằng nhau, nên $PA+PB=8$.",
+        "result": "8"
+      }
+    ],
+    "finalAnswer": "8",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s022",
+    "questionId": "math10-m8x-q022",
+    "recognition": "Dạng mở rộng math10-qt15-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Điều kiện tiếp xúc: $|k|/\\sqrt2=\\sqrt2$, nên $|k|=2$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Có hai giá trị $k=2$ và $k=-2$.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s023",
+    "questionId": "math10-m8x-q023",
+    "recognition": "Dạng mở rộng math10-qt15-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$|3+8+c|/5=5$, nên $|11+c|=25$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Hai nghiệm là 14 và -36; điều kiện $c>0$ chọn $c=14$.",
+        "result": "14"
+      }
+    ],
+    "finalAnswer": "14",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s024",
+    "questionId": "math10-m8x-q024",
+    "recognition": "Dạng mở rộng math10-qt15-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Khoảng cách từ O đến đường là $20/5=4$, đúng bằng bán kính."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Đường thẳng tiếp xúc đường tròn nên có một giao điểm.",
+        "result": "1"
+      }
+    ],
+    "finalAnswer": "1",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s025",
+    "questionId": "math10-m8x-q025",
+    "recognition": "Dạng mở rộng math10-qt16-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$c^2=25-9=16$ nên $c=4$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Tiêu cự $F_1F_2=2c=8$.",
+        "result": "8"
+      }
+    ],
+    "finalAnswer": "8",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s026",
+    "questionId": "math10-m8x-q026",
+    "recognition": "Dạng mở rộng math10-qt16-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Bán trục lớn theo Oy có $a^2=25$, còn $b^2=16$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$c=\\sqrt{25-16}=3$.",
+        "result": "3"
+      }
+    ],
+    "finalAnswer": "3",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s027",
+    "questionId": "math10-m8x-q027",
+    "recognition": "Dạng mở rộng math10-qt16-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$a=6$, $c=4$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Với elip, $b^2=a^2-c^2=36-16=20$.",
+        "result": "20"
+      }
+    ],
+    "finalAnswer": "20",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s028",
+    "questionId": "math10-m8x-q028",
+    "recognition": "Dạng mở rộng math10-qt16-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Trục lớn dài $2a=10$, trục nhỏ dài $2b=8$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Tổng bằng $10+8=18$.",
+        "result": "18"
+      }
+    ],
+    "finalAnswer": "18",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s029",
+    "questionId": "math10-m8x-q029",
+    "recognition": "Dạng mở rộng math10-qt16-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$c=ea=6$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$b=\\sqrt{a^2-c^2}=\\sqrt{100-36}=8$.",
+        "result": "8"
+      }
+    ],
+    "finalAnswer": "8",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s030",
+    "questionId": "math10-m8x-q030",
+    "recognition": "Dạng mở rộng math10-qt16-st1: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$9/25+y^2/16=1$ nên $y^2/16=16/25$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$y>0$ nên $y=16/5=3{,}2$.",
+        "result": "3.2"
+      }
+    ],
+    "finalAnswer": "3.2",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s031",
+    "questionId": "math10-m8x-q031",
+    "recognition": "Dạng mở rộng math10-qt16-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$c^2=9+16=25$ nên $c=5$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Tiêu cự bằng $2c=10$.",
+        "result": "10"
+      }
+    ],
+    "finalAnswer": "10",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s032",
+    "questionId": "math10-m8x-q032",
+    "recognition": "Dạng mở rộng math10-qt16-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$a^2=4$, $b^2=5$ dù trục thực nằm trên Oy."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$c=\\sqrt{4+5}=3$.",
+        "result": "3"
+      }
+    ],
+    "finalAnswer": "3",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s033",
+    "questionId": "math10-m8x-q033",
+    "recognition": "Dạng mở rộng math10-qt16-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Tiệm cận có dạng $y=\\pm(b/a)x$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$b/a=3/5=0{,}6$.",
+        "result": "0.6"
+      }
+    ],
+    "finalAnswer": "0.6",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s034",
+    "questionId": "math10-m8x-q034",
+    "recognition": "Dạng mở rộng math10-qt16-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$a=4$, $c=5$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Với hypebol, $b^2=c^2-a^2=25-16=9$.",
+        "result": "9"
+      }
+    ],
+    "finalAnswer": "9",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s035",
+    "questionId": "math10-m8x-q035",
+    "recognition": "Dạng mở rộng math10-qt16-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$c=ea=10$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$b=\\sqrt{c^2-a^2}=\\sqrt{100-36}=8$.",
+        "result": "8"
+      }
+    ],
+    "finalAnswer": "8",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s036",
+    "questionId": "math10-m8x-q036",
+    "recognition": "Dạng mở rộng math10-qt16-st2: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$x^2/9=18/9=2$, nên $2-y^2/16=1$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$y>0$ nên $y=4$.",
+        "result": "4"
+      }
+    ],
+    "finalAnswer": "4",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s037",
+    "questionId": "math10-m8x-q037",
+    "recognition": "Dạng mở rộng math10-qt16-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "So sánh $16=4p$ được $p=4$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Tiêu điểm là $(4;0)$.",
+        "result": "4"
+      }
+    ],
+    "finalAnswer": "4",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s038",
+    "questionId": "math10-m8x-q038",
+    "recognition": "Dạng mở rộng math10-qt16-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$4p=-12$ nên $p=-3$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Đường chuẩn là $y=-p=3$.",
+        "result": "3"
+      }
+    ],
+    "finalAnswer": "3",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s039",
+    "questionId": "math10-m8x-q039",
+    "recognition": "Dạng mở rộng math10-qt16-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "$p=5$ vì tiêu điểm là $(0;p)$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Phương trình $x^2=4py$ nên $k=20$.",
+        "result": "20"
+      }
+    ],
+    "finalAnswer": "20",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s040",
+    "questionId": "math10-m8x-q040",
+    "recognition": "Dạng mở rộng math10-qt16-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Đường chuẩn $x=-p=-2$ nên $p=2$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "$k=4p=8$.",
+        "result": "8"
+      }
+    ],
+    "finalAnswer": "8",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s041",
+    "questionId": "math10-m8x-q041",
+    "recognition": "Dạng mở rộng math10-qt16-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Thay $x=2$ được $y^2=16$, nên hai giao điểm có tung độ 4 và -4."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Hai điểm cùng hoành độ nên $AB=|4-(-4)|=8$.",
+        "result": "8"
+      }
+    ],
+    "finalAnswer": "8",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
+  },
+  {
+    "id": "math10-m8x-s042",
+    "questionId": "math10-m8x-q042",
+    "recognition": "Dạng mở rộng math10-qt16-st3: cần chuẩn hóa phương trình và xác định đúng yếu tố hình học trước khi tính.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Nhận dạng và thiết lập",
+        "explanation": "Thay điểm được $36=4p\\cdot9=36p$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kiểm tra",
+        "explanation": "Suy ra $p=1$.",
+        "result": "1"
+      }
+    ],
+    "finalAnswer": "1",
+    "commonMistakes": [
+      "Đọc sai dấu, nhầm vectơ pháp tuyến/chỉ phương hoặc dùng sai quan hệ a, b, c của đường conic."
+    ],
+    "reviewSuggestions": [
+      "Đưa phương trình về dạng chuẩn, kiểm tra hướng trục và đơn vị trước khi thay số."
+    ]
   }
 ];
-
-g10MathModule8Solutions.push(...g10MathModule8SolutionExpansion);

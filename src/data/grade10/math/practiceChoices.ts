@@ -1126,96 +1126,6 @@ export const g10MathPracticeChoices: Math10PracticeChoice[] = [
     ]
   },
   {
-    "id": "math10-m6-q028",
-    "correctAnswer": "D",
-    "options": [
-      "A. 46",
-      "B. 44",
-      "C. 47",
-      "D. 45"
-    ]
-  },
-  {
-    "id": "math10-m6-q029",
-    "correctAnswer": "A",
-    "options": [
-      "A. 6",
-      "B. 7",
-      "C. 5",
-      "D. 8"
-    ]
-  },
-  {
-    "id": "math10-m6-q030",
-    "correctAnswer": "B",
-    "options": [
-      "A. 37",
-      "B. 36",
-      "C. 35",
-      "D. 38"
-    ]
-  },
-  {
-    "id": "math10-m6-q031",
-    "correctAnswer": "C",
-    "options": [
-      "A. 58",
-      "B. 56",
-      "C. 57",
-      "D. 59"
-    ]
-  },
-  {
-    "id": "math10-m6-q032",
-    "correctAnswer": "D",
-    "options": [
-      "A. 13",
-      "B. 11",
-      "C. 14",
-      "D. 12"
-    ]
-  },
-  {
-    "id": "math10-m6-q033",
-    "correctAnswer": "A",
-    "options": [
-      "A. 42",
-      "B. 43",
-      "C. 41",
-      "D. 44"
-    ]
-  },
-  {
-    "id": "math10-m6-q034",
-    "correctAnswer": "B",
-    "options": [
-      "A. 74",
-      "B. 73",
-      "C. 72",
-      "D. 75"
-    ]
-  },
-  {
-    "id": "math10-m6-q035",
-    "correctAnswer": "C",
-    "options": [
-      "A. 20",
-      "B. 18",
-      "C. 19",
-      "D. 21"
-    ]
-  },
-  {
-    "id": "math10-m6-q036",
-    "correctAnswer": "D",
-    "options": [
-      "A. 61",
-      "B. 59",
-      "C. 62",
-      "D. 60"
-    ]
-  },
-  {
     "id": "math10-m6-q037",
     "correctAnswer": "A",
     "options": [
@@ -2276,46 +2186,6 @@ export const g10MathPracticeChoices: Math10PracticeChoice[] = [
     ]
   },
   {
-    "id": "math10-m7-q005",
-    "correctAnswer": "C",
-    "options": [
-      "A. 0.01",
-      "B. 0.006",
-      "C. 0.005",
-      "D. 0.004"
-    ]
-  },
-  {
-    "id": "math10-m7-q006",
-    "correctAnswer": "D",
-    "options": [
-      "A. 1",
-      "B. 0.6",
-      "C. 0.4",
-      "D. 0.5"
-    ]
-  },
-  {
-    "id": "math10-m7-q007",
-    "correctAnswer": "A",
-    "options": [
-      "A. 5",
-      "B. 10",
-      "C. 6",
-      "D. 4"
-    ]
-  },
-  {
-    "id": "math10-m7-q008",
-    "correctAnswer": "B",
-    "options": [
-      "A. 0.001",
-      "B. 0.0005",
-      "C. 0.0006",
-      "D. 0.0004"
-    ]
-  },
-  {
     "id": "math10-m7-q009",
     "correctAnswer": "C",
     "options": [
@@ -2323,36 +2193,6 @@ export const g10MathPracticeChoices: Math10PracticeChoice[] = [
       "B. 1.03",
       "C. 1.04",
       "D. 1.06"
-    ]
-  },
-  {
-    "id": "math10-m7-q010",
-    "correctAnswer": "D",
-    "options": [
-      "A. 0.5",
-      "B. 0.3",
-      "C. 0.6",
-      "D. 0.4"
-    ]
-  },
-  {
-    "id": "math10-m7-q011",
-    "correctAnswer": "A",
-    "options": [
-      "A. 0.16",
-      "B. 0.17",
-      "C. 0.15",
-      "D. 0.18"
-    ]
-  },
-  {
-    "id": "math10-m7-q012",
-    "correctAnswer": "B",
-    "options": [
-      "A. 0.3",
-      "B. 0.2",
-      "C. 0.1",
-      "D. 0.4"
     ]
   },
   {
@@ -2386,26 +2226,6 @@ export const g10MathPracticeChoices: Math10PracticeChoice[] = [
     ]
   },
   {
-    "id": "math10-m7-q016",
-    "correctAnswer": "B",
-    "options": [
-      "A. 7",
-      "B. 6",
-      "C. 5",
-      "D. 8"
-    ]
-  },
-  {
-    "id": "math10-m7-q017",
-    "correctAnswer": "C",
-    "options": [
-      "A. 19",
-      "B. 17",
-      "C. 18",
-      "D. 20"
-    ]
-  },
-  {
     "id": "math10-m7-q018",
     "correctAnswer": "D",
     "options": [
@@ -2433,36 +2253,6 @@ export const g10MathPracticeChoices: Math10PracticeChoice[] = [
       "B. 10",
       "C. 9",
       "D. 12"
-    ]
-  },
-  {
-    "id": "math10-m7-q021",
-    "correctAnswer": "C",
-    "options": [
-      "A. 23",
-      "B. 21",
-      "C. 22",
-      "D. 24"
-    ]
-  },
-  {
-    "id": "math10-m7-q022",
-    "correctAnswer": "D",
-    "options": [
-      "A. 11",
-      "B. 9",
-      "C. 12",
-      "D. 10"
-    ]
-  },
-  {
-    "id": "math10-m7-q023",
-    "correctAnswer": "A",
-    "options": [
-      "A. 30",
-      "B. 31",
-      "C. 29",
-      "D. 32"
     ]
   },
   {

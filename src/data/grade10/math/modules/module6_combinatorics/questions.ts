@@ -1,5 +1,4 @@
 import type { Question } from '@/types';
-import { g10MathModule6QuestionExpansion } from './practiceExpansion';
 
 export const g10MathModule6Questions: Question[] = [
   {
@@ -404,141 +403,6 @@ export const g10MathModule6Questions: Question[] = [
     "correctAnswer": "24",
     "acceptedAnswers": [
       "24"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m6-q028",
-    "subjectId": "math",
-    "topicId": "math10-t6",
-    "questionTypeId": "math10-qt8",
-    "content": "Trong 50 học sinh, có 32 em tham gia câu lạc bộ Toán, 24 em tham gia câu lạc bộ Tin và 11 em tham gia cả hai. Có bao nhiêu học sinh tham gia ít nhất một câu lạc bộ?",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "45",
-    "acceptedAnswers": [
-      "45"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m6-q029",
-    "subjectId": "math",
-    "topicId": "math10-t6",
-    "questionTypeId": "math10-qt8",
-    "content": "Trong 45 học sinh, có 28 em tham gia câu lạc bộ Toán, 19 em tham gia câu lạc bộ Tin và 8 em tham gia cả hai. Có bao nhiêu học sinh không tham gia câu lạc bộ nào?",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "6",
-    "acceptedAnswers": [
-      "6"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m6-q030",
-    "subjectId": "math",
-    "topicId": "math10-t6",
-    "questionTypeId": "math10-qt8",
-    "content": "Trong 60 học sinh, có 35 em tham gia câu lạc bộ Toán, 27 em tham gia câu lạc bộ Tin và 13 em tham gia cả hai. Có bao nhiêu học sinh chỉ tham gia đúng một câu lạc bộ?",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "36",
-    "acceptedAnswers": [
-      "36"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m6-q031",
-    "subjectId": "math",
-    "topicId": "math10-t6",
-    "questionTypeId": "math10-qt8",
-    "content": "Trong 70 học sinh, có 42 em tham gia câu lạc bộ Toán, 31 em tham gia câu lạc bộ Tin và 16 em tham gia cả hai. Có bao nhiêu học sinh tham gia ít nhất một câu lạc bộ?",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "57",
-    "acceptedAnswers": [
-      "57"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m6-q032",
-    "subjectId": "math",
-    "topicId": "math10-t6",
-    "questionTypeId": "math10-qt8",
-    "content": "Trong 65 học sinh, có 38 em tham gia câu lạc bộ Toán, 29 em tham gia câu lạc bộ Tin và 14 em tham gia cả hai. Có bao nhiêu học sinh không tham gia câu lạc bộ nào?",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "12",
-    "acceptedAnswers": [
-      "12"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m6-q033",
-    "subjectId": "math",
-    "topicId": "math10-t6",
-    "questionTypeId": "math10-qt8",
-    "content": "Trong 80 học sinh, có 48 em tham gia câu lạc bộ Toán, 36 em tham gia câu lạc bộ Tin và 21 em tham gia cả hai. Có bao nhiêu học sinh chỉ tham gia đúng một câu lạc bộ?",
-    "responseType": "short_answer",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "correctAnswer": "42",
-    "acceptedAnswers": [
-      "42"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m6-q034",
-    "subjectId": "math",
-    "topicId": "math10-t6",
-    "questionTypeId": "math10-qt8",
-    "content": "Trong 90 học sinh, có 55 em tham gia câu lạc bộ Toán, 43 em tham gia câu lạc bộ Tin và 25 em tham gia cả hai. Có bao nhiêu học sinh tham gia ít nhất một câu lạc bộ?",
-    "responseType": "short_answer",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "correctAnswer": "73",
-    "acceptedAnswers": [
-      "73"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m6-q035",
-    "subjectId": "math",
-    "topicId": "math10-t6",
-    "questionTypeId": "math10-qt8",
-    "content": "Trong 100 học sinh, có 62 em tham gia câu lạc bộ Toán, 47 em tham gia câu lạc bộ Tin và 28 em tham gia cả hai. Có bao nhiêu học sinh không tham gia câu lạc bộ nào?",
-    "responseType": "short_answer",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "correctAnswer": "19",
-    "acceptedAnswers": [
-      "19"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m6-q036",
-    "subjectId": "math",
-    "topicId": "math10-t6",
-    "questionTypeId": "math10-qt8",
-    "content": "Trong 110 học sinh, có 70 em tham gia câu lạc bộ Toán, 54 em tham gia câu lạc bộ Tin và 32 em tham gia cả hai. Có bao nhiêu học sinh chỉ tham gia đúng một câu lạc bộ?",
-    "responseType": "short_answer",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "correctAnswer": "60",
-    "acceptedAnswers": [
-      "60"
     ],
     "validatorType": "number"
   },
@@ -1693,7 +1557,647 @@ export const g10MathModule6Questions: Question[] = [
       "-5674372704"
     ],
     "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q001",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt8",
+    "content": "Một khối có 40 học sinh thích Toán, 28 học sinh thích Vật lí và 15 học sinh thích cả hai môn. Có bao nhiêu học sinh thích ít nhất một trong hai môn?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "53",
+    "acceptedAnswers": [
+      "53"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q002",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt8",
+    "content": "Lớp có 45 học sinh; 30 bạn học câu lạc bộ tiếng Anh, 25 bạn học Tin học và 12 bạn học cả hai. Có bao nhiêu bạn không học câu lạc bộ nào trong hai câu lạc bộ?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q003",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt8",
+    "content": "Trong các số nguyên từ 1 đến 100, có bao nhiêu số chia hết cho 4 hoặc chia hết cho 6?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "33",
+    "acceptedAnswers": [
+      "33"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q004",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt8",
+    "content": "Có 35 học sinh tham gia đội A, 27 học sinh tham gia đội B và 10 học sinh tham gia cả hai. Có bao nhiêu học sinh tham gia đúng một đội?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "42",
+    "acceptedAnswers": [
+      "42"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q005",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt8",
+    "content": "Trong các số từ 1 đến 60, có bao nhiêu số không chia hết cho 2 và cũng không chia hết cho 3?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "20",
+    "acceptedAnswers": [
+      "20"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q006",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt8",
+    "content": "Có bao nhiêu mã gồm 4 chữ số từ 0 đến 9, cho phép lặp và chứa ít nhất một chữ số 0?",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "3439",
+    "acceptedAnswers": [
+      "3439"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q007",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Xếp 7 quyển sách khác nhau lên một kệ, trong đó 3 quyển Toán phải đứng cạnh nhau. Có bao nhiêu cách xếp?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "720",
+    "acceptedAnswers": [
+      "720"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q008",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Xếp 8 học sinh khác nhau thành một hàng. Hai bạn An và Bình không được đứng cạnh nhau. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "30240",
+    "acceptedAnswers": [
+      "30240"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q009",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Dùng các chữ số 0, 1, 2, 3, 4, mỗi chữ số đúng một lần, lập được bao nhiêu số tự nhiên có 5 chữ số?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "96",
+    "acceptedAnswers": [
+      "96"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q010",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Có bao nhiêu cách sắp xếp 5 chữ cái của từ LEVEL?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "30",
+    "acceptedAnswers": [
+      "30"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q011",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Xếp 9 người thành một hàng, trong đó A, B, C phải đứng liên tiếp theo đúng thứ tự A–B–C. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "5040",
+    "acceptedAnswers": [
+      "5040"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q012",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Xếp 4 học sinh nam và 3 học sinh nữ khác nhau thành một hàng sao cho nam và nữ xen kẽ. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "144",
+    "acceptedAnswers": [
+      "144"
+    ],
+    "validatorType": "number",
+    "media": [
+      {
+        "id": "math10-m6x-q012-media-lineup",
+        "type": "diagram",
+        "src": "/assets/math/grade10/module6-alternating-lineup.svg",
+        "alt": "Bảy vị trí thẳng hàng theo thứ tự nam, nữ, nam, nữ, nam, nữ, nam.",
+        "caption": "Mẫu vị trí duy nhất để 4 nam và 3 nữ đứng xen kẽ",
+        "longDescription": "Bốn vị trí dành cho nam và ba vị trí dành cho nữ xen kẽ nhau; sau đó hoán vị từng nhóm độc lập.",
+        "width": 760,
+        "height": 340
+      }
+    ]
+  },
+  {
+    "id": "math10-m6x-q013",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Chọn chủ tịch, phó chủ tịch và thư kí từ 10 thành viên. Có bao nhiêu cách phân công?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "720",
+    "acceptedAnswers": [
+      "720"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q014",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Trao ba huy chương vàng, bạc, đồng cho 3 trong 12 vận động viên, mỗi người nhiều nhất một huy chương. Có bao nhiêu kết quả?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "1320",
+    "acceptedAnswers": [
+      "1320"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q015",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Từ các chữ số 1 đến 9, lập mã gồm 4 chữ số khác nhau. Có bao nhiêu mã?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "3024",
+    "acceptedAnswers": [
+      "3024"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q016",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Từ 7 chữ cái khác nhau, trong đó có 3 nguyên âm, lập chuỗi 5 chữ cái khác nhau bắt đầu bằng một nguyên âm. Có bao nhiêu chuỗi?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "1080",
+    "acceptedAnswers": [
+      "1080"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q017",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Phân 4 nhiệm vụ khác nhau cho 4 trong 9 người, mỗi người nhận nhiều nhất một nhiệm vụ. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "3024",
+    "acceptedAnswers": [
+      "3024"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q018",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Chọn đội trưởng và đội phó từ 8 người, biết A và B không được đồng thời giữ hai chức vụ. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "54",
+    "acceptedAnswers": [
+      "54"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q019",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Chọn 4 học sinh từ 12 học sinh để lập một nhóm. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "495",
+    "acceptedAnswers": [
+      "495"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q020",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Từ 7 nữ và 5 nam, chọn đội 5 người có đúng 3 nữ. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "350",
+    "acceptedAnswers": [
+      "350"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q021",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Chọn 6 người từ 10 người, biết A bắt buộc có mặt và B không được chọn. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "56",
+    "acceptedAnswers": [
+      "56"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q022",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Từ 6 nữ và 5 nam, chọn đội 4 người có ít nhất 2 nữ. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "265",
+    "acceptedAnswers": [
+      "265"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q023",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Chọn 3 vị trí trong 8 vị trí thẳng hàng sao cho không có hai vị trí nào kề nhau. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "20",
+    "acceptedAnswers": [
+      "20"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q024",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt9",
+    "content": "Từ 9 học sinh, chọn đội 5 người rồi chọn một đội trưởng trong đội. Có bao nhiêu cách?",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "630",
+    "acceptedAnswers": [
+      "630"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q025",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Tổng các hệ số của khai triển $(2x-1)^6$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "1",
+    "acceptedAnswers": [
+      "1"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q026",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Khai triển $(x+2)^8$ có bao nhiêu số hạng với các bậc khác nhau?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "9",
+    "acceptedAnswers": [
+      "9"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q027",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Tổng các hệ số của các lũy thừa chẵn trong khai triển $(1+x)^{10}$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "512",
+    "acceptedAnswers": [
+      "512"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q028",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Tổng các hệ số của khai triển $(3-2x)^5$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "1",
+    "acceptedAnswers": [
+      "1"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q029",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Tổng các hệ số khác hệ số tự do trong khai triển $(1+2x)^7$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "2186",
+    "acceptedAnswers": [
+      "2186"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q030",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Giá trị tại $x=1$ của đa thức nhận được khi khai triển $(x^2+x)^6$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "64",
+    "acceptedAnswers": [
+      "64"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q031",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Hệ số của $x^3$ trong khai triển $(2x-1)^5$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "80",
+    "acceptedAnswers": [
+      "80"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q032",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Hệ số của $x^4$ trong khai triển $(1-3x)^6$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "1215",
+    "acceptedAnswers": [
+      "1215"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q033",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Hệ số của $x^5$ trong khai triển $(x^2+2x)^5$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "32",
+    "acceptedAnswers": [
+      "32"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q034",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Hệ số của $x^6$ trong khai triển $(x^2+1)^5$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "10",
+    "acceptedAnswers": [
+      "10"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q035",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Hệ số của $x^7$ trong khai triển $(x^3-x)^4$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "0",
+    "acceptedAnswers": [
+      "0"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q036",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Hệ số của $x^4$ trong khai triển $\\left(2x+\\dfrac1x\\right)^6$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "192",
+    "acceptedAnswers": [
+      "192"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q037",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Số hạng không chứa x trong khai triển $\\left(x+\\dfrac1x\\right)^8$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "70",
+    "acceptedAnswers": [
+      "70"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q038",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Số hạng không chứa x trong khai triển $\\left(2x^2-\\dfrac1x\\right)^6$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "60",
+    "acceptedAnswers": [
+      "60"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q039",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Số hạng không chứa x trong khai triển $\\left(x^3+\\dfrac2x\\right)^8$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "1792",
+    "acceptedAnswers": [
+      "1792"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q040",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Số hạng không chứa x trong khai triển $\\left(x^2-\\dfrac3{x^2}\\right)^6$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "-540",
+    "acceptedAnswers": [
+      "-540"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q041",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Số hạng không chứa x trong khai triển $\\left(2x-\\dfrac1{x^2}\\right)^9$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "-5376",
+    "acceptedAnswers": [
+      "-5376"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m6x-q042",
+    "subjectId": "math",
+    "topicId": "math10-t6",
+    "questionTypeId": "math10-qt10",
+    "content": "Hệ số của số hạng không chứa x trong khai triển $\\left(x^2+\\dfrac1x\\right)^5$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "0",
+    "acceptedAnswers": [
+      "0"
+    ],
+    "validatorType": "number"
   }
 ];
-
-g10MathModule6Questions.push(...g10MathModule6QuestionExpansion);

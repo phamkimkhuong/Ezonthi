@@ -666,8 +666,7 @@ npm run deploy     # Build + Firebase deploy hosting
 - Các callable `activatePremiumTrial`, `refreshLearningSummary`, `getSurveySummary` là đường tương thích mới. `teacher_reviews` chỉ giáo viên ghi, tách khỏi bài làm học sinh.
 - `scripts/buildServerLearningCatalog.mjs` sinh catalog đáp án và validator/hàm Premium dùng chung trước mỗi build Functions; không sửa file generated.
 - Email dùng quyền giáo viên thống nhất, Firebase Auth directory, quota transaction và idempotency. PayOS và rút tiền cập nhật tài chính trong transaction.
-- Public leaderboard chuyển sang `system_stats/leaderboard_public`, không xuất email và chỉ sử dụng stats do server kiểm tra.
-- Kiểm thử/ràng buộc chuyển đổi dữ liệu: `docs/security-phase1.md`; lệnh `npm run test:security`.
+- Kiểm thử/ràng buộc chuyển đổi dữ liệu: lệnh `npm run validate:release`.
 
 ### Đợt mở rộng có số liệu 4 (13/09/2026)
 

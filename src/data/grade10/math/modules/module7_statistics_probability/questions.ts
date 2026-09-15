@@ -1,5 +1,4 @@
 import type { Question } from '@/types';
-import { g10MathModule7QuestionExpansion } from './practiceExpansion';
 
 export const g10MathModule7Questions: Question[] = [
   {
@@ -63,66 +62,6 @@ export const g10MathModule7Questions: Question[] = [
     "validatorType": "number"
   },
   {
-    "id": "math10-m7-q005",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Một đại lượng được làm tròn đến đơn vị 0.01. Sai số tuyệt đối tối đa do phép làm tròn là bao nhiêu?",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "0.005",
-    "acceptedAnswers": [
-      "0.005"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m7-q006",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Một đại lượng được làm tròn đến đơn vị 1. Sai số tuyệt đối tối đa do phép làm tròn là bao nhiêu?",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "0.5",
-    "acceptedAnswers": [
-      "0.5"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m7-q007",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Một đại lượng được làm tròn đến đơn vị 10. Sai số tuyệt đối tối đa do phép làm tròn là bao nhiêu?",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "5",
-    "acceptedAnswers": [
-      "5"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m7-q008",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Một đại lượng được làm tròn đến đơn vị 0.001. Sai số tuyệt đối tối đa do phép làm tròn là bao nhiêu?",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "0.0005",
-    "acceptedAnswers": [
-      "0.0005"
-    ],
-    "validatorType": "number"
-  },
-  {
     "id": "math10-m7-q009",
     "subjectId": "math",
     "topicId": "math10-t7",
@@ -135,54 +74,6 @@ export const g10MathModule7Questions: Question[] = [
     "acceptedAnswers": [
       "1.04",
       "1.04%"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m7-q010",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Giá trị gần đúng là 125 với sai số tuyệt đối không quá 0.5. Tính sai số tương đối tối đa theo phần trăm, làm tròn đến 0,01%.",
-    "responseType": "short_answer",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "correctAnswer": "0.4",
-    "acceptedAnswers": [
-      "0.4",
-      "0.4%"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m7-q011",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Giá trị gần đúng là 3.14 với sai số tuyệt đối không quá 0.005. Tính sai số tương đối tối đa theo phần trăm, làm tròn đến 0,01%.",
-    "responseType": "short_answer",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "correctAnswer": "0.16",
-    "acceptedAnswers": [
-      "0.16",
-      "0.16%"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m7-q012",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Giá trị gần đúng là 2500 với sai số tuyệt đối không quá 5. Tính sai số tương đối tối đa theo phần trăm, làm tròn đến 0,01%.",
-    "responseType": "short_answer",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "correctAnswer": "0.2",
-    "acceptedAnswers": [
-      "0.2",
-      "0.2%"
     ],
     "validatorType": "number"
   },
@@ -232,36 +123,6 @@ export const g10MathModule7Questions: Question[] = [
     "validatorType": "number"
   },
   {
-    "id": "math10-m7-q016",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Tính số trung bình cộng của mẫu số liệu: 2; 4; 6; 8; 10.",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "6",
-    "acceptedAnswers": [
-      "6"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m7-q017",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Tính số trung bình cộng của mẫu số liệu: 12; 15; 18; 21; 24.",
-    "responseType": "short_answer",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "correctAnswer": "18",
-    "acceptedAnswers": [
-      "18"
-    ],
-    "validatorType": "number"
-  },
-  {
     "id": "math10-m7-q018",
     "subjectId": "math",
     "topicId": "math10-t7",
@@ -303,51 +164,6 @@ export const g10MathModule7Questions: Question[] = [
     "correctAnswer": "10",
     "acceptedAnswers": [
       "10"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m7-q021",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Tính số trung bình cộng của mẫu số liệu: 18; 20; 21; 23; 24; 26.",
-    "responseType": "short_answer",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "correctAnswer": "22",
-    "acceptedAnswers": [
-      "22"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m7-q022",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Tính số trung bình cộng của mẫu số liệu: 4; 7; 9; 10; 13; 17.",
-    "responseType": "short_answer",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "correctAnswer": "10",
-    "acceptedAnswers": [
-      "10"
-    ],
-    "validatorType": "number"
-  },
-  {
-    "id": "math10-m7-q023",
-    "subjectId": "math",
-    "topicId": "math10-t7",
-    "questionTypeId": "math10-qt11",
-    "content": "Tính số trung bình cộng của mẫu số liệu: 25; 28; 30; 32; 35.",
-    "responseType": "short_answer",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "correctAnswer": "30",
-    "acceptedAnswers": [
-      "30"
     ],
     "validatorType": "number"
   },
@@ -1697,7 +1513,107 @@ export const g10MathModule7Questions: Question[] = [
       "117/125"
     ],
     "validatorType": "number"
+  },
+  {
+    "id": "math10-m7x-q001",
+    "subjectId": "math",
+    "topicId": "math10-t7",
+    "questionTypeId": "math10-qt12",
+    "content": "Hai mẫu A và B cùng đơn vị có độ lệch chuẩn lần lượt là 3 và 5. Độ lệch chuẩn của mẫu ổn định hơn nhỏ hơn mẫu kia bao nhiêu đơn vị?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m7x-q002",
+    "subjectId": "math",
+    "topicId": "math10-t7",
+    "questionTypeId": "math10-qt12",
+    "content": "Mẫu A có độ lệch chuẩn 4. Mẫu B được tạo bằng cách nhân mọi giá trị của A với 2 rồi cộng 3. Độ lệch chuẩn của B bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "8",
+    "acceptedAnswers": [
+      "8"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m7x-q003",
+    "subjectId": "math",
+    "topicId": "math10-t7",
+    "questionTypeId": "math10-qt12",
+    "content": "Mẫu A có phương sai 9, mẫu B có phương sai 25. Độ lệch chuẩn của B lớn hơn độ lệch chuẩn của A bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m7x-q004",
+    "subjectId": "math",
+    "topicId": "math10-t7",
+    "questionTypeId": "math10-qt12",
+    "content": "Mẫu A gồm 10, 10, 10, 10; mẫu B gồm 8, 9, 11, 12. Phương sai của B lớn hơn phương sai của A bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "2.5",
+    "acceptedAnswers": [
+      "2.5"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m7x-q005",
+    "subjectId": "math",
+    "topicId": "math10-t7",
+    "questionTypeId": "math10-qt12",
+    "content": "Mẫu A có phương sai 7. Mẫu B thu được bằng cách cộng 100 vào mọi giá trị của A. Phương sai của B trừ phương sai của A bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "0",
+    "acceptedAnswers": [
+      "0"
+    ],
+    "validatorType": "number",
+    "media": [
+      {
+        "id": "math10-m7x-q005-media-shift",
+        "type": "chart",
+        "src": "/assets/math/grade10/module7-shifted-distribution.svg",
+        "alt": "Hai đường cong cùng hình dạng và độ rộng; mẫu B là mẫu A được dịch sang phải một trăm đơn vị.",
+        "caption": "Phép cộng hằng số làm đổi vị trí nhưng không đổi độ phân tán",
+        "longDescription": "Hai phân bố có tâm khác nhau một trăm đơn vị nhưng cùng độ rộng, vì vậy phương sai và độ lệch chuẩn bằng nhau.",
+        "width": 760,
+        "height": 410
+      }
+    ]
+  },
+  {
+    "id": "math10-m7x-q006",
+    "subjectId": "math",
+    "topicId": "math10-t7",
+    "questionTypeId": "math10-qt12",
+    "content": "Một mẫu có độ lệch chuẩn 2. Nếu mọi giá trị được nhân với $-3$ thì độ lệch chuẩn mới bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "6",
+    "acceptedAnswers": [
+      "6"
+    ],
+    "validatorType": "number"
   }
 ];
-
-g10MathModule7Questions.push(...g10MathModule7QuestionExpansion);

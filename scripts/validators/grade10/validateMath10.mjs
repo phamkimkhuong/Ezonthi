@@ -89,46 +89,6 @@ for (const moduleName of moduleDirs) {
   blueprints.push(...readFirstMatchingArray(path.join(modulePath, 'practiceBlueprint.ts'), /export const (g10MathModule\d+PracticeBlueprints)/));
   metadata.push(...readFirstMatchingArray(path.join(modulePath, 'practiceMetadata.ts'), /export const (g10MathModule\d+PracticeMetadata)/));
 
-  const practiceExpansionFile = path.join(modulePath, 'practiceExpansion.ts');
-  if (fs.existsSync(practiceExpansionFile)) {
-    const expansionSeeds = readExportedArray(practiceExpansionFile, 'g10MathPracticeExpansionSeeds');
-    for (const seed of expansionSeeds) {
-      const questionTypeId = seed.subTypeId.replace(/-st\d+$/, '');
-      const topicId = questionTypes.find(item => item.id === questionTypeId)?.topicId;
-      questions.push({
-        id: seed.id,
-        subjectId: 'math',
-        topicId,
-        questionTypeId,
-        content: seed.content,
-        responseType: 'short_answer',
-        difficulty: seed.difficulty,
-        sourceType: 'manual',
-        correctAnswer: seed.correctAnswer,
-        acceptedAnswers: [seed.correctAnswer],
-        validatorType: 'number',
-        ...(Array.isArray(seed.media) ? { media: seed.media } : {})
-      });
-      solutions.push({
-        id: seed.id.replace('-q', '-s'),
-        questionId: seed.id,
-        recognition: `Dạng mở rộng ${seed.subTypeId}.`,
-        detailedSteps: seed.reasoning.map((explanation, index) => ({
-          order: index + 1,
-          explanation
-        })),
-        finalAnswer: seed.correctAnswer,
-        commonMistakes: ['Cần kiểm tra mô hình đếm.']
-      });
-      metadata.push({
-        questionId: seed.id,
-        subTypeId: seed.subTypeId,
-        practiceRole: seed.practiceRole,
-        representationType: seed.representationType,
-        ...(seed.practiceRole === 'mastery_holdout' ? { isMasteryHoldout: true } : {})
-      });
-    }
-  }
 
   const curriculumExpansionFile = path.join(modulePath, 'curriculumExpansion.ts');
   if (fs.existsSync(curriculumExpansionFile)) {

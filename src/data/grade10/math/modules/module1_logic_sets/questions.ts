@@ -2,351 +2,467 @@ import type { Question } from '@/types';
 
 export const g10MathModule1Questions: Question[] = [
   {
-      id: 'math10-q1',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho hai tập hợp $A = [-2; 3]$ và $B = (1; 5)$. Hãy xác định tập hợp $A \\cap B$.',
-      difficulty: 'easy',
-      sourceType: 'manual',
-      correctAnswer: '(1; 3]',
-      acceptedAnswers: ['(1;3]', '(1; 3]'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q1",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho hai tập hợp $A = [-2; 3]$ và $B = (1; 5)$. Hãy xác định tập hợp $A \\cap B$.",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "(1; 3]",
+    "acceptedAnswers": [
+      "(1;3]",
+      "(1; 3]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q2',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho tập hợp $A = [m; m + 2]$ và $B = [-1; 3]$. Tìm tất cả các giá trị thực của tham số m để $A \\cap B \\neq \\varnothing$.',
-      difficulty: 'hard',
-      sourceType: 'manual',
-      correctAnswer: '-3 <= m <= 3',
-      acceptedAnswers: ['[-3; 3]', '-3 <= m <= 3', 'm in [-3;3]'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q2",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho tập hợp $A = [m; m + 2]$ và $B = [-1; 3]$. Tìm tất cả các giá trị thực của tham số m để $A \\cap B \\neq \\varnothing$.",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "-3 <= m <= 3",
+    "acceptedAnswers": [
+      "[-3; 3]",
+      "-3 <= m <= 3",
+      "m in [-3;3]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q6',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho hai tập hợp $A = [-3; 2)$ và $B = [0; 5)$. Hãy xác định tập hợp $A \\cap B$.',
-      difficulty: 'easy',
-      sourceType: 'manual',
-      correctAnswer: '[0; 2)',
-      acceptedAnswers: ['[0; 2)', '[0;2)', '[0; 2['],
-      validatorType: 'exact'
-    },
+    "id": "math10-q6",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho hai tập hợp $A = [-3; 2)$ và $B = [0; 5)$. Hãy xác định tập hợp $A \\cap B$.",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "[0; 2)",
+    "acceptedAnswers": [
+      "[0; 2)",
+      "[0;2)",
+      "[0; 2["
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q7',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho hai tập hợp $A = (-4; 1]$ và $B = (0; 3)$. Hãy xác định tập hợp $A \\cup B$.',
-      difficulty: 'easy',
-      sourceType: 'manual',
-      correctAnswer: '(-4; 3)',
-      acceptedAnswers: ['(-4; 3)', '(-4;3)', ']-4; 3['],
-      validatorType: 'exact'
-    },
+    "id": "math10-q7",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho hai tập hợp $A = (-4; 1]$ và $B = (0; 3)$. Hãy xác định tập hợp $A \\cup B$.",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "(-4; 3)",
+    "acceptedAnswers": [
+      "(-4; 3)",
+      "(-4;3)",
+      "]-4; 3["
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q8',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho hai tập hợp $A = [-2; 4]$ và $B = (1; 6]$. Hãy xác định tập hợp $A \\setminus B$.',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: '[-2; 1]',
-      acceptedAnswers: ['[-2; 1]', '[-2;1]'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q8",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho hai tập hợp $A = [-2; 4]$ và $B = (1; 6]$. Hãy xác định tập hợp $A \\setminus B$.",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "[-2; 1]",
+    "acceptedAnswers": [
+      "[-2; 1]",
+      "[-2;1]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q9',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho hai tập hợp $A = (-\\infty; 2]$ và $B = [-1; 4)$. Hãy xác định tập hợp $B \\setminus A$.',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: '(2; 4)',
-      acceptedAnswers: ['(2; 4)', '(2;4)', ']2; 4['],
-      validatorType: 'exact'
-    },
+    "id": "math10-q9",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho hai tập hợp $A = (-\\infty; 2]$ và $B = [-1; 4)$. Hãy xác định tập hợp $B \\setminus A$.",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "(2; 4)",
+    "acceptedAnswers": [
+      "(2; 4)",
+      "(2;4)",
+      "]2; 4["
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q10',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho tập hợp $A = [-3; 5)$. Hãy xác định phần bù của tập hợp A trong tập số thực $\\mathbb{R}$ (tức là $C_{\\mathbb{R}}A$).',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: '(-\\infty; -3) \\cup [5; +\\infty)',
-      acceptedAnswers: [
-        '(-\\infty; -3) \\cup [5; +\\infty)',
-        '(-\\infty;-3) \\cup [5;+\\infty)',
-        '(-\\infty; -3) U [5; +\\infty)',
-        '(-\\infty;-3) U [5;+\\infty)'
-      ],
-      validatorType: 'exact'
-    },
+    "id": "math10-q10",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho tập hợp $A = [-3; 5)$. Hãy xác định phần bù của tập hợp A trong tập số thực $\\mathbb{R}$ (tức là $C_{\\mathbb{R}}A$).",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "(-\\infty; -3) \\cup [5; +\\infty)",
+    "acceptedAnswers": [
+      "(-\\infty; -3) \\cup [5; +\\infty)",
+      "(-\\infty;-3) \\cup [5;+\\infty)",
+      "(-\\infty; -3) U [5; +\\infty)",
+      "(-\\infty;-3) U [5;+\\infty)"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q11',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho hai tập hợp $A = [0; 3]$ và $B = (2; 6)$. Hãy xác định phần bù của tập hợp $A \\cup B$ trong tập số thực $\\mathbb{R}$ (tức là $C_{\\mathbb{R}}(A \\cup B)$).',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: '(-\\infty; 0) \\cup [6; +\\infty)',
-      acceptedAnswers: [
-        '(-\\infty; 0) \\cup [6; +\\infty)',
-        '(-\\infty;0) \\cup [6;+\\infty)',
-        '(-\\infty; 0) U [6; +\\infty)',
-        '(-\\infty;0) U [6;+\\infty)'
-      ],
-      validatorType: 'exact'
-    },
+    "id": "math10-q11",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho hai tập hợp $A = [0; 3]$ và $B = (2; 6)$. Hãy xác định phần bù của tập hợp $A \\cup B$ trong tập số thực $\\mathbb{R}$ (tức là $C_{\\mathbb{R}}(A \\cup B)$).",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "(-\\infty; 0) \\cup [6; +\\infty)",
+    "acceptedAnswers": [
+      "(-\\infty; 0) \\cup [6; +\\infty)",
+      "(-\\infty;0) \\cup [6;+\\infty)",
+      "(-\\infty; 0) U [6; +\\infty)",
+      "(-\\infty;0) U [6;+\\infty)"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q12',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho hai tập hợp $A = (-\\infty; -2]$ và $B = [-2; +\\infty)$. Hãy xác định tập hợp $A \\cap B$.',
-      difficulty: 'easy',
-      sourceType: 'manual',
-      correctAnswer: '{-2}',
-      acceptedAnswers: ['{-2}', '{-2}', '[-2; -2]'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q12",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho hai tập hợp $A = (-\\infty; -2]$ và $B = [-2; +\\infty)$. Hãy xác định tập hợp $A \\cap B$.",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "{-2}",
+    "acceptedAnswers": [
+      "{-2}",
+      "{-2}",
+      "[-2; -2]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q13',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho ba tập hợp $A = [-4; 2]$, $B = [-2; 4)$ và $C = (0; 5]$. Hãy xác định tập hợp $A \\cap B \\cap C$.',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: '(0; 2]',
-      acceptedAnswers: ['(0; 2]', '(0;2]'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q13",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho ba tập hợp $A = [-4; 2]$, $B = [-2; 4)$ và $C = (0; 5]$. Hãy xác định tập hợp $A \\cap B \\cap C$.",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "(0; 2]",
+    "acceptedAnswers": [
+      "(0; 2]",
+      "(0;2]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q14',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho hai tập hợp $A = [-3; 3]$ và $B = [-1; 2]$. Hãy xác định tập hợp $A \\setminus B$.',
-      difficulty: 'hard',
-      sourceType: 'manual',
-      correctAnswer: '[-3; -1) \\cup (2; 3]',
-      acceptedAnswers: [
-        '[-3; -1) \\cup (2; 3]',
-        '[-3;-1) \\cup (2;3]',
-        '[-3; -1) U (2; 3]',
-        '[-3;-1) U (2;3]'
-      ],
-      validatorType: 'exact'
-    },
+    "id": "math10-q14",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho hai tập hợp $A = [-3; 3]$ và $B = [-1; 2]$. Hãy xác định tập hợp $A \\setminus B$.",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "[-3; -1) \\cup (2; 3]",
+    "acceptedAnswers": [
+      "[-3; -1) \\cup (2; 3]",
+      "[-3;-1) \\cup (2;3]",
+      "[-3; -1) U (2; 3]",
+      "[-3;-1) U (2;3]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q15',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho hai tập hợp $A = (m - 1; m + 3)$ và $B = (-\\infty; -3) \\cup [5; +\\infty)$. Tìm tất cả các giá trị của tham số m để $A \\cap B = \\varnothing$.',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: '-2 <= m <= 2',
-      acceptedAnswers: ['-2 <= m <= 2', '[-2; 2]', '-2 <= m <= 2', 'm in [-2;2]'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q15",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho hai tập hợp $A = (m - 1; m + 3)$ và $B = (-\\infty; -3) \\cup [5; +\\infty)$. Tìm tất cả các giá trị của tham số m để $A \\cap B = \\varnothing$.",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "-2 <= m <= 2",
+    "acceptedAnswers": [
+      "-2 <= m <= 2",
+      "[-2; 2]",
+      "-2 <= m <= 2",
+      "m in [-2;2]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q16',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho tập hợp $A = (m; m + 2)$ và $B = [-2; 4]$. Tìm tất cả các giá trị thực của tham số m để $A \\subset B$.',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: '-2 <= m <= 2',
-      acceptedAnswers: ['-2 <= m <= 2', '[-2; 2]', '-2 <= m <= 2', 'm in [-2;2]'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q16",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho tập hợp $A = (m; m + 2)$ và $B = [-2; 4]$. Tìm tất cả các giá trị thực của tham số m để $A \\subset B$.",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "-2 <= m <= 2",
+    "acceptedAnswers": [
+      "-2 <= m <= 2",
+      "[-2; 2]",
+      "-2 <= m <= 2",
+      "m in [-2;2]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q17',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho hai tập hợp $A = [m - 1; \\frac{m + 5}{2}]$ và $B = (-\\infty; -2) \\cup [3; +\\infty)$. Tìm tất cả các giá trị thực của m để $A \\cap B \\neq \\varnothing$.',
-      difficulty: 'hard',
-      sourceType: 'manual',
-      correctAnswer: 'm < -1 hoặc 1 <= m <= 7',
-      acceptedAnswers: [
-        'm < -1 hoặc 1 <= m <= 7',
-        'm < -1 hoac 1 <= m <= 7',
-        '(-\\infty; -1) \\cup [1; 7]',
-        '(-\\infty;-1) \\cup [1;7]'
-      ],
-      validatorType: 'exact'
-    },
+    "id": "math10-q17",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho hai tập hợp $A = [m - 1; \\frac{m + 5}{2}]$ và $B = (-\\infty; -2) \\cup [3; +\\infty)$. Tìm tất cả các giá trị thực của m để $A \\cap B \\neq \\varnothing$.",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "m < -1 hoặc 1 <= m <= 7",
+    "acceptedAnswers": [
+      "m < -1 hoặc 1 <= m <= 7",
+      "m < -1 hoac 1 <= m <= 7",
+      "(-\\infty; -1) \\cup [1; 7]",
+      "(-\\infty;-1) \\cup [1;7]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q18',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho tập hợp $A = [m; +\\infty)$ và $B = (5; +\\infty)$. Tìm điều kiện của tham số m để $A \\subset B$.',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: 'm > 5',
-      acceptedAnswers: ['m > 5', 'm > 5', '(5; +\\infty)'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q18",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho tập hợp $A = [m; +\\infty)$ và $B = (5; +\\infty)$. Tìm điều kiện của tham số m để $A \\subset B$.",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "m > 5",
+    "acceptedAnswers": [
+      "m > 5",
+      "m > 5",
+      "(5; +\\infty)"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q19',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho hai tập hợp $A = (m - 3; m]$ và $B = (1; 4)$. Tìm tất cả các giá trị của tham số m để $A \\cap B = \\varnothing$.',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: 'm <= 1 hoặc m >= 7',
-      acceptedAnswers: ['m <= 1 hoặc m >= 7', 'm <= 1 hoac m >= 7', '(-\\infty; 1] \\cup [7; +\\infty)'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q19",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho hai tập hợp $A = (m - 3; m]$ và $B = (1; 4)$. Tìm tất cả các giá trị của tham số m để $A \\cap B = \\varnothing$.",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "m <= 1 hoặc m >= 7",
+    "acceptedAnswers": [
+      "m <= 1 hoặc m >= 7",
+      "m <= 1 hoac m >= 7",
+      "(-\\infty; 1] \\cup [7; +\\infty)"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q20',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho tập hợp $A = (-\\infty; m)$ và $B = (-\\infty; 2m - 1]$. Tìm tất cả các giá trị thực của m để $A \\subset B$.',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: 'm >= 1',
-      acceptedAnswers: ['m >= 1', 'm >= 1', '[1; +\\infty)', '[1;+\\infty)'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q20",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho tập hợp $A = (-\\infty; m)$ và $B = (-\\infty; 2m - 1]$. Tìm tất cả các giá trị thực của m để $A \\subset B$.",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "m >= 1",
+    "acceptedAnswers": [
+      "m >= 1",
+      "m >= 1",
+      "[1; +\\infty)",
+      "[1;+\\infty)"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q21',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho hai tập hợp $A = [m; m + 3]$ và $B = [2m - 1; 2m + 2]$. Tìm điều kiện của tham số m để $A \\cap B \\neq \\varnothing$.',
-      difficulty: 'hard',
-      sourceType: 'manual',
-      correctAnswer: '-2 <= m <= 4',
-      acceptedAnswers: ['-2 <= m <= 4', '[-2; 4]', '-2 <= m <= 4', 'm in [-2;4]'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q21",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho hai tập hợp $A = [m; m + 3]$ và $B = [2m - 1; 2m + 2]$. Tìm điều kiện của tham số m để $A \\cap B \\neq \\varnothing$.",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "-2 <= m <= 4",
+    "acceptedAnswers": [
+      "-2 <= m <= 4",
+      "[-2; 4]",
+      "-2 <= m <= 4",
+      "m in [-2;4]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q22',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho hai tập hợp $A = [2m - 1; 2m + 3]$ và $B = [-1; 5]$. Tìm tất cả các giá trị của tham số m để $A \\cap B = \\varnothing$.',
-      difficulty: 'medium',
-      sourceType: 'manual',
-      correctAnswer: 'm < -2 hoặc m > 3',
-      acceptedAnswers: ['m < -2 hoặc m > 3', 'm < -2 hoac m > 3', 'm < -2 hoặc m > 3', 'm < -2 hoac m > 3'],
-      validatorType: 'exact',
-      media: [{
-        id: 'math10-q22-media-intervals',
-        type: 'diagram',
-        src: '/assets/math/grade10/module1-disjoint-intervals.svg',
-        alt: 'Hai trường hợp để khoảng A không giao khoảng B từ âm một đến năm: A nằm hoàn toàn bên trái hoặc hoàn toàn bên phải B.',
-        caption: 'Sơ đồ định hướng điều kiện hai khoảng không giao nhau',
-        longDescription: 'Hàng trên minh họa đầu phải của A phải nhỏ hơn đầu trái âm một của B. Hàng dưới minh họa đầu trái của A phải lớn hơn đầu phải năm của B.',
-        width: 760,
-        height: 360
-      }]
-    },
-  {
-      id: 'math10-q23',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho tập hợp $A = [-3; 3]$ và $B = [m - 2; m + 5]$. Tìm điều kiện của tham số m để $A \\subset B$.',
-      difficulty: 'hard',
-      sourceType: 'manual',
-      correctAnswer: '-2 <= m <= -1',
-      acceptedAnswers: ['-2 <= m <= -1', '[-2; -1]', '-2 <= m <= -1', 'm in [-2;-1]'],
-      validatorType: 'exact'
-    },
-  {
-      id: 'math10-q64',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho $U = \\{1;2;\\ldots;30\\}$, $A$ là tập các phần tử của $U$ chia hết cho 2 và $B$ là tập các phần tử của $U$ chia hết cho 3. Tính số phần tử của $U \\setminus (A \\cup B)$.',
-      difficulty: 'hard',
-      sourceType: 'manual',
-      correctAnswer: '10',
-      acceptedAnswers: ['10', '10 phần tử', '10 phan tu'],
-      validatorType: 'number',
-      correctFinalAnswer: { value: '10' },
-      acceptedFinalAnswers: [{ value: '10' }],
-      answerSchema: {
-        type: 'single-number',
-        fields: [{ key: 'value', label: 'Số phần tử:', valueType: 'number', placeholder: 'Nhập số phần tử' }],
-        proofImageRequired: false,
-        autoCheckMode: 'numeric'
+    "id": "math10-q22",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho hai tập hợp $A = [2m - 1; 2m + 3]$ và $B = [-1; 5]$. Tìm tất cả các giá trị của tham số m để $A \\cap B = \\varnothing$.",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "m < -2 hoặc m > 3",
+    "acceptedAnswers": [
+      "m < -2 hoặc m > 3",
+      "m < -2 hoac m > 3",
+      "m < -2 hoặc m > 3",
+      "m < -2 hoac m > 3"
+    ],
+    "validatorType": "exact",
+    "media": [
+      {
+        "id": "math10-q22-media-intervals",
+        "type": "diagram",
+        "src": "/assets/math/grade10/module1-disjoint-intervals.svg",
+        "alt": "Hai trường hợp để khoảng A không giao khoảng B từ âm một đến năm: A nằm hoàn toàn bên trái hoặc hoàn toàn bên phải B.",
+        "caption": "Sơ đồ định hướng điều kiện hai khoảng không giao nhau",
+        "longDescription": "Hàng trên minh họa đầu phải của A phải nhỏ hơn đầu trái âm một của B. Hàng dưới minh họa đầu trái của A phải lớn hơn đầu phải năm của B.",
+        "width": 760,
+        "height": 360
       }
-    },
+    ]
+  },
   {
-      id: 'math10-q65',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt1',
-      content: 'Cho $A=[-4;5]$, $B=(-2;7)$ và $C=[0;3]$. Xác định tập hợp $(A \\cup B) \\setminus C$.',
-      difficulty: 'hard',
-      sourceType: 'manual',
-      correctAnswer: '[-4; 0) \\cup (3; 7)',
-      acceptedAnswers: ['[-4; 0) \\cup (3; 7)', '[-4;0)\\cup(3;7)', '[-4; 0) U (3; 7)'],
-      validatorType: 'exact'
-    },
+    "id": "math10-q23",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho tập hợp $A = [-3; 3]$ và $B = [m - 2; m + 5]$. Tìm điều kiện của tham số m để $A \\subset B$.",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "-2 <= m <= -1",
+    "acceptedAnswers": [
+      "-2 <= m <= -1",
+      "[-2; -1]",
+      "-2 <= m <= -1",
+      "m in [-2;-1]"
+    ],
+    "validatorType": "exact"
+  },
   {
-      id: 'math10-q66',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho $A=[-2;1]$ và $B=[m;4]$. Tìm điều kiện của $m$ để $A \\cap B \\ne \\varnothing$.',
-      difficulty: 'easy',
-      sourceType: 'manual',
-      correctAnswer: 'm <= 1',
-      acceptedAnswers: ['m <= 1', 'm ≤ 1', '(-\\infty; 1]'],
-      validatorType: 'exact'
+    "id": "math10-q64",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho $U = \\{1;2;\\ldots;30\\}$, $A$ là tập các phần tử của $U$ chia hết cho 2 và $B$ là tập các phần tử của $U$ chia hết cho 3. Tính số phần tử của $U \\setminus (A \\cup B)$.",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "10",
+    "acceptedAnswers": [
+      "10",
+      "10 phần tử",
+      "10 phan tu"
+    ],
+    "validatorType": "number",
+    "correctFinalAnswer": {
+      "value": "10"
     },
-  {
-      id: 'math10-q67',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho $A=[m;4]$ và $B=[1;6]$. Tìm tất cả giá trị thực của $m$ để $A$ khác rỗng và $A \\subset B$.',
-      difficulty: 'easy',
-      sourceType: 'manual',
-      correctAnswer: '1 <= m <= 4',
-      acceptedAnswers: ['1 <= m <= 4', '1 ≤ m ≤ 4', '[1;4]', 'm \\in [1;4]'],
-      validatorType: 'exact'
-    },
-  {
-      id: 'math10-q68',
-      subjectId: 'math',
-      topicId: 'math10-t1',
-      questionTypeId: 'math10-qt2',
-      content: 'Cho $A=(m-1;m+1)$ và $B=[-3;2]$. Tìm số nguyên lớn nhất $m$ để $A \\subset B$.',
-      difficulty: 'easy',
-      sourceType: 'manual',
-      correctAnswer: '1',
-      acceptedAnswers: ['1', 'm = 1', 'm=1'],
-      validatorType: 'number',
-      correctFinalAnswer: { value: '1' },
-      acceptedFinalAnswers: [{ value: '1' }],
-      answerSchema: {
-        type: 'single-number',
-        fields: [{ key: 'value', label: 'Giá trị lớn nhất của m:', valueType: 'number', placeholder: 'Nhập m' }],
-        proofImageRequired: false,
-        autoCheckMode: 'numeric'
+    "acceptedFinalAnswers": [
+      {
+        "value": "10"
       }
+    ],
+    "answerSchema": {
+      "type": "single-number",
+      "fields": [
+        {
+          "key": "value",
+          "label": "Số phần tử:",
+          "valueType": "number",
+          "placeholder": "Nhập số phần tử"
+        }
+      ],
+      "proofImageRequired": false,
+      "autoCheckMode": "numeric"
+    }
+  },
+  {
+    "id": "math10-q65",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt1",
+    "content": "Cho $A=[-4;5]$, $B=(-2;7)$ và $C=[0;3]$. Xác định tập hợp $(A \\cup B) \\setminus C$.",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "[-4; 0) \\cup (3; 7)",
+    "acceptedAnswers": [
+      "[-4; 0) \\cup (3; 7)",
+      "[-4;0)\\cup(3;7)",
+      "[-4; 0) U (3; 7)"
+    ],
+    "validatorType": "exact"
+  },
+  {
+    "id": "math10-q66",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho $A=[-2;1]$ và $B=[m;4]$. Tìm điều kiện của $m$ để $A \\cap B \\ne \\varnothing$.",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "m <= 1",
+    "acceptedAnswers": [
+      "m <= 1",
+      "m ≤ 1",
+      "(-\\infty; 1]"
+    ],
+    "validatorType": "exact"
+  },
+  {
+    "id": "math10-q67",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho $A=[m;4]$ và $B=[1;6]$. Tìm tất cả giá trị thực của $m$ để $A$ khác rỗng và $A \\subset B$.",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "1 <= m <= 4",
+    "acceptedAnswers": [
+      "1 <= m <= 4",
+      "1 ≤ m ≤ 4",
+      "[1;4]",
+      "m \\in [1;4]"
+    ],
+    "validatorType": "exact"
+  },
+  {
+    "id": "math10-q68",
+    "subjectId": "math",
+    "topicId": "math10-t1",
+    "questionTypeId": "math10-qt2",
+    "content": "Cho $A=(m-1;m+1)$ và $B=[-3;2]$. Tìm số nguyên lớn nhất $m$ để $A \\subset B$.",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "1",
+    "acceptedAnswers": [
+      "1",
+      "m = 1",
+      "m=1"
+    ],
+    "validatorType": "number",
+    "correctFinalAnswer": {
+      "value": "1"
     },
+    "acceptedFinalAnswers": [
+      {
+        "value": "1"
+      }
+    ],
+    "answerSchema": {
+      "type": "single-number",
+      "fields": [
+        {
+          "key": "value",
+          "label": "Giá trị lớn nhất của m:",
+          "valueType": "number",
+          "placeholder": "Nhập m"
+        }
+      ],
+      "proofImageRequired": false,
+      "autoCheckMode": "numeric"
+    }
+  },
   {
     "id": "math10-m1-q001",
     "subjectId": "math",
@@ -357,35 +473,14 @@ export const g10MathModule1Questions: Question[] = [
     "difficulty": "medium",
     "sourceType": "manual",
     "options": [
-      "A. $[-1;2]$",
+      "A. $(-5;4)$",
       "B. $(-1;2]$",
       "C. $[-1;2)$",
-      "D. $(-5;4)$"
+      "D. $[-1;2]$"
     ],
-    "correctAnswer": "A",
+    "correctAnswer": "D",
     "acceptedAnswers": [
-      "A"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m1-q002",
-    "subjectId": "math",
-    "topicId": "math10-t1",
-    "questionTypeId": "math10-qt1",
-    "content": "Cho $A=[0;7)$ và $B=(3;9]$. Tìm $A\\cap B$.",
-    "responseType": "single_choice",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "options": [
-      "A. $[3;7)$",
-      "B. $(3;7)$",
-      "C. $(3;7]$",
-      "D. $[0;9]$"
-    ],
-    "correctAnswer": "B",
-    "acceptedAnswers": [
-      "B"
+      "D"
     ],
     "validatorType": "choice"
   },
@@ -453,27 +548,6 @@ export const g10MathModule1Questions: Question[] = [
     "validatorType": "choice"
   },
   {
-    "id": "math10-m1-q006",
-    "subjectId": "math",
-    "topicId": "math10-t1",
-    "questionTypeId": "math10-qt1",
-    "content": "Cho $A=[-2;3]$ và $B=[3;6)$. Tìm $A\\cap B$.",
-    "responseType": "single_choice",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "options": [
-      "A. $\\varnothing$",
-      "B. $\\{3\\}$",
-      "C. $(3;6)$",
-      "D. $[-2;6)$"
-    ],
-    "correctAnswer": "B",
-    "acceptedAnswers": [
-      "B"
-    ],
-    "validatorType": "choice"
-  },
-  {
     "id": "math10-m1-q007",
     "subjectId": "math",
     "topicId": "math10-t1",
@@ -516,27 +590,6 @@ export const g10MathModule1Questions: Question[] = [
     "validatorType": "choice"
   },
   {
-    "id": "math10-m1-q009",
-    "subjectId": "math",
-    "topicId": "math10-t1",
-    "questionTypeId": "math10-qt1",
-    "content": "Cho $A=[-4;1]$ và $B=(-1;5)$. Tìm $A\\cup B$.",
-    "responseType": "single_choice",
-    "difficulty": "easy",
-    "sourceType": "manual",
-    "options": [
-      "A. $[-4;5)$",
-      "B. $(-1;1]$",
-      "C. $[-4;5]$",
-      "D. $[-4;-1)\\cup(1;5)$"
-    ],
-    "correctAnswer": "A",
-    "acceptedAnswers": [
-      "A"
-    ],
-    "validatorType": "choice"
-  },
-  {
     "id": "math10-m1-q010",
     "subjectId": "math",
     "topicId": "math10-t1",
@@ -575,48 +628,6 @@ export const g10MathModule1Questions: Question[] = [
     "correctAnswer": "C",
     "acceptedAnswers": [
       "C"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m1-q012",
-    "subjectId": "math",
-    "topicId": "math10-t1",
-    "questionTypeId": "math10-qt1",
-    "content": "Cho $A=(-3;7]$ và $B=[0;4]$. Tìm $A\\cup B$.",
-    "responseType": "single_choice",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "options": [
-      "A. $[0;4]$",
-      "B. $(-3;4]$",
-      "C. $[0;7]$",
-      "D. $(-3;7]$"
-    ],
-    "correctAnswer": "D",
-    "acceptedAnswers": [
-      "D"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m1-q013",
-    "subjectId": "math",
-    "topicId": "math10-t1",
-    "questionTypeId": "math10-qt1",
-    "content": "Cho $A=[1;3)$ và $B=[3;8)$. Tìm $A\\cup B$.",
-    "responseType": "single_choice",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "options": [
-      "A. $[1;8)$",
-      "B. $[1;3)\\cup(3;8)$",
-      "C. $(1;8)$",
-      "D. $[1;8]$"
-    ],
-    "correctAnswer": "A",
-    "acceptedAnswers": [
-      "A"
     ],
     "validatorType": "choice"
   },
@@ -705,27 +716,6 @@ export const g10MathModule1Questions: Question[] = [
     "validatorType": "choice"
   },
   {
-    "id": "math10-m1-q018",
-    "subjectId": "math",
-    "topicId": "math10-t1",
-    "questionTypeId": "math10-qt1",
-    "content": "Cho $A=[2;+\\infty)$ và $B=(-\\infty;5)$. Tìm $A\\cup B$.",
-    "responseType": "single_choice",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "options": [
-      "A. $[2;5)$",
-      "B. $\\mathbb{R}$",
-      "C. $(-\\infty;2)\\cup[5;+\\infty)$",
-      "D. $(2;5)$"
-    ],
-    "correctAnswer": "B",
-    "acceptedAnswers": [
-      "B"
-    ],
-    "validatorType": "choice"
-  },
-  {
     "id": "math10-m1-q019",
     "subjectId": "math",
     "topicId": "math10-t1",
@@ -743,27 +733,6 @@ export const g10MathModule1Questions: Question[] = [
     "correctAnswer": "C",
     "acceptedAnswers": [
       "C"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m1-q020",
-    "subjectId": "math",
-    "topicId": "math10-t1",
-    "questionTypeId": "math10-qt1",
-    "content": "Cho $A=[-5;4]$, $B=(-2;1]$. Tìm $A\\setminus B$.",
-    "responseType": "single_choice",
-    "difficulty": "easy",
-    "sourceType": "manual",
-    "options": [
-      "A. $[-5;-2)\\cup[1;4]$",
-      "B. $(-2;1]$",
-      "C. $[-5;4]$",
-      "D. $[-5;-2]\\cup(1;4]$"
-    ],
-    "correctAnswer": "D",
-    "acceptedAnswers": [
-      "D"
     ],
     "validatorType": "choice"
   },
@@ -806,48 +775,6 @@ export const g10MathModule1Questions: Question[] = [
     "correctAnswer": "B",
     "acceptedAnswers": [
       "B"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m1-q023",
-    "subjectId": "math",
-    "topicId": "math10-t1",
-    "questionTypeId": "math10-qt1",
-    "content": "Cho $A=[0;8]$, $B=(2;5)$. Tìm $A\\setminus B$.",
-    "responseType": "single_choice",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "options": [
-      "A. $[0;2)\\cup(5;8]$",
-      "B. $(2;5)$",
-      "C. $[0;2]\\cup[5;8]$",
-      "D. $[0;8]$"
-    ],
-    "correctAnswer": "C",
-    "acceptedAnswers": [
-      "C"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m1-q024",
-    "subjectId": "math",
-    "topicId": "math10-t1",
-    "questionTypeId": "math10-qt1",
-    "content": "Cho $A=(-3;7]$, $B=(-\\infty;1]$. Tìm $A\\setminus B$.",
-    "responseType": "single_choice",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "options": [
-      "A. $[1;7]$",
-      "B. $(-3;1]$",
-      "C. $(1;7)$",
-      "D. $(1;7]$"
-    ],
-    "correctAnswer": "D",
-    "acceptedAnswers": [
-      "D"
     ],
     "validatorType": "choice"
   },

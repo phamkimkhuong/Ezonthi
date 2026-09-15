@@ -29,10 +29,10 @@ try {
     choiceModule.g10MathPracticeChoices.map(choice => choice.id)
   );
 
-  if (g10MathQuestions.length !== 966) fail(`Cần 966 câu luyện, nhận ${g10MathQuestions.length}.`);
-  if (practiceQuestions.length !== 966) fail(`PracticeEngine nhận ${practiceQuestions.length}/966 câu.`);
-  if (runtimeQuestions.length !== 1152) fail(`Runtime cần 1152 câu gồm assessment, nhận ${runtimeQuestions.length}.`);
-  if (convertedIds.size !== 427) fail(`Cần 427 câu chuyển đổi, nhận ${convertedIds.size}.`);
+  if (g10MathQuestions.length !== 928) fail(`Cần 928 câu luyện, nhận ${g10MathQuestions.length}.`);
+  if (practiceQuestions.length !== 928) fail(`PracticeEngine nhận ${practiceQuestions.length}/928 câu.`);
+  if (runtimeQuestions.length !== 1114) fail(`Runtime cần 1114 câu gồm assessment, nhận ${runtimeQuestions.length}.`);
+  if (convertedIds.size !== 406) fail(`Cần 406 câu chuyển đổi, nhận ${convertedIds.size}.`);
 
   const answerCounts = { A: 0, B: 0, C: 0, D: 0 };
   const suspicious = [];
@@ -98,8 +98,8 @@ try {
     if (!sampleGroups.has(key)) sampleGroups.set(key, question);
   }
 
-  console.log(`Runtime hợp lệ: 966 câu luyện + 186 câu kiểm tra = ${runtimeQuestions.length} câu.`);
-  console.log(`Khóa đáp án 966 câu: ${JSON.stringify(answerCounts)}.`);
+  console.log(`Runtime hợp lệ: 928 câu luyện + 186 câu kiểm tra = ${runtimeQuestions.length} câu.`);
+  console.log(`Khóa đáp án 928 câu: ${JSON.stringify(answerCounts)}.`);
   console.log('Mẫu câu đã chuyển đổi theo chủ đề và độ khó:');
   for (const question of sampleGroups.values()) {
     console.log(`- ${question.id} | ${question.topicId} | ${question.difficulty} | ${question.options.join(' / ')}`);

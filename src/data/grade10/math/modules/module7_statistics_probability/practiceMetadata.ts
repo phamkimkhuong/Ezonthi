@@ -1,5 +1,4 @@
 import type { QuestionPracticeMetadata } from '@/types';
-import { g10MathModule7PracticeMetadataExpansion } from './practiceExpansion';
 
 export const g10MathModule7PracticeMetadata: QuestionPracticeMetadata[] = [
   {
@@ -28,54 +27,10 @@ export const g10MathModule7PracticeMetadata: QuestionPracticeMetadata[] = [
     "representationType": "table"
   },
   {
-    "questionId": "math10-m7-q005",
-    "subTypeId": "math10-qt11-st1",
-    "practiceRole": "near_transfer",
-    "representationType": "text"
-  },
-  {
-    "questionId": "math10-m7-q006",
-    "subTypeId": "math10-qt11-st1",
-    "practiceRole": "retention",
-    "representationType": "text"
-  },
-  {
-    "questionId": "math10-m7-q007",
-    "subTypeId": "math10-qt11-st1",
-    "practiceRole": "far_transfer",
-    "representationType": "text"
-  },
-  {
-    "questionId": "math10-m7-q008",
-    "subTypeId": "math10-qt11-st1",
-    "practiceRole": "representation_switch",
-    "representationType": "table"
-  },
-  {
     "questionId": "math10-m7-q009",
     "subTypeId": "math10-qt11-st1",
     "practiceRole": "far_transfer",
     "representationType": "graph"
-  },
-  {
-    "questionId": "math10-m7-q010",
-    "subTypeId": "math10-qt11-st1",
-    "practiceRole": "mastery_holdout",
-    "representationType": "text",
-    "isMasteryHoldout": true
-  },
-  {
-    "questionId": "math10-m7-q011",
-    "subTypeId": "math10-qt11-st1",
-    "practiceRole": "mastery_holdout",
-    "representationType": "text",
-    "isMasteryHoldout": true
-  },
-  {
-    "questionId": "math10-m7-q012",
-    "subTypeId": "math10-qt11-st1",
-    "practiceRole": "far_transfer",
-    "representationType": "text"
   },
   {
     "questionId": "math10-m7-q013",
@@ -97,18 +52,6 @@ export const g10MathModule7PracticeMetadata: QuestionPracticeMetadata[] = [
     "misconceptionId": "MATH10-M7-M01"
   },
   {
-    "questionId": "math10-m7-q016",
-    "subTypeId": "math10-qt11-st2",
-    "practiceRole": "representation_switch",
-    "representationType": "table"
-  },
-  {
-    "questionId": "math10-m7-q017",
-    "subTypeId": "math10-qt11-st2",
-    "practiceRole": "near_transfer",
-    "representationType": "text"
-  },
-  {
     "questionId": "math10-m7-q018",
     "subTypeId": "math10-qt11-st2",
     "practiceRole": "retention",
@@ -125,26 +68,6 @@ export const g10MathModule7PracticeMetadata: QuestionPracticeMetadata[] = [
     "subTypeId": "math10-qt11-st2",
     "practiceRole": "representation_switch",
     "representationType": "table"
-  },
-  {
-    "questionId": "math10-m7-q021",
-    "subTypeId": "math10-qt11-st2",
-    "practiceRole": "far_transfer",
-    "representationType": "graph"
-  },
-  {
-    "questionId": "math10-m7-q022",
-    "subTypeId": "math10-qt11-st2",
-    "practiceRole": "mastery_holdout",
-    "representationType": "text",
-    "isMasteryHoldout": true
-  },
-  {
-    "questionId": "math10-m7-q023",
-    "subTypeId": "math10-qt11-st2",
-    "practiceRole": "mastery_holdout",
-    "representationType": "text",
-    "isMasteryHoldout": true
   },
   {
     "questionId": "math10-m7-q024",
@@ -676,7 +599,42 @@ export const g10MathModule7PracticeMetadata: QuestionPracticeMetadata[] = [
     "subTypeId": "math10-qt13-st3",
     "practiceRole": "far_transfer",
     "representationType": "text"
+  },
+  {
+    "questionId": "math10-m7x-q001",
+    "subTypeId": "math10-qt12-st3",
+    "practiceRole": "near_transfer",
+    "representationType": "text"
+  },
+  {
+    "questionId": "math10-m7x-q002",
+    "subTypeId": "math10-qt12-st3",
+    "practiceRole": "representation_switch",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m7x-q003",
+    "subTypeId": "math10-qt12-st3",
+    "practiceRole": "far_transfer",
+    "representationType": "table"
+  },
+  {
+    "questionId": "math10-m7x-q004",
+    "subTypeId": "math10-qt12-st3",
+    "practiceRole": "retention",
+    "representationType": "table"
+  },
+  {
+    "questionId": "math10-m7x-q005",
+    "subTypeId": "math10-qt12-st3",
+    "practiceRole": "mastery_holdout",
+    "representationType": "graph",
+    "isMasteryHoldout": true
+  },
+  {
+    "questionId": "math10-m7x-q006",
+    "subTypeId": "math10-qt12-st3",
+    "practiceRole": "misconception_check",
+    "representationType": "equation"
   }
 ];
-
-g10MathModule7PracticeMetadata.push(...g10MathModule7PracticeMetadataExpansion);

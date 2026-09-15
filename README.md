@@ -322,9 +322,7 @@ Khi bổ sung một môn học mới tại `src/data/grade{X}/{subject}/`, cần
 
 ### Kiểm thử và phát hành bảo mật
 
-Chi tiết thay đổi và giới hạn dữ liệu cũ: [docs/security-phase1.md](docs/security-phase1.md).
-
-- `npm run test:security`: build Functions và chạy kiểm thử quyền/giao dịch trên Firebase Emulator (cần Java, cổng 8180 và 9299 trống).
+- `npm run validate:release`: kiểm tra toàn diện quy chuẩn repo, test cases, nội dung dữ liệu và build production bundle.
 - `npm run type-check` và `npm run lint`: kiểm tra TypeScript/ESLint.
 - `npm run build`: build giao diện, sitemap và trang SEO.
 - `npm --prefix functions run build`: sinh catalog đáp án từ dữ liệu dự án và biên dịch backend. Cần cài dependency ở cả thư mục gốc lẫn `functions`.

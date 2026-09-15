@@ -1,5 +1,4 @@
 import type { Solution } from '@/types';
-import { g10MathModule6SolutionExpansion } from './practiceExpansion';
 
 export const g10MathModule6Solutions: Solution[] = [
   {
@@ -673,240 +672,6 @@ export const g10MathModule6Solutions: Solution[] = [
       }
     ],
     "finalAnswer": "24",
-    "commonMistakes": [
-      "Cộng hai nhóm mà không trừ phần giao, hoặc trừ phần giao sai số lần."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại bao hàm–loại trừ."
-    ]
-  },
-  {
-    "id": "math10-m6-s028",
-    "questionId": "math10-m6-q028",
-    "recognition": "Dạng: bao hàm–loại trừ. Dấu hiệu là hai nhóm có phần giao nên cộng trực tiếp sẽ đếm trùng.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính số phần tử của hợp",
-        "explanation": "Dùng |A∪B|=|A|+|B|−|A∩B|=32+24−11=45.",
-        "result": "45"
-      },
-      {
-        "order": 2,
-        "title": "Trả lời đúng đại lượng được hỏi",
-        "explanation": "Biểu thức cần tính là 32+24-11.",
-        "result": "45"
-      }
-    ],
-    "finalAnswer": "45",
-    "commonMistakes": [
-      "Cộng hai nhóm mà không trừ phần giao, hoặc trừ phần giao sai số lần."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại bao hàm–loại trừ."
-    ]
-  },
-  {
-    "id": "math10-m6-s029",
-    "questionId": "math10-m6-q029",
-    "recognition": "Dạng: bao hàm–loại trừ. Dấu hiệu là hai nhóm có phần giao nên cộng trực tiếp sẽ đếm trùng.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính số phần tử của hợp",
-        "explanation": "Dùng |A∪B|=|A|+|B|−|A∩B|=28+19−8=39.",
-        "result": "39"
-      },
-      {
-        "order": 2,
-        "title": "Trả lời đúng đại lượng được hỏi",
-        "explanation": "Biểu thức cần tính là 45-(28+19-8).",
-        "result": "6"
-      }
-    ],
-    "finalAnswer": "6",
-    "commonMistakes": [
-      "Cộng hai nhóm mà không trừ phần giao, hoặc trừ phần giao sai số lần."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại bao hàm–loại trừ."
-    ]
-  },
-  {
-    "id": "math10-m6-s030",
-    "questionId": "math10-m6-q030",
-    "recognition": "Dạng: bao hàm–loại trừ. Dấu hiệu là hai nhóm có phần giao nên cộng trực tiếp sẽ đếm trùng.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính số phần tử của hợp",
-        "explanation": "Dùng |A∪B|=|A|+|B|−|A∩B|=35+27−13=49.",
-        "result": "49"
-      },
-      {
-        "order": 2,
-        "title": "Trả lời đúng đại lượng được hỏi",
-        "explanation": "Biểu thức cần tính là 35+27-2×13.",
-        "result": "36"
-      }
-    ],
-    "finalAnswer": "36",
-    "commonMistakes": [
-      "Cộng hai nhóm mà không trừ phần giao, hoặc trừ phần giao sai số lần."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại bao hàm–loại trừ."
-    ]
-  },
-  {
-    "id": "math10-m6-s031",
-    "questionId": "math10-m6-q031",
-    "recognition": "Dạng: bao hàm–loại trừ. Dấu hiệu là hai nhóm có phần giao nên cộng trực tiếp sẽ đếm trùng.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính số phần tử của hợp",
-        "explanation": "Dùng |A∪B|=|A|+|B|−|A∩B|=42+31−16=57.",
-        "result": "57"
-      },
-      {
-        "order": 2,
-        "title": "Trả lời đúng đại lượng được hỏi",
-        "explanation": "Biểu thức cần tính là 42+31-16.",
-        "result": "57"
-      }
-    ],
-    "finalAnswer": "57",
-    "commonMistakes": [
-      "Cộng hai nhóm mà không trừ phần giao, hoặc trừ phần giao sai số lần."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại bao hàm–loại trừ."
-    ]
-  },
-  {
-    "id": "math10-m6-s032",
-    "questionId": "math10-m6-q032",
-    "recognition": "Dạng: bao hàm–loại trừ. Dấu hiệu là hai nhóm có phần giao nên cộng trực tiếp sẽ đếm trùng.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính số phần tử của hợp",
-        "explanation": "Dùng |A∪B|=|A|+|B|−|A∩B|=38+29−14=53.",
-        "result": "53"
-      },
-      {
-        "order": 2,
-        "title": "Trả lời đúng đại lượng được hỏi",
-        "explanation": "Biểu thức cần tính là 65-(38+29-14).",
-        "result": "12"
-      }
-    ],
-    "finalAnswer": "12",
-    "commonMistakes": [
-      "Cộng hai nhóm mà không trừ phần giao, hoặc trừ phần giao sai số lần."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại bao hàm–loại trừ."
-    ]
-  },
-  {
-    "id": "math10-m6-s033",
-    "questionId": "math10-m6-q033",
-    "recognition": "Dạng: bao hàm–loại trừ. Dấu hiệu là hai nhóm có phần giao nên cộng trực tiếp sẽ đếm trùng.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính số phần tử của hợp",
-        "explanation": "Dùng |A∪B|=|A|+|B|−|A∩B|=48+36−21=63.",
-        "result": "63"
-      },
-      {
-        "order": 2,
-        "title": "Trả lời đúng đại lượng được hỏi",
-        "explanation": "Biểu thức cần tính là 48+36-2×21.",
-        "result": "42"
-      }
-    ],
-    "finalAnswer": "42",
-    "commonMistakes": [
-      "Cộng hai nhóm mà không trừ phần giao, hoặc trừ phần giao sai số lần."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại bao hàm–loại trừ."
-    ]
-  },
-  {
-    "id": "math10-m6-s034",
-    "questionId": "math10-m6-q034",
-    "recognition": "Dạng: bao hàm–loại trừ. Dấu hiệu là hai nhóm có phần giao nên cộng trực tiếp sẽ đếm trùng.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính số phần tử của hợp",
-        "explanation": "Dùng |A∪B|=|A|+|B|−|A∩B|=55+43−25=73.",
-        "result": "73"
-      },
-      {
-        "order": 2,
-        "title": "Trả lời đúng đại lượng được hỏi",
-        "explanation": "Biểu thức cần tính là 55+43-25.",
-        "result": "73"
-      }
-    ],
-    "finalAnswer": "73",
-    "commonMistakes": [
-      "Cộng hai nhóm mà không trừ phần giao, hoặc trừ phần giao sai số lần."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại bao hàm–loại trừ."
-    ]
-  },
-  {
-    "id": "math10-m6-s035",
-    "questionId": "math10-m6-q035",
-    "recognition": "Dạng: bao hàm–loại trừ. Dấu hiệu là hai nhóm có phần giao nên cộng trực tiếp sẽ đếm trùng.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính số phần tử của hợp",
-        "explanation": "Dùng |A∪B|=|A|+|B|−|A∩B|=62+47−28=81.",
-        "result": "81"
-      },
-      {
-        "order": 2,
-        "title": "Trả lời đúng đại lượng được hỏi",
-        "explanation": "Biểu thức cần tính là 100-(62+47-28).",
-        "result": "19"
-      }
-    ],
-    "finalAnswer": "19",
-    "commonMistakes": [
-      "Cộng hai nhóm mà không trừ phần giao, hoặc trừ phần giao sai số lần."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại bao hàm–loại trừ."
-    ]
-  },
-  {
-    "id": "math10-m6-s036",
-    "questionId": "math10-m6-q036",
-    "recognition": "Dạng: bao hàm–loại trừ. Dấu hiệu là hai nhóm có phần giao nên cộng trực tiếp sẽ đếm trùng.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính số phần tử của hợp",
-        "explanation": "Dùng |A∪B|=|A|+|B|−|A∩B|=70+54−32=92.",
-        "result": "92"
-      },
-      {
-        "order": 2,
-        "title": "Trả lời đúng đại lượng được hỏi",
-        "explanation": "Biểu thức cần tính là 70+54-2×32.",
-        "result": "60"
-      }
-    ],
-    "finalAnswer": "60",
     "commonMistakes": [
       "Cộng hai nhóm mà không trừ phần giao, hoặc trừ phần giao sai số lần."
     ],
@@ -2713,7 +2478,1055 @@ export const g10MathModule6Solutions: Solution[] = [
     "reviewSuggestions": [
       "Ôn lại số hạng không chứa x."
     ]
+  },
+  {
+    "id": "math10-m6x-s001",
+    "questionId": "math10-m6x-q001",
+    "recognition": "Dạng mở rộng math10-qt8-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Dùng bao hàm–loại trừ vì nhóm thích cả hai bị đếm hai lần."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "$40+28-15=53$.",
+        "result": "53"
+      }
+    ],
+    "finalAnswer": "53",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s002",
+    "questionId": "math10-m6x-q002",
+    "recognition": "Dạng mở rộng math10-qt8-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số bạn học ít nhất một câu lạc bộ là $30+25-12=43$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Số bạn không học câu lạc bộ nào là $45-43=2$.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s003",
+    "questionId": "math10-m6x-q003",
+    "recognition": "Dạng mở rộng math10-qt8-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Có 25 bội của 4, 16 bội của 6 và 8 bội chung của 12."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Số cần tìm là $25+16-8=33$.",
+        "result": "33"
+      }
+    ],
+    "finalAnswer": "33",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s004",
+    "questionId": "math10-m6x-q004",
+    "recognition": "Dạng mở rộng math10-qt8-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số thuộc đúng A là $35-10$, đúng B là $27-10$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Cộng hai nhóm rời nhau: $25+17=42$.",
+        "result": "42"
+      }
+    ],
+    "finalAnswer": "42",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s005",
+    "questionId": "math10-m6x-q005",
+    "recognition": "Dạng mở rộng math10-qt8-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số chia hết cho 2 hoặc 3 là $30+20-10=40$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Lấy biến cố đối trong 60 số: $60-40=20$.",
+        "result": "20"
+      }
+    ],
+    "finalAnswer": "20",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s006",
+    "questionId": "math10-m6x-q006",
+    "recognition": "Dạng mở rộng math10-qt8-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Có $10^4$ mã tất cả; mã không chứa 0 có $9^4$ cách."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Số mã chứa ít nhất một chữ số 0 là $10^4-9^4=3439$.",
+        "result": "3439"
+      }
+    ],
+    "finalAnswer": "3439",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s007",
+    "questionId": "math10-m6x-q007",
+    "recognition": "Dạng mở rộng math10-qt9-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Gộp 3 quyển Toán thành một khối, ta có 5 đơn vị để xếp: $5!$ cách."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Ba quyển trong khối đổi chỗ theo $3!$ cách, tổng $5!3!=720$.",
+        "result": "720"
+      }
+    ],
+    "finalAnswer": "720",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s008",
+    "questionId": "math10-m6x-q008",
+    "recognition": "Dạng mở rộng math10-qt9-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Có $8!$ cách xếp tất cả; trường hợp An, Bình cạnh nhau có $2\\cdot7!$ cách."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Lấy phần bù: $8!-2\\cdot7!=30240$.",
+        "result": "30240"
+      }
+    ],
+    "finalAnswer": "30240",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s009",
+    "questionId": "math10-m6x-q009",
+    "recognition": "Dạng mở rộng math10-qt9-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Chữ số đầu có 4 cách chọn vì không được bằng 0."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Bốn chữ số còn lại hoán vị theo $4!$ cách, được $4\\cdot4!=96$.",
+        "result": "96"
+      }
+    ],
+    "finalAnswer": "96",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s010",
+    "questionId": "math10-m6x-q010",
+    "recognition": "Dạng mở rộng math10-qt9-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Có 5 vị trí, trong đó chữ L lặp 2 lần và chữ E lặp 2 lần."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Số hoán vị phân biệt là $5!/(2!2!)=30$.",
+        "result": "30"
+      }
+    ],
+    "finalAnswer": "30",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s011",
+    "questionId": "math10-m6x-q011",
+    "recognition": "Dạng mở rộng math10-qt9-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Khối A–B–C có thứ tự cố định, cùng 6 người còn lại tạo 7 đơn vị."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Xếp 7 đơn vị theo $7!=5040$ cách.",
+        "result": "5040"
+      }
+    ],
+    "finalAnswer": "5040",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s012",
+    "questionId": "math10-m6x-q012",
+    "recognition": "Dạng mở rộng math10-qt9-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Vì có nhiều hơn một nam, mẫu vị trí bắt buộc là nam–nữ–nam–nữ–nam–nữ–nam."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Xếp nam và nữ độc lập: $4!3!=144$.",
+        "result": "144"
+      }
+    ],
+    "finalAnswer": "144",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s013",
+    "questionId": "math10-m6x-q013",
+    "recognition": "Dạng mở rộng math10-qt9-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Ba chức vụ phân biệt nên thứ tự lựa chọn tạo phương án khác."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Dùng chỉnh hợp $A_{10}^3=10\\cdot9\\cdot8=720$.",
+        "result": "720"
+      }
+    ],
+    "finalAnswer": "720",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s014",
+    "questionId": "math10-m6x-q014",
+    "recognition": "Dạng mở rộng math10-qt9-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Ba huy chương có vai trò khác nhau nên cần chọn có thứ tự."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "$A_{12}^3=12\\cdot11\\cdot10=1320$.",
+        "result": "1320"
+      }
+    ],
+    "finalAnswer": "1320",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s015",
+    "questionId": "math10-m6x-q015",
+    "recognition": "Dạng mở rộng math10-qt9-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Bốn vị trí phân biệt và không lặp chữ số nên dùng chỉnh hợp."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "$A_9^4=9\\cdot8\\cdot7\\cdot6=3024$.",
+        "result": "3024"
+      }
+    ],
+    "finalAnswer": "3024",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s016",
+    "questionId": "math10-m6x-q016",
+    "recognition": "Dạng mở rộng math10-qt9-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Vị trí đầu có 3 cách chọn nguyên âm."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Bốn vị trí sau nhận 4 trong 6 chữ còn lại: $3A_6^4=1080$.",
+        "result": "1080"
+      }
+    ],
+    "finalAnswer": "1080",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s017",
+    "questionId": "math10-m6x-q017",
+    "recognition": "Dạng mở rộng math10-qt9-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Các nhiệm vụ là các vị trí phân biệt."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Chọn và phân 4 người vào 4 nhiệm vụ: $A_9^4=3024$.",
+        "result": "3024"
+      }
+    ],
+    "finalAnswer": "3024",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s018",
+    "questionId": "math10-m6x-q018",
+    "recognition": "Dạng mở rộng math10-qt9-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Không có ràng buộc có $A_8^2=56$ cách."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Loại hai cách A–B và B–A, còn $56-2=54$.",
+        "result": "54"
+      }
+    ],
+    "finalAnswer": "54",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s019",
+    "questionId": "math10-m6x-q019",
+    "recognition": "Dạng mở rộng math10-qt9-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Nhóm không phân chức vụ nên không xét thứ tự."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "$C_{12}^4=495$.",
+        "result": "495"
+      }
+    ],
+    "finalAnswer": "495",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s020",
+    "questionId": "math10-m6x-q020",
+    "recognition": "Dạng mở rộng math10-qt9-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Chọn 3 trong 7 nữ và 2 trong 5 nam độc lập."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "$C_7^3C_5^2=35\\cdot10=350$.",
+        "result": "350"
+      }
+    ],
+    "finalAnswer": "350",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s021",
+    "questionId": "math10-m6x-q021",
+    "recognition": "Dạng mở rộng math10-qt9-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Cố định A, loại B, còn 8 người để chọn thêm 5 người."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "$C_8^5=56$.",
+        "result": "56"
+      }
+    ],
+    "finalAnswer": "56",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s022",
+    "questionId": "math10-m6x-q022",
+    "recognition": "Dạng mở rộng math10-qt9-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Tách theo số nữ là 2, 3 hoặc 4."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "$C_6^2C_5^2+C_6^3C_5^1+C_6^4=150+100+15=265$.",
+        "result": "265"
+      }
+    ],
+    "finalAnswer": "265",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s023",
+    "questionId": "math10-m6x-q023",
+    "recognition": "Dạng mở rộng math10-qt9-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Bài chọn không kề nhau dùng phép dịch vị trí hoặc công thức $C_{n-k+1}^k$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "$C_{8-3+1}^3=C_6^3=20$.",
+        "result": "20"
+      }
+    ],
+    "finalAnswer": "20",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s024",
+    "questionId": "math10-m6x-q024",
+    "recognition": "Dạng mở rộng math10-qt9-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Chọn đội theo $C_9^5$ cách; mỗi đội có 5 cách chọn đội trưởng."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "$C_9^5\\cdot5=126\\cdot5=630$.",
+        "result": "630"
+      }
+    ],
+    "finalAnswer": "630",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s025",
+    "questionId": "math10-m6x-q025",
+    "recognition": "Dạng mở rộng math10-qt10-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Tổng hệ số của đa thức bằng giá trị của đa thức tại $x=1$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Thay $x=1$: $(2-1)^6=1$.",
+        "result": "1"
+      }
+    ],
+    "finalAnswer": "1",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s026",
+    "questionId": "math10-m6x-q026",
+    "recognition": "Dạng mở rộng math10-qt10-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Chỉ số k chạy từ 0 đến 8 và mỗi k cho một bậc x khác nhau."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Do đó khai triển có $8+1=9$ số hạng.",
+        "result": "9"
+      }
+    ],
+    "finalAnswer": "9",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s027",
+    "questionId": "math10-m6x-q027",
+    "recognition": "Dạng mở rộng math10-qt10-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Gọi E, O là tổng hệ số bậc chẵn, lẻ: $E+O=2^{10}$ và $E-O=(1-1)^{10}=0$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Suy ra $E=2^9=512$.",
+        "result": "512"
+      }
+    ],
+    "finalAnswer": "512",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s028",
+    "questionId": "math10-m6x-q028",
+    "recognition": "Dạng mở rộng math10-qt10-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Tổng hệ số được tính bằng cách cho $x=1$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Ta được $(3-2)^5=1$.",
+        "result": "1"
+      }
+    ],
+    "finalAnswer": "1",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s029",
+    "questionId": "math10-m6x-q029",
+    "recognition": "Dạng mở rộng math10-qt10-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Tổng mọi hệ số là $(1+2)^7=2187$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Hệ số tự do bằng 1, nên tổng cần tìm là $2187-1=2186$.",
+        "result": "2186"
+      }
+    ],
+    "finalAnswer": "2186",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s030",
+    "questionId": "math10-m6x-q030",
+    "recognition": "Dạng mở rộng math10-qt10-st1: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Không cần khai triển đầy đủ; thay trực tiếp $x=1$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "$(1^2+1)^6=2^6=64$.",
+        "result": "64"
+      }
+    ],
+    "finalAnswer": "64",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s031",
+    "questionId": "math10-m6x-q031",
+    "recognition": "Dạng mở rộng math10-qt10-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Chọn ba thừa số $2x$ và hai thừa số $-1$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Hệ số là $C_5^3\\cdot2^3\\cdot(-1)^2=80$.",
+        "result": "80"
+      }
+    ],
+    "finalAnswer": "80",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s032",
+    "questionId": "math10-m6x-q032",
+    "recognition": "Dạng mở rộng math10-qt10-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số hạng chứa $x^4$ ứng với k=4."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Hệ số là $C_6^4(-3)^4=15\\cdot81=1215$.",
+        "result": "1215"
+      }
+    ],
+    "finalAnswer": "1215",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s033",
+    "questionId": "math10-m6x-q033",
+    "recognition": "Dạng mở rộng math10-qt10-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số hạng tổng quát có số mũ $x^{2(5-k)+k}=x^{10-k}$; cần $10-k=5$ nên k=5."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Hệ số là $C_5^5 2^5=32$.",
+        "result": "32"
+      }
+    ],
+    "finalAnswer": "32",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s034",
+    "questionId": "math10-m6x-q034",
+    "recognition": "Dạng mở rộng math10-qt10-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Cần chọn ba thừa số $x^2$ để tạo $x^6$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Hệ số là $C_5^3=10$.",
+        "result": "10"
+      }
+    ],
+    "finalAnswer": "10",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s035",
+    "questionId": "math10-m6x-q035",
+    "recognition": "Dạng mở rộng math10-qt10-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số mũ tổng quát là $3(4-k)+k=12-2k$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Phương trình $12-2k=7$ không có k nguyên, nên hệ số bằng 0.",
+        "result": "0"
+      }
+    ],
+    "finalAnswer": "0",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s036",
+    "questionId": "math10-m6x-q036",
+    "recognition": "Dạng mở rộng math10-qt10-st2: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số mũ x là $6-2k$; cần $6-2k=4$ nên k=1."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Hệ số là $C_6^1 2^5=192$.",
+        "result": "192"
+      }
+    ],
+    "finalAnswer": "192",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s037",
+    "questionId": "math10-m6x-q037",
+    "recognition": "Dạng mở rộng math10-qt10-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số mũ x là $8-2k$; đặt bằng 0 được k=4."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Số hạng độc lập là $C_8^4=70$.",
+        "result": "70"
+      }
+    ],
+    "finalAnswer": "70",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s038",
+    "questionId": "math10-m6x-q038",
+    "recognition": "Dạng mở rộng math10-qt10-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số mũ x là $2(6-k)-k=12-3k$; đặt bằng 0 được k=4."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Giá trị là $C_6^4 2^2(-1)^4=60$.",
+        "result": "60"
+      }
+    ],
+    "finalAnswer": "60",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s039",
+    "questionId": "math10-m6x-q039",
+    "recognition": "Dạng mở rộng math10-qt10-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số mũ x là $3(8-k)-k=24-4k$; đặt bằng 0 được k=6."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Giá trị là $C_8^6 2^6=28\\cdot64=1792$.",
+        "result": "1792"
+      }
+    ],
+    "finalAnswer": "1792",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s040",
+    "questionId": "math10-m6x-q040",
+    "recognition": "Dạng mở rộng math10-qt10-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số mũ x là $2(6-k)-2k=12-4k$; đặt bằng 0 được k=3."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Giá trị là $C_6^3(-3)^3=20\\cdot(-27)=-540$.",
+        "result": "-540"
+      }
+    ],
+    "finalAnswer": "-540",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s041",
+    "questionId": "math10-m6x-q041",
+    "recognition": "Dạng mở rộng math10-qt10-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số mũ x là $(9-k)-2k=9-3k$; đặt bằng 0 được k=3."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Giá trị là $C_9^3 2^6(-1)^3=-5376$.",
+        "result": "-5376"
+      }
+    ],
+    "finalAnswer": "-5376",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
+  },
+  {
+    "id": "math10-m6x-s042",
+    "questionId": "math10-m6x-q042",
+    "recognition": "Dạng mở rộng math10-qt10-st3: cần nhận diện cấu trúc trước khi chọn công thức đếm.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Thiết lập mô hình đếm",
+        "explanation": "Số mũ x là $2(5-k)-k=10-3k$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và kết luận",
+        "explanation": "Phương trình $10-3k=0$ không có k nguyên, nên không có số hạng độc lập và hệ số quy ước bằng 0.",
+        "result": "0"
+      }
+    ],
+    "finalAnswer": "0",
+    "commonMistakes": [
+      "Áp dụng công thức theo từ khóa mà không kiểm tra thứ tự, khả năng lặp, phần giao hoặc miền của chỉ số k."
+    ],
+    "reviewSuggestions": [
+      "Viết rõ một kết quả được tạo như thế nào, sau đó mới chọn quy tắc đếm hoặc số hạng tổng quát."
+    ]
   }
 ];
-
-g10MathModule6Solutions.push(...g10MathModule6SolutionExpansion);

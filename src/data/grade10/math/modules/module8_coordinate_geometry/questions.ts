@@ -1,5 +1,4 @@
 import type { Question } from '@/types';
-import { g10MathModule8QuestionExpansion } from './practiceExpansion';
 
 export const g10MathModule8Questions: Question[] = [
   {
@@ -34,160 +33,13 @@ export const g10MathModule8Questions: Question[] = [
     "sourceType": "manual",
     "options": [
       "A. $2x -y +4 = 0$",
-      "B. $2x -y -4 = 0$",
+      "B. $-x +2y -1 = 0$",
       "C. $-x -2y +7 = 0$",
-      "D. $-x +2y -1 = 0$"
-    ],
-    "correctAnswer": "B",
-    "acceptedAnswers": [
-      "B"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m8-q003",
-    "subjectId": "math",
-    "topicId": "math10-t8",
-    "questionTypeId": "math10-qt14",
-    "content": "Đường thẳng đi qua $M(2;-2)$ và có vectơ pháp tuyến $\\vec n=(-1;3)$. Chọn phương trình đúng.",
-    "responseType": "single_choice",
-    "difficulty": "easy",
-    "sourceType": "manual",
-    "options": [
-      "A. $-x +3y -8 = 0$",
-      "B. $3x +y -4 = 0$",
-      "C. $-x +3y +8 = 0$",
-      "D. $3x -y -8 = 0$"
-    ],
-    "correctAnswer": "C",
-    "acceptedAnswers": [
-      "C"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m8-q004",
-    "subjectId": "math",
-    "topicId": "math10-t8",
-    "questionTypeId": "math10-qt14",
-    "content": "Đường thẳng đi qua $M(-1;4)$ và có vectơ pháp tuyến $\\vec n=(3;2)$. Chọn phương trình đúng.",
-    "responseType": "single_choice",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "options": [
-      "A. $3x +2y +5 = 0$",
-      "B. $2x -3y +14 = 0$",
-      "C. $2x +3y -10 = 0$",
-      "D. $3x +2y -5 = 0$"
+      "D. $2x -y -4 = 0$"
     ],
     "correctAnswer": "D",
     "acceptedAnswers": [
       "D"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m8-q005",
-    "subjectId": "math",
-    "topicId": "math10-t8",
-    "questionTypeId": "math10-qt14",
-    "content": "Đường thẳng đi qua $M(2;-1)$ và có vectơ pháp tuyến $\\vec n=(2;5)$. Chọn phương trình đúng.",
-    "responseType": "single_choice",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "options": [
-      "A. $2x +5y +1 = 0$",
-      "B. $2x +5y -1 = 0$",
-      "C. $5x -2y -12 = 0$",
-      "D. $5x +2y -8 = 0$"
-    ],
-    "correctAnswer": "A",
-    "acceptedAnswers": [
-      "A"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m8-q006",
-    "subjectId": "math",
-    "topicId": "math10-t8",
-    "questionTypeId": "math10-qt14",
-    "content": "Đường thẳng đi qua $M(-2;3)$ và có vectơ pháp tuyến $\\vec n=(4;-3)$. Chọn phương trình đúng.",
-    "responseType": "single_choice",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "options": [
-      "A. $4x -3y -17 = 0$",
-      "B. $4x -3y +17 = 0$",
-      "C. $-3x -4y +6 = 0$",
-      "D. $-3x +4y -18 = 0$"
-    ],
-    "correctAnswer": "B",
-    "acceptedAnswers": [
-      "B"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m8-q007",
-    "subjectId": "math",
-    "topicId": "math10-t8",
-    "questionTypeId": "math10-qt14",
-    "content": "Đường thẳng đi qua $M(1;-4)$ và có vectơ pháp tuyến $\\vec n=(5;1)$. Chọn phương trình đúng.",
-    "responseType": "single_choice",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "options": [
-      "A. $5x +y +1 = 0$",
-      "B. $x -5y -21 = 0$",
-      "C. $5x +y -1 = 0$",
-      "D. $x +5y +19 = 0$"
-    ],
-    "correctAnswer": "C",
-    "acceptedAnswers": [
-      "C"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m8-q008",
-    "subjectId": "math",
-    "topicId": "math10-t8",
-    "questionTypeId": "math10-qt14",
-    "content": "Đường thẳng đi qua $M(4;2)$ và có vectơ pháp tuyến $\\vec n=(3;-4)$. Chọn phương trình đúng.",
-    "responseType": "single_choice",
-    "difficulty": "medium",
-    "sourceType": "manual",
-    "options": [
-      "A. $3x -4y +4 = 0$",
-      "B. $-4x -3y +22 = 0$",
-      "C. $-4x +3y +10 = 0$",
-      "D. $3x -4y -4 = 0$"
-    ],
-    "correctAnswer": "D",
-    "acceptedAnswers": [
-      "D"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m8-q009",
-    "subjectId": "math",
-    "topicId": "math10-t8",
-    "questionTypeId": "math10-qt14",
-    "content": "Đường thẳng đi qua $M(-3;5)$ và có vectơ pháp tuyến $\\vec n=(7;2)$. Chọn phương trình đúng.",
-    "responseType": "single_choice",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "options": [
-      "A. $7x +2y +11 = 0$",
-      "B. $7x +2y -11 = 0$",
-      "C. $2x -7y +41 = 0$",
-      "D. $2x +7y -29 = 0$"
-    ],
-    "correctAnswer": "A",
-    "acceptedAnswers": [
-      "A"
     ],
     "validatorType": "choice"
   },
@@ -209,27 +61,6 @@ export const g10MathModule8Questions: Question[] = [
     "correctAnswer": "B",
     "acceptedAnswers": [
       "B"
-    ],
-    "validatorType": "choice"
-  },
-  {
-    "id": "math10-m8-q011",
-    "subjectId": "math",
-    "topicId": "math10-t8",
-    "questionTypeId": "math10-qt14",
-    "content": "Đường thẳng đi qua $M(-4;-5)$ và có vectơ pháp tuyến $\\vec n=(8;3)$. Chọn phương trình đúng.",
-    "responseType": "single_choice",
-    "difficulty": "hard",
-    "sourceType": "manual",
-    "options": [
-      "A. $8x +3y -47 = 0$",
-      "B. $3x -8y -28 = 0$",
-      "C. $8x +3y +47 = 0$",
-      "D. $3x +8y +52 = 0$"
-    ],
-    "correctAnswer": "C",
-    "acceptedAnswers": [
-      "C"
     ],
     "validatorType": "choice"
   },
@@ -1909,7 +1740,647 @@ export const g10MathModule8Questions: Question[] = [
       "-8"
     ],
     "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q001",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Đường thẳng qua $M(1;2)$, có pháp tuyến $(3;-4)$, được viết dạng $3x-4y+c=0$. Tính c.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "5",
+    "acceptedAnswers": [
+      "5"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q002",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Đường thẳng qua $A(-2;1)$ và $B(4;4)$ có dạng tối giản $x-2y+c=0$. Tính tổng các hệ số $1-2+c$.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "3",
+    "acceptedAnswers": [
+      "3"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q003",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Đường thẳng qua $(3;-1)$ và song song với $2x-3y+5=0$ có dạng $2x-3y+c=0$. Tính c.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "-9",
+    "acceptedAnswers": [
+      "-9"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q004",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Đường thẳng qua $(2;5)$ và vuông góc với $x+2y-3=0$ có dạng $2x-y+c=0$. Tính c.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "1",
+    "acceptedAnswers": [
+      "1"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q005",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Điểm $M(t)$ trên đường thẳng $x=1+3t$, $y=-2+4t$ đồng thời thuộc đường $2x-y-8=0$. Tính t.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q006",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Trong tam giác $A(2;3)$, $B(-1;1)$, $C(5;-3)$, trung tuyến từ A có phương trình $x+c=0$. Tính $|c|$.",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q007",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Tính khoảng cách từ $M(1;2)$ đến đường thẳng $3x+4y-10=0$.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "0.2",
+    "acceptedAnswers": [
+      "0.2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q008",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Tính khoảng cách giữa hai đường song song $3x+4y-2=0$ và $3x+4y+8=0$.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q009",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Có bao nhiêu giá trị thực của k để khoảng cách từ O đến đường $3x+4y+k=0$ bằng 2?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q010",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Điểm $M(t;0)$ trên trục Ox cách đều hai đường thẳng $x=-2$ và $x=6$. Tính t.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q011",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Tam giác có $A(0;0)$, $B(6;0)$, $C(2;4)$. Tính bình phương khoảng cách từ C đến đường trung tuyến kẻ từ A.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "7.2",
+    "acceptedAnswers": [
+      "7.2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q012",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt14",
+    "content": "Giao điểm của $x+y=4$ và $x-y=2$ cách đường $3x+4y-8=0$ bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "1",
+    "acceptedAnswers": [
+      "1"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q013",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Đường tròn tâm $I(2;-3)$ đi qua $M(5;1)$. Tính $R^2$.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "25",
+    "acceptedAnswers": [
+      "25"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q014",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Đường tròn có đường kính $A(-2;1)$, $B(4;5)$, tâm $I(a;b)$. Tính $a+b+R^2$.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "17",
+    "acceptedAnswers": [
+      "17"
+    ],
+    "validatorType": "number",
+    "media": [
+      {
+        "id": "math10-m8x-q014-media-circle",
+        "type": "diagram",
+        "src": "/assets/math/grade10/module8-circle-diameter.svg",
+        "alt": "Đường tròn có A âm hai một và B bốn năm là hai đầu đường kính, tâm I tại một ba.",
+        "caption": "Tâm đường tròn là trung điểm của đường kính AB",
+        "longDescription": "Đoạn AB đi qua tâm I. Tọa độ I được tính bằng trung bình cộng từng tọa độ tương ứng của A và B.",
+        "width": 760,
+        "height": 440
+      }
+    ]
+  },
+  {
+    "id": "math10-m8x-q015",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Đường tròn qua $(0;0)$, $(4;0)$, $(0;6)$ có dạng $x^2+y^2+Dx+Ey+F=0$. Tính $D+E+F$.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "-10",
+    "acceptedAnswers": [
+      "-10"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q016",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Đường tròn có tâm nằm trên Ox và đi qua $A(1;2)$, $B(5;2)$. Biết tâm có hoành độ dương. Tính hoành độ tâm cộng $R^2$.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "11",
+    "acceptedAnswers": [
+      "11"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q017",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Có bao nhiêu đường tròn có tâm trong góc phần tư I, tiếp xúc cả hai trục tọa độ và đi qua điểm $M(6;3)$?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q018",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Đường tròn có tâm trên $y=x$ và đi qua $O(0;0)$, $A(2;0)$. Tính tổng hai tọa độ tâm và $R^2$.",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "4",
+    "acceptedAnswers": [
+      "4"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q019",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Tiếp tuyến tại $M(5;0)$ của đường tròn $x^2+y^2=25$ có dạng $x+c=0$. Tính c.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "-5",
+    "acceptedAnswers": [
+      "-5"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q020",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Đường tròn tâm $(2;-1)$, bán kính 3 có tiếp tuyến song song Ox nằm phía trên tâm. Tiếp tuyến có dạng $y=k$. Tính k.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q021",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Điểm P cách tâm I của đường tròn 5 đơn vị, bán kính bằng 3. Hai tiếp tuyến từ P tiếp xúc tại A và B. Tính $PA+PB$.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "8",
+    "acceptedAnswers": [
+      "8"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q022",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Có bao nhiêu giá trị thực của k để $x+y+k=0$ tiếp xúc với đường tròn tâm O, bán kính $\\sqrt2$?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q023",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Đường thẳng $3x+4y+c=0$ tiếp xúc đường tròn tâm $(1;2)$, bán kính 5. Biết $c>0$. Tính c.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "14",
+    "acceptedAnswers": [
+      "14"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q024",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt15",
+    "content": "Đường thẳng $3x+4y-20=0$ và đường tròn tâm O, bán kính 4 có bao nhiêu giao điểm?",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "1",
+    "acceptedAnswers": [
+      "1"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q025",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Elip $\\dfrac{x^2}{25}+\\dfrac{y^2}{9}=1$ có tiêu cự $F_1F_2$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "8",
+    "acceptedAnswers": [
+      "8"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q026",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Elip $\\dfrac{x^2}{16}+\\dfrac{y^2}{25}=1$ có giá trị c bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "3",
+    "acceptedAnswers": [
+      "3"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q027",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Elip có hai đỉnh trục lớn $(\\pm6;0)$ và hai tiêu điểm $(\\pm4;0)$. Tính $b^2$.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "20",
+    "acceptedAnswers": [
+      "20"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q028",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Elip có $a=5$, $b=4$. Tổng độ dài trục lớn và trục nhỏ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "18",
+    "acceptedAnswers": [
+      "18"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q029",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Elip có tâm sai $e=0{,}6$ và bán trục lớn $a=10$. Tính bán trục nhỏ b.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "8",
+    "acceptedAnswers": [
+      "8"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q030",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Điểm $M(3;y)$ với $y>0$ thuộc elip $\\dfrac{x^2}{25}+\\dfrac{y^2}{16}=1$. Tính y.",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "3.2",
+    "acceptedAnswers": [
+      "3.2"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q031",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Hypebol $\\dfrac{x^2}{9}-\\dfrac{y^2}{16}=1$ có tiêu cự $F_1F_2$ bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "10",
+    "acceptedAnswers": [
+      "10"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q032",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Hypebol $\\dfrac{y^2}{4}-\\dfrac{x^2}{5}=1$ có giá trị c bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "3",
+    "acceptedAnswers": [
+      "3"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q033",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Hypebol $\\dfrac{x^2}{25}-\\dfrac{y^2}{9}=1$ có hệ số góc dương của đường tiệm cận bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "0.6",
+    "acceptedAnswers": [
+      "0.6"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q034",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Hypebol có hai đỉnh $(\\pm4;0)$ và hai tiêu điểm $(\\pm5;0)$. Tính $b^2$.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "9",
+    "acceptedAnswers": [
+      "9"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q035",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Hypebol có tâm sai $e=5/3$ và bán trục thực $a=6$. Tính b.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "8",
+    "acceptedAnswers": [
+      "8"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q036",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Điểm $M(3\\sqrt2;y)$ với $y>0$ thuộc hypebol $\\dfrac{x^2}{9}-\\dfrac{y^2}{16}=1$. Tính y.",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "4",
+    "acceptedAnswers": [
+      "4"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q037",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Parabol $y^2=16x$ có hoành độ tiêu điểm bằng bao nhiêu?",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "4",
+    "acceptedAnswers": [
+      "4"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q038",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Parabol $x^2=-12y$ có đường chuẩn $y=k$. Tính k.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "3",
+    "acceptedAnswers": [
+      "3"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q039",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Parabol có tiêu điểm $F(0;5)$ và đỉnh O. Trong phương trình $x^2=ky$, tính k.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "20",
+    "acceptedAnswers": [
+      "20"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q040",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Parabol có đỉnh O và đường chuẩn $x=-2$. Trong phương trình $y^2=kx$, tính k.",
+    "responseType": "short_answer",
+    "difficulty": "medium",
+    "sourceType": "manual",
+    "correctAnswer": "8",
+    "acceptedAnswers": [
+      "8"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q041",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Đường thẳng $x=2$ cắt parabol $y^2=8x$ tại A và B. Tính độ dài AB.",
+    "responseType": "short_answer",
+    "difficulty": "hard",
+    "sourceType": "manual",
+    "correctAnswer": "8",
+    "acceptedAnswers": [
+      "8"
+    ],
+    "validatorType": "number"
+  },
+  {
+    "id": "math10-m8x-q042",
+    "subjectId": "math",
+    "topicId": "math10-t8",
+    "questionTypeId": "math10-qt16",
+    "content": "Parabol $y^2=4px$ đi qua điểm $(9;6)$. Tính p.",
+    "responseType": "short_answer",
+    "difficulty": "easy",
+    "sourceType": "manual",
+    "correctAnswer": "1",
+    "acceptedAnswers": [
+      "1"
+    ],
+    "validatorType": "number"
   }
 ];
-
-g10MathModule8Questions.push(...g10MathModule8QuestionExpansion);

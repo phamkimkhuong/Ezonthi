@@ -1,5 +1,4 @@
 import type { Solution } from '@/types';
-import { g10MathModule7SolutionExpansion } from './practiceExpansion';
 
 export const g10MathModule7Solutions: Solution[] = [
   {
@@ -103,106 +102,6 @@ export const g10MathModule7Solutions: Solution[] = [
     ]
   },
   {
-    "id": "math10-m7-s005",
-    "questionId": "math10-m7-q005",
-    "recognition": "Dạng: sai số tuyệt đối của phép làm tròn. Dấu hiệu là biết đơn vị làm tròn và hỏi độ lệch tối đa.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Nhận diện khoảng làm tròn",
-        "explanation": "Các giá trị cách số đã làm tròn không quá nửa đơn vị 0.01."
-      },
-      {
-        "order": 2,
-        "title": "Tính sai số tối đa",
-        "explanation": "Sai số tối đa là 0.01/2.",
-        "result": "0.005"
-      }
-    ],
-    "finalAnswer": "0.005",
-    "commonMistakes": [
-      "Lấy toàn bộ đơn vị làm tròn làm sai số tối đa thay vì lấy một nửa."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại sai số tuyệt đối của phép làm tròn."
-    ]
-  },
-  {
-    "id": "math10-m7-s006",
-    "questionId": "math10-m7-q006",
-    "recognition": "Dạng: sai số tuyệt đối của phép làm tròn. Dấu hiệu là biết đơn vị làm tròn và hỏi độ lệch tối đa.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Nhận diện khoảng làm tròn",
-        "explanation": "Các giá trị cách số đã làm tròn không quá nửa đơn vị 1."
-      },
-      {
-        "order": 2,
-        "title": "Tính sai số tối đa",
-        "explanation": "Sai số tối đa là 1/2.",
-        "result": "0.5"
-      }
-    ],
-    "finalAnswer": "0.5",
-    "commonMistakes": [
-      "Lấy toàn bộ đơn vị làm tròn làm sai số tối đa thay vì lấy một nửa."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại sai số tuyệt đối của phép làm tròn."
-    ]
-  },
-  {
-    "id": "math10-m7-s007",
-    "questionId": "math10-m7-q007",
-    "recognition": "Dạng: sai số tuyệt đối của phép làm tròn. Dấu hiệu là biết đơn vị làm tròn và hỏi độ lệch tối đa.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Nhận diện khoảng làm tròn",
-        "explanation": "Các giá trị cách số đã làm tròn không quá nửa đơn vị 10."
-      },
-      {
-        "order": 2,
-        "title": "Tính sai số tối đa",
-        "explanation": "Sai số tối đa là 10/2.",
-        "result": "5"
-      }
-    ],
-    "finalAnswer": "5",
-    "commonMistakes": [
-      "Lấy toàn bộ đơn vị làm tròn làm sai số tối đa thay vì lấy một nửa."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại sai số tuyệt đối của phép làm tròn."
-    ]
-  },
-  {
-    "id": "math10-m7-s008",
-    "questionId": "math10-m7-q008",
-    "recognition": "Dạng: sai số tuyệt đối của phép làm tròn. Dấu hiệu là biết đơn vị làm tròn và hỏi độ lệch tối đa.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Nhận diện khoảng làm tròn",
-        "explanation": "Các giá trị cách số đã làm tròn không quá nửa đơn vị 0.001."
-      },
-      {
-        "order": 2,
-        "title": "Tính sai số tối đa",
-        "explanation": "Sai số tối đa là 0.001/2.",
-        "result": "0.0005"
-      }
-    ],
-    "finalAnswer": "0.0005",
-    "commonMistakes": [
-      "Lấy toàn bộ đơn vị làm tròn làm sai số tối đa thay vì lấy một nửa."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại sai số tuyệt đối của phép làm tròn."
-    ]
-  },
-  {
     "id": "math10-m7-s009",
     "questionId": "math10-m7-q009",
     "recognition": "Dạng: sai số tương đối. Dấu hiệu là đề cho cả giá trị gần đúng và sai số tuyệt đối.",
@@ -220,81 +119,6 @@ export const g10MathModule7Solutions: Solution[] = [
       }
     ],
     "finalAnswer": "1.04",
-    "commonMistakes": [
-      "Quên nhân 100 khi đổi tỉ số sang phần trăm."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại sai số tương đối."
-    ]
-  },
-  {
-    "id": "math10-m7-s010",
-    "questionId": "math10-m7-q010",
-    "recognition": "Dạng: sai số tương đối. Dấu hiệu là đề cho cả giá trị gần đúng và sai số tuyệt đối.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Lập tỉ số sai số",
-        "explanation": "Sai số tương đối tối đa bằng 0.5/125."
-      },
-      {
-        "order": 2,
-        "title": "Đổi sang phần trăm",
-        "explanation": "Nhân tỉ số với 100% rồi làm tròn đến 0,01%.",
-        "result": "0.4%"
-      }
-    ],
-    "finalAnswer": "0.4",
-    "commonMistakes": [
-      "Quên nhân 100 khi đổi tỉ số sang phần trăm."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại sai số tương đối."
-    ]
-  },
-  {
-    "id": "math10-m7-s011",
-    "questionId": "math10-m7-q011",
-    "recognition": "Dạng: sai số tương đối. Dấu hiệu là đề cho cả giá trị gần đúng và sai số tuyệt đối.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Lập tỉ số sai số",
-        "explanation": "Sai số tương đối tối đa bằng 0.005/3.14."
-      },
-      {
-        "order": 2,
-        "title": "Đổi sang phần trăm",
-        "explanation": "Nhân tỉ số với 100% rồi làm tròn đến 0,01%.",
-        "result": "0.16%"
-      }
-    ],
-    "finalAnswer": "0.16",
-    "commonMistakes": [
-      "Quên nhân 100 khi đổi tỉ số sang phần trăm."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại sai số tương đối."
-    ]
-  },
-  {
-    "id": "math10-m7-s012",
-    "questionId": "math10-m7-q012",
-    "recognition": "Dạng: sai số tương đối. Dấu hiệu là đề cho cả giá trị gần đúng và sai số tuyệt đối.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Lập tỉ số sai số",
-        "explanation": "Sai số tương đối tối đa bằng 5/2500."
-      },
-      {
-        "order": 2,
-        "title": "Đổi sang phần trăm",
-        "explanation": "Nhân tỉ số với 100% rồi làm tròn đến 0,01%.",
-        "result": "0.2%"
-      }
-    ],
-    "finalAnswer": "0.2",
     "commonMistakes": [
       "Quên nhân 100 khi đổi tỉ số sang phần trăm."
     ],
@@ -381,58 +205,6 @@ export const g10MathModule7Solutions: Solution[] = [
     ]
   },
   {
-    "id": "math10-m7-s016",
-    "questionId": "math10-m7-q016",
-    "recognition": "Dạng: số trung bình cộng. Dấu hiệu là cần một giá trị đại diện có sử dụng toàn bộ quan sát.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính tổng số liệu",
-        "explanation": "Tổng các giá trị là 30.",
-        "result": "30"
-      },
-      {
-        "order": 2,
-        "title": "Chia cho số quan sát",
-        "explanation": "Mẫu có 5 giá trị nên trung bình là 30/5.",
-        "result": "6"
-      }
-    ],
-    "finalAnswer": "6",
-    "commonMistakes": [
-      "Chia tổng cho khoảng biến thiên hoặc cho số giá trị khác nhau thay vì số quan sát."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại số trung bình cộng."
-    ]
-  },
-  {
-    "id": "math10-m7-s017",
-    "questionId": "math10-m7-q017",
-    "recognition": "Dạng: số trung bình cộng. Dấu hiệu là cần một giá trị đại diện có sử dụng toàn bộ quan sát.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính tổng số liệu",
-        "explanation": "Tổng các giá trị là 90.",
-        "result": "90"
-      },
-      {
-        "order": 2,
-        "title": "Chia cho số quan sát",
-        "explanation": "Mẫu có 5 giá trị nên trung bình là 90/5.",
-        "result": "18"
-      }
-    ],
-    "finalAnswer": "18",
-    "commonMistakes": [
-      "Chia tổng cho khoảng biến thiên hoặc cho số giá trị khác nhau thay vì số quan sát."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại số trung bình cộng."
-    ]
-  },
-  {
     "id": "math10-m7-s018",
     "questionId": "math10-m7-q018",
     "recognition": "Dạng: số trung bình cộng. Dấu hiệu là cần một giá trị đại diện có sử dụng toàn bộ quan sát.",
@@ -503,84 +275,6 @@ export const g10MathModule7Solutions: Solution[] = [
       }
     ],
     "finalAnswer": "10",
-    "commonMistakes": [
-      "Chia tổng cho khoảng biến thiên hoặc cho số giá trị khác nhau thay vì số quan sát."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại số trung bình cộng."
-    ]
-  },
-  {
-    "id": "math10-m7-s021",
-    "questionId": "math10-m7-q021",
-    "recognition": "Dạng: số trung bình cộng. Dấu hiệu là cần một giá trị đại diện có sử dụng toàn bộ quan sát.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính tổng số liệu",
-        "explanation": "Tổng các giá trị là 132.",
-        "result": "132"
-      },
-      {
-        "order": 2,
-        "title": "Chia cho số quan sát",
-        "explanation": "Mẫu có 6 giá trị nên trung bình là 132/6.",
-        "result": "22"
-      }
-    ],
-    "finalAnswer": "22",
-    "commonMistakes": [
-      "Chia tổng cho khoảng biến thiên hoặc cho số giá trị khác nhau thay vì số quan sát."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại số trung bình cộng."
-    ]
-  },
-  {
-    "id": "math10-m7-s022",
-    "questionId": "math10-m7-q022",
-    "recognition": "Dạng: số trung bình cộng. Dấu hiệu là cần một giá trị đại diện có sử dụng toàn bộ quan sát.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính tổng số liệu",
-        "explanation": "Tổng các giá trị là 60.",
-        "result": "60"
-      },
-      {
-        "order": 2,
-        "title": "Chia cho số quan sát",
-        "explanation": "Mẫu có 6 giá trị nên trung bình là 60/6.",
-        "result": "10"
-      }
-    ],
-    "finalAnswer": "10",
-    "commonMistakes": [
-      "Chia tổng cho khoảng biến thiên hoặc cho số giá trị khác nhau thay vì số quan sát."
-    ],
-    "reviewSuggestions": [
-      "Ôn lại số trung bình cộng."
-    ]
-  },
-  {
-    "id": "math10-m7-s023",
-    "questionId": "math10-m7-q023",
-    "recognition": "Dạng: số trung bình cộng. Dấu hiệu là cần một giá trị đại diện có sử dụng toàn bộ quan sát.",
-    "detailedSteps": [
-      {
-        "order": 1,
-        "title": "Tính tổng số liệu",
-        "explanation": "Tổng các giá trị là 150.",
-        "result": "150"
-      },
-      {
-        "order": 2,
-        "title": "Chia cho số quan sát",
-        "explanation": "Mẫu có 5 giá trị nên trung bình là 150/5.",
-        "result": "30"
-      }
-    ],
-    "finalAnswer": "30",
     "commonMistakes": [
       "Chia tổng cho khoảng biến thiên hoặc cho số giá trị khác nhau thay vì số quan sát."
     ],
@@ -2869,7 +2563,155 @@ export const g10MathModule7Solutions: Solution[] = [
     "reviewSuggestions": [
       "Ôn lại biến cố đối và hợp biến cố."
     ]
+  },
+  {
+    "id": "math10-m7x-s001",
+    "questionId": "math10-m7x-q001",
+    "recognition": "Dạng mở rộng math10-qt12-st3: so sánh đúng chỉ số phân tán và cùng đơn vị.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Chọn chỉ số và quy tắc biến đổi",
+        "explanation": "Độ lệch chuẩn nhỏ hơn biểu thị mẫu ổn định hơn."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và diễn giải",
+        "explanation": "Hiệu hai độ lệch chuẩn là $5-3=2$.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "So sánh trung bình thay vì chỉ số phân tán hoặc quên lấy căn phương sai."
+    ],
+    "reviewSuggestions": [
+      "Đưa các mẫu về cùng đại lượng, cùng đơn vị rồi mới so sánh phương sai hoặc độ lệch chuẩn."
+    ]
+  },
+  {
+    "id": "math10-m7x-s002",
+    "questionId": "math10-m7x-q002",
+    "recognition": "Dạng mở rộng math10-qt12-st3: so sánh đúng chỉ số phân tán và cùng đơn vị.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Chọn chỉ số và quy tắc biến đổi",
+        "explanation": "Cộng 3 không đổi độ lệch chuẩn; nhân 2 làm độ lệch chuẩn nhân $|2|$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và diễn giải",
+        "explanation": "$s_B=2\\cdot4=8$.",
+        "result": "8"
+      }
+    ],
+    "finalAnswer": "8",
+    "commonMistakes": [
+      "So sánh trung bình thay vì chỉ số phân tán hoặc quên lấy căn phương sai."
+    ],
+    "reviewSuggestions": [
+      "Đưa các mẫu về cùng đại lượng, cùng đơn vị rồi mới so sánh phương sai hoặc độ lệch chuẩn."
+    ]
+  },
+  {
+    "id": "math10-m7x-s003",
+    "questionId": "math10-m7x-q003",
+    "recognition": "Dạng mở rộng math10-qt12-st3: so sánh đúng chỉ số phân tán và cùng đơn vị.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Chọn chỉ số và quy tắc biến đổi",
+        "explanation": "Độ lệch chuẩn là căn bậc hai của phương sai: $s_A=3$, $s_B=5$."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và diễn giải",
+        "explanation": "Hiệu là $5-3=2$.",
+        "result": "2"
+      }
+    ],
+    "finalAnswer": "2",
+    "commonMistakes": [
+      "So sánh trung bình thay vì chỉ số phân tán hoặc quên lấy căn phương sai."
+    ],
+    "reviewSuggestions": [
+      "Đưa các mẫu về cùng đại lượng, cùng đơn vị rồi mới so sánh phương sai hoặc độ lệch chuẩn."
+    ]
+  },
+  {
+    "id": "math10-m7x-s004",
+    "questionId": "math10-m7x-q004",
+    "recognition": "Dạng mở rộng math10-qt12-st3: so sánh đúng chỉ số phân tán và cùng đơn vị.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Chọn chỉ số và quy tắc biến đổi",
+        "explanation": "Cả hai có trung bình 10; phương sai A bằng 0."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và diễn giải",
+        "explanation": "Phương sai B là $(4+1+1+4)/4=2{,}5$, nên hiệu bằng $2{,}5$.",
+        "result": "2.5"
+      }
+    ],
+    "finalAnswer": "2.5",
+    "commonMistakes": [
+      "So sánh trung bình thay vì chỉ số phân tán hoặc quên lấy căn phương sai."
+    ],
+    "reviewSuggestions": [
+      "Đưa các mẫu về cùng đại lượng, cùng đơn vị rồi mới so sánh phương sai hoặc độ lệch chuẩn."
+    ]
+  },
+  {
+    "id": "math10-m7x-s005",
+    "questionId": "math10-m7x-q005",
+    "recognition": "Dạng mở rộng math10-qt12-st3: so sánh đúng chỉ số phân tán và cùng đơn vị.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Chọn chỉ số và quy tắc biến đổi",
+        "explanation": "Cộng cùng một hằng số chỉ tịnh tiến mẫu và trung bình."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và diễn giải",
+        "explanation": "Các độ lệch không đổi nên hai phương sai bằng nhau, hiệu bằng 0.",
+        "result": "0"
+      }
+    ],
+    "finalAnswer": "0",
+    "commonMistakes": [
+      "So sánh trung bình thay vì chỉ số phân tán hoặc quên lấy căn phương sai."
+    ],
+    "reviewSuggestions": [
+      "Đưa các mẫu về cùng đại lượng, cùng đơn vị rồi mới so sánh phương sai hoặc độ lệch chuẩn."
+    ]
+  },
+  {
+    "id": "math10-m7x-s006",
+    "questionId": "math10-m7x-q006",
+    "recognition": "Dạng mở rộng math10-qt12-st3: so sánh đúng chỉ số phân tán và cùng đơn vị.",
+    "detailedSteps": [
+      {
+        "order": 1,
+        "title": "Chọn chỉ số và quy tắc biến đổi",
+        "explanation": "Độ lệch chuẩn nhân với trị tuyệt đối của hệ số biến đổi."
+      },
+      {
+        "order": 2,
+        "title": "Tính toán và diễn giải",
+        "explanation": "$s_{mới}=|-3|\\cdot2=6$.",
+        "result": "6"
+      }
+    ],
+    "finalAnswer": "6",
+    "commonMistakes": [
+      "So sánh trung bình thay vì chỉ số phân tán hoặc quên lấy căn phương sai."
+    ],
+    "reviewSuggestions": [
+      "Đưa các mẫu về cùng đại lượng, cùng đơn vị rồi mới so sánh phương sai hoặc độ lệch chuẩn."
+    ]
   }
 ];
-
-g10MathModule7Solutions.push(...g10MathModule7SolutionExpansion);

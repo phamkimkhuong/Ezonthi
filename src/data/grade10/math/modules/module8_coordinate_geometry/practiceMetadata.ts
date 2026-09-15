@@ -1,5 +1,4 @@
 import type { QuestionPracticeMetadata } from '@/types';
-import { g10MathModule8PracticeMetadataExpansion } from './practiceExpansion';
 
 export const g10MathModule8PracticeMetadata: QuestionPracticeMetadata[] = [
   {
@@ -15,57 +14,7 @@ export const g10MathModule8PracticeMetadata: QuestionPracticeMetadata[] = [
     "representationType": "equation"
   },
   {
-    "questionId": "math10-m8-q003",
-    "subTypeId": "math10-qt14-st1",
-    "practiceRole": "misconception_check",
-    "representationType": "equation",
-    "misconceptionId": "MATH10-M8-M01"
-  },
-  {
-    "questionId": "math10-m8-q004",
-    "subTypeId": "math10-qt14-st1",
-    "practiceRole": "representation_switch",
-    "representationType": "equation"
-  },
-  {
-    "questionId": "math10-m8-q005",
-    "subTypeId": "math10-qt14-st1",
-    "practiceRole": "near_transfer",
-    "representationType": "equation"
-  },
-  {
-    "questionId": "math10-m8-q006",
-    "subTypeId": "math10-qt14-st1",
-    "practiceRole": "retention",
-    "representationType": "equation"
-  },
-  {
-    "questionId": "math10-m8-q007",
-    "subTypeId": "math10-qt14-st1",
-    "practiceRole": "far_transfer",
-    "representationType": "equation"
-  },
-  {
-    "questionId": "math10-m8-q008",
-    "subTypeId": "math10-qt14-st1",
-    "practiceRole": "representation_switch",
-    "representationType": "equation"
-  },
-  {
-    "questionId": "math10-m8-q009",
-    "subTypeId": "math10-qt14-st1",
-    "practiceRole": "far_transfer",
-    "representationType": "equation"
-  },
-  {
     "questionId": "math10-m8-q010",
-    "subTypeId": "math10-qt14-st1",
-    "practiceRole": "mastery_holdout",
-    "representationType": "equation",
-    "isMasteryHoldout": true
-  },
-  {
-    "questionId": "math10-m8-q011",
     "subTypeId": "math10-qt14-st1",
     "practiceRole": "mastery_holdout",
     "representationType": "equation",
@@ -676,7 +625,264 @@ export const g10MathModule8PracticeMetadata: QuestionPracticeMetadata[] = [
     "subTypeId": "math10-qt16-st3",
     "practiceRole": "far_transfer",
     "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q001",
+    "subTypeId": "math10-qt14-st1",
+    "practiceRole": "near_transfer",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q002",
+    "subTypeId": "math10-qt14-st1",
+    "practiceRole": "representation_switch",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q003",
+    "subTypeId": "math10-qt14-st1",
+    "practiceRole": "far_transfer",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q004",
+    "subTypeId": "math10-qt14-st1",
+    "practiceRole": "retention",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q005",
+    "subTypeId": "math10-qt14-st1",
+    "practiceRole": "mastery_holdout",
+    "representationType": "graph",
+    "isMasteryHoldout": true
+  },
+  {
+    "questionId": "math10-m8x-q006",
+    "subTypeId": "math10-qt14-st1",
+    "practiceRole": "misconception_check",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q007",
+    "subTypeId": "math10-qt14-st3",
+    "practiceRole": "near_transfer",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q008",
+    "subTypeId": "math10-qt14-st3",
+    "practiceRole": "representation_switch",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q009",
+    "subTypeId": "math10-qt14-st3",
+    "practiceRole": "far_transfer",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q010",
+    "subTypeId": "math10-qt14-st3",
+    "practiceRole": "retention",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q011",
+    "subTypeId": "math10-qt14-st3",
+    "practiceRole": "mastery_holdout",
+    "representationType": "diagram",
+    "isMasteryHoldout": true
+  },
+  {
+    "questionId": "math10-m8x-q012",
+    "subTypeId": "math10-qt14-st3",
+    "practiceRole": "misconception_check",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q013",
+    "subTypeId": "math10-qt15-st2",
+    "practiceRole": "near_transfer",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q014",
+    "subTypeId": "math10-qt15-st2",
+    "practiceRole": "representation_switch",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q015",
+    "subTypeId": "math10-qt15-st2",
+    "practiceRole": "far_transfer",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q016",
+    "subTypeId": "math10-qt15-st2",
+    "practiceRole": "retention",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q017",
+    "subTypeId": "math10-qt15-st2",
+    "practiceRole": "mastery_holdout",
+    "representationType": "diagram",
+    "isMasteryHoldout": true
+  },
+  {
+    "questionId": "math10-m8x-q018",
+    "subTypeId": "math10-qt15-st2",
+    "practiceRole": "misconception_check",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q019",
+    "subTypeId": "math10-qt15-st3",
+    "practiceRole": "near_transfer",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q020",
+    "subTypeId": "math10-qt15-st3",
+    "practiceRole": "representation_switch",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q021",
+    "subTypeId": "math10-qt15-st3",
+    "practiceRole": "far_transfer",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q022",
+    "subTypeId": "math10-qt15-st3",
+    "practiceRole": "retention",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q023",
+    "subTypeId": "math10-qt15-st3",
+    "practiceRole": "mastery_holdout",
+    "representationType": "equation",
+    "isMasteryHoldout": true
+  },
+  {
+    "questionId": "math10-m8x-q024",
+    "subTypeId": "math10-qt15-st3",
+    "practiceRole": "misconception_check",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q025",
+    "subTypeId": "math10-qt16-st1",
+    "practiceRole": "near_transfer",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q026",
+    "subTypeId": "math10-qt16-st1",
+    "practiceRole": "representation_switch",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q027",
+    "subTypeId": "math10-qt16-st1",
+    "practiceRole": "far_transfer",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q028",
+    "subTypeId": "math10-qt16-st1",
+    "practiceRole": "retention",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q029",
+    "subTypeId": "math10-qt16-st1",
+    "practiceRole": "mastery_holdout",
+    "representationType": "equation",
+    "isMasteryHoldout": true
+  },
+  {
+    "questionId": "math10-m8x-q030",
+    "subTypeId": "math10-qt16-st1",
+    "practiceRole": "misconception_check",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q031",
+    "subTypeId": "math10-qt16-st2",
+    "practiceRole": "near_transfer",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q032",
+    "subTypeId": "math10-qt16-st2",
+    "practiceRole": "representation_switch",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q033",
+    "subTypeId": "math10-qt16-st2",
+    "practiceRole": "far_transfer",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q034",
+    "subTypeId": "math10-qt16-st2",
+    "practiceRole": "retention",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q035",
+    "subTypeId": "math10-qt16-st2",
+    "practiceRole": "mastery_holdout",
+    "representationType": "equation",
+    "isMasteryHoldout": true
+  },
+  {
+    "questionId": "math10-m8x-q036",
+    "subTypeId": "math10-qt16-st2",
+    "practiceRole": "misconception_check",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q037",
+    "subTypeId": "math10-qt16-st3",
+    "practiceRole": "near_transfer",
+    "representationType": "equation"
+  },
+  {
+    "questionId": "math10-m8x-q038",
+    "subTypeId": "math10-qt16-st3",
+    "practiceRole": "representation_switch",
+    "representationType": "graph"
+  },
+  {
+    "questionId": "math10-m8x-q039",
+    "subTypeId": "math10-qt16-st3",
+    "practiceRole": "far_transfer",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q040",
+    "subTypeId": "math10-qt16-st3",
+    "practiceRole": "retention",
+    "representationType": "diagram"
+  },
+  {
+    "questionId": "math10-m8x-q041",
+    "subTypeId": "math10-qt16-st3",
+    "practiceRole": "mastery_holdout",
+    "representationType": "graph",
+    "isMasteryHoldout": true
+  },
+  {
+    "questionId": "math10-m8x-q042",
+    "subTypeId": "math10-qt16-st3",
+    "practiceRole": "misconception_check",
+    "representationType": "equation"
   }
 ];
-
-g10MathModule8PracticeMetadata.push(...g10MathModule8PracticeMetadataExpansion);
