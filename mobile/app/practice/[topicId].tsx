@@ -4,7 +4,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Trophy, RotateCcw, Lock } from 'lucide-react-native';
 import { QuestionCard } from '../../components/QuestionCard';
 import { DataService } from '../../services/dataService';
-import { useUserStore } from '../../services/storageService';
+import { useUserStore } from '../../stores';
 import { HapticService } from '../../services/hapticService';
 import { CloudSyncService } from '../../services/cloudSyncService';
 

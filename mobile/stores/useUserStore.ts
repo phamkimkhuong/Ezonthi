@@ -1,8 +1,9 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { UserAttempt, MasteryService, TopicMastery } from './masteryService';
-import { MobileMistake, MistakeService } from './mistakeService';
+import { UserAttempt, MasteryService, TopicMastery } from '../services/masteryService';
+import { MobileMistake, MistakeService } from '../services/mistakeService';
+import { STORAGE_KEYS } from '../constants/storageKeys';
 
 export type { UserAttempt, TopicMastery, MobileMistake };
 
@@ -31,7 +32,7 @@ export interface UserStats {
   isHydrated: boolean;
 }
 
-interface UserStore extends UserStats {
+export interface UserStore extends UserStats {
   setUser: (user: UserProfile | null) => void;
   setHydrated: (hydrated: boolean) => void;
   recordAnswer: (questionId: string, isCorrect: boolean, xpEarned?: number) => void;
@@ -76,7 +77,7 @@ export const useUserStore = create<UserStore>()(
       recordAnswer: (questionId: string, isCorrect: boolean, xpEarned: number = 10) => {
         const state = get();
         const today = getTodayString();
-        
+
         // Tính toán streak
         let newStreak = state.streak;
         if (state.lastActiveDate !== today) {
@@ -94,8 +95,8 @@ export const useUserStore = create<UserStore>()(
           lastActiveDate: today,
           completedQuestions: {
             ...state.completedQuestions,
-            [questionId]: isCorrect
-          }
+            [questionId]: isCorrect,
+          },
         });
       },
 
@@ -222,7 +223,7 @@ export const useUserStore = create<UserStore>()(
         set({
           reminderHour: hour,
           reminderMinute: minute,
-          reminderEnabled: enabled
+          reminderEnabled: enabled,
         });
       },
 
@@ -239,10 +240,10 @@ export const useUserStore = create<UserStore>()(
           mistakes: [],
           topicMastery: {},
         });
-      }
+      },
     }),
     {
-      name: 'ezonthi-user-storage',
+      name: STORAGE_KEYS.USER_STORAGE,
       storage: createJSONStorage(() => AsyncStorage),
       onRehydrateStorage: () => (state) => {
         state?.setHydrated(true);

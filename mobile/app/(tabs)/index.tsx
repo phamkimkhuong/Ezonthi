@@ -7,7 +7,7 @@ import { ReminderModal } from '../../components/ReminderModal';
 import { CompetencyChart } from '../../components/CompetencyChart';
 import { SUBJECTS } from '../../services/dataService';
 import { MOCK_EXAMS } from '../../services/examService';
-import { useUserStore } from '../../services/storageService';
+import { useUserStore } from '../../stores';
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -78,6 +78,33 @@ export default function HomeScreen() {
         </View>
         <View className="bg-indigo-600/30 p-2 rounded-xl">
           <ChevronRight size={18} color="#A5B4FC" />
+        </View>
+      </TouchableOpacity>
+
+      {/* Interactive English Vocabulary Banner */}
+      <TouchableOpacity
+        onPress={() => router.push('/vocabulary' as any)}
+        activeOpacity={0.8}
+        className="bg-slate-900 border border-indigo-500/40 rounded-3xl p-4 my-2 flex-row items-center justify-between shadow-lg"
+      >
+        <View className="flex-row items-center space-x-3 gap-3 flex-1">
+          <View className="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/30 items-center justify-center">
+            <Text className="text-2xl">🃏</Text>
+          </View>
+          <View className="flex-1">
+            <View className="flex-row items-center space-x-1.5 gap-1.5">
+              <Text className="text-sm font-bold text-white">Luyện Từ Vựng SGK 10</Text>
+              <View className="bg-amber-500/20 px-1.5 py-0.5 rounded border border-amber-500/30">
+                <Text className="text-[9px] font-black text-amber-300">FLASHCARD 3D</Text>
+              </View>
+            </View>
+            <Text className="text-xs text-slate-300 mt-0.5" numberOfLines={1}>
+              10 Units Tiếng Anh Global Success • Quiz phản xạ • Gõ từ
+            </Text>
+          </View>
+        </View>
+        <View className="bg-slate-800 p-2 rounded-xl">
+          <ChevronRight size={18} color="#94A3B8" />
         </View>
       </TouchableOpacity>
 

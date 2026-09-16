@@ -1,14 +1,14 @@
 import { useEffect, useState, useCallback } from 'react';
 import { View, Text, ScrollView, RefreshControl, TouchableOpacity } from 'react-native';
 import { Trophy, Flame, Zap, Wifi, WifiOff, RefreshCw } from 'lucide-react-native';
-import { useUserStore } from '../../services/storageService';
+import { useUserStore } from '../../stores';
+import { useNetworkStatus } from '../../hooks';
 import { FirebaseSyncService, LeaderboardItem, LeaderboardFetchResult } from '../../services/firebaseSyncService';
 import { HapticService } from '../../services/hapticService';
-import { useNetInfo } from '@react-native-community/netinfo';
 
 export default function RankScreen() {
   const { xp, streak, user } = useUserStore();
-  const netInfo = useNetInfo();
+  const { isConnected } = useNetworkStatus();
   const [leaderboard, setLeaderboard] = useState<LeaderboardItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [refreshing, setRefreshing] = useState<boolean>(false);
@@ -46,10 +46,10 @@ export default function RankScreen() {
 
   // Tự động tải lại Bảng vàng thời gian thực ngay khi có mạng trở lại mà không cần bấm nút
   useEffect(() => {
-    if (netInfo.isConnected === true && (leaderboard.length === 0 || fetchResult?.fromCache)) {
+    if (isConnected && (leaderboard.length === 0 || fetchResult?.fromCache)) {
       fetchRankings(false);
     }
-  }, [netInfo.isConnected, leaderboard.length, fetchResult?.fromCache, fetchRankings]);
+  }, [isConnected, leaderboard.length, fetchResult?.fromCache, fetchRankings]);
 
   const handleRetry = () => {
     HapticService.selection();

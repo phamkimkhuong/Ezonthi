@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Flame, Zap } from 'lucide-react-native';
-import { useUserStore } from '../services/storageService';
+import { useUserStore } from '../stores';
+import { formatHourMinute } from '../utils';
 
 interface StreakBannerProps {
   onPressReminder?: () => void;
@@ -10,7 +11,7 @@ interface StreakBannerProps {
 export const StreakBanner: React.FC<StreakBannerProps> = ({ onPressReminder }) => {
   const { streak, xp, reminderHour, reminderMinute, reminderEnabled } = useUserStore();
 
-  const formattedTime = `${String(reminderHour).padStart(2, '0')}:${String(reminderMinute).padStart(2, '0')}`;
+  const formattedTime = formatHourMinute(reminderHour, reminderMinute);
 
   return (
     <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/10 border border-amber-500/30 rounded-2xl p-4 my-3">

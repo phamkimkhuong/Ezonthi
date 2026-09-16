@@ -1,7 +1,7 @@
 import { GoogleAuthProvider, signInWithCredential, signOut as fbSignOut } from 'firebase/auth';
 import * as WebBrowser from 'expo-web-browser';
 import { auth } from './firebase';
-import { UserProfile, useUserStore } from './storageService';
+import { UserProfile, useUserStore } from '../stores';
 import { CloudSyncService } from './cloudSyncService';
 
 WebBrowser.maybeCompleteAuthSession();

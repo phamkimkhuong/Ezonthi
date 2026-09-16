@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import { Home, BookOpen, BookMarked, Trophy, Settings } from 'lucide-react-native';
-import { useUserStore } from '../../services/storageService';
+import { useUserStore } from '../../stores';
 
 export default function TabLayout() {
   const { mistakes } = useUserStore();

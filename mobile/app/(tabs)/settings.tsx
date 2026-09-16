@@ -4,7 +4,8 @@ import { useRouter } from 'expo-router';
 import { Bell, Volume2, Vibrate, RefreshCcw, Sparkles, Clock, LogIn, LogOut } from 'lucide-react-native';
 import { signOut } from 'firebase/auth';
 import { ReminderModal } from '../../components/ReminderModal';
-import { useUserStore } from '../../services/storageService';
+import { useUserStore } from '../../stores';
+import { formatHourMinute } from '../../utils';
 import { NotificationService } from '../../services/notificationService';
 import { auth } from '../../services/firebase';
 
@@ -26,7 +27,7 @@ export default function SettingsScreen() {
     streak
   } = useUserStore();
 
-  const formattedTime = `${String(reminderHour).padStart(2, '0')}:${String(reminderMinute).padStart(2, '0')}`;
+  const formattedTime = formatHourMinute(reminderHour, reminderMinute);
 
   const handleToggleReminder = async (val: boolean) => {
     updateReminder(reminderHour, reminderMinute, val);

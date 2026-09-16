@@ -8,16 +8,16 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../services/firebase';
 import { Sentry } from '../services/sentry';
 import { NotificationService } from '../services/notificationService';
-import { useUserStore } from '../services/storageService';
+import { useUserStore } from '../stores';
+import { useNetworkStatus } from '../hooks';
 import { OfflineBanner } from '../components/OfflineBanner';
 import '../global.css';
 
-import { useNetInfo } from '@react-native-community/netinfo';
 import { CloudSyncService } from '../services/cloudSyncService';
 
 function RootLayout() {
   const router = useRouter();
-  const netInfo = useNetInfo();
+  const { isConnected } = useNetworkStatus();
   const { reminderHour, reminderMinute, reminderEnabled, streak, setUser } = useUserStore();
 
   useEffect(() => {
@@ -43,10 +43,10 @@ function RootLayout() {
 
   // Tự động đẩy dữ liệu lên Firestore khi có kết nối mạng
   useEffect(() => {
-    if (netInfo.isConnected === true) {
+    if (isConnected) {
       CloudSyncService.syncToCloud();
     }
-  }, [netInfo.isConnected]);
+  }, [isConnected]);
 
   useEffect(() => {
     // Xin quyền và đặt lịch thông báo hàng ngày khi mở app

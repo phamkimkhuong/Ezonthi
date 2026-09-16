@@ -9,7 +9,7 @@ import {
   Check,
   X
 } from 'lucide-react-native';
-import { useUserStore } from '../../services/storageService';
+import { useUserStore } from '../../stores';
 import { DataService } from '../../services/dataService';
 import { MathRenderer } from '../../components/MathRenderer';
 import { HapticService } from '../../services/hapticService';

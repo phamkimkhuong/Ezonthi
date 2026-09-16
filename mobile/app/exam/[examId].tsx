@@ -26,7 +26,8 @@ import {
 import { getExamById, evaluateExam, Exam, ExamResult } from '../../services/examService';
 import { DataService } from '../../services/dataService';
 import { MathRenderer } from '../../components/MathRenderer';
-import { useUserStore } from '../../services/storageService';
+import { useUserStore } from '../../stores';
+import { formatSecondsToTimer } from '../../utils';
 import { HapticService } from '../../services/hapticService';
 
 export default function ExamDetailScreen() {
@@ -73,11 +74,7 @@ export default function ExamDetailScreen() {
     };
   }, [exam, isSubmitted, timeLeft]);
 
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-  };
+  const formatTime = formatSecondsToTimer;
 
   const handleSelectAnswer = (letter: string) => {
     if (isSubmitted || !exam) return;

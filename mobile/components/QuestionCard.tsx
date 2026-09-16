@@ -5,7 +5,7 @@ import { CheckCircle2, XCircle, Lightbulb, Bot, Sparkles } from 'lucide-react-na
 import { MathRenderer } from './MathRenderer';
 import { MobileQuestion, DataService } from '../services/dataService';
 import { HapticService } from '../services/hapticService';
-import { useUserStore } from '../services/storageService';
+import { useUserStore } from '../stores';
 
 interface QuestionCardProps {
   question: MobileQuestion;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { useNetInfo } from '@react-native-community/netinfo';
 import { WifiOff } from 'lucide-react-native';
+import { useNetworkStatus } from '../hooks';
 
 export const OfflineBanner: React.FC = () => {
-  const netInfo = useNetInfo();
+  const { isOffline } = useNetworkStatus();
 
-  // Chỉ hiển thị khi chắc chắn mất kết nối (isConnected === false)
-  if (netInfo.isConnected === null || netInfo.isConnected !== false) {
+  // Chỉ hiển thị khi chắc chắn mất kết nối
+  if (!isOffline) {
     return null;
   }
 

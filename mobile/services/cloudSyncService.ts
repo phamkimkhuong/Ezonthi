@@ -1,6 +1,6 @@
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from './firebase';
-import { useUserStore, UserProfile } from './storageService';
+import { useUserStore, UserProfile } from '../stores';
 import { MobileMistake } from './mistakeService';
 
 export const CloudSyncService = {

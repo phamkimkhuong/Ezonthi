@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Clock, HelpCircle, Sparkles, Star } from 'lucide-react-native';
 import { SUBJECTS } from '../../services/dataService';
-import { useUserStore } from '../../services/storageService';
+import { useUserStore } from '../../stores';
 
 export default function SubjectsScreen() {
   const router = useRouter();
@@ -59,6 +59,37 @@ export default function SubjectsScreen() {
             <Sparkles size={20} color="#ffffff" />
           </View>
         </View>
+
+        {/* Banner Luyện Từ Vựng Tương Tác (Khi chọn môn Tiếng Anh) */}
+        {selectedSubjectId === 'english' && (
+          <TouchableOpacity
+            onPress={() => router.push('/vocabulary' as any)}
+            activeOpacity={0.8}
+            className="mb-4 p-4 rounded-3xl bg-indigo-950/70 border-2 border-indigo-500/50 shadow-xl"
+          >
+            <View className="flex-row items-center justify-between mb-2">
+              <View className="flex-row items-center space-x-2 gap-2">
+                <View className="px-2 py-0.5 rounded-full bg-indigo-500/30 border border-indigo-400/40">
+                  <Text className="text-[10px] font-black text-indigo-300">TƯƠNG TÁC 3D</Text>
+                </View>
+                <Text className="text-xs font-bold text-amber-400">10 Units SGK</Text>
+              </View>
+              <Sparkles size={16} color="#818cf8" />
+            </View>
+
+            <Text className="text-base font-black text-white mb-1">
+              🃏 Luyện Từ Vựng Flashcard & Quiz
+            </Text>
+            <Text className="text-xs text-slate-300 leading-relaxed mb-3">
+              Lật thẻ 3D 60fps, nghe phát âm giọng bản xứ, phản xạ 4 đáp án và luyện gõ chính tả.
+            </Text>
+
+            <View className="flex-row items-center justify-between pt-2.5 border-t border-slate-800">
+              <Text className="text-xs font-bold text-indigo-300">Vào học từ vựng ngay</Text>
+              <Text className="text-xs font-black text-white">Khám Phá ➔</Text>
+            </View>
+          </TouchableOpacity>
+        )}
 
         {/* List of topics */}
         <View className="space-y-3 gap-3 mb-10">

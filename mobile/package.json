@@ -11,7 +11,6 @@
     "web": "expo start --web",
     "build-a-preview": "npx eas-cli build -p android --profile preview",
     "build-a-dev": "npx eas-cli build -p android --profile development",
-    "build-a-development": "npx eas-cli build -p android --profile development",
     "update-preview": "npx eas-cli update --channel preview --auto",
     "update-prod": "npx eas-cli update --channel production --auto"
   },
@@ -25,6 +24,7 @@
     "expo-clipboard": "~57.0.2",
     "expo-constants": "~57.0.18",
     "expo-crypto": "~57.0.3",
+    "expo-dev-client": "~57.0.19",
     "expo-device": "~57.0.2",
     "expo-font": "~57.0.4",
     "expo-haptics": "~57.0.3",

@@ -1,6 +1,7 @@
 import { doc, getDoc } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { db } from './firebase';
+import { STORAGE_KEYS } from '../constants/storageKeys';
 
 export interface LeaderboardItem {
   rank: number;
@@ -27,7 +28,7 @@ export interface LeaderboardFetchResult {
   error?: string | null;
 }
 
-const CACHE_KEY = '@ezonthi_leaderboard_cache';
+const CACHE_KEY = STORAGE_KEYS.LEADERBOARD_CACHE;
 
 export const FirebaseSyncService = {
   /**

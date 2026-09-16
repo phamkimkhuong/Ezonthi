@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 import { Award, TrendingUp } from 'lucide-react-native';
-import { useUserStore } from '../services/storageService';
+import { useUserStore } from '../stores';
 import { SUBJECTS } from '../services/dataService';
 
 export const CompetencyChart: React.FC = () => {

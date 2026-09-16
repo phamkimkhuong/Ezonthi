@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Modal, TouchableOpacity, Alert } from 'react-native';
 import { Bell, Clock, Check, X, Sparkles } from 'lucide-react-native';
-import { useUserStore } from '../services/storageService';
+import { useUserStore } from '../stores';
 import { NotificationService } from '../services/notificationService';
 
 interface ReminderModalProps {
