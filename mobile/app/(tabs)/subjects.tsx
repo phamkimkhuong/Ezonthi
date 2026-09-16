@@ -2,23 +2,49 @@ import { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Clock, HelpCircle, Sparkles, Star } from 'lucide-react-native';
-import { SUBJECTS } from '../../services/dataService';
+import { getSubjectsByGrade } from '../../services/dataService';
 import { useUserStore } from '../../stores';
+import { GradeSelector } from '../../components/GradeSelector';
 
 export default function SubjectsScreen() {
   const router = useRouter();
-  const [selectedSubjectId, setSelectedSubjectId] = useState<string>('math');
-  const { topicMastery } = useUserStore();
+  const { topicMastery, selectedGrade } = useUserStore();
+  const currentGradeSubjects = getSubjectsByGrade(selectedGrade);
 
-  const currentSubject = SUBJECTS.find(s => s.id === selectedSubjectId) || SUBJECTS[0];
+  const [selectedSubjectId, setSelectedSubjectId] = useState<string>(
+    () => currentGradeSubjects[0]?.id || 'math'
+  );
+
+  const currentSubject =
+    currentGradeSubjects.find((s) => s.id === selectedSubjectId) ||
+    currentGradeSubjects[0] || {
+      id: 'math',
+      name: 'Toán học',
+      badge: 'Trọng tâm',
+      color: '#6366f1',
+      totalQuestions: 0,
+      topics: [],
+    };
 
   return (
     <View className="flex-1 bg-slate-950">
+      {/* Grade Selector Header */}
+      <View className="px-4 pt-3 pb-2 bg-slate-950">
+        <GradeSelector
+          onGradeChange={(newGrade) => {
+            const newSubjects = getSubjectsByGrade(newGrade);
+            if (!newSubjects.some((s) => s.id === selectedSubjectId)) {
+              setSelectedSubjectId(newSubjects[0]?.id || 'math');
+            }
+          }}
+        />
+      </View>
+
       {/* Subject Filter Tabs */}
-      <View className="bg-slate-900/90 border-b border-slate-800 py-3 px-4">
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} className="flex-row space-x-2 gap-2">
-          {SUBJECTS.map(subject => {
-            const isSelected = subject.id === selectedSubjectId;
+      <View className="bg-slate-900 border-b border-slate-800 py-3 px-4">
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} className="flex-row gap-2">
+          {currentGradeSubjects.map((subject) => {
+            const isSelected = subject.id === currentSubject.id;
             return (
               <TouchableOpacity
                 key={subject.id}
@@ -28,7 +54,7 @@ export default function SubjectsScreen() {
                   backgroundColor: isSelected ? subject.color : '#1e293b',
                   borderColor: isSelected ? subject.color : '#334155',
                 }}
-                className="px-4 py-2 rounded-xl border flex-row items-center space-x-1.5 gap-1.5"
+                className="px-4 py-2 rounded-xl border flex-row items-center gap-1.5"
               >
                 <Text className={`font-bold text-xs ${isSelected ? 'text-white' : 'text-slate-300'}`}>
                   {subject.name}
@@ -49,7 +75,9 @@ export default function SubjectsScreen() {
           <View>
             <Text className="text-lg font-black text-white">{currentSubject.name}</Text>
             <Text className="text-xs text-slate-300 mt-0.5">
-              Tổng cộng {currentSubject.totalQuestions} câu hỏi đã qua kiểm định chuẩn SGK
+              {currentSubject.totalQuestions > 0
+                ? `${currentSubject.totalQuestions} câu hỏi hiện có trên ứng dụng`
+                : 'Đang bổ sung nội dung. Chưa mở luyện tập.'}
             </Text>
           </View>
           <View
@@ -61,7 +89,7 @@ export default function SubjectsScreen() {
         </View>
 
         {/* Banner Luyện Từ Vựng Tương Tác (Khi chọn môn Tiếng Anh) */}
-        {selectedSubjectId === 'english' && (
+        {selectedGrade === 'grade10' && currentSubject.id === 'english' && (
           <TouchableOpacity
             onPress={() => router.push('/vocabulary' as any)}
             activeOpacity={0.8}
@@ -94,7 +122,8 @@ export default function SubjectsScreen() {
         {/* List of topics */}
         <View className="space-y-3 gap-3 mb-10">
           {currentSubject.topics.map((topic, index) => {
-            const mastery = topicMastery[topic.id];
+            const isAvailable = topic.questionCount > 0;
+            const mastery = isAvailable ? topicMastery[topic.id] : undefined;
             const score = mastery?.score ?? 0;
             const stars = mastery?.stars ?? 0;
             const isMastered = stars === 3 || score >= 80;
@@ -102,9 +131,11 @@ export default function SubjectsScreen() {
             return (
               <TouchableOpacity
                 key={topic.id}
+                disabled={!isAvailable}
+                accessibilityState={{ disabled: !isAvailable }}
                 onPress={() => router.push(`/practice/${topic.id}` as any)}
                 activeOpacity={0.7}
-                className="bg-slate-900 border border-slate-800 p-4 rounded-2xl"
+                className={`bg-slate-900 border border-slate-800 p-4 rounded-2xl ${isAvailable ? '' : 'opacity-60'}`}
               >
                 <View className="flex-row items-center justify-between mb-1.5">
                   <View className="flex-row items-center space-x-2 gap-2 flex-1 mr-2">
@@ -149,10 +180,10 @@ export default function SubjectsScreen() {
                       <HelpCircle size={14} color="#818cf8" />
                       <Text className="text-xs text-slate-300 font-medium">{topic.questionCount} câu</Text>
                     </View>
-                    <View className="flex-row items-center space-x-1 gap-1">
+                    {isAvailable && <View className="flex-row items-center space-x-1 gap-1">
                       <Clock size={14} color="#f59e0b" />
                       <Text className="text-xs text-slate-300 font-medium">~{topic.estimatedMinutes} phút</Text>
-                    </View>
+                    </View>}
                   </View>
 
                   <View className="flex-row items-center space-x-1.5 gap-1.5">
@@ -166,7 +197,7 @@ export default function SubjectsScreen() {
                       score > 0 ? 'bg-indigo-500/15 text-indigo-300' :
                       'bg-slate-800 text-slate-400'
                     }`}>
-                      {isMastered ? '🏆 Đã làm chủ' : score > 0 ? 'Đang học' : 'Chưa học'}
+                      {!isAvailable ? 'Đang bổ sung' : isMastered ? '🏆 Đã làm chủ' : score > 0 ? 'Đang học' : 'Chưa học'}
                     </Text>
                   </View>
                 </View>

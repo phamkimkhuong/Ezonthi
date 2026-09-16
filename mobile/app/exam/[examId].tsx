@@ -4,11 +4,11 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
-  SafeAreaView,
   StatusBar,
   Alert,
   Modal
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import {
   Clock,
@@ -156,7 +156,7 @@ export default function ExamDetailScreen() {
   if (!exam) {
     return (
       <SafeAreaView className="flex-1 bg-slate-900 items-center justify-center">
-        <Text className="text-white text-base">Không tìm thấy đề thi tuyển sinh yêu cầu.</Text>
+        <Text className="text-white text-base">Đề thi chưa có nội dung phù hợp hoặc không tồn tại.</Text>
         <TouchableOpacity
           onPress={() => router.back()}
           className="mt-4 bg-indigo-600 px-5 py-2.5 rounded-xl"
@@ -300,7 +300,8 @@ export default function ExamDetailScreen() {
             const userChoice = answers[q.id];
             const isRight = userChoice === q.correctAnswer;
             const topicTitle = DataService.getTopic(q.topicId)?.title || exam.subjectName;
-            const subjectTitle = DataService.getSubject(q.subjectId)?.name || exam.subjectName;
+            const scope = DataService.getTopicScope(q.topicId);
+            const subjectTitle = (scope && DataService.getSubject(q.subjectId, scope.gradeId)?.name) || exam.subjectName;
 
             return (
               <View

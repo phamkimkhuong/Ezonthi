@@ -42,6 +42,7 @@ serviceAccountKey.json
 functions/lib
 functions/content/answer-catalog.json
 functions/src/generated/
+mobile/.expo
 tmp
 
 # Scratch & Temporary Agent files

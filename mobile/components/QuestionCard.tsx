@@ -20,7 +20,8 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({ question, onNext, is
   const [showExplanation, setShowExplanation] = useState<boolean>(false);
   const { recordAttempt, hapticEnabled } = useUserStore();
 
-  const subjectName = DataService.getSubject(question.subjectId)?.name || 'Lớp 10';
+  const scope = DataService.getTopicScope(question.topicId);
+  const subjectName = scope ? DataService.getSubject(question.subjectId, scope.gradeId)?.name || 'Môn học' : 'Môn học';
   const topicName = DataService.getTopic(question.topicId)?.title || '';
 
   const isAnswered = selectedLetter !== null;

@@ -5,18 +5,27 @@ import { Play, Sparkles, BookOpen, ArrowRight, Bell, Bot, Clock, Award, ChevronR
 import { StreakBanner } from '../../components/StreakBanner';
 import { ReminderModal } from '../../components/ReminderModal';
 import { CompetencyChart } from '../../components/CompetencyChart';
-import { SUBJECTS } from '../../services/dataService';
-import { MOCK_EXAMS } from '../../services/examService';
-import { useUserStore } from '../../stores';
+import { GradeSelector } from '../../components/GradeSelector';
+import { getSubjectsByGrade } from '../../services/dataService';
+import { getExamsByGrade } from '../../services/examService';
+import { useUserStore, GRADE_OPTIONS } from '../../stores';
 
 export default function HomeScreen() {
   const router = useRouter();
   const [reminderModalVisible, setReminderModalVisible] = useState(false);
-  const { user } = useUserStore();
+  const { user, selectedGrade } = useUserStore();
+
+  const currentGradeSubjects = getSubjectsByGrade(selectedGrade);
+  const currentGradeExams = getExamsByGrade(selectedGrade);
+  const activeExams = currentGradeExams;
+  const quickSubject = currentGradeSubjects.find(subject => subject.totalQuestions > 0);
+  const quickTopic = quickSubject?.topics.find(topic => topic.questionCount > 0);
+
+  const activeGradeOption =
+    GRADE_OPTIONS.find((g) => g.id === selectedGrade) || GRADE_OPTIONS[0];
 
   const handleStartQuickPractice = () => {
-    // Navigate straight to first math topic
-    router.push('/practice/math10-t1');
+    if (quickTopic) router.push(`/practice/${quickTopic.id}` as any);
   };
 
   const greetingName = user?.displayName
@@ -54,6 +63,11 @@ export default function HomeScreen() {
       {/* Streak & XP Banner */}
       <StreakBanner onPressReminder={() => setReminderModalVisible(true)} />
 
+      {/* Grade Selector Switcher */}
+      <View className="my-1.5">
+        <GradeSelector />
+      </View>
+
       {/* AI Tutor Quick Access Banner */}
       <TouchableOpacity
         onPress={() => router.push('/ai-chat')}
@@ -81,8 +95,8 @@ export default function HomeScreen() {
         </View>
       </TouchableOpacity>
 
-      {/* Interactive English Vocabulary Banner */}
-      <TouchableOpacity
+      {/* Interactive English Vocabulary Banner: only the grade 10 bank is available. */}
+      {selectedGrade === 'grade10' && <TouchableOpacity
         onPress={() => router.push('/vocabulary' as any)}
         activeOpacity={0.8}
         className="bg-slate-900 border border-indigo-500/40 rounded-3xl p-4 my-2 flex-row items-center justify-between shadow-lg"
@@ -93,58 +107,75 @@ export default function HomeScreen() {
           </View>
           <View className="flex-1">
             <View className="flex-row items-center space-x-1.5 gap-1.5">
-              <Text className="text-sm font-bold text-white">Luyện Từ Vựng SGK 10</Text>
+              <Text className="text-sm font-bold text-white">
+                Luyện Từ Vựng SGK 10
+              </Text>
               <View className="bg-amber-500/20 px-1.5 py-0.5 rounded border border-amber-500/30">
                 <Text className="text-[9px] font-black text-amber-300">FLASHCARD 3D</Text>
               </View>
             </View>
             <Text className="text-xs text-slate-300 mt-0.5" numberOfLines={1}>
-              10 Units Tiếng Anh Global Success • Quiz phản xạ • Gõ từ
+              10 Units Tiếng Anh 10 Global Success • Quiz phản xạ • Gõ từ
             </Text>
           </View>
         </View>
         <View className="bg-slate-800 p-2 rounded-xl">
           <ChevronRight size={18} color="#94A3B8" />
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity>}
 
       {/* Quick Start Daily Quest Card */}
       <View className="bg-gradient-to-r from-indigo-900/60 to-purple-900/40 border border-indigo-500/40 rounded-3xl p-5 my-2 shadow-xl">
         <View className="flex-row items-center space-x-2 gap-2 mb-2">
           <Sparkles size={18} color="#818cf8" />
           <Text className="text-xs uppercase tracking-wider font-bold text-indigo-300">
-            Nhiệm Vụ Hàng Ngày (5 Phút)
+            {quickTopic ? 'Luyện tập chuyên đề' : 'Nội dung đang được bổ sung'}
           </Text>
         </View>
 
         <Text className="text-xl font-bold text-white mb-1">
-          Luyện Đề Nhanh 5 Câu Trắc Nghiệm
+          {quickTopic ? `Luyện ${quickTopic.questionCount} câu trắc nghiệm` : 'Chưa mở luyện tập lớp này'}
         </Text>
         <Text className="text-xs text-slate-300 mb-4 leading-relaxed">
-          Giải 5 câu ngẫu nhiên môn Toán 10 để tích lũy +50 XP và giữ ngọn lửa Streak không bao giờ tắt.
+          {quickTopic
+            ? `${quickSubject?.name} (${activeGradeOption.shortLabel}) • ${quickTopic.title}. Điểm XP được tính theo kết quả từng câu.`
+            : `Các chuyên đề ${activeGradeOption.shortLabel} sẽ được mở khi có câu hỏi phù hợp. Bạn có thể chọn lớp khác để học.`}
         </Text>
 
         <TouchableOpacity
           onPress={handleStartQuickPractice}
+          disabled={!quickTopic}
+          accessibilityState={{ disabled: !quickTopic }}
           activeOpacity={0.8}
           className="bg-indigo-600 hover:bg-indigo-500 p-4 rounded-2xl flex-row items-center justify-center space-x-2 gap-2 shadow-lg shadow-indigo-600/30"
         >
           <Play size={20} color="#ffffff" fill="#ffffff" />
-          <Text className="text-white font-bold text-base">Bắt đầu học ngay 🚀</Text>
+          <Text className="text-white font-bold text-base">{quickTopic ? 'Bắt đầu học ngay 🚀' : 'Đang bổ sung câu hỏi'}</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Mock Exam Section (Phòng Thi Thử Tuyển Sinh Vào 10) */}
+      {/* Mock Exam Section */}
       <View className="mt-4 mb-2 flex-row items-center justify-between">
         <View className="flex-row items-center space-x-2 gap-2">
           <Award size={18} color="#F59E0B" />
-          <Text className="text-lg font-bold text-white">Phòng Thi Thử Vào 10</Text>
+          <Text className="text-lg font-bold text-white">
+            {selectedGrade === 'grade9'
+              ? 'Phòng Thi Thử Tuyển Sinh Vào 10'
+              : selectedGrade === 'grade11'
+              ? 'Phòng Khảo Sát Năng Lực 11'
+              : 'Phòng Thi Khảo Sát 10'}
+          </Text>
         </View>
-        <Text className="text-xs text-slate-400">Bấm giờ chuẩn thi thật</Text>
+        <Text className="text-xs text-slate-400">{activeExams.length > 0 ? 'Có đồng hồ làm bài' : 'Đang bổ sung'}</Text>
       </View>
 
+      {activeExams.length === 0 && (
+        <View className="bg-slate-900 border border-slate-800 rounded-2xl p-4 my-2">
+          <Text className="text-sm text-slate-300">Chưa có đề thi phù hợp cho {activeGradeOption.shortLabel}. Đề sẽ được mở sau khi bổ sung nội dung.</Text>
+        </View>
+      )}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} className="flex-row -mx-1 mb-2">
-        {MOCK_EXAMS.map((exam) => (
+        {activeExams.map((exam) => (
           <TouchableOpacity
             key={exam.id}
             onPress={() => router.push(`/exam/${exam.id}` as any)}
@@ -188,14 +219,14 @@ export default function HomeScreen() {
 
       {/* Subjects Overview */}
       <View className="mt-4 mb-2 flex-row items-center justify-between">
-        <Text className="text-lg font-bold text-white">Môn Học Khối 10</Text>
+        <Text className="text-lg font-bold text-white">Môn Học {activeGradeOption.label}</Text>
         <TouchableOpacity onPress={() => router.push('/(tabs)/subjects')}>
           <Text className="text-xs font-semibold text-indigo-400">Xem tất cả →</Text>
         </TouchableOpacity>
       </View>
 
       <View className="space-y-3 gap-3 mb-8">
-        {SUBJECTS.map((subject) => (
+        {currentGradeSubjects.map((subject) => (
           <TouchableOpacity
             key={subject.id}
             onPress={() => router.push('/(tabs)/subjects')}
@@ -221,7 +252,7 @@ export default function HomeScreen() {
                   </Text>
                 </View>
                 <Text className="text-xs text-slate-400 mt-0.5">
-                  {subject.totalQuestions} câu hỏi • {subject.topics.length} chuyên đề
+                  {subject.totalQuestions} câu hỏi hiện có • {subject.totalQuestions > 0 ? `${subject.topics.length} chuyên đề` : 'Đang bổ sung'}
                 </Text>
               </View>
             </View>

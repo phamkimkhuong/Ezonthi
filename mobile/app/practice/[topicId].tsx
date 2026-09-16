@@ -13,12 +13,26 @@ export default function PracticeScreen() {
   const router = useRouter();
   const { user, streak } = useUserStore();
 
-  const topic = DataService.getTopic(topicId || 'math10-t1');
-  const questions = DataService.getQuestionsForTopic(topicId || 'math10-t1');
+  const topic = DataService.getTopic(topicId || '');
+  const questions = DataService.getQuestionsForTopic(topicId || '');
 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
   const [correctCount, setCorrectCount] = useState<number>(0);
+
+  if (!topic || questions.length === 0) {
+    return (
+      <View className="flex-1 bg-slate-950 items-center justify-center p-6">
+        <Text className="text-white font-bold text-base mb-4">{topic ? 'Chuyên đề đang được bổ sung câu hỏi. Chưa thể luyện tập.' : 'Chuyên đề không tồn tại.'}</Text>
+        <TouchableOpacity
+          onPress={() => router.back()}
+          className="bg-indigo-600 px-5 py-3 rounded-xl"
+        >
+          <Text className="text-white font-bold">Quay lại danh sách</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   if (!user) {
     return (
@@ -73,19 +87,6 @@ export default function PracticeScreen() {
     setIsCompleted(false);
   };
 
-  if (!currentQuestion) {
-    return (
-      <View className="flex-1 bg-slate-950 items-center justify-center p-6">
-        <Text className="text-white font-bold text-base mb-4">Không tìm thấy câu hỏi cho chuyên đề này.</Text>
-        <TouchableOpacity
-          onPress={() => router.back()}
-          className="bg-indigo-600 px-5 py-3 rounded-xl"
-        >
-          <Text className="text-white font-bold">Quay lại danh sách</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
 
   const earnedXp = correctCount * 10 + (questions.length - correctCount) * 2;
 

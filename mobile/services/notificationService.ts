@@ -4,11 +4,10 @@ import { Platform } from 'react-native';
 // Configure how notifications are displayed when app is in foreground
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldPlaySound: true,
-    shouldSetBadge: true,
     shouldShowBanner: true,
     shouldShowList: true,
+    shouldPlaySound: true,
+    shouldSetBadge: true,
   }),
 });
 
@@ -39,7 +38,6 @@ export const NotificationService = {
         importance: Notifications.AndroidImportance.MAX,
         vibrationPattern: [0, 250, 250, 250],
         lightColor: '#6366f1',
-        sound: 'default',
       });
     }
 
@@ -74,6 +72,7 @@ export const NotificationService = {
       },
       trigger: {
         type: Notifications.SchedulableTriggerInputTypes.DAILY,
+        channelId: 'study-reminders',
         hour,
         minute,
       },
@@ -95,7 +94,9 @@ export const NotificationService = {
         body: 'Hệ thống nhắc nhở của EZ Ôn Thi đã sẵn sàng đồng hành cùng bạn mỗi tối!',
         sound: true,
       },
-      trigger: null, // Gửi ngay lập tức
+      trigger: {
+        channelId: 'study-reminders',
+      },
     });
   },
 

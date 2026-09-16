@@ -1,10 +1,8 @@
 import { GoogleAuthProvider, signInWithCredential, signOut as fbSignOut } from 'firebase/auth';
-import * as WebBrowser from 'expo-web-browser';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { auth } from './firebase';
 import { UserProfile, useUserStore } from '../stores';
 import { CloudSyncService } from './cloudSyncService';
-
-WebBrowser.maybeCompleteAuthSession();
 
 export const MobileAuthService = {
   /**
@@ -36,6 +34,11 @@ export const MobileAuthService = {
    * Đăng xuất tài khoản
    */
   async signOut(): Promise<void> {
+    try {
+      await GoogleSignin.signOut();
+    } catch (e) {
+      // Bỏ qua nếu chưa đăng nhập qua Google
+    }
     try {
       await fbSignOut(auth);
     } catch (e) {

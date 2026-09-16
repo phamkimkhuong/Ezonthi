@@ -11,6 +11,281 @@ export interface MobileQuestion {
 }
 
 export const QUESTION_BANK: Record<string, MobileQuestion[]> = {
+  // ========================== TOÁN HỌC 9 (ÔN THI VÀO 10) ==========================
+  'math9-t1': [
+    {
+      id: 'math9-t1-q1',
+      subjectId: 'math',
+      topicId: 'math9-t1',
+      content: 'Rút gọn biểu thức $A = \\sqrt{12} - \\sqrt{27} + \\sqrt{48}$ ta được kết quả là:',
+      options: ['A. 3\\sqrt{3}', 'B. 5\\sqrt{3}', 'C. 2\\sqrt{3}', 'D. \\sqrt{3}'],
+      correctAnswer: 'A',
+      recognition: 'Đưa thừa số ra ngoài dấu căn: $\\sqrt{12} = 2\\sqrt{3}$, $\\sqrt{27} = 3\\sqrt{3}$, $\\sqrt{48} = 4\\sqrt{3}$.',
+      explanation: 'Ta có $A = 2\\sqrt{3} - 3\\sqrt{3} + 4\\sqrt{3} = (2 - 3 + 4)\\sqrt{3} = 3\\sqrt{3}$.',
+      difficulty: 'easy'
+    },
+    {
+      id: 'math9-t1-q2',
+      subjectId: 'math',
+      topicId: 'math9-t1',
+      content: 'Điều kiện xác định của biểu thức $\\sqrt{2x - 6}$ là:',
+      options: ['A. x >= 3', 'B. x > 3', 'C. x <= 3', 'D. x < 3'],
+      correctAnswer: 'A',
+      recognition: 'Biểu thức căn bậc hai $\\sqrt{A}$ xác định khi và chỉ khi $A \\ge 0$.',
+      explanation: 'Ta có $2x - 6 \\ge 0 \\Leftrightarrow 2x \\ge 6 \\Leftrightarrow x \\ge 3$.',
+      difficulty: 'easy'
+    },
+    {
+      id: 'math9-t1-q3',
+      subjectId: 'math',
+      topicId: 'math9-t1',
+      content: 'Giá trị của biểu thức $B = \\sqrt{(\\sqrt{5} - 3)^2} + \\sqrt{5}$ bằng:',
+      options: ['A. 3', 'B. 2\\sqrt{5} - 3', 'C. -3', 'D. 3 - 2\\sqrt{5}'],
+      correctAnswer: 'A',
+      recognition: 'Hằng đẳng thức $\\sqrt{A^2} = |A|$. Chú ý so sánh $\\sqrt{5}$ với $3 = \\sqrt{9}$.',
+      explanation: 'Vì $\\sqrt{5} < 3$ nên $|\\sqrt{5} - 3| = 3 - \\sqrt{5}$. Do đó $B = 3 - \\sqrt{5} + \\sqrt{5} = 3$.',
+      difficulty: 'medium'
+    }
+  ],
+
+  'math9-t2': [
+    {
+      id: 'math9-t2-q1',
+      subjectId: 'math',
+      topicId: 'math9-t2',
+      content: 'Cho phương trình bậc hai $x^2 - 5x + 6 = 0$. Tổng hai nghiệm $S = x_1 + x_2$ và tích hai nghiệm $P = x_1 x_2$ lần lượt là:',
+      options: ['A. S = 5; P = 6', 'B. S = -5; P = 6', 'C. S = 5; P = -6', 'D. S = -5; P = -6'],
+      correctAnswer: 'A',
+      recognition: 'Hệ thức Vi-ét cho phương trình $ax^2 + bx + c = 0$: $S = -b/a$, $P = c/a$.',
+      explanation: 'Với $a = 1, b = -5, c = 6$: $S = -(-5)/1 = 5$, $P = 6/1 = 6$.',
+      difficulty: 'easy'
+    },
+    {
+      id: 'math9-t2-q2',
+      subjectId: 'math',
+      topicId: 'math9-t2',
+      content: 'Phương trình $x^2 - 4x + 1 = 0$ có 2 nghiệm $x_1, x_2$. Giá trị của biểu thức $A = x_1^2 + x_2^2$ bằng:',
+      options: ['A. 14', 'B. 16', 'C. 18', 'D. 12'],
+      correctAnswer: 'A',
+      recognition: 'Biến đổi hằng đẳng thức $x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1 x_2$.',
+      explanation: 'Theo Vi-ét: $x_1 + x_2 = 4$, $x_1 x_2 = 1$. Vậy $A = 4^2 - 2(1) = 16 - 2 = 14$.',
+      difficulty: 'medium'
+    },
+    {
+      id: 'math9-t2-q3',
+      subjectId: 'math',
+      topicId: 'math9-t2',
+      content: 'Tìm tất cả các giá trị của tham số $m$ để phương trình $x^2 - 2(m-1)x + m^2 - 3 = 0$ có nghiệm kép:',
+      options: ['A. m = 2', 'B. m = -2', 'C. m = 1', 'D. m = -1'],
+      correctAnswer: 'A',
+      recognition: 'Phương trình bậc hai có nghiệm kép khi và chỉ khi biệt thức $\\Delta\' = 0$.',
+      explanation: '$\\Delta\' = (m-1)^2 - (m^2 - 3) = m^2 - 2m + 1 - m^2 + 3 = 4 - 2m$. Để có nghiệm kép: $4 - 2m = 0 \\Leftrightarrow m = 2$.',
+      difficulty: 'hard'
+    }
+  ],
+
+  'math9-t3': [
+    {
+      id: 'math9-t3-q1',
+      subjectId: 'math',
+      topicId: 'math9-t3',
+      content: 'Nghiệm của hệ phương trình $\\begin{cases} 2x + y = 5 \\\\ x - y = 1 \\end{cases}$ là cặp số $(x; y)$:',
+      options: ['A. (2; 1)', 'B. (1; 2)', 'C. (3; -1)', 'D. (0; 5)'],
+      correctAnswer: 'A',
+      recognition: 'Cộng từng vế hai phương trình để triệt tiêu biến $y$: $(2x + x) = 5 + 1 \\Rightarrow 3x = 6$.',
+      explanation: 'Cộng hai vế: $3x = 6 \\Rightarrow x = 2$. Thay vào $x - y = 1 \\Rightarrow y = 2 - 1 = 1$. Cặp nghiệm là $(2; 1)$.',
+      difficulty: 'easy'
+    },
+    {
+      id: 'math9-t3-q2',
+      subjectId: 'math',
+      topicId: 'math9-t3',
+      content: 'Hai người làm chung công việc trong 12 giờ thì xong. Nếu người 1 làm 4h rồi người 2 làm tiếp 9h thì được 7/12 công việc. Người 1 làm một mình xong trong bao lâu?',
+      options: ['A. 20 giờ', 'B. 24 giờ', 'C. 18 giờ', 'D. 30 giờ'],
+      correctAnswer: 'D',
+      recognition: 'Giải bài toán bằng cách lập hệ phương trình: đặt ẩn là thời gian hoàn thành công việc của từng người.',
+      explanation: 'Gọi năng suất mỗi giờ của người 1 và người 2 là $u$ và $v$. Ta có $u + v = 1/12$ và $4u + 9v = 7/12$. Trừ bốn lần phương trình đầu khỏi phương trình sau được $5v = 3/12$, nên $v = 1/20$ và $u = 1/30$. Vậy người 1 làm một mình xong trong 30 giờ.',
+      difficulty: 'hard'
+    }
+  ],
+
+  'math9-t4': [
+    {
+      id: 'math9-t4-q1',
+      subjectId: 'math',
+      topicId: 'math9-t4',
+      content: 'Cho parabol $(P): y = 2x^2$. Điểm nào sau đây thuộc đồ thị $(P)$?',
+      options: ['A. M(1; 2)', 'B. N(-1; -2)', 'C. P(2; 4)', 'D. Q(-2; 4)'],
+      correctAnswer: 'A',
+      recognition: 'Thay hoành độ $x$ vào hàm số để kiểm tra xem tung độ $y$ có bằng tung độ của điểm đã cho hay không.',
+      explanation: 'Với $x = 1 \\Rightarrow y = 2(1^2) = 2$, vậy điểm $M(1; 2)$ thuộc Parabol.',
+      difficulty: 'easy'
+    },
+    {
+      id: 'math9-t4-q2',
+      subjectId: 'math',
+      topicId: 'math9-t4',
+      content: 'Tọa độ các giao điểm của Parabol $(P): y = x^2$ và đường thẳng $(d): y = 2x + 3$ là:',
+      options: ['A. (-1; 1) và (3; 9)', 'B. (1; 1) và (3; 9)', 'C. (-1; 1) và (-3; 9)', 'D. (2; 4) và (3; 9)'],
+      correctAnswer: 'A',
+      recognition: 'Phương trình hoành độ giao điểm: $x^2 = 2x + 3 \\Leftrightarrow x^2 - 2x - 3 = 0$.',
+      explanation: 'Phương trình $x^2 - 2x - 3 = 0$ có $a - b + c = 0 \\Rightarrow x_1 = -1$ (suy ra $y_1 = 1$), $x_2 = 3$ (suy ra $y_2 = 9$). Giao điểm: $(-1; 1)$ và $(3; 9)$.',
+      difficulty: 'medium'
+    }
+  ],
+
+  'math9-t5': [
+    {
+      id: 'math9-t5-q1',
+      subjectId: 'math',
+      topicId: 'math9-t5',
+      content: 'Cho đường tròn $(O; 5\\text{ cm})$ và dây cung $AB = 8\\text{ cm}$. Khoảng cách từ tâm $O$ đến dây cung $AB$ bằng:',
+      options: ['A. 3 cm', 'B. 4 cm', 'C. 2.5 cm', 'D. \\sqrt{41} cm'],
+      correctAnswer: 'A',
+      recognition: 'Đường kính vuông góc với dây cung đi qua trung điểm của dây, áp dụng định lý Pythagore trong tam giác vuông.',
+      explanation: 'Kẻ $OH \\perp AB \\Rightarrow H$ là trung điểm $AB \\Rightarrow AH = 4\\text{ cm}$. Tam giác $OAH$ vuông tại $H: OH = \\sqrt{OA^2 - AH^2} = \\sqrt{5^2 - 4^2} = 3\\text{ cm}$.',
+      difficulty: 'easy'
+    },
+    {
+      id: 'math9-t5-q2',
+      subjectId: 'math',
+      topicId: 'math9-t5',
+      content: 'Cho tam giác $ABC$ nội tiếp đường tròn $(O)$ có góc $\\widehat{BAC} = 60^\\circ$. Số đo của cung nhỏ $BC$ bằng:',
+      options: ['A. 120°', 'B. 60°', 'C. 30°', 'D. 180°'],
+      correctAnswer: 'A',
+      recognition: 'Góc nội tiếp chắn cung có số đo bằng một nửa số đo của cung bị chắn.',
+      explanation: 'Số đo góc nội tiếp $\\widehat{BAC} = \\frac{1}{2} \\text{sđ}\\overparen{BC} \\Rightarrow \\text{sđ}\\overparen{BC} = 2 \\times 60^\\circ = 120^\\circ$.',
+      difficulty: 'easy'
+    }
+  ],
+
+  'math9-t6': [
+    {
+      id: 'math9-t6-q1',
+      subjectId: 'math',
+      topicId: 'math9-t6',
+      content: 'Gieo một con xúc xắc cân đối và đồng chất 1 lần. Xác suất để xuất hiện mặt có số chấm là số nguyên tố bằng:',
+      options: ['A. 1/2', 'B. 1/3', 'C. 2/3', 'D. 1/6'],
+      correctAnswer: 'A',
+      recognition: 'Không gian mẫu có 6 kết quả {1, 2, 3, 4, 5, 6}. Các số nguyên tố là {2, 3, 5}.',
+      explanation: 'Số kết quả thuận lợi là 3 (gồm các mặt 2, 3, 5). Xác suất là $P = 3/6 = 1/2$.',
+      difficulty: 'easy'
+    },
+    {
+      id: 'math9-t6-q2',
+      subjectId: 'math',
+      topicId: 'math9-t6',
+      content: 'Điểm kiểm tra môn Toán của 10 học sinh: 7, 8, 9, 7, 6, 8, 7, 9, 10, 8. Mốt ($M_o$) của mẫu số liệu trên là:',
+      options: ['A. 7 và 8', 'B. 7', 'C. 8', 'D. 9'],
+      correctAnswer: 'A',
+      recognition: 'Mốt là giá trị có tần số xuất hiện nhiều nhất trong mẫu số liệu.',
+      explanation: 'Giá trị 7 xuất hiện 3 lần, giá trị 8 xuất hiện 3 lần. Cả hai đều có tần số cao nhất nên mốt là 7 và 8.',
+      difficulty: 'medium'
+    }
+  ],
+
+  // ========================== TIẾNG ANH 9 (ÔN THI VÀO 10) ==========================
+  'eng9-t1': [
+    {
+      id: 'eng9-t1-q1',
+      subjectId: 'english',
+      topicId: 'eng9-t1',
+      content: 'If the weather ______ fine tomorrow, we will go on a picnic in the countryside.',
+      options: ['A. is', 'B. will be', 'C. were', 'D. would be'],
+      correctAnswer: 'A',
+      recognition: 'Câu điều kiện loại 1: If + S + V(hiện tại đơn), S + will + V(nguyên mẫu).',
+      explanation: 'Mệnh đề If của câu điều kiện loại 1 chia thì hiện tại đơn với chủ ngữ số ít "the weather" là "is".',
+      difficulty: 'easy'
+    },
+    {
+      id: 'eng9-t1-q2',
+      subjectId: 'english',
+      topicId: 'eng9-t1',
+      content: 'The woman ______ lives next door to my house is a famous English teacher.',
+      options: ['A. who', 'B. whom', 'C. which', 'D. whose'],
+      correctAnswer: 'A',
+      recognition: 'Đại từ quan hệ thay thế cho danh từ chỉ người làm chủ ngữ trong mệnh đề quan hệ.',
+      explanation: '"The woman" là danh từ chỉ người, theo sau là động từ "lives" nên dùng đại từ quan hệ "who".',
+      difficulty: 'easy'
+    },
+    {
+      id: 'eng9-t1-q3',
+      subjectId: 'english',
+      topicId: 'eng9-t1',
+      content: 'She asked me where I ______ the previous weekend.',
+      options: ['A. had gone', 'B. went', 'C. go', 'D. have gone'],
+      correctAnswer: 'A',
+      recognition: 'Câu tường thuật (Reported speech) với thì quá khứ đơn lùi về quá khứ hoàn thành (had + V3/ed).',
+      explanation: '"the previous weekend" thay thế cho "last weekend" trong câu trực tiếp, do đó thì quá khứ đơn lùi thành quá khứ hoàn thành: had gone.',
+      difficulty: 'medium'
+    }
+  ],
+
+  'eng9-t2': [
+    {
+      id: 'eng9-t2-q1',
+      subjectId: 'english',
+      topicId: 'eng9-t2',
+      content: 'Choose the best word to complete the sentence: Many students in our school are interested ______ joining the green club.',
+      options: ['A. in', 'B. on', 'C. at', 'D. with'],
+      correctAnswer: 'A',
+      recognition: 'Cụm giới từ cố định: be interested in + V-ing/Noun (thích, quan tâm đến cái gì).',
+      explanation: 'Cấu trúc "interested in": say mê, quan tâm đến hoạt động nào đó.',
+      difficulty: 'easy'
+    },
+    {
+      id: 'eng9-t2-q2',
+      subjectId: 'english',
+      topicId: 'eng9-t2',
+      content: 'Read and identify the main benefit: "Renewable energy sources like solar and wind power produce no greenhouse gas emissions and never run out." What is stated?',
+      options: [
+        'A. They do not emit greenhouse gases and are inexhaustible',
+        'B. They are harmful to wildlife',
+        'C. They run out quickly in the winter',
+        'D. They produce high greenhouse emissions'
+      ],
+      correctAnswer: 'A',
+      recognition: 'Kỹ năng Skimming / Scanning đọc hiểu tìm ý chính của đoạn văn bản.',
+      explanation: 'Đoạn văn chỉ rõ "produce no greenhouse gas emissions and never run out", tương đương với "do not emit greenhouse gases and are inexhaustible".',
+      difficulty: 'medium'
+    }
+  ],
+
+  'eng9-t3': [
+    {
+      id: 'eng9-t3-q1',
+      subjectId: 'english',
+      topicId: 'eng9-t3',
+      content: 'Choose the sentence that has the CLOSEST meaning to: "They built this bridge in 2020."',
+      options: [
+        'A. This bridge was built in 2020.',
+        'B. This bridge is built in 2020.',
+        'C. This bridge has been built in 2020.',
+        'D. This bridge was build in 2020.'
+      ],
+      correctAnswer: 'A',
+      recognition: 'Biến đổi câu chủ động sang câu bị động thì Quá khứ đơn: S + was/were + V3/ed + (by O).',
+      explanation: 'Chủ ngữ mới là "This bridge" (số ít), thì quá khứ đơn dùng "was built".',
+      difficulty: 'easy'
+    },
+    {
+      id: 'eng9-t3-q2',
+      subjectId: 'english',
+      topicId: 'eng9-t3',
+      content: 'Choose the sentence that has the CLOSEST meaning to: "Because it rained heavily, we postponed our soccer match."',
+      options: [
+        'A. Because of the heavy rain, we postponed our soccer match.',
+        'B. In spite of the heavy rain, we postponed our soccer match.',
+        'C. Although it rained heavily, we postponed our soccer match.',
+        'D. Despite it rained heavily, we cancelled our soccer match.'
+      ],
+      correctAnswer: 'A',
+      recognition: 'Chuyển đổi giữa liên từ "Because + clause" và cụm giới từ "Because of + noun phrase".',
+      explanation: '"Because it rained heavily" = "Because of the heavy rain". Các đáp án còn lại (In spite of, Although, Despite) chỉ sự nhượng bộ là sai nghĩa.',
+      difficulty: 'medium'
+    }
+  ],
+
   // ========================== TOÁN HỌC 10 ==========================
   'math10-t1': [
     {

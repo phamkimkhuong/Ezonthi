@@ -4,6 +4,9 @@ import { gradeCanonicalAttempt, migrateUserLearningData, syncCanonicalAttempts, 
 
 export const syncLearningData = onCall({ cors: true, timeoutSeconds: 120, memory: '512MiB' }, async request => {
   const uid = requireUser(request);
+  if (request.data?.expectedUserId !== undefined && request.data.expectedUserId !== uid) {
+    throw new HttpsError('permission-denied', 'Tài khoản đã thay đổi; batch vẫn được giữ trên thiết bị nguồn.');
+  }
   const attempts = request.data?.attempts;
   if (!Array.isArray(attempts) || attempts.length > SYNC_BATCH_SIZE) throw new HttpsError('invalid-argument', `Mỗi lần đồng bộ tối đa ${SYNC_BATCH_SIZE} bài làm.`);
   await migrateUserLearningData(uid);

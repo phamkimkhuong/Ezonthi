@@ -6,6 +6,10 @@ export interface UserAttempt {
   isCorrect: boolean;
   selectedAnswer: string;
   answeredAt: string;
+  timeSpent?: number;
+  syncStatus?: 'pending' | 'acknowledged' | 'blocked';
+  gradingStatus?: 'pending' | 'graded';
+  teacherFeedback?: string;
 }
 
 export interface TopicMastery {

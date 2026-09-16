@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
-import { Stack } from 'expo-router';
+import { Stack, router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as Notifications from 'expo-notifications';
-import { useRouter } from 'expo-router';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../services/firebase';
 import { Sentry } from '../services/sentry';
@@ -16,7 +15,6 @@ import '../global.css';
 import { CloudSyncService } from '../services/cloudSyncService';
 
 function RootLayout() {
-  const router = useRouter();
   const { isConnected } = useNetworkStatus();
   const { reminderHour, reminderMinute, reminderEnabled, streak, setUser } = useUserStore();
 

@@ -2,13 +2,14 @@ import { View, Text } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 import { Award, TrendingUp } from 'lucide-react-native';
 import { useUserStore } from '../stores';
-import { SUBJECTS } from '../services/dataService';
+import { getSubjectsByGrade } from '../services/dataService';
 
 export const CompetencyChart: React.FC = () => {
-  const { topicMastery } = useUserStore();
+  const { topicMastery, selectedGrade } = useUserStore();
+  const currentSubjects = getSubjectsByGrade(selectedGrade);
 
-  // Tính toán % năng lực cho từng môn học dựa trên topicMastery
-  const subjectStats = SUBJECTS.map((subject) => {
+  // Tính toán % năng lực cho từng môn học dựa trên topicMastery của khối lớp hiện tại
+  const subjectStats = currentSubjects.map((subject) => {
     let totalScore = 0;
     const topicCount = subject.topics.length;
 
@@ -39,6 +40,20 @@ export const CompetencyChart: React.FC = () => {
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (circumference * overallCompetency) / 100;
 
+  const gradeBadgeText =
+    selectedGrade === 'grade9'
+      ? 'Tuyển sinh Vào 10'
+      : selectedGrade === 'grade11'
+      ? 'Khối 11 Phân Hóa'
+      : 'Chuẩn GDPT 2018';
+
+  const gradeSubText =
+    selectedGrade === 'grade9'
+      ? 'Độ sẵn sàng thi tuyển sinh vào 10'
+      : selectedGrade === 'grade11'
+      ? 'Mức độ nắm vững kiến thức lớp 11'
+      : 'Độ vững vàng kiến thức lớp 10';
+
   return (
     <View className="bg-slate-900/90 border border-slate-800 rounded-3xl p-5 shadow-xl my-4">
       {/* Header */}
@@ -49,12 +64,12 @@ export const CompetencyChart: React.FC = () => {
           </View>
           <View>
             <Text className="text-white font-bold text-base">Đánh Giá Năng Lực</Text>
-            <Text className="text-xs text-slate-400">Độ sẵn sàng tuyển sinh vào 10</Text>
+            <Text className="text-xs text-slate-400">{gradeSubText}</Text>
           </View>
         </View>
 
         <View className="bg-indigo-500/20 px-2.5 py-1 rounded-full border border-indigo-500/30">
-          <Text className="text-[11px] font-bold text-indigo-300">Chuẩn GDPT 2018</Text>
+          <Text className="text-[11px] font-bold text-indigo-300">{gradeBadgeText}</Text>
         </View>
       </View>
 
@@ -110,7 +125,7 @@ export const CompetencyChart: React.FC = () => {
 
       {/* Subject Breakdown Bars */}
       <Text className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
-        Phân bố năng lực 6 môn
+        Phân bố năng lực {subjectStats.length} môn học
       </Text>
 
       <View className="space-y-3 gap-2.5">

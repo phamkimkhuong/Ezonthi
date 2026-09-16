@@ -8,9 +8,9 @@ import {
   KeyboardAvoidingView,
   Platform,
   ActivityIndicator,
-  SafeAreaView,
   StatusBar
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Bot, User, Send, ArrowLeft, Trash2, Sparkles, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react-native';
 import { askAiTutor, ChatMessage, QuestionContext, normalizeSubjectCode } from '../services/aiTutorService';

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   View,
   Text,
@@ -9,7 +9,12 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { ChevronLeft, Sparkles, ShieldCheck, Target, Trophy, BookOpen } from 'lucide-react-native';
-import * as Google from 'expo-auth-session/providers/google';
+import {
+  GoogleSignin,
+  isErrorWithCode,
+  isSuccessResponse,
+  statusCodes
+} from '@react-native-google-signin/google-signin';
 import { MobileAuthService } from '../services/authService';
 import { HapticService } from '../services/hapticService';
 import Svg, { Path } from 'react-native-svg';
@@ -36,59 +41,63 @@ const GoogleIcon = () => (
   </Svg>
 );
 
+const GOOGLE_WEB_CLIENT_ID =
+  process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID ||
+  '326319018998-73pqsa6c3nj5jbd0tulch4m0e1ajemc9.apps.googleusercontent.com';
+
+// Cấu hình GoogleSignin theo chuẩn official của Google & Expo
+try {
+  GoogleSignin.configure({
+    webClientId: GOOGLE_WEB_CLIENT_ID,
+    scopes: ['profile', 'email'],
+  });
+} catch (e) {
+  console.warn('[GoogleSignin] Native module chưa sẵn sàng (cần build APK mới):', e);
+}
+
 export default function AuthScreen() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-
-  // Hook xác thực Google qua expo-auth-session
-  const [request, response, promptAsync] = Google.useAuthRequest({
-    clientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID || '326319018998-dummy.apps.googleusercontent.com',
-  });
-
-  useEffect(() => {
-    if (response?.type === 'success') {
-      const { id_token, access_token } = response.params;
-      if (id_token || access_token) {
-        handleGoogleSuccess(id_token, access_token);
-      }
-    } else if (response?.type === 'error') {
-      setLoading(false);
-      Alert.alert('Đăng nhập gián đoạn', 'Không thể kết nối đến tài khoản Google. Vui lòng thử lại.');
-    }
-  }, [response]);
-
-  const handleGoogleSuccess = async (idToken: string, accessToken?: string) => {
-    setLoading(true);
-    try {
-      await MobileAuthService.signInWithGoogleCredential(idToken, accessToken);
-      HapticService.success();
-      Alert.alert('Thành công! 🎉', 'Đăng nhập thành công. Chúc bạn học tập hiệu quả!', [
-        { text: 'Bắt đầu học', onPress: () => router.back() }
-      ]);
-    } catch (err: any) {
-      HapticService.warning();
-      Alert.alert('Lỗi đăng nhập', 'Không thể xác thực với Firebase. Vui lòng thử lại.');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleGoogleLoginPress = async () => {
     HapticService.selection();
     setLoading(true);
     try {
-      if (request) {
-        await promptAsync();
-      } else {
-        Alert.alert(
-          'Đăng Nhập Bằng Google',
-          'Đang khởi tạo kết nối Google OAuth. Vui lòng thử lại sau giây lát.'
-        );
-        setLoading(false);
+      await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+      const response = await GoogleSignin.signIn();
+
+      if (isSuccessResponse(response)) {
+        const idToken = response.data.idToken;
+        if (idToken) {
+          await MobileAuthService.signInWithGoogleCredential(idToken);
+          HapticService.success();
+          Alert.alert('Thành công! 🎉', 'Đăng nhập thành công. Chúc bạn học tập hiệu quả!', [
+            { text: 'Bắt đầu học', onPress: () => router.back() }
+          ]);
+        } else {
+          HapticService.warning();
+          Alert.alert('Lỗi đăng nhập', 'Không thể lấy thông tin xác thực từ Google. Vui lòng thử lại.');
+        }
       }
-    } catch (e: any) {
+    } catch (error: any) {
+      if (isErrorWithCode(error)) {
+        if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+          // Người dùng chủ động đóng hộp thoại
+          return;
+        } else if (error.code === statusCodes.IN_PROGRESS) {
+          // Thao tác đang được thực hiện
+          return;
+        } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+          HapticService.warning();
+          Alert.alert('Thông báo', 'Thiết bị cần cài đặt hoặc cập nhật Google Play Services.');
+          return;
+        }
+      }
+      console.error('Google Sign-In Error:', error);
+      HapticService.warning();
+      Alert.alert('Đăng nhập gián đoạn', 'Không thể kết nối đến tài khoản Google. Vui lòng thử lại.');
+    } finally {
       setLoading(false);
-      Alert.alert('Thông báo', 'Đã hủy thao tác đăng nhập Google.');
     }
   };
 

@@ -4,6 +4,24 @@
 
 ---
 
+## Nội dung hiện có và kiểm tra
+
+- Lớp 9: 21 câu; lớp 10: 45 câu. Số câu từng môn/chủ đề lấy từ bank trên thiết bị.
+- Các chủ đề lớp 11 hiện chưa có câu riêng nên hiển thị “Đang bổ sung”, chưa cho luyện tập.
+- Hai đề lớp 11 giữ trạng thái `draft`; chỉ mở khi chuyển sang `ready` và có câu đúng lớp/môn. Không thay bằng đề lớp khác.
+- Từ vựng hiện dùng kho English 10; shortcut chỉ hiển thị trong lớp 10.
+- ID chủ đề sai hoặc thiếu nội dung trả danh sách rỗng, kể cả khi mở deep link.
+
+Chạy kiểm tra trước khi cập nhật nội dung:
+
+```bash
+cd mobile
+npm run types-check
+npm run test:content
+```
+
+Kiểm thử bao gồm số câu thực, scope lớp/môn, đề chưa mở, dữ liệu đặt nhầm bucket và đáp án D (30 giờ) của `math9-t3-q2`. Khi bổ sung bank mới, cập nhật các mốc số lượng trong test và tài liệu cùng lúc.
+
 ## 🚀 Hướng Dẫn Khởi Chạy & Thử Nghiệm
 
 ### 1. Cài đặt Dependencies

@@ -1,115 +1,57 @@
-import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { db } from './firebase';
-import { useUserStore, UserProfile } from '../stores';
-import { MobileMistake } from './mistakeService';
+import { collection, doc, getDoc, getDocs, query, orderBy, documentId, limit, startAfter, type QueryDocumentSnapshot } from 'firebase/firestore';
+import { httpsCallable } from 'firebase/functions';
+import { auth, db, functions } from './firebase';
+import { useUserStore, type UserProfile } from '../stores';
+import { flushLearningStorage, waitForLearningHydration } from '../stores/useUserStore';
+import { accountScope, emptyAccount, type CanonicalRecord } from './accountLearningState';
+import { runOutbox, type CanonicalAck } from './outboxDriver';
+
+let running: Promise<boolean> | null = null;
+let nextRetryAt = 0;
+let failures = 0;
+let retryScope = '';
 
 export const CloudSyncService = {
-  /**
-   * Đẩy dữ liệu tiến độ học tập cục bộ lên Firestore (khi học sinh đã đăng nhập)
-   */
-  async syncToCloud(): Promise<boolean> {
-    const { user, xp, streak, topicMastery, completedQuestions, attempts, mistakes, lastActiveDate } =
-      useUserStore.getState();
-
-    // Chỉ đồng bộ lên Cloud khi đã đăng nhập tài khoản thực (không phải Guest)
-    if (!user?.uid || user.isAnonymous) {
-      return false;
-    }
-
-    try {
-      const summaryRef = doc(db, 'users', user.uid, 'learning_progress', 'summary');
-      await setDoc(
-        summaryRef,
-        {
-          xp,
-          streak,
-          topicMastery,
-          completedQuestionsCount: Object.keys(completedQuestions).length,
-          totalAttempts: attempts.length,
-          mistakesCount: mistakes.length,
-          lastActiveDate,
-          displayName: user.displayName,
-          email: user.email,
-          lastSyncedAt: new Date().toISOString(),
-        },
-        { merge: true }
-      );
-
-      const mistakesRef = doc(db, 'users', user.uid, 'learning_progress', 'mistakes');
-      await setDoc(
-        mistakesRef,
-        {
-          mistakes,
-          lastSyncedAt: new Date().toISOString(),
-        },
-        { merge: true }
-      );
-
-      return true;
-    } catch {
-      // Offline hoặc lỗi mạng -> Bỏ qua nhẹ nhàng để không gián đoạn trải nghiệm học tập
-      return false;
-    }
+  async syncToCloud(force = false): Promise<boolean> {
+    await waitForLearningHydration();
+    const user = useUserStore.getState().user;
+    if (!user?.uid || user.isAnonymous || auth.currentUser?.uid !== user.uid) return false;
+    const scope = accountScope(user.uid);
+    if (scope !== retryScope) { retryScope = scope; nextRetryAt = 0; failures = 0; }
+    if (running) return running;
+    if (!force && Date.now() < nextRetryAt) return false;
+    const uid = user.uid;
+    const send = httpsCallable<any, CanonicalAck>(functions, 'syncLearningData', { timeout: 125_000 });
+    running = runOutbox({
+      scope, uid,
+      isCurrent: () => useUserStore.getState().activeScope === scope && auth.currentUser?.uid === uid,
+      getAccount: () => useUserStore.getState().accounts[scope] || emptyAccount(),
+      update: update => useUserStore.getState().updateAccount(scope, update),
+      flush: flushLearningStorage,
+      send: async payload => (await send(payload)).data,
+      pull: async () => {
+        const records: CanonicalRecord[] = [];
+        let cursor: QueryDocumentSnapshot | undefined;
+        do {
+          if (auth.currentUser?.uid !== uid) throw new Error('Tài khoản đã thay đổi.');
+          const base = collection(db, 'users', uid, 'learning_attempts');
+          const page = await getDocs(query(base, orderBy(documentId()), ...(cursor ? [startAfter(cursor)] : []), limit(200)));
+          records.push(...page.docs.map(item => item.data() as CanonicalRecord));
+          cursor = page.size === 200 ? page.docs.at(-1) : undefined;
+        } while (cursor);
+        const userDoc = await getDoc(doc(db, 'users', uid));
+        return { records, xp: Number(userDoc.data()?.stats?.xpScore) || 0 };
+      },
+    }).then(ok => {
+      if (ok) { failures = 0; nextRetryAt = Date.now() + 30_000; }
+      else { failures++; nextRetryAt = Date.now() + Math.min(120_000, 2_000 * 2 ** Math.min(failures, 6)); }
+      return ok;
+    }).finally(() => { running = null; });
+    return running;
   },
 
-  /**
-   * Kéo và hợp nhất dữ liệu từ Cloud về máy khi học sinh đăng nhập tài khoản
-   */
   async pullAndMergeFromCloud(user: UserProfile): Promise<boolean> {
-    if (!user?.uid || user.isAnonymous) {
-      return false;
-    }
-
-    try {
-      const summaryRef = doc(db, 'users', user.uid, 'learning_progress', 'summary');
-      const mistakesRef = doc(db, 'users', user.uid, 'learning_progress', 'mistakes');
-
-      const [summarySnap, mistakesSnap] = await Promise.all([
-        getDoc(summaryRef),
-        getDoc(mistakesRef),
-      ]);
-
-      const state = useUserStore.getState();
-
-      let mergedXp = state.xp;
-      let mergedStreak = state.streak;
-      let mergedMastery = { ...state.topicMastery };
-      let mergedMistakes = [...state.mistakes];
-
-      if (summarySnap.exists()) {
-        const cloudData = summarySnap.data();
-        mergedXp = Math.max(state.xp, cloudData.xp || 0);
-        mergedStreak = Math.max(state.streak, cloudData.streak || 1);
-        if (cloudData.topicMastery) {
-          mergedMastery = {
-            ...cloudData.topicMastery,
-            ...state.topicMastery,
-          };
-        }
-      }
-
-      if (mistakesSnap.exists()) {
-        const cloudMistakes = (mistakesSnap.data().mistakes as MobileMistake[]) || [];
-        const mistakeMap = new Map<string, MobileMistake>();
-        for (const m of cloudMistakes) {
-          mistakeMap.set(m.questionId, m);
-        }
-        for (const localM of state.mistakes) {
-          mistakeMap.set(localM.questionId, localM);
-        }
-        mergedMistakes = Array.from(mistakeMap.values());
-      }
-
-      useUserStore.setState({
-        xp: mergedXp,
-        streak: mergedStreak,
-        topicMastery: mergedMastery,
-        mistakes: mergedMistakes,
-      });
-
-      return true;
-    } catch {
-      return false;
-    }
+    if (useUserStore.getState().user?.uid !== user.uid) return false;
+    return this.syncToCloud(true);
   },
 };
