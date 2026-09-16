@@ -1,0 +1,3505 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "2026.09.1",
+  "updatedAt": "2026-09-16T12:27:43.580Z",
+  "grade": "grade10",
+  "subject": "english",
+  "subjectName": "Tiếng Anh 10",
+  "icon": "Languages",
+  "themeColor": "#10b981",
+  "badge": "Chương trình mới",
+  "stats": {
+    "totalTopics": 11,
+    "totalQuestionTypes": 73,
+    "estimatedTotalMinutes": 2190
+  },
+  "topics": [
+    {
+      "id": "eng10-t1",
+      "name": "Chuyên đề 1: Family Life (Đời sống gia đình)",
+      "slug": "family-life",
+      "orderIndex": 1,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 1: Family Life (Đời sống gia đình)",
+      "estimatedMinutes": 180,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "eng10-qt1",
+        "eng10-qt9",
+        "eng10-qt14",
+        "eng10-skill-qt-u1-reading",
+        "eng10-skill-qt-u1-writing",
+        "eng10-deep-qt-u1-language-in-context"
+      ]
+    },
+    {
+      "id": "eng10-t2",
+      "name": "Chuyên đề 2: Humans and the Environment (Con người và môi trường)",
+      "slug": "humans-and-environment",
+      "orderIndex": 2,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 2: Humans and the Environment (Con người và môi trường)",
+      "estimatedMinutes": 210,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "eng10-qt2",
+        "eng10-qt3",
+        "eng10-qt10",
+        "eng10-qt15",
+        "eng10-skill-qt-u2-reading",
+        "eng10-skill-qt-u2-writing",
+        "eng10-deep-qt-u2-language-in-context"
+      ]
+    },
+    {
+      "id": "eng10-t3",
+      "name": "Chuyên đề 3: Music (Âm nhạc)",
+      "slug": "music",
+      "orderIndex": 3,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 3: Music (Âm nhạc)",
+      "estimatedMinutes": 210,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "eng10-qt4",
+        "eng10-qt7",
+        "eng10-qt11",
+        "eng10-qt16",
+        "eng10-skill-qt-u3-reading",
+        "eng10-skill-qt-u3-writing",
+        "eng10-deep-qt-u3-language-in-context"
+      ]
+    },
+    {
+      "id": "eng10-t4",
+      "name": "Chuyên đề 4: For a Better Community (Vì một cộng đồng tốt đẹp hơn)",
+      "slug": "for-a-better-community",
+      "orderIndex": 4,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 4: For a Better Community (Vì một cộng đồng tốt đẹp hơn)",
+      "estimatedMinutes": 180,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "eng10-qt5",
+        "eng10-qt12",
+        "eng10-qt17",
+        "eng10-skill-qt-u4-reading",
+        "eng10-skill-qt-u4-writing",
+        "eng10-deep-qt-u4-language-in-context"
+      ]
+    },
+    {
+      "id": "eng10-t5",
+      "name": "Chuyên đề 5: Inventions (Các phát minh)",
+      "slug": "inventions",
+      "orderIndex": 5,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 5: Inventions (Các phát minh)",
+      "estimatedMinutes": 210,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "eng10-qt6",
+        "eng10-qt8",
+        "eng10-qt13",
+        "eng10-qt18",
+        "eng10-skill-qt-u5-reading",
+        "eng10-skill-qt-u5-writing",
+        "eng10-deep-qt-u5-language-in-context"
+      ]
+    },
+    {
+      "id": "eng10-t6",
+      "name": "Chuyên đề 6: Gender Equality (Bình đẳng giới)",
+      "slug": "gender-equality",
+      "orderIndex": 6,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 6: Gender Equality (Bình đẳng giới)",
+      "estimatedMinutes": 180,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "eng10-qt19",
+        "eng10-qt20",
+        "eng10-qt21",
+        "eng10-skill-qt-u6-reading",
+        "eng10-skill-qt-u6-writing",
+        "eng10-deep-qt-u6-language-in-context"
+      ]
+    },
+    {
+      "id": "eng10-t7",
+      "name": "Chuyên đề 7: Viet Nam and International Organisations (Việt Nam và các tổ chức quốc tế)",
+      "slug": "viet-nam-and-international-organisations",
+      "orderIndex": 7,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 7: Viet Nam and International Organisations (Việt Nam và các tổ chức quốc tế)",
+      "estimatedMinutes": 180,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "eng10-qt22",
+        "eng10-qt23",
+        "eng10-qt24",
+        "eng10-skill-qt-u7-reading",
+        "eng10-skill-qt-u7-writing",
+        "eng10-deep-qt-u7-language-in-context"
+      ]
+    },
+    {
+      "id": "eng10-t8",
+      "name": "Chuyên đề 8: New Ways to Learn (Những cách học mới)",
+      "slug": "new-ways-to-learn",
+      "orderIndex": 8,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 8: New Ways to Learn (Những cách học mới)",
+      "estimatedMinutes": 180,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "eng10-qt25",
+        "eng10-qt26",
+        "eng10-qt27",
+        "eng10-skill-qt-u8-reading",
+        "eng10-skill-qt-u8-writing",
+        "eng10-deep-qt-u8-language-in-context"
+      ]
+    },
+    {
+      "id": "eng10-t9",
+      "name": "Chuyên đề 9: Protecting the Environment (Bảo vệ môi trường)",
+      "slug": "protecting-the-environment",
+      "orderIndex": 9,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 9: Protecting the Environment (Bảo vệ môi trường)",
+      "estimatedMinutes": 180,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "eng10-qt28",
+        "eng10-qt29",
+        "eng10-qt30",
+        "eng10-skill-qt-u9-reading",
+        "eng10-skill-qt-u9-writing",
+        "eng10-deep-qt-u9-language-in-context"
+      ]
+    },
+    {
+      "id": "eng10-t10",
+      "name": "Chuyên đề 10: Ecotourism (Du lịch sinh thái)",
+      "slug": "ecotourism",
+      "orderIndex": 10,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 10: Ecotourism (Du lịch sinh thái)",
+      "estimatedMinutes": 180,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "eng10-qt31",
+        "eng10-qt32",
+        "eng10-qt33",
+        "eng10-skill-qt-u10-reading",
+        "eng10-skill-qt-u10-writing",
+        "eng10-deep-qt-u10-language-in-context"
+      ]
+    },
+    {
+      "id": "eng10-listening-extension",
+      "name": "Chuyên đề mở rộng: Listening (Luyện nghe tự chọn)",
+      "slug": "listening-extension",
+      "orderIndex": 100,
+      "tier": 3,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề mở rộng: Listening (Luyện nghe tự chọn)",
+      "estimatedMinutes": 300,
+      "difficulty": "hard",
+      "questionTypeIds": [
+        "eng10-skill-qt-u1-listening",
+        "eng10-skill-qt-u2-listening",
+        "eng10-skill-qt-u3-listening",
+        "eng10-skill-qt-u4-listening",
+        "eng10-skill-qt-u5-listening",
+        "eng10-skill-qt-u6-listening",
+        "eng10-skill-qt-u7-listening",
+        "eng10-skill-qt-u8-listening",
+        "eng10-skill-qt-u10-listening",
+        "eng10-skill-qt-u9-listening"
+      ]
+    }
+  ],
+  "questionTypes": [
+    {
+      "id": "eng10-qt31",
+      "topicId": "eng10-t10",
+      "name": "Câu điều kiện loại 1 và loại 2",
+      "slug": "conditional-sentences-types-1-2",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân biệt tình huống có thật/có thể xảy ra với tình huống giả định hoặc khó xảy ra; chia đúng động từ ở mệnh đề if và mệnh đề chính.",
+      "recognitionSigns": [
+        "Có if và quan hệ điều kiện–kết quả.",
+        "Từ ngữ cho biết khả năng thực (tomorrow, probably) hoặc giả định (were, would, imagine)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xét ý nghĩa: có thể xảy ra hay giả định/khó xảy ra.",
+        "Bước 2: Chọn cặp thì loại 1 hoặc loại 2.",
+        "Bước 3: Kiểm tra không dùng will/would trong mệnh đề if thông thường."
+      ],
+      "commonMistakes": [
+        "Dùng will sau if trong cấu trúc cơ bản.",
+        "Nhìn hình thức quá khứ mà quên loại 2 nói về hiện tại/tương lai giả định."
+      ],
+      "theory": [
+        "Loại 1: $If + S + V_{present}, S + will/can/may + V$ — điều kiện thực hoặc có khả năng trong hiện tại/tương lai.",
+        "Loại 2: $If + S + V_{past}, S + would/could/might + V$ — tình huống không có thật hoặc khó xảy ra; *were* dùng được cho mọi chủ ngữ."
+      ],
+      "subTypes": [
+        {
+          "name": "Type 1",
+          "example": "If tourists follow the rules, they will protect the habitat.",
+          "note": "Khả năng thực trong tương lai."
+        },
+        {
+          "name": "Type 2",
+          "example": "If I were a park manager, I would limit visitor numbers.",
+          "note": "Giả định trái hiện tại."
+        }
+      ],
+      "exampleQuestionId": "eng10-q373"
+    },
+    {
+      "id": "eng10-qt32",
+      "topicId": "eng10-t10",
+      "name": "Từ vựng trọng tâm: Ecotourism",
+      "slug": "vocabulary-ecotourism",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Từ và cụm từ về du lịch sinh thái, trách nhiệm của du khách, tác động môi trường và lợi ích cho cộng đồng địa phương.",
+      "recognitionSigns": [
+        "Ngữ cảnh tham quan thiên nhiên, bảo vệ môi trường hoặc hỗ trợ người dân địa phương.",
+        "Chỗ trống đòi hỏi đúng từ loại, giới từ hoặc cụm kết hợp cố định."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ loại và quan hệ nghĩa.",
+        "Bước 2: Tìm collocation/dấu hiệu ngữ cảnh.",
+        "Bước 3: Loại từ cùng chủ đề nhưng không hợp cấu trúc."
+      ],
+      "commonMistakes": [
+        "Nhầm tourist với tourism.",
+        "Nhầm responsible for với responsible to trong nghĩa chịu trách nhiệm làm việc gì."
+      ],
+      "theory": [
+        "Từ lõi: *eco-friendly, field trip, litter, responsible, aware, impact, local business, profit, traditional arts and crafts, brochure, wildlife, preservation*.",
+        "Collocation: *be responsible for, be aware of, have an impact on, make a profit, leave litter behind, local products/services*."
+      ],
+      "subTypes": [
+        {
+          "name": "Nghĩa theo ngữ cảnh",
+          "example": "be aware of the damage",
+          "note": "Nhận thức được thiệt hại."
+        },
+        {
+          "name": "Collocation và từ loại",
+          "example": "environmental impact",
+          "note": "environmental là tính từ bổ nghĩa cho impact."
+        }
+      ],
+      "exampleQuestionId": "eng10-q385"
+    },
+    {
+      "id": "eng10-qt33",
+      "topicId": "eng10-t10",
+      "name": "Ngữ điệu câu trần thuật và câu hỏi",
+      "slug": "intonation-statements-questions",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Chọn ngữ điệu xuống cho câu trần thuật và Wh-question, ngữ điệu lên cho Yes/No question; vận dụng trong hội thoại.",
+      "recognitionSigns": [
+        "Đề hỏi intonation, rising/falling hoặc mũi tên ↗/↘.",
+        "Phải xác định loại câu và mục đích giao tiếp."
+      ],
+      "solvingSteps": [
+        "Bước 1: Nhận diện statement, Wh-question hay Yes/No question.",
+        "Bước 2: Áp dụng quy tắc ngữ điệu cơ bản.",
+        "Bước 3: Với hội thoại, kiểm tra câu đang hỏi thông tin hay xác nhận."
+      ],
+      "commonMistakes": [
+        "Cho rằng mọi câu hỏi đều lên giọng.",
+        "Chỉ nhìn dấu hỏi mà không nhận diện Wh-question."
+      ],
+      "theory": [
+        "Câu trần thuật thường xuống giọng (↘) ở cuối.",
+        "Wh-question thường xuống giọng (↘); Yes/No question thường lên giọng (↗).",
+        "Ngữ điệu phụ thuộc chức năng giao tiếp thực tế, không chỉ dấu câu."
+      ],
+      "subTypes": [
+        {
+          "name": "Falling intonation",
+          "example": "What is an eco-friendly field trip? ↘",
+          "note": "Wh-question hỏi thông tin."
+        },
+        {
+          "name": "Rising intonation",
+          "example": "Can we bring snacks? ↗",
+          "note": "Yes/No question."
+        }
+      ],
+      "exampleQuestionId": "eng10-q397"
+    },
+    {
+      "id": "eng10-qt1",
+      "topicId": "eng10-t1",
+      "name": "Thì Hiện tại đơn & Hiện tại tiếp diễn",
+      "slug": "hien-tai-don-hien-tai-tiep-dien",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Học cách phân biệt và chia động từ ở hai thì cơ bản: Hiện tại đơn (diễn tả thói quen, sự thật hiển nhiên) và Hiện tại tiếp diễn (diễn tả hành động đang diễn ra tại thời điểm nói hoặc một xu hướng thay đổi). Đây là chủ điểm ngữ pháp cốt lõi của Unit 1: Family Life.",
+      "recognitionSigns": [
+        "Câu hỏi yêu cầu chia thì của động từ trong ngoặc hoặc chọn phương án trắc nghiệm đúng.",
+        "Câu có các trạng từ chỉ tần suất (*always, usually, often*) hoặc trạng từ chỉ thời điểm tiếp diễn (*now, at the moment, Look!, Listen!*)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Tìm các trạng từ chỉ thời gian hoặc từ khóa mang tính chất mệnh lệnh để xác định thời điểm hành động.",
+        "Bước 2: Phân tích động từ trong câu xem đó là động từ chỉ hành động (action verb) hay động từ trạng thái (state verb).",
+        "Bước 3: Xác định ngôi và số (ít hay nhiều) của chủ ngữ để chia dạng động từ tương thích (ví dụ chủ ngữ số ít thêm s/es ở hiện tại đơn)."
+      ],
+      "commonMistakes": [
+        "Quên thêm \"s/es\" khi chủ ngữ là danh từ số ít ở Hiện tại đơn.",
+        "Chia Hiện tại tiếp diễn cho các động từ trạng thái như *like, want, know*."
+      ],
+      "theory": [
+        "**1. Thì Hiện tại đơn (Present Simple)**:\n- **Công thức**: \n  * Động từ thường: $S + V(s/es)$\n  * Động từ tobe: $S + am/is/are + adj/noun$\n- **Cách dùng chính**:\n  * Diễn tả một thói quen, hành động lặp đi lặp lại ở hiện tại (ví dụ: *I usually do the laundry on weekends*).\n  * Diễn tả một sự thật hiển nhiên, chân lý (ví dụ: *The sun rises in the east*).\n- **Dấu hiệu nhận biết**: Các trạng từ chỉ tần suất như *always, usually, often, sometimes, rarely, never, every day/week/month*...",
+        "**2. Thì Hiện tại tiếp diễn (Present Continuous)**:\n- **Công thức**: $S + am/is/are + V-ing$\n- **Cách dùng chính**:\n  * Diễn tả hành động đang xảy ra ngay tại thời điểm nói (ví dụ: *Listen! Someone is singing*).\n  * Diễn tả một hành động mang tính chất tạm thời (ví dụ: *I am staying with my uncle this week*).\n  * Diễn tả một xu hướng biến đổi dần dần (đi kèm các động từ *get, become, grow* - ví dụ: *Green technology is becoming popular*).\n- **Dấu hiệu nhận biết**: *now, right now, at the moment, at present*, hoặc các câu mệnh lệnh gây chú ý như *Look!, Listen!, Be quiet!*...",
+        "**3. Lưu ý đặc biệt về Động từ trạng thái (State Verbs)**:\n- Các động từ chỉ trạng thái cảm xúc, nhận thức, sở hữu như *like, love, hate, know, believe, understand, want, remember, see, hear, possess*... **không chia ở thì tiếp diễn** ngay cả khi câu có dấu hiệu hiện tại tiếp diễn (ví dụ: viết *I understand the lesson now*, không viết *I am understanding...*)."
+      ],
+      "subTypes": [
+        {
+          "name": "Chia động từ ở Hiện tại đơn",
+          "example": "My mother (cook) __________ dinner for the family every evening.",
+          "note": "Chủ ngữ \"My mother\" là ngôi thứ ba số ít, câu diễn tả thói quen hàng ngày (every evening) nên chia Hiện tại đơn: cooks."
+        },
+        {
+          "name": "Chia động từ ở Hiện tại tiếp diễn",
+          "example": "Look! The dog (chase) __________ the cat in the garden.",
+          "note": "Có từ mệnh lệnh \"Look!\" chỉ hành động đang diễn ra nên chia Hiện tại tiếp diễn: is chasing."
+        },
+        {
+          "name": "Sử dụng động từ trạng thái ở Hiện tại đơn",
+          "example": "At the moment, I (want) __________ to buy a new laptop.",
+          "note": "Dù có \"At the moment\" nhưng \"want\" là động từ trạng thái chỉ mong muốn, không chia tiếp diễn. Đáp án đúng là: want."
+        }
+      ],
+      "exampleQuestionId": "eng10-q1"
+    },
+    {
+      "id": "eng10-qt9",
+      "topicId": "eng10-t1",
+      "name": "Từ vựng trọng tâm: Family Life",
+      "slug": "tu-vung-family-life",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Học và làm chủ các từ vựng chủ chốt liên quan đến cuộc sống gia đình, công việc nhà, vai trò và trách nhiệm của các thành viên. Chủ điểm thuộc Unit 1: Family Life.",
+      "recognitionSigns": [
+        "Câu hỏi yêu cầu hoàn thành câu với từ vựng phù hợp nhất về chủ đề gia đình."
+      ],
+      "solvingSteps": [
+        "Bước 1: Đọc kỹ ngữ cảnh và định nghĩa của các từ lựa chọn.",
+        "Bước 2: Tìm các từ bổ trợ xung quanh (ví dụ: earn money -> breadwinner, housework -> chores).",
+        "Bước 3: Lựa chọn từ có ý nghĩa và từ loại phù hợp nhất."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn giữa homemaker (người nội trợ) và breadwinner (trụ cột tài chính)."
+      ],
+      "theory": [
+        "**Danh sách từ vựng trọng tâm (Unit 1)**:\n\n1. **Breadwinner** (n) /ˈbredwɪnə(r)/: người trụ cột (kiếm tiền chính trong gia đình).\n   * *Example*: In many traditional societies, the husband is the breadwinner.\n\n2. **Homemaker** (n) /ˈhəʊmmeɪkə(r)/: người nội trợ (chăm sóc gia đình, dọn dẹp nhà cửa).\n   * *Example*: After retiring, she decided to be a homemaker to take care of her kids.\n\n3. **Household chores** (n.phr) /ˈhaʊshəʊld tʃɔːz/: công việc nhà (lau nhà, rửa bát, nấu ăn).\n   * *Example*: We split the household chores equally among family members.\n\n4. **Heavy lifting** (n.phr) /ˌhevi ˈlɪftɪŋ/: việc nặng nhọc (mang vác nặng).\n   * *Example*: In my house, my father and older brother do the heavy lifting.\n\n5. **Groceries** (n) /ˈɡrəʊsəriz/: thực phẩm, đồ tạp hóa.\n   * *Example*: I usually help my mother buy groceries at the supermarket on Sundays."
+      ],
+      "subTypes": [
+        {
+          "name": "Nhận diện nghĩa của từ",
+          "example": "A __________ is a person who manages the home and raises children instead of earning money.",
+          "note": "Định nghĩa chỉ người nội trợ, từ thích hợp là: homemaker."
+        }
+      ],
+      "exampleQuestionId": "eng10-q51"
+    },
+    {
+      "id": "eng10-qt14",
+      "topicId": "eng10-t1",
+      "name": "Phát âm cụm phụ âm /br/, /kr/, /tr/",
+      "slug": "phat-am-cum-phu-am-br-kr-tr",
+      "difficulty": "easy",
+      "examFrequency": "medium",
+      "description": "Học cách nhận biết, phát âm và phân biệt các cụm phụ âm ghép bắt đầu bằng /b/, /k/, /t/ kết hợp với âm /r/ trong Unit 1: Family Life.",
+      "recognitionSigns": [
+        "Câu hỏi yêu cầu tìm từ có cụm phụ âm đầu được phát âm khác với các từ còn lại."
+      ],
+      "solvingSteps": [
+        "Bước 1: Đọc to từng từ và chú ý cách phát âm cụm phụ âm đầu.",
+        "Bước 2: Phân loại các từ vào nhóm âm tương ứng (/br/, /kr/ hoặc /tr/).",
+        "Bước 3: Xác định từ có âm khác biệt nhất."
+      ],
+      "commonMistakes": [
+        "Phát âm thêm nguyên âm /ơ/ vào giữa các phụ âm (ví dụ đọc tree thành /tờ-ri/)."
+      ],
+      "theory": [
+        "**Cụm phụ âm ghép (Consonant Clusters)**:\n- **Cụm /br/**: Hai âm /b/ và /r/ được phát âm liền nhau rất nhanh, không có nguyên âm xen giữa.\n  * Ví dụ: *bread* /bred/, *brother* /ˈbrʌðə(r)/, *breadwinner* /ˈbredwɪnə(r)/.\n- **Cụm /kr/**: Âm /k/ và /r/ kết hợp.\n  * Ví dụ: *crash* /kræʃ/, *create* /kriˈeɪt/, *cricket* /ˈkrɪkɪt/.\n- **Cụm /tr/**: Âm /t/ và /r/ kết hợp.\n  * Ví dụ: *tree* /triː/, *truth* /truːθ/, *train* /treɪn/."
+      ],
+      "subTypes": [
+        {
+          "name": "Tìm từ có cụm phụ âm đầu phát âm khác",
+          "example": "Identify the word whose initial consonant cluster is pronounced differently: A. **br**ead, B. **br**other, C. **cr**eate, D. **br**own",
+          "note": "Bread, brother và brown bắt đầu bằng cụm /br/; create bắt đầu bằng /kr/. Đáp án khác biệt là C."
+        }
+      ],
+      "exampleQuestionId": "eng10-q76"
+    },
+    {
+      "id": "eng10-qt2",
+      "topicId": "eng10-t2",
+      "name": "Tương lai với \"Will\" vs. \"Be going to\"",
+      "slug": "tuong-lai-will-va-be-going-to",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Phân biệt cách nói về các hành động trong tương lai bằng cách sử dụng trợ động từ \"will\" (quyết định tức thì, dự đoán cá nhân) và cấu trúc \"be going to\" (kế hoạch sẵn có, dự đoán có căn cứ). Đây là phần trọng tâm ngữ pháp của Unit 2: Humans and the Environment.",
+      "recognitionSigns": [
+        "Câu chứa các ngữ cảnh hội thoại biểu thị phản ứng nhanh (A nói - B đáp).",
+        "Câu chứa các bằng chứng rõ ràng ở hiện tại (*dark clouds, ticket bought, driving too fast*)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định xem hành động tương lai này là dự định đã lên lịch trước đó hay quyết định phát sinh ngay lúc đối thoại.",
+        "Bước 2: Nếu là dự đoán, xem xét có dấu hiệu hoặc bằng chứng thực tế tại hiện trường hay chỉ là dự đoán cảm tính (think/hope).",
+        "Bước 3: Chia động từ thích hợp. Chú ý chia động từ \"to be\" (am/is/are) cho cấu trúc \"be going to\" hợp với chủ ngữ."
+      ],
+      "commonMistakes": [
+        "Sử dụng nhầm \"will\" cho các kế hoạch đã lên lịch từ trước.",
+        "Quên chia động từ \"to be\" khi viết cấu trúc \"going to\" (ví dụ viết nhầm: *He going to play*)."
+      ],
+      "theory": [
+        "**1. Cách dùng \"Will\" (Tương lai đơn)**:\n- **Cấu trúc**: $S + will + V-bare$\n- **Cách dùng**:\n  * Đưa ra quyết định ngay tại thời điểm nói (ví dụ: *A: \"The phone is ringing.\" B: \"I will answer it.\"*).\n  * Dự đoán tương lai dựa trên ý kiến cá nhân, không có căn cứ rõ ràng (thường đi với *think, believe, hope, perhaps*).\n  * Diễn tả một lời hứa, lời đe dọa hoặc lời đề nghị giúp đỡ (ví dụ: *I will help you carry these bags*).",
+        "**2. Cách dùng \"Be going to\" (Tương lai gần)**:\n- **Cấu trúc**: $S + am/is/are + going + to + V-bare$\n- **Cách dùng**:\n  * Diễn tả một kế hoạch, dự định đã được lên lịch từ trước khi nói (ví dụ: *We are going to visit our grandparents this weekend*).\n  * Đưa ra dự đoán về tương lai dựa trên những dấu hiệu thực tế ở hiện tại (ví dụ: *Look at those dark clouds! It is going to rain*)."
+      ],
+      "subTypes": [
+        {
+          "name": "Quyết định tức thời (Will)",
+          "example": "A: \"There is no milk left.\" B: \"Oh, really? I (go) __________ to the supermarket to buy some.\"",
+          "note": "Người nói B chỉ quyết định đi mua sữa sau khi nghe tin hết sữa (quyết định tức thời), do đó dùng: will go."
+        },
+        {
+          "name": "Kế hoạch chuẩn bị sẵn (Be going to)",
+          "example": "I have bought the tickets. We (watch) __________ a football match this Saturday.",
+          "note": "Hành động mua vé chứng tỏ kế hoạch đã được chuẩn bị sẵn từ trước, dùng: are going to watch."
+        },
+        {
+          "name": "Dự đoán có căn cứ thực tế (Be going to)",
+          "example": "Look at the driver! He is driving too fast. He (crash) __________ into that tree.",
+          "note": "Dấu hiệu thực tế \"driving too fast\" cho thấy một tai nạn sắp xảy ra, dùng: is going to crash."
+        }
+      ],
+      "exampleQuestionId": "eng10-q11"
+    },
+    {
+      "id": "eng10-qt3",
+      "topicId": "eng10-t2",
+      "name": "Câu bị động (Passive Voice) của các thì cơ bản",
+      "slug": "cau-bi-dong-thi-co-ban",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Học sinh hiểu bản chất của câu bị động và làm chủ kỹ năng biến đổi từ câu chủ động sang câu bị động, cũng như cách chia động từ bị động ở các thì Hiện tại đơn, Quá khứ đơn, Hiện tại hoàn thành và Tương lai đơn. Chủ điểm xuất hiện ở Unit 2: Humans and the Environment.",
+      "recognitionSigns": [
+        "Chủ ngữ của câu là danh từ chỉ vật hoặc danh từ không thể tự thực hiện hành động chính.",
+        "Trong câu thường xuất hiện giới từ \"by\" đứng trước tác nhân gây ra hành động."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định thì của câu dựa vào các trạng từ chỉ thời gian (*every day, yesterday, next week, since 2010*).",
+        "Bước 2: Kiểm tra xem chủ ngữ có khả năng tự thực hiện hành động hay không để xác định câu mang nghĩa bị động.",
+        "Bước 3: Lắp ráp công thức bị động của thì đó: Be + V3/ed (lưu ý đổi động từ sang dạng quá khứ phân từ và chia động từ be hợp với số của chủ ngữ)."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn phân từ hai của các động từ bất quy tắc (ví dụ viết *writed* thay vì *written*, *buyed* thay vì *bought*).",
+        "Quên chia động từ \"to be\" theo số ít/số nhiều của chủ ngữ mới."
+      ],
+      "theory": [
+        "**1. Nguyên tắc biến đổi câu bị động**:\n- **Chủ động**: $S_{chủ} + V + O_{chủ}$\n- **Bị động**: $S_{bị} (O_{chủ}) + be + V_{3/ed} + [by + O_{bị} (S_{chủ})]$\n- **Lưu ý**:\n  * Động từ \"to be\" được chia theo thì của câu chủ động và hợp số ít/nhiều với chủ ngữ mới.\n  * Trạng từ chỉ nơi chốn đứng trước *by + O* (ví dụ: *in the kitchen by my mom*).\n  * Trạng từ chỉ thời gian đứng sau *by + O* (ví dụ: *by my mom yesterday*).",
+        "**2. Công thức câu bị động ở các thì cơ bản**:\n- **Hiện tại đơn**: $S + am/is/are + V_{3/ed}$\n- **Quá khứ đơn**: $S + was/were + V_{3/ed}$\n- **Hiện tại hoàn thành**: $S + has/have + been + V_{3/ed}$\n- **Tương lai đơn**: $S + will + be + V_{3/ed}$"
+      ],
+      "subTypes": [
+        {
+          "name": "Bị động thì Hiện tại đơn",
+          "example": "Garbage (collect) __________ by the sanitation workers every day.",
+          "note": "Chủ ngữ \"Garbage\" không tự thu gom mà được thu gom (bị động). Trạng từ \"every day\" chỉ thì hiện tại đơn. Garbage là danh từ không đếm được (số ít) nên chia: is collected."
+        },
+        {
+          "name": "Bị động thì Quá khứ đơn",
+          "example": "The book (write) __________ by a young author in 2020.",
+          "note": "Mốc thời gian \"in 2020\" ở quá khứ, câu mang nghĩa bị động: was written."
+        },
+        {
+          "name": "Bị động thì Tương lai đơn",
+          "example": "A new eco-friendly park (build) __________ in this area next year.",
+          "note": "Dấu hiệu \"next year\" chỉ tương lai đơn, câu bị động: will be built."
+        }
+      ],
+      "exampleQuestionId": "eng10-q16"
+    },
+    {
+      "id": "eng10-qt10",
+      "topicId": "eng10-t2",
+      "name": "Từ vựng trọng tâm: Humans and the Environment",
+      "slug": "tu-vung-humans-and-environment",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Học và làm chủ các từ vựng về lối sống xanh, bảo vệ môi trường, các hoạt động tái chế và ảnh hưởng của con người. Chủ điểm thuộc Unit 2: Humans and the Environment.",
+      "recognitionSigns": [
+        "Câu hỏi điền từ liên quan đến các vấn đề môi trường, rác thải hoặc năng lượng sạch."
+      ],
+      "solvingSteps": [
+        "Bước 1: Phân tích ngữ cảnh câu (ví dụ nói về túi nhựa dùng một lần -> single-use).",
+        "Bước 2: Xác định từ loại cần điền (danh từ, động từ hay tính từ).",
+        "Bước 3: Chọn từ đúng nghĩa."
+      ],
+      "commonMistakes": [
+        "Không phân biệt được giữa tính từ eco-friendly và danh từ/cụm danh từ green living."
+      ],
+      "theory": [
+        "**Danh sách từ vựng trọng tâm (Unit 2)**:\n\n1. **Eco-friendly** (adj) /ˌiːkəʊ ˈfrendli/: thân thiện với môi trường.\n   * *Example*: Using public transport is more eco-friendly than driving cars.\n\n2. **Carbon footprint** (n.phr) /ˌkɑːbən ˈfʊtprɪnt/: lượng khí thải carbon, dấu chân carbon.\n   * *Example*: Planting more trees is a great way to reduce your carbon footprint.\n\n3. **Green living** (n.phr) /ˌɡriːn ˈlɪvɪŋ/: lối sống xanh (bảo vệ môi trường).\n   * *Example*: More people are adopting green living by recycling and using solar energy.\n\n4. **Single-use** (adj) /ˌsɪŋɡl ˈjuːs/: chỉ dùng một lần (như cốc nhựa, túi nilon).\n   * *Example*: We should ban single-use plastics to protect our oceans.\n\n5. **Pollute** (v) /pəˈluːt/: làm ô nhiễm (nguồn nước, không khí).\n   * *Example*: Toxic waste from factories can pollute nearby rivers."
+      ],
+      "subTypes": [
+        {
+          "name": "Chọn từ vựng bảo vệ môi trường",
+          "example": "We are trying to reduce our __________ by saving electricity.",
+          "note": "Tiết kiệm điện giúp giảm lượng khí thải carbon, từ phù hợp: carbon footprint."
+        }
+      ],
+      "exampleQuestionId": "eng10-q56"
+    },
+    {
+      "id": "eng10-qt15",
+      "topicId": "eng10-t2",
+      "name": "Phát âm cụm phụ âm /kl/, /pl/, /gr/, /pr/",
+      "slug": "phat-am-cum-phu-am-kl-pl-gr-pr",
+      "difficulty": "easy",
+      "examFrequency": "medium",
+      "description": "Rèn luyện và nhận diện cách phát âm chính xác của đóng vai trò rất quan trọng ở Unit 2: Humans and the Environment.",
+      "recognitionSigns": [
+        "Đề bài yêu cầu tìm từ có cách phát âm của cụm phụ âm đầu khác biệt."
+      ],
+      "solvingSteps": [
+        "Bước 1: Phát âm các từ để xác định âm đi với /l/ hay /r/.",
+        "Bước 2: Phân nhóm cụ thể (/kl/, /pl/, /gr/, /pr/).",
+        "Bước 3: Chọn phương án khác loại."
+      ],
+      "commonMistakes": [
+        "Lẫn lộn âm /kl/ và /pl/ hoặc /gr/ và /pr/ do khẩu hình miệng tương tự."
+      ],
+      "theory": [
+        "**Các cụm phụ âm đi với /l/ và /r/ (Unit 2)**:\n- **Cụm /kl/**: *clean* /kliːn/, *club* /klʌb/, *climate* /ˈklaɪmət/.\n- **Cụm /pl/**: *please* /pliːz/, *plastic* /ˈplæstɪk/, *plough* /plaʊ/.\n- **Cụm /gr/**: *green* /ɡriːn/, *group* /ɡruːp/, *grow* /ɡrəʊ/.\n- **Cụm /pr/**: *practise* /ˈpræktɪs/, *protect* /pəˈtekt/ (ở đây pr bị giảm âm nhẹ nhưng vẫn phát âm /pr/), *present* /ˈpreznt/."
+      ],
+      "subTypes": [
+        {
+          "name": "Phân biệt cụm phụ âm đầu",
+          "example": "Choose the word whose initial consonant cluster is pronounced differently: A. **cl**ean, B. **cl**ub, C. **pl**astic, D. **cl**imate",
+          "note": "Các từ A, B, D bắt đầu bằng âm /kl/, trong khi plastic bắt đầu bằng âm /pl/. Chọn C."
+        }
+      ],
+      "exampleQuestionId": "eng10-q79"
+    },
+    {
+      "id": "eng10-qt4",
+      "topicId": "eng10-t3",
+      "name": "Động từ nguyên mẫu có To và không To (To-V & Bare-V)",
+      "slug": "dong-tu-nguyen-mau-to-va-bare-v",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Học cách phân loại các động từ đi sau bởi động từ nguyên mẫu có \"to\" (to-infinitive) và động từ nguyên mẫu không \"to\" (bare infinitive). Chủ điểm xuất hiện ở Unit 3: Music.",
+      "recognitionSigns": [
+        "Câu hỏi kiểm tra dạng động từ đứng sau các động từ chính cho sẵn (*decide, make, let, promise*)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định động từ chính đứng liền trước khoảng trống cần chia.",
+        "Bước 2: Tra cứu động từ chính đó thuộc nhóm đi với to-infinitive hay bare infinitive (hoặc cấu trúc V + O + V-bare).",
+        "Bước 3: Chọn phương án phù hợp."
+      ],
+      "commonMistakes": [
+        "Dùng V-ing sau các từ như *decide, plan* vì dịch nghĩa tiếng Việt là \"quyết định việc gì đó\"."
+      ],
+      "theory": [
+        "**1. Động từ nguyên mẫu có \"To\" (To-infinitive)**:\n- Theo sau các động từ diễn tả ý định, mong muốn, quyết định, kế hoạch: *decide, want, hope, plan, promise, agree, refuse, expect, manage, offer, seem, choose*...\n- Công thức: $S + V_1 + to-V_2$\n- Ví dụ: *She decided to enter the music contest.*",
+        "**2. Động từ nguyên mẫu không \"To\" (Bare infinitive / V-bare)**:\n- Theo sau các động từ khuyết thiếu: *can, could, may, might, should, must*...\n- Theo sau các động từ cầu khiến, chỉ giác quan: *make, let, hear, see, watch* (cấu trúc: *make/let + O + V-bare*).\n- Ví dụ: *My parents let me go to the music concert.*"
+      ],
+      "subTypes": [
+        {
+          "name": "Động từ đi với To-V",
+          "example": "He promises (practice) __________ the piano every day before school.",
+          "note": "Sau động từ \"promise\" là to-V, chia: to practice."
+        },
+        {
+          "name": "Động từ đi với Bare-V",
+          "example": "The upbeat music made us (feel) __________ energetic and happy.",
+          "note": "Áp dụng cấu trúc cầu khiến: make + O + V-bare. Do đó chia: feel."
+        }
+      ],
+      "exampleQuestionId": "eng10-q21"
+    },
+    {
+      "id": "eng10-qt7",
+      "topicId": "eng10-t3",
+      "name": "Câu ghép với các liên từ kết hợp (Compound Sentences)",
+      "slug": "cau-ghep-lien-tu-ket-hop",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Sử dụng các liên từ kết hợp (and, or, but, so) để liên kết hai mệnh đề độc lập thành một câu ghép hoàn chỉnh. Đây là ngữ pháp trọng tâm của Unit 3: Music.",
+      "recognitionSigns": [
+        "Câu kiểm tra trắc nghiệm chọn liên từ thích hợp (*and, or, but, so*) đứng sau dấu phẩy để nối hai mệnh đề."
+      ],
+      "solvingSteps": [
+        "Bước 1: Đọc và dịch nghĩa cả hai mệnh đề độc lập.",
+        "Bước 2: Phân tích mối quan hệ logic giữa hai mệnh đề (đối lập, lựa chọn, nhân quả hay bổ sung).",
+        "Bước 3: Chọn liên từ tương ứng phù hợp nhất."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn giữa so (kết quả) và but (tương phản)."
+      ],
+      "theory": [
+        "**Câu ghép với các liên từ kết hợp (Coordinating Conjunctions)**:\n- Sử dụng các liên từ **FANBOYS** (phổ biến nhất ở lớp 10 là *and, or, but, so*) để nối hai mệnh đề độc lập. Luôn có dấu phẩy đứng trước liên từ khi nối hai mệnh đề độc lập:\n  * **and**: dùng để bổ sung thông tin tương đồng (ví dụ: *She loves classical music, and she also plays the violin*).\n  * **but**: dùng để diễn tả sự đối lập, tương phản (ví dụ: *He wanted to attend the concert, but he could not buy the tickets*).\n  * **or**: dùng để diễn tả sự lựa chọn, thay thế (ví dụ: *You can practice singing at home, or you can join a music class*).\n  * **so**: dùng để chỉ kết quả, hậu quả của hành động trước đó (ví dụ: *The melody is catchy, so the song becomes a hit*)."
+      ],
+      "subTypes": [
+        {
+          "name": "Liên từ and (bổ sung)",
+          "example": "She plays the guitar, __________ she also composes her own songs.",
+          "note": "Hai vế tương đồng bổ sung ý nghĩa cho nhau, dùng: and."
+        },
+        {
+          "name": "Liên từ but (đối lập)",
+          "example": "I wanted to see the show, __________ I was too busy.",
+          "note": "Vế sau thể hiện sự cản trở tương phản với vế trước, dùng: but."
+        },
+        {
+          "name": "Liên từ or (lựa chọn)",
+          "example": "We can go to the concert, __________ we can watch it live on TV.",
+          "note": "Hai phương án hành động có thể lựa chọn thay thế nhau, dùng: or."
+        },
+        {
+          "name": "Liên từ so (kết quả)",
+          "example": "The weather was bad, __________ the outdoor concert was cancelled.",
+          "note": "Vế sau là kết quả trực tiếp của nguyên nhân thời tiết xấu ở vế trước, dùng: so."
+        }
+      ],
+      "exampleQuestionId": "eng10-q26"
+    },
+    {
+      "id": "eng10-qt11",
+      "topicId": "eng10-t3",
+      "name": "Từ vựng trọng tâm: Music",
+      "slug": "tu-vung-music",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Học và làm chủ các từ vựng về thể loại nhạc, nhạc cụ, các cuộc thi âm nhạc và buổi biểu diễn. Chủ điểm thuộc Unit 3: Music.",
+      "recognitionSigns": [
+        "Câu hỏi chứa các từ khóa về buổi biểu diễn, ban nhạc, ca sĩ, cuộc thi âm nhạc."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định chủ đề âm nhạc của câu.",
+        "Bước 2: Đối chiếu từ loại và ngữ cảnh (khán giả xem biểu diễn -> audience).",
+        "Bước 3: Chọn từ vựng thích hợp."
+      ],
+      "commonMistakes": [
+        "Viết sai danh từ số nhiều phenomenon (số nhiều là phenomena)."
+      ],
+      "theory": [
+        "**Danh sách từ vựng trọng tâm (Unit 3)**:\n\n1. **Phenomenon** (n) /fəˈnɒmɪnən/: hiện tượng (sự việc, người nổi bật lạ thường).\n   * *Example*: The young singer became a global music phenomenon overnight.\n\n2. **Instrument** (n) /ˈɪnstrəmənt/: nhạc cụ (đàn, sáo, trống...).\n   * *Example*: The violin is a very difficult musical instrument to play.\n\n3. **Audience** (n) /ˈɔːdiəns/: khán giả, thính giả (người xem buổi biểu diễn).\n   * *Example*: The audience cheered loudly at the end of the concert.\n\n4. **Talented** (adj) /ˈtæləntɪd/: tài năng, có khiếu.\n   * *Example*: She is a talented pianist who started playing at the age of four.\n\n5. **Contest** (n) /ˈkɒntest/: cuộc thi (tài năng, ca hát).\n   * *Example*: Thousands of people signed up for the singing contest."
+      ],
+      "subTypes": [
+        {
+          "name": "Chọn từ vựng nhạc cụ/nghệ sĩ",
+          "example": "He can play many musical __________ like the drums, guitar, and piano.",
+          "note": "Đàn, trống là các nhạc cụ, từ thích hợp: instruments."
+        }
+      ],
+      "exampleQuestionId": "eng10-q61"
+    },
+    {
+      "id": "eng10-qt16",
+      "topicId": "eng10-t3",
+      "name": "Trọng âm của từ 2 âm tiết",
+      "slug": "trong-am-tu-2-am-tiet",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Nắm vững các quy tắc đánh dấu trọng âm cơ bản cho các từ có 2 âm tiết (danh từ, tính từ và động từ). Chủ điểm thuộc Unit 3: Music.",
+      "recognitionSigns": [
+        "Đề bài yêu cầu tìm từ có trọng âm chính (primary stress) rơi vào vị trí khác các từ còn lại."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ loại của từng từ (danh, động, tính).",
+        "Bước 2: Áp dụng quy tắc trọng âm 2 âm tiết thông dụng và lọc ra các từ ngoại lệ.",
+        "Bước 3: Đối chiếu vị trí trọng âm (âm 1 hay âm 2) để chọn đáp án."
+      ],
+      "commonMistakes": [
+        "Quên quy tắc ngoại lệ của các động từ kết thúc bằng đuôi -er, -en như enter, happen, offer (nhấn âm 1)."
+      ],
+      "theory": [
+        "**Quy tắc trọng âm từ 2 âm tiết cơ bản**:\n1. **Động từ có 2 âm tiết**: Trọng âm thường rơi vào **âm tiết thứ 2**.\n   * Ví dụ: *perform* /pəˈfɔːm/, *decide* /dɪˈsaɪd/, *attract* /əˈtrækt/.\n2. **Danh từ và Tính từ có 2 âm tiết**: Trọng âm thường rơi vào **âm tiết thứ 1**.\n   * Ví dụ: *music* /ˈmjuːzɪk/, *singer* /ˈsɪŋə(r)/, *famous* /ˈfeɪməs/.\n3. **Ngoại lệ**:\n   * Động từ có âm tiết thứ hai chứa nguyên âm ngắn và kết thúc bằng một phụ âm: trọng âm rơi vào **âm tiết thứ 1** (ví dụ: *enter* /ˈentə(r)/, *offer* /ˈɒfə(r)/).\n   * Danh từ có âm tiết thứ nhất chứa nguyên âm ngắn /ə/ hoặc /ɪ/: trọng âm rơi vào **âm tiết thứ 2** (ví dụ: *advice* /ədˈvaɪs/)."
+      ],
+      "subTypes": [
+        {
+          "name": "Tìm từ có trọng âm chính khác biệt",
+          "example": "Choose the word that has a different stress pattern: A. perform, B. decide, C. singer, D. attract",
+          "note": "perform, decide, attract nhấn âm 2; singer nhấn âm 1. Chọn C."
+        }
+      ],
+      "exampleQuestionId": "eng10-q82"
+    },
+    {
+      "id": "eng10-qt5",
+      "topicId": "eng10-t4",
+      "name": "Quá khứ đơn vs. Quá khứ tiếp diễn với When/While",
+      "slug": "qua-khu-don-va-qua-khu-tiep-dien-when-while",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Cách kết hợp hai thì quá khứ trong cùng một câu để diễn đạt các hành động cắt ngang nhau hoặc song song diễn ra trong quá khứ thông qua liên từ \"when\" và \"while\". Đây là điểm ngữ pháp cốt lõi của Unit 4: For a Better Community.",
+      "recognitionSigns": [
+        "Câu chứa hai hành động trong quá khứ có các liên từ nối *when* hoặc *while*.",
+        "Một trong các động từ đã được chia sẵn ở Quá khứ đơn hoặc Quá khứ tiếp diễn, yêu cầu chia động từ còn lại."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định mối quan hệ giữa hai hành động (xen vào nhau hay song song đồng thời).",
+        "Bước 2: Xác định hành động nào kéo dài hơn (chia Quá khứ tiếp diễn: was/were + V-ing) và hành động nào đột ngột cắt ngang (chia Quá khứ đơn: V2/ed).",
+        "Bước 3: Chia động từ chú ý sự phù hợp giữa tobe (was/were) và chủ ngữ số ít/số nhiều."
+      ],
+      "commonMistakes": [
+        "Chia sai dạng động từ tobe (dùng *was* cho chủ ngữ số nhiều hoặc ngược lại).",
+        "Chia nhầm thì giữa hành động xen ngang và hành động đang diễn ra."
+      ],
+      "theory": [
+        "**1. Hành động xen vào nhau (Interrupted Actions)**:\n- Diễn tả một hành động **đang diễn ra** ở quá khứ (chia Quá khứ tiếp diễn) thì một hành động khác **xen ngang** vào (chia Quá khứ đơn).\n- **Cấu trúc liên kết**:\n  * $S + was/were + V-ing + when + S + V_{2/ed}$\n  * $When + S + V_{2/ed}, S + was/were + V-ing$\n  * $S + V_{2/ed} + while + S + was/were + V-ing$\n- Ví dụ: *We were collecting garbage when it started to rain.* (Chúng tôi đang gom rác thì trời bắt đầu mưa - gom rác là đang diễn ra, mưa là xen ngang).",
+        "**2. Hai hành động song song (Parallel Actions)**:\n- Diễn tả hai hành động **xảy ra đồng thời, song song** tại cùng một thời điểm trong quá khứ (cả hai động từ đều chia Quá khứ tiếp diễn, thường đi với *while*).\n- **Cấu trúc**: $S + was/were + V-ing + while + S + was/were + V-ing$\n- Ví dụ: *While I was cleaning the beach, my friends were planting trees.*"
+      ],
+      "subTypes": [
+        {
+          "name": "Hành động đang diễn ra bị cắt ngang (vế when)",
+          "example": "When the volunteers arrived at the nursing home, the elderly residents (have) __________ breakfast.",
+          "note": "Hành động các cụ già đang ăn sáng là hành động đang diễn ra (chia QKTD), hành động tình nguyện viên đến là xen ngang (chia QKĐ). Resident là số nhiều nên chia: were having."
+        },
+        {
+          "name": "Hành động đang diễn ra bị cắt ngang (vế while)",
+          "example": "While we (clean) __________ up the schoolyard, a sudden storm broke out.",
+          "note": "Sau \"While\" diễn tả hành động đang diễn ra trong quá khứ, chia QKTD. Chủ ngữ \"we\" là số nhiều nên chia: were cleaning."
+        },
+        {
+          "name": "Hai hành động song song xảy ra đồng thời",
+          "example": "While my brother was cooking, I (sweep) __________ the floor.",
+          "note": "Hai hành động diễn ra song song cùng lúc trong quá khứ, cả hai cùng chia QKTD. Chia: was sweeping."
+        }
+      ],
+      "exampleQuestionId": "eng10-q31"
+    },
+    {
+      "id": "eng10-qt12",
+      "topicId": "eng10-t4",
+      "name": "Từ vựng trọng tâm: For a Better Community",
+      "slug": "tu-vung-for-a-better-community",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Học và làm chủ các từ vựng về hoạt động tình nguyện, phát triển cộng đồng, quyên góp và các tổ chức phi lợi nhuận. Chủ điểm thuộc Unit 4: For a Better Community.",
+      "recognitionSigns": [
+        "Câu chứa các từ khóa cứu trợ, quyên góp, mái ấm, vùng cao hẻo lánh."
+      ],
+      "solvingSteps": [
+        "Bước 1: Tìm hiểu nghĩa tổng quát của câu (giúp đỡ người nghèo, quyên góp đồ dùng).",
+        "Bước 2: Chọn từ loại thích hợp (động từ, danh từ hoặc tính từ).",
+        "Bước 3: Chọn từ đúng nghĩa."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn vai trò ngữ pháp của volunteer (vừa là danh từ vừa là động từ) và voluntary (tính từ)."
+      ],
+      "theory": [
+        "**Danh sách từ vựng trọng tâm (Unit 4)**:\n\n1. **Volunteer** (n/v) /ˌvɒlənˈtɪə(r)/: tình nguyện viên, làm tình nguyện.\n   * *Example*: She works as a volunteer at the local children's hospital.\n\n2. **Non-profit** (adj) /ˌnɒn ˈprɒfɪt/: phi lợi nhuận.\n   * *Example*: They set up a non-profit organization to help disabled children.\n\n3. **Remote** (adj) /rɪˈməʊt/: xa xôi, hẻo lánh (nơi khó tiếp cận).\n   * *Example*: The group built schools for kids living in remote villages.\n\n4. **Donate** (v) /dəʊˈneɪt/: quyên góp, hiến tặng.\n   * *Example*: People donated food and warm clothes to the flood victims.\n\n5. **Charity** (n) /ˈtʃærəti/: từ thiện (tổ chức quyên góp giúp đỡ người nghèo).\n   * *Example*: Half of the concert proceeds will be given to local charities."
+      ],
+      "subTypes": [
+        {
+          "name": "Chọn từ vựng chủ đề thiện nguyện",
+          "example": "We decided to __________ some books and school things to children in need.",
+          "note": "Quyên góp sách và đồ dùng cho trẻ em khó khăn, động từ thích hợp: donate."
+        }
+      ],
+      "exampleQuestionId": "eng10-q66"
+    },
+    {
+      "id": "eng10-qt17",
+      "topicId": "eng10-t4",
+      "name": "Trọng âm của từ 3 âm tiết",
+      "slug": "trong-am-tu-3-am-tiet",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nắm vững quy tắc xác định trọng âm chính cho các từ có 3 âm tiết dựa trên từ loại và các hậu tố (suffixes) phổ biến trong Unit 4: For a Better Community.",
+      "recognitionSigns": [
+        "Từ trong đề bài gồm 3 âm tiết, thường đi kèm các hậu tố nhận biết."
+      ],
+      "solvingSteps": [
+        "Bước 1: Tìm các hậu tố đặc trưng ở đuôi từ để áp dụng quy tắc nhanh.",
+        "Bước 2: Phát âm thử từ để xác định vị trí nhấn âm (âm tiết 1, 2 hay 3).",
+        "Bước 3: So sánh và chọn phương án."
+      ],
+      "commonMistakes": [
+        "Đánh sai vị trí trọng âm của các từ có hậu tố -ate, -ise (thường nhấn âm 1 chứ không nhấn sát đuôi)."
+      ],
+      "theory": [
+        "**Quy tắc trọng âm từ 3 âm tiết**:\n1. **Quy tắc đuôi (Hậu tố)**:\n   * Các từ tận cùng là đuôi `-tion`, `-sion`, `-ic`, `-ity`, `-ian`: trọng âm rơi vào **âm tiết ngay trước nó**.\n     * Ví dụ: *donation* /dəʊˈneɪʃn/ (nhấn âm 2), *artistic* /ɑːˈtɪstɪk/ (nhấn âm 2).\n   * Các từ tận cùng là đuôi `-y`, `-ce`, `-ate`, `-tude`: trọng âm thường rơi vào **âm tiết thứ 3 từ cuối lên (tức âm tiết thứ nhất của từ 3 âm tiết)**.\n     * Ví dụ: *charity* /ˈtʃærəti/ (nhấn âm 1), *organise* /ˈɔːɡənaɪz/ (nhấn âm 1).\n2. **Động từ 3 âm tiết**: Nếu âm tiết thứ 3 chứa nguyên âm ngắn hoặc âm /ə/, trọng âm rơi vào **âm tiết thứ 2**.\n   * Ví dụ: *encounter* /ɪnˈkaʊntə(r)/ (nhấn âm 2)."
+      ],
+      "subTypes": [
+        {
+          "name": "Trọng âm từ có hậu tố",
+          "example": "Choose the word with different stress: A. charity, B. organise, C. donation, D. benefit",
+          "note": "charity, organise, benefit nhấn âm 1; donation nhấn âm 2. Chọn C."
+        }
+      ],
+      "exampleQuestionId": "eng10-q85"
+    },
+    {
+      "id": "eng10-qt6",
+      "topicId": "eng10-t5",
+      "name": "Thì Hiện tại hoàn thành (Present Perfect)",
+      "slug": "thi-hien-tai-hoan-thanh",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nắm vững cấu trúc, cách dùng thì Hiện tại hoàn thành để diễn tả hành động bắt đầu trong quá khứ kéo dài đến hiện tại, hoặc một kinh nghiệm, trải nghiệm thực tế. Đây là phần ngữ pháp trọng tâm của Unit 5: Inventions.",
+      "recognitionSigns": [
+        "Câu chứa các trạng từ thời gian đặc trưng: *since, for, already, yet, ever, never, just, recently, so far*."
+      ],
+      "solvingSteps": [
+        "Bước 1: Tìm các trạng từ chỉ thời gian báo hiệu thì Hiện tại hoàn thành.",
+        "Bước 2: Phân tích số ít hay số nhiều của chủ ngữ để chọn trợ động từ tương ứng: \"has\" (số ít) hoặc \"have\" (số nhiều, I, we, you, they).",
+        "Bước 3: Chuyển đổi động từ chính sang dạng phân từ hai cột 3 (V3/ed)."
+      ],
+      "commonMistakes": [
+        "Chia sai động từ cột 3 của các động từ bất quy tắc.",
+        "Dùng nhầm \"has\" cho chủ ngữ số nhiều hoặc ngược lại."
+      ],
+      "theory": [
+        "**Thì Hiện tại hoàn thành (Present Perfect)**:\n- **Công thức**: \n  * Khẳng định: $S + has/have + V_{3/ed}$\n  * Phủ định: $S + has/have + not + V_{3/ed}$\n  * Nghi vấn: $Have/Has + S + V_{3/ed}?$\n- **Cách dùng chính**:\n  * Diễn tả hành động bắt đầu trong quá khứ kéo dài đến hiện tại và có thể tiếp diễn trong tương lai (thường đi với *since* + mốc thời gian, *for* + khoảng thời gian).\n  * Diễn tả hành động đã hoàn thành tính đến thời điểm hiện tại nhưng không nói rõ thời gian (diễn tả kinh nghiệm, trải nghiệm, đi với *ever, never, already, yet, before*).\n  * Diễn tả hành động vừa mới xảy ra (đi với *just, recently*)."
+      ],
+      "subTypes": [
+        {
+          "name": "Chia động từ ở Hiện tại hoàn thành với since/for",
+          "example": "Scientists (develop) __________ many useful inventions since the turn of the century.",
+          "note": "Có dấu hiệu \"since + mốc thời gian\" nên chia Hiện tại hoàn thành. Chủ ngữ \"Scientists\" số nhiều nên dùng \"have\": have developed."
+        },
+        {
+          "name": "Trải nghiệm với ever/never",
+          "example": "Have you ever (use) __________ a 3D printer before?",
+          "note": "Cấu trúc câu hỏi trải nghiệm với \"ever\", chia động từ phân từ hai: used."
+        },
+        {
+          "name": "Câu phủ định với yet",
+          "example": "He has not (finish) __________ his science essay yet.",
+          "note": "Có trạng từ \"yet\" đứng cuối câu phủ định của thì Hiện tại hoàn thành. Chia: finished."
+        }
+      ],
+      "exampleQuestionId": "eng10-q41"
+    },
+    {
+      "id": "eng10-qt8",
+      "topicId": "eng10-t5",
+      "name": "Danh động từ & Động từ nguyên mẫu (Gerunds & Infinitives)",
+      "slug": "danh-dong-tu-va-dong-tu-nguyen-mau-unit5",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Học cách sử dụng Danh động từ (V-ing) làm tân ngữ của một số động từ đặc biệt và giới từ, hoặc dùng cụm To-V và V-ing để chỉ mục đích, chức năng sử dụng của các phát minh. Chủ điểm xuất hiện ở Unit 5: Inventions.",
+      "recognitionSigns": [
+        "Câu có động từ chính là các từ yêu cầu theo sau là V-ing như *avoid, enjoy, spend, practice* hoặc có chứa giới từ.",
+        "Câu hỏi kiểm tra cấu trúc chỉ mục đích của các phát minh công nghệ (*used for V-ing* hoặc *used to V*)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định xem vị trí cần chia động từ đứng sau động từ chỉ hoạt động, sau giới từ, hay đứng trong cấu trúc chỉ công dụng (*be used for*).",
+        "Bước 2: Lựa chọn dạng động từ thích hợp: V-ing sau giới từ hoặc sau động từ đặc trưng; To-V nếu chỉ mục đích của người thực hiện.",
+        "Bước 3: Chọn phương án phù hợp."
+      ],
+      "commonMistakes": [
+        "Lẫn lộn cấu trúc giữa *be used to + V-bare* (được dùng để làm gì) và *be used for + V-ing* (được dùng cho việc gì).",
+        "Nhầm lẫn cấu trúc chỉ mục đích của người (dùng To-V) thành V-ing."
+      ],
+      "theory": [
+        "**1. Danh động từ (Gerunds / V-ing) làm tân ngữ**:\n- Theo sau các động từ đặc biệt như: *avoid, enjoy, mind, dislike, practice, spend (time), postpone, finish, recommend*...\n- Theo sau các giới từ: *about, of, in, for, on, at*...\n- Ví dụ: *We should avoid spending too much time on phones.*",
+        "**2. Cấu trúc chỉ mục đích và chức năng (Purpose and Function)**:\n- **Chỉ mục đích của người (To-V)**: Sử dụng để diễn tả lý do ai đó làm việc gì.\n  * Cấu trúc: $S + V + to-V-bare$\n  * Ví dụ: *I use my laptop to study online.* (Tôi dùng laptop để học trực tuyến).\n- **Chỉ chức năng của vật (For + V-ing hoặc To-V)**: Sử dụng để mô tả công dụng của một công cụ, phát minh.\n  * Cấu trúc: $S + be + used + for + V-ing$ hoặc $S + be + used + to + V-bare$\n  * Ví dụ: *Robotic vacuum is used for cleaning floors* hoặc *is used to clean floors*."
+      ],
+      "subTypes": [
+        {
+          "name": "Danh động từ làm tân ngữ sau động từ chỉ sở thích/phòng tránh",
+          "example": "We should avoid (use) __________ single-use plastic bags to protect the environment.",
+          "note": "Sau động từ \"avoid\" là V-ing, chia: using."
+        },
+        {
+          "name": "Danh động từ chỉ mục đích sau giới từ",
+          "example": "This smart device is used for (track) __________ daily calorie intake.",
+          "note": "Sau giới từ \"for\" chỉ mục đích sử dụng của đồ vật, ta dùng động từ dạng V-ing. Chia: tracking."
+        },
+        {
+          "name": "Động từ nguyên mẫu chỉ mục đích của người",
+          "example": "I bought this e-reader (read) __________ books anywhere.",
+          "note": "Người nói mua máy đọc sách nhằm mục đích đọc sách (chỉ mục đích của người), dùng: to read."
+        }
+      ],
+      "exampleQuestionId": "eng10-q43"
+    },
+    {
+      "id": "eng10-qt13",
+      "topicId": "eng10-t5",
+      "name": "Từ vựng trọng tâm: Inventions",
+      "slug": "tu-vung-inventions",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Học và làm chủ các từ vựng về phát minh, thiết bị thông minh, công nghệ số và trí tuệ nhân tạo. Chủ điểm thuộc Unit 5: Inventions.",
+      "recognitionSigns": [
+        "Câu chứa các từ khóa về thiết bị phần cứng, phần mềm, robot, sáng chế khoa học."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định ngữ cảnh phát minh hoặc công nghệ của câu.",
+        "Bước 2: Phân tích từ loại và ý nghĩa từ cần điền.",
+        "Bước 3: Chọn từ vựng đúng."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn giữa invention (sự phát minh - vật mới hoàn toàn) và discovery (sự khám phá - vật đã có sẵn trong tự nhiên)."
+      ],
+      "theory": [
+        "**Danh sách từ vựng trọng tâm (Unit 5)**:\n\n1. **Invention** (n) /in'venʃn/: phát minh, sáng chế.\n   * *Example*: The internet is considered one of the greatest inventions of all time.\n\n2. **Device** (n) /dɪˈvaɪs/: thiết bị, dụng cụ công nghệ.\n   * *Example*: Smartphones are useful devices that help us stay connected.\n\n3. **Processor** (n) /ˈprəʊsesə(r)/: bộ vi xử lý (trong máy tính/điện thoại).\n   * *Example*: The computer runs very fast because it has a powerful processor.\n\n4. **Robotic** (adj) /rəʊˈbɒtɪk/: thuộc về robot (tự động hóa).\n   * *Example*: They bought a robotic vacuum to clean the house.\n\n5. **AI (Artificial Intelligence)** (n.phr) /ˌɑːtɪfɪʃl ɪnˈtelɪdʒəns/: trí tuệ nhân tạo.\n   * *Example*: AI is playing an increasingly important role in our daily lives."
+      ],
+      "subTypes": [
+        {
+          "name": "Chọn từ vựng chủ đề công nghệ",
+          "example": "A smartphone is a pocket-sized __________ that has many smart features.",
+          "note": "Điện thoại thông minh là một thiết bị công nghệ, từ thích hợp: device."
+        }
+      ],
+      "exampleQuestionId": "eng10-q71"
+    },
+    {
+      "id": "eng10-qt18",
+      "topicId": "eng10-t5",
+      "name": "Trọng âm của danh từ ghép và cụm danh từ",
+      "slug": "trong-am-danh-tu-ghep-cum-danh-tu",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Quy tắc xác định trọng âm cho các từ ghép (compound nouns) và cụm danh từ (noun phrases) liên quan đến chủ đề công nghệ trong Unit 5: Inventions.",
+      "recognitionSigns": [
+        "Đề bài chứa các danh từ ghép công nghệ phổ biến hoặc cụm danh từ."
+      ],
+      "solvingSteps": [
+        "Bước 1: Phân biệt từ đó là danh từ ghép (viết liền/nối) hay cụm danh từ (viết tách).",
+        "Bước 2: Xác định vị trí nhấn âm chính (âm đầu tiên cho danh từ ghép, âm thứ hai cho cụm danh từ).",
+        "Bước 3: So sánh vị trí trọng âm."
+      ],
+      "commonMistakes": [
+        "Nhấn âm tiết thứ 2 của danh từ ghép (ví dụ đọc smartPHONE thay vì SMARTphone)."
+      ],
+      "theory": [
+        "**Trọng âm của từ ghép và cụm từ**:\n1. **Danh từ ghép (Compound Nouns)**: Thường được tạo thành bởi `Danh từ + Danh từ` hoặc `Tính từ + Danh từ` viết liền hoặc có dấu nối. Trọng âm chính rơi vào **danh từ thứ nhất (âm tiết đầu tiên)**.\n   * Ví dụ: *smartphone* /ˈsmɑːt.fəʊn/ (nhấn âm 1), *laptop* /ˈlæp.tɒp/ (nhấn âm 1), *greenhouse* /ˈɡriːn.haʊs/ (nhấn âm 1).\n2. **Cụm danh từ (Noun Phrases)**: Thường gồm `Tính từ + Danh từ` chỉ một ý nghĩa mô tả chung (không tạo thành một từ ghép cố định). Trọng âm rơi vào **từ thứ hai (danh từ chính)**.\n   * Ví dụ: *smart device* /ˌsmɑːt dɪˈvaɪs/ (nhấn chính ở âm tiết 2 của device), *solar panel* /ˌsəʊ.lə ˈpæn.əl/."
+      ],
+      "subTypes": [
+        {
+          "name": "Trọng âm danh từ ghép vs cụm danh từ",
+          "example": "Identify the word with a different stress pattern: A. laptop, B. smartphone, C. greenhouse, D. white house (cụm danh từ chỉ ngôi nhà sơn màu trắng)",
+          "note": "A, B, C là danh từ ghép nhấn trọng âm 1; D là cụm danh từ nhấn âm 2. Chọn D."
+        }
+      ],
+      "exampleQuestionId": "eng10-q88"
+    },
+    {
+      "id": "eng10-qt19",
+      "topicId": "eng10-t6",
+      "name": "Câu bị động với động từ khuyết thiếu",
+      "slug": "passive-voice-with-modals",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân biệt chủ động và bị động với can, could, may, might, must và should trong ngữ cảnh bình đẳng giới.",
+      "recognitionSigns": [
+        "Trong câu có modal verb và chỗ trống chứa động từ chính.",
+        "Chủ ngữ thường là người/vật nhận hành động; có thể xuất hiện by + tác nhân."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định chủ ngữ thực hiện hay nhận hành động.",
+        "Bước 2: Giữ modal verb, thêm be nếu câu mang nghĩa bị động.",
+        "Bước 3: Đổi động từ chính sang V3/ed và kiểm tra nghĩa toàn câu."
+      ],
+      "commonMistakes": [
+        "Viết modal + V3 mà thiếu be.",
+        "Dùng bị động chỉ vì chủ ngữ là vật, dù vật đó có thể thực hiện hành động."
+      ],
+      "theory": [
+        "**Chủ động**: $S + modal + V + O$. **Bị động**: $S + modal + be + V_{3/ed}$. Động từ khuyết thiếu không đổi theo chủ ngữ.",
+        "Chỉ dùng bị động khi chủ ngữ nhận hành động. Nếu chủ ngữ tự thực hiện hành động, giữ $modal + V$."
+      ],
+      "subTypes": [
+        {
+          "name": "Chọn chủ động hoặc bị động",
+          "example": "Women can (lead) organisations.",
+          "note": "Women tự thực hiện hành động: can lead."
+        },
+        {
+          "name": "Bị động với modal",
+          "example": "Equal opportunities should (provide) to everyone.",
+          "note": "Opportunities nhận hành động: should be provided."
+        },
+        {
+          "name": "Phủ định và modal hoàn thành",
+          "example": "The rule must not (apply) unfairly.",
+          "note": "must not be applied."
+        }
+      ],
+      "exampleQuestionId": "eng10-q229"
+    },
+    {
+      "id": "eng10-qt20",
+      "topicId": "eng10-t6",
+      "name": "Từ vựng trọng tâm: Gender Equality",
+      "slug": "vocabulary-gender-equality",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Từ vựng về cơ hội bình đẳng, định kiến giới, việc làm, giáo dục và vai trò lãnh đạo.",
+      "recognitionSigns": [
+        "Bốn phương án gần nghĩa hoặc cùng họ từ.",
+        "Cần kết hợp nghĩa, từ loại và collocation."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ loại cần điền.",
+        "Bước 2: Đọc các từ xung quanh để nhận diện collocation.",
+        "Bước 3: Thay phương án vào câu và loại lựa chọn sai sắc thái."
+      ],
+      "commonMistakes": [
+        "Chọn đúng nghĩa tiếng Việt nhưng sai từ loại.",
+        "Nhầm equality với equity hoặc equal."
+      ],
+      "theory": [
+        "Nhóm từ lõi: *equality, equal, gender, discrimination, opportunity, qualified, pursue, leadership, income, domestic violence*.",
+        "Học theo collocation và word family: *equal opportunities, gender discrimination, pursue a career, be qualified for, leadership position*."
+      ],
+      "subTypes": [
+        {
+          "name": "Chọn từ theo ngữ cảnh",
+          "example": "Everyone deserves equal ___.",
+          "note": "opportunities."
+        },
+        {
+          "name": "Collocation",
+          "example": "pursue a ___.",
+          "note": "career."
+        },
+        {
+          "name": "Word family",
+          "example": "gender ___.",
+          "note": "equality."
+        }
+      ],
+      "exampleQuestionId": "eng10-q241"
+    },
+    {
+      "id": "eng10-qt21",
+      "topicId": "eng10-t6",
+      "name": "Trọng âm tính từ và động từ ba âm tiết",
+      "slug": "stress-three-syllable-adjectives-verbs",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Nhận diện trọng âm chính của các tính từ và động từ ba âm tiết trong Unit 6.",
+      "recognitionSigns": [
+        "Đề yêu cầu chọn từ có primary stress khác.",
+        "Các phương án chủ yếu là tính từ hoặc động từ ba âm tiết."
+      ],
+      "solvingSteps": [
+        "Bước 1: Tách mỗi từ thành các âm tiết.",
+        "Bước 2: Đánh dấu âm tiết mang trọng âm chính.",
+        "Bước 3: Nhóm ba từ cùng mẫu và chọn từ còn lại."
+      ],
+      "commonMistakes": [
+        "Đếm chữ cái thay vì âm tiết.",
+        "Suy đoán hoàn toàn từ từ loại mà không kiểm tra cách phát âm."
+      ],
+      "theory": [
+        "Tính từ và động từ ba âm tiết thường nhấn âm đầu hoặc âm thứ hai; ví dụ *medical, opposite, organise, benefit* nhấn âm đầu; *expensive, fantastic, develop, encourage* nhấn âm hai.",
+        "Quy tắc chỉ là xu hướng. Cần đọc thành tiếng, nhận diện hậu tố và ghi nhớ ngoại lệ."
+      ],
+      "subTypes": [
+        {
+          "name": "Tìm từ có trọng âm khác",
+          "example": "medical – opposite – expensive – organise",
+          "note": "expensive nhấn âm hai."
+        }
+      ],
+      "exampleQuestionId": "eng10-q253"
+    },
+    {
+      "id": "eng10-qt22",
+      "topicId": "eng10-t7",
+      "name": "So sánh hơn và so sánh nhất của tính từ",
+      "slug": "comparative-superlative-adjectives",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Làm chủ so sánh hơn, so sánh nhất, less, as...as và cấu trúc one of the trong ngữ cảnh hợp tác quốc tế.",
+      "recognitionSigns": [
+        "Có than, in/of + phạm vi, one of the hoặc as...as.",
+        "Các phương án khác nhau ở more/most, -er/-est hoặc dạng bất quy tắc."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định so sánh hai đối tượng hay một đối tượng trong cả nhóm.",
+        "Bước 2: Xác định tính từ ngắn, dài hoặc bất quy tắc.",
+        "Bước 3: Lắp cấu trúc và kiểm tra than/the/danh từ số nhiều."
+      ],
+      "commonMistakes": [
+        "Dùng đồng thời more và đuôi -er.",
+        "Quên the hoặc quên danh từ số nhiều sau one of the."
+      ],
+      "theory": [
+        "**Tính từ ngắn**: $adj-er + than$; $the + adj-est$. **Tính từ dài**: $more/less + adj + than$; $the most/least + adj$.",
+        "Bất quy tắc: *good → better → best; bad → worse → worst; far → farther/further → farthest/furthest*.",
+        "Cấu trúc quan trọng: *as + adj + as; not as/so + adj + as; one of the + superlative + plural noun*."
+      ],
+      "subTypes": [
+        {
+          "name": "So sánh hơn",
+          "example": "Trade is (easy) easier than before.",
+          "note": "Có than → comparative."
+        },
+        {
+          "name": "So sánh nhất",
+          "example": "the (large) largest organisation",
+          "note": "Có phạm vi so sánh từ ba đối tượng."
+        },
+        {
+          "name": "Biến đổi tương đương",
+          "example": "No organisation is larger than X.",
+          "note": "X is the largest organisation."
+        }
+      ],
+      "exampleQuestionId": "eng10-q265"
+    },
+    {
+      "id": "eng10-qt23",
+      "topicId": "eng10-t7",
+      "name": "Từ vựng trọng tâm: International Organisations",
+      "slug": "vocabulary-international-organisations",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Từ vựng về thành viên, cam kết, đầu tư, thúc đẩy, hỗ trợ và hoạt động của các tổ chức quốc tế.",
+      "recognitionSigns": [
+        "Câu nói về chức năng hoặc hoạt động của một tổ chức.",
+        "Cần xét giới từ, từ loại và sắc thái của từ."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ loại.",
+        "Bước 2: Tìm giới từ hoặc danh từ đi kèm để nhận diện collocation.",
+        "Bước 3: Kiểm tra nghĩa của cả câu."
+      ],
+      "commonMistakes": [
+        "Nhầm economic với economical.",
+        "Dùng commit to + V nguyên mẫu thay vì V-ing."
+      ],
+      "theory": [
+        "Từ lõi: *member, organisation, enter, promote, aim, commit, invest, support, peacekeeping, disadvantaged*.",
+        "Collocation: *member of, aim to, commit to doing / be committed to doing, invest in, provide somebody with, promote growth*."
+      ],
+      "subTypes": [
+        {
+          "name": "Chọn từ theo ngữ cảnh",
+          "example": "The programme aims to support children.",
+          "note": "aim to + V."
+        },
+        {
+          "name": "Collocation và word family",
+          "example": "economic growth",
+          "note": "economy/economic/economically."
+        }
+      ],
+      "exampleQuestionId": "eng10-q277"
+    },
+    {
+      "id": "eng10-qt24",
+      "topicId": "eng10-t7",
+      "name": "Trọng âm từ có hơn ba âm tiết",
+      "slug": "stress-words-more-than-three-syllables",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Nhận diện trọng âm chính của từ bốn âm tiết trở lên thường gặp trong Unit 7.",
+      "recognitionSigns": [
+        "Các phương án có từ bốn âm tiết trở lên.",
+        "Đề hỏi primary stress pattern."
+      ],
+      "solvingSteps": [
+        "Bước 1: Tách âm tiết.",
+        "Bước 2: Nhận diện hậu tố ảnh hưởng trọng âm.",
+        "Bước 3: Đánh dấu trọng âm và chọn từ khác nhóm."
+      ],
+      "commonMistakes": [
+        "Đếm chữ thay vì âm.",
+        "Cho rằng mọi từ có cùng hậu tố đều có cùng số thứ tự âm nhấn tính từ đầu."
+      ],
+      "theory": [
+        "Các hậu tố như *-tion, -sion* thường khiến trọng âm rơi ngay trước hậu tố: *organisation, education*.",
+        "Các hậu tố *-ity* thường khiến trọng âm rơi vào âm ngay trước hậu tố: *responsibility, opportunity*.",
+        "Cần dựa vào phát âm thực tế; không xác định trọng âm bằng số chữ cái."
+      ],
+      "subTypes": [
+        {
+          "name": "Tìm từ có trọng âm khác",
+          "example": "international – organisation – responsibility – disadvantaged",
+          "note": "Đánh dấu âm chính rồi nhóm mẫu."
+        }
+      ],
+      "exampleQuestionId": "eng10-q289"
+    },
+    {
+      "id": "eng10-qt25",
+      "topicId": "eng10-t8",
+      "name": "Mệnh đề quan hệ xác định và không xác định",
+      "slug": "defining-non-defining-relative-clauses",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Sử dụng who, whom, which, that và whose; phân biệt thông tin thiết yếu với thông tin bổ sung và sử dụng dấu phẩy đúng.",
+      "recognitionSigns": [
+        "Hai mệnh đề cùng nói về một danh từ.",
+        "Chỗ trống đứng sau danh từ và trước một mệnh đề thiếu chủ ngữ, tân ngữ hoặc sở hữu."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định danh từ đứng trước chỉ người hay vật.",
+        "Bước 2: Xác định vai trò còn thiếu trong mệnh đề sau.",
+        "Bước 3: Kiểm tra đây là mệnh đề xác định hay không xác định và xử lý dấu phẩy/that."
+      ],
+      "commonMistakes": [
+        "Dùng that sau dấu phẩy.",
+        "Dùng which cho người hoặc bỏ đại từ đang làm chủ ngữ."
+      ],
+      "theory": [
+        "*Who/whom* chỉ người; *which* chỉ vật; *whose + noun* chỉ sở hữu; *that* có thể thay who/which trong mệnh đề xác định.",
+        "Mệnh đề không xác định được ngăn bằng dấu phẩy, không dùng *that* và không lược bỏ đại từ quan hệ.",
+        "Trong mệnh đề xác định, đại từ quan hệ làm tân ngữ có thể được lược bỏ."
+      ],
+      "subTypes": [
+        {
+          "name": "Chọn đại từ quan hệ",
+          "example": "The teacher who helps me...",
+          "note": "Teacher là người và who làm chủ ngữ."
+        },
+        {
+          "name": "Dấu phẩy",
+          "example": "This app, which is free, ...",
+          "note": "Thông tin bổ sung."
+        }
+      ],
+      "exampleQuestionId": "eng10-q301"
+    },
+    {
+      "id": "eng10-qt26",
+      "topicId": "eng10-t8",
+      "name": "Từ vựng trọng tâm: New Ways to Learn",
+      "slug": "vocabulary-new-ways-to-learn",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Từ vựng về học trực tuyến, học kết hợp, công cụ số, tương tác, phản hồi và sự xao nhãng.",
+      "recognitionSigns": [
+        "Ngữ cảnh lớp học, thiết bị hoặc nền tảng trực tuyến.",
+        "Các phương án gần nghĩa nhưng khác collocation/từ loại."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ loại.",
+        "Bước 2: Tìm từ khóa mô tả chức năng hoặc phương thức học.",
+        "Bước 3: Kiểm tra collocation và nghĩa toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhầm online learning với blended learning.",
+        "Nhầm distract và distraction."
+      ],
+      "theory": [
+        "Từ lõi: *blended learning, online learning, face-to-face, digital, distraction, interact, exchange, feedback, learning platform, flow chart*.",
+        "Học theo collocation: *give feedback, exchange ideas, access materials, interact with, stay focused, learning resources*."
+      ],
+      "subTypes": [
+        {
+          "name": "Định nghĩa",
+          "example": "A mix of online and classroom study",
+          "note": "blended learning."
+        },
+        {
+          "name": "Collocation/word family",
+          "example": "digital resources",
+          "note": "digital là tính từ."
+        }
+      ],
+      "exampleQuestionId": "eng10-q313"
+    },
+    {
+      "id": "eng10-qt27",
+      "topicId": "eng10-t8",
+      "name": "Trọng âm câu: content words và structure words",
+      "slug": "sentence-stress-content-structure-words",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Xác định những từ thường được nhấn trong câu trung tính và hiểu trường hợp nhấn tương phản.",
+      "recognitionSigns": [
+        "Đề hỏi stressed/content words trong một câu.",
+        "Cần xét câu trung tính hay ngữ cảnh tương phản."
+      ],
+      "solvingSteps": [
+        "Bước 1: Gạch chân từ mang nội dung.",
+        "Bước 2: Loại từ chức năng thường không nhấn.",
+        "Bước 3: Nếu có đối chiếu/not/correction, xác định từ được nhấn tương phản."
+      ],
+      "commonMistakes": [
+        "Nhấn mọi từ như nhau.",
+        "Cho rằng đại từ/trợ động từ không bao giờ có thể được nhấn."
+      ],
+      "theory": [
+        "Content words thường được nhấn: danh từ, động từ chính, tính từ, trạng từ, từ để hỏi và từ phủ định.",
+        "Structure words thường không nhấn: mạo từ, đại từ, giới từ ngắn, liên từ, trợ động từ và to be; chúng có thể được nhấn khi tương phản/sửa thông tin."
+      ],
+      "subTypes": [
+        {
+          "name": "Chọn nhóm từ được nhấn",
+          "example": "Students use digital tools.",
+          "note": "STUDENTS, USE, DIGITAL, TOOLS."
+        },
+        {
+          "name": "Nhấn tương phản",
+          "example": "I said MONDAY, not Tuesday.",
+          "note": "Monday được nhấn để sửa thông tin."
+        }
+      ],
+      "exampleQuestionId": "eng10-q325"
+    },
+    {
+      "id": "eng10-qt28",
+      "topicId": "eng10-t9",
+      "name": "Câu tường thuật: câu kể và câu hỏi",
+      "slug": "reported-speech-statements-questions",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyển câu kể, câu hỏi Yes/No và Wh-question sang lời nói gián tiếp; đổi thì, đại từ và từ chỉ thời gian phù hợp.",
+      "recognitionSigns": [
+        "Có lời nói trực tiếp trong dấu ngoặc kép hoặc yêu cầu chọn dạng gián tiếp.",
+        "Phải xác định loại câu trước khi chọn reporting verb và trật tự từ."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định câu kể, Yes/No hay Wh-question.",
+        "Bước 2: Chọn said/asked/suggested và từ nối that/if/wh-word.",
+        "Bước 3: Đổi đại từ, thì, modal và trạng từ thời gian; đưa câu hỏi về trật tự khẳng định."
+      ],
+      "commonMistakes": [
+        "Giữ đảo ngữ trong reported question.",
+        "Dùng said somebody thay vì told somebody hoặc asked somebody."
+      ],
+      "theory": [
+        "Câu kể: $said/explained + (that) + clause$. Yes/No question: $asked + if/whether + S + V$. Wh-question: $asked + wh-word + S + V$.",
+        "Lùi thì thường gặp: present → past; present perfect/past simple → past perfect; will → would; can → could.",
+        "Đổi thời gian khi cần: today → that day; tomorrow → the following day; yesterday → the previous day; next week → the following week; here → there."
+      ],
+      "subTypes": [
+        {
+          "name": "Câu kể",
+          "example": "“Coal causes pollution,” she said.",
+          "note": "She said that coal caused/causes pollution."
+        },
+        {
+          "name": "Yes/No question",
+          "example": "“Is it endangered?”",
+          "note": "He asked if it was endangered."
+        },
+        {
+          "name": "Wh-question",
+          "example": "“Where can I find it?”",
+          "note": "She asked where she could find it."
+        }
+      ],
+      "exampleQuestionId": "eng10-q337"
+    },
+    {
+      "id": "eng10-qt29",
+      "topicId": "eng10-t9",
+      "name": "Từ vựng trọng tâm: Protecting the Environment",
+      "slug": "vocabulary-protecting-environment",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Từ vựng về đa dạng sinh học, môi trường sống, phá rừng, ô nhiễm, hệ sinh thái và loài nguy cấp.",
+      "recognitionSigns": [
+        "Ngữ cảnh các loài, môi trường sống hoặc tác động của con người.",
+        "Cần xét cả từ loại và giới từ đi kèm."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ loại.",
+        "Bước 2: Tìm định nghĩa/collocation trong câu.",
+        "Bước 3: Loại từ cùng chủ đề nhưng sai quan hệ nghĩa."
+      ],
+      "commonMistakes": [
+        "Nhầm environment với environmental.",
+        "Nhầm endangered với dangerous."
+      ],
+      "theory": [
+        "Từ lõi: *biodiversity, habitat, ecosystem, deforestation, endangered, pollution, issue, impact, balance, wildlife*.",
+        "Collocation: *have an impact on, deal with an issue, natural habitat, endangered species, ecosystem balance, air pollution*."
+      ],
+      "subTypes": [
+        {
+          "name": "Định nghĩa",
+          "example": "variety of plants and animals",
+          "note": "biodiversity."
+        },
+        {
+          "name": "Collocation/word family",
+          "example": "environmental protection",
+          "note": "environmental là tính từ."
+        }
+      ],
+      "exampleQuestionId": "eng10-q349"
+    },
+    {
+      "id": "eng10-qt30",
+      "topicId": "eng10-t9",
+      "name": "Nhịp điệu tự nhiên trong câu",
+      "slug": "natural-sentence-rhythm",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Xác định từ mang trọng âm, nhịp giữa các trọng âm và cách đọc từ chức năng ở dạng yếu.",
+      "recognitionSigns": [
+        "Đề hỏi stressed words, beat, rhythm hoặc weak forms.",
+        "Cần xét từ loại và ngữ cảnh nhấn mạnh."
+      ],
+      "solvingSteps": [
+        "Bước 1: Gạch chân content words và phủ định.",
+        "Bước 2: Xác định các từ chức năng ở giữa.",
+        "Bước 3: Giữ khoảng nhịp chính tương đối đều bằng cách đọc nhanh phần không nhấn."
+      ],
+      "commonMistakes": [
+        "Đọc từng từ cách đều nhau.",
+        "Nhầm word stress với sentence rhythm."
+      ],
+      "theory": [
+        "Nhịp tiếng Anh thường dựa trên các stressed syllables xuất hiện tương đối đều; các âm tiết không nhấn được rút ngắn để vừa khoảng nhịp.",
+        "Content words và từ phủ định thường nhấn; structure words thường yếu. Trọng âm có thể thay đổi theo thông tin mới hoặc tương phản."
+      ],
+      "subTypes": [
+        {
+          "name": "Xác định beat words",
+          "example": "DON’T PICK FLOWERS in the PARK.",
+          "note": "Các từ viết hoa tạo nhịp chính."
+        },
+        {
+          "name": "Dạng yếu",
+          "example": "to /tə/, and /ən/",
+          "note": "Từ chức năng được rút gọn trong lời nói tự nhiên."
+        }
+      ],
+      "exampleQuestionId": "eng10-q361"
+    },
+    {
+      "id": "eng10-skill-qt-u1-reading",
+      "topicId": "eng10-t1",
+      "name": "Đọc hiểu tích hợp – Family Life",
+      "slug": "reading-u1",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc văn bản theo chiến lược, tìm ý chính, chi tiết, nghĩa từ, từ quy chiếu và suy luận có bằng chứng.",
+      "recognitionSigns": [
+        "Có một văn bản chung và câu hỏi yêu cầu bằng chứng từ ngữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước.",
+        "Quét đoạn chứa bằng chứng.",
+        "Loại phương án sai hoặc vượt quá thông tin."
+      ],
+      "commonMistakes": [
+        "Chọn phương án có từ giống bài nhưng sai quan hệ.",
+        "Suy luận bằng kiến thức cá nhân thay vì văn bản."
+      ],
+      "theory": [
+        "Đọc tiêu đề và câu đầu/cuối để dự đoán ý chính; không dịch từng từ.",
+        "Với câu chi tiết và suy luận, gạch bằng chứng trong bài rồi mới đối chiếu phương án.",
+        "Đoán từ theo ngữ cảnh bằng từ loại, quan hệ nguyên nhân–kết quả và ví dụ xung quanh."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u1-reading-gist",
+          "name": "Ý chính",
+          "example": "What is the passage mainly about?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u1-reading-detail",
+          "name": "Chi tiết",
+          "example": "According to the passage...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u1-reading-vocabulary",
+          "name": "Từ trong ngữ cảnh",
+          "example": "The word ... is closest in meaning to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u1-reading-reference",
+          "name": "Từ quy chiếu",
+          "example": "The word it refers to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u1-reading-inference",
+          "name": "Suy luận",
+          "example": "What can be inferred?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u1-r1"
+    },
+    {
+      "id": "eng10-skill-qt-u1-listening",
+      "topicId": "eng10-listening-extension",
+      "name": "Nghe hiểu – Family Life",
+      "slug": "listening-u1",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tự chọn: nghe đoạn nói tự nhiên để xác định mục đích, ý chính, chi tiết và hàm ý; không thuộc cấu trúc đề giữa kỳ/cuối kỳ.",
+      "recognitionSigns": [
+        "Có nút phát bài nghe và transcript được ẩn trước khi nộp."
+      ],
+      "solvingSteps": [
+        "Dự đoán loại thông tin cần nghe.",
+        "Nghe toàn ý.",
+        "Nghe lại để kiểm tra chi tiết."
+      ],
+      "commonMistakes": [
+        "Chọn từ nghe thấy đầu tiên.",
+        "Cố ghi lại toàn bộ transcript."
+      ],
+      "theory": [
+        "Đọc câu hỏi trước khi phát audio.",
+        "Lượt đầu nghe ý chính; lượt sau ghi từ khóa và quan hệ giữa các ý.",
+        "Không dừng lại vì một từ chưa biết."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u1-listening-gist",
+          "name": "Ý chính/mục đích",
+          "example": "What are the speakers mainly discussing?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u1-listening-detail",
+          "name": "Chi tiết",
+          "example": "What will the speaker do?",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u1-listening-inference",
+          "name": "Hàm ý/thái độ",
+          "example": "What does the speaker imply?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u1-l1"
+    },
+    {
+      "id": "eng10-skill-qt-u1-writing",
+      "topicId": "eng10-t1",
+      "name": "Viết có hướng dẫn – Family Life",
+      "slug": "writing-u1",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "recognitionSigns": [
+        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+      ],
+      "solvingSteps": [
+        "Gạch yêu cầu bắt buộc.",
+        "Lập dàn ý ngắn.",
+        "Viết bản nháp.",
+        "Soát theo rubric."
+      ],
+      "commonMistakes": [
+        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
+        "Không có liên kết hoặc bằng chứng."
+      ],
+      "theory": [
+        "Xác định người đọc và mục đích.",
+        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
+        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u1-writing-controlled",
+          "name": "Đoạn ngắn có kiểm soát",
+          "example": "60–80 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u1-writing-guided",
+          "name": "Bài viết có hướng dẫn",
+          "example": "90–120 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u1-writing-extended",
+          "name": "Bài viết lập luận",
+          "example": "120–150 words",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u1-w1"
+    },
+    {
+      "id": "eng10-skill-qt-u2-reading",
+      "topicId": "eng10-t2",
+      "name": "Đọc hiểu tích hợp – Humans and the Environment",
+      "slug": "reading-u2",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc văn bản theo chiến lược, tìm ý chính, chi tiết, nghĩa từ, từ quy chiếu và suy luận có bằng chứng.",
+      "recognitionSigns": [
+        "Có một văn bản chung và câu hỏi yêu cầu bằng chứng từ ngữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước.",
+        "Quét đoạn chứa bằng chứng.",
+        "Loại phương án sai hoặc vượt quá thông tin."
+      ],
+      "commonMistakes": [
+        "Chọn phương án có từ giống bài nhưng sai quan hệ.",
+        "Suy luận bằng kiến thức cá nhân thay vì văn bản."
+      ],
+      "theory": [
+        "Đọc tiêu đề và câu đầu/cuối để dự đoán ý chính; không dịch từng từ.",
+        "Với câu chi tiết và suy luận, gạch bằng chứng trong bài rồi mới đối chiếu phương án.",
+        "Đoán từ theo ngữ cảnh bằng từ loại, quan hệ nguyên nhân–kết quả và ví dụ xung quanh."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u2-reading-gist",
+          "name": "Ý chính",
+          "example": "What is the passage mainly about?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u2-reading-detail",
+          "name": "Chi tiết",
+          "example": "According to the passage...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u2-reading-vocabulary",
+          "name": "Từ trong ngữ cảnh",
+          "example": "The word ... is closest in meaning to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u2-reading-reference",
+          "name": "Từ quy chiếu",
+          "example": "The word it refers to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u2-reading-inference",
+          "name": "Suy luận",
+          "example": "What can be inferred?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u2-r1"
+    },
+    {
+      "id": "eng10-skill-qt-u2-listening",
+      "topicId": "eng10-listening-extension",
+      "name": "Nghe hiểu – Humans and the Environment",
+      "slug": "listening-u2",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tự chọn: nghe đoạn nói tự nhiên để xác định mục đích, ý chính, chi tiết và hàm ý; không thuộc cấu trúc đề giữa kỳ/cuối kỳ.",
+      "recognitionSigns": [
+        "Có nút phát bài nghe và transcript được ẩn trước khi nộp."
+      ],
+      "solvingSteps": [
+        "Dự đoán loại thông tin cần nghe.",
+        "Nghe toàn ý.",
+        "Nghe lại để kiểm tra chi tiết."
+      ],
+      "commonMistakes": [
+        "Chọn từ nghe thấy đầu tiên.",
+        "Cố ghi lại toàn bộ transcript."
+      ],
+      "theory": [
+        "Đọc câu hỏi trước khi phát audio.",
+        "Lượt đầu nghe ý chính; lượt sau ghi từ khóa và quan hệ giữa các ý.",
+        "Không dừng lại vì một từ chưa biết."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u2-listening-gist",
+          "name": "Ý chính/mục đích",
+          "example": "What are the speakers mainly discussing?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u2-listening-detail",
+          "name": "Chi tiết",
+          "example": "What will the speaker do?",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u2-listening-inference",
+          "name": "Hàm ý/thái độ",
+          "example": "What does the speaker imply?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u2-l1"
+    },
+    {
+      "id": "eng10-skill-qt-u2-writing",
+      "topicId": "eng10-t2",
+      "name": "Viết có hướng dẫn – Humans and the Environment",
+      "slug": "writing-u2",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "recognitionSigns": [
+        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+      ],
+      "solvingSteps": [
+        "Gạch yêu cầu bắt buộc.",
+        "Lập dàn ý ngắn.",
+        "Viết bản nháp.",
+        "Soát theo rubric."
+      ],
+      "commonMistakes": [
+        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
+        "Không có liên kết hoặc bằng chứng."
+      ],
+      "theory": [
+        "Xác định người đọc và mục đích.",
+        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
+        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u2-writing-controlled",
+          "name": "Đoạn ngắn có kiểm soát",
+          "example": "60–80 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u2-writing-guided",
+          "name": "Bài viết có hướng dẫn",
+          "example": "90–120 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u2-writing-extended",
+          "name": "Bài viết lập luận",
+          "example": "120–150 words",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u2-w1"
+    },
+    {
+      "id": "eng10-skill-qt-u3-reading",
+      "topicId": "eng10-t3",
+      "name": "Đọc hiểu tích hợp – Music",
+      "slug": "reading-u3",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc văn bản theo chiến lược, tìm ý chính, chi tiết, nghĩa từ, từ quy chiếu và suy luận có bằng chứng.",
+      "recognitionSigns": [
+        "Có một văn bản chung và câu hỏi yêu cầu bằng chứng từ ngữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước.",
+        "Quét đoạn chứa bằng chứng.",
+        "Loại phương án sai hoặc vượt quá thông tin."
+      ],
+      "commonMistakes": [
+        "Chọn phương án có từ giống bài nhưng sai quan hệ.",
+        "Suy luận bằng kiến thức cá nhân thay vì văn bản."
+      ],
+      "theory": [
+        "Đọc tiêu đề và câu đầu/cuối để dự đoán ý chính; không dịch từng từ.",
+        "Với câu chi tiết và suy luận, gạch bằng chứng trong bài rồi mới đối chiếu phương án.",
+        "Đoán từ theo ngữ cảnh bằng từ loại, quan hệ nguyên nhân–kết quả và ví dụ xung quanh."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u3-reading-gist",
+          "name": "Ý chính",
+          "example": "What is the passage mainly about?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u3-reading-detail",
+          "name": "Chi tiết",
+          "example": "According to the passage...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u3-reading-vocabulary",
+          "name": "Từ trong ngữ cảnh",
+          "example": "The word ... is closest in meaning to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u3-reading-reference",
+          "name": "Từ quy chiếu",
+          "example": "The word it refers to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u3-reading-inference",
+          "name": "Suy luận",
+          "example": "What can be inferred?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u3-r1"
+    },
+    {
+      "id": "eng10-skill-qt-u3-listening",
+      "topicId": "eng10-listening-extension",
+      "name": "Nghe hiểu – Music",
+      "slug": "listening-u3",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tự chọn: nghe đoạn nói tự nhiên để xác định mục đích, ý chính, chi tiết và hàm ý; không thuộc cấu trúc đề giữa kỳ/cuối kỳ.",
+      "recognitionSigns": [
+        "Có nút phát bài nghe và transcript được ẩn trước khi nộp."
+      ],
+      "solvingSteps": [
+        "Dự đoán loại thông tin cần nghe.",
+        "Nghe toàn ý.",
+        "Nghe lại để kiểm tra chi tiết."
+      ],
+      "commonMistakes": [
+        "Chọn từ nghe thấy đầu tiên.",
+        "Cố ghi lại toàn bộ transcript."
+      ],
+      "theory": [
+        "Đọc câu hỏi trước khi phát audio.",
+        "Lượt đầu nghe ý chính; lượt sau ghi từ khóa và quan hệ giữa các ý.",
+        "Không dừng lại vì một từ chưa biết."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u3-listening-gist",
+          "name": "Ý chính/mục đích",
+          "example": "What are the speakers mainly discussing?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u3-listening-detail",
+          "name": "Chi tiết",
+          "example": "What will the speaker do?",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u3-listening-inference",
+          "name": "Hàm ý/thái độ",
+          "example": "What does the speaker imply?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u3-l1"
+    },
+    {
+      "id": "eng10-skill-qt-u3-writing",
+      "topicId": "eng10-t3",
+      "name": "Viết có hướng dẫn – Music",
+      "slug": "writing-u3",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "recognitionSigns": [
+        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+      ],
+      "solvingSteps": [
+        "Gạch yêu cầu bắt buộc.",
+        "Lập dàn ý ngắn.",
+        "Viết bản nháp.",
+        "Soát theo rubric."
+      ],
+      "commonMistakes": [
+        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
+        "Không có liên kết hoặc bằng chứng."
+      ],
+      "theory": [
+        "Xác định người đọc và mục đích.",
+        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
+        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u3-writing-controlled",
+          "name": "Đoạn ngắn có kiểm soát",
+          "example": "60–80 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u3-writing-guided",
+          "name": "Bài viết có hướng dẫn",
+          "example": "90–120 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u3-writing-extended",
+          "name": "Bài viết lập luận",
+          "example": "120–150 words",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u3-w1"
+    },
+    {
+      "id": "eng10-skill-qt-u4-reading",
+      "topicId": "eng10-t4",
+      "name": "Đọc hiểu tích hợp – For a Better Community",
+      "slug": "reading-u4",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc văn bản theo chiến lược, tìm ý chính, chi tiết, nghĩa từ, từ quy chiếu và suy luận có bằng chứng.",
+      "recognitionSigns": [
+        "Có một văn bản chung và câu hỏi yêu cầu bằng chứng từ ngữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước.",
+        "Quét đoạn chứa bằng chứng.",
+        "Loại phương án sai hoặc vượt quá thông tin."
+      ],
+      "commonMistakes": [
+        "Chọn phương án có từ giống bài nhưng sai quan hệ.",
+        "Suy luận bằng kiến thức cá nhân thay vì văn bản."
+      ],
+      "theory": [
+        "Đọc tiêu đề và câu đầu/cuối để dự đoán ý chính; không dịch từng từ.",
+        "Với câu chi tiết và suy luận, gạch bằng chứng trong bài rồi mới đối chiếu phương án.",
+        "Đoán từ theo ngữ cảnh bằng từ loại, quan hệ nguyên nhân–kết quả và ví dụ xung quanh."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u4-reading-gist",
+          "name": "Ý chính",
+          "example": "What is the passage mainly about?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u4-reading-detail",
+          "name": "Chi tiết",
+          "example": "According to the passage...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u4-reading-vocabulary",
+          "name": "Từ trong ngữ cảnh",
+          "example": "The word ... is closest in meaning to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u4-reading-reference",
+          "name": "Từ quy chiếu",
+          "example": "The word it refers to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u4-reading-inference",
+          "name": "Suy luận",
+          "example": "What can be inferred?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u4-r1"
+    },
+    {
+      "id": "eng10-skill-qt-u4-listening",
+      "topicId": "eng10-listening-extension",
+      "name": "Nghe hiểu – For a Better Community",
+      "slug": "listening-u4",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tự chọn: nghe đoạn nói tự nhiên để xác định mục đích, ý chính, chi tiết và hàm ý; không thuộc cấu trúc đề giữa kỳ/cuối kỳ.",
+      "recognitionSigns": [
+        "Có nút phát bài nghe và transcript được ẩn trước khi nộp."
+      ],
+      "solvingSteps": [
+        "Dự đoán loại thông tin cần nghe.",
+        "Nghe toàn ý.",
+        "Nghe lại để kiểm tra chi tiết."
+      ],
+      "commonMistakes": [
+        "Chọn từ nghe thấy đầu tiên.",
+        "Cố ghi lại toàn bộ transcript."
+      ],
+      "theory": [
+        "Đọc câu hỏi trước khi phát audio.",
+        "Lượt đầu nghe ý chính; lượt sau ghi từ khóa và quan hệ giữa các ý.",
+        "Không dừng lại vì một từ chưa biết."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u4-listening-gist",
+          "name": "Ý chính/mục đích",
+          "example": "What are the speakers mainly discussing?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u4-listening-detail",
+          "name": "Chi tiết",
+          "example": "What will the speaker do?",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u4-listening-inference",
+          "name": "Hàm ý/thái độ",
+          "example": "What does the speaker imply?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u4-l1"
+    },
+    {
+      "id": "eng10-skill-qt-u4-writing",
+      "topicId": "eng10-t4",
+      "name": "Viết có hướng dẫn – For a Better Community",
+      "slug": "writing-u4",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "recognitionSigns": [
+        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+      ],
+      "solvingSteps": [
+        "Gạch yêu cầu bắt buộc.",
+        "Lập dàn ý ngắn.",
+        "Viết bản nháp.",
+        "Soát theo rubric."
+      ],
+      "commonMistakes": [
+        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
+        "Không có liên kết hoặc bằng chứng."
+      ],
+      "theory": [
+        "Xác định người đọc và mục đích.",
+        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
+        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u4-writing-controlled",
+          "name": "Đoạn ngắn có kiểm soát",
+          "example": "60–80 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u4-writing-guided",
+          "name": "Bài viết có hướng dẫn",
+          "example": "90–120 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u4-writing-extended",
+          "name": "Bài viết lập luận",
+          "example": "120–150 words",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u4-w1"
+    },
+    {
+      "id": "eng10-skill-qt-u5-reading",
+      "topicId": "eng10-t5",
+      "name": "Đọc hiểu tích hợp – Inventions",
+      "slug": "reading-u5",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc văn bản theo chiến lược, tìm ý chính, chi tiết, nghĩa từ, từ quy chiếu và suy luận có bằng chứng.",
+      "recognitionSigns": [
+        "Có một văn bản chung và câu hỏi yêu cầu bằng chứng từ ngữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước.",
+        "Quét đoạn chứa bằng chứng.",
+        "Loại phương án sai hoặc vượt quá thông tin."
+      ],
+      "commonMistakes": [
+        "Chọn phương án có từ giống bài nhưng sai quan hệ.",
+        "Suy luận bằng kiến thức cá nhân thay vì văn bản."
+      ],
+      "theory": [
+        "Đọc tiêu đề và câu đầu/cuối để dự đoán ý chính; không dịch từng từ.",
+        "Với câu chi tiết và suy luận, gạch bằng chứng trong bài rồi mới đối chiếu phương án.",
+        "Đoán từ theo ngữ cảnh bằng từ loại, quan hệ nguyên nhân–kết quả và ví dụ xung quanh."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u5-reading-gist",
+          "name": "Ý chính",
+          "example": "What is the passage mainly about?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u5-reading-detail",
+          "name": "Chi tiết",
+          "example": "According to the passage...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u5-reading-vocabulary",
+          "name": "Từ trong ngữ cảnh",
+          "example": "The word ... is closest in meaning to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u5-reading-reference",
+          "name": "Từ quy chiếu",
+          "example": "The word it refers to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u5-reading-inference",
+          "name": "Suy luận",
+          "example": "What can be inferred?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u5-r1"
+    },
+    {
+      "id": "eng10-skill-qt-u5-listening",
+      "topicId": "eng10-listening-extension",
+      "name": "Nghe hiểu – Inventions",
+      "slug": "listening-u5",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tự chọn: nghe đoạn nói tự nhiên để xác định mục đích, ý chính, chi tiết và hàm ý; không thuộc cấu trúc đề giữa kỳ/cuối kỳ.",
+      "recognitionSigns": [
+        "Có nút phát bài nghe và transcript được ẩn trước khi nộp."
+      ],
+      "solvingSteps": [
+        "Dự đoán loại thông tin cần nghe.",
+        "Nghe toàn ý.",
+        "Nghe lại để kiểm tra chi tiết."
+      ],
+      "commonMistakes": [
+        "Chọn từ nghe thấy đầu tiên.",
+        "Cố ghi lại toàn bộ transcript."
+      ],
+      "theory": [
+        "Đọc câu hỏi trước khi phát audio.",
+        "Lượt đầu nghe ý chính; lượt sau ghi từ khóa và quan hệ giữa các ý.",
+        "Không dừng lại vì một từ chưa biết."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u5-listening-gist",
+          "name": "Ý chính/mục đích",
+          "example": "What are the speakers mainly discussing?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u5-listening-detail",
+          "name": "Chi tiết",
+          "example": "What will the speaker do?",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u5-listening-inference",
+          "name": "Hàm ý/thái độ",
+          "example": "What does the speaker imply?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u5-l1"
+    },
+    {
+      "id": "eng10-skill-qt-u5-writing",
+      "topicId": "eng10-t5",
+      "name": "Viết có hướng dẫn – Inventions",
+      "slug": "writing-u5",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "recognitionSigns": [
+        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+      ],
+      "solvingSteps": [
+        "Gạch yêu cầu bắt buộc.",
+        "Lập dàn ý ngắn.",
+        "Viết bản nháp.",
+        "Soát theo rubric."
+      ],
+      "commonMistakes": [
+        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
+        "Không có liên kết hoặc bằng chứng."
+      ],
+      "theory": [
+        "Xác định người đọc và mục đích.",
+        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
+        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u5-writing-controlled",
+          "name": "Đoạn ngắn có kiểm soát",
+          "example": "60–80 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u5-writing-guided",
+          "name": "Bài viết có hướng dẫn",
+          "example": "90–120 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u5-writing-extended",
+          "name": "Bài viết lập luận",
+          "example": "120–150 words",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u5-w1"
+    },
+    {
+      "id": "eng10-skill-qt-u6-reading",
+      "topicId": "eng10-t6",
+      "name": "Đọc hiểu tích hợp – Gender Equality",
+      "slug": "reading-u6",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc văn bản theo chiến lược, tìm ý chính, chi tiết, nghĩa từ, từ quy chiếu và suy luận có bằng chứng.",
+      "recognitionSigns": [
+        "Có một văn bản chung và câu hỏi yêu cầu bằng chứng từ ngữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước.",
+        "Quét đoạn chứa bằng chứng.",
+        "Loại phương án sai hoặc vượt quá thông tin."
+      ],
+      "commonMistakes": [
+        "Chọn phương án có từ giống bài nhưng sai quan hệ.",
+        "Suy luận bằng kiến thức cá nhân thay vì văn bản."
+      ],
+      "theory": [
+        "Đọc tiêu đề và câu đầu/cuối để dự đoán ý chính; không dịch từng từ.",
+        "Với câu chi tiết và suy luận, gạch bằng chứng trong bài rồi mới đối chiếu phương án.",
+        "Đoán từ theo ngữ cảnh bằng từ loại, quan hệ nguyên nhân–kết quả và ví dụ xung quanh."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u6-reading-gist",
+          "name": "Ý chính",
+          "example": "What is the passage mainly about?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u6-reading-detail",
+          "name": "Chi tiết",
+          "example": "According to the passage...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u6-reading-vocabulary",
+          "name": "Từ trong ngữ cảnh",
+          "example": "The word ... is closest in meaning to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u6-reading-reference",
+          "name": "Từ quy chiếu",
+          "example": "The word it refers to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u6-reading-inference",
+          "name": "Suy luận",
+          "example": "What can be inferred?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u6-r1"
+    },
+    {
+      "id": "eng10-skill-qt-u6-listening",
+      "topicId": "eng10-listening-extension",
+      "name": "Nghe hiểu – Gender Equality",
+      "slug": "listening-u6",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tự chọn: nghe đoạn nói tự nhiên để xác định mục đích, ý chính, chi tiết và hàm ý; không thuộc cấu trúc đề giữa kỳ/cuối kỳ.",
+      "recognitionSigns": [
+        "Có nút phát bài nghe và transcript được ẩn trước khi nộp."
+      ],
+      "solvingSteps": [
+        "Dự đoán loại thông tin cần nghe.",
+        "Nghe toàn ý.",
+        "Nghe lại để kiểm tra chi tiết."
+      ],
+      "commonMistakes": [
+        "Chọn từ nghe thấy đầu tiên.",
+        "Cố ghi lại toàn bộ transcript."
+      ],
+      "theory": [
+        "Đọc câu hỏi trước khi phát audio.",
+        "Lượt đầu nghe ý chính; lượt sau ghi từ khóa và quan hệ giữa các ý.",
+        "Không dừng lại vì một từ chưa biết."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u6-listening-gist",
+          "name": "Ý chính/mục đích",
+          "example": "What are the speakers mainly discussing?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u6-listening-detail",
+          "name": "Chi tiết",
+          "example": "What will the speaker do?",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u6-listening-inference",
+          "name": "Hàm ý/thái độ",
+          "example": "What does the speaker imply?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u6-l1"
+    },
+    {
+      "id": "eng10-skill-qt-u6-writing",
+      "topicId": "eng10-t6",
+      "name": "Viết có hướng dẫn – Gender Equality",
+      "slug": "writing-u6",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "recognitionSigns": [
+        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+      ],
+      "solvingSteps": [
+        "Gạch yêu cầu bắt buộc.",
+        "Lập dàn ý ngắn.",
+        "Viết bản nháp.",
+        "Soát theo rubric."
+      ],
+      "commonMistakes": [
+        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
+        "Không có liên kết hoặc bằng chứng."
+      ],
+      "theory": [
+        "Xác định người đọc và mục đích.",
+        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
+        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u6-writing-controlled",
+          "name": "Đoạn ngắn có kiểm soát",
+          "example": "60–80 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u6-writing-guided",
+          "name": "Bài viết có hướng dẫn",
+          "example": "90–120 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u6-writing-extended",
+          "name": "Bài viết lập luận",
+          "example": "120–150 words",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u6-w1"
+    },
+    {
+      "id": "eng10-skill-qt-u7-reading",
+      "topicId": "eng10-t7",
+      "name": "Đọc hiểu tích hợp – Viet Nam and International Organisations",
+      "slug": "reading-u7",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc văn bản theo chiến lược, tìm ý chính, chi tiết, nghĩa từ, từ quy chiếu và suy luận có bằng chứng.",
+      "recognitionSigns": [
+        "Có một văn bản chung và câu hỏi yêu cầu bằng chứng từ ngữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước.",
+        "Quét đoạn chứa bằng chứng.",
+        "Loại phương án sai hoặc vượt quá thông tin."
+      ],
+      "commonMistakes": [
+        "Chọn phương án có từ giống bài nhưng sai quan hệ.",
+        "Suy luận bằng kiến thức cá nhân thay vì văn bản."
+      ],
+      "theory": [
+        "Đọc tiêu đề và câu đầu/cuối để dự đoán ý chính; không dịch từng từ.",
+        "Với câu chi tiết và suy luận, gạch bằng chứng trong bài rồi mới đối chiếu phương án.",
+        "Đoán từ theo ngữ cảnh bằng từ loại, quan hệ nguyên nhân–kết quả và ví dụ xung quanh."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u7-reading-gist",
+          "name": "Ý chính",
+          "example": "What is the passage mainly about?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u7-reading-detail",
+          "name": "Chi tiết",
+          "example": "According to the passage...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u7-reading-vocabulary",
+          "name": "Từ trong ngữ cảnh",
+          "example": "The word ... is closest in meaning to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u7-reading-reference",
+          "name": "Từ quy chiếu",
+          "example": "The word it refers to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u7-reading-inference",
+          "name": "Suy luận",
+          "example": "What can be inferred?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u7-r1"
+    },
+    {
+      "id": "eng10-skill-qt-u7-listening",
+      "topicId": "eng10-listening-extension",
+      "name": "Nghe hiểu – Viet Nam and International Organisations",
+      "slug": "listening-u7",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tự chọn: nghe đoạn nói tự nhiên để xác định mục đích, ý chính, chi tiết và hàm ý; không thuộc cấu trúc đề giữa kỳ/cuối kỳ.",
+      "recognitionSigns": [
+        "Có nút phát bài nghe và transcript được ẩn trước khi nộp."
+      ],
+      "solvingSteps": [
+        "Dự đoán loại thông tin cần nghe.",
+        "Nghe toàn ý.",
+        "Nghe lại để kiểm tra chi tiết."
+      ],
+      "commonMistakes": [
+        "Chọn từ nghe thấy đầu tiên.",
+        "Cố ghi lại toàn bộ transcript."
+      ],
+      "theory": [
+        "Đọc câu hỏi trước khi phát audio.",
+        "Lượt đầu nghe ý chính; lượt sau ghi từ khóa và quan hệ giữa các ý.",
+        "Không dừng lại vì một từ chưa biết."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u7-listening-gist",
+          "name": "Ý chính/mục đích",
+          "example": "What are the speakers mainly discussing?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u7-listening-detail",
+          "name": "Chi tiết",
+          "example": "What will the speaker do?",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u7-listening-inference",
+          "name": "Hàm ý/thái độ",
+          "example": "What does the speaker imply?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u7-l1"
+    },
+    {
+      "id": "eng10-skill-qt-u7-writing",
+      "topicId": "eng10-t7",
+      "name": "Viết có hướng dẫn – Viet Nam and International Organisations",
+      "slug": "writing-u7",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "recognitionSigns": [
+        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+      ],
+      "solvingSteps": [
+        "Gạch yêu cầu bắt buộc.",
+        "Lập dàn ý ngắn.",
+        "Viết bản nháp.",
+        "Soát theo rubric."
+      ],
+      "commonMistakes": [
+        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
+        "Không có liên kết hoặc bằng chứng."
+      ],
+      "theory": [
+        "Xác định người đọc và mục đích.",
+        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
+        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u7-writing-controlled",
+          "name": "Đoạn ngắn có kiểm soát",
+          "example": "60–80 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u7-writing-guided",
+          "name": "Bài viết có hướng dẫn",
+          "example": "90–120 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u7-writing-extended",
+          "name": "Bài viết lập luận",
+          "example": "120–150 words",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u7-w1"
+    },
+    {
+      "id": "eng10-skill-qt-u8-reading",
+      "topicId": "eng10-t8",
+      "name": "Đọc hiểu tích hợp – New Ways to Learn",
+      "slug": "reading-u8",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc văn bản theo chiến lược, tìm ý chính, chi tiết, nghĩa từ, từ quy chiếu và suy luận có bằng chứng.",
+      "recognitionSigns": [
+        "Có một văn bản chung và câu hỏi yêu cầu bằng chứng từ ngữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước.",
+        "Quét đoạn chứa bằng chứng.",
+        "Loại phương án sai hoặc vượt quá thông tin."
+      ],
+      "commonMistakes": [
+        "Chọn phương án có từ giống bài nhưng sai quan hệ.",
+        "Suy luận bằng kiến thức cá nhân thay vì văn bản."
+      ],
+      "theory": [
+        "Đọc tiêu đề và câu đầu/cuối để dự đoán ý chính; không dịch từng từ.",
+        "Với câu chi tiết và suy luận, gạch bằng chứng trong bài rồi mới đối chiếu phương án.",
+        "Đoán từ theo ngữ cảnh bằng từ loại, quan hệ nguyên nhân–kết quả và ví dụ xung quanh."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u8-reading-gist",
+          "name": "Ý chính",
+          "example": "What is the passage mainly about?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u8-reading-detail",
+          "name": "Chi tiết",
+          "example": "According to the passage...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u8-reading-vocabulary",
+          "name": "Từ trong ngữ cảnh",
+          "example": "The word ... is closest in meaning to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u8-reading-reference",
+          "name": "Từ quy chiếu",
+          "example": "The word it refers to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u8-reading-inference",
+          "name": "Suy luận",
+          "example": "What can be inferred?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u8-r1"
+    },
+    {
+      "id": "eng10-skill-qt-u8-listening",
+      "topicId": "eng10-listening-extension",
+      "name": "Nghe hiểu – New Ways to Learn",
+      "slug": "listening-u8",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tự chọn: nghe đoạn nói tự nhiên để xác định mục đích, ý chính, chi tiết và hàm ý; không thuộc cấu trúc đề giữa kỳ/cuối kỳ.",
+      "recognitionSigns": [
+        "Có nút phát bài nghe và transcript được ẩn trước khi nộp."
+      ],
+      "solvingSteps": [
+        "Dự đoán loại thông tin cần nghe.",
+        "Nghe toàn ý.",
+        "Nghe lại để kiểm tra chi tiết."
+      ],
+      "commonMistakes": [
+        "Chọn từ nghe thấy đầu tiên.",
+        "Cố ghi lại toàn bộ transcript."
+      ],
+      "theory": [
+        "Đọc câu hỏi trước khi phát audio.",
+        "Lượt đầu nghe ý chính; lượt sau ghi từ khóa và quan hệ giữa các ý.",
+        "Không dừng lại vì một từ chưa biết."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u8-listening-gist",
+          "name": "Ý chính/mục đích",
+          "example": "What are the speakers mainly discussing?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u8-listening-detail",
+          "name": "Chi tiết",
+          "example": "What will the speaker do?",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u8-listening-inference",
+          "name": "Hàm ý/thái độ",
+          "example": "What does the speaker imply?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u8-l1"
+    },
+    {
+      "id": "eng10-skill-qt-u8-writing",
+      "topicId": "eng10-t8",
+      "name": "Viết có hướng dẫn – New Ways to Learn",
+      "slug": "writing-u8",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "recognitionSigns": [
+        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+      ],
+      "solvingSteps": [
+        "Gạch yêu cầu bắt buộc.",
+        "Lập dàn ý ngắn.",
+        "Viết bản nháp.",
+        "Soát theo rubric."
+      ],
+      "commonMistakes": [
+        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
+        "Không có liên kết hoặc bằng chứng."
+      ],
+      "theory": [
+        "Xác định người đọc và mục đích.",
+        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
+        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u8-writing-controlled",
+          "name": "Đoạn ngắn có kiểm soát",
+          "example": "60–80 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u8-writing-guided",
+          "name": "Bài viết có hướng dẫn",
+          "example": "90–120 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u8-writing-extended",
+          "name": "Bài viết lập luận",
+          "example": "120–150 words",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u8-w1"
+    },
+    {
+      "id": "eng10-skill-qt-u10-reading",
+      "topicId": "eng10-t10",
+      "name": "Đọc hiểu tích hợp – Ecotourism",
+      "slug": "reading-u10",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc văn bản theo chiến lược, tìm ý chính, chi tiết, nghĩa từ, từ quy chiếu và suy luận có bằng chứng.",
+      "recognitionSigns": [
+        "Có một văn bản chung và câu hỏi yêu cầu bằng chứng từ ngữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước.",
+        "Quét đoạn chứa bằng chứng.",
+        "Loại phương án sai hoặc vượt quá thông tin."
+      ],
+      "commonMistakes": [
+        "Chọn phương án có từ giống bài nhưng sai quan hệ.",
+        "Suy luận bằng kiến thức cá nhân thay vì văn bản."
+      ],
+      "theory": [
+        "Đọc tiêu đề và câu đầu/cuối để dự đoán ý chính; không dịch từng từ.",
+        "Với câu chi tiết và suy luận, gạch bằng chứng trong bài rồi mới đối chiếu phương án.",
+        "Đoán từ theo ngữ cảnh bằng từ loại, quan hệ nguyên nhân–kết quả và ví dụ xung quanh."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u10-reading-gist",
+          "name": "Ý chính",
+          "example": "What is the passage mainly about?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u10-reading-detail",
+          "name": "Chi tiết",
+          "example": "According to the passage...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u10-reading-vocabulary",
+          "name": "Từ trong ngữ cảnh",
+          "example": "The word ... is closest in meaning to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u10-reading-reference",
+          "name": "Từ quy chiếu",
+          "example": "The word it refers to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u10-reading-inference",
+          "name": "Suy luận",
+          "example": "What can be inferred?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u10-r1"
+    },
+    {
+      "id": "eng10-skill-qt-u10-listening",
+      "topicId": "eng10-listening-extension",
+      "name": "Nghe hiểu – Ecotourism",
+      "slug": "listening-u10",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tự chọn: nghe đoạn nói tự nhiên để xác định mục đích, ý chính, chi tiết và hàm ý; không thuộc cấu trúc đề giữa kỳ/cuối kỳ.",
+      "recognitionSigns": [
+        "Có nút phát bài nghe và transcript được ẩn trước khi nộp."
+      ],
+      "solvingSteps": [
+        "Dự đoán loại thông tin cần nghe.",
+        "Nghe toàn ý.",
+        "Nghe lại để kiểm tra chi tiết."
+      ],
+      "commonMistakes": [
+        "Chọn từ nghe thấy đầu tiên.",
+        "Cố ghi lại toàn bộ transcript."
+      ],
+      "theory": [
+        "Đọc câu hỏi trước khi phát audio.",
+        "Lượt đầu nghe ý chính; lượt sau ghi từ khóa và quan hệ giữa các ý.",
+        "Không dừng lại vì một từ chưa biết."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u10-listening-gist",
+          "name": "Ý chính/mục đích",
+          "example": "What are the speakers mainly discussing?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u10-listening-detail",
+          "name": "Chi tiết",
+          "example": "What will the speaker do?",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u10-listening-inference",
+          "name": "Hàm ý/thái độ",
+          "example": "What does the speaker imply?",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u10-l1"
+    },
+    {
+      "id": "eng10-skill-qt-u10-writing",
+      "topicId": "eng10-t10",
+      "name": "Viết có hướng dẫn – Ecotourism",
+      "slug": "writing-u10",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "recognitionSigns": [
+        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+      ],
+      "solvingSteps": [
+        "Gạch yêu cầu bắt buộc.",
+        "Lập dàn ý ngắn.",
+        "Viết bản nháp.",
+        "Soát theo rubric."
+      ],
+      "commonMistakes": [
+        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
+        "Không có liên kết hoặc bằng chứng."
+      ],
+      "theory": [
+        "Xác định người đọc và mục đích.",
+        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
+        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u10-writing-controlled",
+          "name": "Đoạn ngắn có kiểm soát",
+          "example": "60–80 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u10-writing-guided",
+          "name": "Bài viết có hướng dẫn",
+          "example": "90–120 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u10-writing-extended",
+          "name": "Bài viết lập luận",
+          "example": "120–150 words",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-skill-u10-w1"
+    },
+    {
+      "id": "eng10-skill-qt-u9-reading",
+      "topicId": "eng10-t9",
+      "name": "Đọc hiểu tích hợp – Protecting the Environment",
+      "slug": "reading-u9",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc văn bản theo chiến lược, tìm ý chính, chi tiết, nghĩa từ, từ quy chiếu và suy luận có bằng chứng.",
+      "recognitionSigns": [
+        "Có một văn bản chung và câu hỏi yêu cầu bằng chứng từ ngữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước.",
+        "Quét đoạn chứa bằng chứng.",
+        "Loại phương án sai hoặc vượt quá thông tin."
+      ],
+      "commonMistakes": [
+        "Chọn phương án có từ giống bài nhưng sai quan hệ.",
+        "Suy luận bằng kiến thức cá nhân thay vì văn bản."
+      ],
+      "theory": [
+        "Đọc tiêu đề và câu đầu/cuối để dự đoán ý chính; không dịch từng từ.",
+        "Với câu chi tiết và suy luận, gạch bằng chứng trong bài rồi mới đối chiếu phương án.",
+        "Đoán từ theo ngữ cảnh bằng từ loại, quan hệ nguyên nhân–kết quả và ví dụ xung quanh."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u9-reading-gist",
+          "name": "Ý chính",
+          "example": "What is the passage mainly about?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u9-reading-detail",
+          "name": "Chi tiết",
+          "example": "According to the passage...",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u9-reading-vocabulary",
+          "name": "Từ trong ngữ cảnh",
+          "example": "The word ... is closest in meaning to...",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u9-reading-inference",
+          "name": "Suy luận",
+          "example": "What can be inferred?",
+          "targetQuestionCount": 2
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u9-r1"
+    },
+    {
+      "id": "eng10-skill-qt-u9-listening",
+      "topicId": "eng10-listening-extension",
+      "name": "Nghe hiểu – Protecting the Environment",
+      "slug": "listening-u9",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tự chọn: nghe đoạn nói tự nhiên để xác định mục đích, ý chính, chi tiết và hàm ý; không thuộc cấu trúc đề giữa kỳ/cuối kỳ.",
+      "recognitionSigns": [
+        "Có nút phát bài nghe và transcript được ẩn trước khi nộp."
+      ],
+      "solvingSteps": [
+        "Dự đoán loại thông tin cần nghe.",
+        "Nghe toàn ý.",
+        "Nghe lại để kiểm tra chi tiết."
+      ],
+      "commonMistakes": [
+        "Chọn từ nghe thấy đầu tiên.",
+        "Cố ghi lại toàn bộ transcript."
+      ],
+      "theory": [
+        "Đọc câu hỏi trước khi phát audio.",
+        "Lượt đầu nghe ý chính; lượt sau ghi từ khóa và quan hệ giữa các ý.",
+        "Không dừng lại vì một từ chưa biết."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u9-listening-gist",
+          "name": "Ý chính/mục đích",
+          "example": "What are the speakers mainly discussing?",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u9-listening-detail",
+          "name": "Chi tiết",
+          "example": "What will the speaker do?",
+          "targetQuestionCount": 2
+        },
+        {
+          "id": "eng10-u9-listening-inference",
+          "name": "Hàm ý/thái độ",
+          "example": "What does the speaker imply?",
+          "targetQuestionCount": 2
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u9-l1"
+    },
+    {
+      "id": "eng10-skill-qt-u9-writing",
+      "topicId": "eng10-t9",
+      "name": "Viết có hướng dẫn – Protecting the Environment",
+      "slug": "writing-u9",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "recognitionSigns": [
+        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+      ],
+      "solvingSteps": [
+        "Gạch yêu cầu bắt buộc.",
+        "Lập dàn ý ngắn.",
+        "Viết bản nháp.",
+        "Soát theo rubric."
+      ],
+      "commonMistakes": [
+        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
+        "Không có liên kết hoặc bằng chứng."
+      ],
+      "theory": [
+        "Xác định người đọc và mục đích.",
+        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
+        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u9-writing-controlled",
+          "name": "Đoạn ngắn có kiểm soát",
+          "example": "60–80 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u9-writing-guided",
+          "name": "Bài viết có hướng dẫn",
+          "example": "90–120 words",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u9-writing-extended",
+          "name": "Bài viết lập luận",
+          "example": "120–150 words",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u9-w1"
+    },
+    {
+      "id": "eng10-deep-qt-u1-language-in-context",
+      "topicId": "eng10-t1",
+      "name": "Language in context nâng cao – Family Life",
+      "slug": "language-in-context-deep-u1",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng cấu trúc và từ vựng của Unit trong câu có ngữ cảnh, từ nhận biết đến phát hiện/chỉnh lỗi.",
+      "recognitionSigns": [
+        "Câu có ngữ cảnh Unit và yêu cầu đồng thời kiểm tra nghĩa với hình thức ngôn ngữ."
+      ],
+      "solvingSteps": [
+        "Khoanh dấu hiệu ngữ cảnh.",
+        "Xác định cấu trúc/từ loại.",
+        "Loại phương án sai nghĩa hoặc sai kết hợp.",
+        "Đọc kiểm tra toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhìn một từ khóa rồi chọn ngay.",
+        "Chỉ kiểm tra ngữ pháp mà bỏ qua nghĩa.",
+        "Không kiểm tra sự hòa hợp chủ ngữ–động từ."
+      ],
+      "theory": [
+        "Đọc toàn bộ câu để xác định thời gian, chủ thể, quan hệ ý và từ loại cần dùng.",
+        "Không chọn chỉ vì thấy một từ khóa; phải kiểm tra cả nghĩa và cấu trúc.",
+        "Ở câu sửa lỗi, đọc lại toàn câu sau khi chọn để kiểm tra tính tự nhiên."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u1-deep-language-grammar-context",
+          "name": "Ngữ pháp trong ngữ cảnh",
+          "example": "Choose the form that completes the meaning",
+          "targetQuestionCount": 4
+        },
+        {
+          "id": "eng10-u1-deep-language-vocabulary-use",
+          "name": "Từ vựng và từ loại",
+          "example": "Choose the context-appropriate word",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u1-deep-language-editing",
+          "name": "Phát hiện và chỉnh câu",
+          "example": "Choose the grammatically accurate sentence",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u1-g1"
+    },
+    {
+      "id": "eng10-deep-qt-u2-language-in-context",
+      "topicId": "eng10-t2",
+      "name": "Language in context nâng cao – Humans and the Environment",
+      "slug": "language-in-context-deep-u2",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng cấu trúc và từ vựng của Unit trong câu có ngữ cảnh, từ nhận biết đến phát hiện/chỉnh lỗi.",
+      "recognitionSigns": [
+        "Câu có ngữ cảnh Unit và yêu cầu đồng thời kiểm tra nghĩa với hình thức ngôn ngữ."
+      ],
+      "solvingSteps": [
+        "Khoanh dấu hiệu ngữ cảnh.",
+        "Xác định cấu trúc/từ loại.",
+        "Loại phương án sai nghĩa hoặc sai kết hợp.",
+        "Đọc kiểm tra toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhìn một từ khóa rồi chọn ngay.",
+        "Chỉ kiểm tra ngữ pháp mà bỏ qua nghĩa.",
+        "Không kiểm tra sự hòa hợp chủ ngữ–động từ."
+      ],
+      "theory": [
+        "Đọc toàn bộ câu để xác định thời gian, chủ thể, quan hệ ý và từ loại cần dùng.",
+        "Không chọn chỉ vì thấy một từ khóa; phải kiểm tra cả nghĩa và cấu trúc.",
+        "Ở câu sửa lỗi, đọc lại toàn câu sau khi chọn để kiểm tra tính tự nhiên."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u2-deep-language-grammar-context",
+          "name": "Ngữ pháp trong ngữ cảnh",
+          "example": "Choose the form that completes the meaning",
+          "targetQuestionCount": 4
+        },
+        {
+          "id": "eng10-u2-deep-language-vocabulary-use",
+          "name": "Từ vựng và từ loại",
+          "example": "Choose the context-appropriate word",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u2-deep-language-editing",
+          "name": "Phát hiện và chỉnh câu",
+          "example": "Choose the grammatically accurate sentence",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u2-g1"
+    },
+    {
+      "id": "eng10-deep-qt-u3-language-in-context",
+      "topicId": "eng10-t3",
+      "name": "Language in context nâng cao – Music",
+      "slug": "language-in-context-deep-u3",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng cấu trúc và từ vựng của Unit trong câu có ngữ cảnh, từ nhận biết đến phát hiện/chỉnh lỗi.",
+      "recognitionSigns": [
+        "Câu có ngữ cảnh Unit và yêu cầu đồng thời kiểm tra nghĩa với hình thức ngôn ngữ."
+      ],
+      "solvingSteps": [
+        "Khoanh dấu hiệu ngữ cảnh.",
+        "Xác định cấu trúc/từ loại.",
+        "Loại phương án sai nghĩa hoặc sai kết hợp.",
+        "Đọc kiểm tra toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhìn một từ khóa rồi chọn ngay.",
+        "Chỉ kiểm tra ngữ pháp mà bỏ qua nghĩa.",
+        "Không kiểm tra sự hòa hợp chủ ngữ–động từ."
+      ],
+      "theory": [
+        "Đọc toàn bộ câu để xác định thời gian, chủ thể, quan hệ ý và từ loại cần dùng.",
+        "Không chọn chỉ vì thấy một từ khóa; phải kiểm tra cả nghĩa và cấu trúc.",
+        "Ở câu sửa lỗi, đọc lại toàn câu sau khi chọn để kiểm tra tính tự nhiên."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u3-deep-language-grammar-context",
+          "name": "Ngữ pháp trong ngữ cảnh",
+          "example": "Choose the form that completes the meaning",
+          "targetQuestionCount": 4
+        },
+        {
+          "id": "eng10-u3-deep-language-vocabulary-use",
+          "name": "Từ vựng và từ loại",
+          "example": "Choose the context-appropriate word",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u3-deep-language-editing",
+          "name": "Phát hiện và chỉnh câu",
+          "example": "Choose the grammatically accurate sentence",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u3-g1"
+    },
+    {
+      "id": "eng10-deep-qt-u4-language-in-context",
+      "topicId": "eng10-t4",
+      "name": "Language in context nâng cao – For a Better Community",
+      "slug": "language-in-context-deep-u4",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng cấu trúc và từ vựng của Unit trong câu có ngữ cảnh, từ nhận biết đến phát hiện/chỉnh lỗi.",
+      "recognitionSigns": [
+        "Câu có ngữ cảnh Unit và yêu cầu đồng thời kiểm tra nghĩa với hình thức ngôn ngữ."
+      ],
+      "solvingSteps": [
+        "Khoanh dấu hiệu ngữ cảnh.",
+        "Xác định cấu trúc/từ loại.",
+        "Loại phương án sai nghĩa hoặc sai kết hợp.",
+        "Đọc kiểm tra toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhìn một từ khóa rồi chọn ngay.",
+        "Chỉ kiểm tra ngữ pháp mà bỏ qua nghĩa.",
+        "Không kiểm tra sự hòa hợp chủ ngữ–động từ."
+      ],
+      "theory": [
+        "Đọc toàn bộ câu để xác định thời gian, chủ thể, quan hệ ý và từ loại cần dùng.",
+        "Không chọn chỉ vì thấy một từ khóa; phải kiểm tra cả nghĩa và cấu trúc.",
+        "Ở câu sửa lỗi, đọc lại toàn câu sau khi chọn để kiểm tra tính tự nhiên."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u4-deep-language-grammar-context",
+          "name": "Ngữ pháp trong ngữ cảnh",
+          "example": "Choose the form that completes the meaning",
+          "targetQuestionCount": 4
+        },
+        {
+          "id": "eng10-u4-deep-language-vocabulary-use",
+          "name": "Từ vựng và từ loại",
+          "example": "Choose the context-appropriate word",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u4-deep-language-editing",
+          "name": "Phát hiện và chỉnh câu",
+          "example": "Choose the grammatically accurate sentence",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u4-g1"
+    },
+    {
+      "id": "eng10-deep-qt-u5-language-in-context",
+      "topicId": "eng10-t5",
+      "name": "Language in context nâng cao – Inventions",
+      "slug": "language-in-context-deep-u5",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng cấu trúc và từ vựng của Unit trong câu có ngữ cảnh, từ nhận biết đến phát hiện/chỉnh lỗi.",
+      "recognitionSigns": [
+        "Câu có ngữ cảnh Unit và yêu cầu đồng thời kiểm tra nghĩa với hình thức ngôn ngữ."
+      ],
+      "solvingSteps": [
+        "Khoanh dấu hiệu ngữ cảnh.",
+        "Xác định cấu trúc/từ loại.",
+        "Loại phương án sai nghĩa hoặc sai kết hợp.",
+        "Đọc kiểm tra toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhìn một từ khóa rồi chọn ngay.",
+        "Chỉ kiểm tra ngữ pháp mà bỏ qua nghĩa.",
+        "Không kiểm tra sự hòa hợp chủ ngữ–động từ."
+      ],
+      "theory": [
+        "Đọc toàn bộ câu để xác định thời gian, chủ thể, quan hệ ý và từ loại cần dùng.",
+        "Không chọn chỉ vì thấy một từ khóa; phải kiểm tra cả nghĩa và cấu trúc.",
+        "Ở câu sửa lỗi, đọc lại toàn câu sau khi chọn để kiểm tra tính tự nhiên."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u5-deep-language-grammar-context",
+          "name": "Ngữ pháp trong ngữ cảnh",
+          "example": "Choose the form that completes the meaning",
+          "targetQuestionCount": 4
+        },
+        {
+          "id": "eng10-u5-deep-language-vocabulary-use",
+          "name": "Từ vựng và từ loại",
+          "example": "Choose the context-appropriate word",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u5-deep-language-editing",
+          "name": "Phát hiện và chỉnh câu",
+          "example": "Choose the grammatically accurate sentence",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u5-g1"
+    },
+    {
+      "id": "eng10-deep-qt-u6-language-in-context",
+      "topicId": "eng10-t6",
+      "name": "Language in context nâng cao – Gender Equality",
+      "slug": "language-in-context-deep-u6",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng cấu trúc và từ vựng của Unit trong câu có ngữ cảnh, từ nhận biết đến phát hiện/chỉnh lỗi.",
+      "recognitionSigns": [
+        "Câu có ngữ cảnh Unit và yêu cầu đồng thời kiểm tra nghĩa với hình thức ngôn ngữ."
+      ],
+      "solvingSteps": [
+        "Khoanh dấu hiệu ngữ cảnh.",
+        "Xác định cấu trúc/từ loại.",
+        "Loại phương án sai nghĩa hoặc sai kết hợp.",
+        "Đọc kiểm tra toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhìn một từ khóa rồi chọn ngay.",
+        "Chỉ kiểm tra ngữ pháp mà bỏ qua nghĩa.",
+        "Không kiểm tra sự hòa hợp chủ ngữ–động từ."
+      ],
+      "theory": [
+        "Đọc toàn bộ câu để xác định thời gian, chủ thể, quan hệ ý và từ loại cần dùng.",
+        "Không chọn chỉ vì thấy một từ khóa; phải kiểm tra cả nghĩa và cấu trúc.",
+        "Ở câu sửa lỗi, đọc lại toàn câu sau khi chọn để kiểm tra tính tự nhiên."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u6-deep-language-grammar-context",
+          "name": "Ngữ pháp trong ngữ cảnh",
+          "example": "Choose the form that completes the meaning",
+          "targetQuestionCount": 4
+        },
+        {
+          "id": "eng10-u6-deep-language-vocabulary-use",
+          "name": "Từ vựng và từ loại",
+          "example": "Choose the context-appropriate word",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u6-deep-language-editing",
+          "name": "Phát hiện và chỉnh câu",
+          "example": "Choose the grammatically accurate sentence",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u6-g1"
+    },
+    {
+      "id": "eng10-deep-qt-u7-language-in-context",
+      "topicId": "eng10-t7",
+      "name": "Language in context nâng cao – Viet Nam and International Organisations",
+      "slug": "language-in-context-deep-u7",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng cấu trúc và từ vựng của Unit trong câu có ngữ cảnh, từ nhận biết đến phát hiện/chỉnh lỗi.",
+      "recognitionSigns": [
+        "Câu có ngữ cảnh Unit và yêu cầu đồng thời kiểm tra nghĩa với hình thức ngôn ngữ."
+      ],
+      "solvingSteps": [
+        "Khoanh dấu hiệu ngữ cảnh.",
+        "Xác định cấu trúc/từ loại.",
+        "Loại phương án sai nghĩa hoặc sai kết hợp.",
+        "Đọc kiểm tra toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhìn một từ khóa rồi chọn ngay.",
+        "Chỉ kiểm tra ngữ pháp mà bỏ qua nghĩa.",
+        "Không kiểm tra sự hòa hợp chủ ngữ–động từ."
+      ],
+      "theory": [
+        "Đọc toàn bộ câu để xác định thời gian, chủ thể, quan hệ ý và từ loại cần dùng.",
+        "Không chọn chỉ vì thấy một từ khóa; phải kiểm tra cả nghĩa và cấu trúc.",
+        "Ở câu sửa lỗi, đọc lại toàn câu sau khi chọn để kiểm tra tính tự nhiên."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u7-deep-language-grammar-context",
+          "name": "Ngữ pháp trong ngữ cảnh",
+          "example": "Choose the form that completes the meaning",
+          "targetQuestionCount": 4
+        },
+        {
+          "id": "eng10-u7-deep-language-vocabulary-use",
+          "name": "Từ vựng và từ loại",
+          "example": "Choose the context-appropriate word",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u7-deep-language-editing",
+          "name": "Phát hiện và chỉnh câu",
+          "example": "Choose the grammatically accurate sentence",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u7-g1"
+    },
+    {
+      "id": "eng10-deep-qt-u8-language-in-context",
+      "topicId": "eng10-t8",
+      "name": "Language in context nâng cao – New Ways to Learn",
+      "slug": "language-in-context-deep-u8",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng cấu trúc và từ vựng của Unit trong câu có ngữ cảnh, từ nhận biết đến phát hiện/chỉnh lỗi.",
+      "recognitionSigns": [
+        "Câu có ngữ cảnh Unit và yêu cầu đồng thời kiểm tra nghĩa với hình thức ngôn ngữ."
+      ],
+      "solvingSteps": [
+        "Khoanh dấu hiệu ngữ cảnh.",
+        "Xác định cấu trúc/từ loại.",
+        "Loại phương án sai nghĩa hoặc sai kết hợp.",
+        "Đọc kiểm tra toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhìn một từ khóa rồi chọn ngay.",
+        "Chỉ kiểm tra ngữ pháp mà bỏ qua nghĩa.",
+        "Không kiểm tra sự hòa hợp chủ ngữ–động từ."
+      ],
+      "theory": [
+        "Đọc toàn bộ câu để xác định thời gian, chủ thể, quan hệ ý và từ loại cần dùng.",
+        "Không chọn chỉ vì thấy một từ khóa; phải kiểm tra cả nghĩa và cấu trúc.",
+        "Ở câu sửa lỗi, đọc lại toàn câu sau khi chọn để kiểm tra tính tự nhiên."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u8-deep-language-grammar-context",
+          "name": "Ngữ pháp trong ngữ cảnh",
+          "example": "Choose the form that completes the meaning",
+          "targetQuestionCount": 4
+        },
+        {
+          "id": "eng10-u8-deep-language-vocabulary-use",
+          "name": "Từ vựng và từ loại",
+          "example": "Choose the context-appropriate word",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u8-deep-language-editing",
+          "name": "Phát hiện và chỉnh câu",
+          "example": "Choose the grammatically accurate sentence",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u8-g1"
+    },
+    {
+      "id": "eng10-deep-qt-u9-language-in-context",
+      "topicId": "eng10-t9",
+      "name": "Language in context nâng cao – Protecting the Environment",
+      "slug": "language-in-context-deep-u9",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng cấu trúc và từ vựng của Unit trong câu có ngữ cảnh, từ nhận biết đến phát hiện/chỉnh lỗi.",
+      "recognitionSigns": [
+        "Câu có ngữ cảnh Unit và yêu cầu đồng thời kiểm tra nghĩa với hình thức ngôn ngữ."
+      ],
+      "solvingSteps": [
+        "Khoanh dấu hiệu ngữ cảnh.",
+        "Xác định cấu trúc/từ loại.",
+        "Loại phương án sai nghĩa hoặc sai kết hợp.",
+        "Đọc kiểm tra toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhìn một từ khóa rồi chọn ngay.",
+        "Chỉ kiểm tra ngữ pháp mà bỏ qua nghĩa.",
+        "Không kiểm tra sự hòa hợp chủ ngữ–động từ."
+      ],
+      "theory": [
+        "Đọc toàn bộ câu để xác định thời gian, chủ thể, quan hệ ý và từ loại cần dùng.",
+        "Không chọn chỉ vì thấy một từ khóa; phải kiểm tra cả nghĩa và cấu trúc.",
+        "Ở câu sửa lỗi, đọc lại toàn câu sau khi chọn để kiểm tra tính tự nhiên."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u9-deep-language-grammar-context",
+          "name": "Ngữ pháp trong ngữ cảnh",
+          "example": "Choose the form that completes the meaning",
+          "targetQuestionCount": 4
+        },
+        {
+          "id": "eng10-u9-deep-language-vocabulary-use",
+          "name": "Từ vựng và từ loại",
+          "example": "Choose the context-appropriate word",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u9-deep-language-editing",
+          "name": "Phát hiện và chỉnh câu",
+          "example": "Choose the grammatically accurate sentence",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u9-g1"
+    },
+    {
+      "id": "eng10-deep-qt-u10-language-in-context",
+      "topicId": "eng10-t10",
+      "name": "Language in context nâng cao – Ecotourism",
+      "slug": "language-in-context-deep-u10",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng cấu trúc và từ vựng của Unit trong câu có ngữ cảnh, từ nhận biết đến phát hiện/chỉnh lỗi.",
+      "recognitionSigns": [
+        "Câu có ngữ cảnh Unit và yêu cầu đồng thời kiểm tra nghĩa với hình thức ngôn ngữ."
+      ],
+      "solvingSteps": [
+        "Khoanh dấu hiệu ngữ cảnh.",
+        "Xác định cấu trúc/từ loại.",
+        "Loại phương án sai nghĩa hoặc sai kết hợp.",
+        "Đọc kiểm tra toàn câu."
+      ],
+      "commonMistakes": [
+        "Nhìn một từ khóa rồi chọn ngay.",
+        "Chỉ kiểm tra ngữ pháp mà bỏ qua nghĩa.",
+        "Không kiểm tra sự hòa hợp chủ ngữ–động từ."
+      ],
+      "theory": [
+        "Đọc toàn bộ câu để xác định thời gian, chủ thể, quan hệ ý và từ loại cần dùng.",
+        "Không chọn chỉ vì thấy một từ khóa; phải kiểm tra cả nghĩa và cấu trúc.",
+        "Ở câu sửa lỗi, đọc lại toàn câu sau khi chọn để kiểm tra tính tự nhiên."
+      ],
+      "subTypes": [
+        {
+          "id": "eng10-u10-deep-language-grammar-context",
+          "name": "Ngữ pháp trong ngữ cảnh",
+          "example": "Choose the form that completes the meaning",
+          "targetQuestionCount": 4
+        },
+        {
+          "id": "eng10-u10-deep-language-vocabulary-use",
+          "name": "Từ vựng và từ loại",
+          "example": "Choose the context-appropriate word",
+          "targetQuestionCount": 1
+        },
+        {
+          "id": "eng10-u10-deep-language-editing",
+          "name": "Phát hiện và chỉnh câu",
+          "example": "Choose the grammatically accurate sentence",
+          "targetQuestionCount": 1
+        }
+      ],
+      "exampleQuestionId": "eng10-deep-u10-g1"
+    }
+  ]
+}

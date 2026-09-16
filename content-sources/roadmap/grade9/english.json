@@ -1,0 +1,480 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "2026.09.1",
+  "updatedAt": "2026-09-16T12:27:39.882Z",
+  "grade": "grade9",
+  "subject": "english",
+  "subjectName": "Tiếng Anh 9 (Vào 10)",
+  "icon": "Languages",
+  "themeColor": "#10b981",
+  "badge": "Tuyển sinh",
+  "stats": {
+    "totalTopics": 3,
+    "totalQuestionTypes": 12,
+    "estimatedTotalMinutes": 360
+  },
+  "topics": [
+    {
+      "id": "eng-t2",
+      "name": "Từ vựng & Ngữ pháp",
+      "slug": "tu-vung-va-ngu-phap",
+      "orderIndex": 1,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Từ vựng & Ngữ pháp",
+      "estimatedMinutes": 150,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "eng-qt3",
+        "eng-qt4",
+        "eng-qt6",
+        "eng-qt7",
+        "eng-qt11"
+      ]
+    },
+    {
+      "id": "eng-t3",
+      "name": "Đọc hiểu",
+      "slug": "doc-hieu",
+      "orderIndex": 2,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Đọc hiểu",
+      "estimatedMinutes": 120,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "eng-qt8",
+        "eng-qt12",
+        "eng-qt13",
+        "eng-qt14"
+      ]
+    },
+    {
+      "id": "eng-t4",
+      "name": "Viết & Biến đổi câu",
+      "slug": "viet-va-bien-doi-cau",
+      "orderIndex": 3,
+      "tier": 3,
+      "description": "Kiến thức trọng tâm và phương pháp giải Viết & Biến đổi câu",
+      "estimatedMinutes": 90,
+      "difficulty": "hard",
+      "questionTypeIds": [
+        "eng-qt5",
+        "eng-qt10",
+        "eng-qt15"
+      ]
+    }
+  ],
+  "questionTypes": [
+    {
+      "id": "eng-qt3",
+      "topicId": "eng-t2",
+      "name": "Câu bị động (Passive Voice)",
+      "slug": "cau-bi-dong",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Cấu trúc nhấn mạnh hành động được thực hiện lên chủ ngữ, biến đổi từ câu chủ động tương ứng theo các thì ngữ pháp.",
+      "recognitionSigns": [
+        "Chủ ngữ của câu là vật hoặc người chịu tác động của hành động",
+        "Phía sau chỗ trống thường có từ \"by\" + tân ngữ chỉ tác nhân, hoặc không có tân ngữ trực tiếp theo sau động từ chính",
+        "Đề bài yêu cầu biến đổi câu chủ động sang bị động hoặc ngược lại"
+      ],
+      "solvingSteps": [
+        "Xác định thì của động từ trong câu chủ động",
+        "Xác định tân ngữ của câu chủ động để đưa lên làm chủ ngữ câu bị động",
+        "Áp dụng cấu trúc bị động tổng quát: S + be + V3/ed + (by O)",
+        "Chia động từ \"to be\" chính xác theo thì của câu gốc và hòa hợp với chủ ngữ mới (số ít/số nhiều)",
+        "Động từ chính chuyển sang dạng phân từ hai V3 (Past Participle)"
+      ],
+      "commonMistakes": [
+        "Chia sai động từ \"to be\" do nhầm thì hoặc không hòa hợp với chủ ngữ mới số nhiều/số ít",
+        "Quên không bỏ các đại từ bất định như \"someone, people, they\" khi chuyển sang \"by...\"",
+        "Viết sai dạng phân từ hai của động từ bất quy tắc"
+      ]
+    },
+    {
+      "id": "eng-qt4",
+      "topicId": "eng-t2",
+      "name": "Câu điều kiện (Conditional Sentences)",
+      "slug": "cau-dieu-kien",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Cấu trúc diễn tả một giả thiết về một sự việc và kết quả tương ứng, thường thi loại 1 và loại 2 trong kỳ thi vào 10.",
+      "recognitionSigns": [
+        "Câu chứa từ liên kết \"If\" hoặc \"Unless\" (If... not)",
+        "Đề bài yêu cầu chia động từ của một trong hai mệnh đề (mệnh đề If hoặc mệnh đề chính)",
+        "Đề bài yêu cầu viết lại câu sử dụng If/Unless thay cho \"because\", \"so\", \"or\""
+      ],
+      "solvingSteps": [
+        "Phân biệt loại câu điều kiện cần sử dụng:",
+        "- Loại 1: Diễn tả sự việc có thật/có thể xảy ra ở hiện tại hoặc tương lai. Cấu trúc: If + S + V(hiện tại đơn), S + will/can/must + V(nguyên thể)",
+        "- Loại 2: Diễn tả sự việc không có thật/không thể xảy ra ở hiện tại. Cấu trúc: If + S + V2/ed (were cho mọi ngôi), S + would/could + V(nguyên thể)",
+        "Chia động từ chính xác ở mệnh đề còn thiếu hoặc biến đổi viết lại câu phù hợp",
+        "Lưu ý: \"Unless\" = \"If... not\", khi đổi cần đổi thể khẳng định/phủ định tương ứng"
+      ],
+      "commonMistakes": [
+        "Dùng sai loại điều kiện (ví dụ: thực tế ở hiện tại không có thật nhưng lại viết điều kiện loại 1)",
+        "Dùng \"was\" thay vì \"were\" cho các ngôi số ít trong mệnh đề If của câu điều kiện loại 2 (mặc dù văn nói chấp nhận nhưng đề thi chuẩn luôn yêu cầu \"were\")",
+        "Quên không đổi thể khẳng định/phủ định khi viết lại câu giữa \"If not\" và \"Unless\""
+      ]
+    },
+    {
+      "id": "eng-qt5",
+      "topicId": "eng-t4",
+      "name": "Viết lại câu với Mệnh đề quan hệ",
+      "slug": "viet-lai-cau-menh-de-quan-he",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Kết hợp hai câu đơn thành một câu phức sử dụng đại từ quan hệ (who, whom, which, that, whose) hoặc trạng từ quan hệ (where, when, why).",
+      "recognitionSigns": [
+        "Đề bài cho hai câu đơn và yêu cầu nối lại thành một câu sử dụng đại từ thích hợp",
+        "Chỗ trống trong câu trắc nghiệm nằm trước một mệnh đề giải thích cho danh từ đứng trước"
+      ],
+      "solvingSteps": [
+        "Tìm danh từ chung lặp lại xuất hiện ở cả hai câu đơn",
+        "Xác định vai trò của danh từ lặp lại trong câu thứ hai để chọn đại từ quan hệ phù hợp:",
+        "- Chỉ người, làm chủ ngữ: dùng **who** / **that**",
+        "- Chỉ người, làm tân ngữ: dùng **whom** / **who** / **that**",
+        "- Chỉ vật, làm chủ ngữ/tân ngữ: dùng **which** / **that**",
+        "- Chỉ sở hữu: dùng **whose** + danh từ",
+        "- Chỉ địa điểm: dùng **where** (không dùng sau giới từ)",
+        "Viết mệnh đề quan hệ ngay sau danh từ nó bổ nghĩa ở câu thứ nhất"
+      ],
+      "commonMistakes": [
+        "Viết mệnh đề quan hệ sai vị trí (phải viết ngay sau danh từ đứng trước ở câu thứ nhất chứ không phải cuối câu)",
+        "Vẫn giữ lại đại từ nhân xưng lặp lại ở câu thứ hai (ví dụ: \"This is the book which I bought **it** yesterday\" - thừa từ \"it\")",
+        "Dùng \"that\" trong mệnh đề quan hệ có dấu phẩy (mệnh đề không xác định) hoặc sau giới từ"
+      ],
+      "exampleQuestionId": "eng-q96"
+    },
+    {
+      "id": "eng-qt6",
+      "topicId": "eng-t2",
+      "name": "Trắc nghiệm Ngữ pháp & Từ vựng",
+      "slug": "trac-nghiem-ngu-phap-va-tu-vung",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Chuyên đề ôn luyện 8 câu hỏi trắc nghiệm khách quan (chiếm 2 điểm) luôn đứng đầu cấu trúc đề thi Tiếng Anh tuyển sinh vào 10 Bình Định. Chuyên đề tập trung giúp học sinh củng cố và ăn chắc điểm các mảng ngữ pháp và từ vựng nền tảng bao gồm thì động từ, dạng động từ (to V/V-ing/V0), giới từ & phrasal verbs thông dụng, câu so sánh, và vị trí của danh - động - tính - trạng trong câu.",
+      "recognitionSigns": [
+        "Đề bài cho một câu đơn có chứa một chỗ trống cần điền.",
+        "Cung cấp 4 lựa chọn trả lời dạng trắc nghiệm A, B, C, D.",
+        "Câu chứa các dấu hiệu thời gian đặc trưng, động từ thái độ hoặc các liên từ so sánh."
+      ],
+      "solvingSteps": [
+        "Bước 1: Quét nhanh câu hỏi để tìm các \"tín hiệu trực quan\" (ví dụ: trạng từ chỉ thời gian như yesterday, ago, since...; động từ đứng trước chỗ trống như enjoy, decide, should...; hoặc các từ so sánh như than, as, the...).",
+        "Bước 2: Xác định mảng kiến thức tương ứng với tín hiệu đó (ví dụ: thấy \"three years ago\" -> Quá khứ đơn; thấy \"interested\" -> tìm giới từ \"in\"; thấy \"than\" -> tìm So sánh hơn).",
+        "Bước 3: Thực hiện loại trừ các phương án sai cấu trúc ngữ pháp (ví dụ: chia động từ sai ngôi, dùng sai dạng từ loại đứng trước/sau danh từ).",
+        "Bước 4: Chọn đáp án đúng nhất và điền vào phiếu trả lời."
+      ],
+      "commonMistakes": [
+        "Lỗi bỏ sót từ tín hiệu ở cuối câu dẫn đến chia sai thì động từ.",
+        "Dịch nghĩa cảm tính giới từ từ tiếng Việt sang dẫn đến dùng sai giới từ cố định (ví dụ chọn interested with/at thay vì interested in).",
+        "Không phân biệt được vị trí của tính từ và trạng từ trong mối quan hệ với danh từ và động từ thường.",
+        "Chia động từ không hòa hợp với chủ ngữ số ít/số nhiều ở thì hiện tại đơn."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Thì động từ cơ bản (Hiện tại đơn, Quá khứ đơn, Hiện tại tiếp diễn, Hiện tại hoàn thành, Tương lai đơn)",
+          "example": "He has lived in Binh Dinh since he was a child.",
+          "note": "Căn cứ vào tín hiệu \"since + mệnh đề quá khứ đơn\" để chọn thì Hiện tại hoàn thành."
+        },
+        {
+          "name": "Dạng 2: Cấu trúc động từ (to V, V-ing, V0)",
+          "example": "We enjoy playing football after school.",
+          "note": "Nhìn động từ \"enjoy\" đứng trước chỗ trống để áp dụng công thức enjoy + V-ing."
+        },
+        {
+          "name": "Dạng 3: Giới từ & Phrasal verbs cơ bản",
+          "example": "She is interested in learning English.",
+          "note": "Ghi nhớ cụm giới từ cố định: be interested in (thích thú/quan tâm cái gì)."
+        },
+        {
+          "name": "Dạng 4: So sánh hơn, so sánh nhất và so sánh bằng",
+          "example": "This exam is more difficult than the last one.",
+          "note": "Dựa vào từ khóa \"than\" để xác định cấu trúc so sánh hơn của tính từ."
+        },
+        {
+          "name": "Dạng 5: Vị trí của các loại từ (Danh - Động - Tính - Trạng)",
+          "example": "My uncle is a careful driver.",
+          "note": "Nhận diện vị trí tính từ đứng trước bổ nghĩa cho danh từ: a + Adj + Noun."
+        }
+      ],
+      "exampleQuestionId": "eng-q5"
+    },
+    {
+      "id": "eng-qt7",
+      "topicId": "eng-t2",
+      "name": "Chia dạng từ (Word Form)",
+      "slug": "chia-dang-tu-word-form",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng bài chia dạng đúng của từ trong ngoặc để hoàn thành câu, chiếm điểm số trực tiếp trong Part 6 của đề thi tuyển sinh lớp 10 Bình Định. Dạng bài này kiểm tra khả năng vận dụng ngữ pháp kết hợp biến đổi từ loại (Danh - Động - Tính - Trạng) từ một gốc từ cho trước (như inventions, studying, natural, unpleasant). Đây là bước tiếp nối trực tiếp ngay sau khi học sinh đã nắm vững Vị trí từ loại (Dạng 5) để thực hiện biến đổi từ chính xác theo cấu trúc câu thay vì đoán nghĩa.",
+      "recognitionSigns": [
+        "Cuối câu hỏi có một từ gốc viết hoa đặt trong ngoặc đơn như (INVENT), (STUDY), (NATURE), (PLEASE)...",
+        "Trong câu có một chỗ trống cần điền một từ loại đã được biến đổi chính xác để hoàn thành cấu trúc ngữ pháp và ý nghĩa của câu."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định vị trí chỗ trống và phân tích cấu trúc ngữ pháp xung quanh (ví dụ: đứng sau tính từ cần danh từ, đứng trước danh từ cần tính từ, đứng sau động từ thường cần trạng từ...).",
+        "Bước 2: Quyết định loại từ cần điền: Danh từ (Noun), Động từ (Verb), Tính từ (Adjective) hay Trạng từ (Adverb).",
+        "Bước 3: Biến đổi từ gốc trong ngoặc sang đúng từ loại đã chọn bằng cách áp dụng các hậu tố phổ biến (-tion, -ment, -ful, -ly...) hoặc các tiền tố phù hợp.",
+        "Bước 4: Kiểm tra lại các yếu tố phụ trợ: Danh từ cần ở dạng số ít hay số nhiều (như sau \"one of the\" phải là danh từ số nhiều), từ cần mang nghĩa khẳng định hay phủ định (ví dụ pleasant vs unpleasant dựa trên ngữ cảnh)."
+      ],
+      "commonMistakes": [
+        "Xác định sai loại từ cần điền (nhầm lẫn giữa tính từ và trạng từ, hoặc điền động từ vào vị trí danh từ).",
+        "Quên chia danh từ số nhiều: Ghi danh từ số ít (ví dụ \"invention\") khi đứng sau các cụm từ yêu cầu số nhiều như \"one of the...\", \"many\", \"some\" (đáp án đúng phải là \"inventions\").",
+        "Bỏ qua phân tích nghĩa phủ định của câu: Điền từ mang nghĩa khẳng định trong ngữ cảnh tiêu cực (ví dụ: ghi \"pleasant\" khi ngữ cảnh câu chỉ sự khó chịu \"không tìm được khách sạn\", đúng ra phải là \"unpleasant\").",
+        "Sai chính tả khi thêm hậu tố (quên gấp đôi phụ âm, biến đổi sai đuôi \"y\" thành \"i\" trước khi thêm hậu tố, viết sai đuôi tiền tố phủ định)."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Biến đổi Động từ thành Danh từ (Verb -> Noun)",
+          "example": "The telephone is one of the most useful inventions of the 20th century. (INVENT)",
+          "note": "Đứng sau cụm \"one of the most useful\" (so sánh nhất + tính từ) bắt buộc phải là một danh từ số nhiều. Ta chuyển động từ \"invent\" thành danh từ \"invention\" rồi thêm \"s\" thành \"inventions\". Các cặp động - danh từ phổ biến: invent -> invention, decide -> decision, communicate -> communication, educate -> education, inform -> information, perform -> performance, attract -> attraction, protect -> protection."
+        },
+        {
+          "name": "Dạng 2: Biến đổi Danh từ thành Tính từ (Noun -> Adjective)",
+          "example": "They are trying to protect the natural beauty of the area. (NATURE)",
+          "note": "Đứng trước danh từ \"beauty\" để bổ nghĩa cho nó cần một tính từ. Ta biến đổi danh từ \"nature\" thành tính từ \"natural\". Các cặp danh - tính từ hay gặp: nature -> natural, beauty -> beautiful, danger -> dangerous, environment -> environmental, use -> useful/useless, success -> successful, care -> careful/careless, peace -> peaceful."
+        },
+        {
+          "name": "Dạng 3: Biến đổi Tính từ thành Trạng từ (Adjective -> Adverb)",
+          "example": "She speaks English very fluently. (FLUENT)",
+          "note": "Đứng sau để bổ nghĩa cho động từ hành động \"speaks\" cần một trạng từ chỉ cách thức. Ta thêm đuôi \"-ly\" vào sau tính từ \"fluent\" để thành trạng từ \"fluently\". Các trạng từ phổ biến: carefully, quickly, clearly, fluently, successfully, naturally."
+        },
+        {
+          "name": "Dạng 4: Tạo từ mang nghĩa phủ định (Negative Prefixes)",
+          "example": "It was an unpleasant experience because we couldn't find a hotel. (PLEASE)",
+          "note": "Ngữ cảnh chỉ việc \"không thể tìm thấy khách sạn\" mang nghĩa tiêu cực. Ta cần chuyển \"please\" thành tính từ \"pleasant\" rồi thêm tiền tố phủ định \"un-\" thành \"unpleasant\". Các tiền tố phủ định thường gặp: un- (unhappy, unhealthy), im- (impossible, impatient), in- (incorrect, inactive), dis- (dishonest, disappear), il- (illegal), ir- (irregular)."
+        }
+      ],
+      "exampleQuestionId": "eng-q85"
+    },
+    {
+      "id": "eng-qt8",
+      "topicId": "eng-t3",
+      "name": "Đọc điền từ quảng cáo/thông báo",
+      "slug": "doc-dien-tu-quang-cao-thong-bao",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề Đọc điền từ (Gap Filling) vào văn bản ngắn dạng quảng cáo, thông báo hoặc tin nhắn (Part 2 đề Bình Định 2025). Đây là cầu nối quan trọng giữa các câu ngữ pháp rời rạc và bài đọc hiểu dài. Thay vì kiểm tra công thức khô khan, dạng bài này đòi hỏi học sinh vừa vận dụng linh hoạt kiến thức cũ (giới từ, liên từ, từ nối, từ loại, thì động từ), vừa phải hiểu ngữ cảnh và sự liên kết ý nghĩa giữa các câu trong đoạn văn.",
+      "recognitionSigns": [
+        "Đề bài cung cấp một bảng thông báo (Announcement/Notice) hoặc quảng cáo ngắn (Advertisement) hoàn chỉnh có chứa các chỗ trống đánh số (1), (2), (3)...",
+        "Đi kèm là các câu hỏi trắc nghiệm A, B, C, D tương ứng cho từng chỗ trống.",
+        "Các phương án lựa chọn trộn lẫn giữa ngữ pháp (giới từ, liên từ, từ loại, cấu trúc song song) và từ vựng liên kết theo ngữ cảnh (feedback, registered, contact...)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định loại văn bản và chủ đề chính bằng cách đọc nhanh tiêu đề lớn (ví dụ: SCHOOL ENGLISH CLUB, VOLUNTEER ACTIVITY) và câu đầu tiên để định hình ngữ cảnh từ vựng.",
+        "Bước 2: Phân tích ngữ pháp xung quanh chỗ trống: Xem xét các từ đứng ngay trước và ngay sau chỗ trống để tìm collocations, giới từ cố định (như interested + in, participate + in), cấu trúc song song (đứng sau liên từ \"and\"), hoặc dạng động từ (to V/V-ing).",
+        "Bước 3: Phân tích tính liên kết và ý nghĩa logic: Đọc cả câu chứa chỗ trống và câu liền trước/sau để xác định mối quan hệ logic (đối lập dùng \"however/but\", nguyên nhân dùng \"because\", bổ sung thông tin dùng \"also/besides\").",
+        "Bước 4: Sử dụng phương pháp loại trừ: Loại các phương án sai cấu trúc hoặc sai từ loại trước, sau đó dịch nghĩa ngữ cảnh để chọn đáp án đúng nhất."
+      ],
+      "commonMistakes": [
+        "Lỗi dịch thô từ tiếng Việt: Dịch nghĩa từng từ rồi tự ghép giới từ theo thói quen tiếng Việt (ví dụ chọn interested with/at thay vì interested in).",
+        "Bỏ qua mối quan hệ liên kết giữa các câu: Chọn trạng từ nối chỉ dựa vào một câu đơn mà không đọc câu trước đó, dẫn đến chọn nhầm từ nối chỉ nguyên nhân (therefore) thay vì đối lập (however).",
+        "Nhầm lẫn từ loại và cấu trúc so sánh: Không xác định được loại từ đứng sau các từ chỉ mức độ (ví dụ sau become more... phải điền một tính từ như confident chứ không điền danh từ confidence hay trạng từ confidently).",
+        "Lỗi giới từ thời gian: Quên quy tắc đặc biệt (ví dụ thấy tháng June vội chọn \"in June\" mà bỏ quên có ngày cụ thể \"Sunday, June 10th\" phía trước, đáp án đúng phải là \"on\")."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Giới từ & Cụm từ cố định (Prepositions & Collocations)",
+          "example": "Are you interested (1) ______ speaking English? -> choose: in",
+          "note": "Kiểm tra khả năng ghi nhớ các giới từ đi kèm tính từ, động từ cố định hoặc giới từ chỉ thời gian, nơi chốn cụ thể."
+        },
+        {
+          "name": "Dạng 2: Từ nối & Liên từ liên kết (Connectors & Conjunctions)",
+          "example": "You do not need to be an excellent speaker; (1) ______, you should be ready to communicate. -> choose: however",
+          "note": "Đòi hỏi học sinh phải đọc hiểu ý nghĩa của cả câu trước và sau chỗ trống để tìm ra mối quan hệ logic (đối lập, nguyên nhân, mục đích)."
+        },
+        {
+          "name": "Dạng 3: Vị trí từ loại trong ngữ cảnh (Word Form/Parts of Speech in context)",
+          "example": "By taking part regularly, you will become more (4) ______ when speaking. -> choose: confident",
+          "note": "Cần phân tích cấu trúc câu để xác định chỗ trống cần danh từ, động từ, tính từ hay trạng từ, kết hợp với so sánh hơn hoặc cấu trúc song song (V-ing and V-ing)."
+        },
+        {
+          "name": "Dạng 4: Từ vựng theo ngữ cảnh (Contextual Vocabulary)",
+          "example": "members discuss a topic and receive useful (2) ______ from teachers. -> choose: feedback",
+          "note": "Cả 4 lựa chọn đều cùng từ loại (ví dụ danh từ) nhưng học sinh phải hiểu bối cảnh và ý nghĩa thực tế của đoạn văn để chọn từ phù hợp nhất."
+        }
+      ],
+      "exampleQuestionId": "eng-q90"
+    },
+    {
+      "id": "eng-qt10",
+      "topicId": "eng-t4",
+      "name": "Viết lại câu cùng nghĩa (Although/Because)",
+      "slug": "viet-lai-cau-although-because",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Biến đổi câu sử dụng các liên từ nhượng bộ (Although/Even though) hoặc nguyên nhân (Because/Because of) sao cho ý nghĩa câu không thay đổi.",
+      "recognitionSigns": [
+        "Đề bài cho câu gốc và từ khóa viết lại trong ngoặc (ví dụ: (ALTHOUGH), (BECAUSE)).",
+        "Yêu cầu hoàn thành câu thứ hai bắt đầu bằng từ cho sẵn."
+      ],
+      "solvingSteps": [
+        "Xác định mối quan hệ giữa hai vế trong câu gốc (đối lập hay nguyên nhân - kết quả).",
+        "Áp dụng công thức biến đổi tương ứng giữa liên từ nối mệnh đề và cụm danh từ (ví dụ: Because + clause <-> Because of + N-phrase; Although + clause <-> In spite of + N-phrase).",
+        "Viết lại câu mới và kiểm tra kỹ thì của động từ, bỏ các liên từ cũ bị thừa (như but, so)."
+      ],
+      "commonMistakes": [
+        "Vẫn giữ lại từ \"but\" khi dùng \"Although\", hoặc giữ lại \"so\" khi dùng \"Because\" (lỗi cực kỳ phổ biến).",
+        "Không chuyển đổi đúng từ mệnh đề sang cụm danh từ/V-ing khi sử dụng because of / in spite of."
+      ],
+      "exampleQuestionId": "eng-q94"
+    },
+    {
+      "id": "eng-qt11",
+      "topicId": "eng-t2",
+      "name": "Tìm và sửa lỗi sai",
+      "slug": "tim-va-sua-loi-sai",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Phát hiện lỗi sai ngữ pháp hoặc từ vựng trong câu và sửa lại cho đúng, rèn luyện tư duy phân tích ngữ pháp sâu.",
+      "recognitionSigns": [
+        "Đề bài cho một câu có lỗi sai ngữ pháp.",
+        "Yêu cầu chỉ ra lỗi sai và viết lại từ đúng để thay thế."
+      ],
+      "solvingSteps": [
+        "Đọc toàn bộ câu để hiểu nghĩa và xác định thì chủ đạo của câu.",
+        "Kiểm tra sự hòa hợp chủ-vị, cách chia thì động từ, dạng động từ (V-ing/to-V), vị trí từ loại, giới từ, liên từ.",
+        "Xác định từ viết sai, tìm từ đúng thay thế và điền vào câu trả lời."
+      ],
+      "commonMistakes": [
+        "Chỉ ra đúng từ sai nhưng sửa lại thành một từ khác vẫn sai ngữ pháp.",
+        "Sửa các từ vốn đã đúng cấu trúc ngữ pháp do phán đoán vội vàng."
+      ],
+      "exampleQuestionId": "eng-q98"
+    },
+    {
+      "id": "eng-qt12",
+      "topicId": "eng-t3",
+      "name": "Sắp xếp hội thoại, thư và đoạn văn",
+      "slug": "sap-xep-hoi-thoai-thu-doan-van",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng bài sắp xếp hội thoại ngắn, email/thư hoặc các câu rời rạc thành đoạn văn hoàn chỉnh theo cấu trúc logic, trình tự phát triển ý và từ nối liên kết (Part 3 đề Bình Định 2025).",
+      "recognitionSigns": [
+        "Đề bài cung cấp danh sách các câu đơn hoặc lời thoại ký hiệu a, b, c, d, e... không theo thứ tự.",
+        "Các phương án lựa chọn trắc nghiệm A, B, C, D biểu thị chuỗi thứ tự sắp xếp (ví dụ: b - c - e - a - d).",
+        "Kiểm tra tư duy logic về mối quan hệ Hỏi - Đáp, lời mời - phản hồi, hoặc trình tự phát triển ý của đoạn văn."
+      ],
+      "solvingSteps": [
+        "Bước 1: Tìm câu mở đầu độc lập, không phụ thuộc vào câu khác (thường là lời chào, câu hỏi khơi gợi vấn đề, hoặc câu chủ đề khái quát đoạn văn).",
+        "Bước 2: Ghép cặp liên kết bắt buộc: Tìm các mối quan hệ Hỏi - Đáp, lời mời - từ chối/đồng ý, lời phản hồi cảm thán.",
+        "Bước 3: Theo dõi các từ chỉ định và đại từ liên kết: Chú ý các từ như it, this, they, those, because, therefore... chúng phải đứng sau đối tượng được nhắc đến trước đó.",
+        "Bước 4: Đặt câu kết luận xuống cuối: Các câu chứa từ nối kết quả hoặc kết luận như in conclusion, therefore, as a result, best regards, best wishes thường nằm ở cuối.",
+        "Bước 5: Đối chiếu chuỗi thứ tự vừa xếp với 4 phương án trắc nghiệm A, B, C, D để chọn đáp án đúng."
+      ],
+      "commonMistakes": [
+        "Chọn nhầm câu có chứa trạng từ nối làm câu mở đầu (ví dụ: đặt câu bắt đầu bằng First lên trước câu chủ đề giới thiệu chung).",
+        "Ghép sai các cặp câu đối đáp phản hồi (như đặt câu phản hồi tích cực \"That sounds great\" trước khi đưa ra thông tin gợi ý).",
+        "Bỏ qua các đại từ chỉ định và trạng từ liên kết (như đặt câu chứa \"This habit\" lên trước khi định nghĩa thói quen đó là gì)."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Sắp xếp hội thoại ngắn (Dialogue)",
+          "example": "Sắp xếp cuộc trò chuyện hỏi đáp, rủ rê hoặc trao đổi thông tin giao tiếp hằng ngày."
+        },
+        {
+          "name": "Dạng 2: Sắp xếp email / thư hỏi thăm / thư yêu cầu (Email/Letter)",
+          "example": "Sắp xếp các phần của bức thư theo bố cục: Lời chào -> Mục đích thư -> Chi tiết -> Yêu cầu/Hẹn gặp -> Lời kết."
+        },
+        {
+          "name": "Dạng 3: Sắp xếp câu thành đoạn văn hoàn chỉnh (Paragraph)",
+          "example": "Sắp xếp các câu sử dụng từ nối trình tự (First, Next, Finally, Therefore, In conclusion) theo mạch lập luận logic."
+        }
+      ],
+      "exampleQuestionId": "eng-q601"
+    },
+    {
+      "id": "eng-qt13",
+      "topicId": "eng-t3",
+      "name": "Đọc hiểu trắc nghiệm",
+      "slug": "doc-hieu-trac-nghiem",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Đọc một đoạn văn dài hơn và trả lời câu hỏi trắc nghiệm A, B, C, D về nội dung chi tiết hoặc ý chính của bài đọc.",
+      "recognitionSigns": [
+        "Đề bài cho đoạn văn đọc hiểu và câu hỏi trắc nghiệm.",
+        "Câu hỏi yêu cầu tìm ý chính (main topic), chi tiết đúng/sai, hoặc giải nghĩa từ vựng."
+      ],
+      "solvingSteps": [
+        "Đọc câu hỏi trước để định hướng thông tin cần tìm trong bài.",
+        "Đọc quét (scanning) đoạn văn để định vị vùng thông tin chứa câu trả lời.",
+        "Đọc kỹ vùng thông tin đó, đối chiếu với các phương án lựa chọn và dùng phương pháp loại trừ."
+      ],
+      "commonMistakes": [
+        "Chọn đáp án chỉ dựa vào từ khóa giống hệt trong bài mà không đọc kỹ nghĩa của cả câu.",
+        "Nhầm lẫn ý chính của toàn bài với một chi tiết minh họa nhỏ."
+      ],
+      "exampleQuestionId": "eng-q101"
+    },
+    {
+      "id": "eng-qt14",
+      "topicId": "eng-t3",
+      "name": "Đọc hiểu True / False",
+      "slug": "doc-hieu-true-false",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc một đoạn văn ngắn và xác định 4 nhận định đi kèm là Đúng (True) hay Sai (False) dựa trên thông tin đối chiếu thực tế từ bài đọc (Part 5 đề Bình Định 2025).",
+      "recognitionSigns": [
+        "Đề bài cung cấp một đoạn văn đọc hiểu ngắn.",
+        "Đi kèm là 4 câu nhận định khẳng định thông tin.",
+        "Yêu cầu học sinh xác định mỗi câu nhận định là TRUE (Đúng) hoặc FALSE (Sai)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Đọc nhanh 4 câu nhận định và gạch chân các từ khóa quan trọng (chủ ngữ, động từ, mốc thời gian, số lượng, mức độ).",
+        "Bước 2: Tìm vùng chứa thông tin tương ứng trong bài đọc bằng cách dò theo từ khóa.",
+        "Bước 3: Đối chiếu cẩn thận từng chi tiết giữa nhận định và câu văn trong bài (đặc biệt lưu ý các từ chỉ số lượng như some/all, can/must, hoặc mốc thời gian/địa điểm).",
+        "Bước 4: Chỉ chọn TRUE (T) khi toàn bộ thông tin khớp hoàn hảo; chọn FALSE (F) nếu có bất kỳ chi tiết nào bị thay đổi, trái ngược hoặc không xuất hiện."
+      ],
+      "commonMistakes": [
+        "Chọn TRUE dựa trên phán đoán đời sống thực tế hoặc kiến thức xã hội thay vì thông tin có sẵn trong bài.",
+        "Bị bẫy bởi các từ chỉ mức độ/số lượng tuyệt đối (ví dụ: bài viết dùng \"some students\" nhưng nhận định dùng \"every student\" hoặc \"always\").",
+        "Nhầm lẫn về mốc thời gian (như last year vs this year) hoặc chủ thể thực hiện hành động."
+      ],
+      "exampleQuestionId": "eng-q801"
+    },
+    {
+      "id": "eng-qt15",
+      "topicId": "eng-t4",
+      "name": "Viết lại câu không đổi nghĩa",
+      "slug": "viet-lai-cau-khong-doi-nghia",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Biến đổi câu gốc sang một câu mới sử dụng cấu trúc tương đương (bao gồm câu tường thuật, nguyên nhân/kết quả, mệnh đề quan hệ và câu điều kiện), bám sát cấu trúc Part 8 của đề thi tuyển sinh lớp 10 Bình Định.",
+      "recognitionSigns": [
+        "Đề bài cung cấp câu gốc tiếng Anh kèm theo từ gợi ý viết hoa trong ngoặc đơn như (ALTHOUGH), (BECAUSE), (IF), (WHO), (WHICH), (KNEW)...",
+        "Cung cấp phần đầu của câu thứ hai kết thúc bằng dấu mũi tên và từ nối hoặc ba chấm (ví dụ: -> He told me that..., -> If you...)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định cấu trúc ngữ pháp và ý nghĩa của câu gốc (ví dụ: câu trực tiếp dạng nghi vấn Yes/No, câu nguyên nhân có \"so\", hoặc mệnh đề quan hệ ghép 2 câu).",
+        "Bước 2: Phân tích từ khóa trong ngoặc và phần từ gợi ý ở câu mới để xác định mẫu biến đổi tương đương (ví dụ: because of -> because + mệnh đề, direct speech -> reported speech lùi thì).",
+        "Bước 3: Thực hiện viết lại câu: Chú ý biến đổi thì động từ (lùi thì trong câu tường thuật), đại từ, trạng từ chỉ thời gian/nơi chốn, và kiểm tra sự hòa hợp chủ-vị của câu mới.",
+        "Bước 4: Đối chiếu nghĩa của câu mới viết lại với câu gốc để đảm bảo hoàn toàn đồng nhất về mặt ngữ nghĩa."
+      ],
+      "commonMistakes": [
+        "Quên lùi thì động từ hoặc chia sai thì khi chuyển từ câu trực tiếp sang câu tường thuật.",
+        "Vẫn giữ lại các liên từ đối lập cũ (như 'but') khi đã viết lại câu dùng 'Although', hoặc giữ lại 'so' khi dùng 'Because'.",
+        "Sử dụng nhầm động từ khuyết thiếu 'will/would' trong mệnh đề điều kiện 'if' (mệnh đề if phải chia hiện tại đơn).",
+        "Quên đổi thể khẳng định/phủ định khi viết lại câu điều kiện (or -> if not) hoặc nguyên nhân/kết quả."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Viết lại câu chỉ nguyên nhân (Because / Because of)",
+          "example": "It rained heavily, so we stayed at home. -> We stayed at home because it was raining heavily."
+        },
+        {
+          "name": "Dạng 2: Câu điều kiện loại 1 (Conditional Sentences Type 1)",
+          "example": "Hurry up, or you will miss the bus. -> If you don't hurry up, you will miss the bus."
+        },
+        {
+          "name": "Dạng 3: Mệnh đề quan hệ (Relative Clauses)",
+          "example": "The girl won first prize. She is my cousin. -> The girl who won first prize is my cousin."
+        },
+        {
+          "name": "Dạng 4: Câu tường thuật (Reported Speech)",
+          "example": "Mary asked Peter, \"Do you know the way?\" -> Mary asked Peter if he knew the way."
+        }
+      ],
+      "exampleQuestionId": "eng-q831"
+    }
+  ]
+}

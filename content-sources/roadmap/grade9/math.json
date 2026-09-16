@@ -1,0 +1,519 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "2026.09.1",
+  "updatedAt": "2026-09-16T12:27:38.489Z",
+  "grade": "grade9",
+  "subject": "math",
+  "subjectName": "Toán 9 (Vào 10)",
+  "icon": "Calculator",
+  "themeColor": "#6366f1",
+  "badge": "Tuyển sinh",
+  "stats": {
+    "totalTopics": 6,
+    "totalQuestionTypes": 8,
+    "estimatedTotalMinutes": 240
+  },
+  "topics": [
+    {
+      "id": "math-t1",
+      "name": "Đại số nền tảng & Căn thức",
+      "slug": "dai-so-va-can-thuc",
+      "orderIndex": 1,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Đại số nền tảng & Căn thức",
+      "estimatedMinutes": 60,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math-qt1",
+        "math-qt7"
+      ]
+    },
+    {
+      "id": "math-t2",
+      "name": "Phương trình & Hệ thức Vi-ét",
+      "slug": "phuong-trinh-va-vi-et",
+      "orderIndex": 2,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Phương trình & Hệ thức Vi-ét",
+      "estimatedMinutes": 30,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math-qt2"
+      ]
+    },
+    {
+      "id": "math-t3",
+      "name": "Hệ phương trình & Toán thực tế",
+      "slug": "he-phuong-trinh-toan-thuc-te",
+      "orderIndex": 3,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Hệ phương trình & Toán thực tế",
+      "estimatedMinutes": 60,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "math-qt3",
+        "math-qt4"
+      ]
+    },
+    {
+      "id": "math-t4",
+      "name": "Hàm số & Đồ thị",
+      "slug": "ham-so-va-do-thi",
+      "orderIndex": 4,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Hàm số & Đồ thị",
+      "estimatedMinutes": 30,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "math-qt5"
+      ]
+    },
+    {
+      "id": "math-t5",
+      "name": "Hình học đường tròn",
+      "slug": "hinh-hoc-duong-tron",
+      "orderIndex": 5,
+      "tier": 3,
+      "description": "Kiến thức trọng tâm và phương pháp giải Hình học đường tròn",
+      "estimatedMinutes": 30,
+      "difficulty": "hard",
+      "questionTypeIds": [
+        "math-qt6"
+      ]
+    },
+    {
+      "id": "math-t6",
+      "name": "Thống kê & Xác suất cơ bản",
+      "slug": "thong-ke-va-xac-suat",
+      "orderIndex": 6,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Thống kê & Xác suất cơ bản",
+      "estimatedMinutes": 30,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math-qt8"
+      ]
+    }
+  ],
+  "questionTypes": [
+    {
+      "id": "math-qt1",
+      "topicId": "math-t1",
+      "name": "Rút gọn biểu thức chứa căn",
+      "slug": "rut-gon-bieu-thuc-chua-can",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng toán đại số kinh điển luôn chiếm 2 điểm (20% tổng số điểm) ở vị trí Câu 1 trong mọi đề thi tuyển sinh vào 10. Đề bài thường cho một biểu thức phức tạp gồm các phân thức đại số chứa căn bậc hai (thường là biến x), yêu cầu học sinh thực hiện rút gọn chính xác, sau đó vận dụng biểu thức rút gọn để giải quyết các câu hỏi phụ nâng cao như giải phương trình, tìm giá trị nguyên, so sánh hoặc tìm GTLN/GTNN.",
+      "recognitionSigns": [
+        "Đề bài cho biểu thức chứa các căn thức bậc hai của biến \\( x \\) (ví dụ: \\( \\sqrt{x} \\)) kèm theo các phân thức đại số.",
+        "Có nhiều phân thức phức tạp nằm trong ngoặc đơn nối với nhau bởi các phép toán cộng, trừ, nhân, chia.",
+        "Các mẫu thức chứa biến thường có mối quan hệ nhân tử với nhau, ví dụ: \\( x - 1 = (\\sqrt{x} - 1)(\\sqrt{x} + 1) \\), \\( x - \\sqrt{x} = \\sqrt{x}(\\sqrt{x} - 1) \\), hoặc \\( x + 2\\sqrt{x} = \\sqrt{x}(\\sqrt{x} + 2) \\).",
+        "Yêu cầu đầu tiên luôn là: \"Rút gọn biểu thức \\( A \\), \\( B \\), hoặc \\( P \\)\".",
+        "Các yêu cầu tiếp theo là các bài toán ứng dụng kết quả rút gọn: tính giá trị biểu thức, giải phương trình/bất phương trình, tìm giá trị nguyên của \\( x \\) để biểu thức nguyên, so sánh biểu thức với một số."
+      ],
+      "solvingSteps": [
+        "Bước 1: Tìm điều kiện xác định (ĐKXĐ). Biểu thức dưới căn phải không âm (\\( x \\ge 0 \\)) và các mẫu thức phải khác 0.",
+        "Bước 2: Phân tích các mẫu thức thành nhân tử để xác định Mẫu thức chung (MTC). Các hằng đẳng thức thường dùng: \\( a - b = (\\sqrt{a} - \\sqrt{b})(\\sqrt{a} + \\sqrt{b}) \\).",
+        "Bước 3: Quy đồng mẫu thức các phân thức trong từng cụm ngoặc. Thực hiện nhân cả tử và mẫu với nhân tử phụ tương ứng.",
+        "Bước 4: Quy đồng mẫu thức, thực hiện phép tính ở tử số (phá ngoặc, nhân đơn thức/đa thức) giữ nguyên mẫu thức chung. Thu gọn tử số bằng cách nhóm các hạng tử đồng dạng.",
+        "Bước 5: Phân tích tử số vừa thu gọn thành nhân tử để triệt tiêu các nhân tử chung với mẫu thức (nếu có).",
+        "Bước 6: Thực hiện các phép toán nhân/chia ngoài ngoặc (nhân trực tiếp hoặc nhân nghịch đảo đối với phép chia phân thức) để thu được kết quả tối giản nhất.",
+        "Bước 7: Sử dụng kết quả rút gọn tối giản để thực hiện câu phụ, đối chiếu kỹ kết quả tìm được với ĐKXĐ ban đầu trước khi kết luận."
+      ],
+      "commonMistakes": [
+        "Bỏ sót hoặc không viết điều kiện xác định dẫn đến mất điểm trình bày hoặc lấy nhầm nghiệm không thỏa mãn.",
+        "Sai dấu khi quy đồng mẫu thức, đặc biệt khi trước phân thức có dấu trừ \\( - \\) (quên đổi dấu toàn bộ tử số khi phá ngoặc).",
+        "Rút gọn vội vã bằng cách triệt tiêu các số hạng đơn lẻ ở tử và mẫu khi chúng chưa được đưa về dạng tích (ví dụ: triệt tiêu \\( \\sqrt{x} \\) trong biểu thức \\( \\frac{\\sqrt{x}+1}{\\sqrt{x}} \\)).",
+        "Phép chia phân thức nhưng quên đảo ngược tử và mẫu của phân thức chia khi thực hiện phép nhân nghịch đảo.",
+        "Khi làm câu phụ tìm giá trị nguyên của \\( x \\) để biểu thức nguyên, quên không đối chiếu giá trị \\( x \\) tìm được với điều kiện \\( x \\ge 0 \\) và các điều kiện mẫu khác 0."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Tính giá trị biểu thức căn không chứa biến",
+          "example": "Tính giá trị biểu thức: \\( A = \\sqrt{18} - 2\\sqrt{50} + 3\\sqrt{8} \\)",
+          "note": "Phân tích các số dưới căn thành tích có chứa số chính phương để đưa ra ngoài dấu căn, sau đó thực hiện cộng trừ các căn thức đồng dạng."
+        },
+        {
+          "name": "Dạng 2: Tìm điều kiện xác định của biểu thức phân thức chứa căn",
+          "example": "Tìm điều kiện xác định của biểu thức: \\( P = \\left(\\frac{1}{\\sqrt{x}-1} + \\frac{1}{\\sqrt{x}+1}\\right) \\cdot \\frac{x-1}{\\sqrt{x}} \\)",
+          "note": "Đặt điều kiện cho các biểu thức dưới căn không âm (\\( x \\ge 0 \\)) và tất cả các mẫu thức khác 0 (\\( \\sqrt{x}-1 \\neq 0 \\), \\( \\sqrt{x}+1 \\neq 0 \\), và \\( \\sqrt{x} \\neq 0 \\))."
+        },
+        {
+          "name": "Dạng 3: Rút gọn biểu thức đơn giản có hai mẫu liên hợp",
+          "example": "Rút gọn biểu thức: \\( A = \\frac{1}{\\sqrt{x}-1} - \\frac{1}{\\sqrt{x}+1} \\)",
+          "note": "Quy đồng mẫu thức với mẫu chung là tích hai mẫu liên hợp \\( (\\sqrt{x}-1)(\\sqrt{x}+1) = x-1 \\), quy đồng tử số rồi rút gọn."
+        },
+        {
+          "name": "Dạng 4: Rút gọn biểu thức chứa phép nhân hoặc chia phân thức",
+          "example": "Rút gọn biểu thức: \\( P = \\frac{x-4}{\\sqrt{x}-2} : \\frac{\\sqrt{x}+2}{\\sqrt{x}} \\)",
+          "note": "Phân tích tử và mẫu thành nhân tử (áp dụng hằng đẳng thức hiệu hai bình phương \\( x-4 = (\\sqrt{x}-2)(\\sqrt{x}+2) \\)), sau đó chuyển phép chia thành nhân với phân thức nghịch đảo."
+        },
+        {
+          "name": "Dạng 5: Rút gọn rồi tính giá trị của biểu thức tại một điểm cụ thể",
+          "example": "Cho biểu thức \\( P = \\frac{\\sqrt{x}}{\\sqrt{x}-3} \\). Tính giá trị của \\( P \\) tại \\( x = 4 \\).",
+          "note": "Thay giá trị \\( x = 4 \\) (đã kiểm tra thỏa mãn ĐKXĐ \\( x \\ge 0, x \\neq 9 \\)) vào biểu thức rút gọn để tính ra kết quả số cụ thể."
+        },
+        {
+          "name": "Dạng 6: Rút gọn rồi giải phương trình hoặc bất phương trình theo biểu thức",
+          "example": "Tìm giá trị của \\( x \\) để biểu thức rút gọn \\( P = \\frac{\\sqrt{x}-1}{\\sqrt{x}+2} \\) bằng \\( \\frac{1}{3} \\) (tức là giải phương trình \\( P = \\frac{1}{3} \\)).",
+          "note": "Cho biểu thức rút gọn bằng giá trị \\( k \\), quy đồng khử mẫu giải phương trình tìm \\( x \\), sau đó đối chiếu nghiêm ngặt kết quả với ĐKXĐ ban đầu."
+        },
+        {
+          "name": "Dạng 7: Rút gọn rồi tìm x nguyên để biểu thức nhận giá trị nguyên",
+          "example": "Tìm các số nguyên \\( x \\) để biểu thức \\( P = \\frac{\\sqrt{x}+3}{\\sqrt{x}-1} \\) nhận giá trị nguyên.",
+          "note": "Tách tử số theo mẫu số thành dạng \\( P = 1 + \\frac{4}{\\sqrt{x}-1} \\). Để \\( P \\) nguyên thì mẫu thức \\( \\sqrt{x}-1 \\) phải là ước nguyên của tử số \\( 4 \\). Lập bảng tìm ước số để giải tìm \\( x \\) nguyên."
+        },
+        {
+          "name": "Dạng 8: Rút gọn rồi so sánh hoặc chứng minh bất đẳng thức, tìm GTLN/GTNN",
+          "example": "Chứng minh biểu thức \\( P = \\frac{\\sqrt{x}-1}{\\sqrt{x}+2} < 1 \\) với mọi \\( x \\ge 0, x \\neq 1 \\).",
+          "note": "Xét hiệu \\( P - 1 = \\frac{-3}{\\sqrt{x}+2} \\). Vì tử số luôn âm (\\( -3 < 0 \\)) và mẫu số luôn dương (\\( \\sqrt{x}+2 > 0 \\)), nên hiệu luôn âm, suy ra \\( P < 1 \\). Hoặc áp dụng bất đẳng thức Cô-si để tìm GTLN/GTNN."
+        }
+      ],
+      "exampleQuestionId": "math-q1"
+    },
+    {
+      "id": "math-qt2",
+      "topicId": "math-t2",
+      "name": "Biện luận nghiệm phương trình bậc hai & Hệ thức Vi-ét",
+      "slug": "bien-luan-nghiem-va-vi-et",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề trọng tâm ôn thi vào 10 (không chuyên), bao gồm các dạng toán biện luận số nghiệm của phương trình bậc hai bằng biệt thức \\( \\Delta \\) và vận dụng Hệ thức Vi-ét để tính biểu thức nghiệm hoặc tìm tham số thỏa mãn điều kiện.",
+      "recognitionSigns": [
+        "Đề bài cho phương trình bậc hai có chứa tham số \\( m \\) (dạng \\( ax^2 + bx + c = 0 \\) với \\( a \\neq 0 \\)).",
+        "Yêu cầu tìm \\( m \\) để phương trình có 2 nghiệm phân biệt, có nghiệm kép, vô nghiệm, hoặc có nghiệm.",
+        "Yêu cầu tính giá trị biểu thức đối xứng của hai nghiệm \\( x_1, x_2 \\) (ví dụ: \\( x_1^2 + x_2^2 \\), \\( \\frac{1}{x_1} + \\frac{1}{x_2} \\), \\( (x_1 - x_2)^2 \\), \\( x_1^3 + x_2^3 \\)).",
+        "Yêu cầu tìm \\( m \\) để nghiệm thỏa mãn các hệ thức liên hệ (đối xứng hoặc không đối xứng) hoặc xét dấu các nghiệm (cùng dấu, trái dấu, cùng dương, cùng âm).",
+        "Yêu cầu tìm hai số khi biết tổng \\( S \\) và tích \\( P \\) của chúng."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định các hệ số \\( a, b, c \\). Tính biệt thức \\( \\Delta = b^2 - 4ac \\) (hoặc \\( \\Delta' = (b')^2 - ac \\) nếu \\( b \\) chẵn).",
+        "Bước 2: Đặt điều kiện số nghiệm theo yêu cầu: \\( \\Delta > 0 \\) (2 nghiệm phân biệt), \\( \\Delta = 0 \\) (nghiệm kép), \\( \\Delta < 0 \\) (vô nghiệm), hoặc \\( \\Delta \\ge 0 \\) (có nghiệm).",
+        "Bước 3: Áp dụng hệ thức Vi-ét gốc để lập tổng và tích nghiệm: \\( S = x_1 + x_2 = -\\frac{b}{a} \\) và \\( P = x_1x_2 = \\frac{c}{a} \\) (lưu ý chỉ áp dụng khi phương trình có nghiệm).",
+        "Bước 4: Biến đổi biểu thức nghiệm của đề bài theo tổng \\( S \\) và tích \\( P \\) dựa trên các công thức phụ cần nhớ:\n  • \\( x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2 \\)\n  • \\( \\frac{1}{x_1} + \\frac{1}{x_2} = \\frac{x_1 + x_2}{x_1x_2} \\)\n  • \\( (x_1 - x_2)^2 = (x_1 + x_2)^2 - 4x_1x_2 \\)\n  • \\( x_1^3 + x_2^3 = (x_1 + x_2)^3 - 3x_1x_2(x_1 + x_2) \\)",
+        "Bước 5: Giải điều kiện để tìm tham số \\( m \\), sau đó đối chiếu nghiêm ngặt với điều kiện có nghiệm ở Bước 2 trước khi kết luận.",
+        "Bước 6: Đối với toán xét dấu nghiệm, áp dụng các bộ điều kiện tương ứng:\n  • Trái dấu: \\( ac < 0 \\) (không cần tính \\( \\Delta \\)).\n  • Cùng dấu phân biệt: \\( \\Delta > 0 \\) và \\( P > 0 \\).\n  • Cùng dương phân biệt: \\( \\Delta > 0 \\), \\( S > 0 \\), \\( P > 0 \\).\n  • Cùng âm phân biệt: \\( \\Delta > 0 \\), \\( S < 0 \\), \\( P > 0 \\).",
+        "Bước 7: Đối với dạng tìm hai số biết tổng \\( S \\) và tích \\( P \\), hai số đó là nghiệm của phương trình \\( X^2 - SX + P = 0 \\) (điều kiện tồn tại là \\( S^2 \\ge 4P \\))."
+      ],
+      "commonMistakes": [
+        "Lỗi nghiêm trọng: Áp dụng hệ thức Vi-ét để tìm tham số \\( m \\) nhưng quên không đặt điều kiện phương trình có nghiệm (\\( \\Delta \\ge 0 \\) hoặc \\( \\Delta > 0 \\)), dẫn đến kết luận cả các giá trị \\( m \\) làm phương trình vô nghiệm.",
+        "Nhầm lẫn dấu trong công thức Vi-ét (ví dụ viết nhầm thành \\( x_1 + x_2 = \\frac{b}{a} \\) thay vị \\( -\\frac{b}{a} \\)).",
+        "Khai triển sai các biểu thức phụ đối xứng, đặc biệt hay quên hệ số trong \\( (x_1 + x_2)^2 - 2x_1x_2 \\) hoặc nhầm dấu khi phá ngoặc.",
+        "Mất thời gian tính toán điều kiện \\( \\Delta > 0 \\) đối với phương trình có hai nghiệm trái dấu (chỉ cần điều kiện ngắn gọn là \\( ac < 0 \\))."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Biện luận số nghiệm bằng Δ (Phân biệt, nghiệm kép, vô nghiệm)",
+          "example": "Cho phương trình \\( x^2 - 2x + m = 0 \\). Tìm m để phương trình có hai nghiệm phân biệt.",
+          "note": "Phương trình có hai nghiệm phân biệt khi \\( \\Delta > 0 \\Leftrightarrow (-2)^2 - 4 \\cdot 1 \\cdot m > 0 \\Leftrightarrow 4 - 4m > 0 \\Leftrightarrow m < 1 \\)."
+        },
+        {
+          "name": "Dạng 2: Tìm m để phương trình có nghiệm kép",
+          "example": "Cho phương trình \\( x^2 - 2(m + 1)x + m^2 = 0 \\). Tìm m để phương trình có nghiệm kép.",
+          "note": "Tính \\( \\Delta' = (m + 1)^2 - m^2 = 2m + 1 \\). Phương trình có nghiệm kép khi \\( \\Delta' = 0 \\Leftrightarrow 2m + 1 = 0 \\Leftrightarrow m = -\\frac{1}{2} \\)."
+        },
+        {
+          "name": "Dạng 3: Dùng Vi-ét tính biểu thức nghiệm đối xứng",
+          "example": "Cho phương trình \\( x^2 - 5x + 3 = 0 \\) có hai nghiệm \\( x_1, x_2 \\). Tính \\( A = x_1^2 + x_2^2 \\).",
+          "note": "Theo hệ thức Vi-ét: \\( x_1 + x_2 = 5 \\) và \\( x_1x_2 = 3 \\). Ta biến đổi đối xứng: \\( A = (x_1 + x_2)^2 - 2x_1x_2 = 5^2 - 2 \\cdot 3 = 19 \\)."
+        },
+        {
+          "name": "Dạng 4: Tìm m để nghiệm thỏa mãn điều kiện",
+          "example": "Cho phương trình \\( x^2 - 2mx + m - 1 = 0 \\). Tìm m để phương trình có hai nghiệm \\( x_1, x_2 \\) thỏa mãn \\( x_1 + x_2 = 4 \\).",
+          "note": "Áp dụng Vi-ét ta được \\( x_1 + x_2 = 2m \\). Yêu cầu bài toán tương đương \\( 2m = 4 \\Leftrightarrow m = 2 \\). Chú ý thử lại hoặc đặt điều kiện \\( \\Delta \\ge 0 \\) để đảm bảo phương trình có nghiệm."
+        },
+        {
+          "name": "Dạng 5: Xét dấu hai nghiệm (Cùng dấu, trái dấu, dương, âm)",
+          "example": "Cho phương trình \\( x^2 - 2(m - 1)x - m + 2 = 0 \\). Tìm m để phương trình có hai nghiệm trái dấu.",
+          "note": "Phương trình có hai nghiệm trái dấu khi hệ số \\( a \\) và \\( c \\) trái dấu, tức là \\( ac < 0 \\Leftrightarrow 1 \\cdot (-m + 2) < 0 \\Leftrightarrow m > 2 \\)."
+        },
+        {
+          "name": "Dạng 6: Tìm hai số khi biết tổng và tích",
+          "example": "Tìm hai số biết tổng của chúng bằng 7 và tích của chúng bằng 12.",
+          "note": "Hai số cần tìm là nghiệm của phương trình \\( X^2 - SX + P = 0 \\Rightarrow X^2 - 7X + 12 = 0 \\Rightarrow (X - 3)(X - 4) = 0 \\). Hai số đó là 3 và 4."
+        },
+        {
+          "name": "Dạng 7: Nhẩm nghiệm bằng a + b + c = 0 hoặc a - b + c = 0",
+          "example": "Giải nhanh phương trình: \\( 2x^2 - 5x + 3 = 0 \\)",
+          "note": "Ta có \\( a + b + c = 2 - 5 + 3 = 0 \\). Theo hệ quả hệ thức Vi-ét, phương trình có hai nghiệm: \\( x_1 = 1 \\) và \\( x_2 = \\frac{c}{a} = \\frac{3}{2} \\)."
+        }
+      ],
+      "exampleQuestionId": "math-q2"
+    },
+    {
+      "id": "math-qt3",
+      "topicId": "math-t3",
+      "name": "Giải hệ phương trình bậc nhất hai ẩn",
+      "slug": "giai-he-phuong-trinh",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Dạng toán yêu cầu giải hệ hai phương trình hai ẩn bằng phương pháp thế, cộng đại số hoặc đặt ẩn phụ.",
+      "recognitionSigns": [
+        "Đề cho hệ gồm hai phương trình chứa hai ẩn x và y.",
+        "Có thể giải bằng thế, cộng đại số hoặc đặt ẩn phụ."
+      ],
+      "solvingSteps": [
+        "Đặt điều kiện xác định nếu hệ có mẫu hoặc căn.",
+        "Chọn phương pháp giải phù hợp.",
+        "Khử một ẩn để tìm ẩn còn lại.",
+        "Thay lại để tìm nghiệm đầy đủ.",
+        "Đối chiếu điều kiện và kết luận nghiệm."
+      ],
+      "commonMistakes": [
+        "Đổi dấu sai khi cộng hoặc trừ hai phương trình.",
+        "Tìm được x nhưng quên tìm y.",
+        "Kết luận sai thứ tự x, y."
+      ]
+    },
+    {
+      "id": "math-qt4",
+      "topicId": "math-t3",
+      "name": "Lập hệ phương trình từ bài toán thực tế",
+      "slug": "lap-he-phuong-trinh-thuc-te",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng toán yêu cầu chuyển dữ kiện đời sống như giá tiền, phần trăm, năng suất hoặc chuyển động thành hệ phương trình.",
+      "recognitionSigns": [
+        "Đề mô tả tình huống thực tế.",
+        "Có hai đại lượng chưa biết cần tìm.",
+        "Có hai mối quan hệ độc lập để lập hai phương trình."
+      ],
+      "solvingSteps": [
+        "Xác định đại lượng cần tìm và đặt ẩn.",
+        "Ghi điều kiện và đơn vị cho ẩn.",
+        "Lập phương trình thứ nhất từ dữ kiện đầu tiên.",
+        "Lập phương trình thứ hai từ dữ kiện còn lại.",
+        "Giải hệ và đối chiếu điều kiện thực tế.",
+        "Trả lời đúng câu hỏi và đúng đơn vị."
+      ],
+      "commonMistakes": [
+        "Quên đặt điều kiện và đơn vị cho ẩn.",
+        "Lập sai phương trình phần trăm giảm giá.",
+        "Giải đúng hệ nhưng trả lời sai yêu cầu đề bài."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Mua bán, giảm giá, phần trăm",
+          "example": "Một tivi và một tủ lạnh có tổng giá niêm yết là 25 triệu đồng. Tivi giảm 10%, tủ lạnh giảm 20%. Sau giảm, tổng tiền là 21 triệu đồng. Tìm giá ban đầu mỗi món.",
+          "note": "Gọi ẩn \\( x, y \\) là giá niêm yết của hai món. Lập hệ phương trình gồm tổng giá niêm yết ban đầu \\( x+y=25 \\) và tổng tiền thực tế sau giảm giá \\( 0,9x+0,8y=21 \\)."
+        },
+        {
+          "name": "Dạng 2: Tổng số lượng và tỉ lệ phần trăm",
+          "example": "Hai trường A và B có tổng 380 thí sinh dự thi. Tổng số thí sinh trúng tuyển là 191. Trường A có tỉ lệ trúng tuyển 55%, trường B có tỉ lệ trúng tuyển 45%. Hỏi mỗi trường có bao nhiêu thí sinh dự thi?",
+          "note": "Gọi ẩn \\( x, y \\) là số thí sinh của mỗi trường. Lập hệ phương trình gồm tổng số thí sinh dự thi \\( x+y=380 \\) và tổng số thí sinh đỗ của hai trường \\( 0,55x+0,45y=191 \\)."
+        },
+        {
+          "name": "Dạng 3: Vận chuyển, số xe và khối lượng mỗi xe",
+          "example": "Một đội xe dự định chở 120 tấn hàng, mỗi xe chở như nhau. Sau đó đội phải chở thêm 40 tấn hàng nên điều thêm 2 xe, và mỗi xe lúc sau chở thêm 1 tấn so với dự định. Hỏi ban đầu đội có bao nhiêu xe?",
+          "note": "Gọi ẩn \\( x \\) là số xe ban đầu. Thiết lập phương trình so sánh khối lượng chở của mỗi xe lúc sau với lúc đầu: \\( \\frac{160}{x+2} = \\frac{120}{x} + 1 \\)."
+        },
+        {
+          "name": "Dạng 4: Chuyển động đường bộ (Xe máy, Ô tô)",
+          "example": "Hai địa điểm A và B cách nhau 150 km. Một xe máy đi từ A đến B. Sau đó 1 giờ, một ô tô đi từ B về A. Hai xe gặp nhau tại C, biết C cách B 60 km. Vận tốc ô tô lớn hơn vận tốc xe máy 20 km/h. Tính vận tốc mỗi xe.",
+          "note": "Gọi vận tốc xe máy là \\( x \\) (km/h) thì vận tốc ô tô là \\( x+20 \\) (km/h). Lập phương trình cân bằng thời gian đi của hai xe dựa trên quãng đường thực tế di chuyển."
+        },
+        {
+          "name": "Dạng 5: Năng suất, làm chung – làm riêng",
+          "example": "Hai vòi nước cùng chảy vào một bể thì đầy bể sau 6 giờ. Nếu chảy riêng, vòi thứ nhất chảy đầy bể nhanh hơn vòi thứ hai 5 giờ. Hỏi mỗi vòi chảy riêng thì sau bao lâu đầy bể?",
+          "note": "Gọi thời gian vòi một chảy riêng đầy bể là \\( x \\) (giờ) thì vòi hai là \\( x+5 \\) (giờ). Lập phương trình cộng công suất chảy trong 1 giờ của cả hai vòi: \\( \\frac{1}{x} + \\frac{1}{x+5} = \\frac{1}{6} \\)."
+        }
+      ]
+    },
+    {
+      "id": "math-qt5",
+      "topicId": "math-t4",
+      "name": "Hàm số y = ax² & Tương giao Parabol với Đường thẳng",
+      "slug": "ham-so-va-tuong-giao-parabol-duong-thang",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề trọng tâm ôn thi vào 10 (đặc biệt bám sát cấu trúc đề thi tuyển sinh Bình Định). Chuyên đề bao gồm các dạng bài xác định hệ số của Parabol/Đường thẳng khi biết điểm đi qua, tìm giao điểm với các trục tọa độ, tính diện tích tam giác tạo bởi đường thẳng và hai trục tọa độ, vẽ đồ thị Parabol và biện luận tương giao giữa Parabol và Đường thẳng.",
+      "recognitionSigns": [
+        "Đề bài cho hàm số y = ax² hoặc parabol (P): y = ax² và yêu cầu tìm hệ số a khi biết điểm đi qua.",
+        "Yêu cầu vẽ đồ thị parabol (P): y = ax².",
+        "Đề bài cho đường thẳng (d): y = kx + b, yêu cầu tìm giao điểm với trục hoành Ox (y = 0) hoặc trục tung Oy (x = 0).",
+        "Đề bài yêu cầu tìm tham số m để đường thẳng (d) cắt hai trục tọa độ tại A, B tạo thành tam giác OAB có diện tích cho trước.",
+        "Đề bài yêu cầu tìm tọa độ giao điểm của parabol (P) và đường thẳng (d).",
+        "Yêu cầu tìm tham số để đường thẳng (d) cắt, tiếp xúc hoặc không cắt parabol (P)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Để tìm hệ số a khi đồ thị đi qua điểm A(x₀; y₀), thay x = x₀ và y = y₀ vào phương trình đồ thị để giải tìm a.",
+        "Bước 2: Để vẽ parabol y = ax², lập bảng giá trị với ít nhất 5 điểm đối xứng qua Oy (thường lấy x = -2, -1, 0, 1, 2), biểu diễn các điểm trên mặt phẳng tọa độ Oxy rồi vẽ đường cong mềm đi qua các điểm đó.",
+        "Bước 3: Để tìm giao điểm của đường thẳng y = kx + b với trục hoành Ox, cho y = 0 giải tìm x. Để tìm giao điểm với trục tung Oy, cho x = 0 giải tìm y.",
+        "Bước 4: Để tính diện tích tam giác OAB tạo bởi đường thẳng và hai trục tọa độ Ox, Oy: xác định giao điểm A(x_A; 0) và B(0; y_B). Khi đó độ dài các cạnh là OA = |x_A|, OB = |y_B|. Diện tích tam giác vuông OAB là S = 1/2 * OA * OB.",
+        "Bước 5: Để tìm giao điểm của parabol y = ax² và đường thẳng y = kx + b, lập phương trình hoành độ giao điểm: ax² = kx + b ⇔ ax² - kx - b = 0. Giải phương trình bậc hai tìm x, sau đó thay vào một trong hai công thức đồ thị để tính y tương ứng.",
+        "Bước 6: Để biện luận số giao điểm: Xét biệt thức Δ (hoặc Δ') của phương trình hoành độ giao điểm. Cắt tại 2 điểm phân biệt ⇔ Δ > 0; Tiếp xúc nhau ⇔ Δ = 0; Không cắt nhau ⇔ Δ < 0."
+      ],
+      "commonMistakes": [
+        "Thay sai tọa độ điểm (nhầm lẫn giữa hoành độ x và tung độ y khi thay vào công thức).",
+        "Vẽ đồ thị parabol bằng thước thẳng (nối các điểm bằng các đoạn thẳng thay vì vẽ đường cong Parabol trơn mềm).",
+        "Quên dấu giá trị tuyệt đối khi tính độ dài các đoạn thẳng giao điểm với các trục tọa độ (ví dụ viết OA = x_A thay vì OA = |x_A|), dẫn đến việc giải thiếu trường hợp khi tham số m có thể âm.",
+        "Sai dấu khi chuyển vế để lập phương trình hoành độ giao điểm.",
+        "Quên đối chiếu điều kiện có nghiệm của phương trình hoành độ giao điểm trước khi kết luận tham số."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Xác định hệ số a của parabol y = ax² khi biết điểm đi qua",
+          "example": "Xác định hệ số a của parabol (P): \\( y = ax^2 \\) biết (P) đi qua điểm A(1; 1).",
+          "note": "Thay tọa độ điểm A vào phương trình: \\( 1 = a \\cdot 1^2 \\Rightarrow a = 1 \\). Vậy parabol là \\( y = x^2 \\)."
+        },
+        {
+          "name": "Dạng 2: Vẽ đồ thị parabol y = ax²",
+          "example": "Vẽ đồ thị parabol (P): \\( y = x^2 \\).",
+          "note": "Lập bảng giá trị với 5 điểm: \\( (-2; 4), (-1; 1), (0; 0), (1; 1), (2; 4) \\), biểu diễn trên hệ trục Oxy và nối đường cong mềm đối xứng qua Oy."
+        },
+        {
+          "name": "Dạng 3: Xác định giao điểm của đường thẳng với các trục tọa độ",
+          "example": "Tìm giao điểm của đường thẳng (d): \\( y = -3x + 2 \\) với trục hoành Ox và trục tung Oy.",
+          "note": "Giao với Oy: cho \\( x = 0 \\Rightarrow y = 2 \\Rightarrow B(0; 2) \\). Giao với Ox: cho \\( y = 0 \\Rightarrow -3x + 2 = 0 \\Rightarrow x = \\frac{2}{3} \\Rightarrow A(\\frac{2}{3}; 0) \\)."
+        },
+        {
+          "name": "Dạng 4: Bài toán diện tích tam giác tạo bởi đường thẳng và hai trục tọa độ",
+          "example": "Cho đường thẳng (d): \\( y = x + m \\). Tìm m để (d) cắt Ox tại A, cắt Oy tại B sao cho diện tích tam giác OAB bằng 8.",
+          "note": "A(-m; 0) và B(0; m) suy ra \\( OA = |-m| = |m| \\), \\( OB = |m| \\). Diện tích \\( S = \\frac{1}{2} OA \\cdot OB = \\frac{1}{2} m^2 = 8 \\Rightarrow m^2 = 16 \\Rightarrow m = \\pm 4 \\)."
+        },
+        {
+          "name": "Dạng 5: Tìm giao điểm của parabol và đường thẳng",
+          "example": "Tìm tọa độ giao điểm của parabol (P): \\( y = x^2 \\) và đường thẳng (d): \\( y = x + 2 \\).",
+          "note": "Lập phương trình hoành độ giao điểm: \\( x^2 - x - 2 = 0 \\). Giải phương trình có hai nghiệm \\( x = 2 \\) (suy ra \\( y = 4 \\)) và \\( x = -1 \\) (suy ra \\( y = 1 \\)). Tọa độ giao điểm là \\( A(2; 4) \\) và \\( B(-1; 1) \\)."
+        },
+        {
+          "name": "Dạng 6: Tìm tham số m để đường thẳng và parabol cắt, tiếp xúc, không cắt",
+          "example": "Cho (P): \\( y = x^2 \\) và (d): \\( y = 2x + m \\). Tìm m để (d) cắt (P) tại hai điểm phân biệt.",
+          "note": "Phương trình hoành độ giao điểm: \\( x^2 - 2x - m = 0 \\). Cắt tại hai điểm phân biệt khi \\( \\Delta' = 1 + m > 0 \\Rightarrow m > -1 \\)."
+        }
+      ],
+      "exampleQuestionId": "math-q41"
+    },
+    {
+      "id": "math-qt6",
+      "topicId": "math-t5",
+      "name": "Chứng minh tứ giác nội tiếp đường tròn",
+      "slug": "tu-giac-noi-tiep",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng hình học chứng minh bốn điểm cùng nằm trên một đường tròn bằng các dấu hiệu góc.",
+      "recognitionSigns": [
+        "Đề yêu cầu chứng minh tứ giác nội tiếp.",
+        "Có góc vuông, đường cao, tiếp tuyến hoặc góc cùng nhìn một cạnh.",
+        "Cần chỉ ra tổng hai góc đối bằng 180 độ hoặc hai góc cùng nhìn một cạnh bằng nhau."
+      ],
+      "solvingSteps": [
+        "Xác định tứ giác cần chứng minh.",
+        "Chọn dấu hiệu nội tiếp phù hợp.",
+        "Chỉ rõ các góc bằng nhau hoặc tổng hai góc đối bằng 180 độ.",
+        "Kết luận tứ giác nội tiếp."
+      ],
+      "commonMistakes": [
+        "Không nêu lý do xuất hiện góc vuông.",
+        "Dùng sai dấu hiệu tứ giác nội tiếp.",
+        "Viết sai thứ tự đỉnh của tứ giác."
+      ]
+    },
+    {
+      "id": "math-qt7",
+      "topicId": "math-t1",
+      "name": "Giải bất phương trình & Bất đẳng thức cơ bản",
+      "slug": "giai-bat-phuong-trinh-va-bat-dang-thuc",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề tổng hợp phương pháp giải bất phương trình bậc nhất một ẩn, bất phương trình quy về bậc nhất (chứa ngoặc, chứa mẫu thức, chú ý đổi chiều dấu khi nhân/chia số âm) và bài toán tìm GTLN/GTNN cơ bản sau khi rút gọn biểu thức",
+      "recognitionSigns": [
+        "Đề bài yêu cầu giải bất phương trình chứa các dấu so sánh: \\( > \\), \\( < \\), \\( \\ge \\), \\( \\le \\).",
+        "Đề bài yêu cầu tìm giá trị lớn nhất (GTLN) hoặc giá trị nhỏ nhất (GTNN) của một biểu thức sau khi rút gọn."
+      ],
+      "solvingSteps": [
+        "Bước 1: Chuyển vế, đổi dấu các hạng tử chứa biến sang một vế, các hạng tử tự do sang vế còn lại.",
+        "Bước 2: Thu gọn hai vế để đưa về dạng cơ bản \\( ax > b \\), \\( ax < b \\), \\( ax \\ge b \\) hoặc \\( ax \\le b \\). Chú ý quy đồng mẫu thức rồi khử mẫu nếu bất phương trình có mẫu số là hằng số dương.",
+        "Bước 3: Chia cả hai vế cho hệ số \\( a \\). Nếu \\( a > 0 \\), giữ nguyên chiều bất phương trình; nếu \\( a < 0 \\), bắt buộc phải ĐỔI CHIỀU bất phương trình.",
+        "Bước 4: Đối với bài toán tìm GTLN/GTNN, xuất phát từ điều kiện xác định của biến (thường là \\( x \\ge 0 \\)), đánh giá mẫu số hoặc các biểu thức trung gian để đưa ra bất đẳng thức chặn cho biểu thức P. Chỉ rõ dấu bằng xảy ra khi nào và kết luận."
+      ],
+      "commonMistakes": [
+        "Quên không đổi chiều bất phương trình khi nhân hoặc chia cả hai vế cho một số âm.",
+        "Khử mẫu số chứa biến mà chưa xác định rõ dấu của mẫu số đó là dương hay âm.",
+        "Tìm được giá trị cực trị nhưng quên chỉ ra dấu bằng xảy ra khi nào hoặc giá trị đó không thỏa mãn điều kiện xác định ban đầu."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Giải bất phương trình bậc nhất một ẩn",
+          "example": "Giải bất phương trình: \\( 4x \\ge x + 3 \\)",
+          "note": "Chuyển các hạng tử chứa x sang một vế và thu gọn: \\( 3x \\ge 3 \\Rightarrow x \\ge 1 \\)."
+        },
+        {
+          "name": "Dạng 2: Bất phương trình có hệ số âm (Đổi chiều)",
+          "example": "Giải bất phương trình: \\( -3x + 6 < 0 \\)",
+          "note": "Chuyển vế được \\( -3x < -6 \\). Chia cả hai vế cho \\( -3 \\) và đổi chiều ta được \\( x > 2 \\)."
+        },
+        {
+          "name": "Dạng 3: Bất phương trình có ngoặc, quy về bậc nhất",
+          "example": "Giải bất phương trình: \\( 2(x - 3) \\le x + 4 \\)",
+          "note": "Khai triển ngoặc, chuyển vế thu gọn để đưa về bất phương trình bậc nhất: \\( 2x - 6 \\le x + 4 \\Rightarrow x \\le 10 \\)."
+        },
+        {
+          "name": "Dạng 4: Bất phương trình có phân số (Khử mẫu)",
+          "example": "Giải bất phương trình: \\( \\frac{x - 1}{2} > \\frac{x + 3}{3} \\)",
+          "note": "Quy đồng mẫu thức với mẫu chung là 6 (số dương) rồi khử mẫu: \\( 3(x - 1) > 2(x + 3) \\Rightarrow 3x - 3 > 2x + 6 \\Rightarrow x > 9 \\)."
+        },
+        {
+          "name": "Dạng 5: Tìm GTLN/GTNN sau khi rút gọn",
+          "example": "Cho biểu thức \\( P = \\frac{2}{\\sqrt{x} + 1} \\) với \\( x \\ge 0 \\). Tìm giá trị lớn nhất (GTLN) của biểu thức \\( P \\).",
+          "note": "Đánh giá mẫu số: vì \\( x \\ge 0 \\Rightarrow \\sqrt{x} + 1 \\ge 1 \\Rightarrow P = \\frac{2}{\\sqrt{x}+1} \\le 2 \\). Dấu bằng xảy ra khi \\( x = 0 \\). GTLN của P là 2."
+        }
+      ],
+      "exampleQuestionId": "math-q22"
+    },
+    {
+      "id": "math-qt8",
+      "topicId": "math-t6",
+      "name": "Xác suất của biến cố trong phép thử ngẫu nhiên",
+      "slug": "xac-suat-cua-bien-co",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Chuyên đề ôn luyện xác suất cổ điển cơ bản (bám sát cấu trúc đề thi tuyển sinh Bình Định). Tập trung vào các kỹ năng viết không gian mẫu, xác định tập hợp các kết quả thuận lợi dựa trên tính chất số học hoặc phương trình đại số, và tính xác suất biến cố.",
+      "recognitionSigns": [
+        "Đề bài có các cụm từ: \"rút ngẫu nhiên\", \"chọn ngẫu nhiên\", \"gieo xúc xắc\", \"không gian mẫu\", \"tính xác suất\".",
+        "Yêu cầu viết không gian mẫu của phép thử ngẫu nhiên.",
+        "Yêu cầu tính xác suất của một biến cố liên quan đến một tập hợp hữu hạn các kết quả đồng khả năng."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định phép thử ngẫu nhiên và viết tập hợp không gian mẫu Ω. Đếm số phần tử n(Ω).",
+        "Bước 2: Xác định biến cố A theo yêu cầu của đề bài. Viết tập hợp các kết quả thuận lợi cho biến cố A.",
+        "Bước 3: Đếm số phần tử kết quả thuận lợi n(A).",
+        "Bước 4: Tính xác suất của biến cố A bằng công thức P(A) = n(A) / n(Ω). Rút gọn phân số kết quả (nếu có)."
+      ],
+      "commonMistakes": [
+        "Chỉ ghi số lượng phần tử n(Ω) = 15 mà quên không liệt kê cụ thể các phần tử của tập hợp không gian mẫu Ω khi đề bài yêu cầu \"viết không gian mẫu\".",
+        "Liệt kê thiếu hoặc thừa các kết quả thuận lợi của biến cố (đặc biệt khi đếm các số chia hết, số nguyên tố, số chính phương...).",
+        "Không rút gọn phân số kết quả xác suất về phân số tối giản.",
+        "Nhầm lẫn giữa điều kiện số học (ví dụ: \"chia hết cho 5\" nhầm thành \"có chữ số 5\")."
+      ],
+      "subTypes": [
+        {
+          "name": "Dạng 1: Rút ngẫu nhiên 1 thẻ / chọn 1 số từ tập hữu hạn",
+          "example": "Một hộp đựng 15 tấm thẻ ghi số từ 1 đến 15. Rút ngẫu nhiên một tấm thẻ. Viết không gian mẫu và tính xác suất biến cố A: \"Rút được thẻ ghi số chia hết cho 5\".",
+          "note": "Không gian mẫu là tập gồm các số từ 1 đến 15. Tập hợp biến cố gồm các số {5, 10, 15}. Tính tỉ số xác suất."
+        },
+        {
+          "name": "Dạng 2: Phép thử gieo con xúc xắc hoặc tung đồng xu",
+          "example": "Gieo một con xúc xắc cân đối và đồng chất. Tính xác suất để xuất hiện mặt có số chấm là số chẵn.",
+          "note": "Không gian mẫu Ω = {1; 2; 3; 4; 5; 6}. Biến cố A = {2; 4; 6}. Xác suất P(A) = 3/6 = 1/2."
+        },
+        {
+          "name": "Dạng 3: Chọn ngẫu nhiên 1 vật từ một nhóm vật",
+          "example": "Một hộp có 5 viên bi đỏ, 3 viên bi xanh, 2 viên bi vàng. Lấy ngẫu nhiên 1 viên bi. Tính xác suất lấy được viên bi xanh.",
+          "note": "Tính tổng số bi là 10. Số bi xanh là 3. Xác suất P = 3/10."
+        },
+        {
+          "name": "Dạng 4: Xác suất gắn với các tính chất số học",
+          "example": "Chọn ngẫu nhiên một số tự nhiên từ 1 đến 20. Tính xác suất chọn được số là số nguyên tố.",
+          "note": "Các số nguyên tố từ 1 đến 20 gồm: {2, 3, 5, 7, 11, 13, 17, 19} (có 8 số). Xác suất P = 8/20 = 2/5."
+        },
+        {
+          "name": "Dạng 5: Xác suất kết hợp với điều kiện đại số",
+          "example": "Một hộp chứa 50 tấm thẻ ghi số từ 1 đến 50. Rút ngẫu nhiên một tấm thẻ ghi số c. Tính xác suất để phương trình \\( x^2 - 8x + c = 0 \\) có hai nghiệm phân biệt.",
+          "note": "Phương trình có hai nghiệm phân biệt khi \\( \\Delta' = 16 - c > 0 \\Rightarrow c < 16 \\). Các giá trị c thỏa mãn là từ 1 đến 15 (có 15 số). Xác suất P = 15/50 = 3/10."
+        }
+      ],
+      "exampleQuestionId": "math-q51"
+    }
+  ]
+}

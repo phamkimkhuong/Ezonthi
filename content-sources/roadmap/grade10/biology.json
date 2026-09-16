@@ -1,0 +1,2606 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "2026.09.1",
+  "updatedAt": "2026-09-16T12:27:54.730Z",
+  "grade": "grade10",
+  "subject": "biology",
+  "subjectName": "Sinh học 10",
+  "icon": "Dna",
+  "themeColor": "#84cc16",
+  "badge": "Chương trình mới",
+  "stats": {
+    "totalTopics": 8,
+    "totalQuestionTypes": 44,
+    "estimatedTotalMinutes": 1320
+  },
+  "topics": [
+    {
+      "id": "bio10-t0",
+      "name": "Chuyên đề 0: Mở đầu & Các cấp độ tổ chức thế giới sống",
+      "slug": "mo-dau-the-gioi-song",
+      "orderIndex": 1,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 0: Mở đầu & Các cấp độ tổ chức thế giới sống",
+      "estimatedMinutes": 180,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "bio10-qt9",
+        "bio10-qt10",
+        "bio10-qt11",
+        "bio10-qt12",
+        "bio10-qt13",
+        "bio10-qt1"
+      ]
+    },
+    {
+      "id": "bio10-t1",
+      "name": "Chuyên đề 1: Thành phần hóa học của tế bào",
+      "slug": "thanh-phan-hoa-hoc-te-bao",
+      "orderIndex": 2,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 1: Thành phần hóa học của tế bào",
+      "estimatedMinutes": 240,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "bio10-qt14",
+        "bio10-qt15",
+        "bio10-qt16",
+        "bio10-qt17",
+        "bio10-qt2",
+        "bio10-qt18",
+        "bio10-qt19",
+        "bio10-qt20"
+      ]
+    },
+    {
+      "id": "bio10-t2",
+      "name": "Chuyên đề 2: Cấu trúc tế bào",
+      "slug": "cau-truc-te-bao",
+      "orderIndex": 3,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 2: Cấu trúc tế bào",
+      "estimatedMinutes": 240,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "bio10-qt21",
+        "bio10-qt22",
+        "bio10-qt23",
+        "bio10-qt24",
+        "bio10-qt3",
+        "bio10-qt25",
+        "bio10-qt26",
+        "bio10-qt27"
+      ]
+    },
+    {
+      "id": "bio10-t3",
+      "name": "Chuyên đề 3: Trao đổi chất & Truyền tin tế bào",
+      "slug": "trao-doi-chat-truyen-tin",
+      "orderIndex": 4,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 3: Trao đổi chất & Truyền tin tế bào",
+      "estimatedMinutes": 150,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "bio10-qt4",
+        "bio10-qt28",
+        "bio10-qt29",
+        "bio10-qt30",
+        "bio10-qt31"
+      ]
+    },
+    {
+      "id": "bio10-t4",
+      "name": "Chuyên đề 4: Chuyển hóa vật chất & năng lượng",
+      "slug": "chuyen-hoa-nang-luong",
+      "orderIndex": 5,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 4: Chuyển hóa vật chất & năng lượng",
+      "estimatedMinutes": 150,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "bio10-qt32",
+        "bio10-qt5",
+        "bio10-qt33",
+        "bio10-qt34",
+        "bio10-qt35"
+      ]
+    },
+    {
+      "id": "bio10-t5",
+      "name": "Chuyên đề 5: Chu kỳ tế bào & Phân bào",
+      "slug": "chu-ky-te-bao-phan-bao",
+      "orderIndex": 6,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 5: Chu kỳ tế bào & Phân bào",
+      "estimatedMinutes": 120,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "bio10-qt6",
+        "bio10-qt36",
+        "bio10-qt37",
+        "bio10-qt38"
+      ]
+    },
+    {
+      "id": "bio10-t6",
+      "name": "Chuyên đề 6: Sinh học vi sinh vật & Công nghệ vi sinh",
+      "slug": "sinh-hoc-vi-sinh-vat",
+      "orderIndex": 7,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 6: Sinh học vi sinh vật & Công nghệ vi sinh",
+      "estimatedMinutes": 120,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "bio10-qt7",
+        "bio10-qt39",
+        "bio10-qt40",
+        "bio10-qt41"
+      ]
+    },
+    {
+      "id": "bio10-t7",
+      "name": "Chuyên đề 7: Virus và ứng dụng",
+      "slug": "virus-va-ung-dung",
+      "orderIndex": 8,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chuyên đề 7: Virus và ứng dụng",
+      "estimatedMinutes": 120,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "bio10-qt8",
+        "bio10-qt42",
+        "bio10-qt43",
+        "bio10-qt44"
+      ]
+    }
+  ],
+  "questionTypes": [
+    {
+      "id": "bio10-qt9",
+      "topicId": "bio10-t0",
+      "name": "Vai trò, triển vọng và đạo đức sinh học",
+      "slug": "vai-tro-trien-vong-dao-duc-sinh-hoc",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Nhận diện lĩnh vực sinh học, đánh giá ứng dụng và cân nhắc lợi ích–rủi ro–đạo đức.",
+      "recognitionSigns": [
+        "Đề mô tả một thành tựu, nghề nghiệp hoặc ứng dụng sinh học trong y tế, nông nghiệp hay môi trường.",
+        "Đề yêu cầu đánh giá một quyết định có yếu tố lợi ích, rủi ro, quyền riêng tư hoặc công bằng."
+      ],
+      "solvingSteps": [
+        "Xác định vấn đề sinh học và nhóm đối tượng chịu tác động.",
+        "Tách riêng bằng chứng khoa học, lợi ích dự kiến, rủi ro và vấn đề đạo đức.",
+        "Chọn kết luận cân bằng, có điều kiện kiểm soát và không tuyệt đối hóa công nghệ."
+      ],
+      "commonMistakes": [
+        "Cho rằng công nghệ có lợi thì mặc nhiên không cần đánh giá rủi ro.",
+        "Đưa ra phán xét đạo đức nhưng không dựa vào dữ kiện của tình huống."
+      ],
+      "theory": [
+        "**1. Sinh học nghiên cứu điều gì?**\nSinh học nghiên cứu thế giới sống ở nhiều cấp độ: cấu trúc, chức năng, cơ chế, nguồn gốc, tiến hóa, quan hệ giữa sinh vật và môi trường. Đây là khoa học dựa trên quan sát, thực nghiệm và dữ liệu, không chỉ là việc ghi nhớ tên loài.",
+        "**2. Các lĩnh vực tiêu biểu**\n- Sinh học tế bào và phân tử: cấu trúc, hoạt động của tế bào và phân tử sống.\n- Di truyền học: sự lưu giữ, truyền đạt và biến đổi thông tin di truyền.\n- Vi sinh vật học: vi sinh vật và hoạt động của chúng.\n- Sinh thái học: quan hệ giữa sinh vật với nhau và với môi trường.\n- Công nghệ sinh học: vận dụng hệ sống hoặc thành phần của chúng để tạo sản phẩm, quy trình.",
+        "**3. Vai trò trong đời sống và sản xuất**\nSinh học góp phần phát triển thuốc, vaccine, chẩn đoán; chọn tạo giống và nông nghiệp bền vững; xử lí ô nhiễm, bảo tồn đa dạng sinh học; sản xuất enzyme, thực phẩm lên men và vật liệu sinh học. Mỗi ứng dụng cần được đánh giá bằng hiệu quả thực tế, không chỉ bằng mức độ hiện đại.",
+        "**4. Triển vọng và nghề nghiệp**\nCác hướng nghề nghiệp gồm nghiên cứu, y sinh, xét nghiệm, dược, nông nghiệp, môi trường, công nghệ thực phẩm, công nghệ gene, tin sinh học và giáo dục. Một nghề thường cần phối hợp kiến thức sinh học với hóa học, toán, thống kê, tin học, kĩ năng phòng thí nghiệm và giao tiếp khoa học.",
+        "**5. Khung đánh giá một ứng dụng sinh học**\n- Vấn đề cần giải quyết là gì?\n- Bằng chứng nào cho thấy ứng dụng có hiệu quả?\n- Ai nhận lợi ích và ai có thể chịu rủi ro?\n- Rủi ro có thể kiểm soát, theo dõi hoặc đảo ngược không?\n- Có phương án thay thế ít rủi ro hơn không?\n- Quyết định có minh bạch và công bằng không?",
+        "**6. Các vấn đề đạo đức sinh học**\nĐạo đức sinh học thường liên quan sự đồng thuận, quyền riêng tư dữ liệu gene, phúc lợi động vật, an toàn sinh học, tác động môi trường, khả năng tiếp cận công bằng và trách nhiệm lâu dài. “Có thể làm về kĩ thuật” không đồng nghĩa “nên làm trong mọi hoàn cảnh”.",
+        "**7. Phân biệt bằng chứng và giá trị**\nKhoa học có thể cung cấp dữ liệu về hiệu quả và nguy cơ. Quyết định đạo đức còn cần cân nhắc quyền, trách nhiệm và giá trị xã hội. Câu trả lời tốt phải tách: điều dữ liệu cho biết, điều chưa chắc chắn và lựa chọn có điều kiện kiểm soát.",
+        "**8. Lỗi cần tránh**\n- Cho rằng công nghệ có lợi thì không cần đánh giá rủi ro.\n- Phản đối hoặc ủng hộ chỉ vì cảm xúc, không xét bằng chứng.\n- Đánh đồng “tự nhiên” với an toàn và “nhân tạo” với nguy hiểm.\n- Đưa kết luận tuyệt đối khi dữ liệu chỉ áp dụng cho một nhóm hoặc điều kiện."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt9-st1",
+          "name": "Vai trò và triển vọng của sinh học",
+          "example": "Phân tích đóng góp của sinh học trong y học, nông nghiệp và môi trường.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt9-st2",
+          "name": "Đạo đức, an toàn và giới hạn ứng dụng",
+          "example": "Cân bằng lợi ích, nguy cơ, quyền riêng tư và trách nhiệm xã hội.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m0-q004"
+    },
+    {
+      "id": "bio10-qt10",
+      "topicId": "bio10-t0",
+      "name": "Lựa chọn phương pháp nghiên cứu sinh học",
+      "slug": "lua-chon-phuong-phap-nghien-cuu-sinh-hoc",
+      "difficulty": "easy",
+      "examFrequency": "medium",
+      "description": "Phân biệt quan sát, thực nghiệm, điều tra và lựa chọn phương pháp phù hợp với câu hỏi nghiên cứu.",
+      "recognitionSigns": [
+        "Đề hỏi nên thu thập thông tin bằng quan sát, điều tra hay chủ động thay đổi một yếu tố.",
+        "Tình huống nhấn mạnh khả năng can thiệp, so sánh nhóm hoặc ghi nhận hiện tượng tự nhiên."
+      ],
+      "solvingSteps": [
+        "Chuyển mục tiêu thành câu hỏi nghiên cứu cụ thể.",
+        "Kiểm tra có cần chủ động tác động một biến hay chỉ ghi nhận/khảo sát hiện trạng.",
+        "Chọn phương pháp tạo ra loại bằng chứng phù hợp, đồng thời xét tính an toàn và khả thi."
+      ],
+      "commonMistakes": [
+        "Gọi mọi hoạt động có dụng cụ là thực nghiệm dù không có biến được chủ động thay đổi.",
+        "Dùng điều tra ý kiến để kết luận trực tiếp một cơ chế sinh học."
+      ],
+      "theory": [
+        "**1. Bắt đầu từ câu hỏi nghiên cứu**\nPhương pháp phải phù hợp với loại câu hỏi. Trước khi chọn công cụ, cần xác định đang muốn mô tả hiện trạng, khảo sát ý kiến, so sánh mối liên hệ hay kiểm tra tác động nhân quả của một yếu tố.",
+        "**2. Phương pháp quan sát**\nNgười nghiên cứu ghi nhận hiện tượng mà không chủ động thay đổi biến chính. Quan sát phù hợp khi cần mô tả hành vi, cấu trúc, phân bố hoặc diễn biến tự nhiên. Nó có thể phát hiện quy luật và tạo giả thuyết nhưng thường chưa đủ chứng minh quan hệ nhân quả.",
+        "**3. Phương pháp thực nghiệm**\nNgười nghiên cứu chủ động thay đổi biến độc lập, đo biến phụ thuộc và kiểm soát các yếu tố khác. Thực nghiệm phù hợp để kiểm tra dự đoán về tác động của một yếu tố. Có dụng cụ phòng thí nghiệm chưa đủ để gọi là thực nghiệm nếu không có biến được chủ động thao tác.",
+        "**4. Phương pháp điều tra**\nĐiều tra thu thập thông tin từ mẫu đối tượng bằng phiếu hỏi, phỏng vấn, hồ sơ hoặc khảo sát hiện trường. Chất lượng phụ thuộc cách chọn mẫu, câu hỏi, tỉ lệ phản hồi và độ trung thực. Điều tra ý kiến không trực tiếp chứng minh một cơ chế sinh học.",
+        "**5. Nghiên cứu trong phòng thí nghiệm và ngoài thực địa**\nPhòng thí nghiệm kiểm soát điều kiện tốt nhưng có thể đơn giản hóa môi trường tự nhiên. Nghiên cứu thực địa phản ánh bối cảnh thật hơn nhưng khó kiểm soát biến. Hai cách có thể bổ sung nhau thay vì một cách luôn tốt hơn.",
+        "**6. Tiêu chí lựa chọn phương pháp**\n- Có cần chủ động can thiệp một biến không?\n- Loại dữ liệu cần thu là hình ảnh, số đo, trình tự hay ý kiến?\n- Có bảo đảm an toàn, đạo đức và khả thi không?\n- Mẫu có đại diện cho đối tượng cần kết luận không?\n- Phương pháp có tạo đúng loại bằng chứng cho câu hỏi không?",
+        "**7. Kết hợp nhiều phương pháp**\nMột nghiên cứu có thể bắt đầu bằng quan sát để phát hiện xu hướng, dùng điều tra để mô tả phạm vi rồi thực nghiệm để kiểm tra nguyên nhân. Kết quả từ nhiều phương pháp độc lập, nếu phù hợp, thường tạo bằng chứng mạnh hơn.",
+        "**8. Lỗi cần tránh**\n- Chọn phương pháp vì “hiện đại” thay vì phù hợp câu hỏi.\n- Gọi mọi hoạt động đo đạc là thực nghiệm.\n- Dùng tương quan từ quan sát hoặc điều tra để khẳng định nhân quả.\n- Bỏ qua an toàn, đạo đức và tính đại diện của mẫu."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt10-st1",
+          "name": "Nhận diện phương pháp nghiên cứu",
+          "example": "Phân biệt quan sát, thực nghiệm, phân tích và mô hình hóa.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt10-st2",
+          "name": "Chọn phương pháp theo câu hỏi và cấp tổ chức",
+          "example": "Chọn công cụ tạo đúng loại bằng chứng cần thiết.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m0-q008"
+    },
+    {
+      "id": "bio10-qt11",
+      "topicId": "bio10-t0",
+      "name": "Thiết kế thí nghiệm và kiểm soát biến",
+      "slug": "thiet-ke-thi-nghiem-kiem-soat-bien",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Xác định giả thuyết, biến độc lập, biến phụ thuộc, biến kiểm soát và nhóm đối chứng.",
+      "recognitionSigns": [
+        "Đề mô tả việc thay đổi một yếu tố và đo phản ứng của sinh vật hay mẫu vật.",
+        "Đề yêu cầu chỉ ra biến, đối chứng, sai sót thiết kế hoặc cách tăng độ tin cậy."
+      ],
+      "solvingSteps": [
+        "Viết quan hệ dự đoán theo mẫu: nếu biến độc lập thay đổi thì biến phụ thuộc thay đổi thế nào.",
+        "Xác định duy nhất yếu tố chủ động thay đổi, đại lượng đo và các điều kiện phải giữ giống nhau.",
+        "Kiểm tra đối chứng, số lần lặp, cỡ mẫu và cách đo có đủ để so sánh công bằng hay không."
+      ],
+      "commonMistakes": [
+        "Nhầm biến phụ thuộc với đại lượng do người nghiên cứu chủ động đặt.",
+        "Thay đổi đồng thời nhiều điều kiện nên không xác định được nguyên nhân."
+      ],
+      "theory": [
+        "**1. Câu hỏi và giả thuyết kiểm chứng được**\nCâu hỏi nghiên cứu cần cụ thể về đối tượng, yếu tố và đại lượng đo. Giả thuyết là lời giải thích hoặc dự đoán có thể kiểm tra bằng dữ liệu, thường viết:\n**Nếu** biến độc lập thay đổi, **thì** biến phụ thuộc sẽ thay đổi theo cách dự đoán, **vì** cơ sở sinh học nào đó.",
+        "**2. Ba loại biến**\n- **Biến độc lập:** yếu tố người nghiên cứu chủ động thay đổi.\n- **Biến phụ thuộc:** kết quả được đo để đánh giá tác động.\n- **Biến kiểm soát:** các điều kiện khác phải giữ giống nhau.\nMột đại lượng được “đo” thường là biến phụ thuộc; đại lượng được “đặt các mức” thường là biến độc lập.",
+        "**3. Nhóm đối chứng**\nNhóm đối chứng tạo mốc so sánh, giống nhóm thử ở mọi điều kiện quan trọng nhưng không nhận tác nhân đang khảo sát hoặc nhận điều kiện chuẩn. Đối chứng giúp tách tác động của biến độc lập khỏi thay đổi nền và quy trình.",
+        "**4. Đối chứng dương và đối chứng âm**\n- **Đối chứng dương:** biết trước phải cho kết quả dương, dùng xác nhận thuốc thử hoặc quy trình hoạt động.\n- **Đối chứng âm:** không chứa tác nhân hoặc đối tượng đích, dùng phát hiện tín hiệu nền và nhiễm bẩn.\nMột thí nghiệm có thể cần cả hai loại.",
+        "**5. Lặp lại, cỡ mẫu và phân công ngẫu nhiên**\nLặp lại giúp ước lượng biến thiên và giảm ảnh hưởng sai số ngẫu nhiên. Cỡ mẫu lớn hơn thường làm kết luận ổn định hơn. Phân công ngẫu nhiên giúp hạn chế sai lệch có hệ thống giữa các nhóm; không thay thế việc kiểm soát điều kiện.",
+        "**6. Đo lường và thao tác hóa**\nKhái niệm mơ hồ phải chuyển thành đại lượng đo cụ thể. Ví dụ “cây phát triển tốt” có thể đo bằng chiều cao, khối lượng khô hoặc diện tích lá trong thời gian xác định. Phương pháp đo, đơn vị và thời điểm phải giống nhau giữa các nhóm.",
+        "**7. Quy trình thiết kế**\n- Viết câu hỏi và giả thuyết.\n- Chọn biến độc lập, các mức xử lí và nhóm đối chứng.\n- Xác định biến phụ thuộc và cách đo.\n- Liệt kê biến kiểm soát.\n- Chọn cỡ mẫu, số lần lặp, thời gian và cách ghi dữ liệu.\n- Đánh giá an toàn, đạo đức và cách phân tích.",
+        "**8. Đánh giá một thiết kế có sẵn**\nHỏi lần lượt: chỉ một biến chính được thay đổi chưa; đối chứng có tương đương không; số lần lặp có đủ; phép đo có phản ánh câu hỏi; có biến gây nhiễu; có thể tái lập; kết luận dự kiến có vượt dữ liệu không?",
+        "**9. Lỗi cần tránh**\n- Nhầm biến độc lập với biến phụ thuộc.\n- Thay đồng thời nhiều yếu tố rồi quy kết cho một yếu tố.\n- Dùng loài, kích thước hoặc điều kiện khác làm đối chứng.\n- Chỉ đo một mẫu một lần.\n- Viết giả thuyết chủ quan không thể đo hoặc bác bỏ."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt11-st1",
+          "name": "Biến, đối chứng và giả thuyết",
+          "example": "Nhận diện biến độc lập, phụ thuộc và đối chứng.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt11-st2",
+          "name": "Kiểm soát nhiễu và nâng độ tin cậy",
+          "example": "Phát hiện biến gây nhiễu, thiên lệch và cách cải tiến.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m0-q012"
+    },
+    {
+      "id": "bio10-qt12",
+      "topicId": "bio10-t0",
+      "name": "Đọc dữ liệu và đánh giá kết luận sinh học",
+      "slug": "doc-du-lieu-danh-gia-ket-luan-sinh-hoc",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc bảng số liệu, phân biệt kết quả với kết luận và xác định mức độ bằng chứng hỗ trợ giả thuyết.",
+      "recognitionSigns": [
+        "Đề cung cấp bảng, biểu đồ, số lần lặp hoặc kết quả của các nhóm thí nghiệm.",
+        "Đề hỏi xu hướng, ngoại lệ, kết luận hợp lí hoặc giới hạn của dữ liệu."
+      ],
+      "solvingSteps": [
+        "Đọc tên đại lượng, đơn vị, nhóm so sánh và điều kiện thu dữ liệu trước khi tính toán.",
+        "Mô tả đúng xu hướng quan sát được, không thêm cơ chế chưa được kiểm tra.",
+        "Đối chiếu với giả thuyết và giới hạn kết luận trong phạm vi mẫu, biến và điều kiện khảo sát."
+      ],
+      "commonMistakes": [
+        "Dùng một kết quả phù hợp để tuyên bố giả thuyết đã được chứng minh tuyệt đối.",
+        "Nhầm tương quan quan sát được với quan hệ nhân quả."
+      ],
+      "theory": [
+        "**1. Đọc cấu trúc dữ liệu trước**\nXác định tiêu đề, biến, đơn vị, nhóm đối chứng, thời điểm, cỡ mẫu và chú thích. Với biểu đồ, đọc tỉ lệ hai trục và thanh sai số nếu có. Không so sánh con số khi đơn vị hoặc mẫu số khác nhau.",
+        "**2. Kết quả khác kết luận**\n- **Kết quả:** điều trực tiếp quan sát hoặc đo được, ví dụ nhóm A cao hơn nhóm B 9 mm.\n- **Kết luận:** cách diễn giải kết quả đối với câu hỏi hoặc giả thuyết.\nKết luận phải dựa trên kết quả nhưng không được thêm cơ chế chưa được kiểm tra.",
+        "**3. So sánh tuyệt đối và tương đối**\nChênh lệch tuyệt đối:\n$$\\Delta X=X_{\\text{xử lí}}-X_{\\text{đối chứng}}$$\nPhần trăm thay đổi:\n$$\\%\\Delta X=\\frac{X_{\\text{xử lí}}-X_{\\text{đối chứng}}}{X_{\\text{đối chứng}}}\\times100\\%$$\nPhải nói rõ mẫu số và giữ nguyên dấu nếu cần thể hiện tăng hoặc giảm.",
+        "**4. Trung bình và độ biến thiên**\nGiá trị trung bình mô tả xu hướng trung tâm nhưng không cho biết dữ liệu phân tán đến đâu. Hai nhóm có trung bình khác nhau nhỏ nhưng khoảng dao động chồng lấp mạnh có thể chưa đủ để khẳng định khác biệt đáng tin cậy nếu thiếu phân tích thêm.",
+        "**5. Ngoại lệ và dữ liệu bất thường**\nKhông loại một điểm chỉ vì nó trái giả thuyết. Cần kiểm tra lỗi đo, ghi chép, điều kiện bất thường và lặp lại. Nếu chưa có lí do rõ, giữ điểm và nêu ảnh hưởng của nó tới độ chắc chắn.",
+        "**6. Hỗ trợ không phải chứng minh tuyệt đối**\nDữ liệu có thể hỗ trợ, không hỗ trợ hoặc chưa đủ đánh giá giả thuyết trong điều kiện khảo sát. Một thí nghiệm nhỏ không chứng minh giả thuyết luôn đúng ở mọi loài, địa điểm và thời gian.",
+        "**7. Tương quan và nhân quả**\nHai đại lượng biến đổi cùng nhau tạo tương quan, nhưng có thể do biến thứ ba hoặc chiều tác động ngược. Quan hệ nhân quả cần thiết kế kiểm soát tốt, trình tự thời gian hợp lí và bằng chứng lặp lại.",
+        "**8. Chọn kết luận phù hợp nhất**\nƯu tiên kết luận hẹp nhất nhưng bao phủ đúng dữ liệu: nêu đối tượng, điều kiện, chiều xu hướng và giới hạn. Tránh từ tuyệt đối như “luôn luôn”, “chắc chắn”, “mọi trường hợp” khi nghiên cứu không hỗ trợ.",
+        "**9. Lỗi cần tránh**\n- Bỏ đơn vị, mẫu số hoặc điều kiện.\n- Chỉ nhìn trung bình mà bỏ độ biến thiên.\n- Xóa dữ liệu không thuận lợi.\n- Biến tương quan thành nhân quả.\n- Dùng một kết quả để tuyên bố giả thuyết đã được chứng minh hoàn toàn."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt12-st1",
+          "name": "Đọc bảng, đồ thị và xu hướng",
+          "example": "Rút kết luận đúng phạm vi từ dữ liệu.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt12-st2",
+          "name": "Đánh giá sức mạnh và giới hạn bằng chứng",
+          "example": "Xét cỡ mẫu, biến thiên, đối chứng và khả năng khái quát.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m0-q016"
+    },
+    {
+      "id": "bio10-qt13",
+      "topicId": "bio10-t0",
+      "name": "Công cụ nghiên cứu và tin sinh học",
+      "slug": "cong-cu-nghien-cuu-tin-sinh-hoc",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Lựa chọn kính hiển vi, thiết bị hoặc công cụ tin sinh học theo loại dữ liệu cần quan sát và phân tích.",
+      "recognitionSigns": [
+        "Đề hỏi công cụ dùng để quan sát cấu trúc nhỏ, đo đại lượng hoặc xử lí dữ liệu sinh học lớn.",
+        "Đề mô tả so sánh trình tự DNA/protein, xây dựng cơ sở dữ liệu hoặc dự đoán cấu trúc."
+      ],
+      "solvingSteps": [
+        "Xác định đối tượng cần khảo sát và loại dữ liệu cần thu: hình ảnh, số đo hay trình tự.",
+        "Đối chiếu giới hạn phân giải, chức năng thiết bị và yêu cầu xử lí dữ liệu.",
+        "Chọn công cụ trực tiếp tạo hoặc phân tích dữ liệu cần thiết, không chọn theo độ hiện đại đơn thuần."
+      ],
+      "commonMistakes": [
+        "Cho rằng kính hiển vi có độ phóng đại lớn hơn luôn cho ảnh rõ hơn mà bỏ qua độ phân giải.",
+        "Đồng nhất tin sinh học với việc chỉ lưu trữ văn bản trên máy tính."
+      ],
+      "theory": [
+        "**1. Chọn công cụ theo loại dữ liệu**\nTrước tiên xác định cần quan sát hình dạng, cấu trúc bên trong, bề mặt, đo một đại lượng hay phân tích trình tự. Công cụ phù hợp là công cụ tạo đúng dữ liệu với độ phân giải, độ chính xác và điều kiện mẫu cần thiết.",
+        "**2. Độ phóng đại và độ phân giải**\n- **Độ phóng đại:** ảnh lớn hơn vật bao nhiêu lần.\n- **Độ phân giải:** khả năng phân biệt hai điểm rất gần nhau.\nẢnh phóng đại lớn nhưng độ phân giải thấp chỉ là “phóng đại rỗng”, không cung cấp thêm chi tiết.",
+        "**3. Công thức độ phóng đại**\n$$M=\\frac{\\text{kích thước ảnh}}{\\text{kích thước thật}}$$\nHai kích thước phải đổi về cùng đơn vị. Khi ảnh có thanh tỉ lệ, có thể dùng tỉ số:\n$$\\text{kích thước thật của vật}=\\frac{\\text{độ dài vật trên ảnh}}{\\text{độ dài thanh trên ảnh}}\\times\\text{giá trị thanh tỉ lệ}$$",
+        "**4. Kính hiển vi quang học**\nDùng ánh sáng, phù hợp quan sát tế bào và một số mẫu sống, thao tác tương đối đơn giản. Độ phân giải thấp hơn kính điện tử nên không quan sát rõ cấu trúc siêu hiển vi rất nhỏ.",
+        "**5. TEM và SEM**\n- **TEM:** electron truyền qua lát cắt mỏng, cho ảnh cấu trúc bên trong với độ phân giải cao.\n- **SEM:** quét bề mặt, cho thông tin hình thái bề mặt có cảm giác ba chiều.\nMẫu kính điện tử thường phải xử lí và không còn sống; không chọn kính chỉ dựa vào độ phóng đại.",
+        "**6. Thiết bị đo và kiểm soát chất lượng**\nMáy quang phổ, cảm biến, máy li tâm, thiết bị PCR hoặc giải trình tự tạo các loại dữ liệu khác nhau. Kết quả cần hiệu chuẩn thiết bị, mẫu trắng, mẫu chuẩn, lặp lại và ghi đơn vị; thiết bị hiện đại không tự bảo đảm dữ liệu đúng.",
+        "**7. Tin sinh học là gì?**\nTin sinh học dùng phương pháp tính toán để lưu trữ, quản lí, so sánh, phân tích và mô hình hóa dữ liệu sinh học như trình tự DNA, RNA, protein hoặc cấu trúc. Nó không chỉ là lưu file trên máy tính.",
+        "**8. Quy trình phân tích trình tự khái quát**\n- Thu mẫu và tạo dữ liệu trình tự.\n- Kiểm tra chất lượng, loại nhiễu.\n- Căn chỉnh hoặc so sánh với cơ sở dữ liệu tham chiếu.\n- Tính mức tương đồng, nhận diện biến thể hoặc dự đoán chức năng.\n- Diễn giải cùng metadata và giới hạn phương pháp.",
+        "**9. Giới hạn suy luận**\nMức tương đồng trình tự cao có thể gợi quan hệ hoặc chức năng gần nhau nhưng không tự chứng minh hai mẫu hoàn toàn giống hay protein chắc chắn có cùng chức năng. Kết luận phụ thuộc chất lượng dữ liệu, cơ sở tham chiếu và thuật toán.",
+        "**10. Lỗi cần tránh**\n- Đồng nhất phóng đại với phân giải.\n- Chọn TEM để quan sát bề mặt hoặc SEM để xem lát cắt bên trong.\n- Không đổi đơn vị khi tính kích thước.\n- Bỏ kiểm soát chất lượng dữ liệu.\n- Xem một phần trăm tương đồng là bằng chứng tuyệt đối."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt13-st1",
+          "name": "Công cụ nghiên cứu sinh học",
+          "example": "Nhận diện kính hiển vi, thiết bị phân tích và cơ sở dữ liệu.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt13-st2",
+          "name": "Tin sinh học, chất lượng dữ liệu và tái lập",
+          "example": "Đánh giá đầu ra thuật toán, metadata và sai lệch dữ liệu.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m0-q020"
+    },
+    {
+      "id": "bio10-qt1",
+      "topicId": "bio10-t0",
+      "name": "Các cấp độ tổ chức của thế giới sống",
+      "slug": "cac-cap-do-to-chuc-the-gioi-song",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Sắp xếp các cấp tổ chức, xác định cấp cơ bản và giải thích đặc tính nổi trội của hệ sống.",
+      "recognitionSigns": [
+        "Đề yêu cầu sắp xếp hoặc xác định cấp tổ chức từ tế bào đến sinh quyển.",
+        "Đề hỏi cấp nhỏ nhất biểu hiện đầy đủ đặc trưng sống hoặc đặc tính nổi trội."
+      ],
+      "solvingSteps": [
+        "Xác định đề đang hỏi thứ bậc, đơn vị cơ bản hay đặc tính của một cấp tổ chức.",
+        "Đặt đối tượng vào chuỗi: tế bào → cơ thể → quần thể → quần xã → hệ sinh thái → sinh quyển.",
+        "Kiểm tra phương án bằng nguyên tắc: cấp cao gồm các cấp thấp tương tác và có thể xuất hiện đặc tính mới."
+      ],
+      "commonMistakes": [
+        "Chọn phân tử hoặc bào quan vì nhỏ hơn tế bào, dù chúng không tự biểu hiện đầy đủ đặc trưng sống.",
+        "Đồng nhất quần thể với quần xã và bỏ qua điều kiện cùng loài."
+      ],
+      "theory": [
+        "**1. Thế giới sống được tổ chức theo thứ bậc**\nCác cấp tổ chức cốt lõi được sắp xếp:\n$$\\text{tế bào}\\rightarrow\\text{cơ thể}\\rightarrow\\text{quần thể}\\rightarrow\\text{quần xã}\\rightarrow\\text{hệ sinh thái}\\rightarrow\\text{sinh quyển}$$\nCấp cao được hình thành từ các thành phần thuộc cấp thấp hơn tương tác với nhau, không phải chỉ là phép cộng cơ học.",
+        "**2. Tế bào là đơn vị cơ bản của sự sống**\nTế bào là cấp nhỏ nhất biểu hiện tương đối đầy đủ các đặc trưng cơ bản như trao đổi chất, chuyển hóa năng lượng, sinh trưởng, đáp ứng và sinh sản. Phân tử và bào quan rất quan trọng nhưng không tự thực hiện đầy đủ các đặc trưng sống khi tách khỏi tế bào.",
+        "**3. Phân biệt cơ thể, quần thể và quần xã**\n- **Cơ thể:** một cá thể sống hoàn chỉnh.\n- **Quần thể:** các cá thể **cùng loài**, sống trong một khu vực và thời gian xác định, có khả năng sinh sản với nhau.\n- **Quần xã:** tập hợp nhiều quần thể thuộc **các loài khác nhau** cùng sống và tương tác trong một khu vực.",
+        "**4. Hệ sinh thái và sinh quyển**\nHệ sinh thái gồm quần xã sinh vật và môi trường vô sinh cùng các mối trao đổi vật chất, năng lượng. Sinh quyển là toàn bộ vùng trên Trái Đất có sự sống, bao gồm mọi hệ sinh thái. Vì vậy, hệ sinh thái không chỉ gồm sinh vật và sinh quyển không phải một quần thể rất lớn.",
+        "**5. Đặc tính nổi trội**\nĐặc tính nổi trội là đặc tính xuất hiện ở cấp tổ chức cao do cách các thành phần tương tác, trong khi từng thành phần riêng lẻ không có đầy đủ đặc tính đó. Ví dụ, khả năng co bóp của tim phụ thuộc sự phối hợp của nhiều loại tế bào và mô, không phải tính chất của một phân tử đơn lẻ.",
+        "**6. Hệ sống là hệ mở và tự điều chỉnh**\nSinh vật luôn trao đổi vật chất và năng lượng với môi trường. Các cơ chế tự điều chỉnh giúp duy trì trạng thái tương đối ổn định trước biến động. “Ổn định” không có nghĩa bất biến; đó là trạng thái động được duy trì nhờ nhiều quá trình liên tục.",
+        "**7. Cách giải câu hỏi cấp tổ chức**\n- Xác định đối tượng là một cá thể, nhóm cùng loài, nhiều loài hay cả sinh vật và môi trường.\n- Đặt đối tượng đúng vào chuỗi thứ bậc.\n- Nếu hỏi cấp cơ bản, chọn tế bào.\n- Nếu hỏi đặc tính nổi trội, tìm tính chất sinh ra từ sự tương tác ở cấp cao hơn.",
+        "**8. Lỗi cần tránh**\n- Chọn bào quan hoặc phân tử là đơn vị sống cơ bản chỉ vì chúng nhỏ hơn.\n- Nhầm quần thể với quần xã và bỏ qua điều kiện cùng loài.\n- Bỏ thành phần vô sinh khi xác định hệ sinh thái.\n- Cho rằng cấp cao chỉ là tổng số lượng thành phần, không có tương tác và đặc tính mới."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt1-st1",
+          "name": "Nhận diện các cấp tổ chức sống",
+          "example": "Phân biệt tế bào, cơ thể, quần thể, quần xã và hệ sinh thái.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt1-st2",
+          "name": "Tính hệ thống và đặc tính nổi trội",
+          "example": "Theo dõi tác động giữa các cấp và giải thích tự điều chỉnh.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-q1"
+    },
+    {
+      "id": "bio10-qt14",
+      "topicId": "bio10-t1",
+      "name": "Nguyên tố hóa học và vai trò của carbon",
+      "slug": "nguyen-to-hoa-hoc-va-carbon",
+      "difficulty": "easy",
+      "examFrequency": "medium",
+      "description": "Phân biệt nguyên tố đa lượng, vi lượng và giải thích khả năng tạo khung phân tử đa dạng của carbon.",
+      "recognitionSigns": [
+        "Đề hỏi tỉ lệ, vai trò hoặc hậu quả thiếu một nguyên tố trong cơ thể.",
+        "Đề nhấn mạnh bốn electron hóa trị, mạch carbon hoặc bộ khung hợp chất hữu cơ."
+      ],
+      "solvingSteps": [
+        "Xác định đề hỏi lượng cần thiết hay chức năng của nguyên tố.",
+        "Phân loại đa lượng–vi lượng theo nhu cầu tương đối, không theo mức độ quan trọng.",
+        "Nếu hỏi carbon, liên hệ khả năng tạo bốn liên kết cộng hóa trị và mạch đa dạng."
+      ],
+      "commonMistakes": [
+        "Cho rằng nguyên tố vi lượng không quan trọng.",
+        "Nhầm “có nhiều trong cơ thể” với “chỉ có một chức năng”."
+      ],
+      "theory": [
+        "**1. Các nguyên tố cấu tạo cơ thể sống**\nCơ thể sống chứa nhiều nguyên tố hóa học, trong đó C, H, O, N chiếm tỉ lệ lớn và tham gia phần lớn phân tử hữu cơ. Vai trò của một nguyên tố phụ thuộc cấu trúc và quá trình nó tham gia, không chỉ phụ thuộc tỉ lệ khối lượng.",
+        "**2. Nguyên tố đa lượng và vi lượng**\n- **Đa lượng:** cơ thể cần với lượng tương đối lớn, thường tham gia cấu trúc và nhiều quá trình sống.\n- **Vi lượng:** cần với lượng rất nhỏ nhưng có thể là thành phần enzyme, hormone hoặc chất điều hòa thiết yếu.\nCách phân loại dựa trên nhu cầu tương đối, không phải mức độ quan trọng.",
+        "**3. Thiếu hoặc thừa đều có thể gây hại**\nThiếu iodine có thể ảnh hưởng hormone tuyến giáp; thiếu iron ảnh hưởng hemoglobin. Ngược lại, một số nguyên tố vi lượng ở nồng độ cao có thể gây độc. Vì vậy “cần thiết” không đồng nghĩa “càng nhiều càng tốt”.",
+        "**4. Vì sao carbon tạo khung phân tử đa dạng?**\nCarbon có 4 electron hóa trị nên có thể tạo bốn liên kết cộng hóa trị bền với nhiều nguyên tử, kể cả với carbon. Carbon tạo được mạch thẳng, mạch nhánh, vòng và liên kết đơn, đôi, ba, tạo nền tảng cho sự đa dạng của hợp chất hữu cơ.",
+        "**5. Bộ khung carbon và nhóm chức**\nBộ khung carbon quyết định kích thước, hình dạng cơ bản; các nhóm chức gắn vào khung làm thay đổi tính phân cực, khả năng phản ứng và chức năng sinh học. Hai phân tử có cùng số nguyên tử nhưng cách sắp xếp khác nhau có thể có tính chất khác.",
+        "**6. Cách giải câu hỏi**\n- Nếu hỏi đa lượng/vi lượng: xét lượng cơ thể cần, không suy từ vai trò.\n- Nếu hỏi hậu quả thiếu chất: nối nguyên tố với phân tử hoặc quá trình cụ thể.\n- Nếu hỏi carbon: nêu hóa trị 4 và khả năng tự liên kết thành nhiều dạng khung.\n- Tránh khẳng định tuyệt đối khi dữ kiện chỉ nói một chức năng.",
+        "**7. Lỗi cần tránh**\n- Cho rằng vi lượng không quan trọng.\n- Cho rằng mọi nguyên tố có nhiều trong cơ thể đều chỉ làm cấu trúc.\n- Xem carbon tồn tại chủ yếu dưới dạng ion trong phân tử hữu cơ.\n- Đồng nhất nhu cầu thiết yếu với việc bổ sung không giới hạn."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt14-st1",
+          "name": "Nguyên tố đa lượng, vi lượng và carbon",
+          "example": "Nhận diện vai trò nguyên tố và bộ khung carbon.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt14-st2",
+          "name": "Dữ kiện thiếu khoáng và quan hệ liều–đáp ứng",
+          "example": "Giới hạn kết luận từ thí nghiệm dinh dưỡng khoáng.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m1-q001"
+    },
+    {
+      "id": "bio10-qt15",
+      "topicId": "bio10-t1",
+      "name": "Cấu tạo và vai trò sinh học của nước",
+      "slug": "cau-tao-va-vai-tro-cua-nuoc",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Liên hệ tính phân cực và liên kết hydrogen với tính dung môi, điều hòa nhiệt và các vai trò sinh học của nước.",
+      "recognitionSigns": [
+        "Đề nhắc đến phân cực, liên kết hydrogen, nhiệt dung, bay hơi hoặc dung môi.",
+        "Đề yêu cầu giải thích một hiện tượng sinh học bằng tính chất của nước."
+      ],
+      "solvingSteps": [
+        "Xác định tính chất vật lí–hóa học của nước đang được gợi ý.",
+        "Nối cấu tạo phân cực/liên kết hydrogen với tính chất vĩ mô.",
+        "Liên hệ tính chất đó với chức năng cụ thể trong tế bào hoặc cơ thể."
+      ],
+      "commonMistakes": [
+        "Nói phân tử nước mang điện tích tổng khác 0.",
+        "Cho rằng mọi chất đều tan tốt trong nước."
+      ],
+      "theory": [
+        "**1. Cấu tạo phân tử nước**\nMột phân tử nước gồm một oxygen liên kết cộng hóa trị với hai hydrogen. Oxygen hút electron mạnh hơn nên phía oxygen mang điện tích âm một phần $\\delta^-$, phía hydrogen mang điện tích dương một phần $\\delta^+$. Phân tử phân cực nhưng tổng điện tích vẫn bằng 0.",
+        "**2. Liên kết hydrogen giữa các phân tử**\nĐiện tích phần dương của H trong một phân tử hút điện tích phần âm của O ở phân tử khác, tạo liên kết hydrogen. Mỗi liên kết tương đối yếu nhưng số lượng lớn tạo ra các tính chất đặc biệt của nước.",
+        "**3. Nước là dung môi sinh học quan trọng**\nTính phân cực giúp nước bao quanh ion và nhiều phân tử phân cực, tạo môi trường cho phản ứng và vận chuyển chất. Các chất không phân cực như dầu không tan tốt trong nước. Vì vậy không được nói nước hòa tan mọi chất.",
+        "**4. Tính liên kết và bám dính**\n- **Liên kết/cohesion:** các phân tử nước hút nhau, góp phần tạo sức căng bề mặt và cột nước liên tục.\n- **Bám dính/adhesion:** nước hút bề mặt phân cực khác, hỗ trợ hiện tượng mao dẫn.\nHai tính chất phối hợp trong vận chuyển nước ở thực vật.",
+        "**5. Nhiệt dung riêng cao**\nCần nhiều năng lượng để phá vỡ một phần mạng liên kết hydrogen trước khi các phân tử chuyển động nhanh hơn. Vì vậy nước hấp thụ hoặc giải phóng nhiều nhiệt mà nhiệt độ thay đổi tương đối chậm, giúp ổn định nhiệt độ tế bào, cơ thể và môi trường.",
+        "**6. Nhiệt hóa hơi cao và làm mát**\nNhững phân tử có năng lượng cao thoát khỏi bề mặt khi nước bay hơi, mang theo nhiệt. Mồ hôi bay hơi làm mát da và thoát hơi nước có thể làm mát lá. Hiệu quả giảm khi không khí quá ẩm vì bay hơi khó hơn.",
+        "**7. Nước tham gia phản ứng và duy trì cấu trúc**\nNước là chất tham gia trong thủy phân, có thể được tạo ra trong phản ứng ngưng tụ và góp phần duy trì thể tích, áp suất tế bào. Vai trò của nước không chỉ là “chất chứa” thụ động.",
+        "**8. Lỗi cần tránh**\n- Cho rằng phân tử nước mang điện tích tổng.\n- Nhầm liên kết O–H trong phân tử với liên kết hydrogen giữa các phân tử.\n- Cho mọi chất đều tan trong nước.\n- Giải thích làm mát bằng việc nước bay hơi giải phóng nhiệt vào da."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt15-st1",
+          "name": "Phân cực, liên kết hydrogen và vai trò của nước",
+          "example": "Nối cấu tạo nước với tính dung môi và điều hòa nhiệt.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt15-st2",
+          "name": "Nước trong hệ sống và dữ liệu vật lí",
+          "example": "Giải thích hiện tượng sinh học từ tương tác phân tử nước.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m1-q005"
+    },
+    {
+      "id": "bio10-qt16",
+      "topicId": "bio10-t1",
+      "name": "Carbohydrate: cấu tạo và chức năng",
+      "slug": "carbohydrate-cau-tao-chuc-nang",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Phân biệt đường đơn, đường đôi, đường đa và liên hệ cấu trúc với cung cấp năng lượng, dự trữ và cấu trúc.",
+      "recognitionSigns": [
+        "Đề nêu glucose, sucrose, starch, glycogen, cellulose hoặc chitin.",
+        "Đề hỏi đơn phân, dạng dự trữ, chức năng cấu trúc hoặc sản phẩm thủy phân."
+      ],
+      "solvingSteps": [
+        "Xác định phân tử thuộc đường đơn, đôi hay đa.",
+        "Nhận diện đơn phân và loại liên kết/chuỗi ở mức chương trình.",
+        "Đối chiếu nguồn gốc và chức năng: năng lượng nhanh, dự trữ hay cấu trúc."
+      ],
+      "commonMistakes": [
+        "Nhầm cellulose là chất dự trữ của thực vật.",
+        "Cho rằng mọi carbohydrate đều có vị ngọt và tan trong nước."
+      ],
+      "theory": [
+        "**1. Khái quát carbohydrate**\nCarbohydrate chứa chủ yếu C, H, O; nhiều chất có tỉ lệ H:O gần 2:1 nhưng đây không phải tiêu chí duy nhất. Chúng có vai trò cung cấp năng lượng, dự trữ, cấu trúc và tham gia nhận diện tế bào.",
+        "**2. Đường đơn**\nMonosaccharide là đơn vị đường nhỏ, ví dụ glucose, fructose, galactose, ribose và deoxyribose. Glucose là nguồn nhiên liệu quan trọng; ribose và deoxyribose tham gia nucleotide. Không phải mọi đường đơn có cùng chức năng.",
+        "**3. Đường đôi**\nDisaccharide được tạo từ hai đường đơn bằng phản ứng ngưng tụ và liên kết glycosidic; thủy phân tách liên kết bằng nước. Ví dụ sucrose, lactose, maltose. Thành phần đường đơn và kiểu liên kết quyết định tính chất.",
+        "**4. Đường đa**\nPolysaccharide gồm nhiều monosaccharide nối nhau. Chúng thường không ngọt và có thể ít tan. Cùng được tạo từ glucose nhưng starch, glycogen và cellulose khác kiểu liên kết, độ phân nhánh và cấu trúc không gian nên khác chức năng.",
+        "**5. Dự trữ năng lượng**\n- **Starch/tinh bột:** dạng dự trữ phổ biến ở thực vật.\n- **Glycogen:** dạng dự trữ ở động vật và nấm, phân nhánh nhiều nên có thể huy động glucose nhanh.\nCác chất dự trữ khác cellulose dù cùng chứa glucose.",
+        "**6. Chức năng cấu trúc**\n- **Cellulose:** thành tế bào thực vật, tạo sợi bền; người không có enzyme phân giải liên kết đặc trưng nên cellulose là chất xơ.\n- **Chitin:** thành tế bào nấm và bộ xương ngoài của nhiều động vật chân khớp.\nChức năng cấu trúc gắn với cách chuỗi sắp xếp và tương tác.",
+        "**7. Tính đặc hiệu của enzyme**\nEnzyme nhận diện cấu trúc và kiểu liên kết cụ thể. Enzyme phân giải starch không nhất thiết phân giải cellulose dù cả hai cùng từ glucose. Vì vậy “cùng đơn phân” không đồng nghĩa “cùng tính chất và khả năng tiêu hóa”.",
+        "**8. Quy trình phân loại**\n- Xác định số đơn vị đường: đơn, đôi hay đa.\n- Nhận diện đơn phân và kiểu tổ chức chuỗi.\n- Hỏi chất dùng ngay, dự trữ hay cấu trúc.\n- Đối chiếu nhóm sinh vật và vị trí chứa chất.",
+        "**9. Lỗi cần tránh**\n- Cho cellulose là chất dự trữ của thực vật.\n- Cho mọi carbohydrate đều ngọt và tan.\n- Nhầm glycogen với starch hoặc chitin.\n- Kết luận hai polymer giống nhau chỉ vì cùng đơn phân glucose."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt16-st1",
+          "name": "Phân loại và chức năng carbohydrate",
+          "example": "Phân biệt đường đơn, đường đôi và đường đa.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt16-st2",
+          "name": "Liên kết, cấu trúc và khả năng tiêu hóa",
+          "example": "Suy chức năng từ cách tổ chức chuỗi carbohydrate.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m1-q009"
+    },
+    {
+      "id": "bio10-qt17",
+      "topicId": "bio10-t1",
+      "name": "Lipid và tính kị nước",
+      "slug": "lipid-va-tinh-ki-nuoc",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân biệt triglyceride, phospholipid, steroid và giải thích quan hệ cấu trúc–chức năng của lipid.",
+      "recognitionSigns": [
+        "Đề nhắc đến glycerol, acid béo, đầu ưa nước–đuôi kị nước hoặc vòng steroid.",
+        "Đề hỏi dự trữ năng lượng, màng sinh chất, hormone steroid hay độ no acid béo."
+      ],
+      "solvingSteps": [
+        "Nhận diện nhóm lipid qua thành phần cấu tạo đặc trưng.",
+        "Xác định phần ưa nước/kị nước và hình dạng phân tử nếu có.",
+        "Liên hệ với chức năng dự trữ, cấu tạo màng, tín hiệu hoặc cách nhiệt."
+      ],
+      "commonMistakes": [
+        "Coi lipid là polymer gồm nhiều đơn phân lặp lại như protein.",
+        "Nhầm phospholipid với triglyceride."
+      ],
+      "theory": [
+        "**1. Đặc điểm chung của lipid**\nLipid là nhóm phân tử đa dạng, phần lớn không phân cực hoặc ít phân cực nên kị nước. Lipid không phải một polymer điển hình gồm chuỗi dài đơn phân lặp lại giống protein hay nucleic acid.",
+        "**2. Triglyceride**\nTriglyceride gồm một glycerol liên kết với ba acid béo. Chúng dự trữ năng lượng dài hạn, cách nhiệt và bảo vệ cơ quan. Lipid giàu liên kết C–H và được dự trữ ít kèm nước nên có mật độ năng lượng cao.",
+        "**3. Acid béo no và không no**\n- Acid béo no không có liên kết đôi C=C, chuỗi tương đối thẳng và dễ xếp sít.\n- Acid béo không no có một hoặc nhiều liên kết đôi, thường tạo đoạn gấp làm các chuỗi khó xếp sít.\nVì vậy lipid giàu acid béo không no thường lỏng hơn ở cùng nhiệt độ.",
+        "**4. Phospholipid**\nPhospholipid thường gồm glycerol, hai đuôi acid béo kị nước và đầu chứa phosphate ưa nước. Tính lưỡng cực khiến chúng tự sắp xếp thành lớp kép trong nước: đầu hướng ra môi trường nước, đuôi quay vào nhau.",
+        "**5. Phospholipid khác triglyceride**\nTriglyceride có ba acid béo và thiên về dự trữ năng lượng; phospholipid có hai đuôi và đầu phân cực, thích hợp tạo màng. Thay phospholipid bằng triglyceride sẽ làm giảm khả năng tự hình thành lớp kép ổn định.",
+        "**6. Steroid và cholesterol**\nSteroid có bộ khung nhiều vòng carbon hợp nhất. Một số là hormone. Cholesterol là thành phần màng động vật, giúp điều hòa độ lỏng: hạn chế chuyển động quá mức khi nóng và ngăn phospholipid xếp quá sít khi lạnh.",
+        "**7. Quan hệ cấu trúc–chức năng**\n- Kị nước → dự trữ không kèm nhiều nước, tạo hàng rào màng.\n- Đầu ưa nước–đuôi kị nước → tự lắp ráp lớp kép.\n- Mức độ no và độ dài đuôi → ảnh hưởng độ lỏng.\n- Khung vòng steroid → phù hợp chức năng tín hiệu và điều hòa.",
+        "**8. Lỗi cần tránh**\n- Gọi acid béo là đơn phân lặp lại tạo polymer lipid.\n- Nhầm triglyceride với phospholipid.\n- Cho lipid không có vai trò cấu trúc.\n- Kết luận mọi chất béo no hoặc mọi cholesterol đều “xấu” mà không xét loại, lượng và bối cảnh."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt17-st1",
+          "name": "Các nhóm lipid và chức năng",
+          "example": "Phân biệt triglyceride, phospholipid và steroid.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt17-st2",
+          "name": "Lipid màng, độ lỏng và ứng dụng",
+          "example": "Suy đặc tính màng từ thành phần acid béo.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m1-q013"
+    },
+    {
+      "id": "bio10-qt2",
+      "topicId": "bio10-t1",
+      "name": "Protein và quan hệ cấu trúc–chức năng",
+      "slug": "protein-cau-truc-chuc-nang",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nhận diện amino acid, liên kết peptide, các bậc cấu trúc, biến tính và chức năng của protein.",
+      "recognitionSigns": [
+        "Đề nêu amino acid, liên kết peptide, xoắn alpha, phiến beta hoặc cấu trúc không gian.",
+        "Đề hỏi hậu quả của nhiệt độ, pH hoặc đột biến lên chức năng protein."
+      ],
+      "solvingSteps": [
+        "Xác định cấp cấu trúc hoặc quá trình đang được hỏi.",
+        "Nối loại liên kết/tương tác với cấp cấu trúc tương ứng.",
+        "Đánh giá thay đổi cấu trúc không gian có ảnh hưởng vị trí hoạt động và chức năng hay không."
+      ],
+      "commonMistakes": [
+        "Nhầm liên kết peptide tạo bậc một với liên kết hydrogen ổn định bậc hai.",
+        "Cho rằng biến tính luôn phá toàn bộ liên kết peptide."
+      ],
+      "theory": [
+        "**1. Amino acid – đơn phân của protein**\nMỗi amino acid thường có carbon trung tâm gắn nhóm amino $-NH_2$, nhóm carboxyl $-COOH$, hydrogen và nhóm bên R. Nhóm R khác nhau tạo tính chất khác nhau như phân cực, điện tích, kị nước hoặc khả năng tạo cầu disulfide.",
+        "**2. Liên kết peptide và chuỗi polypeptide**\nNhóm carboxyl của amino acid này liên kết với nhóm amino của amino acid kế tiếp qua phản ứng ngưng tụ, tạo liên kết peptide. Chuỗi có đầu amino và đầu carboxyl; thứ tự amino acid mang thông tin cấu trúc.",
+        "**3. Cấu trúc bậc một**\nBậc một là số lượng và trình tự amino acid trong chuỗi polypeptide, được duy trì bởi liên kết peptide. Thay một amino acid có thể không ảnh hưởng, ảnh hưởng nhẹ hoặc làm thay đổi mạnh cách gấp và chức năng tùy vị trí, tính chất thay thế.",
+        "**4. Cấu trúc bậc hai**\nCác đoạn chuỗi tạo xoắn $\\alpha$ hoặc phiến gấp $\\beta$, được ổn định chủ yếu bởi liên kết hydrogen giữa các nhóm trên khung polypeptide. Bậc hai không phải do các amino acid nối với nhau bằng liên kết hydrogen thay cho peptide.",
+        "**5. Cấu trúc bậc ba và bậc bốn**\n- Bậc ba: hình dạng ba chiều của một chuỗi, do tương tác kị nước, liên kết hydrogen, ion, van der Waals và cầu disulfide giữa nhóm R.\n- Bậc bốn: sự phối hợp của nhiều chuỗi polypeptide thành protein chức năng.\nKhông phải protein nào cũng có bậc bốn.",
+        "**6. Cấu trúc quyết định chức năng**\nHình dạng và tính chất hóa học của vị trí gắn quyết định protein tương tác với phân tử nào. Protein có thể làm enzyme, vận chuyển, thụ thể, kháng thể, cấu trúc, vận động hoặc tín hiệu. Thay đổi cấu trúc có thể làm thay đổi chức năng.",
+        "**7. Biến tính protein**\nNhiệt độ cao, pH cực đoan hoặc hóa chất có thể phá vỡ tương tác duy trì cấu trúc bậc cao, làm protein mất hình dạng và chức năng. Biến tính thường không cắt toàn bộ liên kết peptide; một số trường hợp có thể thuận nghịch nếu bậc một còn nguyên.",
+        "**8. Tính đặc hiệu và đột biến**\nMột thay đổi amino acid tại vị trí hoạt động hoặc vùng ổn định quan trọng có thể thay đổi khả năng gắn và hoạt tính. Không được kết luận mọi thay thế đều phá hủy hoàn toàn hoặc luôn có lợi; hậu quả phải xét vị trí và tính chất nhóm R.",
+        "**9. Lỗi cần tránh**\n- Nhầm liên kết peptide của bậc một với liên kết hydrogen của bậc hai.\n- Cho bậc bốn nghĩa là có bốn amino acid.\n- Đồng nhất biến tính với thủy phân hoàn toàn.\n- Cho trình tự amino acid không liên quan hình dạng và chức năng."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt2-st1",
+          "name": "Đơn phân, các bậc cấu trúc và chức năng protein",
+          "example": "Nhận diện liên kết và cấp cấu trúc.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt2-st2",
+          "name": "Gấp cuộn, biến tính và tính đặc hiệu",
+          "example": "Theo dõi tác động của thay đổi cấu trúc lên chức năng.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt2-st3",
+          "name": "Dữ liệu protein và kiểm chứng cơ chế",
+          "example": "Đọc bảng hoạt tính, điện di và thí nghiệm cứu hồi.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-q2"
+    },
+    {
+      "id": "bio10-qt18",
+      "topicId": "bio10-t1",
+      "name": "Nucleic acid và thông tin di truyền",
+      "slug": "nucleic-acid-thong-tin-di-truyen",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân tích nucleotide, so sánh DNA–RNA, nguyên tắc bổ sung và vai trò của các loại RNA.",
+      "recognitionSigns": [
+        "Đề nêu đường pentose, phosphate, nitrogenous base hoặc nucleotide.",
+        "Đề hỏi mạch DNA, base bổ sung, loại RNA hoặc chức năng lưu giữ–biểu hiện thông tin."
+      ],
+      "solvingSteps": [
+        "Xác định phân tử là DNA hay RNA từ đường và base đặc trưng.",
+        "Nếu có hai mạch, áp dụng nguyên tắc bổ sung đúng chiều dữ kiện.",
+        "Phân biệt vai trò mRNA, tRNA, rRNA thay vì gán chung một chức năng."
+      ],
+      "commonMistakes": [
+        "Cho rằng nucleotide chỉ gồm nitrogenous base.",
+        "Cho rằng mọi RNA đều mang thông tin từ DNA tới ribosome."
+      ],
+      "theory": [
+        "**1. Cấu tạo nucleotide**\nMột nucleotide gồm ba thành phần:\n- Đường pentose.\n- Nhóm phosphate.\n- Một nitrogenous base.\nNucleoside chỉ gồm đường và base; không có phosphate.",
+        "**2. DNA và RNA khác nhau**\n- DNA chứa deoxyribose và các base A, T, G, C; thường gồm hai mạch.\n- RNA chứa ribose và A, U, G, C; thường một mạch nhưng có thể tự gấp.\nCả hai đều có khung đường–phosphate và mang thông tin hoặc tham gia biểu hiện thông tin.",
+        "**3. Liên kết trong một mạch**\nCác nucleotide nối bằng liên kết phosphodiester giữa phosphate và đường, tạo khung đường–phosphate có chiều $5\\prime\\rightarrow3\\prime$. Các base hướng ra khỏi khung để bắt cặp hoặc tham gia nhận diện.",
+        "**4. Hai mạch DNA bổ sung và ngược chiều**\nHai mạch DNA chạy ngược chiều. A bắt cặp T bằng 2 liên kết hydrogen; G bắt cặp C bằng 3 liên kết hydrogen. Vì vậy nếu một mạch viết $5\\prime\\rightarrow3\\prime$, mạch bổ sung trực tiếp bên dưới phải viết $3\\prime\\rightarrow5\\prime$.",
+        "**5. Viết mạch bổ sung đúng chiều**\nVí dụ mạch:\n$$5\\prime-ATGCC-3\\prime$$\nMạch bổ sung song song là:\n$$3\\prime-TACGG-5\\prime$$\nNếu đề yêu cầu mạch bổ sung theo chiều $5\\prime\\rightarrow3\\prime$, phải đảo lại:\n$$5\\prime-GGCAT-3\\prime$$",
+        "**6. Quy tắc số lượng trong DNA mạch kép**\nTrong toàn phân tử:\n$$A=T,\\qquad G=C,\\qquad A+G=T+C$$\nTổng liên kết hydrogen:\n$$H=2N_{A-T}+3N_{G-C}$$\nTrong đó $N_{A-T}$ và $N_{G-C}$ là số cặp base, không phải tổng base của cả hai mạch.",
+        "**7. Vai trò của DNA**\nDNA lưu giữ thông tin trong trình tự nucleotide, truyền thông tin khi nhân đôi và làm khuôn tổng hợp RNA. Hai mạch bổ sung hỗ trợ sao chép và sửa chữa; deoxyribose làm DNA ổn định hóa học hơn RNA.",
+        "**8. Các loại RNA chính**\n- **mRNA:** mang thông tin từ DNA đến ribosome.\n- **tRNA:** mang amino acid và nhận diện codon.\n- **rRNA:** thành phần cấu trúc, xúc tác của ribosome.\nKhông phải mọi RNA đều là “bản sao mang tin”; nhiều RNA còn có chức năng điều hòa hoặc xúc tác.",
+        "**9. Từ thông tin đến protein**\nTrình tự DNA được phiên mã thành RNA; ribosome đọc codon mRNA để lắp amino acid thành polypeptide. Một thay đổi nucleotide có thể không đổi amino acid, đổi amino acid hoặc tạo tín hiệu kết thúc, nên hậu quả không giống nhau trong mọi trường hợp.",
+        "**10. Lỗi cần tránh**\n- Cho nucleotide chỉ gồm base.\n- Dùng U khi viết DNA hoặc T khi viết RNA mà không xét bối cảnh.\n- Viết hai mạch DNA cùng chiều.\n- Đếm A–T có 3 và G–C có 2 liên kết hydrogen.\n- Gán chức năng mRNA cho mọi RNA."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt18-st1",
+          "name": "Nucleotide, DNA và các loại RNA",
+          "example": "So sánh cấu tạo và chức năng DNA–RNA.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt18-st2",
+          "name": "Trình tự, chiều mạch và biểu hiện thông tin",
+          "example": "Suy luận từ nguyên tắc bổ sung và vai trò RNA.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt18-st3",
+          "name": "Dữ liệu nucleic acid và sai số thực nghiệm",
+          "example": "Đọc điện di, mức biểu hiện và đối chứng phân tử.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m1-q020"
+    },
+    {
+      "id": "bio10-qt19",
+      "topicId": "bio10-t1",
+      "name": "Dinh dưỡng và ứng dụng phân tử sinh học",
+      "slug": "dinh-duong-ung-dung-phan-tu-sinh-hoc",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Vận dụng kiến thức phân tử sinh học để đánh giá thực phẩm, chế biến, sức khỏe và ứng dụng DNA.",
+      "recognitionSigns": [
+        "Đề đặt kiến thức carbohydrate, lipid, protein hoặc DNA trong bối cảnh đời sống.",
+        "Đề yêu cầu chọn khẩu phần, giải thích chế biến hoặc đánh giá một tuyên bố dinh dưỡng."
+      ],
+      "solvingSteps": [
+        "Xác định phân tử và chức năng liên quan trực tiếp đến tình huống.",
+        "Tách nhu cầu sinh học thực tế khỏi quảng cáo hoặc khẳng định tuyệt đối.",
+        "Chọn giải pháp cân bằng, có điều kiện và phù hợp bằng chứng."
+      ],
+      "commonMistakes": [
+        "Đồng nhất “không có chất béo” với chế độ ăn lành mạnh tuyệt đối.",
+        "Cho rằng thực phẩm giàu protein chỉ cung cấp amino acid mà không cung cấp năng lượng."
+      ],
+      "theory": [
+        "**1. Khẩu phần cần cân bằng chức năng**\nCarbohydrate cung cấp năng lượng nhanh và chất xơ; lipid dự trữ năng lượng, tạo màng và hỗ trợ hấp thu vitamin tan trong lipid; protein cung cấp amino acid và nhiều chức năng; vitamin, khoáng và nước tham gia điều hòa. Không nhóm nào nên bị đánh giá chỉ bằng “tốt” hoặc “xấu”.",
+        "**2. Amino acid thiết yếu**\nAmino acid thiết yếu là loại cơ thể không tổng hợp được hoặc không tổng hợp đủ, nên phải nhận từ khẩu phần. “Thiết yếu” không có nghĩa chỉ tồn tại trong một loại thức ăn hoặc quan trọng hơn mọi amino acid khác.",
+        "**3. Chất béo và sức khỏe**\nCơ thể cần lipid nhưng loại và lượng quan trọng. Acid béo no, không no và trans có tác động khác nhau. Nhãn “không chất béo” không tự bảo đảm thực phẩm lành mạnh nếu sản phẩm nhiều đường, muối hoặc năng lượng.",
+        "**4. Chế biến và biến tính protein**\nNấu chín làm nhiều protein biến tính và kết tụ; thường không phá hủy toàn bộ amino acid hay liên kết peptide. Biến tính có thể làm protein dễ tiếp cận enzyme tiêu hóa hơn, đồng thời nhiệt quá mức có thể làm giảm một số giá trị dinh dưỡng.",
+        "**5. Carbohydrate và chất xơ**\nĐường đơn/đôi thường được hấp thu hoặc sử dụng nhanh hơn polysaccharide phức tạp. Cellulose không được người tiêu hóa thành glucose nhưng góp phần tạo chất xơ, hỗ trợ hoạt động tiêu hóa và hệ vi sinh đường ruột.",
+        "**6. Ứng dụng DNA**\nDNA được dùng trong nhận dạng, xét nghiệm quan hệ, chẩn đoán, nghiên cứu tiến hóa và công nghệ sinh học. Kết luận nhận dạng phải dựa trên nhiều marker, chất lượng mẫu, tần suất allele và xác suất; một marker giống nhau không chứng minh danh tính tuyệt đối.",
+        "**7. Đánh giá tuyên bố dinh dưỡng hoặc công nghệ**\n- Xác định phân tử và cơ chế liên quan.\n- Kiểm tra lượng, đối tượng và điều kiện sử dụng.\n- Phân biệt bằng chứng thực nghiệm với quảng cáo.\n- Xem xét lợi ích, rủi ro và phương án thay thế.\n- Tránh suy từ một thành phần đến toàn bộ chất lượng sản phẩm.",
+        "**8. Lỗi cần tránh**\n- Loại bỏ hoàn toàn một nhóm dinh dưỡng mà không có chỉ định.\n- Cho protein chỉ cung cấp amino acid, không thể cung cấp năng lượng.\n- Đồng nhất biến tính với mất hoàn toàn giá trị dinh dưỡng.\n- Xem một kết quả DNA đơn lẻ là bằng chứng tuyệt đối."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt19-st1",
+          "name": "Ứng dụng phân tử sinh học trong đời sống",
+          "example": "Giải thích chế biến, dinh dưỡng và DNA.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt19-st2",
+          "name": "Phản biện tuyên bố dinh dưỡng và nhận dạng",
+          "example": "Đánh giá nhãn, khẩu phần và giới hạn bằng chứng.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m1-q024"
+    },
+    {
+      "id": "bio10-qt20",
+      "topicId": "bio10-t1",
+      "name": "Thực hành nhận biết phân tử sinh học",
+      "slug": "thuc-hanh-nhan-biet-phan-tu-sinh-hoc",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân tích thuốc thử, đối chứng, hiện tượng và kết luận trong thí nghiệm định tính phân tử sinh học.",
+      "recognitionSigns": [
+        "Đề nêu Benedict, iodine, Biuret, Sudan hoặc hiện tượng đổi màu.",
+        "Đề cho bảng kết quả mẫu thử và yêu cầu xác định chất, đối chứng hoặc lỗi quy trình."
+      ],
+      "solvingSteps": [
+        "Xác định thuốc thử đặc hiệu và điều kiện phản ứng.",
+        "Đối chiếu màu/hiện tượng dương tính với bảng kết quả.",
+        "Kiểm tra đối chứng trước khi kết luận và chỉ kết luận trong giới hạn phép thử."
+      ],
+      "commonMistakes": [
+        "Kết luận mẫu không chứa chất chỉ vì phản ứng âm tính dù thiếu đối chứng dương.",
+        "Nhầm màu dương tính của iodine và Biuret."
+      ],
+      "theory": [
+        "**1. Bản chất phép thử định tính**\nPhép thử định tính cho biết mẫu có khả năng chứa một nhóm chất dựa trên phản ứng màu, kết tủa hoặc khả năng phân bố. Kết quả dương tính không tự cho nồng độ chính xác; kết quả âm tính cũng có thể do lượng chất quá thấp hoặc quy trình sai.",
+        "**2. Iodine nhận biết starch**\nDung dịch iodine/Lugol có màu vàng nâu; khi tương tác với cấu trúc xoắn của starch tạo màu xanh tím hoặc xanh đen. Phép thử không phải phép nhận biết chung mọi carbohydrate.",
+        "**3. Benedict nhận biết đường khử**\nMẫu được trộn với thuốc thử Benedict và **đun nóng**. Khi có đường khử, màu có thể chuyển từ xanh qua lục, vàng, cam đến kết tủa đỏ gạch tùy lượng tương đối. Không hiệu chuẩn thì chỉ nên diễn giải bán định lượng.",
+        "**4. Giới hạn của Benedict**\nGlucose và một số đường khác cho kết quả dương; sucrose thường âm trong điều kiện chuẩn nhưng sau thủy phân có thể tạo đường khử và trở nên dương. Vì vậy Benedict không đồng nghĩa riêng với glucose.",
+        "**5. Biuret nhận biết liên kết peptide**\nTrong môi trường kiềm, ion copper tạo phức màu tím với nhiều liên kết peptide. Kết quả dương gợi protein hoặc polypeptide; amino acid tự do không có nhiều liên kết peptide nên không cho cùng phản ứng.",
+        "**6. Sudan nhận biết lipid**\nThuốc nhuộm Sudan tan ưu tiên trong pha lipid và làm phần lipid hiện màu đỏ/cam hoặc tạo lớp màu tùy quy trình. Đây là phép thử dựa vào tính không phân cực, không phải phản ứng đặc hiệu với mọi loại liên kết lipid.",
+        "**7. Đối chứng dương, âm và mẫu trắng**\n- Đối chứng dương chứa chắc chắn chất cần tìm, xác nhận thuốc thử hoạt động.\n- Đối chứng âm không chứa chất đích, phát hiện tín hiệu nền.\n- Mẫu trắng có nền giống mẫu nhưng thiếu thành phần phản ứng, hữu ích khi mẫu vốn có màu.",
+        "**8. Quy trình phân tích bảng kết quả**\n- Nhận diện từng thuốc thử và đích của nó.\n- Kiểm tra điều kiện như đun nóng với Benedict.\n- Đối chiếu hiện tượng dương tính.\n- Kiểm tra đối chứng trước khi kết luận.\n- Kết hợp nhiều phép thử để mô tả mẫu, không suy ra chất chưa được kiểm tra.",
+        "**9. Thiết kế thí nghiệm tin cậy**\nDùng cùng thể tích mẫu và thuốc thử, cùng thời gian/nhiệt độ, dụng cụ sạch, ghi màu theo thang chuẩn và lặp lại. Nếu cần so lượng tương đối, nên có dãy chuẩn hoặc thiết bị đo màu thay vì chỉ nhìn bằng mắt.",
+        "**10. An toàn**\nĐeo bảo hộ, tránh tiếp xúc thuốc thử, dùng kẹp và bể cách thủy khi đun, không nếm mẫu và xử lí chất thải theo hướng dẫn. Mẫu thực phẩm sau khi thêm thuốc thử không còn dùng để ăn.",
+        "**11. Lỗi cần tránh**\n- Nhầm iodine với Biuret hoặc Sudan.\n- Quên đun Benedict.\n- Cho màu Benedict xác định chính xác nồng độ khi không có đường chuẩn.\n- Kết luận âm tính dù đối chứng dương cũng không hoạt động.\n- Cho Biuret nhận biết amino acid tự do thay vì liên kết peptide."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt20-st1",
+          "name": "Thuốc thử và hiện tượng nhận biết",
+          "example": "Nhận diện Benedict, iodine, Biuret và Sudan.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt20-st2",
+          "name": "Đối chứng, nhiễm chéo và đọc kết quả",
+          "example": "Phân tích bảng phối hợp nhiều phép thử.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m1-q028"
+    },
+    {
+      "id": "bio10-qt21",
+      "topicId": "bio10-t2",
+      "name": "Học thuyết tế bào",
+      "slug": "hoc-thuyet-te-bao",
+      "difficulty": "easy",
+      "examFrequency": "medium",
+      "description": "Nhận diện nội dung học thuyết tế bào và vận dụng để giải thích tính thống nhất của thế giới sống.",
+      "recognitionSigns": [
+        "Đề hỏi đơn vị cấu trúc–chức năng, nguồn gốc tế bào hoặc tính thống nhất sinh giới.",
+        "Đề đưa một quan sát và yêu cầu xác định nó hỗ trợ nội dung nào của học thuyết tế bào."
+      ],
+      "solvingSteps": [
+        "Xác định phát biểu thuộc cấu tạo, chức năng hay nguồn gốc tế bào.",
+        "Đối chiếu ba ý cốt lõi của học thuyết tế bào.",
+        "Loại phát biểu tuyệt đối hóa kích thước hoặc cho rằng tế bào tự sinh từ vật chất không sống."
+      ],
+      "commonMistakes": [
+        "Cho rằng cơ thể lớn được tạo bởi tế bào lớn hơn.",
+        "Đồng nhất virus với tế bào."
+      ],
+      "theory": [
+        "**1. Ba nội dung cốt lõi của học thuyết tế bào**\n- Mọi cơ thể sống được cấu tạo từ một hoặc nhiều tế bào.\n- Tế bào là đơn vị cấu trúc và chức năng cơ bản của sự sống.\n- Tế bào chỉ sinh ra từ tế bào có trước thông qua phân chia.",
+        "**2. Tế bào là đơn vị cấu trúc**\nMô và cơ quan được tạo bởi các tế bào cùng chất nền ngoại bào. Hình dạng, số lượng và cách tổ chức tế bào tạo nên cấu trúc cơ thể. Cơ thể lớn thường có nhiều tế bào hơn, không nhất thiết từng tế bào lớn hơn.",
+        "**3. Tế bào là đơn vị chức năng**\nCác hoạt động như chuyển hóa, thu nhận tín hiệu, duy trì cân bằng và sinh sản diễn ra trong tế bào hoặc nhờ sự phối hợp giữa các tế bào. Chức năng của cơ quan bắt nguồn từ hoạt động có tổ chức của tế bào.",
+        "**4. Tế bào có nguồn gốc từ tế bào**\nTế bào mới hình thành khi tế bào có trước phân chia. Nội dung này bác bỏ quan niệm tế bào sống thường xuyên tự xuất hiện từ vật chất không sống trong điều kiện hiện tại.",
+        "**5. Tính thống nhất và đa dạng của sinh giới**\nMọi tế bào đều có màng sinh chất, vật chất di truyền, ribosome và chuyển hóa cơ bản, cho thấy tính thống nhất. Sự khác nhau về kích thước, cấu trúc và chuyên hóa tạo nên tính đa dạng.",
+        "**6. Virus và học thuyết tế bào**\nVirus không có cấu tạo tế bào và không tự thực hiện chuyển hóa, sinh sản ngoài tế bào chủ. Vì vậy virus không phải “tế bào rất nhỏ”, dù vẫn có vật chất di truyền và liên quan chặt chẽ tới thế giới sống.",
+        "**7. Lỗi cần tránh**\n- Cho cơ thể lớn phải có tế bào lớn.\n- Cho mọi cấu trúc có DNA đều là tế bào.\n- Đồng nhất virus với tế bào nhân sơ.\n- Cho tế bào tự sinh từ vật chất không sống trong điều kiện thông thường."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt21-st1",
+          "name": "Nội dung học thuyết tế bào",
+          "example": "Nhận diện tế bào là đơn vị cấu trúc và chức năng.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt21-st2",
+          "name": "Bằng chứng, ngoại lệ và giới hạn khái quát",
+          "example": "Vận dụng học thuyết cho virus và tế bào chuyên hóa.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m2-q001"
+    },
+    {
+      "id": "bio10-qt22",
+      "topicId": "bio10-t2",
+      "name": "Cấu trúc tế bào nhân sơ",
+      "slug": "cau-truc-te-bao-nhan-so",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nhận diện vùng nhân, plasmid, ribosome, thành tế bào, vỏ nhầy, roi và giải thích kích thước nhỏ của tế bào nhân sơ.",
+      "recognitionSigns": [
+        "Đề nêu DNA vòng ở vùng nhân, ribosome nhỏ hoặc không có bào quan có màng.",
+        "Đề mô tả vi khuẩn và hỏi chức năng của thành, vỏ nhầy, roi, pili hoặc plasmid."
+      ],
+      "solvingSteps": [
+        "Xác định có nhân được bao bởi màng và bào quan có màng hay không.",
+        "Nối từng cấu trúc nhân sơ với chức năng trực tiếp.",
+        "Không suy “không có nhân hoàn chỉnh” thành “không có DNA hay tổ chức bên trong”."
+      ],
+      "commonMistakes": [
+        "Cho rằng tế bào nhân sơ không có DNA.",
+        "Nhầm ribosome với bào quan có màng."
+      ],
+      "theory": [
+        "**1. Đặc điểm chung của tế bào nhân sơ**\nTế bào nhân sơ thường nhỏ, chưa có nhân được bao bởi màng và không có hệ bào quan có màng phát triển. Chúng vẫn có màng sinh chất, tế bào chất, ribosome và DNA, nên “nhân sơ” không có nghĩa “không có tổ chức”.",
+        "**2. Màng sinh chất và tế bào chất**\nMàng sinh chất kiểm soát trao đổi chất và là nơi diễn ra nhiều quá trình chuyển hóa. Tế bào chất chứa nước, ion, enzyme, ribosome và chất dự trữ; không phải khoảng rỗng vô tổ chức.",
+        "**3. Vùng nhân và plasmid**\nDNA chính thường là phân tử vòng nằm ở vùng nhân, không được màng nhân bao quanh. Plasmid là các phân tử DNA vòng nhỏ ngoài DNA chính, có thể mang gene như gene kháng thuốc và được truyền giữa tế bào trong một số trường hợp.",
+        "**4. Ribosome**\nRibosome tổng hợp protein và không có màng bao. Ribosome nhân sơ nhỏ hơn ribosome trong tế bào chất của tế bào nhân thực. Không được gọi ribosome là bào quan có màng.",
+        "**5. Thành tế bào**\nThành tế bào vi khuẩn thường chứa peptidoglycan, giúp duy trì hình dạng và chống vỡ do áp suất thẩm thấu. Thành nằm ngoài màng sinh chất và khác thành cellulose của thực vật.",
+        "**6. Vỏ nhầy, pili và roi**\n- Vỏ nhầy có thể giúp bám dính, tránh khô và bảo vệ.\n- Pili/fimbriae hỗ trợ bám; một số pili tham gia trao đổi DNA.\n- Roi giúp vận động.\nKhông phải mọi tế bào nhân sơ đều có đủ các cấu trúc này.",
+        "**7. Kích thước nhỏ và tỉ lệ diện tích/thể tích**\nKhi kích thước giảm, tỉ lệ diện tích bề mặt trên thể tích tăng. Màng có diện tích tương đối lớn so với thể tích tế bào giúp trao đổi chất nhanh, phù hợp tốc độ chuyển hóa và sinh trưởng cao.",
+        "**8. Nhận diện tế bào nhân sơ**\nCác dấu hiệu mạnh: DNA ở vùng nhân, không có màng nhân, không có bào quan có màng, có ribosome và kích thước nhỏ. Một dấu hiệu như “có thành tế bào” chưa đủ vì thực vật và nấm cũng có thành.",
+        "**9. Lỗi cần tránh**\n- Cho tế bào nhân sơ không có DNA hoặc ribosome.\n- Nhầm plasmid với nhân tế bào.\n- Cho mọi vi khuẩn có roi, vỏ nhầy và plasmid.\n- Nhầm peptidoglycan với cellulose."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt22-st1",
+          "name": "Thành phần tế bào nhân sơ",
+          "example": "Nhận diện vùng nhân, ribosome, màng, thành và roi.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt22-st2",
+          "name": "Cấu trúc–chức năng và thích nghi nhân sơ",
+          "example": "Suy hậu quả khi cấu trúc vi khuẩn bị tác động.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m2-q005"
+    },
+    {
+      "id": "bio10-qt23",
+      "topicId": "bio10-t2",
+      "name": "Màng sinh chất, thành tế bào và tế bào chất",
+      "slug": "mang-thanh-te-bao-te-bao-chat",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân tích mô hình khảm động, tính thấm chọn lọc, vai trò thành tế bào và môi trường tế bào chất.",
+      "recognitionSigns": [
+        "Đề nhắc lớp kép phospholipid, protein màng, carbohydrate màng hoặc tính thấm chọn lọc.",
+        "Đề yêu cầu phân biệt màng sinh chất với thành tế bào hoặc giải thích hậu quả tổn thương màng."
+      ],
+      "solvingSteps": [
+        "Xác định cấu trúc đang hỏi là màng, thành hay tế bào chất.",
+        "Nối thành phần phân tử với tính chất cơ học, vận chuyển hoặc nhận tín hiệu.",
+        "Đối chiếu loại tế bào vì thành tế bào có thành phần khác nhau và tế bào động vật không có thành."
+      ],
+      "commonMistakes": [
+        "Coi màng sinh chất là lớp cứng bất động.",
+        "Cho rằng mọi tế bào đều có thành cellulose."
+      ],
+      "theory": [
+        "**1. Mô hình khảm động của màng sinh chất**\nMàng gồm lớp kép phospholipid với nhiều protein xen kẽ; lipid và nhiều protein có thể chuyển động trong mặt phẳng màng. “Khảm” nói tới nhiều thành phần, “động” nói tới tính linh hoạt, không phải màng là lớp cứng cố định.",
+        "**2. Lớp kép phospholipid**\nĐầu ưa nước hướng về môi trường nước, đuôi kị nước quay vào nhau. Lõi kị nước tạo hàng rào với ion và nhiều phân tử phân cực, trong khi phân tử nhỏ không phân cực có thể đi qua dễ hơn.",
+        "**3. Protein màng**\nProtein màng có thể làm kênh, protein tải, bơm, enzyme, thụ thể, điểm neo hoặc dấu nhận diện. Cấu trúc protein quyết định tính đặc hiệu; không phải mọi protein màng đều vận chuyển chất.",
+        "**4. Carbohydrate màng và cholesterol**\nChuỗi carbohydrate gắn lipid/protein thường hướng ra ngoài, tham gia nhận diện và liên kết tế bào. Cholesterol ở màng động vật điều hòa độ lỏng và độ ổn định trong các điều kiện nhiệt độ khác nhau.",
+        "**5. Tính thấm chọn lọc**\nMàng cho một số chất đi qua dễ hơn chất khác dựa trên kích thước, điện tích, độ phân cực và protein vận chuyển. “Chọn lọc” không có nghĩa màng chủ động nhận biết ý thức; đó là hệ quả cấu trúc và protein.",
+        "**6. Thành tế bào khác màng sinh chất**\nThành tế bào nằm ngoài màng, tạo độ bền và hình dạng. Thực vật có thành cellulose, nấm có chitin, vi khuẩn thường có peptidoglycan. Tế bào động vật không có thành tế bào.",
+        "**7. Tế bào chất và dịch tế bào**\nTế bào chất gồm dịch tế bào, bào quan và cấu trúc khác bên trong màng nhưng ngoài nhân. Dịch tế bào là môi trường cho nhiều phản ứng, chứa ion, phân tử và protein; không đồng nhất toàn bộ tế bào chất với “dịch lỏng”.",
+        "**8. Hậu quả tổn thương màng**\nMất tính toàn vẹn làm ion và chất tan phân bố mất kiểm soát, gradient bị phá vỡ, truyền tin và cân bằng nội môi suy giảm. Tổn thương thành chủ yếu ảnh hưởng chống đỡ và chống vỡ, không thay thế hoàn toàn chức năng chọn lọc của màng.",
+        "**9. Lỗi cần tránh**\n- Coi màng là lớp cứng bất động.\n- Cho mọi tế bào có thành cellulose.\n- Nhầm thành tế bào là lớp quyết định trực tiếp mọi vận chuyển chọn lọc.\n- Cho carbohydrate màng phân bố đối xứng ở cả hai phía."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt23-st1",
+          "name": "Màng, thành tế bào và tế bào chất",
+          "example": "Nhận diện mô hình khảm động và vai trò thành.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt23-st2",
+          "name": "Tính động, chọn lọc và liên kết tế bào",
+          "example": "Phân tích protein màng, khung xương và chất nền.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m2-q009"
+    },
+    {
+      "id": "bio10-qt24",
+      "topicId": "bio10-t2",
+      "name": "Nhân tế bào và điều khiển hoạt động",
+      "slug": "nhan-te-bao-dieu-khien-hoat-dong",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nhận diện màng nhân, lỗ nhân, chromatin, nucleolus và suy luận vai trò nhân trong biểu hiện thông tin.",
+      "recognitionSigns": [
+        "Đề nêu màng kép có lỗ, chromatin, nucleolus hoặc trao đổi nhân–tế bào chất.",
+        "Đề mô tả loại bỏ, thay nhân hoặc tổn thương nhân rồi hỏi hậu quả."
+      ],
+      "solvingSteps": [
+        "Xác định thành phần nhân được nêu.",
+        "Nối DNA/chromatin với lưu giữ thông tin, nucleolus với tạo thành phần ribosome, lỗ nhân với trao đổi.",
+        "Khi suy luận hậu quả, lần theo chuỗi thông tin gene → RNA/protein → hoạt động tế bào."
+      ],
+      "commonMistakes": [
+        "Cho rằng nhân trực tiếp thực hiện mọi phản ứng trao đổi chất.",
+        "Nhầm nucleolus là nơi chứa toàn bộ DNA."
+      ],
+      "theory": [
+        "**1. Bao nhân và lỗ nhân**\nNhân được bao bởi màng kép liên tục với lưới nội chất. Lỗ nhân kiểm soát trao đổi RNA, protein và phân tử khác giữa nhân với tế bào chất; bao nhân không cô lập nhân hoàn toàn.",
+        "**2. Chromatin và nhiễm sắc thể**\nChromatin gồm DNA kết hợp protein. Khi tế bào không phân chia, chromatin thường ít co xoắn để gene có thể hoạt động; khi phân bào, nó co xoắn thành nhiễm sắc thể dễ phân li.",
+        "**3. Nucleolus/hạch nhân**\nHạch nhân là vùng tổng hợp rRNA và lắp ráp ban đầu các tiểu đơn vị ribosome. Nó không có màng riêng và không phải nơi chứa toàn bộ DNA của tế bào.",
+        "**4. Nhân lưu giữ và sử dụng thông tin**\nTrình tự DNA chứa gene. Gene được phiên mã thành RNA; nhiều RNA sau đó đi qua lỗ nhân để tham gia tổng hợp protein. Protein và RNA điều khiển mạng hoạt động của tế bào.",
+        "**5. “Điều khiển” không có nghĩa thực hiện trực tiếp**\nNhân không trực tiếp hô hấp, tổng hợp mọi protein hay vận chuyển chất. Nó điều hòa hoạt động thông qua biểu hiện gene, trong khi phản ứng diễn ra nhờ bào quan, enzyme và cấu trúc khác.",
+        "**6. Suy luận khi nhân bị tổn thương**\nTổn thương DNA, lỗ nhân hoặc hạch nhân có thể làm thay đổi phiên mã, tổng hợp ribosome và protein, từ đó ảnh hưởng chuyển hóa, sinh trưởng và phân chia. Hậu quả có thể chậm, không nhất thiết mọi phản ứng dừng ngay.",
+        "**7. Lỗi cần tránh**\n- Cho hạch nhân chứa toàn bộ DNA.\n- Cho nhân trực tiếp thực hiện mọi chuyển hóa.\n- Đồng nhất chromatin luôn ở dạng nhiễm sắc thể co xoắn rõ.\n- Cho bao nhân không có trao đổi với tế bào chất."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt24-st1",
+          "name": "Cấu trúc và chức năng của nhân",
+          "example": "Nhận diện màng nhân, lỗ nhân, nhân con và chromatin.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt24-st2",
+          "name": "Vận chuyển nhân và bằng chứng điều khiển",
+          "example": "Phân tích chuyển nhân, tín hiệu nhập nhân và tế bào mất nhân.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m2-q013"
+    },
+    {
+      "id": "bio10-qt3",
+      "topicId": "bio10-t2",
+      "name": "Bào quan và hệ thống nội màng",
+      "slug": "bao-quan-he-thong-noi-mang",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nhận diện bào quan qua cấu trúc–chức năng và phân tích sự phối hợp trong sản xuất, biến đổi, vận chuyển và phân giải.",
+      "recognitionSigns": [
+        "Đề cung cấp số lớp màng, cấu trúc đặc trưng hoặc chức năng để nhận diện bào quan.",
+        "Đề yêu cầu xếp đường đi của protein hoặc dự đoán hậu quả khi một bào quan bị tổn thương."
+      ],
+      "solvingSteps": [
+        "Gạch chân dấu hiệu cấu trúc và chức năng đặc hiệu.",
+        "Nhận diện bào quan trực tiếp rồi đặt nó vào chuỗi phối hợp với bào quan khác.",
+        "Kiểm tra loại tế bào để loại các cấu trúc không tồn tại."
+      ],
+      "commonMistakes": [
+        "Học thuộc mỗi bào quan chỉ có đúng một chức năng.",
+        "Cho rằng bào quan hoạt động độc lập."
+      ],
+      "theory": [
+        "**1. Nguyên tắc nhận diện bào quan**\nKhông học bằng tên đơn lẻ. Hãy kết hợp số lớp màng, cấu trúc đặc trưng, loại phân tử xử lí và chức năng. Sau khi nhận diện, đặt bào quan vào chuỗi phối hợp của tế bào.",
+        "**2. Ribosome**\nRibosome không có màng, tổng hợp polypeptide. Ribosome tự do thường tạo protein dùng trong tế bào chất; ribosome gắn lưới nội chất hạt tạo nhiều protein tiết, protein màng hoặc protein của hệ nội màng.",
+        "**3. Lưới nội chất hạt và trơn**\n- Lưới nội chất hạt có ribosome, tham gia tổng hợp, gấp và biến đổi ban đầu protein.\n- Lưới nội chất trơn tổng hợp lipid, chuyển hóa một số chất, khử độc và dự trữ $Ca^{2+}$ ở tế bào chuyên hóa.",
+        "**4. Bộ máy Golgi**\nGolgi tiếp nhận túi từ lưới nội chất, tiếp tục biến đổi, phân loại và đóng gói sản phẩm tới màng, lysosome hoặc nơi tiết. Golgi không phải nơi dịch mã protein từ mRNA.",
+        "**5. Lysosome và peroxisome**\nLysosome chứa enzyme thủy phân hoạt động trong môi trường acid, phân giải đại phân tử và cấu trúc hỏng. Peroxisome thực hiện phản ứng oxi hóa và phân giải $H_2O_2$ nhờ catalase. Hai bào quan không hoàn toàn giống nhau.",
+        "**6. Mitochondria**\nMitochondria có màng kép, màng trong gấp nếp thành cristae, chứa DNA và ribosome riêng. Đây là nơi thực hiện nhiều giai đoạn hô hấp tế bào và tạo phần lớn ATP trong tế bào nhân thực hiếu khí.",
+        "**7. Chloroplast**\nChloroplast có màng kép, hệ thylakoid và stroma, chứa DNA và ribosome riêng. Nó thực hiện quang hợp ở tế bào thực vật và tảo quang hợp; tế bào thực vật không quang hợp như tế bào rễ thường không có nhiều chloroplast.",
+        "**8. Không bào và khung xương tế bào**\nKhông bào trung tâm ở thực vật dự trữ chất, phân giải và duy trì áp suất trương. Khung xương tế bào giúp duy trì hình dạng, vận động, vận chuyển nội bào và phân bào; nó là hệ động, không chỉ là “bộ xương” cố định.",
+        "**9. Đường đi của protein tiết**\n$$\\text{ribosome trên ER hạt}\\rightarrow\\text{ER}\\rightarrow\\text{túi vận chuyển}\\rightarrow\\text{Golgi}\\rightarrow\\text{túi tiết}\\rightarrow\\text{màng sinh chất}$$\nMỗi chặng đảm nhiệm tổng hợp, gấp/biến đổi, phân loại và vận chuyển.",
+        "**10. Lỗi cần tránh**\n- Cho mỗi bào quan chỉ có một chức năng hoặc hoạt động độc lập.\n- Nhầm Golgi là nơi tổng hợp polypeptide.\n- Cho mọi tế bào thực vật đều có chloroplast.\n- Nhầm lysosome với peroxisome.\n- Bỏ sự phối hợp giữa ER, Golgi, túi và màng."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt3-st1",
+          "name": "Nhận diện bào quan và chức năng",
+          "example": "Phân biệt lưới nội chất, Golgi, lysosome, ti thể và lục lạp.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt3-st2",
+          "name": "Hệ thống nội màng và định tuyến protein",
+          "example": "Theo dõi đường đi và kiểm soát chất lượng sản phẩm.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt3-st3",
+          "name": "Bào quan năng lượng và dữ liệu tổn thương",
+          "example": "Đọc dữ kiện ti thể, lục lạp, peroxisome và lysosome.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-q3"
+    },
+    {
+      "id": "bio10-qt25",
+      "topicId": "bio10-t2",
+      "name": "Tế bào chuyên hóa và cấu trúc thích nghi",
+      "slug": "te-bao-chuyen-hoa-cau-truc-thich-nghi",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Suy luận bào quan hoặc cấu trúc phát triển từ chức năng chuyên hóa của tế bào.",
+      "recognitionSigns": [
+        "Đề mô tả tế bào tiết protein, co cơ, hấp thu, quang hợp hoặc vận chuyển oxygen.",
+        "Đề hỏi bào quan nào nhiều, cấu trúc nào phát triển hoặc vì sao tế bào mất một cấu trúc."
+      ],
+      "solvingSteps": [
+        "Xác định nhiệm vụ nổi bật và loại sản phẩm/năng lượng cần thiết.",
+        "Nối nhiệm vụ với bào quan hoặc hình dạng hỗ trợ trực tiếp.",
+        "Giải thích theo chuỗi cấu trúc phát triển → quá trình hiệu quả hơn → chức năng chuyên hóa."
+      ],
+      "commonMistakes": [
+        "Cho rằng mọi tế bào nhân thực có số lượng bào quan giống nhau.",
+        "Chọn bào quan theo tên quen thuộc thay vì chức năng."
+      ],
+      "theory": [
+        "**1. Chuyên hóa tế bào**\nCác tế bào trong cơ thể có cùng bộ gene cơ bản nhưng biểu hiện các nhóm gene khác nhau, tạo hình dạng, bào quan và protein phù hợp nhiệm vụ. Chuyên hóa không có nghĩa mỗi tế bào chỉ thực hiện duy nhất một hoạt động.",
+        "**2. Tế bào tiết protein**\nTế bào sản xuất nhiều enzyme hoặc hormone protein thường có nhiều ribosome, lưới nội chất hạt, Golgi và túi tiết. Chuỗi cấu trúc này hỗ trợ tổng hợp, biến đổi, đóng gói và xuất bào.",
+        "**3. Tế bào cần nhiều năng lượng**\nTế bào cơ, tế bào vận chuyển chủ động mạnh hoặc tế bào hoạt động liên tục thường có nhiều mitochondria. Số mitochondria phản ánh nhu cầu ATP, không trực tiếp chứng minh tế bào quang hợp.",
+        "**4. Tế bào hấp thu**\nTế bào biểu mô ruột có vi nhung mao làm tăng diện tích bề mặt và nhiều protein vận chuyển; tế bào lông hút có phần kéo dài tăng tiếp xúc với đất. Cấu trúc tăng diện tích chỉ hữu ích khi đi kèm màng và cơ chế vận chuyển phù hợp.",
+        "**5. Tế bào quang hợp và tế bào vận chuyển oxygen**\nTế bào mô lá quang hợp có nhiều chloroplast. Hồng cầu trưởng thành ở động vật có vú mất nhân và nhiều bào quan, tạo thêm không gian cho hemoglobin nhưng giảm khả năng tổng hợp, sửa chữa.",
+        "**6. Cách suy luận cấu trúc–chức năng**\n- Xác định nhiệm vụ chính.\n- Xác định sản phẩm, năng lượng hoặc trao đổi cần thiết.\n- Chọn bào quan/hình dạng hỗ trợ trực tiếp.\n- Viết chuỗi: cấu trúc phát triển → quá trình hiệu quả hơn → chức năng được thực hiện tốt hơn.",
+        "**7. Lỗi cần tránh**\n- Cho mọi tế bào nhân thực có số bào quan giống nhau.\n- Chọn bào quan theo tên quen thuộc, không theo nhiệm vụ.\n- Cho mất nhân luôn là bệnh lí; một số tế bào chuyên hóa bình thường có đặc điểm này.\n- Suy một cấu trúc chỉ có một hệ quả duy nhất."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt25-st1",
+          "name": "Nhận diện tế bào chuyên hóa",
+          "example": "Ghép chức năng với cấu trúc nổi bật.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt25-st2",
+          "name": "Suy cấu trúc từ nhu cầu chức năng",
+          "example": "Dự đoán bào quan phát triển ở tế bào tiết, cơ và hấp thu.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m2-q020"
+    },
+    {
+      "id": "bio10-qt26",
+      "topicId": "bio10-t2",
+      "name": "So sánh các kiểu tế bào",
+      "slug": "so-sanh-cac-kieu-te-bao",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "So sánh nhân sơ–nhân thực và thực vật–động vật theo tiêu chí cấu trúc, vật chất di truyền và bào quan.",
+      "recognitionSigns": [
+        "Đề yêu cầu tìm điểm giống, điểm khác hoặc phân loại một tế bào từ tập hợp đặc điểm.",
+        "Đề đưa bảng tiêu chí về nhân, ribosome, thành tế bào, chloroplast, vacuole hoặc kích thước."
+      ],
+      "solvingSteps": [
+        "Xác định cặp kiểu tế bào cần so sánh.",
+        "Lập tiêu chí cố định rồi kiểm tra từng đặc điểm, tránh so sánh lệch tiêu chí.",
+        "Phân biệt đặc điểm phổ biến với đặc điểm tuyệt đối vì có các ngoại lệ sinh học."
+      ],
+      "commonMistakes": [
+        "Cho rằng chỉ tế bào thực vật mới có mitochondria.",
+        "Cho rằng mọi tế bào nhân sơ đều có roi."
+      ],
+      "theory": [
+        "**1. Điểm chung của mọi tế bào**\nTế bào nhân sơ và nhân thực đều có màng sinh chất, tế bào chất, DNA và ribosome. Đây là bằng chứng về tính thống nhất của sự sống.",
+        "**2. Nhân sơ và nhân thực**\n- Nhân sơ: không có màng nhân, DNA chính thường vòng ở vùng nhân, không có hệ bào quan có màng phát triển, kích thước thường nhỏ.\n- Nhân thực: có nhân màng kép, chromosome dạng thẳng, có nhiều bào quan có màng và hệ thống nội màng.",
+        "**3. Ribosome và thành tế bào**\nCả hai kiểu đều có ribosome nhưng kích thước khác nhau. Thành tế bào không phải tiêu chí tuyệt đối để phân biệt: vi khuẩn, thực vật và nấm đều có thành nhưng thành phần khác nhau; động vật không có.",
+        "**4. Tế bào thực vật**\nĐặc điểm thường gặp: thành cellulose, không bào trung tâm lớn, plastid; tế bào quang hợp có chloroplast. Thực vật cũng có mitochondria và hô hấp tế bào.",
+        "**5. Tế bào động vật**\nKhông có thành tế bào và chloroplast; màng linh hoạt, thường có lysosome phát triển và trung thể điển hình trong nhiều tế bào. Không bào nếu có thường nhỏ hơn; vẫn có mitochondria, ER, Golgi.",
+        "**6. So sánh theo tiêu chí cố định**\nDùng cùng một tiêu chí cho cả hai phía: màng nhân, dạng DNA, ribosome, bào quan có màng, thành tế bào, chloroplast, không bào, kích thước. Không so “có nhân” ở một bên với “có thành” ở bên kia.",
+        "**7. Đặc điểm phổ biến và ngoại lệ**\nKhông phải mọi vi khuẩn có roi; không phải mọi tế bào thực vật có chloroplast; tế bào chuyên hóa có thể mất nhân hoặc bào quan. Khi đề mô tả một tế bào cụ thể, ưu tiên dữ kiện trực tiếp hơn khuôn mẫu chung.",
+        "**8. Lỗi cần tránh**\n- Cho nhân sơ không có DNA/ribosome.\n- Cho chỉ thực vật có mitochondria.\n- Cho mọi tế bào thực vật đều quang hợp.\n- Dùng thành tế bào làm dấu hiệu duy nhất phân biệt nhân sơ–nhân thực."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt26-st1",
+          "name": "So sánh nhân sơ–nhân thực và thực vật–động vật",
+          "example": "Phân loại theo bộ tiêu chí cấu trúc.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt26-st2",
+          "name": "Ngoại lệ và sức mạnh tiêu chí phân loại",
+          "example": "Phản biện kết luận dựa vào một dấu hiệu đơn lẻ.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m2-q024"
+    },
+    {
+      "id": "bio10-qt27",
+      "topicId": "bio10-t2",
+      "name": "Kính hiển vi và nhận diện ảnh tế bào",
+      "slug": "kinh-hien-vi-nhan-dien-anh-te-bao",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lựa chọn thao tác làm tiêu bản, sử dụng kính, tính kích thước và diễn giải ảnh tế bào.",
+      "recognitionSigns": [
+        "Đề hỏi thứ tự lấy nét, chuyển vật kính, làm tiêu bản hoặc xử lí sự cố ảnh.",
+        "Đề cho độ phóng đại, đường kính trường nhìn, thanh tỉ lệ hoặc đặc điểm ảnh để nhận diện tế bào."
+      ],
+      "solvingSteps": [
+        "Xác định mục tiêu là thao tác, đo kích thước hay nhận diện cấu trúc.",
+        "Nếu thao tác, bắt đầu bằng vật kính nhỏ và lấy nét an toàn; nếu đo, lập tỉ lệ theo thanh chuẩn.",
+        "Phân biệt dữ kiện quan sát được với suy luận vượt quá độ phân giải của ảnh."
+      ],
+      "commonMistakes": [
+        "Bắt đầu bằng vật kính lớn rồi dùng ốc chỉnh thô.",
+        "Dùng độ phóng đại thay cho thanh tỉ lệ khi kích thước ảnh đã thay đổi."
+      ],
+      "theory": [
+        "**1. Chuẩn bị tiêu bản**\nMẫu cần đủ mỏng để ánh sáng đi qua, đặt trong giọt dung dịch phù hợp và đậy lamelle nghiêng để hạn chế bọt khí. Thuốc nhuộm tăng tương phản nhưng có thể làm chết hoặc biến đổi mẫu.",
+        "**2. Bắt đầu quan sát an toàn**\n- Đặt vật kính có độ phóng đại nhỏ.\n- Dùng ốc chỉnh thô để tìm ảnh khi khoảng cách còn an toàn.\n- Chỉnh ánh sáng và ốc tinh cho rõ.\n- Đưa đối tượng vào giữa trường nhìn trước khi chuyển vật kính lớn.",
+        "**3. Khi dùng vật kính lớn**\nChỉ dùng ốc chỉnh tinh, tránh để vật kính chạm lam kính. Trường nhìn nhỏ và tối hơn nên cần căn giữa từ trước. Nếu mất ảnh, quay lại vật kính nhỏ thay vì vặn thô tùy tiện.",
+        "**4. Ảnh qua kính và di chuyển tiêu bản**\nẢnh qua kính quang học thường đảo chiều. Muốn ảnh dịch sang một phía trong trường nhìn, phải dịch tiêu bản theo hướng ngược lại. Đây là lỗi thao tác thường gặp.",
+        "**5. Độ phóng đại tổng**\n$$M_{\\text{tổng}}=M_{\\text{thị kính}}\\times M_{\\text{vật kính}}$$\nĐộ phóng đại lớn hơn không tự làm tăng độ phân giải. Chỉ báo “phóng đại 400 lần” chưa đủ để suy kích thước nếu ảnh đã bị co giãn khi in.",
+        "**6. Tính kích thước từ ảnh**\n$$\\text{kích thước thật}=\\frac{\\text{kích thước ảnh}}{M}$$\nPhải đổi cùng đơn vị. Nếu có thanh tỉ lệ, ưu tiên dùng tỉ lệ thanh vì nó vẫn đúng khi ảnh được phóng to hoặc thu nhỏ cùng toàn bộ nội dung.",
+        "**7. Ước lượng từ trường nhìn**\nNếu biết đường kính trường nhìn và số tế bào xếp ngang, kích thước gần đúng bằng đường kính trường nhìn chia số tế bào. Kết quả là ước lượng vì tế bào có thể không xếp khít và kích thước không đồng đều.",
+        "**8. Nhận diện tế bào trên ảnh**\nChỉ kết luận cấu trúc đủ lớn và đủ tương phản để quan sát. Thành tế bào, chloroplast, nhân nhuộm màu có thể nhận diện; không được tuyên bố thấy ribosome bằng kính quang học thông thường.",
+        "**9. Sai số và độ tin cậy**\nĐo nhiều tế bào, hiệu chuẩn thước, ghi độ phóng đại, chọn vùng đại diện và báo trung bình/phạm vi. Bọt khí, mẫu quá dày, co mẫu và nhuộm không đều có thể làm sai nhận diện.",
+        "**10. Lỗi cần tránh**\n- Bắt đầu bằng vật kính lớn và dùng ốc thô.\n- Để vật kính chạm tiêu bản.\n- Không đổi đơn vị khi tính kích thước.\n- Dùng độ phóng đại danh nghĩa thay thanh tỉ lệ sau khi ảnh đổi kích thước.\n- Kết luận cấu trúc vượt giới hạn phân giải."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt27-st1",
+          "name": "Thao tác và nhận diện ảnh hiển vi",
+          "example": "Chọn vật kính, lấy nét, nhuộm và đọc ảnh.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt27-st2",
+          "name": "Lựa chọn kính và chuẩn bị tiêu bản",
+          "example": "Phân biệt phóng đại, phân giải và artefact.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt27-st3",
+          "name": "Đo ảnh, thước tỉ lệ và sai số quan sát",
+          "example": "Tính kích thước và đánh giá độ tin cậy phép đếm.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m2-q028"
+    },
+    {
+      "id": "bio10-qt4",
+      "topicId": "bio10-t3",
+      "name": "Khuếch tán, thẩm thấu và tính trương",
+      "slug": "khuech-tan-tham-thau",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Xác định chiều vận chuyển thụ động và dự đoán đáp ứng của tế bào trong môi trường ưu–nhược–đẳng trương.",
+      "recognitionSigns": [
+        "Đề cho chênh lệch nồng độ, tính thấm của màng hoặc thay đổi thể tích tế bào.",
+        "Xuất hiện các từ khóa khuếch tán đơn giản, khuếch tán hỗ trợ, thẩm thấu, ưu trương, nhược trương hoặc đẳng trương."
+      ],
+      "solvingSteps": [
+        "Khoanh vùng hệ đang xét và xác định chất nào thực sự đi qua màng.",
+        "So sánh nồng độ hoặc thế nước ở hai phía, đồng thời kiểm tra màng có thấm chất đó không.",
+        "Suy ra chiều dòng ròng rồi dự đoán thể tích, sức trương hoặc trạng thái co nguyên sinh."
+      ],
+      "commonMistakes": [
+        "Nhầm chiều nước với chiều chất tan; bỏ qua tính thấm chọn lọc; cho rằng cân bằng động nghĩa là các phân tử ngừng chuyển động."
+      ],
+      "theory": [
+        "**1. Gradient và vận chuyển thụ động**\nGradient là chênh lệch nồng độ hoặc thế điện hóa giữa hai phía. Vận chuyển thụ động có dòng ròng theo chiều làm giảm gradient và không trực tiếp dùng ATP, dù các phân tử vẫn chuyển động hai chiều.",
+        "**2. Khuếch tán đơn giản**\nCác phân tử nhỏ không phân cực như $O_2$, $CO_2$ có thể đi trực tiếp qua lớp lipid theo gradient. Tốc độ phụ thuộc độ chênh, diện tích, khoảng cách, nhiệt độ và tính chất màng.",
+        "**3. Khuếch tán hỗ trợ**\nIon và nhiều phân tử phân cực đi qua kênh hoặc protein tải theo gradient. Cơ chế có tính đặc hiệu và có thể bão hòa. Có protein tham gia không đồng nghĩa vận chuyển chủ động.",
+        "**4. Thẩm thấu**\nThẩm thấu là sự di chuyển ròng của **nước** qua màng thấm chọn lọc từ phía có nồng độ chất tan không thấm thấp hơn tới phía có nồng độ chất tan không thấm cao hơn, cho tới khi đạt cân bằng phù hợp.",
+        "**5. Ưu trương, nhược trương, đẳng trương**\nCác khái niệm được xác định tương đối so với tế bào và chủ yếu dựa trên chất tan không qua màng:\n- Ưu trương: nước ra khỏi tế bào.\n- Nhược trương: nước đi vào tế bào.\n- Đẳng trương: không có dòng nước ròng làm đổi thể tích.",
+        "**6. Tế bào động vật và thực vật**\nTế bào động vật trong nhược trương có thể trương và vỡ; trong ưu trương bị co. Tế bào thực vật trong nhược trương trương nước nhờ thành chống vỡ; trong ưu trương màng tách khỏi thành, gây co nguyên sinh.",
+        "**7. Cân bằng động và tính thấm**\nỞ cân bằng, các phân tử không ngừng chuyển động; chỉ dòng hai chiều cân bằng nhau. Nếu chất tan có thể đi qua màng, nồng độ và tính trương có thể thay đổi theo thời gian, nên không chỉ nhìn nồng độ ban đầu.",
+        "**8. Tính phần trăm thay đổi khối lượng**\n$$\\%\\Delta m=\\frac{m_{\\text{sau}}-m_{\\text{đầu}}}{m_{\\text{đầu}}}\\times100\\%$$\nGiá trị dương cho thấy mẫu tăng khối lượng, âm là giảm. Nồng độ gần nơi $\\%\\Delta m=0$ thường được dùng ước lượng điều kiện đẳng trương.",
+        "**9. Quy trình giải**\n- Xác định chất/nước nào có thể qua màng.\n- So sánh hai phía đối với chính đại lượng đó.\n- Suy dòng ròng.\n- Dự đoán thể tích và trạng thái tế bào.\n- Kiểm tra diễn biến theo thời gian và chất tan có thấm hay không.",
+        "**10. Lỗi cần tránh**\n- Nói chất tan di chuyển trong “thẩm thấu” khi đề hỏi nước.\n- Cho mọi chất đi từ cao xuống thấp qua lớp lipid.\n- Đồng nhất protein vận chuyển với dùng ATP.\n- Cho cân bằng nghĩa là phân tử dừng.\n- Bỏ qua chất tan có thấm và thành tế bào."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt4-st1",
+          "name": "Khuếch tán đơn giản và khuếch tán hỗ trợ",
+          "example": "Chọn con đường qua màng từ kích thước, độ phân cực, gradient và protein vận chuyển.",
+          "recognitionSigns": [
+            "Chất đi cùng gradient nồng độ hoặc điện hóa.",
+            "Cần xét chất đi trực tiếp qua lipid hay qua kênh/protein tải."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt4-st2",
+          "name": "Thẩm thấu, ưu trương và nhược trương",
+          "example": "Dự đoán chiều nước và trạng thái tế bào trong các môi trường khác nhau.",
+          "recognitionSigns": [
+            "Đề nhắc nước, màng bán thấm, trương/co hoặc phản co nguyên sinh.",
+            "Phải xác định chất tan không thấm và so sánh hai phía màng."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt4-st3",
+          "name": "Đọc dữ liệu tính thấm và cân bằng màng",
+          "example": "Suy dung dịch đẳng trương từ bảng đổi khối lượng hoặc dữ kiện màng thấm chọn lọc.",
+          "recognitionSigns": [
+            "Đề cho phần trăm đổi khối lượng, nhiều chất tan hoặc diễn biến theo thời gian.",
+            "Không được chỉ cộng nồng độ ban đầu; phải xét chất nào qua màng."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-q4"
+    },
+    {
+      "id": "bio10-qt28",
+      "topicId": "bio10-t3",
+      "name": "Vận chuyển chủ động qua màng",
+      "slug": "van-chuyen-chu-dong",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân biệt vận chuyển chủ động với khuếch tán hỗ trợ; phân tích vai trò gradient, ATP, bơm và đồng vận chuyển.",
+      "recognitionSigns": [
+        "Chất đi ngược gradient hoặc tế bào phải duy trì chênh lệch nồng độ lâu dài.",
+        "Đề nhắc ATP, bơm ion, protein tải, đồng vận chuyển hay chất ức chế hô hấp."
+      ],
+      "solvingSteps": [
+        "Xác định chiều gradient điện hóa của chất.",
+        "Tìm nguồn năng lượng trực tiếp hoặc gián tiếp và protein vận chuyển liên quan.",
+        "Dự đoán hậu quả khi thiếu ATP, hỏng bơm hoặc mất gradient ghép cặp."
+      ],
+      "commonMistakes": [
+        "Cho rằng mọi protein vận chuyển đều dùng ATP trực tiếp hoặc mọi chuyển động từ thấp lên cao đều độc lập với điện tích."
+      ],
+      "theory": [
+        "**1. Vận chuyển chủ động**\nVận chuyển chủ động đưa chất ngược gradient nồng độ hoặc điện hóa và cần năng lượng. Nó cho phép tế bào duy trì chênh lệch ion, hấp thu chất khi môi trường nghèo và điều hòa thể tích.",
+        "**2. Gradient điện hóa**\nVới ion, chiều thuận lợi phụ thuộc cả chênh lệch nồng độ và điện thế màng. Không được chỉ so nồng độ rồi bỏ qua điện tích của ion và điện thế hai phía.",
+        "**3. Vận chuyển chủ động sơ cấp**\nBơm màng trực tiếp ghép thủy phân ATP với vận chuyển chất. Khi ATP cạn hoặc bơm bị ức chế, gradient do bơm duy trì sẽ suy giảm dần chứ không nhất thiết biến mất tức thì.",
+        "**4. Vận chuyển chủ động thứ cấp**\nProtein đồng vận chuyển dùng năng lượng dự trữ trong gradient của một chất để đưa chất khác ngược gradient. ATP không được dùng trực tiếp tại protein này nhưng thường đã được bơm sơ cấp dùng để tạo gradient.",
+        "**5. Symport và antiport**\n- Symport: hai chất đi cùng chiều qua protein.\n- Antiport: hai chất đi ngược chiều nhau.\nTên gọi mô tả hướng tương đối, không tự cho biết chất nào đi thuận hay ngược gradient.",
+        "**6. Phân biệt với khuếch tán hỗ trợ**\nCả hai dùng protein và có thể bão hòa. Khuếch tán hỗ trợ đi thuận gradient, không cần nguồn năng lượng ghép; vận chuyển chủ động có ít nhất một chất đi ngược gradient và cần năng lượng trực tiếp/gián tiếp.",
+        "**7. Bão hòa và tính đặc hiệu**\nSố protein có hạn nên tốc độ có thể đạt trần khi mọi protein bận. Chất cạnh tranh hoặc đột biến protein có thể làm giảm tốc độ. Tuy nhiên bão hòa một mình chưa đủ chứng minh dùng ATP.",
+        "**8. Phân tích chất ức chế**\n- Ức chế ATP làm giảm bơm sơ cấp.\n- Gradient suy giảm làm vận chuyển thứ cấp giảm sau đó.\n- Hỏng một protein chỉ tác động trực tiếp các chất phụ thuộc protein ấy, không làm mọi vận chuyển màng dừng.",
+        "**9. Lỗi cần tránh**\n- Cho mọi protein màng dùng ATP trực tiếp.\n- Chỉ xét nồng độ mà bỏ điện thế với ion.\n- Cho thứ cấp không liên quan năng lượng.\n- Đồng nhất symport với luôn đi vào tế bào.\n- Kết luận bão hòa chắc chắn là vận chuyển chủ động."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt28-st1",
+          "name": "Vận chuyển chủ động sơ cấp và bơm màng",
+          "example": "Dự đoán hậu quả khi ATP cạn hoặc bơm ion bị ức chế.",
+          "recognitionSigns": [
+            "Protein trực tiếp dùng ATP và chất đi ngược gradient.",
+            "Cần nối hoạt động bơm với gradient được duy trì."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt28-st2",
+          "name": "Đồng vận chuyển và vận chuyển chủ động thứ cấp",
+          "example": "Phân tích symport/antiport dùng gradient do một bơm khác tạo ra.",
+          "recognitionSigns": [
+            "Một chất đi xuống gradient kéo chất khác đi ngược gradient.",
+            "ATP không nhất thiết được dùng trực tiếp tại protein đồng vận chuyển."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt28-st3",
+          "name": "Gradient điện hóa, độ bão hòa và chất ức chế",
+          "example": "Kết hợp điện thế, nồng độ và dữ liệu tốc độ để nhận diện cơ chế.",
+          "recognitionSigns": [
+            "Đề nhắc điện thế màng, tốc độ đạt trần, đột biến hoặc chất ức chế.",
+            "Cần phân biệt ảnh hưởng trực tiếp với hệ quả thứ cấp."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m3-q012"
+    },
+    {
+      "id": "bio10-qt29",
+      "topicId": "bio10-t3",
+      "name": "Nhập bào và xuất bào",
+      "slug": "nhap-bao-xuat-bao",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Nhận diện thực bào, ẩm bào, nhập bào qua thụ thể và xuất bào; theo dõi đường đi của túi màng.",
+      "recognitionSigns": [
+        "Đối tượng vận chuyển là hạt lớn, đại phân tử hoặc một lượng dịch mà kênh màng không thể chuyển riêng lẻ.",
+        "Màng lõm vào tạo túi hoặc túi nội bào hòa với màng sinh chất."
+      ],
+      "solvingSteps": [
+        "Xác định hướng vận chuyển: vào hay ra khỏi tế bào.",
+        "Kiểm tra tính chọn lọc và kích thước vật chất để phân biệt các kiểu vận chuyển túi.",
+        "Theo dõi sự biến dạng màng, đích của túi và nhu cầu năng lượng."
+      ],
+      "commonMistakes": [
+        "Đồng nhất nhập bào với khuếch tán hoặc cho rằng xuất bào làm mất vĩnh viễn toàn bộ diện tích màng."
+      ],
+      "theory": [
+        "**1. Vận chuyển bằng túi màng**\nĐại phân tử, hạt lớn hoặc lượng dịch không đi qua kênh riêng lẻ có thể được vận chuyển bằng túi. Màng biến dạng, tách hoặc hòa màng; quá trình cần năng lượng và bộ khung tế bào.",
+        "**2. Nhập bào và xuất bào**\n- Nhập bào: màng lõm vào, bao vật chất ngoài tế bào và tạo túi đi vào.\n- Xuất bào: túi nội bào hòa với màng, giải phóng chất ra ngoài.\nHai quá trình còn góp phần tái chế và cân bằng diện tích màng.",
+        "**3. Thực bào**\nTế bào thu nhận hạt rắn lớn như vi khuẩn hoặc mảnh vụn bằng các phần màng bao quanh. Túi thực bào thường hợp nhất lysosome để phân giải. Không phải mọi tế bào đều thực bào mạnh.",
+        "**4. Ẩm bào**\nTế bào thu nhận dịch ngoại bào và các chất hòa tan trong các túi nhỏ. So với thực bào, đối tượng chính là dịch và các chất trong dịch, không phải hạt rắn lớn.",
+        "**5. Nhập bào qua thụ thể**\nLigand gắn thụ thể đặc hiệu tại vùng màng, tập trung vào túi và đi vào tế bào. Cơ chế chọn lọc hơn ẩm bào. Hỏng một thụ thể làm giảm thu nhận ligand tương ứng, không làm mọi kiểu nhập bào dừng.",
+        "**6. Xuất bào**\nTế bào tiết hormone, enzyme, chất dẫn truyền hoặc chất nền ngoại bào bằng xuất bào. Tín hiệu có thể làm túi tiết hòa màng; màng túi trở thành một phần màng sinh chất.",
+        "**7. Đường đi của túi**\nProtein tiết thường đi ER hạt → Golgi → túi tiết → màng. Vật chất nhập bào có thể đi endosome → lysosome, trong khi thụ thể và màng có thể được tái chế.",
+        "**8. Lỗi cần tránh**\n- Đồng nhất nhập bào với khuếch tán.\n- Cho mọi nhập bào đều không chọn lọc.\n- Nhầm thực bào hạt rắn với ẩm bào dịch.\n- Cho xuất bào làm mất vĩnh viễn diện tích màng.\n- Bỏ vai trò năng lượng và bộ khung tế bào."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt29-st1",
+          "name": "Thực bào và ẩm bào",
+          "example": "Nhận diện cơ chế thu nhận hạt rắn lớn hoặc dịch ngoại bào.",
+          "recognitionSigns": [
+            "Màng biến dạng và tạo túi đưa vật chất vào tế bào.",
+            "Loại vật chất giúp phân biệt thực bào với ẩm bào."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt29-st2",
+          "name": "Nhập bào qua thụ thể",
+          "example": "Dự đoán hậu quả khi ligand hoặc thụ thể đặc hiệu bị biến đổi.",
+          "recognitionSigns": [
+            "Đề nhắc ligand, thụ thể, hố có áo hoặc thu nhận chọn lọc.",
+            "Không suy rằng hỏng một thụ thể làm dừng mọi hình thức nhập bào."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt29-st3",
+          "name": "Xuất bào và cân bằng màng",
+          "example": "Giải thích bài tiết, hòa màng và tái chế diện tích màng.",
+          "recognitionSigns": [
+            "Túi nội bào hòa màng để giải phóng chất ra ngoài.",
+            "Cần theo dõi hướng túi màng và sự cân bằng nhập–xuất bào."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m3-q024"
+    },
+    {
+      "id": "bio10-qt30",
+      "topicId": "bio10-t3",
+      "name": "Thực hành tính thấm và co nguyên sinh",
+      "slug": "thuc-hanh-tinh-tham-co-nguyen-sinh",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Thiết kế, đọc dữ liệu và đánh giá thí nghiệm thẩm thấu, co–phản co nguyên sinh và tính thấm chọn lọc.",
+      "recognitionSigns": [
+        "Đề có tiêu bản biểu bì thực vật, dung dịch nồng độ khác nhau, khối lượng mẫu hoặc tỉ lệ tế bào co nguyên sinh.",
+        "Yêu cầu xác định biến, đối chứng, sai số, kết luận hoặc cải tiến quy trình."
+      ],
+      "solvingSteps": [
+        "Xác định câu hỏi nghiên cứu, biến độc lập, biến phụ thuộc và biến kiểm soát.",
+        "Đọc xu hướng số liệu hoặc mô tả khoảng cách màng–thành tế bào.",
+        "Kết luận trong giới hạn dữ liệu, kiểm tra khả năng phản co và đề xuất lặp lại/đối chứng."
+      ],
+      "commonMistakes": [
+        "Dùng một quan sát để kết luận tuyệt đối; nhầm thành tế bào co lại; thay đổi đồng thời nhiều biến."
+      ],
+      "theory": [
+        "**1. Co nguyên sinh**\nKhi tế bào thực vật ở môi trường ưu trương, nước ra khỏi tế bào, không bào và tế bào chất co lại, màng sinh chất tách một phần khỏi thành. Thành tế bào giữ hình dạng ngoài tương đối; thành không “co theo màng”.",
+        "**2. Phản co nguyên sinh**\nChuyển tế bào còn sống sang môi trường nhược trương thích hợp làm nước đi vào, không bào lớn và màng áp sát lại thành. Khả năng phản co cho thấy tổn thương chưa vượt giới hạn không hồi phục.",
+        "**3. Thiết kế thí nghiệm**\nBiến độc lập thường là nồng độ hoặc loại dung dịch; biến phụ thuộc có thể là tỉ lệ tế bào co, khoảng cách màng–thành hoặc phần trăm đổi khối lượng. Giữ loại mô, kích thước, thời gian, nhiệt độ và cách quan sát giống nhau.",
+        "**4. Đối chứng và dãy nồng độ**\nMẫu trong nước hoặc dung dịch chuẩn tạo mốc. Dùng nhiều nồng độ giúp tìm ngưỡng và xu hướng tốt hơn chỉ hai mức. Mỗi nồng độ cần nhiều tế bào/mẫu và lặp lại.",
+        "**5. Quan sát tiêu bản**\nĐánh dấu cùng vùng hoặc lấy mẫu đại diện, tránh nhầm bọt khí/khoảng gian bào với co nguyên sinh. Ghi hình trước–sau và dùng tiêu chí nhất quán để phân loại trạng thái.",
+        "**6. Xử lí dữ liệu**\nCó thể tính:\n$$\\%\\text{ tế bào co} = \\frac{\\text{số tế bào co}}{\\text{tổng số tế bào quan sát}}\\times100\\%$$\nHoặc phần trăm thay đổi khối lượng. Trình bày trung bình và độ biến thiên nếu có nhiều lần lặp.",
+        "**7. Kết luận về tính thấm**\nNếu một chất tan đi qua màng, hiệu ứng co có thể thay đổi theo thời gian. Chỉ từ một ảnh cuối không đủ kết luận màng hoàn toàn không thấm; cần chuỗi thời gian, đối chứng và chất so sánh.",
+        "**8. Nguồn sai số và cải tiến**\nMẫu dày không đều, tế bào tổn thương, thời gian tiếp xúc khác, nồng độ pha sai và chủ quan khi đếm đều gây sai số. Cải tiến bằng chuẩn hóa mẫu, làm mù người đếm, chụp ảnh, lặp và dùng nhiều trường nhìn.",
+        "**9. Lỗi cần tránh**\n- Cho thành tế bào co lại.\n- Dùng một tế bào để kết luận toàn mẫu.\n- Thay nhiều biến cùng lúc.\n- Không chuẩn hóa thời gian.\n- Kết luận màng thấm/không thấm tuyệt đối từ một thời điểm."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt30-st1",
+          "name": "Quan sát co và phản co nguyên sinh",
+          "example": "Nhận diện trạng thái tế bào từ tiêu bản trước và sau khi đổi dung dịch.",
+          "recognitionSigns": [
+            "Đề mô tả màng sinh chất tách khỏi thành hoặc áp sát trở lại.",
+            "Phải liên hệ hình thái với chiều di chuyển của nước."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt30-st2",
+          "name": "Thiết kế thí nghiệm tính thấm màng",
+          "example": "Chọn biến, đối chứng và cách chuẩn hóa mẫu khi khảo sát màng.",
+          "recognitionSigns": [
+            "Đề yêu cầu lập kế hoạch hoặc tìm biến gây nhiễu.",
+            "Chỉ thay một biến độc lập và giữ ổn định các điều kiện còn lại."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt30-st3",
+          "name": "Xử lí dữ liệu, sai số và cải tiến",
+          "example": "Đánh giá bảng số liệu, mẫu lặp và nguồn sai số của thí nghiệm màng.",
+          "recognitionSigns": [
+            "Đề cho kết quả nhiều nghiệm thức hoặc một kết luận thực nghiệm.",
+            "Cần xét độ lặp lại, cách đo và bằng chứng có đủ cho kết luận hay không."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m3-q036"
+    },
+    {
+      "id": "bio10-qt31",
+      "topicId": "bio10-t3",
+      "name": "Truyền tin tế bào và vận dụng",
+      "slug": "truyen-tin-te-bao-van-dung",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Phân tích tiếp nhận–truyền tin–đáp ứng, vị trí thụ thể, khuếch đại tín hiệu và rối loạn truyền tin.",
+      "recognitionSigns": [
+        "Đề có ligand, hormone, thụ thể màng/nội bào, chất truyền tin thứ hai hoặc protein đích.",
+        "Yêu cầu dự đoán đáp ứng khi thụ thể, mắt xích truyền tin hay phân tử đích bị biến đổi."
+      ],
+      "solvingSteps": [
+        "Tách sơ đồ thành tiếp nhận, truyền tin nội bào và đáp ứng.",
+        "Xác định vị trí thụ thể từ tính chất hóa học của ligand và đường đi qua màng.",
+        "Lần theo mắt xích bị tác động để dự đoán đáp ứng tăng, giảm hay kéo dài."
+      ],
+      "commonMistakes": [
+        "Cho rằng mọi ligand phải đi vào tế bào hoặc một ligand luôn tạo cùng đáp ứng ở mọi loại tế bào."
+      ],
+      "theory": [
+        "**1. Ba giai đoạn truyền tin**\n$$\\text{tiếp nhận}\\rightarrow\\text{truyền tin nội bào}\\rightarrow\\text{đáp ứng}$$\nTín hiệu ngoài tế bào được thụ thể nhận, chuyển thành thay đổi trong tế bào và cuối cùng tác động enzyme, biểu hiện gene, bộ khung hoặc hoạt động khác.",
+        "**2. Ligand và thụ thể đặc hiệu**\nLigand gắn thụ thể nhờ sự phù hợp về hình dạng và tương tác hóa học. Một tế bào chỉ đáp ứng nếu có thụ thể và hệ truyền tin phù hợp; cùng ligand có thể gây đáp ứng khác ở các loại tế bào.",
+        "**3. Thụ thể màng**\nTín hiệu phân cực hoặc kích thước lớn thường không qua lớp lipid, nên gắn thụ thể màng. Ligand không cần đi vào tế bào; thụ thể đổi cấu hình và kích hoạt chuỗi nội bào.",
+        "**4. Thụ thể nội bào**\nMột số tín hiệu tan trong lipid có thể qua màng và gắn thụ thể trong tế bào chất hoặc nhân. Phức hợp có thể điều hòa biểu hiện gene. Không phải mọi phân tử nhỏ đều tự động có thụ thể nội bào.",
+        "**5. Chuỗi truyền tin và chất truyền tin thứ hai**\nProtein truyền tin thường được hoạt hóa tuần tự qua phosphoryl hóa hoặc tương tác. Các chất truyền tin thứ hai như $Ca^{2+}$ có thể lan tín hiệu nhanh trong tế bào.",
+        "**6. Khuếch đại tín hiệu**\nMột thụ thể hoạt hóa nhiều phân tử, mỗi phân tử lại hoạt hóa nhiều mục tiêu, nên tín hiệu nhỏ tạo đáp ứng lớn. Khuếch đại không có nghĩa thông tin ban đầu bị thay đổi tùy ý.",
+        "**7. Kết thúc tín hiệu**\nLigand bị loại, thụ thể bất hoạt/nội hóa, phosphate bị tháo và chất truyền tin thứ hai được phân hủy hoặc bơm về nơi dự trữ. Nếu cơ chế tắt hỏng, đáp ứng có thể kéo dài bất thường.",
+        "**8. Phân tích đột biến hoặc thuốc**\nXác định mắt xích bị tác động rồi lần theo các bước phía sau:\n- Thụ thể không gắn ligand → giảm truyền tin.\n- Thụ thể hoạt hóa liên tục → đáp ứng không cần ligand.\n- Protein giữa chuỗi bị chặn → các bước sau giảm, bước trước có thể vẫn hoạt động.",
+        "**9. Lỗi cần tránh**\n- Cho mọi ligand phải đi vào tế bào.\n- Cho cùng ligand tạo cùng đáp ứng ở mọi tế bào.\n- Bỏ cơ chế kết thúc tín hiệu.\n- Kết luận hỏng một mắt xích làm mọi con đường tế bào dừng.\n- Nhầm truyền tin với vận chuyển khối lượng ligand vào tế bào."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt31-st1",
+          "name": "Thụ thể và tiếp nhận tín hiệu",
+          "example": "Chọn thụ thể màng hoặc nội bào từ tính chất của phân tử tín hiệu.",
+          "recognitionSigns": [
+            "Đề cho hormone/ligand và vị trí thụ thể.",
+            "Tính tan trong lipid giúp dự đoán khả năng đi qua màng."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt31-st2",
+          "name": "Truyền tin, khuếch đại và kết thúc tín hiệu",
+          "example": "Sắp xếp tiếp nhận–truyền tin–đáp ứng và giải thích khuếch đại.",
+          "recognitionSigns": [
+            "Đề nhắc chuỗi protein, chất truyền tin thứ hai hoặc phosphoryl hóa.",
+            "Cần theo dõi hướng truyền tín hiệu và cơ chế tắt tín hiệu."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt31-st3",
+          "name": "Đột biến, thuốc và đáp ứng sinh lí",
+          "example": "Suy hậu quả khi thụ thể hoạt hóa liên tục hoặc một mắt xích bị ức chế.",
+          "recognitionSigns": [
+            "Đề có đột biến, thuốc ức chế hoặc đáp ứng bất thường.",
+            "Cần xác định vị trí can thiệp rồi lần theo các bước phía sau."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m3-q048"
+    },
+    {
+      "id": "bio10-qt32",
+      "topicId": "bio10-t4",
+      "name": "Năng lượng, ATP và ghép cặp phản ứng",
+      "slug": "nang-luong-atp",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Phân tích cấu tạo, chu trình ATP–ADP và vai trò ghép phản ứng giải phóng năng lượng với công tế bào.",
+      "recognitionSigns": [
+        "Đề nhắc ATP, ADP, phosphate, thủy phân, phosphoryl hóa hoặc công cơ học–vận chuyển–hóa học.",
+        "Yêu cầu phân biệt chất mang năng lượng ngắn hạn với chất dự trữ lâu dài."
+      ],
+      "solvingSteps": [
+        "Xác định phản ứng đang giải phóng hay cần năng lượng.",
+        "Theo dõi ATP → ADP + Pi hoặc chiều tái tạo ATP.",
+        "Giải thích cách ghép cặp năng lượng và tránh mô tả ATP như kho dự trữ lâu dài."
+      ],
+      "commonMistakes": [
+        "Cho rằng ATP dự trữ năng lượng lâu dài, năng lượng nằm riêng trong một liên kết hoặc thủy phân ATP tự động thực hiện mọi công."
+      ],
+      "theory": [
+        "**1. Năng lượng trong tế bào**\nTế bào cần năng lượng để tổng hợp chất, vận chuyển chủ động, co rút, phân bào và duy trì tổ chức. Năng lượng hóa học phân bố trong toàn bộ cấu trúc và trạng thái của phân tử; không nên nói nó chỉ “nằm trong một liên kết”.",
+        "**2. Cấu tạo và vai trò ATP**\nATP gồm adenine, đường ribose và ba nhóm phosphate. ATP là chất mang năng lượng trực tiếp, ngắn hạn: được tạo ra và sử dụng liên tục. Lipid và carbohydrate mới là các dạng dự trữ năng lượng dài hạn chủ yếu.",
+        "**3. Thủy phân ATP**\n$$ATP+H_2O\\rightarrow ADP+P_i+\\text{năng lượng có thể sử dụng}$$\nPhản ứng giải phóng năng lượng tự do vì toàn bộ hệ sản phẩm bền hơn hệ chất đầu, không phải vì “bẻ liên kết phosphate tự nó giải phóng năng lượng”. Phá liên kết luôn cần năng lượng; năng lượng ròng xuất hiện khi xét cả phá và hình thành tương tác mới.",
+        "**4. Tái tạo ATP**\n$$ADP+P_i+\\text{năng lượng}\\rightarrow ATP+H_2O$$\nNăng lượng tái tạo ATP đến từ hô hấp, lên men hoặc quang hợp tùy tế bào. ATP không phải nguồn năng lượng ban đầu; nó là mắt xích trung chuyển giữa quá trình giải phóng và quá trình cần năng lượng.",
+        "**5. Ghép cặp phản ứng**\nMột phản ứng không thuận lợi có thể diễn ra khi được ghép với thủy phân ATP. Thường ATP chuyển nhóm phosphate vào cơ chất hoặc protein, tạo trạng thái trung gian dễ phản ứng hơn. Chỉ viết hai phản ứng cạnh nhau chưa đủ; cần chỉ ra mắt xích ghép cặp.",
+        "**6. Ba dạng công tế bào**\n- Công hóa học: tổng hợp đại phân tử.\n- Công vận chuyển: bơm ion/chất qua màng ngược gradient.\n- Công cơ học: chuyển động của protein vận động, lông, roi hoặc nhiễm sắc thể.\nATP còn tham gia điều hòa tín hiệu và hoạt tính protein.",
+        "**7. Phosphoryl hóa**\nChuyển một nhóm phosphate từ ATP sang phân tử đích có thể làm thay đổi cấu hình, hoạt tính hoặc khả năng tương tác của nó. Khử phosphoryl hóa có thể đảo trạng thái. Tuy nhiên không phải mọi phosphoryl hóa đều hoạt hóa và không phải mọi quá trình dùng ATP đều là phosphoryl hóa.",
+        "**8. Lỗi cần tránh**\n- Gọi ATP là kho năng lượng dài hạn.\n- Cho năng lượng nằm riêng trong “liên kết cao năng”.\n- Cho thủy phân ATP tự động tạo công mà không cần cơ chế ghép cặp.\n- Cho ATP chỉ dùng cho co cơ.\n- Quên rằng ATP phải được tái tạo liên tục."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt32-st1",
+          "name": "Cấu tạo, thủy phân và chu trình ATP",
+          "example": "Nhận diện vai trò truyền năng lượng của ATP.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt32-st2",
+          "name": "Ghép cặp phản ứng và trạng thái năng lượng",
+          "example": "Theo dõi ATP/ADP trong vận chuyển, co cơ và tổng hợp.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m4-q001"
+    },
+    {
+      "id": "bio10-qt5",
+      "topicId": "bio10-t4",
+      "name": "Cơ chế và các yếu tố ảnh hưởng enzyme",
+      "slug": "co-che-yeu-to-enzyme",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Giải thích tính đặc hiệu, năng lượng hoạt hóa và đọc đồ thị hoạt tính theo nhiệt độ, pH, nồng độ, chất ức chế.",
+      "recognitionSigns": [
+        "Đề mô tả phức hợp enzyme–cơ chất, trung tâm hoạt động hoặc năng lượng hoạt hóa.",
+        "Đề cung cấp bảng/đồ thị tốc độ theo nhiệt độ, pH, nồng độ cơ chất/enzyme hay chất ức chế."
+      ],
+      "solvingSteps": [
+        "Xác định biến độc lập, biến phụ thuộc và vùng điều kiện đang khảo sát.",
+        "Đọc xu hướng dữ liệu trước khi gắn với va chạm, bão hòa hoặc biến đổi cấu trúc enzyme.",
+        "Kiểm tra tính đặc hiệu và nhớ enzyme không làm đổi cân bằng hay bị tiêu hao sau mỗi chu kì."
+      ],
+      "commonMistakes": [
+        "Kết luận tăng nhiệt độ luôn tăng hoạt tính; cho rằng enzyme cung cấp năng lượng hoặc bị dùng hết."
+      ],
+      "theory": [
+        "**1. Enzyme là chất xúc tác sinh học**\nEnzyme làm tăng tốc độ phản ứng bằng cách tạo con đường có năng lượng hoạt hóa thấp hơn. Enzyme không cung cấp năng lượng cho phản ứng, không làm thay đổi $\\Delta G$ hay vị trí cân bằng và không bị tiêu hao sau mỗi chu kì xúc tác.",
+        "**2. Trung tâm hoạt động và tính đặc hiệu**\nCơ chất liên kết tại trung tâm hoạt động nhờ sự phù hợp về hình dạng và tương tác hóa học. Sự gắn kết thường gây biến đổi cấu hình phù hợp hơn, nên không nên hiểu enzyme và cơ chất như hai khối cứng hoàn toàn.",
+        "**3. Chu trình xúc tác**\n$$E+S\\rightleftharpoons ES\\rightarrow E+P$$\nEnzyme gắn cơ chất, ổn định trạng thái chuyển tiếp, tạo sản phẩm rồi được giải phóng để tiếp tục chu kì. Tốc độ phụ thuộc số enzyme hoạt động và số trung tâm hoạt động đang được cơ chất chiếm.",
+        "**4. Năng lượng hoạt hóa**\nNăng lượng hoạt hóa là mức năng lượng tối thiểu cần vượt qua để phản ứng diễn ra. Enzyme hạ rào cản này cho cả chiều thuận và nghịch, vì vậy giúp hệ đạt cân bằng nhanh hơn nhưng không chuyển cân bằng về một phía.",
+        "**5. Ảnh hưởng của nhiệt độ**\nTrong một khoảng, tăng nhiệt độ làm va chạm hiệu quả tăng nên hoạt tính tăng. Gần nhiệt độ tối ưu, hoạt tính cao nhất; vượt quá có thể phá vỡ tương tác duy trì cấu trúc enzyme, làm biến tính và hoạt tính giảm mạnh. Vì thế không được kết luận “càng nóng càng nhanh”.",
+        "**6. Ảnh hưởng của pH**\npH làm thay đổi trạng thái ion hóa của amino acid và tương tác duy trì cấu trúc enzyme. Mỗi enzyme có khoảng pH hoạt động phù hợp; quá xa khoảng này làm trung tâm hoạt động thay đổi hoặc enzyme biến tính.",
+        "**7. Nồng độ cơ chất và sự bão hòa**\nKhi enzyme cố định, tăng cơ chất ban đầu làm tốc độ tăng. Đến khi gần như mọi trung tâm hoạt động đều bận, tốc độ tiến tới cực đại; thêm cơ chất không còn làm tăng đáng kể. Bão hòa không có nghĩa phản ứng dừng.",
+        "**8. Nồng độ enzyme**\nKhi cơ chất còn đủ, tăng lượng enzyme làm tăng số trung tâm hoạt động và tốc độ phản ứng. Nếu cơ chất giới hạn, tác dụng tăng enzyme sẽ giảm dần. Khi so thí nghiệm phải giữ các yếu tố khác không đổi.",
+        "**9. Chất ức chế**\nỨc chế cạnh tranh tranh vị trí trung tâm hoạt động và có thể giảm ảnh hưởng khi tăng cơ chất. Ức chế không cạnh tranh gắn vị trí khác, làm giảm lượng enzyme hoạt động; tăng cơ chất thường không khôi phục hoàn toàn tốc độ cực đại.",
+        "**10. Quy trình đọc đồ thị enzyme**\n- Xác định trục, đơn vị và biến được giữ cố định.\n- Mô tả vùng tăng, cực đại, giảm hoặc bão hòa.\n- Chỉ so các điểm tương ứng.\n- Giải thích bằng va chạm, số trung tâm hoạt động hoặc biến đổi cấu trúc.\n- Không suy ra quan hệ nhân quả vượt quá dữ liệu.",
+        "**11. Lỗi cần tránh**\n- Cho enzyme bị dùng hết.\n- Cho enzyme làm phản ứng bất lợi tự trở thành thuận lợi.\n- Đồng nhất nhiệt độ tối ưu với nhiệt độ cao nhất.\n- Cho mọi enzyme có cùng pH tối ưu.\n- Nhìn đường cong bão hòa nhưng vẫn dự đoán tốc độ tăng tuyến tính mãi."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt5-st1",
+          "name": "Cấu trúc và yếu tố ảnh hưởng enzyme",
+          "example": "Nhận diện tính đặc hiệu và đường cong hoạt tính.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt5-st2",
+          "name": "Cơ chế xúc tác và các kiểu ức chế",
+          "example": "Phân biệt động học với nhiệt động học và vị trí tác động.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt5-st3",
+          "name": "Dữ liệu động học và điều hòa enzyme",
+          "example": "Đọc đồ thị bão hòa, pH, nhiệt độ và phản hồi âm.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-q5"
+    },
+    {
+      "id": "bio10-qt33",
+      "topicId": "bio10-t4",
+      "name": "Thực hành hoạt tính enzyme",
+      "slug": "thuc-hanh-enzyme",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Thiết kế và phân tích thí nghiệm amylase, catalase; xác định biến, đối chứng, chỉ thị, sai số và kết luận.",
+      "recognitionSigns": [
+        "Đề có ống nghiệm, thời gian phản ứng, iodine, bọt khí hoặc các mức nhiệt độ/pH.",
+        "Yêu cầu chọn đối chứng, giữ biến, đọc kết quả và đánh giá độ tin cậy."
+      ],
+      "solvingSteps": [
+        "Viết câu hỏi nghiên cứu và xác định biến độc lập/phụ thuộc.",
+        "Giữ các biến còn lại giống nhau và chọn đối chứng phù hợp.",
+        "Liên hệ tín hiệu đo được với lượng cơ chất/sản phẩm rồi kết luận trong phạm vi dữ liệu."
+      ],
+      "commonMistakes": [
+        "Đồng nhất ít cơ chất còn lại với hoạt tính thấp; không có đối chứng; thay đổi nhiều yếu tố cùng lúc."
+      ],
+      "theory": [
+        "**1. Khung thiết kế thí nghiệm enzyme**\nXác định câu hỏi, giả thuyết, biến độc lập, biến phụ thuộc và biến kiểm soát. Mỗi nhóm chỉ nên khác nhau ở biến độc lập; cần đối chứng, lặp mẫu và cách đo khách quan.",
+        "**2. Thí nghiệm amylase – tinh bột**\nAmylase thủy phân tinh bột. Dung dịch iodine tạo màu xanh tím/đen khi còn tinh bột; màu nhạt hoặc không xuất hiện cho thấy tinh bột đã giảm. Iodine không trực tiếp đo lượng đường tạo thành nên kết luận phải đúng phạm vi.",
+        "**3. Đo tốc độ bằng thời gian phản ứng**\nNếu dùng cùng một mốc kết thúc, thời gian càng ngắn thì hoạt tính trung bình càng cao. Có thể dùng chỉ số tương đối:\n$$v\\propto\\frac{1}{t}$$\nChỉ so nghịch đảo thời gian khi lượng cơ chất, enzyme và tiêu chí kết thúc giống nhau.",
+        "**4. Thí nghiệm catalase – hydrogen peroxide**\nCatalase phân giải $H_2O_2$ tạo nước và oxygen:\n$$2H_2O_2\\rightarrow 2H_2O+O_2$$\nCó thể đo thể tích $O_2$, tốc độ tăng khí hoặc độ cao bọt. Bọt chỉ là đại lượng thay thế, dễ bị ảnh hưởng bởi chất tẩy, kích thước bình và cách lắc.",
+        "**5. Đối chứng**\nĐối chứng âm có thể không có enzyme, không có cơ chất hoặc dùng enzyme đã đun biến tính. Đối chứng giúp chứng minh tín hiệu phụ thuộc phản ứng đang khảo sát. Đối chứng dương dùng hệ đã biết có phản ứng để kiểm tra dụng cụ/chỉ thị.",
+        "**6. Biến cần kiểm soát**\nGiữ lượng và nồng độ enzyme/cơ chất, pH, nhiệt độ, thể tích, diện tích mẫu, thời gian ủ, cách trộn và cách đo giống nhau. Nếu khảo sát nhiệt độ, nên cân bằng nhiệt trước khi bắt đầu phản ứng.",
+        "**7. Tính tốc độ trung bình**\nNếu đo sản phẩm:\n$$v_{tb}=\\frac{\\Delta P}{\\Delta t}$$\nNếu đo cơ chất giảm:\n$$v_{tb}=\\frac{|\\Delta S|}{\\Delta t}$$\nPhải ghi đơn vị, khoảng thời gian và không đồng nhất tốc độ trung bình với tốc độ tức thời.",
+        "**8. Độ tin cậy và cải tiến**\nLặp ít nhất nhiều mẫu, lấy trung bình, mô tả độ biến thiên và nhận diện ngoại lệ. Có thể dùng cảm biến khí, máy đo hấp thụ hoặc ảnh chuẩn hóa thay cho đánh giá màu/bọt bằng mắt.",
+        "**9. An toàn**\nĐeo kính, không nếm hóa chất, tránh để $H_2O_2$ và iodine tiếp xúc da/mắt, dùng bể ổn nhiệt cẩn thận. Không bịt kín hệ sinh khí nếu không có đường thoát hoặc dụng cụ chịu áp.",
+        "**10. Lỗi cần tránh**\n- Thay nhiều biến cùng lúc.\n- Không dùng đối chứng.\n- Kết luận màu nhạt là enzyme ít hoạt động dù màu nhạt thường nghĩa tinh bột còn ít.\n- So $1/t$ khi mốc kết thúc khác nhau.\n- Chỉ làm một lần rồi khẳng định chắc chắn."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt33-st1",
+          "name": "Quy trình thực hành enzyme",
+          "example": "Nhận diện biến, đối chứng và chỉ báo hoạt tính.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt33-st2",
+          "name": "Thiết kế và chuẩn hóa phép đo",
+          "example": "Kiểm soát thời gian, lượng enzyme và cách đo sản phẩm.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt33-st3",
+          "name": "Sai số, đường chuẩn và phân biệt giả thuyết",
+          "example": "Đánh giá độ lặp, giới hạn đo và hiệu ứng lô.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m4-q024"
+    },
+    {
+      "id": "bio10-qt34",
+      "topicId": "bio10-t4",
+      "name": "Tổng hợp chất và tích lũy năng lượng",
+      "slug": "tong-hop-chat",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Phân tích đồng hóa, quang hợp, hóa tổng hợp và quang khử ở mức khái quát.",
+      "recognitionSigns": [
+        "Đề mô tả tạo phân tử phức tạp từ chất đơn giản và cần năng lượng.",
+        "Xuất hiện nguồn carbon, nguồn năng lượng ánh sáng/hóa học hoặc sắc tố quang hợp."
+      ],
+      "solvingSteps": [
+        "Xác định nguồn carbon và nguồn năng lượng.",
+        "Phân biệt quang hợp giải phóng oxygen, quang khử và hóa tổng hợp.",
+        "Theo dõi vật chất được tổng hợp và dạng năng lượng được tích lũy."
+      ],
+      "commonMistakes": [
+        "Cho rằng chỉ thực vật mới tự dưỡng hoặc mọi quá trình dùng ánh sáng đều giải phóng oxygen."
+      ],
+      "theory": [
+        "**1. Tổng hợp chất và đồng hóa**\nĐồng hóa xây dựng phân tử phức tạp từ chất đơn giản, thường cần năng lượng và chất khử. Sản phẩm tạo cấu trúc tế bào, dự trữ vật chất hoặc tham gia hoạt động sống.",
+        "**2. Phân loại theo nguồn carbon và năng lượng**\nNguồn carbon có thể là $CO_2$ hoặc chất hữu cơ; nguồn năng lượng có thể là ánh sáng hoặc phản ứng hóa học. “Tự dưỡng” mô tả nguồn carbon chủ yếu là vô cơ, không đồng nghĩa chỉ có thực vật.",
+        "**3. Quang hợp giải phóng oxygen**\nPhương trình khái quát thường viết:\n$$6CO_2+6H_2O\\xrightarrow{\\text{ánh sáng}}C_6H_{12}O_6+6O_2$$\nĐây là phương trình tổng quát, không mô tả một bước duy nhất. Oxygen giải phóng có nguồn từ nước.",
+        "**4. Hai nhóm phản ứng quang hợp**\nPha phụ thuộc ánh sáng tạo ATP và chất khử, đồng thời giải phóng $O_2$. Quá trình cố định carbon dùng ATP và chất khử để tổng hợp carbohydrate. Gọi phản ứng cố định carbon là “pha tối” không có nghĩa nó chỉ xảy ra ban đêm.",
+        "**5. Quang khử**\nMột số vi khuẩn dùng ánh sáng nhưng chất cho electron không phải nước, chẳng hạn $H_2S$, nên không giải phóng oxygen. Vì vậy “dùng ánh sáng” chưa đủ kết luận là quang hợp giải phóng $O_2$.",
+        "**6. Hóa tổng hợp**\nSinh vật hóa tự dưỡng lấy năng lượng từ oxi hóa chất vô cơ như ammonia, nitrite, sulfide hoặc ion sắt rồi dùng năng lượng đó cố định $CO_2$. Quá trình không cần ánh sáng nhưng vẫn tổng hợp chất hữu cơ từ carbon vô cơ.",
+        "**7. Vai trò sinh thái**\nSinh vật tự dưỡng tạo chất hữu cơ cho hệ sinh thái và tham gia chu trình carbon, nitrogen, sulfur. Vi khuẩn hóa tổng hợp đặc biệt quan trọng ở môi trường thiếu ánh sáng.",
+        "**8. Quan hệ với phân giải**\nTổng hợp dùng ATP, chất khử và chất trung gian; phân giải cung cấp nhiều nguyên liệu đó. Sản phẩm của một con đường có thể là cơ chất của con đường khác, nên chuyển hóa là mạng lưới chứ không phải hai tuyến hoàn toàn tách biệt.",
+        "**9. Lỗi cần tránh**\n- Cho chỉ thực vật mới tự dưỡng.\n- Cho mọi quang hợp đều giải phóng oxygen.\n- Cho phản ứng cố định carbon chỉ xảy ra trong bóng tối.\n- Nhầm nguồn carbon với nguồn năng lượng.\n- Cho hóa tổng hợp dùng năng lượng ánh sáng."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt34-st1",
+          "name": "Đồng hóa và các kiểu tự dưỡng",
+          "example": "Nhận diện quang hợp, hóa tổng hợp và nguồn carbon.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt34-st2",
+          "name": "Dòng năng lượng–carbon trong tổng hợp",
+          "example": "Phân tích pha sáng, cố định carbon và phản hồi.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m4-q036"
+    },
+    {
+      "id": "bio10-qt35",
+      "topicId": "bio10-t4",
+      "name": "Hô hấp, lên men và quan hệ chuyển hóa",
+      "slug": "ho-hap-len-men",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "So sánh phân giải hiếu khí–kị khí, lên men; liên hệ tổng hợp–phân giải và ứng dụng thực tiễn.",
+      "recognitionSigns": [
+        "Đề cho oxygen, glucose, ATP, CO2, ethanol/lactate hoặc vị trí các giai đoạn hô hấp.",
+        "Yêu cầu so hiệu suất, giải thích lên men hay kết nối sản phẩm phân giải với nguyên liệu tổng hợp."
+      ],
+      "solvingSteps": [
+        "Xác định điều kiện có/không oxygen và chất nhận electron cuối cùng ở mức yêu cầu.",
+        "Theo dõi sản phẩm, vị trí và lượng ATP tương đối của con đường.",
+        "Đặt con đường trong mạng chuyển hóa: phân giải cung cấp ATP/chất trung gian, tổng hợp sử dụng chúng."
+      ],
+      "commonMistakes": [
+        "Đồng nhất hô hấp kị khí với lên men; cho rằng lên men không tạo ATP hoặc thực vật không hô hấp."
+      ],
+      "theory": [
+        "**1. Phân giải và hô hấp tế bào**\nPhân giải phá vỡ chất hữu cơ, giải phóng năng lượng và tạo chất trung gian. Hô hấp tế bào chuyển electron từ chất hữu cơ qua các phản ứng oxi hóa–khử để tạo ATP; không đồng nhất với động tác hít thở.",
+        "**2. Đường phân**\nĐường phân diễn ra trong tế bào chất, biến một glucose thành hai pyruvate, tạo một lượng nhỏ ATP ròng và NADH. Đây là giai đoạn chung trước nhiều con đường hiếu khí hoặc lên men.",
+        "**3. Hô hấp hiếu khí**\nKhi có oxygen và hệ enzyme phù hợp, pyruvate tiếp tục bị oxi hóa; chu trình Krebs và chuỗi truyền electron ở tế bào nhân thực chủ yếu liên quan ti thể. Oxygen là chất nhận electron cuối cùng, tạo nước.",
+        "**4. Hiệu suất năng lượng**\nHô hấp hiếu khí tạo nhiều ATP hơn lên men vì glucose được oxi hóa sâu hơn và chuỗi truyền electron khai thác phần lớn năng lượng. Số ATP thực tế có thể thay đổi theo loại tế bào và điều kiện, nên chỉ dùng con số khi đề quy ước rõ.",
+        "**5. Lên men**\nKhi chuỗi truyền electron không hoạt động, lên men tái sinh $NAD^+$ để đường phân tiếp tục. ATP ròng của toàn quá trình đến từ đường phân; lên men không tạo thêm ATP ngoài phần này, nhưng nói “lên men không tạo ATP” là sai.",
+        "**6. Hai kiểu lên men quen thuộc**\n- Lên men lactic: pyruvate nhận electron tạo lactate.\n- Lên men alcohol: pyruvate tạo ethanol và $CO_2$.\nCả hai giúp tái sinh $NAD^+$; sản phẩm và sinh vật thực hiện khác nhau.",
+        "**7. Hô hấp kị khí không đồng nhất lên men**\nHô hấp kị khí vẫn dùng chuỗi truyền electron nhưng chất nhận cuối không phải oxygen. Lên men không dùng chuỗi truyền electron. Nếu chương trình chỉ yêu cầu mức khái quát, vẫn phải giữ ranh giới này khi giải thích.",
+        "**8. Thực vật cũng hô hấp**\nTế bào thực vật hô hấp cả ngày lẫn đêm để tạo ATP. Quang hợp tích lũy năng lượng còn hô hấp huy động năng lượng; hai quá trình có thể đồng thời xảy ra khi có ánh sáng.",
+        "**9. Ứng dụng**\nLên men được dùng làm sữa chua, bánh mì, đồ uống và bảo quản. Kiểm soát nhiệt độ, oxygen, pH và chủng vi sinh giúp điều chỉnh tốc độ, sản phẩm và hạn chế nhiễm tạp.",
+        "**10. Quan hệ tổng hợp – phân giải**\nPhân giải cung cấp ATP, chất khử và chất trung gian cho tổng hợp; tổng hợp tạo chất có thể được phân giải khi cần. Tế bào điều hòa hai phía để tránh chu trình vô ích và đáp ứng trạng thái dinh dưỡng.",
+        "**11. Lỗi cần tránh**\n- Cho lên men tạo bằng lượng ATP của hô hấp hiếu khí.\n- Cho lên men không tạo ATP nào.\n- Đồng nhất hô hấp kị khí với lên men.\n- Cho thực vật chỉ quang hợp, không hô hấp.\n- Thuộc số ATP tuyệt đối mà bỏ điều kiện và quy ước của đề."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt35-st1",
+          "name": "Các giai đoạn hô hấp và lên men",
+          "example": "Nhận diện vị trí, sản phẩm và hiệu suất.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt35-st2",
+          "name": "Dòng electron và giới hạn hô hấp",
+          "example": "Phân tích oxygen, gradient proton và tái sinh NAD+.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt35-st3",
+          "name": "Mạng chuyển hóa và dữ liệu dòng carbon",
+          "example": "Theo dõi isotope, tháo ghép và quan hệ tổng hợp–phân giải.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m4-q048"
+    },
+    {
+      "id": "bio10-qt6",
+      "topicId": "bio10-t5",
+      "name": "Chu kì tế bào và nguyên phân",
+      "slug": "chu-ki-nguyen-phan",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Luyện chu kì tế bào và nguyên phân.",
+      "recognitionSigns": [
+        "Nhận diện pha chu kì hoặc kì nguyên phân từ trạng thái DNA, nhiễm sắc thể và thoi phân bào.",
+        "Đề yêu cầu giải thích, đọc dữ liệu hoặc vận dụng các outcome BIO10-M5-O01, BIO10-M5-O02."
+      ],
+      "solvingSteps": [
+        "Xác định đúng khái niệm và đối tượng sinh học đang được hỏi.",
+        "Tách dữ kiện, biểu diễn trình tự hoặc quan hệ nhân–quả.",
+        "Đối chiếu từng phương án, chọn kết luận đủ điều kiện và kiểm tra lỗi sai thường gặp."
+      ],
+      "commonMistakes": [
+        "Không đồng nhất lượng DNA, số chromatid và số nhiễm sắc thể tính theo tâm động."
+      ],
+      "theory": [
+        "**1. Chu kì tế bào**\nChu kì gồm kì trung gian và pha phân bào. Kì trung gian thường gồm $G_1$ (sinh trưởng), S (nhân đôi DNA) và $G_2$ (chuẩn bị phân bào). Không được gọi toàn bộ kì trung gian là “pha nghỉ”.",
+        "**2. Các điểm kiểm soát**\nĐiểm kiểm soát đánh giá kích thước, dinh dưỡng, tổn thương DNA, việc nhân đôi DNA và sự gắn của nhiễm sắc thể với thoi phân bào. Nếu điều kiện không đạt, chu kì có thể dừng để sửa chữa hoặc tế bào đi vào chết theo chương trình.",
+        "**3. Phân biệt nhiễm sắc thể, chromatid và DNA**\nSố nhiễm sắc thể được đếm theo số tâm động. Sau pha S, mỗi nhiễm sắc thể gồm hai chromatid chị em và lượng DNA gấp đôi, nhưng số nhiễm sắc thể chưa đổi. Khi hai chromatid tách tâm động, mỗi chromatid trở thành một nhiễm sắc thể.",
+        "**4. Mốc số lượng cần nhớ**\nVới tế bào lưỡng bội:\n- $G_1$: $2n$ nhiễm sắc thể đơn, $2C$ DNA.\n- Sau S, $G_2$, kì đầu và kì giữa: $2n$ nhiễm sắc thể kép, $4C$ DNA.\n- Kì sau trong toàn tế bào: tạm tính $4n$ nhiễm sắc thể đơn, vẫn $4C$ DNA; mỗi cực nhận $2n,2C$.\n- Sau phân chia: mỗi tế bào con $2n,2C$.",
+        "**5. Kì đầu và kì giữa**\nKì đầu: nhiễm sắc thể co xoắn, thoi phân bào hình thành, màng nhân dần biến đổi. Kì giữa: nhiễm sắc thể kép co xoắn cực đại và xếp trên mặt phẳng xích đạo; mỗi chromatid chị em nối với sợi thoi hướng về cực đối diện.",
+        "**6. Kì sau và kì cuối**\nKì sau: tâm động phân chia, chromatid chị em tách và đi về hai cực. Kì cuối: nhiễm sắc thể dãn xoắn, nhân tái lập. Phân chia tế bào chất tạo hai tế bào con; cơ chế ở tế bào động vật và thực vật khác nhau.",
+        "**7. Kết quả và ý nghĩa nguyên phân**\nTừ một tế bào mẹ tạo hai tế bào con thường có bộ nhiễm sắc thể giống nhau và giống tế bào mẹ nếu không có đột biến. Nguyên phân giúp sinh trưởng, thay thế, tái sinh và sinh sản vô tính ở nhiều sinh vật.",
+        "**8. Bài toán số tế bào**\nNếu mọi tế bào đều nguyên phân đồng bộ, không chết và mỗi lần tạo hai tế bào:\n$$N=N_0\\times2^k$$\nTrong đó $N_0$ là số tế bào ban đầu, $k$ là số lần nguyên phân. Chỉ dùng công thức khi các giả thiết này được thỏa.",
+        "**9. Quy trình nhận diện kì**\n- Xem nhiễm sắc thể đã co xoắn chưa.\n- Xem chúng xếp ở xích đạo hay đang phân li.\n- Kiểm tra tâm động đã tách chưa.\n- Xác định một hay hai cực/nhân.\n- Sau cùng mới đối chiếu số DNA và nhiễm sắc thể.",
+        "**10. Lỗi cần tránh**\n- Cho pha S làm tăng số nhiễm sắc thể.\n- Đếm chromatid thay cho tâm động.\n- Cho kì giữa đã tách chromatid.\n- Dùng $2^k$ khi tế bào không cùng số lần chia.\n- Kết luận hai tế bào con luôn tuyệt đối giống nhau dù có đột biến hoặc phân chia tế bào chất không đều."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt6-st1",
+          "name": "Chu kì và điểm kiểm soát",
+          "example": "Xác định pha S hoặc hệ quả khi điểm kiểm soát không hoạt động.",
+          "recognitionSigns": [
+            "Đề nhắc pha G1, S, G2, M hoặc điểm kiểm soát.",
+            "Cần theo dõi trạng thái DNA và điều kiện để tế bào đi tiếp."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt6-st2",
+          "name": "Nhận diện các kì nguyên phân",
+          "example": "Nhận diện kì giữa, kì sau từ vị trí nhiễm sắc thể và thoi phân bào.",
+          "recognitionSigns": [
+            "Dữ kiện mô tả mức co xoắn, mặt phẳng xích đạo hoặc sự phân li.",
+            "Cần đặt sự kiện vào đúng trình tự nguyên phân."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt6-st3",
+          "name": "Số tế bào, NST, chromatid và DNA",
+          "example": "Tính số tế bào con hoặc số NST/chromatid qua nguyên phân.",
+          "recognitionSigns": [
+            "Đề cho 2n, số lần phân bào hoặc thời điểm trước/sau nhân đôi.",
+            "Phải phân biệt số NST theo tâm động với lượng DNA."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-q6"
+    },
+    {
+      "id": "bio10-qt36",
+      "topicId": "bio10-t5",
+      "name": "Mất kiểm soát chu kì và ung thư",
+      "slug": "chu-ki-ung-thu",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Luyện mất kiểm soát chu kì và ung thư.",
+      "recognitionSigns": [
+        "Dạng bệnh học chu kì: xác định điểm kiểm soát, gene điều hòa, tăng sinh và bằng chứng nguy cơ.",
+        "Đề yêu cầu giải thích, đọc dữ liệu hoặc vận dụng các outcome BIO10-M5-O03."
+      ],
+      "solvingSteps": [
+        "Xác định đúng khái niệm và đối tượng sinh học đang được hỏi.",
+        "Tách dữ kiện, biểu diễn trình tự hoặc quan hệ nhân–quả.",
+        "Đối chiếu từng phương án, chọn kết luận đủ điều kiện và kiểm tra lỗi sai thường gặp."
+      ],
+      "commonMistakes": [
+        "Không kết luận một yếu tố đơn lẻ chắc chắn gây ung thư; phân biệt tương quan, nguy cơ và cơ chế."
+      ],
+      "theory": [
+        "**1. Vì sao chu kì phải được kiểm soát**\nTăng sinh phải cân bằng với biệt hóa và chết tế bào để duy trì mô. Tín hiệu kích thích, tín hiệu ức chế, điểm kiểm soát và sửa chữa DNA phối hợp quyết định tế bào có tiếp tục chu kì hay không.",
+        "**2. Hai nhóm gene điều hòa**\nGene thúc đẩy tăng sinh bình thường có thể trở thành oncogene khi hoạt hóa quá mức. Gene ức chế khối u giúp dừng chu kì, sửa chữa DNA hoặc kích hoạt chết tế bào; mất chức năng làm hàng rào kiểm soát suy yếu.",
+        "**3. Ung thư là quá trình nhiều bước**\nMột biến đổi đơn lẻ thường chưa đủ. Nhiều đột biến và thay đổi điều hòa tích lũy làm tế bào tăng sinh không kiểm soát, né chết, tạo mạch, xâm lấn và có thể di căn.",
+        "**4. Yếu tố nguy cơ**\nThuốc lá, tia UV/bức xạ ion hóa, một số hóa chất, virus, tuổi và đột biến di truyền có thể làm tăng nguy cơ. “Tăng nguy cơ” không có nghĩa mọi người phơi nhiễm chắc chắn mắc bệnh, và không phơi nhiễm cũng không bảo đảm bằng không.",
+        "**5. Đọc dữ liệu bệnh học**\nPhân biệt tương quan với quan hệ nhân quả. Cần xem nhóm đối chứng, cỡ mẫu, liều phơi nhiễm, thời gian theo dõi và yếu tố gây nhiễu. Một biểu đồ tỉ lệ bệnh cao hơn chỉ hỗ trợ kết luận trong giới hạn thiết kế nghiên cứu.",
+        "**6. Nguyên tắc điều trị**\nPhẫu thuật loại mô khu trú; xạ trị và hóa trị gây tổn thương tế bào phân chia; thuốc nhắm đích tác động phân tử đặc hiệu; miễn dịch trị liệu hỗ trợ hệ miễn dịch nhận diện ung thư. Lựa chọn phụ thuộc loại, giai đoạn và đặc điểm người bệnh.",
+        "**7. Phòng ngừa và phát hiện sớm**\nGiảm thuốc lá/rượu, bảo vệ khỏi UV, tiêm vaccine phù hợp, vận động và kiểm soát nghề nghiệp giúp giảm một phần nguy cơ. Sàng lọc nhằm phát hiện sớm ở nhóm phù hợp, không phải xét nghiệm nào cũng dùng cho mọi người.",
+        "**8. Lỗi cần tránh**\n- Cho ung thư chỉ do tế bào phân chia nhanh.\n- Gọi mọi khối u là ác tính.\n- Cho một đột biến luôn đủ gây ung thư.\n- Đồng nhất yếu tố nguy cơ với nguyên nhân chắc chắn.\n- Kết luận một phương pháp điều trị phù hợp cho mọi ung thư."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt36-st1",
+          "name": "Cơ chế mất kiểm soát và ung thư",
+          "example": "Suy luận hậu quả khi gene kiểm soát hoặc apoptosis bị bất hoạt.",
+          "recognitionSigns": [
+            "Đề nhắc tăng sinh, sửa chữa DNA, apoptosis hoặc di căn.",
+            "Cần lần theo cơ chế từ sai hỏng phân tử tới tăng sinh tế bào."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt36-st2",
+          "name": "Nguy cơ, bằng chứng và điều trị",
+          "example": "Đánh giá dữ liệu nguy cơ hoặc lựa chọn điều trị đích phù hợp.",
+          "recognitionSigns": [
+            "Đề cho số liệu dịch tễ, yếu tố nguy cơ hoặc đích phân tử.",
+            "Không biến tương quan thành quan hệ nhân quả tuyệt đối."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m5-q012"
+    },
+    {
+      "id": "bio10-qt37",
+      "topicId": "bio10-t5",
+      "name": "Giảm phân và sinh sản hữu tính",
+      "slug": "giam-phan-sinh-san",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Luyện giảm phân và sinh sản hữu tính.",
+      "recognitionSigns": [
+        "Theo dõi cặp tương đồng, chromatid, hai lần phân bào và nguồn biến dị tổ hợp.",
+        "Đề yêu cầu giải thích, đọc dữ liệu hoặc vận dụng các outcome BIO10-M5-O04, BIO10-M5-O05, BIO10-M5-O06."
+      ],
+      "solvingSteps": [
+        "Xác định đúng khái niệm và đối tượng sinh học đang được hỏi.",
+        "Tách dữ kiện, biểu diễn trình tự hoặc quan hệ nhân–quả.",
+        "Đối chiếu từng phương án, chọn kết luận đủ điều kiện và kiểm tra lỗi sai thường gặp."
+      ],
+      "commonMistakes": [
+        "Giảm phân không phải hai nguyên phân: DNA chỉ nhân đôi một lần và cặp tương đồng phân li ở lần I."
+      ],
+      "theory": [
+        "**1. Mục tiêu giảm phân**\nGiảm phân tạo tế bào đơn bội từ tế bào lưỡng bội, giúp số nhiễm sắc thể không tăng gấp đôi qua mỗi thế hệ hữu tính. DNA chỉ nhân đôi một lần trước giảm phân I nhưng tế bào phân chia hai lần.",
+        "**2. Tiếp hợp và trao đổi chéo**\nỞ kì đầu I, các nhiễm sắc thể tương đồng tiếp hợp; chromatid không chị em có thể trao đổi đoạn tương ứng. Trao đổi chéo tạo tổ hợp allele mới nhưng không làm thay đổi số gene hay số nhiễm sắc thể trong điều kiện bình thường.",
+        "**3. Sắp xếp độc lập ở kì giữa I**\nMỗi cặp tương đồng định hướng ngẫu nhiên và độc lập tương đối trên mặt phẳng xích đạo. Sự định hướng này quyết định nhiễm sắc thể nguồn bố/mẹ đi về cực nào, tạo biến dị tổ hợp.",
+        "**4. Giảm phân I**\nCác nhiễm sắc thể tương đồng phân li, tâm động chưa tách. Từ tế bào $2n,4C$ tạo hai tế bào $n,2C$: số bộ nhiễm sắc thể giảm một nửa nhưng mỗi nhiễm sắc thể vẫn gồm hai chromatid.",
+        "**5. Giảm phân II**\nKhông có pha S giữa hai lần phân bào. Ở giảm phân II, tâm động tách và chromatid chị em phân li. Kết quả điển hình là bốn tế bào $n,C$, nhưng hình thức tạo giao tử thực tế có thể khác giữa đực và cái.",
+        "**6. Bảng mốc định lượng**\n- Trước nhân đôi: $2n,2C$.\n- Sau nhân đôi/đầu I: $2n,4C$.\n- Sau giảm phân I: mỗi tế bào $n,2C$.\n- Sau giảm phân II: mỗi tế bào $n,C$.\nLuôn xác định đề đang hỏi một tế bào, toàn bộ các tế bào hay mỗi cực.",
+        "**7. So sánh nguyên phân và giảm phân**\nNguyên phân có một lần phân bào, thường tạo hai tế bào giữ nguyên số bộ nhiễm sắc thể. Giảm phân có hai lần phân bào sau một lần nhân đôi, tạo tế bào đơn bội và biến dị tổ hợp.",
+        "**8. Nguồn biến dị tổ hợp**\nGồm trao đổi chéo, phân li độc lập và tổ hợp ngẫu nhiên khi thụ tinh. Chỉ xét phân li độc lập của $n$ cặp tương đồng, một cá thể có thể tạo tối đa $2^n$ kiểu tổ hợp nhiễm sắc thể trong giao tử; trao đổi chéo làm số khả năng lớn hơn.",
+        "**9. Sinh sản hữu tính**\nGiảm phân tạo giao tử $n$, thụ tinh hợp nhất hai giao tử tạo hợp tử $2n$, nguyên phân phát triển cơ thể. Ba quá trình phối hợp vừa ổn định số nhiễm sắc thể đặc trưng vừa tạo đa dạng.",
+        "**10. Không phân li**\nNếu một cặp tương đồng không phân li ở giảm phân I, bốn giao tử liên quan đều bất thường: hai $n+1$, hai $n-1$. Nếu chromatid không phân li ở một tế bào giảm phân II, thường có hai giao tử bình thường, một $n+1$ và một $n-1$.",
+        "**11. Lỗi cần tránh**\n- Gọi giảm phân là hai nguyên phân liên tiếp.\n- Cho DNA nhân đôi giữa giảm phân I và II.\n- Cho chromatid chị em tách ở kì sau I.\n- Nhầm $n$ với lượng DNA $C$.\n- Dùng $2^n$ như đã bao gồm mọi trao đổi chéo."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt37-st1",
+          "name": "Diễn biến giảm phân",
+          "example": "Nhận diện tiếp hợp, phân li NST tương đồng hoặc chromatid chị em.",
+          "recognitionSigns": [
+            "Đề nhắc giảm phân I, giảm phân II, tiếp hợp hoặc trao đổi chéo.",
+            "Cần xác định cấu trúc nào phân li ở từng lần phân bào."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt37-st2",
+          "name": "Tính số lượng và không phân li",
+          "example": "Tính số NST sau giảm phân I hoặc dự đoán giao tử do không phân li.",
+          "recognitionSigns": [
+            "Đề cho 2n, số cặp NST hoặc vị trí xảy ra không phân li.",
+            "Theo dõi riêng bộ NST, trạng thái kép/đơn và số tế bào."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt37-st3",
+          "name": "So sánh và nguồn biến dị tổ hợp",
+          "example": "Giải thích biến dị do phân li độc lập, trao đổi chéo và thụ tinh.",
+          "recognitionSigns": [
+            "Đề yêu cầu so sánh nguyên phân–giảm phân hoặc giải thích đa dạng di truyền.",
+            "Phải nối cơ chế tế bào với kết quả di truyền."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m5-q024"
+    },
+    {
+      "id": "bio10-qt38",
+      "topicId": "bio10-t5",
+      "name": "Quan sát phân bào và công nghệ tế bào",
+      "slug": "thuc-hanh-cong-nghe-te-bao",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Luyện quan sát phân bào và công nghệ tế bào.",
+      "recognitionSigns": [
+        "Nhận diện kì phân bào từ ảnh hoặc nối tính toàn năng, nuôi cấy mô và chuyển nhân với ứng dụng.",
+        "Đề yêu cầu giải thích, đọc dữ liệu hoặc vận dụng các outcome BIO10-M5-O07, BIO10-M5-O08."
+      ],
+      "solvingSteps": [
+        "Xác định đúng khái niệm và đối tượng sinh học đang được hỏi.",
+        "Tách dữ kiện, biểu diễn trình tự hoặc quan hệ nhân–quả.",
+        "Đối chiếu từng phương án, chọn kết luận đủ điều kiện và kiểm tra lỗi sai thường gặp."
+      ],
+      "commonMistakes": [
+        "Không gọi mọi tế bào nuôi cấy là bản sao hoàn chỉnh; phải xét nguồn tế bào, môi trường và mục tiêu."
+      ],
+      "theory": [
+        "**1. Dấu hiệu nhận diện phân bào trên tiêu bản**\nKì đầu: nhiễm sắc thể bắt đầu co xoắn; kì giữa: xếp ở xích đạo; kì sau: hai nhóm đang tách về cực; kì cuối: hai vùng nhân hình thành. Tế bào ở kì trung gian có nhân rõ nhưng không thấy nhiễm sắc thể co xoắn riêng biệt.",
+        "**2. Phân biệt nguyên phân và giảm phân trên ảnh**\nTìm cặp tương đồng tiếp hợp, tetrad và hai lần phân bào để nhận diện giảm phân. Một ảnh đơn lẻ có thể không đủ; cần kết hợp loại mô, số tế bào con, số bộ nhiễm sắc thể và cách sắp xếp/phân li.",
+        "**3. Chỉ số nguyên phân**\n$$MI=\\frac{\\text{số tế bào đang nguyên phân}}{\\text{tổng số tế bào quan sát}}\\times100\\%$$\n$MI$ cao thường cho thấy tỉ lệ tế bào đang phân chia cao, nhưng còn phụ thuộc thời lượng các kì, vùng lấy mẫu và điều kiện mô; không tự động chứng minh tốc độ chu kì cao hơn.",
+        "**4. Quy trình quan sát**\nChọn mô có phân chia mạnh, cố định/nhuộm phù hợp, làm tiêu bản mỏng, quan sát nhiều trường nhìn và dùng tiêu chí thống nhất. Ghi số tế bào từng kì, lặp mẫu và tránh chỉ chọn vùng “đẹp” làm sai lệch kết quả.",
+        "**5. Tính toàn năng và nuôi cấy mô**\nTính toàn năng là khả năng một tế bào có thông tin di truyền phù hợp tạo cơ thể hoàn chỉnh trong điều kiện thích hợp. Nuôi cấy mô thực vật dựa vào khử biệt hóa, tạo mô sẹo và tái biệt hóa dưới tác động môi trường/dinh dưỡng/hormone.",
+        "**6. Ứng dụng nuôi cấy mô**\nNhân nhanh giống, tạo cây sạch bệnh, bảo tồn nguồn gene và sản xuất đồng đều. Các cây nhân từ một nguồn thường gần giống di truyền, nhưng đột biến soma hoặc biến dị nuôi cấy vẫn có thể xuất hiện.",
+        "**7. Tế bào gốc**\nTế bào gốc có khả năng tự đổi mới và biệt hóa. Tế bào toàn năng tạo mọi loại tế bào kể cả mô ngoài phôi; tế bào đa năng tạo nhiều loại tế bào cơ thể nhưng không tự tạo một cơ thể hoàn chỉnh.",
+        "**8. Chuyển nhân tế bào soma**\nLấy nhân tế bào soma đưa vào trứng đã bỏ nhân, kích thích phát triển rồi cấy hoặc dùng tạo dòng tế bào. DNA nhân chủ yếu giống cá thể cho nhân, còn DNA ti thể chủ yếu đến từ tế bào trứng.",
+        "**9. Nhân bản sinh sản và điều trị**\nNhân bản sinh sản nhằm tạo cá thể; nhân bản điều trị nhằm tạo tế bào/mô phục vụ nghiên cứu hoặc chữa bệnh. Chúng khác mục đích và bước sử dụng phôi, đồng thời có vấn đề hiệu quả, an toàn và đạo đức.",
+        "**10. Lỗi cần tránh**\n- Nhận diện kì chỉ bằng “nhiều sợi đậm”.\n- Cho $MI$ cao chắc chắn nghĩa chu kì ngắn hơn.\n- Cho mọi tế bào nuôi cấy đều tự tạo cơ thể.\n- Cho cá thể chuyển nhân giống tuyệt đối cá thể cho nhân.\n- Bỏ qua DNA ti thể và ảnh hưởng môi trường phát triển."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt38-st1",
+          "name": "Quan sát và định lượng phân bào",
+          "example": "Nhận diện kì trên ảnh hoặc tính chỉ số phân bào.",
+          "recognitionSigns": [
+            "Đề cho ảnh/tiêu bản hoặc số tế bào ở từng trạng thái.",
+            "Cần dựa vào dấu hiệu NST và mẫu số tổng tế bào quan sát."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt38-st2",
+          "name": "Tính toàn năng và nuôi cấy mô",
+          "example": "Chọn điều kiện giúp callus biệt hóa hoặc đánh giá cây nuôi cấy mô.",
+          "recognitionSigns": [
+            "Đề nhắc callus, môi trường vô trùng, hormone hoặc nhân giống.",
+            "Cần nối tính toàn năng với điều kiện biểu hiện trong nuôi cấy."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt38-st3",
+          "name": "Chuyển nhân, tế bào gốc và đạo đức",
+          "example": "Đánh giá bằng chứng chuyển nhân hoặc ứng dụng tế bào gốc.",
+          "recognitionSigns": [
+            "Đề nhắc nhân soma, trứng bỏ nhân, tế bào gốc hoặc cân nhắc đạo đức.",
+            "Phân biệt tiềm năng công nghệ với bằng chứng an toàn và hiệu quả."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m5-q036"
+    },
+    {
+      "id": "bio10-qt7",
+      "topicId": "bio10-t6",
+      "name": "Vi sinh vật và kiểu dinh dưỡng",
+      "slug": "vi-sinh-vat-dinh-duong",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Luyện vi sinh vật và kiểu dinh dưỡng.",
+      "recognitionSigns": [
+        "Xác định nhóm vi sinh vật, rồi tách hai trục nguồn năng lượng và nguồn carbon.",
+        "Đề yêu cầu giải thích, đọc dữ liệu hoặc vận dụng các outcome BIO10-M6-O01, BIO10-M6-O02."
+      ],
+      "solvingSteps": [
+        "Xác định đúng khái niệm và đối tượng sinh học đang được hỏi.",
+        "Tách dữ kiện, biểu diễn trình tự hoặc quan hệ nhân–quả.",
+        "Đối chiếu từng phương án, chọn kết luận đủ điều kiện và kiểm tra lỗi sai thường gặp."
+      ],
+      "commonMistakes": [
+        "Tự dưỡng nói về nguồn carbon CO2, không có nghĩa tự tạo năng lượng."
+      ],
+      "theory": [
+        "**1. Khái niệm vi sinh vật**\nVi sinh vật là nhóm sinh vật có kích thước thường rất nhỏ, phần lớn chỉ quan sát rõ bằng kính hiển vi. Đây là nhóm quy ước theo kích thước và phương pháp nghiên cứu, không phải một bậc phân loại duy nhất.",
+        "**2. Các nhóm thường gặp**\nVi sinh vật có thể gồm vi khuẩn, archaea, nhiều nấm đơn bào, tảo hiển vi và động vật nguyên sinh. Virus thường được nghiên cứu cùng vi sinh vật nhưng không có cấu tạo tế bào. Không được đồng nhất vi sinh vật với vi khuẩn hoặc với tác nhân gây bệnh.",
+        "**3. Đặc điểm chung có tính tương đối**\nKích thước nhỏ tạo tỉ lệ diện tích bề mặt/thể tích lớn, hỗ trợ trao đổi nhanh. Nhiều vi sinh vật hấp thu và chuyển hóa mạnh, sinh trưởng nhanh, phân bố rộng và thích nghi đa dạng; không phải mọi loài đều có cùng tốc độ hay điều kiện sống.",
+        "**4. Hai trục phân loại dinh dưỡng**\nMuốn xác định kiểu dinh dưỡng, tách riêng:\n- Nguồn năng lượng: ánh sáng (**quang**) hoặc phản ứng hóa học (**hóa**).\n- Nguồn carbon: chủ yếu $CO_2$ (**tự dưỡng**) hoặc chất hữu cơ (**dị dưỡng**).\nSau đó mới ghép hai từ thành tên kiểu.",
+        "**5. Quang tự dưỡng**\nDùng ánh sáng làm nguồn năng lượng và $CO_2$ làm nguồn carbon. Ví dụ: vi khuẩn lam và nhiều tảo hiển vi. Không phải mọi quang tự dưỡng đều có cùng sắc tố hoặc cùng kiểu giải phóng oxygen.",
+        "**6. Hóa tự dưỡng**\nLấy năng lượng từ oxi hóa chất vô cơ và lấy carbon từ $CO_2$. Ví dụ: một số vi khuẩn oxi hóa ammonia, nitrite, sulfur hoặc sắt. “Hóa” ở đây nói về nguồn năng lượng, không có nghĩa dùng chất hữu cơ.",
+        "**7. Quang dị dưỡng**\nDùng ánh sáng làm nguồn năng lượng nhưng cần chất hữu cơ làm nguồn carbon chủ yếu. Vì vậy có ánh sáng không đồng nghĩa tự dưỡng.",
+        "**8. Hóa dị dưỡng**\nDùng chất hóa học làm nguồn năng lượng và chất hữu cơ làm nguồn carbon. Nhiều vi khuẩn, nấm và động vật nguyên sinh thuộc nhóm này; trong đó có cả loài có lợi, hoại sinh và gây bệnh.",
+        "**9. Bảng nhận diện nhanh**\n| Năng lượng | Carbon | Kiểu dinh dưỡng |\n|---|---|---|\n| Ánh sáng | $CO_2$ | Quang tự dưỡng |\n| Hóa học | $CO_2$ | Hóa tự dưỡng |\n| Ánh sáng | Hữu cơ | Quang dị dưỡng |\n| Hóa học | Hữu cơ | Hóa dị dưỡng |",
+        "**10. Vai trò sinh thái và thực tiễn**\nVi sinh vật phân giải chất hữu cơ, tham gia chu trình vật chất, cộng sinh, sản xuất thực phẩm/thuốc và xử lí môi trường. Chỉ một phần gây bệnh hoặc làm hỏng sản phẩm.",
+        "**11. Quy trình giải dạng phân loại**\n- Khoanh dữ kiện chỉ nguồn năng lượng.\n- Khoanh dữ kiện chỉ nguồn carbon.\n- Gọi tên theo đúng thứ tự quang/hóa + tự/dị dưỡng.\n- Kiểm tra dữ kiện mô tả oxygen, chất cho electron hay môi trường có làm thay đổi kết luận không.",
+        "**12. Lỗi cần tránh**\n- Cho mọi vi sinh vật là vi khuẩn gây bệnh.\n- Gọi virus là tế bào vi sinh vật.\n- Hiểu tự dưỡng là “tự tạo năng lượng”.\n- Thấy ánh sáng liền chọn quang tự dưỡng mà chưa xét nguồn carbon.\n- Thấy chất vô cơ liền chọn hóa tự dưỡng dù đó không phải nguồn năng lượng."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt7-st1",
+          "name": "Khái niệm và nhóm vi sinh vật",
+          "example": "Nhận diện vi sinh vật nhân sơ, nhân thực hoặc sinh vật không có cấu tạo tế bào.",
+          "recognitionSigns": [
+            "Đề hỏi đặc điểm chung hoặc phân loại nhóm vi sinh vật.",
+            "Cần tách kích thước, kiểu tế bào và lối sống; không đồng nhất vi sinh vật với vi khuẩn."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt7-st2",
+          "name": "Nguồn năng lượng và nguồn carbon",
+          "example": "Xác định quang tự dưỡng, hóa tự dưỡng, quang dị dưỡng hoặc hóa dị dưỡng.",
+          "recognitionSigns": [
+            "Đề cho nguồn năng lượng và nguồn carbon.",
+            "Luôn phân loại theo hai trục độc lập trước khi gọi tên kiểu dinh dưỡng."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-q7"
+    },
+    {
+      "id": "bio10-qt39",
+      "topicId": "bio10-t6",
+      "name": "Nuôi cấy, phân lập và định lượng",
+      "slug": "nghien-cuu-vi-sinh",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Luyện nuôi cấy, phân lập và định lượng.",
+      "recognitionSigns": [
+        "Nhận diện mục tiêu vô trùng, phân lập dòng thuần, đếm khuẩn lạc và thiết kế đối chứng.",
+        "Đề yêu cầu giải thích, đọc dữ liệu hoặc vận dụng các outcome BIO10-M6-O03."
+      ],
+      "solvingSteps": [
+        "Xác định đúng khái niệm và đối tượng sinh học đang được hỏi.",
+        "Tách dữ kiện, biểu diễn trình tự hoặc quan hệ nhân–quả.",
+        "Đối chiếu từng phương án, chọn kết luận đủ điều kiện và kiểm tra lỗi sai thường gặp."
+      ],
+      "commonMistakes": [
+        "Một khuẩn lạc không luôn bằng đúng một tế bào ban đầu; CFU phụ thuộc cụm và điều kiện nuôi."
+      ],
+      "theory": [
+        "**1. Mục tiêu nghiên cứu vi sinh vật**\nNuôi cấy tạo điều kiện để vi sinh vật sinh trưởng; phân lập tách một kiểu vi sinh vật khỏi quần thể hỗn hợp; quan sát mô tả hình thái; định lượng ước tính số lượng. Mỗi phương pháp trả lời một câu hỏi khác nhau.",
+        "**2. Môi trường nuôi cấy**\nMôi trường cần nguồn carbon, nitrogen, khoáng, nước và điều kiện phù hợp với đối tượng. Môi trường lỏng thuận lợi tăng sinh; môi trường rắn giúp tạo khuẩn lạc riêng. Môi trường chọn lọc ưu tiên một nhóm, còn môi trường phân biệt tạo dấu hiệu để phân biệt nhóm.",
+        "**3. Vô trùng và thao tác vô khuẩn**\nVô trùng nhằm loại hoặc ngăn vi sinh vật ngoài ý muốn xâm nhập mẫu, bảo vệ kết quả và an toàn. Khử trùng không phải lúc nào cũng loại được mọi dạng sống; thao tác vô khuẩn là chuỗi biện pháp hạn chế tái nhiễm.",
+        "**4. Đối chứng phát hiện tạp nhiễm**\nMôi trường được xử lí giống mẫu nhưng không cấy là đối chứng âm hữu ích. Nếu đối chứng này cũng mọc, chưa thể quy khuẩn lạc của mẫu hoàn toàn cho vi sinh vật cần nghiên cứu.",
+        "**5. Phân lập bằng khuẩn lạc**\nCấy ria hoặc pha loãng làm các đơn vị tạo khuẩn lạc tách xa nhau. Chọn một khuẩn lạc riêng rồi cấy lại có thể tạo dòng tương đối thuần. Tuy nhiên một khuẩn lạc có thể bắt nguồn từ một tế bào hoặc một cụm tế bào.",
+        "**6. Quan sát và nhận diện**\nKính hiển vi, nhuộm và đặc điểm khuẩn lạc giúp mô tả kích thước, hình dạng, sắp xếp và tính chất. Hình thái giống nhau chưa đủ khẳng định cùng loài; định danh chắc chắn có thể cần dữ liệu sinh hóa hoặc di truyền.",
+        "**7. Pha loãng thập phân**\nMỗi bước pha loãng làm giảm nồng độ theo hệ số xác định, thường là $10$ lần. Độ pha loãng $10^{-4}$ nghĩa mẫu đang xét có nồng độ bằng $10^{-4}$ mẫu gốc; muốn suy về mẫu gốc phải nhân nghịch đảo $10^4$.",
+        "**8. Công thức định lượng CFU**\nVới số khuẩn lạc đếm được $N$, thể tích cấy $V$ mL và độ pha loãng $d$:\n$$CFU/mL=\\frac{N}{V\\times d}$$\nVí dụ 50 khuẩn lạc từ $0{,}1$ mL ở độ pha loãng $10^{-4}$ cho $5\\times10^6\\,CFU/mL$ mẫu gốc.",
+        "**9. Giới hạn của CFU**\nCFU là **đơn vị tạo khuẩn lạc**, không phải số tế bào tuyệt đối. Một cụm nhiều tế bào có thể tạo một khuẩn lạc; tế bào sống nhưng không mọc trong điều kiện đã chọn sẽ không được đếm.",
+        "**10. Chọn đĩa và mẫu lặp**\nĐĩa quá dày khó phân biệt khuẩn lạc; quá ít khuẩn lạc có sai số tương đối lớn. Cần chọn vùng đếm phù hợp theo quy ước thí nghiệm, dùng đĩa lặp, lấy trung bình và ghi độ biến thiên.",
+        "**11. Thiết kế so sánh công bằng**\nKhi so môi trường hoặc chất khử khuẩn, giữ chủng, mật độ ban đầu, thể tích, nhiệt độ, thời gian và cách đo giống nhau. Chỉ thay biến cần khảo sát; có đối chứng âm/dương phù hợp.",
+        "**12. An toàn và giới hạn thao tác**\nChỉ nuôi các chủng an toàn theo hướng dẫn, không mở/ngửi trực tiếp đĩa không rõ nguồn, không tự nuôi mẫu môi trường hoặc cơ thể ngoài quy trình được giám sát. Khử nhiễm và thải bỏ theo hướng dẫn phòng thực hành.",
+        "**13. Lỗi cần tránh**\n- Cho một khuẩn lạc luôn bằng đúng một tế bào.\n- Nhân độ pha loãng thay vì nhân nghịch đảo khi suy mẫu gốc.\n- Quên chia cho thể tích cấy.\n- Dùng hình thái để khẳng định chắc chắn loài.\n- Bỏ đối chứng và mẫu lặp."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt39-st1",
+          "name": "Vô trùng, môi trường và đối chứng",
+          "example": "Chọn thao tác vô trùng hoặc đối chứng phát hiện tạp nhiễm.",
+          "recognitionSigns": [
+            "Đề nhắc khử trùng, môi trường nuôi hoặc đĩa đối chứng.",
+            "Xác định nguồn tạp nhiễm và biến cần được kiểm soát."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt39-st2",
+          "name": "Phân lập và nhận diện",
+          "example": "Giải thích cấy ria, khuẩn lạc riêng hoặc nhuộm quan sát.",
+          "recognitionSigns": [
+            "Đề nhắc cấy ria, dòng thuần, khuẩn lạc hoặc kính hiển vi.",
+            "Phân biệt quan sát hình thái với khẳng định định danh loài."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt39-st3",
+          "name": "Pha loãng và định lượng CFU",
+          "example": "Tính CFU/mL từ số khuẩn lạc, thể tích cấy và độ pha loãng.",
+          "recognitionSigns": [
+            "Đề có số khuẩn lạc, thể tích và hệ số pha loãng.",
+            "Phải quy đổi về mẫu gốc và nêu giới hạn CFU không luôn bằng số tế bào."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m6-q012"
+    },
+    {
+      "id": "bio10-qt40",
+      "topicId": "bio10-t6",
+      "name": "Chuyển hóa, sinh trưởng và kiểm soát",
+      "slug": "sinh-truong-kiem-soat",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Luyện chuyển hóa, sinh trưởng và kiểm soát.",
+      "recognitionSigns": [
+        "Đọc pha sinh trưởng, hình thức sinh sản và tác động nhiệt độ, pH, hóa chất hoặc kháng sinh.",
+        "Đề yêu cầu giải thích, đọc dữ liệu hoặc vận dụng các outcome BIO10-M6-O04, BIO10-M6-O05, BIO10-M6-O06, BIO10-M6-O07."
+      ],
+      "solvingSteps": [
+        "Xác định đúng khái niệm và đối tượng sinh học đang được hỏi.",
+        "Tách dữ kiện, biểu diễn trình tự hoặc quan hệ nhân–quả.",
+        "Đối chiếu từng phương án, chọn kết luận đủ điều kiện và kiểm tra lỗi sai thường gặp."
+      ],
+      "commonMistakes": [
+        "Pha cân bằng vẫn có phân chia và chết; kháng sinh không trị virus và phải dùng đúng chỉ định."
+      ],
+      "theory": [
+        "**1. Tổng hợp ở vi sinh vật**\nVi sinh vật dùng chất dinh dưỡng và năng lượng để tổng hợp protein, polysaccharide, lipid, nucleic acid và chất dự trữ. Một số sản phẩm như amino acid, enzyme, kháng sinh hoặc polymer có giá trị công nghệ.",
+        "**2. Phân giải và enzyme ngoại bào**\nĐại phân tử thường không đi qua màng. Vi sinh vật tiết enzyme ngoại bào phân giải tinh bột, protein, cellulose hoặc lipid thành phân tử nhỏ rồi hấp thu. Sản phẩm phân giải góp phần tái chế vật chất nhưng cũng có thể làm hỏng thực phẩm.",
+        "**3. Sinh trưởng quần thể**\nSinh trưởng vi sinh vật thường được xét là tăng số tế bào của quần thể, không chỉ tăng kích thước từng tế bào. Trong điều kiện lí tưởng, phân đôi làm số lượng tăng theo cấp số nhân.",
+        "**4. Pha tiềm phát**\nSau khi chuyển sang môi trường mới, tế bào thích nghi, sửa chữa và tổng hợp enzyme. Hoạt động chuyển hóa có thể mạnh nhưng số tế bào chưa tăng nhanh; “tiềm phát” không có nghĩa hoàn toàn bất hoạt.",
+        "**5. Pha lũy thừa**\nTế bào phân chia với tốc độ cao và tương đối ổn định, số lượng tăng theo cấp số nhân. Đây thường là pha thuận lợi để nghiên cứu tốc độ sinh trưởng hoặc thu sinh khối đang hoạt động.",
+        "**6. Pha cân bằng và suy vong**\nPha cân bằng: số tế bào mới sinh xấp xỉ số chết nên tổng số tương đối ổn định, nhưng tế bào vẫn chuyển hóa và có thể phân chia. Pha suy vong: số chết vượt số sinh do cạn dinh dưỡng, tích lũy chất thải hoặc điều kiện bất lợi.",
+        "**7. Công thức tăng trưởng lí tưởng**\nNếu mỗi tế bào phân đôi và không chết:\n$$N=N_0\\times2^n$$\nNếu thời gian nuôi là $t$ và thời gian thế hệ là $g$ thì $n=t/g$. Công thức chỉ đúng gần đúng trong pha lũy thừa với điều kiện lí tưởng.",
+        "**8. Nuôi cấy không liên tục và liên tục**\nNuôi cấy không liên tục có lượng môi trường hữu hạn nên thường xuất hiện bốn pha. Nuôi cấy liên tục bổ sung dinh dưỡng và lấy bớt dịch nuôi để duy trì trạng thái sinh trưởng mong muốn; không phải quần thể tăng vô hạn.",
+        "**9. Hình thức sinh sản**\nVi khuẩn chủ yếu phân đôi, không thực hiện nguyên phân có thoi. Nấm men thường nảy chồi hoặc phân đôi; nấm sợi có thể tạo bào tử. Nội bào tử vi khuẩn chủ yếu là cấu trúc sống sót, không phải cách tăng số lượng.",
+        "**10. Yếu tố vật lí**\nNhiệt độ, pH, độ ẩm, áp suất thẩm thấu, oxygen và bức xạ ảnh hưởng enzyme, màng và cấu trúc tế bào. Làm lạnh thường chỉ làm chậm sinh trưởng; không được kết luận đã diệt mọi tế bào hoặc bào tử.",
+        "**11. Chất kiểm soát vi sinh vật**\nChất sát khuẩn dùng trên mô sống; chất khử khuẩn dùng trên bề mặt/vật dụng; kháng sinh tác động những đích đặc trưng của vi khuẩn. Hiệu quả phụ thuộc nồng độ, thời gian, loại vi sinh vật và chất hữu cơ trong môi trường.",
+        "**12. Kháng sinh và virus**\nKháng sinh nhắm thành tế bào, ribosome hoặc quá trình đặc trưng của vi khuẩn nên không điều trị bệnh do virus. Dùng kháng sinh phải theo chỉ định, đúng thuốc, liều và thời gian.",
+        "**13. Kháng kháng sinh là chọn lọc**\nBiến dị hoặc gene kháng có thể tồn tại trước. Thuốc tiêu diệt tế bào nhạy, còn tế bào kháng sống sót và tăng tỉ lệ; thuốc không “dạy” từng vi khuẩn chủ động thích nghi. Lạm dụng và dùng sai tạo áp lực chọn lọc mạnh.",
+        "**14. Quy trình đọc đồ thị sinh trưởng**\n- Xem trục tung là số tế bào sống, tổng số hay mật độ quang.\n- Nhận diện độ dốc và đoạn gần ngang.\n- Phân biệt “số lượng ổn định” với “không có sinh/chết”.\n- Chỉ dùng công thức lũy thừa ở đoạn phù hợp.",
+        "**15. Lỗi cần tránh**\n- Cho pha cân bằng là mọi hoạt động dừng.\n- Gọi phân đôi vi khuẩn là nguyên phân.\n- Cho nội bào tử là sinh sản.\n- Cho làm lạnh diệt hoàn toàn vi sinh vật.\n- Dùng kháng sinh trị virus hoặc tự ý dừng thuốc."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt40-st1",
+          "name": "Tổng hợp và phân giải ở vi sinh vật",
+          "example": "Giải thích vai trò ngoại enzyme hoặc sản phẩm chuyển hóa.",
+          "recognitionSigns": [
+            "Đề nhắc enzyme ngoại bào, polymer, đồng hóa hoặc dị hóa.",
+            "Theo dõi cơ chất, sản phẩm và nơi diễn ra quá trình."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt40-st2",
+          "name": "Đường cong sinh trưởng quần thể",
+          "example": "Nhận diện pha tiềm phát, lũy thừa, cân bằng, suy vong hoặc tính số tế bào.",
+          "recognitionSigns": [
+            "Đề cho thời gian, số thế hệ hoặc đồ thị bốn pha.",
+            "Phân biệt tốc độ sinh, tốc độ chết và số lượng quan sát."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt40-st3",
+          "name": "Các hình thức sinh sản",
+          "example": "Phân biệt phân đôi của vi khuẩn và nảy chồi của nấm men.",
+          "recognitionSigns": [
+            "Đề hỏi cơ chế tạo tế bào mới ở nhóm vi sinh vật.",
+            "Không gán nguyên phân có thoi cho vi khuẩn."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt40-st4",
+          "name": "Yếu tố môi trường, kháng sinh và kháng thuốc",
+          "example": "Giải thích bảo quản lạnh hoặc chọn lọc vi khuẩn kháng thuốc.",
+          "recognitionSigns": [
+            "Đề nhắc nhiệt độ, pH, chất khử khuẩn, kháng sinh hoặc chọn lọc.",
+            "Tách tác động làm chậm sinh trưởng khỏi tiêu diệt hoàn toàn."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m6-q024"
+    },
+    {
+      "id": "bio10-qt41",
+      "topicId": "bio10-t6",
+      "name": "Ứng dụng và dự án lên men",
+      "slug": "ung-dung-len-men",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Luyện ứng dụng và dự án lên men.",
+      "recognitionSigns": [
+        "Nối vi sinh vật–cơ chất–sản phẩm với điều kiện, an toàn, đối chứng và chất lượng quy trình.",
+        "Đề yêu cầu giải thích, đọc dữ liệu hoặc vận dụng các outcome BIO10-M6-O08, BIO10-M6-O09."
+      ],
+      "solvingSteps": [
+        "Xác định đúng khái niệm và đối tượng sinh học đang được hỏi.",
+        "Tách dữ kiện, biểu diễn trình tự hoặc quan hệ nhân–quả.",
+        "Đối chiếu từng phương án, chọn kết luận đủ điều kiện và kiểm tra lỗi sai thường gặp."
+      ],
+      "commonMistakes": [
+        "Không dùng sản phẩm có dấu hiệu hỏng; lên men hữu ích vẫn cần giống, nhiệt độ, vệ sinh và thời gian phù hợp."
+      ],
+      "theory": [
+        "**1. Cơ sở công nghệ vi sinh vật**\nCông nghệ vi sinh khai thác sinh trưởng, enzyme và chuyển hóa của vi sinh vật để tạo sinh khối, sản phẩm hoặc biến đổi vật chất. Quy trình phải chọn đúng giống, cơ chất và điều kiện thay vì chỉ “để vi sinh vật tự hoạt động”.",
+        "**2. Lên men lactic**\nVi khuẩn lactic chuyển hóa đường tạo acid lactic, làm pH giảm và góp phần tạo vị/cấu trúc của sữa chua, rau lên men. Nồng độ muối, nhiệt độ và độ sạch phù hợp giúp ưu tiên nhóm mong muốn, không bảo đảm vô trùng tuyệt đối.",
+        "**3. Lên men alcohol**\nNấm men chuyển hóa đường tạo ethanol và $CO_2$. Khí $CO_2$ làm bột bánh nở; ethanol là sản phẩm quan trọng trong một số quy trình. Oxygen, nhiệt độ, đường và mật độ giống ảnh hưởng kết quả.",
+        "**4. Ứng dụng khác**\nVi sinh vật được dùng sản xuất enzyme, amino acid, vitamin, kháng sinh; phân bón vi sinh; xử lí nước thải/chất hữu cơ; kiểm soát sinh học. Mỗi ứng dụng cần đánh giá hiệu quả và rủi ro sinh học.",
+        "**5. Chuỗi thiết kế quy trình**\n$$\\text{giống}\\rightarrow\\text{môi trường/cơ chất}\\rightarrow\\text{điều kiện nuôi}\\rightarrow\\text{thu sản phẩm}\\rightarrow\\text{kiểm tra chất lượng}$$\nSai ở một mắt xích có thể làm năng suất giảm hoặc tạp nhiễm.",
+        "**6. Biến trong dự án lên men**\nBiến độc lập có thể là nhiệt độ, lượng giống, nồng độ đường/muối. Biến phụ thuộc là thời gian đạt pH, lượng khí, độ chua hoặc sản lượng. Giữ nguyên loại nguyên liệu, thể tích, dụng cụ, thời điểm và cách đo.",
+        "**7. Đối chứng và điểm so sánh**\nMẫu giống quy trình nhưng không bổ sung giống hoạt động giúp đánh giá vai trò của giống. Mẫu theo điều kiện chuẩn giúp so hiệu quả. Không được để mẫu đối chứng khác đồng thời quá nhiều yếu tố.",
+        "**8. Theo dõi dữ liệu**\nGhi thời gian, nhiệt độ, pH, thể tích khí, khối lượng hoặc mô tả cấu trúc theo tiêu chí nhất quán. Vẽ đồ thị theo thời gian, lặp mẻ và so trung bình giúp tách xu hướng khỏi dao động ngẫu nhiên.",
+        "**9. Đánh giá chất lượng**\nSản phẩm đạt không chỉ dựa vào “có thay đổi”. Cần xem pH/độ chua, mùi, màu, cấu trúc, thời gian và tiêu chuẩn an toàn. Mốc lạ, mùi thối, nhớt hoặc phồng bất thường là dấu hiệu cần loại bỏ theo hướng an toàn.",
+        "**10. An toàn thực phẩm**\nRửa tay, làm sạch dụng cụ, dùng nguyên liệu an toàn và kiểm soát nhiệt độ/thời gian. Không nếm để kiểm tra sản phẩm nghi hỏng; đun lại không bảo đảm loại mọi độc tố đã tạo ra.",
+        "**11. Ưu điểm và giới hạn**\nCông nghệ vi sinh có thể hoạt động ở điều kiện nhẹ, dùng nguyên liệu tái tạo và tạo sản phẩm chọn lọc. Tuy nhiên vẫn có nguy cơ tạp nhiễm, biến động giống, chất thải và yêu cầu kiểm soát nghiêm ngặt.",
+        "**12. Quy trình giải bài dự án**\n- Xác định sản phẩm và vi sinh vật/chuyển hóa tạo ra nó.\n- Chọn đúng một biến cần khảo sát.\n- Thiết kế đối chứng, biến kiểm soát và mẫu lặp.\n- Chọn chỉ số định lượng theo thời gian.\n- Nêu tiêu chí an toàn và giới hạn kết luận.",
+        "**13. Lỗi cần tránh**\n- Cho mọi thay đổi đều là lên men có lợi.\n- Thay hai biến rồi quy kết cho một biến.\n- Chỉ quan sát bằng cảm tính, không ghi thời gian/dữ liệu.\n- Cho sản phẩm hỏng đun lại luôn an toàn.\n- Bỏ vai trò giống, vệ sinh và đối chứng."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt41-st1",
+          "name": "Ứng dụng công nghệ vi sinh vật",
+          "example": "Nối vi sinh vật và sản phẩm trong thực phẩm, môi trường, nông nghiệp hoặc dược phẩm.",
+          "recognitionSigns": [
+            "Đề yêu cầu nối chủng/cơ chất/sản phẩm với ứng dụng.",
+            "Đánh giá đồng thời hiệu quả, tính chọn lọc và điều kiện quy trình."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt41-st2",
+          "name": "Thiết kế và đánh giá dự án lên men",
+          "example": "Chọn đối chứng, biến theo dõi và tiêu chí an toàn cho mẻ lên men.",
+          "recognitionSigns": [
+            "Đề có mẻ đối chứng, nhiệt độ, thời gian, pH hoặc dấu hiệu hỏng.",
+            "Cần tách biến thay đổi, biến đo, điều kiện kiểm soát và ngưỡng an toàn."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m6-q036"
+    },
+    {
+      "id": "bio10-qt8",
+      "topicId": "bio10-t7",
+      "name": "Cấu tạo và đặc điểm virus",
+      "slug": "cau-tao-dac-diem-virus",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Luyện cấu tạo và đặc điểm virus.",
+      "recognitionSigns": [
+        "Tìm lõi nucleic acid, capsid, vỏ ngoài/gai và loại các cấu trúc chỉ có ở tế bào.",
+        "Đề yêu cầu giải thích hoặc vận dụng BIO10-M7-O01."
+      ],
+      "solvingSteps": [
+        "Xác định cấu trúc, giai đoạn hoặc mắt xích đang được hỏi.",
+        "Lần theo quan hệ nhân–quả và giới hạn dữ liệu.",
+        "Loại phương án tuyệt đối hóa hoặc gán cho virus cấu trúc tế bào."
+      ],
+      "commonMistakes": [
+        "Không coi virus là tế bào nhỏ; không khẳng định mọi virus có vỏ lipid hoặc chứa đồng thời DNA và RNA."
+      ],
+      "theory": [
+        "**1. Virus là thực thể vô bào**\nVirus không có cấu trúc tế bào, không có ribosome và hệ chuyển hóa độc lập. Ngoài tế bào chủ, virion là hạt virus hoàn chỉnh nhưng không tự sinh trưởng hay tạo ATP.",
+        "**2. Cấu trúc tối thiểu**\nMọi virus có vật chất di truyền là **DNA hoặc RNA** và vỏ protein gọi là capsid. Genome mang thông tin; capsid bảo vệ genome, tham gia bám/xâm nhập ở một số virus và quyết định hình dạng hạt.",
+        "**3. Capsid và capsomere**\nCapsid được tạo từ các đơn vị protein. Cấu trúc có thể xoắn, khối đa diện hoặc phức tạp. Không được gán màng sinh chất, tế bào chất, nhân hay bào quan cho virus.",
+        "**4. Vỏ ngoài và gai bề mặt**\nMột số virus có vỏ lipid lấy từ màng tế bào chủ, trên đó có protein/glycoprotein virus. Vỏ và gai giúp nhận diện, bám hoặc hòa màng; không phải mọi virus đều có vỏ ngoài.",
+        "**5. Genome virus đa dạng**\nGenome có thể là DNA hoặc RNA, một hay hai mạch, một phân tử hoặc nhiều đoạn. Trong phạm vi phổ thông, nguyên tắc quan trọng là một virion điển hình không đồng thời mang cả DNA và RNA làm genome.",
+        "**6. Kí sinh nội bào bắt buộc**\nVirus phải dùng ribosome, năng lượng, nucleotide, amino acid và nhiều enzyme của tế bào chủ để tạo thành phần mới. Vì thiếu bộ máy độc lập, virus không “phân đôi” như vi khuẩn.",
+        "**7. Tính đặc hiệu vật chủ**\nBám vào tế bào cần sự phù hợp giữa protein virus và thụ thể tế bào. Sau khi bám, virus còn phải vượt các hàng rào nội bào và sử dụng được bộ máy chủ; vì vậy bám được chưa chắc hoàn thành chu trình.",
+        "**8. Phổ vật chủ và hướng mô**\nMột virus có thể chỉ nhiễm một số loài, loại tế bào hoặc mô nhất định do thụ thể và điều kiện nội bào. Đột biến protein bề mặt có thể thay đổi khả năng bám nhưng không tự động làm virus thích nghi hoàn toàn với vật chủ mới.",
+        "**9. Virus, vi khuẩn và tế bào nhân thực**\n| Đặc điểm | Virus | Vi khuẩn | Tế bào nhân thực |\n|---|---|---|---|\n| Cấu tạo tế bào | Không | Có | Có |\n| Ribosome riêng | Không | Có | Có |\n| Tự chuyển hóa | Không | Có | Có |\n| Nhân lên | Nhờ tế bào chủ lắp ráp | Phân đôi | Phân bào |",
+        "**10. Lỗi cần tránh**\n- Gọi virus là tế bào rất nhỏ.\n- Cho mọi virus có vỏ lipid.\n- Cho mọi virus chứa đồng thời DNA và RNA.\n- Gán ribosome hoặc ti thể cho virus.\n- Cho bám thụ thể là đủ bảo đảm nhân lên."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt8-st1",
+          "name": "Thành phần và cấu trúc virus",
+          "example": "Nhận diện genome, capsid, vỏ ngoài và gai bề mặt.",
+          "recognitionSigns": [
+            "Đề hỏi bộ phận hoặc chức năng cấu trúc của virus.",
+            "Phải phân biệt thành phần bắt buộc với thành phần chỉ có ở một số virus."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt8-st2",
+          "name": "Bản chất vô bào và kí sinh nội bào bắt buộc",
+          "example": "Giải thích vì sao virus không tự chuyển hóa hay sinh sản ngoài tế bào.",
+          "recognitionSigns": [
+            "Đề so sánh virus với tế bào hoặc hỏi khả năng sống độc lập.",
+            "Cần dựa vào việc virus thiếu ribosome và hệ chuyển hóa hoàn chỉnh."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt8-st3",
+          "name": "Tính đặc hiệu vật chủ và cấu trúc–chức năng",
+          "example": "Suy loại tế bào virus có thể xâm nhập từ tương tác gai–thụ thể.",
+          "recognitionSigns": [
+            "Đề nhắc thụ thể, phổ vật chủ hoặc đột biến protein bề mặt.",
+            "Không đồng nhất bám được với hoàn tất toàn bộ chu trình nhân lên."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-q8"
+    },
+    {
+      "id": "bio10-qt42",
+      "topicId": "bio10-t7",
+      "name": "Chu trình nhân lên và cơ chế gây bệnh",
+      "slug": "nhan-len-gay-benh",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Luyện chu trình nhân lên và cơ chế gây bệnh.",
+      "recognitionSigns": [
+        "Sắp xếp bám–xâm nhập–tổng hợp–lắp ráp–giải phóng và lần theo chặng gây tổn thương tế bào.",
+        "Đề yêu cầu giải thích hoặc vận dụng BIO10-M7-O02, BIO10-M7-O03."
+      ],
+      "solvingSteps": [
+        "Xác định cấu trúc, giai đoạn hoặc mắt xích đang được hỏi.",
+        "Lần theo quan hệ nhân–quả và giới hạn dữ liệu.",
+        "Loại phương án tuyệt đối hóa hoặc gán cho virus cấu trúc tế bào."
+      ],
+      "commonMistakes": [
+        "Virus không lớn lên rồi phân đôi; các thành phần được tổng hợp riêng và lắp ráp nhờ tế bào chủ."
+      ],
+      "theory": [
+        "**1. Nguyên tắc nhân lên**\nVirus không lớn dần rồi phân đôi. Genome và protein virus được tổng hợp riêng nhờ tế bào chủ, sau đó lắp ráp thành virion mới.",
+        "**2. Giai đoạn bám**\nProtein bề mặt virus tương tác với thụ thể phù hợp trên tế bào. Thuốc hoặc kháng thể chặn tương tác này có thể giảm xâm nhập nhưng chỉ hiệu quả với virus/phân tử đích tương ứng.",
+        "**3. Xâm nhập và tháo vỏ**\nVirus hoặc genome đi vào bằng hòa màng, nhập bào hay cơ chế đưa nucleic acid qua màng. Capsid được tháo để giải phóng genome. Cách xâm nhập khác nhau giữa các nhóm virus.",
+        "**4. Sinh tổng hợp**\nGenome được sao chép và gene virus được biểu hiện để tạo protein. Virus chiếm dụng ribosome và nhiều nguồn lực chủ; một số virus mang hoặc tạo enzyme riêng cần cho sao chép genome.",
+        "**5. Lắp ráp và trưởng thành**\nGenome được đóng gói vào capsid, các cấu phần tự lắp ráp theo trật tự. Một số virus còn cần biến đổi protein sau lắp ráp mới trở nên lây nhiễm đầy đủ.",
+        "**6. Giải phóng**\nVirus trần thường có thể thoát ra khi tế bào bị ly giải. Virus có vỏ thường nảy chồi qua màng và lấy vỏ lipid; nảy chồi không nhất thiết làm tế bào chết ngay.",
+        "**7. Chu trình tan**\nVirus nhân lên mạnh, tạo nhiều hạt rồi làm tế bào bị phá hủy/ly giải. Ở phage, đây là chu trình tạo virion và giải phóng nhanh.",
+        "**8. Trạng thái tiềm tan hoặc tiềm ẩn**\nGenome virus có thể tích hợp vào genome chủ hoặc tồn tại tiềm ẩn, được sao chép cùng tế bào mà chưa tạo nhiều virion. Tín hiệu thích hợp có thể hoạt hóa chuyển sang sản xuất virus.",
+        "**9. Cơ chế gây tổn thương trực tiếp**\nVirus có thể làm rối loạn tổng hợp của tế bào, phá màng, làm chết tế bào hoặc biến đổi kiểm soát chu kì. Mô tổn thương phụ thuộc loại tế bào đích và khả năng tái tạo.",
+        "**10. Tổn thương gián tiếp và mức độ bệnh**\nĐáp ứng miễn dịch, viêm và mất cân bằng sinh lí cũng gây triệu chứng. Mức độ bệnh không chỉ phụ thuộc số virus mà còn liều nhiễm, đường vào, tuổi, miễn dịch, bệnh nền và biến thể.",
+        "**11. Can thiệp kháng virus**\nThuốc có thể chặn bám/xâm nhập, enzyme sao chép, xử lí protein, lắp ráp hoặc giải phóng. Vì virus dùng nhiều bộ máy chủ, đích thuốc phải đủ chọn lọc; dùng sai có thể kém hiệu quả và chọn lọc biến thể kháng.",
+        "**12. Quy trình giải câu hỏi cơ chế**\n- Xác định giai đoạn bị chặn.\n- Nêu sự kiện trực tiếp không xảy ra.\n- Lần theo các giai đoạn sau bị giảm.\n- Không kết luận các bước trước cũng dừng nếu dữ kiện không nói.\n- Liên hệ tế bào/mô bị ảnh hưởng với triệu chứng.",
+        "**13. Lỗi cần tránh**\n- Cho virus phân đôi.\n- Nhầm bám với xâm nhập.\n- Cho mọi virus đều làm vỡ tế bào ngay.\n- Đồng nhất tiềm ẩn với virus đã biến mất.\n- Cho triệu chứng chỉ do virus phá tế bào trực tiếp."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt42-st1",
+          "name": "Các giai đoạn nhân lên của virus",
+          "example": "Sắp xếp bám–xâm nhập–sinh tổng hợp–lắp ráp–giải phóng.",
+          "recognitionSigns": [
+            "Đề yêu cầu thứ tự hoặc xác định giai đoạn bị thuốc chặn.",
+            "Cần bám vào sự kiện đặc trưng thay vì học tên rời rạc."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt42-st2",
+          "name": "Chu trình tan, tiềm tan và giải phóng",
+          "example": "Phân biệt ly giải, nảy chồi và trạng thái hệ gene tiềm ẩn.",
+          "recognitionSigns": [
+            "Đề nhắc tế bào vỡ, nảy chồi hoặc genome virus tồn tại lâu trong tế bào.",
+            "Cần tách cách giải phóng khỏi khả năng nhân lên."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt42-st3",
+          "name": "Cơ chế gây bệnh và can thiệp kháng virus",
+          "example": "Nối sự chiếm dụng tế bào, tổn thương mô và đáp ứng miễn dịch với triệu chứng.",
+          "recognitionSigns": [
+            "Đề hỏi vì sao tế bào/mô bị tổn thương hoặc vị trí thuốc tác động.",
+            "Mức độ bệnh không chỉ do số tế bào bị virus phá trực tiếp."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m7-q012"
+    },
+    {
+      "id": "bio10-qt43",
+      "topicId": "bio10-t7",
+      "name": "Lây truyền, phòng chống và biến thể",
+      "slug": "lay-truyen-phong-chong",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Luyện lây truyền, phòng chống và biến thể.",
+      "recognitionSigns": [
+        "Xác định nguồn–đường truyền–đối tượng cảm nhiễm, rồi chọn biện pháp cắt đúng mắt xích và đọc dữ liệu dịch tễ.",
+        "Đề yêu cầu giải thích hoặc vận dụng BIO10-M7-O04, BIO10-M7-O05."
+      ],
+      "solvingSteps": [
+        "Xác định cấu trúc, giai đoạn hoặc mắt xích đang được hỏi.",
+        "Lần theo quan hệ nhân–quả và giới hạn dữ liệu.",
+        "Loại phương án tuyệt đối hóa hoặc gán cho virus cấu trúc tế bào."
+      ],
+      "commonMistakes": [
+        "Vaccine giảm nguy cơ hoặc mức độ nặng chứ không bảo đảm tuyệt đối; kháng sinh không điều trị virus."
+      ],
+      "theory": [
+        "**1. Chuỗi lây nhiễm**\nCó thể phân tích theo nguồn/mầm bệnh → cửa ra → đường truyền → cửa vào → cơ thể cảm nhiễm. Biện pháp hiệu quả phải cắt đúng một hoặc nhiều mắt xích, không có một biện pháp giống nhau cho mọi virus.",
+        "**2. Các đường truyền thường gặp**\nVirus có thể lây qua hô hấp, tiếp xúc/dịch cơ thể, phân–miệng, máu/tình dục, mẹ–con, vector hoặc qua sinh vật/cây trồng. Phải dựa vào dữ kiện dịch tễ, không suy chỉ từ triệu chứng.",
+        "**3. Biện pháp theo đường truyền**\nThông khí và giảm tiếp xúc gần phù hợp đường hô hấp; nước sạch/rửa tay phù hợp phân–miệng; kim tiêm an toàn và sàng lọc máu phù hợp đường máu; kiểm soát vector phù hợp bệnh do côn trùng truyền.",
+        "**4. Vaccine và miễn dịch chủ động**\nVaccine đưa kháng nguyên hoặc thông tin tạo kháng nguyên an toàn để hình thành tế bào nhớ và đáp ứng nhanh hơn khi gặp mầm bệnh. Vaccine chủ yếu phòng bệnh/giảm mức độ nặng, không trực tiếp là kháng sinh hay bảo đảm tuyệt đối từng người không nhiễm.",
+        "**5. Hiệu quả vaccine**\nHiệu quả thường là giảm nguy cơ tương đối giữa nhóm tiêm và nhóm so sánh trong điều kiện xác định:\n$$VE=\\left(1-\\frac{R_v}{R_u}\\right)\\times100\\%$$\nTrong đó $R_v$ và $R_u$ là nguy cơ ở nhóm tiêm và chưa tiêm. Không được lấy phần trăm này làm xác suất chắc chắn của từng cá nhân.",
+        "**6. Miễn dịch cộng đồng**\nKhi nhiều người có miễn dịch, số chuỗi truyền có thể giảm, hỗ trợ bảo vệ người dễ tổn thương. Ngưỡng phụ thuộc khả năng lây, hiệu quả/độ bền miễn dịch và hành vi; không phải một con số cố định cho mọi bệnh.",
+        "**7. Nguồn tạo biến thể**\nSao chép genome có thể phát sinh biến dị; tái tổ hợp hoặc tái phân đoạn xảy ra ở một số virus. Chọn lọc làm biến thể có lợi thế trong điều kiện nhất định tăng tần số. Đột biến xuất hiện không phải vì virus “cố ý cần thích nghi”.",
+        "**8. Khả năng lây và mức độ nặng**\nBiến thể lây nhanh hơn chưa chắc gây bệnh nặng hơn. Cần tách các đặc tính: tốc độ lan, né miễn dịch, độc lực, thời gian ủ bệnh và đáp ứng điều trị.",
+        "**9. Đọc số ca và tỉ lệ**\nSố ca thô phụ thuộc quy mô dân số và mức xét nghiệm. Khi so nhóm, dùng tỉ lệ có cùng mẫu số và khoảng thời gian:\n$$\\text{Tỉ lệ mắc}=\\frac{\\text{số ca mới}}{\\text{số người có nguy cơ}}\\times k$$\nChọn $k$ như $1\\,000$ hoặc $100\\,000$ và ghi rõ.",
+        "**10. Tỉ lệ dương tính và sai lệch dữ liệu**\n$$\\text{Tỉ lệ dương tính}=\\frac{\\text{số mẫu dương}}{\\text{tổng số mẫu xét nghiệm}}\\times100\\%$$\nNó chịu ảnh hưởng đối tượng được xét nghiệm, chiến lược lấy mẫu và độ chính xác xét nghiệm; không đồng nhất trực tiếp với tỉ lệ nhiễm toàn dân.",
+        "**11. Phối hợp phòng bệnh**\nVaccine, vệ sinh, thông khí, phát hiện sớm, cách li phù hợp và điều trị hỗ trợ nhau. Không nên biến một biện pháp thành tuyệt đối hoặc dùng kháng sinh cho bệnh virus nếu không có nhiễm khuẩn cần điều trị.",
+        "**12. Lỗi cần tránh**\n- Chọn biện pháp không khớp đường truyền.\n- Cho vaccine bảo vệ tuyệt đối hoặc điều trị trực tiếp tế bào đã nhiễm.\n- Dùng số ca thô để so hai dân số rất khác.\n- Đồng nhất lây nhanh với nặng hơn.\n- Cho kháng sinh diệt virus."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt43-st1",
+          "name": "Đường truyền và cắt chuỗi lây nhiễm",
+          "example": "Chọn biện pháp phòng bệnh phù hợp với đường hô hấp, tiếp xúc, vector hoặc nước.",
+          "recognitionSigns": [
+            "Đề mô tả đường lây hoặc một mắt xích dịch tễ.",
+            "Biện pháp đúng phải tác động đúng nguồn, đường truyền hoặc người cảm nhiễm."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt43-st2",
+          "name": "Vaccine, miễn dịch và hiệu quả bảo vệ",
+          "example": "Diễn giải đúng hiệu quả vaccine và trí nhớ miễn dịch.",
+          "recognitionSigns": [
+            "Đề nhắc vaccine, kháng thể, tế bào T hoặc phần trăm hiệu quả.",
+            "Không biến giảm nguy cơ tương đối thành bảo vệ tuyệt đối cho từng người."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt43-st3",
+          "name": "Biến thể và dữ liệu dịch tễ",
+          "example": "Đánh giá số ca, tỉ lệ dương tính và đặc tính của biến thể.",
+          "recognitionSigns": [
+            "Đề có số ca, dân số, xét nghiệm hoặc biến thể.",
+            "Cần chuẩn hóa mẫu số/thời gian và tách khả năng lây khỏi mức độ nặng."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m7-q024"
+    },
+    {
+      "id": "bio10-qt44",
+      "topicId": "bio10-t7",
+      "name": "Ứng dụng virus và truyền thông khoa học",
+      "slug": "ung-dung-truyen-thong-virus",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Luyện ứng dụng virus và truyền thông khoa học.",
+      "recognitionSigns": [
+        "Nối đặc tính đưa gene/đặc hiệu vật chủ với ứng dụng, đồng thời đánh giá nguồn, dữ liệu và thông điệp phòng bệnh.",
+        "Đề yêu cầu giải thích hoặc vận dụng BIO10-M7-O06, BIO10-M7-O07."
+      ],
+      "solvingSteps": [
+        "Xác định cấu trúc, giai đoạn hoặc mắt xích đang được hỏi.",
+        "Lần theo quan hệ nhân–quả và giới hạn dữ liệu.",
+        "Loại phương án tuyệt đối hóa hoặc gán cho virus cấu trúc tế bào."
+      ],
+      "commonMistakes": [
+        "Không chia sẻ thông tin chỉ vì giật gân; ứng dụng virus cần đánh giá an toàn, đặc hiệu, hiệu quả và đạo đức."
+      ],
+      "theory": [
+        "**1. Vì sao virus có thể được ứng dụng**\nVirus có khả năng nhận diện tế bào và đưa vật chất di truyền vào tế bào chủ. Khi được biến đổi để giảm khả năng gây bệnh, những đặc tính này có thể được khai thác trong nghiên cứu, y học và nông nghiệp.",
+        "**2. Vector virus**\nVector virus mang gene hoặc thông tin di truyền tới tế bào đích. Cần loại/giảm gene gây bệnh, kiểm soát khả năng nhân lên, chọn mô đích và đánh giá miễn dịch. “Đưa gene hiệu quả” không đồng nghĩa hoàn toàn không rủi ro.",
+        "**3. Phage và trị liệu phage**\nPhage nhiễm vi khuẩn nên có thể hỗ trợ phát hiện hoặc kiểm soát vi khuẩn. Ưu điểm là tính đặc hiệu; giới hạn là phổ vật chủ hẹp, đáp ứng miễn dịch, khả năng kháng phage và yêu cầu kiểm soát gene không mong muốn.",
+        "**4. Virus trong nông nghiệp và công nghệ sinh học**\nMột số virus được dùng kiểm soát côn trùng gây hại hoặc làm công cụ biểu hiện protein. Phải đánh giá đặc hiệu vật chủ, ảnh hưởng sinh vật không mục tiêu, khả năng phát tán và ổn định môi trường.",
+        "**5. Khung đánh giá ứng dụng**\nXem xét đồng thời:\n- Lợi ích và mục tiêu.\n- Hiệu quả so với phương án khác.\n- Tính đặc hiệu.\n- Nguy cơ sinh học/môi trường.\n- Khả năng kiểm soát và theo dõi.\n- Đạo đức và sự đồng thuận.",
+        "**6. Nguồn tin đáng tin cậy**\nƯu tiên cơ quan chuyên môn, bài báo đã phản biện, báo cáo có phương pháp và dữ liệu gốc. Tên miền, chức danh hoặc lượt chia sẻ chỉ là tín hiệu ban đầu, không thay thế việc kiểm tra bằng chứng.",
+        "**7. Đọc một tuyên bố khoa học**\nXác định chính xác tuyên bố, loại nghiên cứu, nhóm so sánh, cỡ mẫu, biến đo, khoảng thời gian và độ bất định. Phân biệt “liên quan”, “làm tăng nguy cơ” và “gây ra”.",
+        "**8. Kiểm tra biểu đồ và con số**\nXem trục có bắt đầu từ 0 không, đơn vị, mẫu số, khoảng thời gian, số tuyệt đối hay tỉ lệ. Một phần trăm lớn có thể đi từ nguy cơ nền rất nhỏ; cần tìm cả nguy cơ tuyệt đối khi có thể.",
+        "**9. Dấu hiệu thông tin yếu**\nTiêu đề giật gân, ngôn ngữ “100%”, không dẫn nguồn gốc, chỉ kể trải nghiệm cá nhân, chọn một đoạn dữ liệu và kêu gọi chia sẻ gấp là dấu hiệu cần kiểm chứng thêm.",
+        "**10. Thiết kế khảo sát**\nCâu hỏi phải trung lập, mẫu cần đại diện cho đối tượng muốn suy rộng, cách thu thập nhất quán và có nhóm so sánh khi phù hợp. Mẫu tự nguyện trên mạng dễ lệch chọn mẫu nên không đại diện tự động cho toàn dân.",
+        "**11. Đạo đức và dữ liệu cá nhân**\nNgười tham gia cần được thông tin và đồng thuận; dữ liệu sức khỏe phải được tối thiểu hóa, ẩn danh/bảo mật và dùng đúng mục đích. Không công khai thông tin có thể nhận diện chỉ để làm bài truyền thông.",
+        "**12. Xây thông điệp phòng bệnh**\nThông điệp nên đúng bằng chứng, nêu hành động cụ thể, phù hợp đối tượng, tránh kì thị và nói rõ mức chắc chắn. Cần dẫn nguồn, ngày cập nhật và hướng người đọc tới hỗ trợ chuyên môn khi cần.",
+        "**13. Quy trình phản biện nhanh**\n- Ai đưa thông tin và nguồn gốc ở đâu?\n- Bằng chứng là dữ liệu hay ý kiến?\n- Mẫu và phép so sánh có phù hợp?\n- Có bỏ mẫu số, độ bất định hoặc giới hạn không?\n- Kết luận có vượt quá dữ liệu?\n- Chia sẻ thông tin có gây hại hoặc xâm phạm riêng tư?",
+        "**14. Lỗi cần tránh**\n- Cho ứng dụng virus không cần đánh giá rủi ro.\n- Tin nội dung vì được chia sẻ nhiều.\n- Dùng tương quan để khẳng định nhân quả.\n- Suy rộng khảo sát thuận tiện cho toàn dân.\n- Đưa dữ liệu cá nhân vào truyền thông mà chưa có đồng thuận."
+      ],
+      "subTypes": [
+        {
+          "id": "bio10-qt44-st1",
+          "name": "Ứng dụng virus và đánh giá rủi ro",
+          "example": "Phân tích vector virus, phage trị liệu hoặc virus diệt côn trùng.",
+          "recognitionSigns": [
+            "Đề nêu ứng dụng virus trong y học, nông nghiệp hoặc công nghệ gene.",
+            "Cần cân bằng lợi ích, tính đặc hiệu và rủi ro sinh học."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt44-st2",
+          "name": "Đánh giá nguồn tin và truyền thông khoa học",
+          "example": "Kiểm tra nguồn, bằng chứng, cỡ mẫu và mức chắc chắn của thông tin sức khỏe.",
+          "recognitionSigns": [
+            "Đề cho bài viết, thông điệp hoặc tuyên bố sức khỏe.",
+            "Không dùng tiêu đề, biểu đồ hay uy tín mơ hồ thay cho bằng chứng gốc."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "bio10-qt44-st3",
+          "name": "Thiết kế khảo sát, đạo đức và sai lệch",
+          "example": "Nhận diện thiên lệch chọn mẫu và yêu cầu bảo vệ dữ liệu cá nhân.",
+          "recognitionSigns": [
+            "Đề mô tả khảo sát, người tham gia hoặc dữ liệu cá nhân.",
+            "Cần xét tính đại diện, đồng thuận, quyền riêng tư và giới hạn suy rộng."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "exampleQuestionId": "bio10-m7-q036"
+    }
+  ]
+}

@@ -1,0 +1,2641 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "2026.09.1",
+  "updatedAt": "2026-09-16T12:27:42.151Z",
+  "grade": "grade10",
+  "subject": "math",
+  "subjectName": "Toán học 10",
+  "icon": "Calculator",
+  "themeColor": "#6366f1",
+  "badge": "Chương trình mới",
+  "stats": {
+    "totalTopics": 9,
+    "totalQuestionTypes": 23,
+    "estimatedTotalMinutes": 690
+  },
+  "topics": [
+    {
+      "id": "math10-t1",
+      "name": "Mệnh đề & Tập hợp",
+      "slug": "menh-de-va-tap-hop",
+      "orderIndex": 1,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Mệnh đề & Tập hợp",
+      "estimatedMinutes": 90,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math10-qt1",
+        "math10-qt2",
+        "math10-qt17"
+      ]
+    },
+    {
+      "id": "math10-t2",
+      "name": "Bất phương trình & Hệ BPT bậc nhất hai ẩn",
+      "slug": "bat-phuong-trinh-he-bpt",
+      "orderIndex": 2,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Bất phương trình & Hệ BPT bậc nhất hai ẩn",
+      "estimatedMinutes": 60,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math10-qt22",
+        "math10-qt3"
+      ]
+    },
+    {
+      "id": "math10-t3",
+      "name": "Hàm số, đồ thị và ứng dụng",
+      "slug": "ham-so-va-do-thi-bac-hai",
+      "orderIndex": 6,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Hàm số, đồ thị và ứng dụng",
+      "estimatedMinutes": 150,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "math10-qt4",
+        "math10-qt18",
+        "math10-qt20",
+        "math10-qt21",
+        "math10-qt23"
+      ]
+    },
+    {
+      "id": "math10-t4",
+      "name": "Hệ thức lượng trong tam giác",
+      "slug": "he-thuc-luong-trong-tam-giac",
+      "orderIndex": 3,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Hệ thức lượng trong tam giác",
+      "estimatedMinutes": 60,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math10-qt6",
+        "math10-qt19"
+      ]
+    },
+    {
+      "id": "math10-t5",
+      "name": "Vectơ",
+      "slug": "vecto-va-cac-phep-toan",
+      "orderIndex": 4,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Vectơ",
+      "estimatedMinutes": 60,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math10-qt5",
+        "math10-qt7"
+      ]
+    },
+    {
+      "id": "math10-t6",
+      "name": "Đại số tổ hợp",
+      "slug": "dai-so-to-hop",
+      "orderIndex": 8,
+      "tier": 3,
+      "description": "Kiến thức trọng tâm và phương pháp giải Đại số tổ hợp",
+      "estimatedMinutes": 90,
+      "difficulty": "hard",
+      "questionTypeIds": [
+        "math10-qt8",
+        "math10-qt9",
+        "math10-qt10"
+      ]
+    },
+    {
+      "id": "math10-t7",
+      "name": "Các số đặc trưng của mẫu số liệu không ghép nhóm",
+      "slug": "thong-ke-mau-khong-ghep-nhom",
+      "orderIndex": 5,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Các số đặc trưng của mẫu số liệu không ghép nhóm",
+      "estimatedMinutes": 60,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "math10-qt11",
+        "math10-qt12"
+      ]
+    },
+    {
+      "id": "math10-t9",
+      "name": "Tính xác suất theo định nghĩa cổ điển",
+      "slug": "xac-suat-co-dien",
+      "orderIndex": 9,
+      "tier": 3,
+      "description": "Kiến thức trọng tâm và phương pháp giải Tính xác suất theo định nghĩa cổ điển",
+      "estimatedMinutes": 30,
+      "difficulty": "hard",
+      "questionTypeIds": [
+        "math10-qt13"
+      ]
+    },
+    {
+      "id": "math10-t8",
+      "name": "Phương pháp tọa độ trong mặt phẳng",
+      "slug": "hinh-hoc-toa-do-oxy",
+      "orderIndex": 7,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Phương pháp tọa độ trong mặt phẳng",
+      "estimatedMinutes": 90,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "math10-qt14",
+        "math10-qt15",
+        "math10-qt16"
+      ]
+    }
+  ],
+  "questionTypes": [
+    {
+      "id": "math10-qt1",
+      "topicId": "math10-t1",
+      "name": "Giao, hợp và hiệu của các khoảng, đoạn số học",
+      "slug": "giao-hop-hieu-khoang-doan",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Tìm giao, hợp, hiệu của các tập hợp số biểu diễn dưới dạng khoảng, đoạn, nửa khoảng trên trục số. Đây là phần cơ bản xuất hiện trong tất cả các bài kiểm tra khảo sát chất lượng đầu năm lớp 10.",
+      "recognitionSigns": [
+        "Đề bài yêu cầu tìm tập hợp $A \\cap B$, $A \\cup B$, $A \\setminus B$ hoặc phần bù $C_{\\mathbb{R}}A$.",
+        "Các tập hợp $A, B$ được cho dưới dạng các khoảng số học $(a; b)$, đoạn $[a; b]$, hoặc các nửa khoảng $[a; b)$, $(a; b]$.",
+        "Đề bài yêu cầu rút gọn hoặc tìm miền xác định biểu diễn dưới dạng tổ hợp các khoảng số học."
+      ],
+      "solvingSteps": [
+        "Bước 1: Vẽ trục số thực $\\mathbb{R}$ nằm ngang, sắp xếp tất cả các giá trị đầu mút của các tập hợp theo thứ tự từ bé đến lớn từ trái qua phải.",
+        "Bước 2: Sử dụng các ký hiệu chuẩn: ngoặc vuông $[$, $]$ biểu diễn lấy giá trị biên; ngoặc tròn $($, $)$ biểu diễn không lấy giá trị biên.",
+        "Bước 3: Thực hiện phép toán tập hợp:\n  - Phép giao ($\\cap$): Biểu diễn tập thứ nhất, gạch bỏ phần không thuộc. Biểu diễn tập thứ hai trên phần còn lại, gạch bỏ phần không thuộc. Phần còn lại không bị gạch chính là kết quả.\n  - Phép hợp ($\\cup$): Biểu diễn tất cả các tập hợp lên trục số bằng cách tô đậm các khoảng tương ứng. Chỉ gạch bỏ phần không thuộc bất kỳ tập nào.\n  - Phép hiệu ($A \\setminus B$): Giữ lại các khoảng thuộc $A$, gạch bỏ toàn bộ phần thuộc $B$. Đối với điểm mút chung của $A$ và $B$, nếu thuộc $B$ thì bỏ (ngoặc vuông đổi thành ngoặc tròn), nếu không thuộc $B$ thì lấy (ngoặc tròn đổi thành ngoặc vuông).",
+        "Bước 4: Viết lại kết quả dưới dạng ký hiệu tập hợp chuẩn."
+      ],
+      "commonMistakes": [
+        "Bẫy ngoặc đơn/ngoặc vuông: Không chú ý kỹ các điểm biên khiến kết quả bị sai ký hiệu đầu mút.",
+        "Bẫy phép hiệu ($A \\setminus B$): Quên đổi dấu ngoặc tại các điểm biên của tập bị trừ $B$ (ví dụ: hiệu tại điểm mút tròn của B phải trở thành mút vuông của kết quả).",
+        "Bất đẳng thức đầu mút: Quên so sánh các giá trị đầu mút (ví dụ $a < b$) khi biểu diễn trục số chứa tham số."
+      ],
+      "theory": [
+        "**1. Tập hợp và kí hiệu thuộc**\n$x\\in A$ nghĩa $x$ thuộc $A$; $x\\notin A$ nghĩa không thuộc. Hai tập bằng nhau khi có đúng cùng phần tử. $A\\subset B$ nghĩa mọi phần tử của $A$ đều thuộc $B$.",
+        "**2. Khoảng, đoạn và nửa khoảng**\n$$(a;b)=\\{x\\mid a<x<b\\},\\qquad[a;b]=\\{x\\mid a\\le x\\le b\\}$$\n$$[a;b)=\\{x\\mid a\\le x<b\\},\\qquad(a;b]=\\{x\\mid a<x\\le b\\}$$\nNgoặc vuông lấy đầu mút; ngoặc tròn không lấy. Với $\\pm\\infty$ luôn dùng ngoặc tròn vì vô cực không phải số thực.",
+        "**3. Phép giao**\n$$A\\cap B=\\{x\\mid x\\in A\\text{ và }x\\in B\\}$$\nGiữ phần chung của hai tập. Tại mỗi đầu mút, điểm chỉ thuộc giao nếu **cả A và B cùng chứa điểm đó**.",
+        "**4. Phép hợp**\n$$A\\cup B=\\{x\\mid x\\in A\\text{ hoặc }x\\in B\\}$$\nGiữ mọi điểm thuộc ít nhất một tập. Nếu hai khoảng rời nhau, kết quả phải viết thành hợp của hai khoảng; không được nối qua phần trống.",
+        "**5. Phép hiệu và phần bù**\n$$A\\setminus B=\\{x\\mid x\\in A\\text{ và }x\\notin B\\}$$\nPhần bù của $A$ trong tập nền $U$ là $C_UA=U\\setminus A$. Kết quả phép hiệu có thể gồm nhiều khoảng rời nhau.",
+        "**6. Cách xử lí đầu mút chính xác**\nKhông dùng máy móc quy tắc “đổi ngoặc”. Với mỗi mốc $c$, hỏi trực tiếp: $c$ có thuộc tập cần giữ không và có thuộc tập cần loại không? Ví dụ trong $A\\setminus B$, lấy $c$ khi $c\\in A$ và $c\\notin B$.",
+        "**7. Biểu diễn trên trục số**\nSắp mọi đầu mút tăng dần; đánh dấu điểm kín/hở; chia trục thành các vùng; chọn một điểm thử trong từng vùng; kiểm tra riêng các đầu mút; cuối cùng ghép các vùng liên tiếp bằng đúng loại ngoặc.",
+        "**8. Các luật hữu ích**\n$$A\\setminus B=A\\cap C_UB$$\n$$C_U(A\\cup B)=C_UA\\cap C_UB$$\n$$C_U(A\\cap B)=C_UA\\cup C_UB$$\nCác luật De Morgan giúp kiểm tra kết quả phần bù của hợp/giao.",
+        "**9. Lỗi cần tránh**\n- Dùng ngoặc vuông với vô cực.\n- Chỉ nhìn dấu ngoặc của một tập tại đầu mút chung.\n- Nối hai khoảng rời nhau thành một khoảng.\n- Nhầm $A\\setminus B$ với $B\\setminus A$.\n- Quên xác định tập nền khi lấy phần bù."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt1-st1",
+          "name": "Phép giao của các tập hợp",
+          "example": "Xác định phần chung và kiểm tra chính xác hai đầu mút.",
+          "recognitionSigns": [
+            "Đề xuất hiện kí hiệu giao hoặc yêu cầu phần tử thuộc đồng thời nhiều tập.",
+            "Cần đối chiếu điều kiện của từng đầu mút."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt1-st2",
+          "name": "Phép hợp của các tập hợp",
+          "example": "Ghép toàn bộ miền thuộc ít nhất một tập và rút gọn các khoảng nối nhau.",
+          "recognitionSigns": [
+            "Đề xuất hiện kí hiệu hợp hoặc cụm “thuộc A hoặc B”.",
+            "Các khoảng giao hay chạm nhau có thể gộp."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt1-st3",
+          "name": "Phép hiệu và phép toán kết hợp",
+          "example": "Giữ phần thuộc tập đứng trước rồi loại phần thuộc tập đứng sau.",
+          "recognitionSigns": [
+            "Thứ tự A\\B và B\\A tạo kết quả khác nhau.",
+            "Đề có nhiều phép toán cần thực hiện theo ngoặc."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt1-st4",
+          "name": "Phần bù trong tập nền",
+          "example": "Lấy toàn bộ tập nền rồi loại các phần tử thuộc tập đã cho.",
+          "recognitionSigns": [
+            "Đề nêu rõ tập nền hoặc kí hiệu phần bù.",
+            "Đầu mút bị loại khỏi A sẽ được giữ trong phần bù và ngược lại."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt1-st5",
+          "name": "Đếm phần tử bằng nguyên lí bao hàm–loại trừ",
+          "example": "Đếm phần tử thuộc hợp rồi suy ra phần còn lại trong tập hữu hạn.",
+          "recognitionSigns": [
+            "Đề hỏi số phần tử thay vì viết khoảng.",
+            "Hai điều kiện có phần giao nên không được cộng trực tiếp."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt1-1",
+          "question": "Kí hiệu nào biểu diễn đúng tập hợp $\\{x\\in\\mathbb R\\mid x\\ge 2\\}$?",
+          "options": [
+            "$(2;+\\infty)$",
+            "$[2;+\\infty)$",
+            "$[2;+\\infty]$",
+            "$(-\\infty;2]$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Điểm 2 được lấy nên dùng ngoặc vuông; với $+\\infty$ luôn dùng ngoặc tròn."
+        },
+        {
+          "id": "math10-check-qt1-2",
+          "question": "Cho $A=[-1;2)$ và $B=(2;4]$. Khi đó $A\\cap B$ bằng",
+          "options": [
+            "$\\{2\\}$",
+            "$(-1;4]$",
+            "$\\varnothing$",
+            "$[2;4]$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Hai khoảng chỉ chạm tại 2 nhưng cả hai đều không chứa điểm 2, nên giao rỗng."
+        },
+        {
+          "id": "math10-check-qt1-3",
+          "question": "Lớp có 25 bạn thích Toán, 18 bạn thích Vật lí và 7 bạn thích cả hai. Có bao nhiêu bạn thích ít nhất một môn?",
+          "options": [
+            "36",
+            "43",
+            "50",
+            "32"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Áp dụng bao hàm–loại trừ: $25+18-7=36$."
+        }
+      ],
+      "exampleQuestionId": "math10-q1"
+    },
+    {
+      "id": "math10-qt2",
+      "topicId": "math10-t1",
+      "name": "Tìm tham số m để giao của hai tập hợp số khác rỗng",
+      "slug": "tim-m-giao-khac-rong",
+      "difficulty": "hard",
+      "examFrequency": "medium",
+      "description": "Bài toán nâng cao chứa tham số m liên quan đến điều kiện giao nhau khác rỗng hoặc tập hợp này là tập con của tập hợp kia.",
+      "recognitionSigns": [
+        "Đề bài cho hai tập hợp số (khoảng, đoạn hoặc nửa khoảng) chứa tham số $m$.",
+        "Yêu cầu tìm điều kiện của $m$ để hai tập hợp giao nhau khác rỗng ($A \\cap B \\neq \\varnothing$), giao nhau bằng rỗng ($A \\cap B = \\varnothing$) hoặc tập này là con của tập kia ($A \\subset B$)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Tìm điều kiện để các tập hợp tồn tại và khác rỗng (đầu mút trái luôn nhỏ hơn đầu mút phải). Đây là điều kiện tiên quyết.",
+        "Bước 2: Phân tích yêu cầu đề bài để chọn phương pháp:\n  - Nếu tìm $A \\cap B = \\varnothing$: Cho biên phải của tập bên trái nhỏ hơn biên trái của tập bên phải (chú ý dấu bằng ở biên).\n  - Nếu tìm $A \\cap B \\neq \\varnothing$: Tìm điều kiện bằng rỗng ở trên rồi lấy phủ định (phương pháp phần bù).\n  - Nếu tìm $A \\subset B$: Đưa về hệ bất phương trình so sánh đầu mút trái $a_{B} \\le a_{A}$ và đầu mút phải $b_{A} \\le b_{B}$ (chú ý so sánh dấu ngoặc ở biên để xem có lấy dấu bằng hay không).",
+        "Bước 3: Giải hệ bất phương trình chứa tham số $m$ thu được.",
+        "Bước 4: Kết hợp điều kiện tồn tại ở Bước 1 để đưa ra kết luận giá trị $m$ cuối cùng."
+      ],
+      "commonMistakes": [
+        "Bỏ sót điều kiện tồn tại tập hợp số (ví dụ tập $A = [m; 2m-1]$ yêu cầu điều kiện $m \\le 2m-1 \\Leftrightarrow m \\ge 1$).",
+        "Lấy sai dấu bằng ở biên khi so sánh các đầu mút chung (đây là bẫy phổ biến nhất trong các đề thi học kỳ 1 lớp 10).",
+        "Quên lấy phủ định khi dùng phương pháp phần bù để giải quyết phép toán giao khác rỗng."
+      ],
+      "theory": [
+        "**1. Điều kiện một khoảng khác rỗng**\n- Đoạn $[a;b]$ khác rỗng khi $a\\le b$; nếu $a=b$ thì $[a;a]=\\{a\\}$.\n- Khoảng $(a;b)$ và hai nửa khoảng $[a;b)$, $(a;b]$ khác rỗng khi $a<b$.\nKhông được dùng chung một điều kiện cho mọi loại ngoặc.",
+        "**2. Tập rỗng vẫn có ý nghĩa**\n$\\varnothing$ là một tập hợp hợp lệ và $\\varnothing\\subset B$ với mọi $B$. Chỉ bắt buộc thêm điều kiện “A khác rỗng” khi đề yêu cầu hoặc khi lập luận đang giả sử A có phần tử.",
+        "**3. Hai khoảng giao nhau khác rỗng**\nGọi $L$ là đầu mút trái lớn hơn và $R$ là đầu mút phải nhỏ hơn. Giao khác rỗng nếu $L<R$; nếu $L=R$, giao chỉ khác rỗng khi điểm chạm được **cả hai tập lấy**. Đây là cách an toàn hơn học thuộc một bất đẳng thức cố định.",
+        "**4. Hai tập rời nhau**\n$A\\cap B=\\varnothing$ khi A nằm hoàn toàn bên trái B hoặc ngược lại. Ở vị trí tiếp xúc, phải xét điểm chung có được cả hai tập lấy không. Phương pháp thường hiệu quả là tìm điều kiện rỗng rồi phủ định để có giao khác rỗng.",
+        "**5. Điều kiện tập con**\n$A\\subset B$ nghĩa mọi điểm của A nằm trong B. Với các khoảng hữu hạn, so sánh hai đầu mút và kiểm tra riêng trường hợp trùng tọa độ: nếu A lấy một đầu mút mà B không lấy thì không thể là tập con.",
+        "**6. Khoảng vô hạn và hợp nhiều khoảng**\nVới $B$ là hợp các khoảng rời nhau, không thể chỉ so sánh hai đầu mút ngoài cùng. Muốn $A\\subset B$, tập liên thông A thường phải nằm trọn trong một thành phần của B; muốn $A\\cap B=\\varnothing$, A phải nằm trong phần bù của toàn bộ B.",
+        "**7. Quy trình bài tham số**\nXác định loại từng tập; lập điều kiện khác rỗng nếu đề cần; vẽ/sắp các đầu mút chứa $m$; chuyển yêu cầu giao–rỗng–tập con thành điều kiện đầu mút; giải bất phương trình; kết hợp các nhánh và điều kiện ban đầu.",
+        "**8. Kiểm tra dấu bằng**\nSau khi giải điều kiện nghiêm/ngặt, thử trực tiếp các giá trị biên của $m$. Một dấu bằng được lấy hay loại phụ thuộc đồng thời vào loại ngoặc của cả hai tập tại điểm chạm.",
+        "**9. Lỗi cần tránh**\n- Mặc định mọi tập phải khác rỗng.\n- Dùng $a<b$ cho đoạn đóng có thể là một điểm.\n- Nhầm giao khác rỗng với tập con.\n- Lấy phủ định sai: phủ định của “$m\\le a$ hoặc $m\\ge b$” là “$a<m<b$”.\n- Bỏ một nhánh trái/phải khi xét hai tập rời nhau."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt2-st1",
+          "name": "Tham số để giao khác rỗng",
+          "example": "So sánh các đầu mút để hai khoảng có ít nhất một điểm chung.",
+          "recognitionSigns": [
+            "Đề có tham số trong đầu mút và điều kiện giao khác rỗng.",
+            "Phải xét dấu ngoặc khi hai đầu mút trùng nhau."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt2-st2",
+          "name": "Tham số để có quan hệ tập con",
+          "example": "Ép đầu trái và đầu phải của tập con nằm trong tập chứa.",
+          "recognitionSigns": [
+            "Đề có kí hiệu tập con hoặc cụm “mọi phần tử của A đều thuộc B”.",
+            "Cần kiểm tra thêm tập phụ thuộc tham số có khác rỗng hay không."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt2-st3",
+          "name": "Tham số để hai tập rời nhau",
+          "example": "Tách hai khả năng: A nằm hoàn toàn bên trái hoặc hoàn toàn bên phải B.",
+          "recognitionSigns": [
+            "Đề có điều kiện giao bằng rỗng.",
+            "Kết quả thường là hợp của hai miền tham số."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt2-1",
+          "question": "Khẳng định nào đúng về đoạn $[a;a]$?",
+          "options": [
+            "Luôn rỗng",
+            "Bằng tập $\\{a\\}$",
+            "Chỉ khác rỗng khi $a>0$",
+            "Không xác định"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đoạn đóng lấy cả hai đầu mút nên $[a;a]=\\{a\\}$."
+        },
+        {
+          "id": "math10-check-qt2-2",
+          "question": "Khi hai khoảng chỉ chạm tại cùng một đầu mút, giao của chúng khác rỗng khi nào?",
+          "options": [
+            "Luôn khác rỗng",
+            "Luôn rỗng",
+            "Điểm chạm được cả hai khoảng lấy",
+            "Chỉ cần một khoảng lấy điểm chạm"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Một điểm thuộc giao khi và chỉ khi nó đồng thời thuộc cả hai tập."
+        },
+        {
+          "id": "math10-check-qt2-3",
+          "question": "Quan hệ nào sau đây đúng?",
+          "options": [
+            "$[1;2]\\subset(1;3]$",
+            "$(1;2]\\subset(1;3]$",
+            "$[1;3]\\subset(1;3]$",
+            "$(0;2]\\subset(1;3]$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Mọi điểm của $(1;2]$ đều thuộc $(1;3]$; các lựa chọn khác chứa điểm nằm ngoài tập mẹ."
+        }
+      ],
+      "exampleQuestionId": "math10-q2"
+    },
+    {
+      "id": "math10-qt17",
+      "topicId": "math10-t1",
+      "name": "Mệnh đề, phủ định và suy luận logic",
+      "slug": "menh-de-phu-dinh-suy-luan-logic",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nhận biết mệnh đề, xác định chân trị, phủ định đúng lượng từ và phân tích mệnh đề kéo theo, tương đương, điều kiện cần–đủ.",
+      "recognitionSigns": [
+        "Đề xuất hiện câu khẳng định đúng/sai, lượng từ “mọi”, “tồn tại” hoặc yêu cầu phủ định.",
+        "Đề có cấu trúc “nếu…thì…”, “khi và chỉ khi”, “điều kiện cần/đủ”."
+      ],
+      "solvingSteps": [
+        "Xác định mệnh đề thành phần, tập nền và lượng từ.",
+        "Chuyển câu về cấu trúc logic P, Q trước khi biến đổi.",
+        "Áp dụng đúng quy tắc phủ định, kéo theo hoặc tương đương.",
+        "Kiểm tra bằng phản ví dụ hoặc bảng chân trị khi cần."
+      ],
+      "commonMistakes": [
+        "Phủ định “mọi” nhưng không đổi thành “tồn tại”.",
+        "Nhầm mệnh đề đảo với phản đảo.",
+        "Coi một ví dụ đúng là chứng minh cho mệnh đề toàn thể."
+      ],
+      "theory": [
+        "**1. Mệnh đề và mệnh đề chứa biến**\nMệnh đề là câu khẳng định có đúng một giá trị đúng hoặc sai. Câu hỏi, mệnh lệnh không phải mệnh đề. Câu chứa biến như “$x>2$” chỉ trở thành mệnh đề khi gán $x$ hoặc thêm lượng từ và tập nền.",
+        "**2. Phủ định**\nPhủ định $\\neg P$ đúng khi $P$ sai và sai khi $P$ đúng. Với quan hệ số:\n$$\\neg(x>a)\\equiv x\\le a,\\qquad \\neg(x\\ge a)\\equiv x<a$$\nPhủ định phải bao phủ toàn bộ trường hợp còn lại, không chỉ thêm từ “không” tùy ý.",
+        "**3. Phủ định phép nối logic**\n$$\\neg(P\\land Q)\\equiv\\neg P\\lor\\neg Q$$\n$$\\neg(P\\lor Q)\\equiv\\neg P\\land\\neg Q$$\n$$\\neg(P\\Rightarrow Q)\\equiv P\\land\\neg Q$$\nMệnh đề kéo theo chỉ sai khi giả thiết đúng nhưng kết luận sai.",
+        "**4. Lượng từ**\n$$\\neg(\\forall x\\in D,\\ P(x))\\equiv\\exists x\\in D:\\neg P(x)$$\n$$\\neg(\\exists x\\in D:\\ P(x))\\equiv\\forall x\\in D,\\neg P(x)$$\nKhi phủ định phải giữ đúng tập nền $D$ và đổi cả lượng từ lẫn mệnh đề bên trong.",
+        "**5. Mệnh đề kéo theo**\n$P\\Rightarrow Q$ đọc “nếu P thì Q”. Khi đó P là **điều kiện đủ** của Q; Q là **điều kiện cần** của P. Mệnh đề đảo là $Q\\Rightarrow P$ và không tự động tương đương mệnh đề ban đầu.",
+        "**6. Phản đảo**\nMệnh đề phản đảo của $P\\Rightarrow Q$ là:\n$$\\neg Q\\Rightarrow\\neg P$$\nMệnh đề ban đầu và phản đảo luôn tương đương logic. Điều này khác mệnh đề đảo và mệnh đề phản.",
+        "**7. Tương đương và cần–đủ**\n$$P\\Leftrightarrow Q$$\nđúng khi $P,Q$ cùng chân trị, tương đương với việc cả $P\\Rightarrow Q$ và $Q\\Rightarrow P$ đều đúng. Khi đó P là điều kiện cần và đủ của Q.",
+        "**8. Chứng minh và phản ví dụ**\nĐể bác bỏ mệnh đề “mọi $x$ đều có P”, chỉ cần một phản ví dụ thỏa tập nền nhưng không có P. Một ví dụ đúng không chứng minh được mệnh đề toàn thể. Với mệnh đề tồn tại, một ví dụ thỏa là đủ.",
+        "**9. Lỗi cần tránh**\n- Không xác định tập nền.\n- Phủ định “mọi” vẫn giữ “mọi”.\n- Nhầm đảo với phản đảo.\n- Đổi vị trí điều kiện cần và đủ.\n- Cho $P\\Rightarrow Q$ sai mỗi khi P sai.\n- Dùng một ví dụ làm chứng minh cho mệnh đề toàn thể."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt17-st1",
+          "name": "Nhận biết mệnh đề và chân trị",
+          "example": "Phân biệt câu khẳng định với câu hỏi, mệnh lệnh và mệnh đề chứa biến.",
+          "recognitionSigns": [
+            "Cần quyết định câu có giá trị đúng/sai hay không.",
+            "Có thể cần phản ví dụ để bác bỏ phát biểu toàn thể."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt17-st2",
+          "name": "Phủ định và lượng từ",
+          "example": "Đổi mọi thành tồn tại, và thành hoặc, đồng thời phủ định quan hệ.",
+          "recognitionSigns": [
+            "Đề yêu cầu viết phủ định.",
+            "Xuất hiện lượng từ hoặc nhiều mệnh đề nối bởi và/or."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt17-st3",
+          "name": "Kéo theo, tương đương và điều kiện cần–đủ",
+          "example": "Lập mệnh đề đảo/phản đảo và xác định vai trò điều kiện.",
+          "recognitionSigns": [
+            "Có cấu trúc nếu–thì hoặc khi và chỉ khi.",
+            "Đề hỏi điều kiện cần, đủ, cần và đủ."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt17-1",
+          "question": "Câu nào sau đây là một mệnh đề?",
+          "options": [
+            "Bạn học bài đi!",
+            "$x+1>3$",
+            "Số 11 là số nguyên tố.",
+            "Hôm nay đẹp quá!"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Đây là câu khẳng định có giá trị đúng xác định. Câu chứa biến chưa gán chưa phải mệnh đề."
+        },
+        {
+          "id": "math10-check-qt17-2",
+          "question": "Phủ định của “$\\forall x\\in\\mathbb R,\\ x^2\\ge0$” là",
+          "options": [
+            "$\\forall x\\in\\mathbb R,\\ x^2<0$",
+            "$\\exists x\\in\\mathbb R:\\ x^2<0$",
+            "$\\exists x\\in\\mathbb R:\\ x^2\\ge0$",
+            "$\\forall x\\in\\mathbb R,\\ x^2\\le0$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Phủ định “mọi” thành “tồn tại” và phủ định $x^2\\ge0$ thành $x^2<0$."
+        },
+        {
+          "id": "math10-check-qt17-3",
+          "question": "Trong mệnh đề $P\\Rightarrow Q$, phát biểu đúng là",
+          "options": [
+            "P là điều kiện cần của Q",
+            "Q là điều kiện đủ của P",
+            "P là điều kiện đủ của Q",
+            "P và Q luôn tương đương"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Với $P\\Rightarrow Q$, P là điều kiện đủ của Q và Q là điều kiện cần của P."
+        }
+      ],
+      "exampleQuestionId": "math10-m1-q072"
+    },
+    {
+      "id": "math10-qt22",
+      "topicId": "math10-t2",
+      "name": "Bất phương trình bậc nhất hai ẩn",
+      "slug": "bat-phuong-trinh-bac-nhat-hai-an",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Nhận biết, kiểm tra nghiệm, biểu diễn miền nghiệm và lập bất phương trình bậc nhất hai ẩn từ hình hoặc tình huống thực tế.",
+      "recognitionSigns": [
+        "Biểu thức có dạng ax+by so sánh với một hằng số, trong đó a và b không đồng thời bằng 0.",
+        "Tập nghiệm được biểu diễn bởi một nửa mặt phẳng có bờ là đường thẳng ax+by=c."
+      ],
+      "solvingSteps": [
+        "Đưa bất phương trình về dạng ax+by≤c hoặc một trong ba dấu tương ứng.",
+        "Vẽ đường biên ax+by=c và xác định đường biên có thuộc miền nghiệm hay không.",
+        "Chọn một điểm thử không nằm trên đường biên để xác định đúng nửa mặt phẳng.",
+        "Đối chiếu điều kiện thực tế, dấu bất phương trình và đơn vị trước khi kết luận."
+      ],
+      "commonMistakes": [
+        "Coi biểu thức chứa x², xy hoặc 1/x là bậc nhất hai ẩn.",
+        "Dùng nét liền cho dấu <, > hoặc nét đứt cho dấu ≤, ≥.",
+        "Chọn gốc O làm điểm thử dù O nằm trên đường biên."
+      ],
+      "theory": [
+        "**1. Nhận dạng bất phương trình bậc nhất hai ẩn**\nCó dạng $ax+by<c$, $ax+by\\le c$, $ax+by>c$ hoặc $ax+by\\ge c$, với $a,b$ không đồng thời bằng 0. Biểu thức chứa $x^2$, $xy$, $\\sqrt{x}$ hoặc ẩn ở mẫu không thuộc dạng này.",
+        "**2. Nghiệm của bất phương trình**\nCặp $(x_0;y_0)$ là một nghiệm khi thay vào làm mệnh đề bất đẳng thức đúng. Một bất phương trình bậc nhất hai ẩn có vô số nghiệm.",
+        "**3. Đường biên và miền nghiệm**\nĐường $ax+by=c$ chia mặt phẳng thành hai nửa. Dấu $\\le,\\ge$ lấy cả đường biên và vẽ nét liền; dấu $<,>$ loại đường biên và vẽ nét đứt.",
+        "**4. Chọn phía nghiệm**\nChọn một điểm không nằm trên đường biên, thường là $O(0;0)$. Nếu điểm thử thỏa bất phương trình thì lấy phía chứa điểm đó; nếu không thì lấy phía đối diện. Khi đường biên đi qua O, dùng $(1;0)$ hoặc $(0;1)$.",
+        "**5. Mô hình hóa**\nChọn hai đại lượng làm $x,y$, thống nhất đơn vị rồi dịch: “không quá” thành $\\le$, “ít nhất” thành $\\ge$, “nhỏ hơn” thành $<$ và “lớn hơn” thành $>$. Thêm $x,y\\ge0$ nếu đại lượng không âm."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt22-st1",
+          "name": "Nhận dạng bất phương trình bậc nhất hai ẩn",
+          "example": "Phân biệt ax+by≤c với biểu thức chứa x², xy hoặc phân thức.",
+          "recognitionSigns": [
+            "Đề yêu cầu nhận dạng hoặc xác định hệ số a, b, c.",
+            "Hai hệ số của x và y không đồng thời bằng 0."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt22-st2",
+          "name": "Kiểm tra và tìm nghiệm",
+          "example": "Thay cặp (x;y) vào bất phương trình hoặc tìm một cặp thỏa điều kiện.",
+          "recognitionSigns": [
+            "Đề hỏi một điểm/cặp số có thuộc tập nghiệm hay không.",
+            "Có thể cố định một ẩn rồi tìm miền giá trị của ẩn còn lại."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt22-st3",
+          "name": "Đường biên và nửa mặt phẳng nghiệm",
+          "example": "Vẽ ax+by=c, chọn điểm thử và xác định phía nghiệm.",
+          "recognitionSigns": [
+            "Đề yêu cầu biểu diễn miền nghiệm hoặc chọn hình đúng.",
+            "Cần phân biệt đường biên nét liền và nét đứt."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt22-st4",
+          "name": "Đọc hình và mô hình hóa bất phương trình",
+          "example": "Viết bất phương trình từ miền tô hoặc từ một giới hạn thực tế.",
+          "recognitionSigns": [
+            "Dữ kiện được cho bằng đồ thị, bảng giá hoặc câu chữ.",
+            "Các cụm không quá, ít nhất, lớn hơn, nhỏ hơn quyết định chiều dấu."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt22-1",
+          "question": "Biểu thức nào là bất phương trình bậc nhất hai ẩn?",
+          "options": [
+            "$x^2+y<3$",
+            "$2x-3y\\ge5$",
+            "$xy<1$",
+            "$1/x+y>0$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$2x-3y\\ge5$ có dạng $ax+by\\ge c$; các phương án còn lại chứa bậc hai, tích hai ẩn hoặc ẩn ở mẫu."
+        },
+        {
+          "id": "math10-check-qt22-2",
+          "question": "Đường biên của $x-2y>4$ được vẽ thế nào?",
+          "options": [
+            "Nét liền",
+            "Nét đứt",
+            "Không cần vẽ",
+            "Chỉ vẽ trong góc phần tư I"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Dấu > không lấy các điểm trên đường biên nên đường $x-2y=4$ phải vẽ nét đứt."
+        },
+        {
+          "id": "math10-check-qt22-3",
+          "question": "Cụm “tổng chi phí không quá 5 triệu đồng” tương ứng với dấu nào?",
+          "options": [
+            "$<$",
+            "$>$",
+            "$\\le$",
+            "$\\ge$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "“Không quá” nghĩa là có thể bằng hoặc nhỏ hơn giới hạn."
+        }
+      ],
+      "exampleQuestionId": "math10-m2x-q001"
+    },
+    {
+      "id": "math10-qt3",
+      "topicId": "math10-t2",
+      "name": "Hệ bất phương trình bậc nhất hai ẩn và ứng dụng",
+      "slug": "he-bat-phuong-trinh-va-ung-dung",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Kiểm tra nghiệm, biểu diễn miền nghiệm của hệ, tìm giá trị lớn nhất hoặc nhỏ nhất của biểu thức tuyến tính và giải các bài toán thực tế.",
+      "recognitionSigns": [
+        "Đề bài cho hệ gồm từ 3 bất phương trình bậc nhất hai ẩn trở lên và một biểu thức mục tiêu $F(x; y) = ax + by$.\\n",
+        "Bài toán thực tế yêu cầu tối ưu hóa (tìm giá trị lớn nhất của lợi nhuận hoặc nhỏ nhất của chi phí) dưới các điều kiện ràng buộc tài nguyên có dạng bất phương trình tuyến tính."
+      ],
+      "solvingSteps": [
+        "Bước 1: Thiết lập hệ bất phương trình ràng buộc và biểu thức mục tiêu $F(x; y) = ax + by$ từ dữ liệu đề bài.",
+        "Bước 2: Vẽ các đường thẳng tương ứng với các phương trình biên trên mặt phẳng tọa độ $Oxy$.",
+        "Bước 3: Xác định miền nghiệm đa giác bằng cách thử điểm (thường chọn gốc tọa độ $O(0;0)$ nếu các biên không đi qua O) và gạch bỏ phần không thỏa mãn.",
+        "Bước 4: Giải hệ phương trình giao điểm để tìm tọa độ các đỉnh của miền đa giác nghiệm.",
+        "Bước 5: Tính giá trị của biểu thức mục tiêu $F(x; y)$ tại tất cả các đỉnh vừa tìm được, so sánh các kết quả để đưa ra kết luận tối ưu."
+      ],
+      "commonMistakes": [
+        "Vẽ sai hướng hoặc xác định sai phía miền nghiệm của các bất phương trình (gạch nhầm phần nghiệm đúng).",
+        "Giải sai tọa độ các giao điểm (đỉnh của đa giác) do tính toán nhầm hệ phương trình tuyến tính.",
+        "Quên không tính giá trị tại gốc tọa độ $O(0;0)$ trong trường hợp gốc O cũng là một đỉnh của miền nghiệm cần xét."
+      ],
+      "theory": [
+        "**1. Bất phương trình bậc nhất hai ẩn**\nCó dạng $ax+by\\le c$ hoặc với $<,>,\\ge$, trong đó $a^2+b^2>0$. Mỗi nghiệm là một cặp $(x;y)$, nên tập nghiệm được biểu diễn bằng một nửa mặt phẳng.",
+        "**2. Đường biên và dấu bằng**\nĐường $ax+by=c$ chia mặt phẳng thành hai nửa. Với $\\le,\\ge$, đường biên thuộc miền nghiệm và vẽ nét liền; với $<,>$, đường biên bị loại và vẽ nét đứt.",
+        "**3. Chọn nửa mặt phẳng**\nChọn điểm thử không nằm trên đường biên, thường là $O(0;0)$. Thay vào bất phương trình: nếu đúng, lấy phía chứa điểm thử; nếu sai, lấy phía còn lại. Nếu đường biên đi qua O, phải chọn điểm khác.",
+        "**4. Hệ bất phương trình**\nMiền nghiệm của hệ là **giao** các nửa mặt phẳng. Nó có thể rỗng, bị chặn hoặc không bị chặn. Các đỉnh ứng viên là giao điểm các đường biên nhưng phải thay lại toàn bộ hệ để loại giao điểm không thuộc miền.",
+        "**5. Hàm mục tiêu tuyến tính**\n$$F(x;y)=px+qy$$\nTrên một miền đa giác khác rỗng, đóng và bị chặn, GTLN/GTNN đạt tại ít nhất một đỉnh. Nếu đường mức của F song song với một cạnh tối ưu, mọi điểm trên cạnh đó cùng đạt cực trị.",
+        "**6. Miền không bị chặn**\nKhông được kết luận tự động “không có cực trị”. Miền không bị chặn vẫn có thể có GTNN hoặc GTLN; cần xét hướng tăng của F hoặc các đường mức. Nếu F tăng vô hạn theo một tia thuộc miền thì không có GTLN hữu hạn theo hướng đó.",
+        "**7. Ràng buộc nguyên**\nNếu $x,y$ phải là số nguyên, nghiệm tối ưu liên tục tại một đỉnh không nguyên chưa chắc dùng được. Cần xét các điểm nguyên khả thi, đặc biệt quanh biên/đỉnh tối ưu, hoặc liệt kê khi miền nhỏ.",
+        "**8. Mô hình hóa bài toán thực tế**\nChọn biến và đơn vị; thêm $x,y\\ge0$ cùng điều kiện nguyên nếu cần; dịch từng nguồn lực thành bất phương trình; lập hàm lợi nhuận/chi phí; tìm miền khả thi; tối ưu; kiểm tra phương án có ý nghĩa thực tế.",
+        "**9. Quy trình tính toán**\nVẽ đường biên; xác định đúng phía; lấy giao; tìm và kiểm tra các đỉnh; tính F tại đỉnh nếu đủ điều kiện; xử lí riêng miền không bị chặn hoặc biến nguyên; trả lời kèm đơn vị.",
+        "**10. Lỗi cần tránh**\n- Lấy hợp thay giao các nửa mặt phẳng.\n- Chọn điểm thử nằm trên đường biên.\n- Vẽ nét liền cho bất phương trình nghiêm.\n- Giữ mọi giao điểm đường biên mà không kiểm tra hệ.\n- Áp dụng định lý đỉnh cho miền rỗng/không bị chặn mà không phân tích.\n- Bỏ điều kiện nguyên của số sản phẩm."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt3-st1",
+          "name": "Nghiệm và miền nghiệm của hệ",
+          "example": "Kiểm tra một điểm, lấy giao các nửa mặt phẳng rồi tìm các đỉnh.",
+          "recognitionSigns": [
+            "Đề cho từ hai bất phương trình trở lên.",
+            "Một điểm phải đồng thời thỏa tất cả các điều kiện."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt3-st2",
+          "name": "Cực trị biểu thức tuyến tính trên đa giác",
+          "example": "Tính giá trị hàm mục tiêu tại các đỉnh của miền đa giác.",
+          "recognitionSigns": [
+            "Miền nghiệm đã cho hoặc có thể xác định thành một đa giác.",
+            "Biểu thức mục tiêu có dạng ax+by."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt3-st3",
+          "name": "Quy hoạch tuyến tính thực tế",
+          "example": "Chọn biến, lập hệ ràng buộc rồi tối ưu lợi nhuận hoặc chi phí.",
+          "recognitionSigns": [
+            "Đề có nguồn lực hữu hạn và nhiều phương án sản xuất.",
+            "Cần chuyển ngôn ngữ thực tế thành biến, ràng buộc và hàm mục tiêu."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt3-st4",
+          "name": "Lập hệ ràng buộc từ tình huống",
+          "example": "Chọn ẩn và chuyển từng giới hạn thành một bất phương trình trong hệ.",
+          "recognitionSigns": [
+            "Đề có nhiều điều kiện đồng thời nhưng chưa nhất thiết yêu cầu tối ưu.",
+            "Phải thêm điều kiện không âm hoặc nguyên theo ý nghĩa của biến."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt3-1",
+          "question": "Đường biên của bất phương trình $2x-y<3$ phải được biểu diễn như thế nào?",
+          "options": [
+            "Nét liền và thuộc miền nghiệm",
+            "Nét đứt và không thuộc miền nghiệm",
+            "Nét liền và không thuộc miền nghiệm",
+            "Không cần vẽ"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Bất phương trình nghiêm dùng nét đứt vì các điểm trên đường biên không thỏa dấu “<”."
+        },
+        {
+          "id": "math10-check-qt3-2",
+          "question": "Phát biểu nào đúng về miền nghiệm không bị chặn?",
+          "options": [
+            "Luôn không có GTLN và GTNN",
+            "Luôn có cả GTLN và GTNN",
+            "Vẫn có thể có một cực trị hữu hạn tùy hàm mục tiêu",
+            "Không thể là miền nghiệm của hệ tuyến tính"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Phải xét hướng tăng của hàm mục tiêu; miền không bị chặn vẫn có thể có GTLN hoặc GTNN hữu hạn."
+        },
+        {
+          "id": "math10-check-qt3-3",
+          "question": "Nếu số sản phẩm phải là số nguyên nhưng đỉnh tối ưu liên tục có tọa độ không nguyên, cần làm gì?",
+          "options": [
+            "Làm tròn từng tọa độ ngay",
+            "Bỏ điều kiện nguyên",
+            "Kiểm tra các điểm nguyên khả thi gần vùng tối ưu",
+            "Kết luận bài toán vô nghiệm"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Làm tròn có thể vi phạm ràng buộc hoặc mất tối ưu; cần so sánh các điểm nguyên còn thỏa hệ."
+        }
+      ],
+      "exampleQuestionId": "math10-q3"
+    },
+    {
+      "id": "math10-qt4",
+      "topicId": "math10-t3",
+      "name": "Xác định Parabol và Giá trị lớn nhất, nhỏ nhất của hàm số bậc hai",
+      "slug": "xac-dinh-parabol-cuc-tri",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tìm các hệ số a, b, c của parabol $y = ax^2 + bx + c$ dựa trên các yếu tố hình học cho trước (đỉnh, trục đối xứng, điểm đi qua) và ứng dụng tìm giá trị lớn nhất, nhỏ nhất trong bài toán thực tế.",
+      "recognitionSigns": [
+        "Đề bài yêu cầu lập phương trình parabol $y = ax^2 + bx + c$ từ các điều kiện hình học (đỉnh, trục đối xứng, giao với trục, đi qua điểm).",
+        "Yêu cầu tìm chiều cao lớn nhất, diện tích lớn nhất, hoặc chi phí nhỏ nhất của một mô hình biến đổi theo hàm bậc hai (cổng parabol, quỹ đạo vật ném xiên, hàng rào bao quanh...)."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định dạng phương trình phù hợp: dạng tổng quát $y = ax^2 + bx + c$ hoặc dạng đỉnh $y = a(x - p)^2 + q$.",
+        "Bước 2: Thay các điều kiện cho trước vào phương trình để lập hệ phương trình tìm các hệ số.",
+        "Bước 3: Giải hệ phương trình tuyến tính để tìm $a, b, c$ (hoặc $a, p, q$).",
+        "Bước 4: Với bài toán cực trị, tính hoành độ đỉnh $x_I = -\\frac{b}{2a}$, thay vào hàm số để tìm GTLN/GTNN. Kiểm tra dấu $a$ để xác định đó là GTLN hay GTNN.",
+        "Bước 5: Trả lời câu hỏi kèm đơn vị đo và kiểm tra tính thực tiễn của kết quả."
+      ],
+      "commonMistakes": [
+        "Nhớ nhầm công thức hoành độ đỉnh: viết $x_I = \\frac{b}{2a}$ thay vì $x_I = -\\frac{b}{2a}$ (thiếu dấu trừ).",
+        "Không giới hạn miền xác định thực tế của biến số (ví dụ: chiều dài, thời gian phải dương).",
+        "Nhầm lẫn giữa GTLN ($a < 0$) và GTNN ($a > 0$) do không xét dấu hệ số $a$."
+      ],
+      "theory": [
+        "**1. Hàm số bậc hai**\n$$f(x)=ax^2+bx+c\\qquad(a\\ne0)$$\nTập xác định là $\\mathbb R$ và đồ thị là parabol. $a>0$ parabol mở lên; $a<0$ mở xuống.",
+        "**2. Đỉnh và trục đối xứng**\nĐặt $\\Delta=b^2-4ac$:\n$$x_I=-\\frac b{2a},\\qquad y_I=f(x_I)=-\\frac{\\Delta}{4a}$$\nĐỉnh $I(x_I;y_I)$ và trục đối xứng $x=x_I$. Dạng đỉnh:\n$$f(x)=a(x-x_I)^2+y_I$$",
+        "**3. Chiều biến thiên**\nNếu $a>0$, hàm giảm trên $(-\\infty;x_I)$ và tăng trên $(x_I;+\\infty)$. Nếu $a<0$, chiều biến thiên ngược lại. Đỉnh là điểm đổi chiều.",
+        "**4. Giao trục và nghiệm**\nĐồ thị cắt $Oy$ tại $(0;c)$. Giao với $Ox$ là nghiệm của $ax^2+bx+c=0$: hai điểm khi $\\Delta>0$, tiếp xúc khi $\\Delta=0$, không cắt khi $\\Delta<0$. Nếu biết hai nghiệm $x_1,x_2$:\n$$f(x)=a(x-x_1)(x-x_2)$$",
+        "**5. Cực trị trên toàn $\\mathbb R$**\n$a>0$: GTNN là $y_I$, không có GTLN. $a<0$: GTLN là $y_I$, không có GTNN. Kết luận này chỉ dành cho toàn trục số.",
+        "**6. GTLN/GTNN trên đoạn $[m;n]$**\nTính $f(m),f(n)$ và thêm $f(x_I)$ nếu $x_I\\in[m;n]$; so sánh các giá trị. Nếu đỉnh nằm ngoài đoạn, cực trị đạt tại các đầu mút theo chiều biến thiên.",
+        "**7. Xác định parabol từ dữ kiện**\n- Biết đỉnh và một điểm: dùng dạng đỉnh.\n- Biết hai nghiệm và một điểm: dùng dạng tích.\n- Biết ba điểm có hoành độ phân biệt: thay vào dạng tổng quát để lập hệ.\n- Biết trục và hai điều kiện khác: dùng $b=-2ax_I$ rồi giải các hệ số.",
+        "**8. Bài chứa tham số trên đoạn**\nVị trí đỉnh phụ thuộc tham số nên thường phải chia trường hợp $x_I<m$, $m\\le x_I\\le n$, $x_I>n$. Sau mỗi trường hợp phải kiểm tra lại điều kiện tham số.",
+        "**9. Mô hình thực tế**\nXác định miền có nghĩa của biến trước khi tối ưu: thời gian, chiều dài, số lượng thường không âm và có thể bị chặn. Kết quả đại số ngoài miền thực tế phải loại; đáp án cần đơn vị và mức làm tròn.",
+        "**10. Lỗi cần tránh**\n- Thiếu dấu trừ trong $-b/(2a)$.\n- Cho mở lên là có GTLN.\n- Chỉ tính giá trị tại đỉnh khi tối ưu trên đoạn.\n- Không kiểm tra đỉnh thuộc miền.\n- Dùng ba điểm có dữ kiện phụ thuộc khiến hệ không xác định duy nhất.\n- Bỏ miền thực tế."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt4-st1",
+          "name": "Xác định parabol từ điều kiện",
+          "example": "Lập hệ phương trình cho a, b, c từ điểm, đỉnh hoặc trục đối xứng.",
+          "recognitionSigns": [
+            "Đề yêu cầu tìm phương trình hàm số bậc hai.",
+            "Dữ kiện thường là điểm thuộc đồ thị, đỉnh, trục hoặc giao trục."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt4-st2",
+          "name": "Đỉnh, trục và cực trị trên miền",
+          "example": "So sánh giá trị tại đỉnh nếu thuộc miền với giá trị tại các đầu mút.",
+          "recognitionSigns": [
+            "Đề hỏi đỉnh, trục đối xứng, GTLN hoặc GTNN.",
+            "Nếu có đoạn đóng thì phải kiểm tra cả hai đầu mút."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt4-st3",
+          "name": "Mô hình thực tế bằng hàm bậc hai",
+          "example": "Lập hoặc khai thác parabol để tối ưu chiều cao, diện tích, doanh thu.",
+          "recognitionSigns": [
+            "Đề có quỹ đạo, cổng vòm, hình chữ nhật hoặc doanh thu.",
+            "Cần xác định miền có ý nghĩa thực tế trước khi tối ưu."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt4-1",
+          "question": "Parabol $y=2x^2-4x+1$ có tính chất nào?",
+          "options": [
+            "Mở xuống và có GTLN",
+            "Mở lên và có GTNN",
+            "Mở lên và có GTLN",
+            "Không có cực trị"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hệ số $a=2>0$ nên parabol mở lên và đạt GTNN tại đỉnh."
+        },
+        {
+          "id": "math10-check-qt4-2",
+          "question": "Khi tìm GTLN, GTNN của hàm bậc hai trên đoạn $[m;n]$, cần so sánh",
+          "options": [
+            "Chỉ giá trị tại đỉnh",
+            "Chỉ hai đầu mút",
+            "Hai đầu mút và đỉnh nếu đỉnh thuộc đoạn",
+            "Mọi nghiệm của phương trình $f(x)=0$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Trên đoạn đóng, hai đầu mút luôn là ứng viên; đỉnh chỉ được xét nếu hoành độ đỉnh nằm trong đoạn."
+        },
+        {
+          "id": "math10-check-qt4-3",
+          "question": "Biết parabol có đỉnh $I(p;q)$ và đi qua một điểm khác, dạng nào thuận lợi nhất?",
+          "options": [
+            "$y=a(x-p)^2+q$",
+            "$y=ax+b$",
+            "$y=a(x-q)^2+p$",
+            "$y=a(x-p)(x-q)$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Dạng đỉnh dùng trực tiếp tọa độ $I(p;q)$ và chỉ còn hệ số $a$ cần xác định."
+        }
+      ],
+      "exampleQuestionId": "math10-q4"
+    },
+    {
+      "id": "math10-qt18",
+      "topicId": "math10-t3",
+      "name": "Khái niệm, tập xác định và biểu diễn hàm số",
+      "slug": "khai-niem-tap-xac-dinh-bieu-dien-ham-so",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tính giá trị, xác định miền xác định, đọc bảng–đồ thị và thiết lập mô hình hàm số cơ bản từ dữ liệu hoặc tình huống.",
+      "recognitionSigns": [
+        "Đề hỏi f(a), tập xác định, tập giá trị hoặc đọc thông tin từ bảng và đồ thị.",
+        "Đề mô tả một đầu ra phụ thuộc duy nhất vào đầu vào và yêu cầu lập công thức."
+      ],
+      "solvingSteps": [
+        "Xác định biến đầu vào, đầu ra và biểu diễn đang được sử dụng.",
+        "Đặt các điều kiện để công thức có nghĩa hoặc đọc đúng trục/bảng.",
+        "Tính giá trị, miền hoặc tham số theo yêu cầu.",
+        "Kiểm tra kết quả với tập nền và ý nghĩa thực tế."
+      ],
+      "commonMistakes": [
+        "Nhầm tập xác định với tập giá trị.",
+        "Quên giao đồng thời điều kiện căn và mẫu.",
+        "Đọc tung độ khi đề hỏi hoành độ hoặc ngược lại."
+      ],
+      "theory": [
+        "**1. Khái niệm hàm số**\nHàm số gán cho mỗi $x$ thuộc tập xác định $D$ **đúng một** giá trị $y=f(x)$. Một đầu vào không được có hai đầu ra; nhiều đầu vào khác nhau có thể cho cùng đầu ra.",
+        "**2. Tập xác định và tập giá trị**\nTập xác định gồm mọi $x$ được phép dùng. Tập giá trị gồm mọi $f(x)$ thực sự nhận được. Trên đồ thị, tập xác định là hình chiếu lên $Ox$, tập giá trị là hình chiếu lên $Oy$, đồng thời phải xét điểm kín/hở.",
+        "**3. Điều kiện công thức có nghĩa**\n- Mẫu số: khác 0.\n- Căn bậc chẵn: biểu thức dưới căn $\\ge0$.\n- Căn bậc chẵn ở mẫu: biểu thức dưới căn $>0$.\nNếu có nhiều điều kiện, tập xác định là giao của tất cả điều kiện.",
+        "**4. Hàm từng đoạn**\nKhi tính $f(a)$, chọn đúng nhánh chứa $a$, chú ý dấu bằng ở điểm chia. Khi tìm tập xác định hoặc tập giá trị phải xét từng nhánh rồi lấy hợp, không dùng công thức của một nhánh cho toàn bộ.",
+        "**5. Đọc giá trị và nghiệm từ đồ thị**\n$f(a)$ là tung độ điểm có hoành độ $a$. Nghiệm $f(x)=k$ là hoành độ giao điểm của đồ thị với đường ngang $y=k$; riêng $f(x)=0$ là giao với $Ox$.",
+        "**6. Dấu và biến thiên**\n$f(x)>0$ nơi đồ thị nằm trên $Ox$, $f(x)<0$ nơi nằm dưới. Hàm đồng biến khi x tăng thì y tăng, nghịch biến khi x tăng thì y giảm. Điểm cao/thấp cục bộ không tự động là GTLN/GTNN toàn miền.",
+        "**7. Kiểm tra một quan hệ có là hàm số**\nTrên hình, mọi đường thẳng đứng chỉ được cắt đồ thị tại nhiều nhất một điểm. Trên bảng, mỗi đầu vào chỉ có một đầu ra. Nếu một x ứng với hai y khác nhau thì không phải hàm số của x.",
+        "**8. Mô hình affine và tỉ lệ**\nHàm affine $y=ax+b$ có tốc độ thay đổi $a$ và giá trị ban đầu $b$. Quan hệ tỉ lệ thuận có dạng $y=ax$ đi qua gốc. Hãy xác định đơn vị, miền thực tế và kiểm tra dữ liệu có cùng tốc độ thay đổi không.",
+        "**9. Quy trình giải**\nXác định kiểu biểu diễn; tìm điều kiện/mốc nhánh; tính hoặc đọc đúng trục; giao các điều kiện; kiểm tra đầu mút; đối chiếu tập nền và ý nghĩa thực tế.",
+        "**10. Lỗi cần tránh**\n- Nhầm tập xác định với tập giá trị.\n- Dùng điều kiện căn $\\ge0$ khi căn ở mẫu.\n- Quên loại nghiệm làm mẫu bằng 0.\n- Chọn sai nhánh tại điểm có dấu bằng.\n- Đọc hoành độ khi đề hỏi tung độ.\n- Coi một quan hệ có một đầu vào cho hai đầu ra là hàm."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt18-st1",
+          "name": "Giá trị và tập xác định của hàm số",
+          "example": "Thay giá trị hoặc kết hợp điều kiện mẫu, căn và biểu thức từng đoạn.",
+          "recognitionSigns": [
+            "Đề hỏi f(a) hoặc miền công thức có nghĩa.",
+            "Xuất hiện mẫu số, căn bậc hai hoặc hàm từng đoạn."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt18-st2",
+          "name": "Đọc bảng, đồ thị và biến thiên",
+          "example": "Đọc giá trị, nghiệm, dấu, tập xác định và cực trị từ biểu diễn trực quan.",
+          "recognitionSigns": [
+            "Dữ kiện là bảng giá trị, đồ thị hoặc bảng biến thiên.",
+            "Cần phân biệt thông tin theo trục Ox và Oy."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt18-st3",
+          "name": "Biểu diễn và mô hình hàm số cơ bản",
+          "example": "Lập hàm affine, tỉ lệ hoặc từng đoạn từ dữ liệu thực tế.",
+          "recognitionSigns": [
+            "Đề mô tả đầu ra thay đổi theo đầu vào.",
+            "Có giá trị ban đầu và tốc độ tăng/giảm."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt18-1",
+          "question": "Điều kiện xác định của biểu thức $\\dfrac1{\\sqrt{x-2}}$ là",
+          "options": [
+            "$x\\ge2$",
+            "$x>2$",
+            "$x\\ne2$",
+            "$x<2$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Biểu thức dưới căn phải không âm, đồng thời mẫu phải khác 0, nên $x-2>0$."
+        },
+        {
+          "id": "math10-check-qt18-2",
+          "question": "Một đường cong là đồ thị của hàm số $y=f(x)$ nếu",
+          "options": [
+            "Mọi đường ngang cắt nó không quá một điểm",
+            "Mọi đường thẳng đứng cắt nó không quá một điểm",
+            "Nó đi qua gốc tọa độ",
+            "Nó chỉ nằm phía trên trục hoành"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Mỗi đầu vào x chỉ được ứng với nhiều nhất một đầu ra y, chính là phép thử đường thẳng đứng."
+        },
+        {
+          "id": "math10-check-qt18-3",
+          "question": "Tập xác định của hàm số được đọc trên đồ thị bằng hình chiếu lên",
+          "options": [
+            "Trục $Oy$",
+            "Đường $y=x$",
+            "Trục $Ox$",
+            "Gốc tọa độ"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Tập xác định gồm các hoành độ xuất hiện trên đồ thị nên được đọc theo hình chiếu lên $Ox$."
+        }
+      ],
+      "exampleQuestionId": "math10-m3-q025"
+    },
+    {
+      "id": "math10-qt20",
+      "topicId": "math10-t3",
+      "name": "Dấu của tam thức bậc hai",
+      "slug": "dau-cua-tam-thuc-bac-hai",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Xét dấu tam thức từ hệ số, biệt thức và nghiệm; đọc bảng dấu; xử lí điều kiện tham số để biểu thức luôn dương, âm, không âm hoặc không dương.",
+      "recognitionSigns": [
+        "Đề hỏi biểu thức bậc hai dương, âm trên khoảng nào hoặc yêu cầu lập/đọc bảng xét dấu.",
+        "Đề chứa tham số và các cụm “với mọi x”, “luôn dương”, “không âm”, “không dương”."
+      ],
+      "solvingSteps": [
+        "Kiểm tra hệ số bậc hai có khác 0; nếu phụ thuộc tham số phải tách trường hợp suy biến.",
+        "Tính biệt thức và tìm, sắp thứ tự các nghiệm thực nếu có.",
+        "Dùng quy tắc cùng dấu hệ số a ở ngoài và trái dấu a ở giữa hai nghiệm.",
+        "Chọn đúng điểm hoặc khoảng theo yêu cầu; phân biệt dấu nghiêm ngặt với dấu có bằng."
+      ],
+      "commonMistakes": [
+        "Đảo dấu trong và ngoài hai nghiệm.",
+        "Cho rằng nghiệm kép làm tam thức đổi dấu.",
+        "Dùng điều kiện Δ≤0 cho yêu cầu luôn dương nghiêm ngặt.",
+        "Quên xét trường hợp hệ số bậc hai bằng 0 trong bài tham số."
+      ],
+      "theory": [
+        "**1. Tam thức bậc hai**\nTam thức bậc hai có dạng\n$$f(x)=ax^2+bx+c\\qquad(a\\ne0).$$\nMuốn xét dấu, trước hết tính $\\Delta=b^2-4ac$ và, khi $\\Delta\\ge0$, tìm các nghiệm thực của $f(x)=0$.",
+        "**2. Trường hợp $\\Delta<0$**\nTam thức không có nghiệm thực và luôn cùng dấu với hệ số $a$:\n- $a>0\\Rightarrow f(x)>0$ với mọi $x\\in\\mathbb R$;\n- $a<0\\Rightarrow f(x)<0$ với mọi $x\\in\\mathbb R$.",
+        "**3. Trường hợp $\\Delta=0$**\nTam thức có nghiệm kép $x_0=-\\dfrac b{2a}$ và\n$$f(x)=a(x-x_0)^2.$$\nNó cùng dấu với $a$ khi $x\\ne x_0$ và bằng $0$ tại $x=x_0$. Vì thế “luôn dương” khác “không âm”.",
+        "**4. Trường hợp $\\Delta>0$**\nGọi $x_1<x_2$ là hai nghiệm. Tam thức **cùng dấu với $a$ ở ngoài**, **trái dấu với $a$ ở trong**:\n$$\\begin{array}{c|ccccc}x&(-\\infty;x_1)&x_1&(x_1;x_2)&x_2&(x_2;+\\infty)\\\\ \\hline f(x)&\\operatorname{sgn}(a)&0&-\\operatorname{sgn}(a)&0&\\operatorname{sgn}(a)\\end{array}$$",
+        "**5. Cách nhớ có bản chất**\nNếu phân tích được $f(x)=a(x-x_1)(x-x_2)$, ở ngoài hai nghiệm hai thừa số cùng dấu nên tích mang dấu $a$; ở giữa hai nghiệm chúng trái dấu nên tích đổi dấu. Không cần học thuộc bảng dấu rời rạc.",
+        "**6. Đọc và lập bảng xét dấu**\nSắp các nghiệm từ nhỏ đến lớn, đặt đúng các mốc trên trục số, ghi $0$ tại nghiệm rồi điền dấu theo $a$. Nghiệm kép không làm đổi dấu; hai nghiệm đơn làm dấu đổi khi đi qua từng nghiệm.",
+        "**7. Điều kiện tam thức luôn dương hoặc luôn âm**\nVới đúng tam thức bậc hai ($a\\ne0$):\n$$f(x)>0\\ \\forall x\\Longleftrightarrow a>0,\\Delta<0;$$\n$$f(x)\\ge0\\ \\forall x\\Longleftrightarrow a>0,\\Delta\\le0;$$\n$$f(x)<0\\ \\forall x\\Longleftrightarrow a<0,\\Delta<0;$$\n$$f(x)\\le0\\ \\forall x\\Longleftrightarrow a<0,\\Delta\\le0.$$",
+        "**8. Bài chứa tham số**\nHệ số đầu $a$ có thể phụ thuộc tham số. Phải tách trường hợp $a=0$ trước vì biểu thức lúc đó trở thành bậc nhất hoặc hằng, không được tiếp tục áp dụng định lí dấu tam thức bậc hai.",
+        "**9. Dấu tại một điểm và trên một khoảng**\nCó thể thay trực tiếp nếu chỉ hỏi $f(x_0)$. Nếu hỏi cả khoảng hoặc nhiều điểm, tìm nghiệm và dùng bảng dấu thường nhanh, ít sai hơn. Tại nghiệm, giá trị bằng $0$, không được kết luận dương hay âm.",
+        "**10. Lỗi cần tránh**\n- Chỉ nhìn $a$ mà quên $\\Delta$.\n- Đảo quy tắc “cùng dấu ngoài, trái dấu trong”.\n- Cho nghiệm kép làm đổi dấu.\n- Dùng $\\Delta\\le0$ cho yêu cầu “$>0$”.\n- Quên xét $a=0$ trong bài tham số.\n- Không sắp nghiệm trước khi lập bảng."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt20-st1",
+          "name": "Biệt thức, nghiệm và quy tắc dấu",
+          "example": "Từ Δ và dấu a, xác định dấu của tam thức trên các khoảng.",
+          "recognitionSigns": [
+            "Đề cho trực tiếp tam thức hoặc hai nghiệm.",
+            "Cần dùng quy tắc cùng dấu ngoài, trái dấu trong."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt20-st2",
+          "name": "Đọc bảng dấu và xác định dấu trên miền",
+          "example": "Đọc mốc, dấu hoặc đếm các giá trị thỏa một điều kiện dấu.",
+          "recognitionSigns": [
+            "Đề hỏi dấu tại điểm, trên khoảng hoặc từ bảng dấu.",
+            "Có thể cần kết hợp nhiều dữ kiện về nghiệm và hệ số."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt20-st3",
+          "name": "Tam thức chứa tham số",
+          "example": "Tìm m để tam thức luôn dương, không âm hoặc có dấu quy định.",
+          "recognitionSigns": [
+            "Có tham số trong hệ số và cụm “với mọi x”.",
+            "Phải kiểm tra cả trường hợp hệ số bậc hai bằng 0."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt20-1",
+          "question": "Nếu tam thức $f(x)=ax^2+bx+c$ có $\\Delta<0$ thì",
+          "options": [
+            "Luôn cùng dấu với $a$",
+            "Luôn dương",
+            "Luôn âm",
+            "Đổi dấu tại $-b/(2a)$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Khi không có nghiệm thực, tam thức không đổi dấu và mang dấu của hệ số bậc hai."
+        },
+        {
+          "id": "math10-check-qt20-2",
+          "question": "Khi đi qua nghiệm kép, dấu của tam thức bậc hai",
+          "options": [
+            "Luôn đổi từ dương sang âm",
+            "Luôn đổi từ âm sang dương",
+            "Không đổi",
+            "Không xác định"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Tại nghiệm kép, đồ thị tiếp xúc trục hoành nên tam thức bằng 0 nhưng không đổi dấu."
+        },
+        {
+          "id": "math10-check-qt20-3",
+          "question": "Điều kiện để tam thức bậc hai dương với mọi $x\\in\\mathbb R$ là",
+          "options": [
+            "$a>0,\\Delta\\le0$",
+            "$a>0,\\Delta<0$",
+            "$a<0,\\Delta<0$",
+            "$a>0,\\Delta>0$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Dấu dương nghiêm ngặt không cho phép nghiệm kép, nên cần $a>0$ và $\\Delta<0$."
+        }
+      ],
+      "exampleQuestionId": "math10-m3-q061"
+    },
+    {
+      "id": "math10-qt21",
+      "topicId": "math10-t3",
+      "name": "Bất phương trình bậc hai một ẩn",
+      "slug": "bat-phuong-trinh-bac-hai-mot-an",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Giải bất phương trình bậc hai, tích và thương; xử lí dấu bằng, điều kiện xác định, tham số và mô hình thực tế.",
+      "recognitionSigns": [
+        "Đề yêu cầu tìm tập nghiệm của bất phương trình chứa tam thức bậc hai.",
+        "Biểu thức có thể phân tích thành tích/thương hoặc yêu cầu tham số để tập nghiệm có tính chất cho trước."
+      ],
+      "solvingSteps": [
+        "Đưa bất phương trình về một vế và xác định điều kiện nếu có mẫu.",
+        "Phân tích nhân tử hoặc tìm nghiệm của các tam thức, sau đó sắp mọi mốc tới hạn.",
+        "Lập bảng xét dấu chung và chọn các khoảng đúng dấu.",
+        "Xử lí đầu mút, loại nghiệm mẫu và giao với miền thực tế hoặc điều kiện tham số."
+      ],
+      "commonMistakes": [
+        "Chọn khoảng nghiệm mà không xét dấu hệ số đầu.",
+        "Lấy điểm làm mẫu bằng 0 khi bất phương trình có dấu bằng.",
+        "Mất điều kiện loại sau khi rút gọn nhân tử chung.",
+        "Chia hai vế cho biểu thức chứa ẩn hoặc tham số chưa biết dấu."
+      ],
+      "theory": [
+        "**1. Bất phương trình bậc hai một ẩn**\nCó dạng\n$$ax^2+bx+c>0,\\quad ax^2+bx+c<0,\\quad ax^2+bx+c\\ge0,\\quad ax^2+bx+c\\le0$$\nvới $a\\ne0$. Tập nghiệm chính là phần trục số nơi tam thức có dấu được yêu cầu.",
+        "**2. Quy trình chuẩn**\n(1) Chuyển mọi hạng tử về một vế; (2) tìm nghiệm của tam thức; (3) lập bảng xét dấu; (4) chọn các khoảng đúng dấu; (5) quyết định có lấy mốc hay không. Không “chuyển vế rồi đổi chiều” tùy tiện.",
+        "**3. Dấu nghiêm ngặt và không nghiêm ngặt**\nVới $>0$ hoặc $<0$, loại các điểm làm biểu thức bằng $0$. Với $\\ge0$ hoặc $\\le0$, lấy nghiệm của tử/tam thức. Riêng điểm làm mẫu bằng $0$ luôn bị loại, dù bất phương trình có dấu bằng.",
+        "**4. Mẫu nghiệm nhanh khi $\\Delta>0$**\nNếu $x_1<x_2$:\n- yêu cầu cùng dấu $a$: lấy $(-\\infty;x_1)\\cup(x_2;+\\infty)$;\n- yêu cầu trái dấu $a$: lấy $(x_1;x_2)$.\nThêm hai đầu mút khi dấu bất phương trình có “$=$”.",
+        "**5. Khi $\\Delta\\le0$**\n$\\Delta<0$: tam thức luôn cùng dấu $a$, nên tập nghiệm là $\\mathbb R$ hoặc $\\varnothing$. $\\Delta=0$: phải xét riêng nghiệm kép; chẳng hạn $a(x-x_0)^2>0$ có nghiệm $\\mathbb R\\setminus\\{x_0\\}$.",
+        "**6. Bất phương trình tích**\nĐưa về tích các nhân tử, tìm tất cả nghiệm của từng nhân tử, sắp các mốc và lập một bảng dấu chung. Không giải riêng từng nhân tử rồi lấy hợp một cách máy móc vì dấu của tích phụ thuộc số nhân tử âm.",
+        "**7. Bất phương trình thương**\nTìm nghiệm tử và điều kiện mẫu khác $0$, rồi lập bảng dấu theo tất cả mốc. Nghiệm của tử có thể được lấy khi có dấu bằng; nghiệm của mẫu không bao giờ được lấy.",
+        "**8. Nhân tử lặp và rút gọn**\nNhân tử mũ chẵn không làm đổi dấu khi đi qua nghiệm. Nếu rút gọn nhân tử chung trong phân thức, điều kiện loại của biểu thức ban đầu vẫn phải được giữ lại.",
+        "**9. Bài tham số và số nghiệm**\nChuyển yêu cầu về đặc điểm của tập nghiệm: có nghiệm, vô nghiệm, đúng với mọi $x$, chứa một điểm, hoặc bằng một khoảng cho trước. Sau đó dùng $\\Delta$, dấu $a$, vị trí nghiệm và nhớ tách trường hợp suy biến $a=0$.",
+        "**10. Bài toán thực tế**\nLập bất phương trình từ điều kiện chiều cao, doanh thu, diện tích hoặc thời gian; giải trên $\\mathbb R$ rồi giao với miền thực tế như $t\\ge0$, chiều dài dương hoặc số lượng nguyên.",
+        "**11. Cách viết tập nghiệm**\nDùng ngoặc tròn ở vô cực và điểm bị loại; dùng ngoặc vuông tại nghiệm được lấy. Ví dụ: $x<1$ hoặc $x\\ge3$ được viết $(-\\infty;1)\\cup[3;+\\infty)$.",
+        "**12. Lỗi cần tránh**\n- Không đưa về một vế.\n- Chọn trong/ngoài hai nghiệm mà không xét dấu $a$.\n- Lấy nghiệm mẫu.\n- Bỏ mất điểm loại sau rút gọn.\n- Quên nghiệm kép.\n- Quên giao miền thực tế.\n- Chia hai vế cho biểu thức chưa biết dấu."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt21-st1",
+          "name": "Bất phương trình bậc hai cơ bản",
+          "example": "Giải ax²+bx+c ≥ 0 bằng định lí dấu tam thức.",
+          "recognitionSigns": [
+            "Một tam thức bậc hai được so sánh với 0.",
+            "Cần phân biệt dấu nghiêm ngặt và có bằng."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt21-st2",
+          "name": "Bất phương trình tích và thương",
+          "example": "Lập bảng dấu chung từ các nghiệm tử và điểm loại của mẫu.",
+          "recognitionSigns": [
+            "Vế trái là tích hoặc phân thức.",
+            "Có nhiều mốc tới hạn và mẫu số phải khác 0."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt21-st3",
+          "name": "Tham số, số nghiệm và ứng dụng",
+          "example": "Biến điều kiện về tập nghiệm thành điều kiện của Δ, a hoặc các nghiệm.",
+          "recognitionSigns": [
+            "Đề hỏi tham số, số nghiệm hoặc khoảng nghiệm.",
+            "Tình huống thực tế dẫn đến một bất phương trình bậc hai."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt21-1",
+          "question": "Với bất phương trình $f(x)\\le0$, nghiệm của phương trình $f(x)=0$",
+          "options": [
+            "Luôn bị loại",
+            "Được lấy nếu thuộc miền xác định",
+            "Chỉ lấy khi là nghiệm kép",
+            "Chỉ lấy khi dương"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Dấu “≤” nhận cả những điểm làm biểu thức bằng 0, miễn điểm đó thuộc miền xác định."
+        },
+        {
+          "id": "math10-check-qt21-2",
+          "question": "Trong bất phương trình phân thức, điểm làm mẫu số bằng 0",
+          "options": [
+            "Được lấy khi có dấu ≥",
+            "Luôn bị loại",
+            "Được lấy nếu tử cũng bằng 0",
+            "Chỉ loại với dấu nghiêm ngặt"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Phân thức không xác định tại nghiệm của mẫu nên các điểm này luôn bị loại."
+        },
+        {
+          "id": "math10-check-qt21-3",
+          "question": "Vì sao không được tùy ý chia hai vế bất phương trình cho biểu thức chứa ẩn?",
+          "options": [
+            "Vì biểu thức luôn bằng 0",
+            "Vì có thể chưa biết dấu để quyết định có đổi chiều hay không",
+            "Vì phép chia không dùng cho số thực",
+            "Vì sẽ luôn làm mất nghiệm"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Chia cho số âm phải đổi chiều, còn chia cho 0 không hợp lệ; do đó cần biết dấu trước."
+        }
+      ],
+      "exampleQuestionId": "math10-m3-q097"
+    },
+    {
+      "id": "math10-qt23",
+      "topicId": "math10-t3",
+      "name": "Phương trình quy về phương trình bậc hai",
+      "slug": "phuong-trinh-quy-ve-phuong-trinh-bac-hai",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Giải phương trình căn bằng căn và căn bằng biểu thức bậc nhất bằng cách bình phương, giải phương trình bậc hai nhận được rồi thử lại nghiệm.",
+      "recognitionSigns": [
+        "Hai vế là căn bậc hai của các tam thức hoặc một vế là căn thức, vế còn lại là biểu thức bậc nhất.",
+        "Sau khi bình phương hai vế và thu gọn, phương trình nhận được có bậc không quá hai."
+      ],
+      "solvingSteps": [
+        "Nhận dạng đúng dạng phương trình và ghi điều kiện cần, đặc biệt vế không chứa căn phải không âm.",
+        "Bình phương hai vế rồi thu gọn về phương trình bậc hai hoặc phương trình bậc nhất.",
+        "Giải phương trình nhận được để tìm các nghiệm ứng viên.",
+        "Thay từng ứng viên vào phương trình ban đầu, loại nghiệm không thỏa và kết luận."
+      ],
+      "commonMistakes": [
+        "Xem phép bình phương là biến đổi tương đương và nhận mọi nghiệm của phương trình sau bình phương.",
+        "Quên điều kiện vế bậc nhất phải không âm trong phương trình căn bằng biểu thức.",
+        "Chỉ kiểm tra biểu thức dưới căn mà không thử lại phương trình ban đầu."
+      ],
+      "theory": [
+        "**1. Phạm vi Bài 18**\nBài học tập trung vào hai dạng:\n$$\\sqrt{P(x)}=\\sqrt{Q(x)},\\qquad \\sqrt{P(x)}=ax+b,$$\ntrong đó sau khi bình phương và thu gọn ta nhận được phương trình bậc hai hoặc bậc nhất. Không cần dùng các kĩ thuật căn thức nâng cao ngoài phạm vi này.",
+        "**2. Bình phương không phải lúc nào cũng tương đương**\nTừ $A=B$ suy ra $A^2=B^2$, nhưng chiều ngược lại có thể sai vì $A^2=B^2$ còn cho phép $A=-B$. Do đó nghiệm của phương trình sau bình phương chỉ là **nghiệm ứng viên** và phải thử lại.",
+        "**3. Dạng căn bằng căn**\nVới $\\sqrt{P(x)}=\\sqrt{Q(x)}$, bình phương cho $P(x)=Q(x)$. Giải phương trình nhận được, sau đó thay từng nghiệm vào phương trình ban đầu. Việc thử lại đồng thời kiểm tra hai biểu thức dưới căn có không âm hay không.",
+        "**4. Dạng căn bằng biểu thức bậc nhất**\nVới $\\sqrt{P(x)}=ax+b$, vế trái luôn không âm nên điều kiện cần là $ax+b\\ge0$. Bình phương, giải phương trình nhận được rồi chỉ giữ nghiệm thỏa điều kiện và phương trình ban đầu.",
+        "**5. Vì sao vẫn phải thử lại khi đã đặt điều kiện?**\nĐiều kiện $ax+b\\ge0$ thường giúp loại nghiệm ngoại lai, nhưng thao tác an toàn và phù hợp với bài học là thay trực tiếp từng nghiệm ứng viên vào phương trình ban đầu trước khi kết luận.",
+        "**6. Trường hợp phương trình sau bình phương suy biến**\nSau khi thu gọn có thể nhận phương trình bậc nhất, đẳng thức đúng với mọi x hoặc mệnh đề vô lí. Khi đó vẫn phải quay lại điều kiện ban đầu; chẳng hạn $\\sqrt{(x-2)^2}=x-2$ đúng khi và chỉ khi $x\\ge2$.",
+        "**7. Bài hỏi số nghiệm và tham số**\nTách hai lớp điều kiện: phương trình đại số sau bình phương phải có nghiệm thực, và các nghiệm ấy phải làm hai vế ban đầu bằng nhau. Không chỉ dựa vào biệt thức của phương trình sau bình phương.",
+        "**8. Mô hình khoảng cách**\nKhoảng cách trong tam giác vuông thường có dạng $\\sqrt{x^2+a^2}$. Sau khi lập phương trình từ dữ kiện bằng nhau hoặc hơn kém một độ dài, cần giữ điều kiện độ dài không âm và kiểm tra nghiệm có thuộc miền thực tế.",
+        "**9. Quy trình bốn bước**\n(1) Nhận dạng dạng và ghi điều kiện cần; (2) bình phương, thu gọn; (3) giải phương trình bậc hai/bậc nhất; (4) thử lại từng ứng viên và viết tập nghiệm. Nếu là bài thực tế, thêm đơn vị.",
+        "**10. Lỗi cần tránh**\n- Kết luận ngay sau khi giải phương trình bình phương.\n- Quên điều kiện vế không chứa căn không âm.\n- Cho rằng mọi nghiệm làm biểu thức dưới căn có nghĩa đều thỏa.\n- Bình phương sai $(ax+b)^2$.\n- Loại một nghiệm chỉ vì nó âm dù đề không cấm x âm.\n- Giữ nghiệm không phù hợp với độ dài hoặc thời gian trong bài thực tế."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt23-st1",
+          "name": "Phương trình căn bằng căn",
+          "example": "Bình phương hai vế của √P(x)=√Q(x), giải P(x)=Q(x) rồi thử lại.",
+          "recognitionSigns": [
+            "Hai vế đều là căn bậc hai.",
+            "Biểu thức dưới căn thường là tam thức bậc hai hoặc bậc nhất."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt23-st2",
+          "name": "Phương trình căn bằng biểu thức bậc nhất",
+          "example": "Giải √P(x)=ax+b, chú ý điều kiện ax+b≥0 và thử lại nghiệm.",
+          "recognitionSigns": [
+            "Chỉ một vế có căn bậc hai.",
+            "Vế còn lại là biểu thức bậc nhất hoặc hằng số."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt23-st3",
+          "name": "Điều kiện, tham số và mô hình thực tế",
+          "example": "Dùng điều kiện dấu, số nghiệm hoặc dữ kiện khoảng cách để lập và giải phương trình chứa căn.",
+          "recognitionSigns": [
+            "Đề hỏi số nghiệm, tham số hoặc yêu cầu loại nghiệm ngoại lai.",
+            "Tình huống khoảng cách dẫn đến căn của tổng bình phương."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt23-1",
+          "question": "Sau khi bình phương hai vế của một phương trình chứa căn và tìm được các nghiệm ứng viên, bước tiếp theo là",
+          "options": [
+            "Nhận tất cả các nghiệm",
+            "Thử lại trong phương trình ban đầu",
+            "Chỉ giữ nghiệm dương",
+            "Bình phương thêm lần nữa"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Phép bình phương có thể sinh nghiệm ngoại lai nên mọi ứng viên phải được thử lại."
+        },
+        {
+          "id": "math10-check-qt23-2",
+          "question": "Điều kiện cần của phương trình $\\sqrt{P(x)}=2x-3$ là",
+          "options": [
+            "$x\\ge\\frac32$",
+            "$x\\le\\frac32$",
+            "$x\\ne\\frac32$",
+            "Mọi số thực"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Vế căn không âm nên vế phải cũng phải không âm: $2x-3\\ge0$."
+        },
+        {
+          "id": "math10-check-qt23-3",
+          "question": "Phương trình $\\sqrt{(x-1)^2}=x-1$ có tập nghiệm là",
+          "options": [
+            "$\\mathbb R$",
+            "$(-\\infty;1]$",
+            "$[1;+\\infty)$",
+            "$\\{1\\}$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Vế trái là $|x-1|$, bằng $x-1$ đúng khi $x-1\\ge0$."
+        }
+      ],
+      "exampleQuestionId": "math10-m3x-q001"
+    },
+    {
+      "id": "math10-qt6",
+      "topicId": "math10-t4",
+      "name": "Hệ thức lượng và Giải tam giác trong thực tế",
+      "slug": "he-thuc-luong-va-giai-tam-giac",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Sử dụng các định lí Côsin, định lí Sin, công thức tính diện tích tam giác và giải tam giác để tìm các yếu tố trong tam giác hoặc đo đạc khoảng cách, chiều cao trong thực tế.",
+      "recognitionSigns": [
+        "Đề bài cho các cạnh, các góc hoặc diện tích tam giác và yêu cầu tìm yếu tố còn lại.",
+        "Bài toán đo đạc thực tế có hình vẽ minh họa tam giác với các số đo góc và khoảng cách giữa các điểm quan sát."
+      ],
+      "solvingSteps": [
+        "Bước 1: Vẽ hình, ký hiệu các đỉnh, cạnh ($a, b, c$) và góc ($A, B, C$) tương ứng của tam giác.",
+        "Bước 2: Phân tích các yếu tố đã biết và chọn định lí phù hợp:\n  - Biết 3 cạnh: Dùng định lí Côsin để tính các góc.\n  - Biết 2 cạnh và góc xen giữa: Dùng định lí Côsin tìm cạnh thứ ba, sau đó dùng định lí Sin tìm các góc còn lại.\n  - Biết 1 cạnh và 2 góc: Tìm góc thứ ba, sau đó dùng định lí Sin để tìm hai cạnh còn lại.",
+        "Bước 3: Chọn công thức diện tích thích hợp (Heron nếu biết 3 cạnh, sin nếu biết 2 cạnh 1 góc...) để tính diện tích, từ đó tính bán kính $R, r$ hoặc chiều cao nếu đề bài yêu cầu.",
+        "Bước 4: Đối với bài toán thực tế, vẽ sơ đồ tam giác hóa các đối tượng địa lý và thực hiện tính toán, ghi rõ đơn vị đo."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn giữa các công thức tính diện tích (ví dụ nhầm $S = \\frac{abc}{4R}$ thành $\\frac{abc}{R}$ hoặc $S = pr$ thành $S = \\frac{p}{r}$).",
+        "Tính sai giá trị lượng giác của các góc lớn hơn $90^\\circ$ (ví dụ $\\cos 120^\\circ = -0.5$).",
+        "Quên chuyển máy tính sang chế độ độ (Degree) khi bấm các hàm $\\sin, \\cos$ dẫn đến sai lệch kết quả số đo góc."
+      ],
+      "theory": [
+        "**1. Quy ước trong tam giác**\nTrong tam giác $ABC$, các cạnh $a=BC$, $b=CA$, $c=AB$ lần lượt đối diện các góc $A,B,C$. Trước khi dùng công thức phải ghép đúng cạnh với góc đối diện.",
+        "**2. Định lý cosin**\n$$a^2=b^2+c^2-2bc\\cos A$$\nCác công thức còn lại thu được bằng hoán vị. Bài toán ngược:\n$$\\cos A=\\frac{b^2+c^2-a^2}{2bc}$$\nDùng tốt cho ba cạnh hoặc hai cạnh và góc xen giữa.",
+        "**3. Định lý sin**\n$$\\frac a{\\sin A}=\\frac b{\\sin B}=\\frac c{\\sin C}=2R$$\nDùng tốt khi biết một cặp cạnh–góc đối diện và thêm một cạnh hoặc góc. Luôn kiểm tra tổng ba góc bằng $180^\\circ$.",
+        "**4. Trường hợp mơ hồ của định lý sin**\nKhi biết hai cạnh và một góc không xen giữa, phương trình $\\sin B=t$ có thể cho $B$ hoặc $180^\\circ-B$. Phải kiểm tra cả hai khả năng với $A+B<180^\\circ$ và điều kiện cạnh–góc; bài có thể có 0, 1 hoặc 2 tam giác.",
+        "**5. Công thức diện tích**\n$$S=\\frac12bc\\sin A=\\frac12ca\\sin B=\\frac12ab\\sin C$$\n$$S=pr=\\frac{abc}{4R}$$\nVới nửa chu vi $p=(a+b+c)/2$:\n$$S=\\sqrt{p(p-a)(p-b)(p-c)}$$",
+        "**6. Điều kiện tồn tại tam giác**\nBa cạnh dương tạo thành tam giác khi tổng hai cạnh bất kỳ lớn hơn cạnh còn lại; tương đương $|b-c|<a<b+c$. Kết quả số phải thỏa cạnh lớn hơn đối diện góc lớn hơn.",
+        "**7. Chọn công thức theo dữ kiện**\n- SSS: cosin tìm góc; Heron tìm diện tích.\n- SAS: cosin tìm cạnh còn lại.\n- ASA/AAS: tìm góc thứ ba rồi dùng sin.\n- SSA: dùng sin nhưng kiểm tra trường hợp mơ hồ.\nƯu tiên công thức có ít ẩn nhất.",
+        "**8. Bài toán đo đạc và chuyển động**\nVẽ sơ đồ, xác định đường chuẩn, góc nâng/hạ và khoảng cách thực; chuyển bài toán thành tam giác. Với hai vật xuất phát cùng điểm, các quãng đường là hai cạnh và góc giữa hướng đi là góc xen giữa.",
+        "**9. Làm tròn và kiểm tra**\nGiữ nhiều chữ số trung gian, chỉ làm tròn cuối; đặt máy ở DEG; kiểm tra góc thuộc $(0^\\circ;180^\\circ)$, tổng góc, bất đẳng thức tam giác và đơn vị.",
+        "**10. Lỗi cần tránh**\n- Ghép sai cạnh–góc đối diện.\n- Dùng cosin với góc không xen giữa mà không lập đúng công thức.\n- Bỏ nghiệm bù trong trường hợp SSA.\n- Nhầm $S=abc/(4R)$ hoặc $S=pr$.\n- Làm tròn quá sớm.\n- Không trừ chiều cao mắt hoặc không xét miền thực tế."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt6-st1",
+          "name": "Tính cạnh, góc, diện tích và bán kính",
+          "example": "Chọn định lí cosin, sin hoặc công thức diện tích theo dữ kiện.",
+          "recognitionSigns": [
+            "Đề cho các cạnh, góc và hỏi một đại lượng còn lại.",
+            "Cần nhận ra công thức dùng trực tiếp ít ẩn nhất."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt6-st2",
+          "name": "Giải tam giác",
+          "example": "Xác định toàn bộ cạnh và góc còn thiếu từ bộ dữ kiện đủ.",
+          "recognitionSigns": [
+            "Đề dùng cụm “giải tam giác” hoặc yêu cầu nhiều yếu tố.",
+            "Cần kiểm tra tổng ba góc và khả năng có nhiều nghiệm."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt6-st3",
+          "name": "Đo đạc và chuyển động thực tế",
+          "example": "Dựng tam giác từ góc quan sát, phương chuyển động hoặc khoảng cách chuẩn.",
+          "recognitionSigns": [
+            "Dữ kiện nằm trong bối cảnh đo chiều cao, khoảng cách hoặc chuyển động.",
+            "Bước khó nhất là mô hình hóa đúng tam giác và cặp cạnh–góc đối diện."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt6-1",
+          "question": "Biết hai cạnh và góc xen giữa của một tam giác, nên dùng định lí nào trước?",
+          "options": [
+            "Định lí cosin",
+            "Định lí sin",
+            "Định lí Thales",
+            "Công thức trung vị"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Bộ dữ kiện SAS cho phép dùng định lí cosin để tính trực tiếp cạnh còn lại."
+        },
+        {
+          "id": "math10-check-qt6-2",
+          "question": "Trường hợp biết hai cạnh và một góc không xen giữa có thể cho",
+          "options": [
+            "Luôn đúng một tam giác",
+            "Chỉ hai tam giác",
+            "0, 1 hoặc 2 tam giác",
+            "Vô số tam giác"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Đây là trường hợp mơ hồ của định lí sin; nghiệm góc bù có thể tạo thêm một tam giác hoặc bị loại."
+        },
+        {
+          "id": "math10-check-qt6-3",
+          "question": "Công thức diện tích liên hệ với bán kính ngoại tiếp $R$ là",
+          "options": [
+            "$S=abcR$",
+            "$S=\\dfrac{abc}{2R}$",
+            "$S=\\dfrac{abc}{4R}$",
+            "$S=4abcR$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Công thức chuẩn là $S=\\dfrac{abc}{4R}$."
+        }
+      ],
+      "exampleQuestionId": "math10-q44"
+    },
+    {
+      "id": "math10-qt19",
+      "topicId": "math10-t4",
+      "name": "Giá trị lượng giác của góc từ 0° đến 180°",
+      "slug": "gia-tri-luong-giac-goc-0-180",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tính và suy luận sin, cos, tan của góc; sử dụng góc bù, hệ thức cơ bản và dấu của góc nhọn–tù.",
+      "recognitionSigns": [
+        "Đề cho góc từ 0° đến 180° và hỏi sin, cos, tan hoặc dấu.",
+        "Đề cho một giá trị lượng giác và yêu cầu tìm giá trị còn lại hay xác định góc."
+      ],
+      "solvingSteps": [
+        "Xác định góc đặc biệt hoặc góc chuẩn liên quan.",
+        "Xác định dấu theo vị trí góc trên nửa đường tròn.",
+        "Áp dụng công thức góc bù hoặc hệ thức sin²+cos²=1.",
+        "Kiểm tra miền góc để loại nghiệm sai dấu."
+      ],
+      "commonMistakes": [
+        "Cho cos góc tù dương.",
+        "Đổi dấu sin của hai góc bù.",
+        "Chỉ lấy nghiệm góc nhọn khi phương trình sin có hai nghiệm."
+      ],
+      "theory": [
+        "**1. Giá trị lượng giác trên nửa đường tròn**\nVới $0^\\circ\\le\\alpha\\le180^\\circ$, điểm $M(\\cos\\alpha;\\sin\\alpha)$ trên đường tròn đơn vị xác định sin và cos. Khi mẫu khác 0:\n$$\\tan\\alpha=\\frac{\\sin\\alpha}{\\cos\\alpha},\\qquad\\cot\\alpha=\\frac{\\cos\\alpha}{\\sin\\alpha}$$",
+        "**2. Miền xác định**\n$\\tan\\alpha$ không xác định khi $\\cos\\alpha=0$, tức $\\alpha=90^\\circ$. $\\cot\\alpha$ không xác định khi $\\sin\\alpha=0$, tức $\\alpha=0^\\circ$ hoặc $180^\\circ$.",
+        "**3. Bảng góc đặc biệt**\nVới $0^\\circ,30^\\circ,45^\\circ,60^\\circ,90^\\circ$:\n- $\\sin$: $0,\\frac12,\\frac{\\sqrt2}{2},\\frac{\\sqrt3}{2},1$.\n- $\\cos$: $1,\\frac{\\sqrt3}{2},\\frac{\\sqrt2}{2},\\frac12,0$.\n- $\\tan$: $0,\\frac1{\\sqrt3},1,\\sqrt3$, không xác định.",
+        "**4. Dấu trong khoảng $0^\\circ$ đến $180^\\circ$**\n$\\sin\\alpha>0$ với $0^\\circ<\\alpha<180^\\circ$. $\\cos\\alpha$ dương với góc nhọn, bằng 0 tại $90^\\circ$, âm với góc tù. $\\tan\\alpha$ cùng dấu với $\\cos\\alpha$ vì sin dương trong khoảng.",
+        "**5. Góc bù**\n$$\\sin(180^\\circ-\\alpha)=\\sin\\alpha$$\n$$\\cos(180^\\circ-\\alpha)=-\\cos\\alpha$$\n$$\\tan(180^\\circ-\\alpha)=-\\tan\\alpha$$\nNhờ đó suy các góc $120^\\circ,135^\\circ,150^\\circ$ từ $60^\\circ,45^\\circ,30^\\circ$.",
+        "**6. Các hệ thức cơ bản**\n$$\\sin^2\\alpha+\\cos^2\\alpha=1$$\n$$1+\\tan^2\\alpha=\\frac1{\\cos^2\\alpha}\\quad(\\cos\\alpha\\ne0)$$\n$$1+\\cot^2\\alpha=\\frac1{\\sin^2\\alpha}\\quad(\\sin\\alpha\\ne0)$$",
+        "**7. Suy giá trị còn lại**\nTừ $\\sin\\alpha$ suy $\\cos\\alpha=\\pm\\sqrt{1-\\sin^2\\alpha}$; dấu được chọn theo miền góc. Tương tự cho sin từ cos. Không được mặc định lấy căn dương khi góc có thể tù.",
+        "**8. Phương trình đơn giản trên $[0^\\circ;180^\\circ]$**\nNếu $\\sin x=\\sin\\alpha$ với $0^\\circ<\\alpha<180^\\circ$, thường có $x=\\alpha$ hoặc $x=180^\\circ-\\alpha$ nếu hai giá trị khác nhau. Với cos, dấu và tính giảm trên đoạn giúp xác định nghiệm duy nhất. Luôn loại điểm làm tan/cot không xác định.",
+        "**9. Biểu thức lượng giác**\nĐưa mọi đại lượng về sin, cos khi cần; dùng $\\sin^2+\\cos^2=1$ trước khi thay số. Nếu biết $\\sin x+\\cos x$, bình phương:\n$$(\\sin x+\\cos x)^2=1+2\\sin x\\cos x$$",
+        "**10. Lỗi cần tránh**\n- Cho cos góc tù dương.\n- Đổi dấu sin của góc bù.\n- Bấm máy ở RAD.\n- Quên điều kiện xác định của tan/cot.\n- Lấy căn dương mà không xét miền góc.\n- Chỉ lấy một nghiệm của phương trình sin trên đoạn."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt19-st1",
+          "name": "Góc đặc biệt và dấu của giá trị lượng giác",
+          "example": "Tính giá trị lượng giác của góc đặc biệt hoặc xác định dấu theo miền góc.",
+          "recognitionSigns": [
+            "Đề cho trực tiếp một góc từ 0° đến 180°.",
+            "Cần dùng bảng giá trị đặc biệt và dấu của sin, cos, tan."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt19-st2",
+          "name": "Góc bù và hệ thức lượng giác cơ bản",
+          "example": "Biến đổi góc bù hoặc suy ra giá trị còn lại từ sin²α + cos²α = 1.",
+          "recognitionSigns": [
+            "Xuất hiện hai góc có tổng bằng 180°.",
+            "Đề cho một giá trị lượng giác và miền của góc để tìm giá trị khác."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt19-st3",
+          "name": "Xác định góc và suy luận từ một giá trị lượng giác",
+          "example": "Tìm góc thỏa mãn giá trị lượng giác hoặc tính biểu thức nhiều bước.",
+          "recognitionSigns": [
+            "Ẩn số nằm trong góc hoặc biểu thức lượng giác.",
+            "Phải kết hợp giá trị đặc biệt, dấu và điều kiện miền góc để chọn nghiệm."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt19-1",
+          "question": "Giá trị $\\cos120^\\circ$ bằng",
+          "options": [
+            "$\\dfrac12$",
+            "$-\\dfrac12$",
+            "$\\dfrac{\\sqrt3}{2}$",
+            "$-\\dfrac{\\sqrt3}{2}$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$120^\\circ=180^\\circ-60^\\circ$ nên $\\cos120^\\circ=-\\cos60^\\circ=-\\dfrac12$."
+        },
+        {
+          "id": "math10-check-qt19-2",
+          "question": "Giá trị nào không xác định?",
+          "options": [
+            "$\\sin90^\\circ$",
+            "$\\cos90^\\circ$",
+            "$\\tan90^\\circ$",
+            "$\\sin180^\\circ$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "$\\tan\\alpha=\\sin\\alpha/\\cos\\alpha$ và $\\cos90^\\circ=0$."
+        },
+        {
+          "id": "math10-check-qt19-3",
+          "question": "Trên đoạn $[0^\\circ;180^\\circ]$, phương trình $\\sin x=\\dfrac12$ có nghiệm",
+          "options": [
+            "Chỉ $30^\\circ$",
+            "Chỉ $150^\\circ$",
+            "$30^\\circ$ và $150^\\circ$",
+            "$60^\\circ$ và $120^\\circ$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Hai góc bù $30^\\circ$ và $150^\\circ$ có cùng sin bằng $\\dfrac12$."
+        }
+      ],
+      "exampleQuestionId": "math10-m4-q025"
+    },
+    {
+      "id": "math10-qt5",
+      "topicId": "math10-t5",
+      "name": "Phân tích vectơ và Chứng minh ba điểm thẳng hàng",
+      "slug": "phan-tich-vecto-thang-hang",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Biểu diễn một vectơ theo hai vectơ không cùng phương cho trước và ứng dụng biểu thức vectơ để chứng minh ba điểm thẳng hàng hoặc hai đường thẳng song song.",
+      "recognitionSigns": [
+        "Đề bài cho tam giác hoặc hình bình hành kèm theo các điểm chia đoạn thẳng theo tỷ số.",
+        "Yêu cầu phân tích vectơ $\\vec{AM}$ theo $\\vec{AB}$ và $\\vec{AC}$, hoặc chứng minh ba điểm A, M, N thẳng hàng."
+      ],
+      "solvingSteps": [
+        "Bước 1: Chọn hai vectơ cơ sở không cùng phương (ví dụ $\\vec{AB}, \\vec{AC}$ của tam giác ABC).",
+        "Bước 2: Sử dụng quy tắc ba điểm, quy tắc hình bình hành và định nghĩa tích của vectơ với một số để biểu diễn các vectơ trung gian.",
+        "Bước 3: Để chứng minh ba điểm X, Y, Z thẳng hàng, ta biểu diễn hai vectơ $\\vec{XY}$ và $\\vec{XZ}$ theo cặp vectơ cơ sở rồi chứng minh tồn tại hằng số k sao cho $\\vec{XY} = k\\vec{XZ}$.",
+        "Bước 4: Kết luận."
+      ],
+      "commonMistakes": [
+        "Cộng trừ các vectơ sai quy tắc (quy tắc chèn điểm).",
+        "Nhầm lẫn chiều hướng và tỷ lệ độ dài của các vectơ (ví dụ $\\vec{MB} = -2\\vec{MC}$ viết nhầm thành $2\\vec{MC}$)."
+      ],
+      "theory": [
+        "**1. Các quy tắc vectơ nền tảng**\nVới ba điểm bất kỳ:\n$$\\vec{AB}+\\vec{BC}=\\vec{AC},\\qquad \\vec{AB}=\\vec{OB}-\\vec{OA}$$\nNgoài ra $\\vec{AB}=-\\vec{BA}$. Khi chèn điểm, phải giữ đúng điểm cuối của vectơ trước trùng điểm đầu của vectơ sau.",
+        "**2. Nhân vectơ với một số**\n$k\\vec u$ cùng phương với $\\vec u$; cùng hướng nếu $k>0$, ngược hướng nếu $k<0$, và bằng $\\vec 0$ nếu $k=0$ hoặc $\\vec u=\\vec 0$. Độ dài:\n$$|k\\vec u|=|k|\\,|\\vec u|$$",
+        "**3. Phân tích theo hai vectơ cơ sở**\nNếu $\\vec e_1,\\vec e_2$ không cùng phương thì mọi vectơ trong mặt phẳng biểu diễn duy nhất dưới dạng:\n$$\\vec u=x\\vec e_1+y\\vec e_2$$\nTrong tam giác $ABC$, thường chọn $\\vec{AB},\\vec{AC}$ làm cơ sở rồi đưa tất cả vectơ về cùng gốc $A$. Tính duy nhất cho phép so sánh riêng các hệ số.",
+        "**4. Trung điểm và trọng tâm**\nNếu $M$ là trung điểm $BC$:\n$$\\vec{AM}=\\frac12\\left(\\vec{AB}+\\vec{AC}\\right)$$\nNếu $G$ là trọng tâm tam giác $ABC$:\n$$\\vec{AG}=\\frac13\\left(\\vec{AB}+\\vec{AC}\\right)=\\frac23\\vec{AM}$$\nCác công thức chỉ đúng với đúng thứ tự điểm và gốc đang viết.",
+        "**5. Điểm chia đoạn**\nNếu $M$ nằm trong đoạn $AB$ và $AM:MB=m:n$ với $m,n>0$ thì:\n$$\\vec{AM}=\\frac{m}{m+n}\\vec{AB}$$\nVới gốc tùy ý $O$:\n$$\\vec{OM}=\\frac{n\\vec{OA}+m\\vec{OB}}{m+n}$$\nHệ số của đầu mút $A$ đi cùng độ dài đoạn đối diện $MB=n$, và ngược lại.",
+        "**6. Điều kiện cùng phương và thẳng hàng**\nHai vectơ khác $\\vec0$ cùng phương khi tồn tại $k$ sao cho $\\vec u=k\\vec v$. Ba điểm phân biệt $A,M,N$ thẳng hàng khi $\\vec{AM}$ và $\\vec{AN}$ cùng phương:\n$$\\vec{AM}=k\\vec{AN}$$\nNếu $\\vec{AM}=a\\vec e_1+b\\vec e_2$ và $\\vec{AN}=c\\vec e_1+d\\vec e_2$, điều kiện là tồn tại cùng một $k$ thỏa $a=kc$, $b=kd$.",
+        "**7. Điều kiện tọa độ**\nVới $\\vec u=(x_1;y_1)$, $\\vec v=(x_2;y_2)$, hai vectơ cùng phương khi:\n$$x_1y_2-y_1x_2=0$$\nCó thể dùng điều kiện này cho bài tham số hoặc lập $\\vec{AB},\\vec{AC}$ để kiểm tra ba điểm thẳng hàng. Không chia tỉ số thành phần khi mẫu có thể bằng 0.",
+        "**8. Quy trình bài nhiều điểm phụ**\nChọn một gốc và hai vectơ cơ sở; biểu diễn từng điểm phụ theo tỉ số; lập vectơ nối bằng “vectơ vị trí điểm cuối trừ điểm đầu”; thu gọn hệ số; cuối cùng mới dùng điều kiện cùng phương hoặc đọc kết quả cần tìm.",
+        "**9. Lỗi cần tránh**\n- Viết $\\vec{MN}=\\vec{AM}-\\vec{AN}$ thay vì $\\vec{MN}=\\vec{AN}-\\vec{AM}$.\n- Bỏ dấu âm khi đảo chiều vectơ.\n- So sánh hệ số theo hai vectơ cùng phương, khiến biểu diễn không duy nhất.\n- Chỉ chứng minh tỉ lệ một hệ số.\n- Dùng công thức chia trong đoạn cho điểm chia ngoài mà không xét vectơ có hướng."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt5-st1",
+          "name": "Biểu diễn vectơ qua hai vectơ cơ sở",
+          "example": "Dùng quy tắc ba điểm, trung điểm và tỉ số chia đoạn để đổi về cùng gốc.",
+          "recognitionSigns": [
+            "Đề yêu cầu biểu diễn một vectơ theo hai vectơ cho trước.",
+            "Các điểm thường là trung điểm, trọng tâm hoặc điểm chia đoạn."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt5-st2",
+          "name": "Cùng phương và thẳng hàng có tham số",
+          "example": "So sánh các hệ số theo hai vectơ không cùng phương.",
+          "recognitionSigns": [
+            "Đề hỏi ba điểm thẳng hàng hoặc hai vectơ cùng phương.",
+            "Các hệ số chứa tham số cần thỏa cùng một tỉ lệ."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt5-st3",
+          "name": "Tổng hợp nhiều điểm chia đoạn",
+          "example": "Chọn gốc chung, biểu diễn từng điểm rồi lấy hiệu hai vectơ vị trí.",
+          "recognitionSigns": [
+            "Đề có từ hai điểm phụ trở lên và nhiều tỉ số.",
+            "Cần tránh trừ vectơ sai thứ tự khi lập vectơ nối hai điểm."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt5-1",
+          "question": "Nếu $M$ là trung điểm của $BC$ thì",
+          "options": [
+            "$\\vec{AM}=\\vec{AB}+\\vec{AC}$",
+            "$\\vec{AM}=\\dfrac12(\\vec{AB}+\\vec{AC})$",
+            "$\\vec{AM}=\\dfrac12(\\vec{AB}-\\vec{AC})$",
+            "$\\vec{AM}=\\vec{BC}$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Vectơ từ A tới trung điểm của BC bằng trung bình cộng hai vectơ $\\vec{AB},\\vec{AC}$."
+        },
+        {
+          "id": "math10-check-qt5-2",
+          "question": "Điều kiện an toàn để kiểm tra hai vectơ tọa độ $\\vec u=(x_1;y_1)$, $\\vec v=(x_2;y_2)$ cùng phương là",
+          "options": [
+            "$x_1/x_2=y_1/y_2$",
+            "$x_1x_2+y_1y_2=0$",
+            "$x_1y_2-y_1x_2=0$",
+            "$x_1+y_1=x_2+y_2$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Định thức bằng 0 không phát sinh phép chia cho thành phần có thể bằng 0."
+        },
+        {
+          "id": "math10-check-qt5-3",
+          "question": "Công thức đúng là",
+          "options": [
+            "$\\vec{MN}=\\vec{AM}-\\vec{AN}$",
+            "$\\vec{MN}=\\vec{AN}-\\vec{AM}$",
+            "$\\vec{MN}=\\vec{MA}+\\vec{NA}$",
+            "$\\vec{MN}=\\vec{AM}+\\vec{AN}$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Vectơ nối hai điểm bằng vectơ vị trí điểm cuối trừ vectơ vị trí điểm đầu."
+        }
+      ],
+      "exampleQuestionId": "math10-q5"
+    },
+    {
+      "id": "math10-qt7",
+      "topicId": "math10-t5",
+      "name": "Tích vô hướng của hai vectơ và ứng dụng",
+      "slug": "tich-vo-huong-hai-vecto-va-ung-dung",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tính tích vô hướng của hai vectơ dựa trên độ dài và góc hoặc dựa trên tọa độ Oxy; ứng dụng tích vô hướng để tính độ dài đoạn thẳng, góc giữa hai vectơ và chứng minh tính vuông góc.",
+      "recognitionSigns": [
+        "Đề bài yêu cầu tính tích vô hướng $\\vec{u} \\cdot \\vec{v}$ hoặc góc giữa hai vectơ.",
+        "Yêu cầu chứng minh hai đường thẳng vuông góc hoặc hai vectơ vuông góc.",
+        "Đề bài cho độ dài các vectơ và góc giữa chúng, hoặc cho tọa độ các điểm/vectơ trên hệ trục Oxy."
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định phương pháp tính tích vô hướng phù hợp (định nghĩa hình học hay biểu thức tọa độ Oxy).",
+        "Bước 2: \n  - Nếu dùng tọa độ: Áp dụng công thức $\\vec{u} \\cdot \\vec{v} = x_1x_2 + y_1y_2$.\n  - Nếu dùng hình học: Xác định độ dài hai vectơ và góc chung của chúng. Chú ý đưa về chung gốc (ví dụ góc giữa $\\vec{AB}$ và $\\vec{BC}$ là $180^\\circ - \\angle B$).",
+        "Bước 3: Tính góc hoặc chứng minh vuông góc (nếu tích vô hướng bằng 0 thì hai vectơ vuông góc).",
+        "Bước 4: Để tính độ dài biểu thức vectơ phức tạp, bình phương vô hướng biểu thức đó rồi khai căn ở kết quả cuối."
+      ],
+      "commonMistakes": [
+        "Xác định sai góc giữa hai vectơ khi chúng chưa chung gốc (ví dụ góc giữa $\\vec{AB}$ và $\\vec{BC}$ viết nhầm thành góc $\\angle B$ thay vì $180^\\circ - \\angle B$).",
+        "Lẫn lộn bình phương vô hướng của vectơ và bình phương độ dài (thực chất chúng bằng nhau: $\\vec{u}^2 = |\\vec{u}|^2$).",
+        "Nhầm dấu khi thực hiện nhân các tọa độ âm."
+      ],
+      "theory": [
+        "**1. Định nghĩa tích vô hướng**\nVới hai vectơ khác $\\vec0$ và góc $0^\\circ\\le\\theta\\le180^\\circ$ giữa chúng:\n$$\\vec u\\cdot\\vec v=|\\vec u|\\,|\\vec v|\\cos\\theta$$\nKết quả là một **số**, không phải vectơ. Nếu một vectơ bằng $\\vec0$ thì tích vô hướng bằng 0 nhưng góc với vectơ đó không được xác định.",
+        "**2. Dấu của tích vô hướng**\n- Góc nhọn: $\\vec u\\cdot\\vec v>0$.\n- Góc vuông: $\\vec u\\cdot\\vec v=0$.\n- Góc tù: $\\vec u\\cdot\\vec v<0$.\nVới hai vectơ khác $\\vec0$:\n$$\\vec u\\perp\\vec v\\Longleftrightarrow\\vec u\\cdot\\vec v=0$$",
+        "**3. Các tính chất đại số**\n$$\\vec u\\cdot\\vec v=\\vec v\\cdot\\vec u$$\n$$\\vec u\\cdot(\\vec v+\\vec w)=\\vec u\\cdot\\vec v+\\vec u\\cdot\\vec w$$\n$$(k\\vec u)\\cdot\\vec v=k(\\vec u\\cdot\\vec v)$$\nCác quy tắc này cho phép khai triển biểu thức vectơ như đại số, nhưng mỗi tích hai vectơ cho ra một số.",
+        "**4. Bình phương và độ dài**\n$$\\vec u\\cdot\\vec u=|\\vec u|^2$$\nDo đó:\n$$|\\vec u\\pm\\vec v|^2=|\\vec u|^2+|\\vec v|^2\\pm2\\vec u\\cdot\\vec v$$\nMuốn tìm độ dài biểu thức vectơ, thường tính bình phương trước rồi lấy căn không âm.",
+        "**5. Tính góc**\nVới $\\vec u,\\vec v\\ne\\vec0$:\n$$\\cos\\theta=\\frac{\\vec u\\cdot\\vec v}{{|\\vec u|\\,|\\vec v|}}$$\nSau khi bấm $\\arccos$, kiểm tra máy ở chế độ độ và kết quả thuộc $[0^\\circ;180^\\circ]$. Dấu tích vô hướng giúp kiểm tra nhanh góc nhọn hay tù.",
+        "**6. Biểu thức tọa độ**\nNếu $\\vec u=(x_1;y_1)$, $\\vec v=(x_2;y_2)$ thì:\n$$\\vec u\\cdot\\vec v=x_1x_2+y_1y_2,\\qquad |\\vec u|=\\sqrt{x_1^2+y_1^2}$$\nVới $A(x_A;y_A)$, $B(x_B;y_B)$:\n$$\\vec{AB}=(x_B-x_A;y_B-y_A)$$",
+        "**7. Bài toán tham số vuông góc**\nLập đúng hai vectơ, khai triển tích vô hướng rồi giải:\n$$\\vec u(m)\\cdot\\vec v(m)=0$$\nSau khi tìm $m$, cần kiểm tra vectơ có bị bằng $\\vec0$ hay dữ kiện hình học có suy biến không.",
+        "**8. Xác định đúng góc hình học**\nGóc giữa $\\vec{AB}$ và $\\vec{AC}$ là $\\angle BAC$. Nhưng góc giữa $\\vec{AB}$ và $\\vec{BC}$ là góc giữa $\\vec{BA}$ và $\\vec{BC}$ bù với nó, vì $\\vec{AB}=-\\vec{BA}$. Hãy đưa hai vectơ về chung gốc trước khi đọc góc.",
+        "**9. Lỗi cần tránh**\n- Cho tích vô hướng là vectơ.\n- Kết luận hai đường vuông góc từ tích bằng 0 khi dùng vectơ không hợp lệ hoặc vectơ không.\n- Nhầm góc với góc bù.\n- Quên bình phương hệ số khi tính độ dài.\n- Bỏ dấu âm của tọa độ hoặc của $\\cos$ góc tù."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt7-st1",
+          "name": "Tích vô hướng từ độ dài và góc",
+          "example": "Dùng u·v=|u||v|cosα và xác định đúng góc giữa hai vectơ.",
+          "recognitionSigns": [
+            "Đề cho độ dài và góc hoặc hình học quen thuộc.",
+            "Hướng của vectơ có thể khiến góc cần dùng là góc bù."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt7-st2",
+          "name": "Tích vô hướng bằng tọa độ",
+          "example": "Lập tọa độ vectơ rồi tính tổng tích các thành phần.",
+          "recognitionSigns": [
+            "Đề cho tọa độ điểm hoặc tọa độ vectơ.",
+            "Có thể hỏi tích vô hướng, góc hoặc điều kiện vuông góc."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt7-st3",
+          "name": "Ứng dụng độ dài và vuông góc",
+          "example": "Khai triển bình phương vectơ hoặc đặt tích vô hướng bằng 0.",
+          "recognitionSigns": [
+            "Đề hỏi độ dài của tổng/hiệu, tham số vuông góc hoặc chứng minh hình học.",
+            "Nên chuyển bài toán về tích vô hướng trước khi thay số."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt7-1",
+          "question": "Nếu góc giữa hai vectơ khác vectơ không là góc tù thì tích vô hướng của chúng",
+          "options": [
+            "Dương",
+            "Âm",
+            "Bằng 0",
+            "Không xác định"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Cosin của góc tù âm nên tích $|\\vec u||\\vec v|\\cos\\alpha$ âm."
+        },
+        {
+          "id": "math10-check-qt7-2",
+          "question": "Với $\\vec u=(2;-1)$ và $\\vec v=(3;6)$, ta có",
+          "options": [
+            "$\\vec u\\cdot\\vec v=12$",
+            "$\\vec u\\cdot\\vec v=0$",
+            "$\\vec u\\cdot\\vec v=-12$",
+            "$\\vec u\\cdot\\vec v=5$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$2\\cdot3+(-1)\\cdot6=0$, nên hai vectơ vuông góc."
+        },
+        {
+          "id": "math10-check-qt7-3",
+          "question": "Công thức nào đúng?",
+          "options": [
+            "$|\\vec u+\\vec v|^2=|\\vec u|^2+|\\vec v|^2$",
+            "$|\\vec u+\\vec v|^2=|\\vec u|^2+|\\vec v|^2+2\\vec u\\cdot\\vec v$",
+            "$|\\vec u+\\vec v|=|\\vec u|+|\\vec v|$ trong mọi trường hợp",
+            "$\\vec u\\cdot\\vec u=|\\vec u|$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Khai triển bình phương vô hướng cho thêm hạng $2\\vec u\\cdot\\vec v$."
+        }
+      ],
+      "exampleQuestionId": "math10-q54"
+    },
+    {
+      "id": "math10-qt8",
+      "topicId": "math10-t6",
+      "name": "Quy tắc đếm và bao hàm–loại trừ",
+      "slug": "quy-tac-dem-bao-ham-loai-tru",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân biệt trường hợp loại trừ nhau, công đoạn liên tiếp và tình huống có phần giao để thiết lập phép đếm đúng.",
+      "recognitionSigns": [
+        "Đề hỏi số cách thực hiện một công việc qua nhiều lựa chọn hoặc công đoạn.",
+        "Cần xác định các trường hợp có giao nhau hay không trước khi cộng hoặc nhân."
+      ],
+      "solvingSteps": [
+        "Xác định chính xác một kết quả cần đếm.",
+        "Tách bài toán thành trường hợp hoặc công đoạn.",
+        "Chọn quy tắc cộng, nhân, bao hàm–loại trừ hoặc biến cố đối.",
+        "Tính và kiểm tra có đếm trùng hay bỏ sót."
+      ],
+      "commonMistakes": [
+        "Dùng cộng cho các công đoạn liên tiếp.",
+        "Không trừ phần giao khi cộng hai nhóm.",
+        "Đếm cả phương án không thỏa điều kiện."
+      ],
+      "theory": [
+        "**1. Nguyên tắc đếm đúng đối tượng**\nTrước khi tính, phải mô tả rõ “một kết quả” gồm những gì. Hai cách chỉ khác cách thực hiện nhưng tạo cùng kết quả cuối thì không được đếm hai lần, trừ khi đề coi thứ tự/quy trình là khác nhau.",
+        "**2. Quy tắc cộng**\nNếu công việc được hoàn thành theo **một trong** các trường hợp đôi một không giao nhau, có lần lượt $n_1,n_2,\\ldots,n_k$ cách thì tổng số cách là:\n$$n_1+n_2+\\cdots+n_k$$\nDấu hiệu: chọn đúng một phương án thuộc một trong nhiều nhóm rời nhau.",
+        "**3. Quy tắc nhân**\nNếu công việc gồm các công đoạn liên tiếp; công đoạn 1 có $n_1$ cách, với mỗi lựa chọn đó công đoạn 2 có $n_2$ cách,... thì số cách là:\n$$n_1n_2\\cdots n_k$$\nDấu hiệu: kết quả phải thực hiện **đồng thời/tiếp theo** đủ các công đoạn. “Độc lập” ở đây nghĩa số lựa chọn của bước sau đã được xác định đúng cho từng nhánh, không phải khái niệm biến cố độc lập.",
+        "**4. Khi số lựa chọn phụ thuộc nhánh**\nNếu sau mỗi lựa chọn ở bước đầu, số cách bước sau khác nhau, không được nhân một con số chung. Hãy vẽ cây hoặc chia trường hợp; tính tích trên từng nhánh rồi cộng các nhánh.",
+        "**5. Bao hàm–loại trừ**\nVới hai tập hữu hạn:\n$$|A\\cup B|=|A|+|B|-|A\\cap B|$$\nPhần giao bị cộng hai lần nên phải trừ một lần. Số phần tử không thuộc nhóm nào trong tập nền $U$ là:\n$$|U|-|A\\cup B|$$",
+        "**6. Phương pháp biến cố đối trong bài đếm**\nSố cách thỏa “ít nhất một” thường tính nhanh bằng:\n$$N_{đúng}=N_{tất\\ cả}-N_{không\\ có}$$\nChỉ dùng khi tập “tất cả” dễ đếm và phần bù bao phủ đúng mọi trường hợp vi phạm.",
+        "**7. Mã, số và chuỗi lựa chọn**\nMỗi vị trí là một công đoạn. Phải kiểm tra: có được lặp không, chữ số đầu có được bằng 0 không, các vị trí có vai trò khác nhau không và điều kiện có làm số lựa chọn bước sau thay đổi không.",
+        "**8. Quy trình chọn quy tắc**\nXác định một kết quả; hỏi các trường hợp là “hoặc” hay các bước là “và”; kiểm tra giao nhau; kiểm tra ràng buộc và sự phụ thuộc; tính; cuối cùng thử một trường hợp nhỏ để phát hiện đếm trùng/bỏ sót.",
+        "**9. Lỗi cần tránh**\n- Cộng số cách của các công đoạn liên tiếp.\n- Nhân các trường hợp thay thế nhau.\n- Dùng quy tắc cộng khi các nhóm có giao mà không trừ phần giao.\n- Cho phép lặp hoặc chữ số 0 trái yêu cầu.\n- Dùng phần bù nhưng chọn sai tập tất cả."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt8-st1",
+          "name": "Quy tắc cộng",
+          "example": "Chọn đúng một phương án từ các nhóm rời nhau.",
+          "recognitionSigns": [
+            "Đề có từ “hoặc” và chỉ thực hiện một trường hợp.",
+            "Các nhóm lựa chọn không giao nhau."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt8-st2",
+          "name": "Quy tắc nhân",
+          "example": "Thực hiện liên tiếp một lựa chọn ở mỗi công đoạn.",
+          "recognitionSigns": [
+            "Đề có từ “và”, “gồm các bước” hoặc cấu tạo theo nhiều vị trí.",
+            "Mỗi kết quả được tạo bởi một lựa chọn ở từng công đoạn."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt8-st3",
+          "name": "Bao hàm–loại trừ và biến cố đối",
+          "example": "Đếm hợp của hai nhóm có giao hoặc phần nằm ngoài hợp.",
+          "recognitionSigns": [
+            "Hai nhóm có phần tử chung nên có nguy cơ đếm trùng.",
+            "Đề hỏi “ít nhất một”, “không thuộc nhóm nào” hoặc “đúng một nhóm”."
+          ],
+          "targetQuestionCount": 18
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt8-1",
+          "question": "Một công việc gồm 3 cách thực hiện loại A hoặc 5 cách loại B, hai loại không giao nhau. Có bao nhiêu cách?",
+          "options": [
+            "8",
+            "15",
+            "5",
+            "2"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Các trường hợp loại trừ nhau và chỉ chọn một trường hợp nên dùng quy tắc cộng: $3+5=8$."
+        },
+        {
+          "id": "math10-check-qt8-2",
+          "question": "Có 4 áo và 3 quần. Chọn một áo và một quần có",
+          "options": [
+            "7 cách",
+            "12 cách",
+            "4 cách",
+            "3 cách"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hai công đoạn liên tiếp nên dùng quy tắc nhân: $4\\cdot3=12$."
+        },
+        {
+          "id": "math10-check-qt8-3",
+          "question": "Nếu $|A|=20$, $|B|=15$, $|A\\cap B|=6$ thì $|A\\cup B|$ bằng",
+          "options": [
+            "35",
+            "29",
+            "41",
+            "9"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$|A\\cup B|=20+15-6=29$."
+        }
+      ],
+      "exampleQuestionId": "math10-m6-q001"
+    },
+    {
+      "id": "math10-qt9",
+      "topicId": "math10-t6",
+      "name": "Hoán vị, chỉnh hợp và tổ hợp",
+      "slug": "hoan-vi-chinh-hop-to-hop",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nhận diện việc có dùng toàn bộ phần tử hay không và thứ tự có tạo kết quả mới hay không.",
+      "recognitionSigns": [
+        "Xếp toàn bộ thường là hoán vị; chọn vào vị trí phân biệt thường là chỉnh hợp.",
+        "Chọn một nhóm không xét thứ tự thường là tổ hợp."
+      ],
+      "solvingSteps": [
+        "Xác định n phần tử và số phần tử k được dùng.",
+        "Hỏi xem đổi thứ tự có tạo kết quả khác không.",
+        "Chọn P_n, A_n^k hoặc C_n^k.",
+        "Xử lí ràng buộc bằng gộp khối, cố định hoặc biến cố đối."
+      ],
+      "commonMistakes": [
+        "Dùng tổ hợp cho bài phân chức vụ.",
+        "Quên nhân số cách đổi chỗ trong khối.",
+        "Không loại các trường hợp vi phạm ràng buộc."
+      ],
+      "theory": [
+        "**1. Giai thừa**\nVới $n\\in\\mathbb N$:\n$$n!=1\\cdot2\\cdots n,\\qquad0!=1$$\nCác công thức $P_n,A_n^k,C_n^k$ dưới đây dùng cho các phần tử **phân biệt**, với $0\\le k\\le n$.",
+        "**2. Hoán vị**\nSắp xếp toàn bộ $n$ phần tử phân biệt vào $n$ vị trí phân biệt:\n$$P_n=n!$$\nDấu hiệu: dùng tất cả phần tử và thay đổi thứ tự tạo cách mới.",
+        "**3. Chỉnh hợp**\nChọn $k$ phần tử từ $n$ phần tử phân biệt rồi xếp vào $k$ vị trí/vai trò phân biệt:\n$$A_n^k=n(n-1)\\cdots(n-k+1)=\\frac{n!}{(n-k)!}$$\nDấu hiệu: chỉ dùng $k$ phần tử và **có xét thứ tự**, như phân công chức vụ.",
+        "**4. Tổ hợp**\nChọn một nhóm $k$ phần tử từ $n$ phần tử phân biệt, không xét thứ tự:\n$$C_n^k=\\frac{n!}{k!(n-k)!}$$\nHai tính chất thường dùng:\n$$C_n^k=C_n^{n-k},\\qquad C_n^k+C_n^{k+1}=C_{n+1}^{k+1}$$",
+        "**5. Câu hỏi phân loại quyết định**\n- Dùng toàn bộ $n$ phần tử? Nếu có và xếp thứ tự: hoán vị.\n- Chỉ chọn $k<n$? Hỏi đổi vị trí hai phần tử có tạo kết quả khác không.\n- Có: chỉnh hợp. Không: tổ hợp.\nNếu đề cho phép lặp, không được tự động dùng ba công thức trên.",
+        "**6. Xếp các phần tử phải đứng cạnh nhau**\nGộp nhóm bắt buộc cạnh nhau thành một “khối”, xếp khối cùng các phần tử còn lại, rồi nhân số hoán vị bên trong khối. Ví dụ hai bạn $A,B$ cạnh nhau trong hàng $n$ người:\n$$2(n-1)!$$",
+        "**7. Các phần tử không được cạnh nhau**\nCách thường dùng:\n$$N_{không\\ cạnh}=N_{tất\\ cả}-N_{cạnh}$$\nHoặc xếp nhóm nền trước rồi chèn các phần tử bị tách vào các khoảng trống khi có nhiều đối tượng không được kề nhau.",
+        "**8. Chọn nhóm có điều kiện**\n- Một người bắt buộc có mặt: cố định người đó rồi chọn phần còn lại.\n- Ít nhất một phần tử loại A: lấy tổng số nhóm trừ nhóm không có A.\n- Đúng $r$ phần tử loại A: $C_{n_A}^{r}C_{n_B}^{k-r}$ nếu hai nhóm rời nhau.",
+        "**9. Kiểm tra bằng hai cách**\nVì $A_n^k=C_n^k\\,k!$, một bài “chọn rồi phân vị trí” có thể tính bằng tổ hợp nhân hoán vị. Hai cách phải cho cùng kết quả; đây là phép kiểm tra hữu ích.",
+        "**10. Lỗi cần tránh**\n- Dùng tổ hợp cho chức vụ phân biệt.\n- Quên $0!=1$.\n- Quên hoán vị bên trong khối.\n- Trừ sai phần bù “ít nhất một”.\n- Dùng $P,A,C$ khi phần tử được lặp hoặc không phân biệt.\n- Không kiểm tra $0\\le k\\le n$."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt9-st1",
+          "name": "Hoán vị và xếp hàng có điều kiện",
+          "example": "Sắp xếp toàn bộ phần tử, có thể kèm ràng buộc cạnh nhau.",
+          "recognitionSigns": [
+            "Dùng toàn bộ n phần tử khác nhau.",
+            "Thứ tự xếp tạo kết quả mới."
+          ],
+          "targetQuestionCount": 18
+        },
+        {
+          "id": "math10-qt9-st2",
+          "name": "Chỉnh hợp và phân vị trí",
+          "example": "Chọn k phần tử từ n phần tử vào k vị trí phân biệt.",
+          "recognitionSigns": [
+            "Chỉ dùng k<n phần tử.",
+            "Các chức vụ hoặc vị trí có vai trò khác nhau."
+          ],
+          "targetQuestionCount": 18
+        },
+        {
+          "id": "math10-qt9-st3",
+          "name": "Tổ hợp và chọn nhóm",
+          "example": "Chọn k phần tử mà không xét thứ tự.",
+          "recognitionSigns": [
+            "Đề hỏi chọn tổ, đội, nhóm hoặc tập con.",
+            "Đổi thứ tự liệt kê không tạo phương án mới."
+          ],
+          "targetQuestionCount": 18
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt9-1",
+          "question": "Chọn 3 học sinh từ 8 học sinh để lập một nhóm không phân chức vụ dùng",
+          "options": [
+            "$P_8$",
+            "$A_8^3$",
+            "$C_8^3$",
+            "$3^8$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Đổi thứ tự ba người không tạo nhóm mới nên dùng tổ hợp."
+        },
+        {
+          "id": "math10-check-qt9-2",
+          "question": "Chọn lớp trưởng và lớp phó từ 10 bạn dùng",
+          "options": [
+            "$C_{10}^2$",
+            "$A_{10}^2$",
+            "$P_{10}$",
+            "$10^2$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hai chức vụ khác nhau nên có xét thứ tự, dùng chỉnh hợp."
+        },
+        {
+          "id": "math10-check-qt9-3",
+          "question": "Xếp hai bạn A, B cạnh nhau trong hàng gồm 6 bạn khác nhau có",
+          "options": [
+            "$2\\cdot5!$",
+            "$2\\cdot6!$",
+            "$5!$",
+            "$6!-2$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Gộp A, B thành một khối: xếp 5 đơn vị rồi đổi chỗ trong khối theo 2 cách."
+        }
+      ],
+      "exampleQuestionId": "math10-m6-q037"
+    },
+    {
+      "id": "math10-qt10",
+      "topicId": "math10-t6",
+      "name": "Nhị thức Newton và hệ số",
+      "slug": "nhi-thuc-newton-he-so",
+      "difficulty": "hard",
+      "examFrequency": "medium",
+      "description": "Khai triển nhị thức và khai thác số hạng tổng quát để tìm hệ số hoặc số hạng không chứa biến.",
+      "recognitionSigns": [
+        "Biểu thức có dạng (a+b)^n hoặc yêu cầu hệ số trong khai triển.",
+        "Bài số hạng đặc biệt cần làm việc với số hạng tổng quát thay vì khai triển toàn bộ."
+      ],
+      "solvingSteps": [
+        "Đặt đúng hai số hạng u, v và số mũ n.",
+        "Viết số hạng tổng quát C_n^k u^{n−k}v^k.",
+        "Dùng điều kiện về số mũ để tìm k nếu cần.",
+        "Tính hệ số và kiểm tra dấu."
+      ],
+      "commonMistakes": [
+        "Bỏ hệ số C_n^k.",
+        "Nhầm k với số mũ của biến.",
+        "Mất dấu khi số hạng thứ hai âm."
+      ],
+      "theory": [
+        "**1. Công thức nhị thức Newton**\nVới $n\\in\\mathbb N$:\n$$(u+v)^n=\\sum_{k=0}^{n}C_n^k u^{n-k}v^k$$\nKhai triển có $n+1$ số hạng trước khi gộp các số hạng đồng dạng.",
+        "**2. Số hạng tổng quát và cách đánh số**\nSố hạng ứng với chỉ số $k$ là:\n$$T_{k+1}=C_n^k u^{n-k}v^k\\qquad(0\\le k\\le n)$$\nVì chỉ số bắt đầu từ $k=0$, **số hạng thứ $r$** tương ứng $k=r-1$.",
+        "**3. Khai triển có dấu trừ**\nVới $(u-v)^n$, đặt số hạng thứ hai là $-v$:\n$$T_{k+1}=C_n^k u^{n-k}(-v)^k$$\nDấu phụ thuộc tính chẵn lẻ của $k$; không được đặt tất cả số hạng giữa mang cùng dấu.",
+        "**4. Tìm hệ số của $x^m$**\nNếu $u=ax^p$, $v=bx^q$ thì:\n$$T_{k+1}=C_n^k a^{n-k}b^k x^{p(n-k)+qk}$$\nGiải phương trình số mũ $p(n-k)+qk=m$, rồi kiểm tra $k$ là số nguyên thuộc $[0;n]$. Hệ số cần tìm gồm cả $C_n^k$, lũy thừa của $a,b$ và dấu.",
+        "**5. Số hạng không chứa $x$**\nĐặt tổng số mũ của $x$ bằng 0. Nếu phương trình cho $k$ không nguyên hoặc ngoài $0\\le k\\le n$, khai triển **không có** số hạng độc lập. Nếu có, phải thay $k$ vào toàn bộ $T_{k+1}$ để lấy cả hệ số.",
+        "**6. Khai triển đầy đủ**\nViết lần lượt $k=0,1,\\ldots,n$; kiểm tra số mũ của $u$ giảm từ $n$ về 0, số mũ của $v$ tăng từ 0 lên $n$, và tổng hai số mũ luôn bằng $n$.",
+        "**7. Các tính chất hệ số**\nDo $C_n^k=C_n^{n-k}$, dãy hệ số nhị thức đối xứng. Tổng các hệ số của đa thức theo $x$ có thể tìm bằng cách cho $x=1$ sau khi đã khai triển về đúng đa thức; tổng hệ số bậc chẵn/lẻ có thể dùng thêm $x=-1$ khi phù hợp.",
+        "**8. Quy trình giải nhanh**\nXác định chính xác $u,v,n$; viết một lần $T_{k+1}$; rút gọn hệ số và số mũ của $x$; giải điều kiện số mũ; kiểm tra miền nguyên của $k$; cuối cùng mới tính hệ số/số hạng.",
+        "**9. Lỗi cần tránh**\n- Quên $C_n^k$.\n- Nhầm số hạng thứ $k$ với chỉ số $k$.\n- Chỉ giải số mũ mà không kiểm tra $k$ nguyên và thuộc đoạn.\n- Bỏ lũy thừa của hệ số $a,b$.\n- Mất dấu khi $v<0$.\n- Trả lời “hệ số” bằng cả biểu thức chứa $x$."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt10-st1",
+          "name": "Khai triển nhị thức",
+          "example": "Viết đầy đủ đa thức từ công thức Newton.",
+          "recognitionSigns": [
+            "Đề yêu cầu khai triển hoặc rút gọn toàn bộ.",
+            "Phải tính mọi số hạng từ k=0 đến n."
+          ],
+          "targetQuestionCount": 18
+        },
+        {
+          "id": "math10-qt10-st2",
+          "name": "Tìm hệ số của lũy thừa xác định",
+          "example": "Chọn đúng số hạng tổng quát có số mũ x theo yêu cầu.",
+          "recognitionSigns": [
+            "Đề chỉ hỏi hệ số của x^m.",
+            "Không cần khai triển toàn bộ biểu thức."
+          ],
+          "targetQuestionCount": 18
+        },
+        {
+          "id": "math10-qt10-st3",
+          "name": "Số hạng không chứa biến",
+          "example": "Đặt số mũ của biến trong số hạng tổng quát bằng 0.",
+          "recognitionSigns": [
+            "Biểu thức thường chứa cả x và 1/x.",
+            "Cần kiểm tra chỉ số k tìm được là số nguyên trong [0,n]."
+          ],
+          "targetQuestionCount": 18
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt10-1",
+          "question": "Khai triển $(u+v)^n$ có bao nhiêu số hạng trước khi gộp đồng dạng?",
+          "options": [
+            "$n$",
+            "$n+1$",
+            "$2n$",
+            "$2^n$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Chỉ số $k$ chạy từ 0 đến n nên có $n+1$ số hạng."
+        },
+        {
+          "id": "math10-check-qt10-2",
+          "question": "Số hạng thứ $r$ trong khai triển ứng với chỉ số",
+          "options": [
+            "$k=r$",
+            "$k=r+1$",
+            "$k=r-1$",
+            "$k=n-r$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "$T_{k+1}$ là số hạng ứng với k, nên số hạng thứ r có $k=r-1$."
+        },
+        {
+          "id": "math10-check-qt10-3",
+          "question": "Muốn tìm số hạng không chứa x, ta phải",
+          "options": [
+            "Đặt hệ số bằng 0",
+            "Đặt số mũ của x bằng 0",
+            "Cho x bằng 0 ngay",
+            "Chọn k=n"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Số hạng độc lập có lũy thừa $x^0$; sau đó phải kiểm tra k nguyên và thuộc $[0;n]$."
+        }
+      ],
+      "exampleQuestionId": "math10-m6-q073"
+    },
+    {
+      "id": "math10-qt11",
+      "topicId": "math10-t7",
+      "name": "Số gần đúng và các đại lượng xu thế trung tâm",
+      "slug": "so-gan-dung-xu-the-trung-tam",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Xử lí số gần đúng, số trung bình, trung vị và tứ phân vị để mô tả vị trí trung tâm của mẫu.",
+      "recognitionSigns": [
+        "Đề yêu cầu làm tròn, sai số hoặc một giá trị đại diện cho mẫu.",
+        "Trung bình sử dụng mọi giá trị; trung vị và tứ phân vị phụ thuộc vị trí sau khi sắp xếp."
+      ],
+      "solvingSteps": [
+        "Xác định loại đại lượng được hỏi.",
+        "Chuẩn hóa hoặc sắp xếp số liệu nếu cần.",
+        "Áp dụng đúng công thức hay quy tắc vị trí.",
+        "Ghi đơn vị và mức làm tròn."
+      ],
+      "commonMistakes": [
+        "Không sắp dữ liệu trước khi tìm trung vị.",
+        "Chia tổng cho số giá trị khác nhau.",
+        "Nhầm sai số tuyệt đối với sai số tương đối."
+      ],
+      "theory": [
+        "**1. Số đúng, số gần đúng và sai số tuyệt đối**\nNếu $a$ là giá trị đúng và $\\bar a$ là giá trị gần đúng thì sai số tuyệt đối:\n$$\\Delta_a=|a-\\bar a|$$\nKhi không biết $a$ nhưng biết $\\Delta_a\\le d$, viết $a=\\bar a\\pm d$ hoặc $a\\in[\\bar a-d;\\bar a+d]$.",
+        "**2. Sai số tương đối**\nSai số tương đối đánh giá sai số so với quy mô đại lượng:\n$$\\delta_a=\\frac{\\Delta_a}{|a|}$$\nKhi giá trị đúng chưa biết, thường ước lượng bằng $\\delta_a\\approx\\Delta_a/|\\bar a|$; dạng phần trăm là $\\delta_a\\times100\\%$. Không dùng khi mẫu số bằng hoặc quá gần 0.",
+        "**3. Làm tròn và độ chính xác**\nLàm tròn đến đơn vị $h$ tạo sai số do làm tròn không vượt quá $h/2$. Ví dụ làm tròn đến $0{,}1$ thì sai số tối đa là $0{,}05$. Chữ số ngay sau hàng giữ lại từ 5 trở lên thì tăng chữ số giữ lại một đơn vị.",
+        "**4. Số trung bình cộng**\nVới mẫu $x_1,x_2,\\ldots,x_n$:\n$$\\bar x=\\frac{x_1+x_2+\\cdots+x_n}{n}$$\nNếu giá trị $x_i$ xuất hiện với tần số $n_i$:\n$$\\bar x=\\frac{\\sum n_ix_i}{\\sum n_i}$$\nMẫu số là tổng số quan sát, không phải số giá trị khác nhau.",
+        "**5. Trung vị**\nSắp dữ liệu tăng dần. Nếu $n$ lẻ, trung vị $Q_2$ là giá trị ở vị trí $(n+1)/2$. Nếu $n$ chẵn, $Q_2$ là trung bình hai giá trị ở vị trí $n/2$ và $n/2+1$. Trung vị ít bị ảnh hưởng bởi giá trị quá lớn/nhỏ hơn trung bình.",
+        "**6. Tứ phân vị theo quy ước của ngân hàng câu hỏi**\nSau khi sắp tăng: $Q_2$ là trung vị; $Q_1$ là trung vị nửa dưới; $Q_3$ là trung vị nửa trên. Khi $n$ lẻ, **bỏ $Q_2$ chung** trước khi chia hai nửa. Khi $n$ chẵn, chia mẫu thành hai nửa bằng nhau.",
+        "**7. Mốt và lựa chọn đại lượng đại diện**\nMốt là giá trị có tần số lớn nhất; mẫu có thể không có mốt hoặc có nhiều mốt. Trung bình dùng toàn bộ số liệu nhưng nhạy với ngoại lệ; trung vị phù hợp dữ liệu lệch; mốt phù hợp khi cần giá trị xuất hiện phổ biến.",
+        "**8. Quy trình xử lí dữ liệu**\nKiểm tra đơn vị; sắp xếp nếu tìm trung vị/tứ phân vị; đếm đúng $n$ hoặc tần số; chọn đúng đại lượng; tính; cuối cùng làm tròn theo yêu cầu và diễn giải trong bối cảnh.",
+        "**9. Lỗi cần tránh**\n- Không sắp dữ liệu trước khi tìm trung vị, tứ phân vị.\n- Chia tổng cho số giá trị phân biệt.\n- Giữ trung vị chung trong hai nửa trái với quy ước đề.\n- Nhầm đơn vị làm tròn với số chữ số thập phân.\n- Gọi sai số tương đối là một đại lượng có đơn vị."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt11-st1",
+          "name": "Số gần đúng và sai số",
+          "example": "Làm tròn, tính sai số tuyệt đối hoặc tương đối.",
+          "recognitionSigns": [
+            "Đề nêu hàng làm tròn hoặc độ chính xác.",
+            "Cần phân biệt đơn vị của sai số tuyệt đối và phần trăm tương đối."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt11-st2",
+          "name": "Số trung bình cộng",
+          "example": "Tính giá trị trung bình từ danh sách hoặc bảng tần số.",
+          "recognitionSigns": [
+            "Mọi quan sát đều tham gia vào phép tính.",
+            "Giá trị lặp lại phải được tính đúng số lần."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt11-st3",
+          "name": "Trung vị và tứ phân vị",
+          "example": "Tìm Q1, Q2, Q3 theo vị trí trong mẫu đã sắp.",
+          "recognitionSigns": [
+            "Đề hỏi mốc chia mẫu thay vì tổng.",
+            "Phải sắp dữ liệu trước khi xác định vị trí."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt11-1",
+          "question": "Làm tròn đến đơn vị $0{,}1$ tạo sai số tuyệt đối tối đa bằng",
+          "options": [
+            "$0{,}1$",
+            "$0{,}05$",
+            "$0{,}01$",
+            "$0{,}5$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Sai số làm tròn tối đa bằng một nửa đơn vị làm tròn."
+        },
+        {
+          "id": "math10-check-qt11-2",
+          "question": "Khi tính trung bình từ bảng tần số, mẫu số là",
+          "options": [
+            "Số giá trị khác nhau",
+            "Tổng các giá trị",
+            "Tổng tần số",
+            "Tần số lớn nhất"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Tổng tần số chính là tổng số quan sát của mẫu."
+        },
+        {
+          "id": "math10-check-qt11-3",
+          "question": "Muốn tìm trung vị, thao tác bắt buộc trước tiên là",
+          "options": [
+            "Bình phương số liệu",
+            "Sắp xếp số liệu",
+            "Loại mọi ngoại lệ",
+            "Tính phương sai"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Trung vị và tứ phân vị phụ thuộc vị trí trong mẫu đã sắp."
+        }
+      ],
+      "exampleQuestionId": "math10-m7-q001"
+    },
+    {
+      "id": "math10-qt12",
+      "topicId": "math10-t7",
+      "name": "Độ phân tán và giá trị ngoại lệ",
+      "slug": "do-phan-tan-gia-tri-ngoai-le",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Đo mức biến động bằng khoảng biến thiên, IQR, phương sai và độ lệch chuẩn; so sánh độ ổn định.",
+      "recognitionSigns": [
+        "Đề hỏi dữ liệu phân tán, ổn định hoặc đồng đều đến mức nào.",
+        "Giá trị ngoại lệ được xét qua các ngưỡng dựa trên IQR."
+      ],
+      "solvingSteps": [
+        "Tính các đại lượng trung tâm cần dùng.",
+        "Tính độ lệch hoặc các tứ phân vị.",
+        "Tính chỉ số phân tán.",
+        "Diễn giải chỉ số trong bối cảnh."
+      ],
+      "commonMistakes": [
+        "Dùng trung bình để kết luận độ ổn định.",
+        "Quên bình phương độ lệch.",
+        "Nhầm phương sai với độ lệch chuẩn."
+      ],
+      "theory": [
+        "**1. Khoảng biến thiên**\nVới mẫu đã sắp:\n$$R=x_{\\max}-x_{\\min}$$\n$R$ chỉ dùng hai giá trị biên nên rất nhạy với ngoại lệ. $R$ nhỏ thường biểu thị dữ liệu tập trung hơn, nhưng chưa phản ánh toàn bộ mẫu.",
+        "**2. Khoảng tứ phân vị**\n$$IQR=Q_3-Q_1$$\n$IQR$ đo độ rộng của 50% dữ liệu giữa và ít bị ảnh hưởng bởi ngoại lệ hơn khoảng biến thiên. Phải tính $Q_1,Q_3$ theo cùng một quy ước tứ phân vị.",
+        "**3. Quy tắc nhận diện ngoại lệ**\nCác ngưỡng hàng rào:\n$$L=Q_1-1{,}5IQR,\\qquad U=Q_3+1{,}5IQR$$\nGiá trị $x<L$ hoặc $x>U$ được xem là ngoại lệ theo quy tắc IQR. Giá trị đúng bằng hàng rào không bị đánh dấu.",
+        "**4. Phương sai của mẫu số liệu theo chương trình**\nVới $n$ quan sát:\n$$s^2=\\frac1n\\sum_{i=1}^{n}(x_i-\\bar x)^2$$\nDạng tính nhanh:\n$$s^2=\\frac1n\\sum_{i=1}^{n}x_i^2-\\bar x^2$$\nNgân hàng câu hỏi này dùng công thức **chia cho $n$**, không dùng mẫu số $n-1$ của thống kê suy luận.",
+        "**5. Dữ liệu có tần số**\nNếu $x_i$ có tần số $n_i$, tổng số quan sát $N=\\sum n_i$:\n$$s^2=\\frac1N\\sum n_i(x_i-\\bar x)^2$$\nMỗi độ lệch phải được tính theo trung bình chung và nhân đúng tần số.",
+        "**6. Độ lệch chuẩn**\n$$s=\\sqrt{s^2}\\ge0$$\nĐộ lệch chuẩn có cùng đơn vị với dữ liệu; phương sai có đơn vị bình phương. Với các mẫu cùng đại lượng và cùng đơn vị, $s$ nhỏ hơn thường biểu thị ổn định/tập trung hơn quanh trung bình.",
+        "**7. Ảnh hưởng của phép biến đổi**\nNếu mọi giá trị tăng thêm $c$, trung bình tăng $c$ nhưng phương sai và độ lệch chuẩn không đổi. Nếu mọi giá trị nhân $k$, phương sai nhân $k^2$ và độ lệch chuẩn nhân $|k|$.",
+        "**8. So sánh và diễn giải**\nKhông chỉ nêu “mẫu A nhỏ hơn”; phải chỉ rõ đại lượng nào nhỏ hơn và kết luận mức phân tán. So sánh trực tiếp phương sai/độ lệch chuẩn chỉ hợp lí khi các mẫu dùng cùng đại lượng và đơn vị.",
+        "**9. Lỗi cần tránh**\n- Quên bình phương độ lệch.\n- Chia cho $n-1$ trái quy ước đề.\n- Nhầm $s$ với $s^2$.\n- Quên căn khi hỏi độ lệch chuẩn.\n- Dùng trung bình để kết luận độ ổn định.\n- Cho giá trị bằng hàng rào là ngoại lệ."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt12-st1",
+          "name": "Khoảng biến thiên, IQR và ngoại lệ",
+          "example": "Tính độ rộng tổng thể hoặc độ rộng của 50% dữ liệu giữa.",
+          "recognitionSigns": [
+            "Đề hỏi range, IQR hoặc ngưỡng ngoại lệ.",
+            "Cần biết min, max, Q1 và Q3."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt12-st2",
+          "name": "Phương sai và độ lệch chuẩn",
+          "example": "Đo độ lệch quanh số trung bình.",
+          "recognitionSigns": [
+            "Đề yêu cầu phương sai hoặc độ lệch chuẩn.",
+            "Cần bình phương độ lệch trước khi lấy trung bình."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt12-st3",
+          "name": "So sánh và diễn giải độ phân tán",
+          "example": "Chọn mẫu ổn định hơn từ các chỉ số hoặc dữ liệu.",
+          "recognitionSigns": [
+            "Đề có từ hai mẫu trở lên.",
+            "Mẫu có chỉ số phân tán nhỏ hơn thường ổn định hơn."
+          ],
+          "targetQuestionCount": 18
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt12-1",
+          "question": "Giá trị đúng bằng hàng rào trên $Q_3+1{,}5IQR$",
+          "options": [
+            "Luôn là ngoại lệ",
+            "Không bị xem là ngoại lệ theo quy tắc IQR",
+            "Phải xóa khỏi mẫu",
+            "Là trung vị"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Chỉ các giá trị lớn hơn hàng rào trên hoặc nhỏ hơn hàng rào dưới mới là ngoại lệ."
+        },
+        {
+          "id": "math10-check-qt12-2",
+          "question": "Nếu mọi số liệu đều tăng thêm 7 thì độ lệch chuẩn",
+          "options": [
+            "Tăng 7",
+            "Giảm 7",
+            "Không đổi",
+            "Nhân 49"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Tịnh tiến toàn bộ mẫu không làm thay đổi các độ lệch so với trung bình."
+        },
+        {
+          "id": "math10-check-qt12-3",
+          "question": "Hai mẫu cùng đại lượng và đơn vị; mẫu có độ lệch chuẩn nhỏ hơn thường",
+          "options": [
+            "Có trung bình lớn hơn",
+            "Ổn định hơn",
+            "Có nhiều quan sát hơn",
+            "Luôn có ngoại lệ"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Độ lệch chuẩn nhỏ biểu thị dữ liệu tập trung hơn quanh trung bình."
+        }
+      ],
+      "exampleQuestionId": "math10-m7-q037"
+    },
+    {
+      "id": "math10-qt13",
+      "topicId": "math10-t9",
+      "name": "Không gian mẫu và xác suất cổ điển",
+      "slug": "khong-gian-mau-xac-suat-co-dien",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Mô tả kết quả sơ cấp, đếm biến cố và vận dụng xác suất cổ điển, biến cố đối, hợp biến cố.",
+      "recognitionSigns": [
+        "Phép thử có hữu hạn kết quả và cần xác định kết quả thuận lợi.",
+        "Phải kiểm tra các kết quả sơ cấp có đồng khả năng trước khi dùng tỉ số."
+      ],
+      "solvingSteps": [
+        "Mô tả một kết quả sơ cấp.",
+        "Đếm không gian mẫu.",
+        "Đếm kết quả thuận lợi.",
+        "Lập tỉ số và rút gọn; dùng biến cố đối nếu thuận lợi."
+      ],
+      "commonMistakes": [
+        "Chọn không gian mẫu có các phần tử không đồng khả năng.",
+        "Quên thứ tự của kết quả.",
+        "Cộng xác suất hai biến cố có giao."
+      ],
+      "theory": [
+        "**1. Phép thử và không gian mẫu**\nPhép thử ngẫu nhiên có kết quả chưa biết trước. Mỗi kết quả sơ cấp phải được mô tả rõ; tập tất cả kết quả là không gian mẫu $\\Omega$. Biến cố $A$ là một tập con của $\\Omega$.",
+        "**2. Kết quả có thứ tự**\nHai xúc xắc phân biệt cho kết quả $(i;j)$; $(1;2)$ và $(2;1)$ là hai kết quả khác nhau. Khi gieo nhiều lần, một kết quả là cả chuỗi theo đúng thứ tự thời gian.",
+        "**3. Xác suất cổ điển**\nNếu $\\Omega$ hữu hạn và mọi kết quả sơ cấp đồng khả năng:\n$$P(A)=\\frac{n(A)}{n(\\Omega)}$$\nKhông được dùng tỉ số số phần tử nếu các kết quả trong không gian mẫu đã chọn không đồng khả năng.",
+        "**4. Đếm không gian mẫu và biến cố**\nMô tả một kết quả trước, sau đó dùng quy tắc cộng, nhân, tổ hợp hoặc liệt kê. Tử số và mẫu số phải được đếm trên **cùng một mô hình kết quả**, cùng xét hoặc không xét thứ tự.",
+        "**5. Biến cố đối**\nBiến cố đối $\\overline A=\\Omega\\setminus A$ thỏa:\n$$P(\\overline A)=1-P(A)$$\nDạng “ít nhất một” thường tính bằng 1 trừ xác suất “không có lần nào”.",
+        "**6. Hợp và giao biến cố**\n$$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$$\nNếu $A,B$ xung khắc thì $A\\cap B=\\varnothing$ nên chỉ cộng. “Xung khắc” không đồng nghĩa “độc lập”.",
+        "**7. Các phép thử độc lập lặp lại**\nNếu các lần thử độc lập và xác suất thất bại mỗi lần là $q$, xác suất thất bại cả $n$ lần là $q^n$. Vì vậy:\n$$P(\\text{ít nhất một lần thành công})=1-q^n$$\nChỉ được nhân xác suất khi tính độc lập đã được cho hoặc suy ra hợp lí từ mô hình.",
+        "**8. Kiểm tra kết quả**\nLuôn có $0\\le P(A)\\le1$, $P(\\Omega)=1$, $P(\\varnothing)=0$. Biến cố có nhiều kết quả thuận lợi hơn trong cùng không gian đồng khả năng không thể có xác suất nhỏ hơn.",
+        "**9. Lỗi cần tránh**\n- Chọn phần tử không gian mẫu không đồng khả năng.\n- Quên thứ tự khi phân biệt các lần gieo/vật gieo.\n- Cộng xác suất hai biến cố có giao.\n- Nhầm độc lập với xung khắc.\n- Tính “ít nhất một” bằng cách cộng chồng các trường hợp.\n- Đếm tử và mẫu theo hai quy ước khác nhau."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt13-st1",
+          "name": "Không gian mẫu và biến cố",
+          "example": "Mô tả hoặc đếm toàn bộ kết quả sơ cấp.",
+          "recognitionSigns": [
+            "Đề hỏi các kết quả có thể xảy ra.",
+            "Thứ tự có thể làm hai kết quả khác nhau."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt13-st2",
+          "name": "Xác suất cổ điển bằng phép đếm",
+          "example": "Lấy số kết quả thuận lợi chia tổng số kết quả đồng khả năng.",
+          "recognitionSigns": [
+            "Không gian mẫu hữu hạn và đồng khả năng.",
+            "Cần đếm chính xác biến cố trước khi lập tỉ số."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt13-st3",
+          "name": "Biến cố đối và hợp biến cố",
+          "example": "Tính xác suất “không”, “ít nhất một” hoặc “A hoặc B”.",
+          "recognitionSigns": [
+            "Đề có biến cố đối hoặc hợp hai biến cố.",
+            "Cần tránh đếm trùng phần giao."
+          ],
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt13-1",
+          "question": "Gieo hai xúc xắc phân biệt, $(1;2)$ và $(2;1)$",
+          "options": [
+            "Là cùng một kết quả",
+            "Là hai kết quả khác nhau",
+            "Không đồng khả năng",
+            "Đều không thuộc không gian mẫu"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hai vị trí ứng với hai xúc xắc phân biệt nên thứ tự tạo kết quả khác nhau."
+        },
+        {
+          "id": "math10-check-qt13-2",
+          "question": "Công thức $P(A)=n(A)/n(\\Omega)$ dùng trực tiếp khi",
+          "options": [
+            "Không gian mẫu vô hạn",
+            "Các kết quả sơ cấp đồng khả năng",
+            "A chắc chắn xảy ra",
+            "A và B độc lập"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đây là điều kiện cốt lõi của mô hình xác suất cổ điển."
+        },
+        {
+          "id": "math10-check-qt13-3",
+          "question": "Xác suất có ít nhất một lần thành công trong n phép thử độc lập, xác suất thất bại mỗi lần là q, bằng",
+          "options": [
+            "$q^n$",
+            "$1-q^n$",
+            "$(1-q)^n$",
+            "$nq$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Dùng biến cố đối: 1 trừ xác suất thất bại trong cả n lần."
+        }
+      ],
+      "exampleQuestionId": "math10-m7-q073"
+    },
+    {
+      "id": "math10-qt14",
+      "topicId": "math10-t8",
+      "name": "Phương trình đường thẳng, vị trí và khoảng cách",
+      "slug": "duong-thang-vi-tri-khoang-cach",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Lập phương trình đường thẳng, xét vị trí tương đối và tính khoảng cách trong mặt phẳng tọa độ.",
+      "recognitionSigns": [
+        "Dữ kiện thường gồm điểm, vectơ chỉ phương/pháp tuyến hoặc phương trình ax+by+c=0.",
+        "Vị trí và khoảng cách được xử lí qua cặp hệ số a, b."
+      ],
+      "solvingSteps": [
+        "Xác định vectơ chỉ phương hoặc pháp tuyến.",
+        "Chọn dạng phương trình phù hợp.",
+        "Chuẩn hóa hệ số nếu cần.",
+        "Kiểm tra điểm thuộc đường và kết luận hình học."
+      ],
+      "commonMistakes": [
+        "Nhầm vectơ chỉ phương với pháp tuyến.",
+        "Kết luận trùng nhau khi mới kiểm tra hai hệ số đầu.",
+        "Quên căn ở mẫu công thức khoảng cách."
+      ],
+      "theory": [
+        "**1. Vectơ chỉ phương và pháp tuyến**\nĐường thẳng $d$ có vectơ chỉ phương $\\vec u=(u_1;u_2)\\ne\\vec0$. Một vectơ pháp tuyến vuông góc với $d$ là:\n$$\\vec n=(a;b)\\ne\\vec0$$\nNếu $\\vec n=(a;b)$ thì có thể chọn $\\vec u=(-b;a)$ hoặc $(b;-a)$.",
+        "**2. Phương trình tổng quát**\nĐường thẳng qua $M_0(x_0;y_0)$ và có pháp tuyến $(a;b)$:\n$$a(x-x_0)+b(y-y_0)=0$$\nDạng tổng quát $ax+by+c=0$ có pháp tuyến $(a;b)$, với $a^2+b^2>0$. Kiểm tra điểm thuộc đường bằng cách thay tọa độ vào phương trình.",
+        "**3. Phương trình tham số**\nĐường qua $M_0(x_0;y_0)$ và có chỉ phương $(u_1;u_2)$:\n$$\\begin{cases}x=x_0+u_1t\\\\y=y_0+u_2t\\end{cases}\\qquad(t\\in\\mathbb R)$$\nMuốn đổi sang tổng quát, dùng một pháp tuyến vuông góc với vectơ chỉ phương.",
+        "**4. Lập đường thẳng từ hai điểm**\nVới hai điểm phân biệt $A,B$, lấy $\\vec{AB}$ làm chỉ phương. Nếu $A=B$, dữ kiện chưa xác định một đường duy nhất. Có thể tìm pháp tuyến $(-\\Delta y;\\Delta x)$ rồi dùng dạng điểm–pháp tuyến.",
+        "**5. Vị trí tương đối**\nCho $d_i:a_ix+b_iy+c_i=0$.\n- Song song phân biệt: $(a_1;b_1)$ tỉ lệ $(a_2;b_2)$ nhưng bộ ba hệ số không tỉ lệ.\n- Trùng nhau: $(a_1;b_1;c_1)$ tỉ lệ $(a_2;b_2;c_2)$.\n- Cắt nhau: hai pháp tuyến không cùng phương.\n- Vuông góc: $a_1a_2+b_1b_2=0$.",
+        "**6. Góc giữa hai đường thẳng**\nGóc nhọn hoặc vuông $\\varphi$ giữa hai đường:\n$$\\cos\\varphi=\\frac{|a_1a_2+b_1b_2|}{\\sqrt{a_1^2+b_1^2}\\sqrt{a_2^2+b_2^2}}$$\nGiá trị tuyệt đối chọn góc không tù giữa hai đường; không nhầm với góc có hướng giữa hai vectơ.",
+        "**7. Khoảng cách từ điểm đến đường**\nVới $M(x_0;y_0)$ và $d:ax+by+c=0$:\n$$d(M,d)=\\frac{|ax_0+by_0+c|}{\\sqrt{a^2+b^2}}$$\nPhương trình đường phải ở dạng tổng quát; tử có giá trị tuyệt đối và mẫu là độ dài pháp tuyến.",
+        "**8. Khoảng cách giữa hai đường song song**\nTrước tiên chuẩn hóa để hai phương trình có cùng hệ số $a,b$:\n$$d:ax+by+c_1=0,\\qquad d\\prime:ax+by+c_2=0$$\nKhi đó:\n$$d(d,d\\prime)=\\frac{|c_1-c_2|}{\\sqrt{a^2+b^2}}$$",
+        "**9. Lỗi cần tránh**\n- Nhầm $(a;b)$ là chỉ phương của $ax+by+c=0$.\n- Kết luận trùng chỉ từ $a_1:b_1=a_2:b_2$.\n- Quên điều kiện hai điểm phân biệt.\n- Bỏ giá trị tuyệt đối hoặc căn ở công thức khoảng cách.\n- So sánh $c_1,c_2$ khi hai phương trình chưa chuẩn hóa."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt14-st1",
+          "name": "Lập phương trình đường thẳng",
+          "example": "Viết phương trình từ điểm và vectơ pháp tuyến/chỉ phương.",
+          "recognitionSigns": [
+            "Đề cho điểm thuộc đường và một vectơ.",
+            "Cần xác định vectơ đó là chỉ phương hay pháp tuyến."
+          ],
+          "targetQuestionCount": 18
+        },
+        {
+          "id": "math10-qt14-st2",
+          "name": "Vị trí tương đối và góc",
+          "example": "Phân biệt song song, trùng, vuông góc hoặc cắt nhau.",
+          "recognitionSigns": [
+            "Đề cho hai phương trình đường thẳng.",
+            "Cần so sánh cả pháp tuyến và hệ số tự do."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt14-st3",
+          "name": "Khoảng cách và ứng dụng",
+          "example": "Tính khoảng cách từ điểm đến đường thẳng.",
+          "recognitionSigns": [
+            "Đề cho M(x0,y0) và ax+by+c=0.",
+            "Công thức có giá trị tuyệt đối ở tử và độ dài pháp tuyến ở mẫu."
+          ],
+          "targetQuestionCount": 18
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt14-1",
+          "question": "Đường thẳng $ax+by+c=0$ có một vectơ pháp tuyến là",
+          "options": [
+            "$(a;b)$",
+            "$(-b;a)$",
+            "$(c;a)$",
+            "$(b;a)$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Hai hệ số của x và y tạo thành một vectơ pháp tuyến của đường thẳng."
+        },
+        {
+          "id": "math10-check-qt14-2",
+          "question": "Trong công thức khoảng cách từ điểm đến đường thẳng, tử số phải có",
+          "options": [
+            "Bình phương",
+            "Giá trị tuyệt đối",
+            "Căn bậc hai",
+            "Đạo hàm"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Khoảng cách không âm nên tử là $|ax_0+by_0+c|$."
+        },
+        {
+          "id": "math10-check-qt14-3",
+          "question": "Hai đường có cặp hệ số $(a;b)$ tỉ lệ nhưng bộ ba $(a;b;c)$ không tỉ lệ thì",
+          "options": [
+            "Trùng nhau",
+            "Song song phân biệt",
+            "Vuông góc",
+            "Cắt nhau"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Pháp tuyến cùng phương nhưng phương trình không cùng một đường."
+        }
+      ],
+      "exampleQuestionId": "math10-m8-q001"
+    },
+    {
+      "id": "math10-qt15",
+      "topicId": "math10-t8",
+      "name": "Đường tròn và tiếp tuyến",
+      "slug": "duong-tron-tiep-tuyen",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nhận dạng, lập phương trình đường tròn và viết tiếp tuyến tại một điểm thuộc đường tròn.",
+      "recognitionSigns": [
+        "Phương trình chuẩn có tổng hai bình phương bằng R².",
+        "Bán kính đi qua tiếp điểm là pháp tuyến của tiếp tuyến."
+      ],
+      "solvingSteps": [
+        "Đưa phương trình về dạng chuẩn.",
+        "Xác định tâm và bán kính.",
+        "Kiểm tra điểm thuộc đường tròn nếu có.",
+        "Dùng bán kính làm pháp tuyến khi viết tiếp tuyến."
+      ],
+      "commonMistakes": [
+        "Đọc tâm sai dấu.",
+        "Nhầm R với R².",
+        "Dùng bán kính làm vectơ chỉ phương tiếp tuyến."
+      ],
+      "theory": [
+        "**1. Phương trình chuẩn của đường tròn**\nĐường tròn tâm $I(a;b)$, bán kính $R>0$:\n$$(x-a)^2+(y-b)^2=R^2$$\nDấu tọa độ tâm ngược với dấu nhìn thấy trong ngoặc; vế phải là $R^2$, không phải $R$.",
+        "**2. Dạng khai triển**\n$$x^2+y^2+Dx+Ey+F=0$$\nTâm và bán kính:\n$$I\\left(-\\frac D2;-\\frac E2\\right),\\qquad R^2=\\frac{D^2+E^2}{4}-F$$\nĐây là đường tròn thực khi $R^2>0$; bằng 0 là một điểm; âm thì không có đường tròn thực.",
+        "**3. Lập phương trình từ dữ kiện**\n- Biết tâm và bán kính: dùng trực tiếp dạng chuẩn.\n- Biết tâm và một điểm $M$: $R=IM$.\n- Biết đường kính $AB$: tâm là trung điểm $AB$, $R=AB/2$.\n- Biết ba điểm không thẳng hàng: thay vào dạng khai triển để tìm $D,E,F$.",
+        "**4. Vị trí của điểm**\nSo sánh $IM$ với $R$: $IM<R$ điểm ở trong, $IM=R$ điểm thuộc đường tròn, $IM>R$ điểm ở ngoài. Trước khi viết tiếp tuyến tại $M$, bắt buộc kiểm tra $M$ thuộc đường tròn.",
+        "**5. Tiếp tuyến tại một điểm**\nTại $M(x_M;y_M)$ thuộc đường tròn tâm $I(a;b)$, bán kính $IM$ là pháp tuyến của tiếp tuyến:\n$$(x_M-a)(x-x_M)+(y_M-b)(y-y_M)=0$$",
+        "**6. Vị trí đường thẳng và đường tròn**\nVới đường thẳng $d$, đặt $h=d(I,d)$:\n- $h>R$: không giao.\n- $h=R$: tiếp xúc.\n- $h<R$: cắt tại hai điểm.\nĐiều kiện tiếp tuyến là khoảng cách từ tâm đến đường bằng bán kính.",
+        "**7. Đường tròn tiếp xúc trục tọa độ**\nTâm $I(a;b)$ có khoảng cách đến $Ox$ là $|b|$, đến $Oy$ là $|a|$. Tiếp xúc $Ox$ khi $R=|b|$, tiếp xúc $Oy$ khi $R=|a|$.",
+        "**8. Quy trình bài tiếp tuyến**\nXác định tâm; kiểm tra tiếp điểm; lập vectơ $\\vec{IM}$; dùng nó làm pháp tuyến; viết phương trình qua $M$; thay lại $M$ và kiểm tra khoảng cách từ tâm đến đường.",
+        "**9. Lỗi cần tránh**\n- Đọc tâm sai dấu.\n- Lấy $R=R^2$.\n- Bỏ điều kiện $R^2>0$.\n- Viết tiếp tuyến tại điểm không thuộc đường tròn.\n- Dùng $\\vec{IM}$ làm chỉ phương thay vì pháp tuyến.\n- Dùng điều kiện $d(I,d)=R$ nhưng quên giá trị tuyệt đối."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt15-st1",
+          "name": "Nhận dạng tâm và bán kính",
+          "example": "Đọc tâm, bán kính từ phương trình chuẩn.",
+          "recognitionSigns": [
+            "Phương trình là tổng hai bình phương.",
+            "Dấu tọa độ tâm ngược với dấu trong ngoặc."
+          ],
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math10-qt15-st2",
+          "name": "Lập phương trình đường tròn",
+          "example": "Viết phương trình từ tâm và bán kính.",
+          "recognitionSigns": [
+            "Đề cho tâm trực tiếp hoặc đủ dữ kiện tìm tâm.",
+            "Vế phải của dạng chuẩn là R²."
+          ],
+          "targetQuestionCount": 18
+        },
+        {
+          "id": "math10-qt15-st3",
+          "name": "Tiếp tuyến và vị trí tương đối",
+          "example": "Viết tiếp tuyến tại điểm thuộc đường tròn.",
+          "recognitionSigns": [
+            "Có tâm và tiếp điểm.",
+            "Bán kính tại tiếp điểm vuông góc tiếp tuyến."
+          ],
+          "targetQuestionCount": 18
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt15-1",
+          "question": "Đường tròn $(x+2)^2+(y-3)^2=16$ có tâm",
+          "options": [
+            "$(2;-3)$",
+            "$(-2;3)$",
+            "$(-2;-3)$",
+            "$(2;3)$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Tọa độ tâm mang dấu ngược với dấu trong hai ngoặc."
+        },
+        {
+          "id": "math10-check-qt15-2",
+          "question": "Tiếp tuyến tại M của đường tròn tâm I nhận vectơ nào làm pháp tuyến?",
+          "options": [
+            "$\\vec{IM}$",
+            "Một vectơ cùng hướng tiếp tuyến",
+            "$\\vec{OM}$ trong mọi trường hợp",
+            "$\\vec0$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Bán kính IM vuông góc với tiếp tuyến tại M."
+        },
+        {
+          "id": "math10-check-qt15-3",
+          "question": "Đường thẳng d tiếp xúc đường tròn tâm I, bán kính R khi",
+          "options": [
+            "$d(I,d)>R$",
+            "$d(I,d)<R$",
+            "$d(I,d)=R$",
+            "$I\\in d$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Khoảng cách từ tâm đến tiếp tuyến đúng bằng bán kính."
+        }
+      ],
+      "exampleQuestionId": "math10-m8-q037"
+    },
+    {
+      "id": "math10-qt16",
+      "topicId": "math10-t8",
+      "name": "Elip, hypebol và parabol",
+      "slug": "elip-hypebol-parabol",
+      "difficulty": "hard",
+      "examFrequency": "medium",
+      "description": "Nhận dạng phương trình chính tắc và tính các yếu tố cơ bản của ba đường conic.",
+      "recognitionSigns": [
+        "Hai bình phương cùng dấu gợi elip; trái dấu gợi hypebol.",
+        "Parabol chính tắc có một biến bình phương và biến kia bậc nhất."
+      ],
+      "solvingSteps": [
+        "Nhận dạng loại conic.",
+        "Đọc đúng a², b² hoặc 4a.",
+        "Tính c và các yếu tố hình học.",
+        "Kiểm tra dấu và hướng trục."
+      ],
+      "commonMistakes": [
+        "Dùng cùng một công thức c cho elip và hypebol.",
+        "Đọc nhầm trục từ mẫu số.",
+        "Lấy 4a làm tọa độ tiêu điểm parabol."
+      ],
+      "theory": [
+        "**1. Nhận dạng nhanh ba đường conic**\nSau khi đưa về dạng chính tắc: hai bình phương cùng dấu và bằng 1 gợi elip; hai bình phương trái dấu gợi hypebol; chỉ một biến bình phương và biến kia bậc nhất gợi parabol. Phải chuẩn hóa vế phải trước khi đọc hệ số.",
+        "**2. Elip trục lớn nằm trên $Ox$**\n$$\\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1\\qquad(a>b>0)$$\n$$c^2=a^2-b^2$$\nTâm $O$, đỉnh trục lớn $(\\pm a;0)$, đỉnh trục nhỏ $(0;\\pm b)$, tiêu điểm $(\\pm c;0)$; độ dài trục lớn $2a$, trục nhỏ $2b$, tiêu cự $F_1F_2=2c$, tâm sai $e=c/a$ với $0<e<1$.",
+        "**3. Elip trục lớn nằm trên $Oy$**\nNếu mẫu lớn $a^2$ nằm dưới $y^2$, tiêu điểm và đỉnh trục lớn nằm trên $Oy$:\n$$\\frac{x^2}{b^2}+\\frac{y^2}{a^2}=1$$\nKhi đó $F_{1,2}=(0;\\pm c)$, vẫn có $c^2=a^2-b^2$.",
+        "**4. Hypebol trục thực nằm trên $Ox$**\n$$\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1\\qquad(a,b>0)$$\n$$c^2=a^2+b^2$$\nĐỉnh $(\\pm a;0)$, tiêu điểm $(\\pm c;0)$, trục thực dài $2a$, tiêu cự $2c$, tâm sai $e=c/a>1$, tiệm cận $y=\\pm(b/a)x$.",
+        "**5. Hypebol trục thực nằm trên $Oy$**\n$$\\frac{y^2}{a^2}-\\frac{x^2}{b^2}=1$$\nSố hạng dương xác định hướng trục thực. Tiêu điểm $(0;\\pm c)$ và tiệm cận $y=\\pm(a/b)x$. Không đọc hướng chỉ theo mẫu số lớn.",
+        "**6. Parabol mở sang phải hoặc trái**\n$$y^2=4px$$\nTiêu điểm $F(p;0)$, đường chuẩn $x=-p$. Nếu $p>0$ parabol mở sang phải; nếu $p<0$ mở sang trái. Hệ số trước $x$ là $4p$, không phải tọa độ tiêu điểm.",
+        "**7. Parabol mở lên hoặc xuống**\n$$x^2=4py$$\nTiêu điểm $F(0;p)$, đường chuẩn $y=-p$. Dấu của $p$ quyết định mở lên hay xuống.",
+        "**8. Quy trình khai thác phương trình**\nChuẩn hóa về vế phải 1 với elip/hypebol; xác định số hạng dương và mẫu lớn; tính $a,b,c$ bằng đúng quan hệ; sau đó mới suy tiêu điểm, trục, tiêu cự, tâm sai. Với parabol, so sánh trực tiếp hệ số với $4p$.",
+        "**9. Lỗi cần tránh**\n- Dùng $c^2=a^2-b^2$ cho hypebol.\n- Gọi $c$ là tiêu cự thay vì $F_1F_2=2c$ theo cách dùng trong bài.\n- Mặc định trục nằm trên $Ox$.\n- Lấy mẫu lớn làm $a^2$ của hypebol thay vì xét số hạng dương.\n- Lấy $4p$ làm tọa độ tiêu điểm.\n- Bỏ dấu của $p$ khi xác định hướng parabol."
+      ],
+      "subTypes": [
+        {
+          "id": "math10-qt16-st1",
+          "name": "Elip",
+          "example": "Tính tiêu điểm, trục và tâm sai của elip.",
+          "recognitionSigns": [
+            "Hai bình phương cùng dấu cộng.",
+            "Mẫu lớn ứng với bán trục lớn."
+          ],
+          "targetQuestionCount": 18
+        },
+        {
+          "id": "math10-qt16-st2",
+          "name": "Hypebol",
+          "example": "Tính tiêu điểm, trục thực và tâm sai của hypebol.",
+          "recognitionSigns": [
+            "Hai bình phương trái dấu.",
+            "Số hạng dương xác định hướng trục thực."
+          ],
+          "targetQuestionCount": 18
+        },
+        {
+          "id": "math10-qt16-st3",
+          "name": "Parabol",
+          "example": "Xác định tiêu điểm và đường chuẩn từ dạng chính tắc.",
+          "recognitionSigns": [
+            "Chỉ một biến được bình phương.",
+            "So sánh hệ số với 4a trước khi kết luận."
+          ],
+          "targetQuestionCount": 18
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "math10-check-qt16-1",
+          "question": "Với elip, quan hệ đúng là",
+          "options": [
+            "$c^2=a^2+b^2$",
+            "$c^2=a^2-b^2$",
+            "$c=a+b$",
+            "$c^2=b^2-a^2$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Elip có $a>b>0$ và $c^2=a^2-b^2$."
+        },
+        {
+          "id": "math10-check-qt16-2",
+          "question": "Với hypebol chính tắc, quan hệ đúng là",
+          "options": [
+            "$c^2=a^2-b^2$",
+            "$c^2=a^2+b^2$",
+            "$c=a-b$",
+            "$c^2=4a$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Khoảng cách tiêu điểm của hypebol dùng $c^2=a^2+b^2$."
+        },
+        {
+          "id": "math10-check-qt16-3",
+          "question": "Parabol $y^2=12x$ có tiêu điểm",
+          "options": [
+            "$(12;0)$",
+            "$(6;0)$",
+            "$(3;0)$",
+            "$(0;3)$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "So sánh $12=4p$ được $p=3$, nên tiêu điểm là $(3;0)$."
+        }
+      ],
+      "exampleQuestionId": "math10-m8-q073"
+    }
+  ]
+}

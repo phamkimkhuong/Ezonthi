@@ -1,0 +1,3329 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "2026.09.1",
+  "updatedAt": "2026-09-16T12:27:57.732Z",
+  "grade": "grade11",
+  "subject": "math",
+  "subjectName": "Toán học 11",
+  "icon": "Calculator",
+  "themeColor": "#6366f1",
+  "badge": "Nâng cao",
+  "stats": {
+    "totalTopics": 9,
+    "totalQuestionTypes": 33,
+    "estimatedTotalMinutes": 990
+  },
+  "topics": [
+    {
+      "id": "math11-t01",
+      "name": "Chương I: Hàm số lượng giác và Phương trình lượng giác",
+      "slug": "ham-so-va-phuong-trinh-luong-giac",
+      "orderIndex": 1,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương I: Hàm số lượng giác và Phương trình lượng giác",
+      "estimatedMinutes": 120,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math11-qt01",
+        "math11-qt02",
+        "math11-qt03",
+        "math11-qt04"
+      ]
+    },
+    {
+      "id": "math11-t02",
+      "name": "Chương II: Dãy số. Cấp số cộng và cấp số nhân",
+      "slug": "day-so-cap-so-cong-cap-so-nhan",
+      "orderIndex": 2,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương II: Dãy số. Cấp số cộng và cấp số nhân",
+      "estimatedMinutes": 90,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math11-qt05",
+        "math11-qt06",
+        "math11-qt07"
+      ]
+    },
+    {
+      "id": "math11-t03",
+      "name": "Chương III: Mẫu số liệu ghép nhóm",
+      "slug": "mau-so-lieu-ghep-nhom",
+      "orderIndex": 3,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương III: Mẫu số liệu ghép nhóm",
+      "estimatedMinutes": 60,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math11-qt08",
+        "math11-qt09"
+      ]
+    },
+    {
+      "id": "math11-t04",
+      "name": "Chương IV: Quan hệ song song trong không gian",
+      "slug": "quan-he-song-song-trong-khong-gian",
+      "orderIndex": 4,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương IV: Quan hệ song song trong không gian",
+      "estimatedMinutes": 150,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math11-qt10",
+        "math11-qt11",
+        "math11-qt12",
+        "math11-qt13",
+        "math11-qt14"
+      ]
+    },
+    {
+      "id": "math11-t05",
+      "name": "Chương V: Giới hạn. Hàm số liên tục",
+      "slug": "gioi-han-ham-so-lien-tuc",
+      "orderIndex": 5,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương V: Giới hạn. Hàm số liên tục",
+      "estimatedMinutes": 90,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math11-qt15",
+        "math11-qt16",
+        "math11-qt17"
+      ]
+    },
+    {
+      "id": "math11-t06",
+      "name": "Chương VI: Hàm số mũ và hàm số lôgarit",
+      "slug": "ham-so-mu-logarit",
+      "orderIndex": 6,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương VI: Hàm số mũ và hàm số lôgarit",
+      "estimatedMinutes": 120,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "math11-qt18",
+        "math11-qt19",
+        "math11-qt20",
+        "math11-qt21"
+      ]
+    },
+    {
+      "id": "math11-t07",
+      "name": "Chương VII: Quan hệ vuông góc trong không gian",
+      "slug": "quan-he-vuong-goc-trong-khong-gian",
+      "orderIndex": 7,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương VII: Quan hệ vuông góc trong không gian",
+      "estimatedMinutes": 180,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "math11-qt22",
+        "math11-qt23",
+        "math11-qt24",
+        "math11-qt25",
+        "math11-qt26",
+        "math11-qt27"
+      ]
+    },
+    {
+      "id": "math11-t08",
+      "name": "Chương VIII: Các quy tắc tính xác suất",
+      "slug": "cac-quy-tac-tinh-xac-suat",
+      "orderIndex": 8,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương VIII: Các quy tắc tính xác suất",
+      "estimatedMinutes": 90,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "math11-qt28",
+        "math11-qt29",
+        "math11-qt30"
+      ]
+    },
+    {
+      "id": "math11-t09",
+      "name": "Chương IX: Đạo hàm",
+      "slug": "dao-ham",
+      "orderIndex": 9,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương IX: Đạo hàm",
+      "estimatedMinutes": 90,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "math11-qt31",
+        "math11-qt32",
+        "math11-qt33"
+      ]
+    }
+  ],
+  "questionTypes": [
+    {
+      "id": "math11-qt01",
+      "topicId": "math11-t01",
+      "name": "Dạng 1: Góc lượng giác và giá trị lượng giác",
+      "slug": "goc-va-gia-tri-luong-giac",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Biểu diễn góc lượng giác, xác định góc cùng tia cuối và tính giá trị lượng giác theo góc phần tư.",
+      "recognitionSigns": [
+        "Đề xuất hiện số đo radian, góc cùng tia cuối hoặc hệ thức Chasles.",
+        "Đề cho một giá trị lượng giác và khoảng chứa góc để tính giá trị còn lại."
+      ],
+      "solvingSteps": [
+        "Chuẩn hóa số đo góc và xác định vị trí tia cuối trên đường tròn lượng giác.",
+        "Chọn hệ thức lượng giác phù hợp và xác định dấu theo góc phần tư.",
+        "Tính toán rồi kiểm tra miền giá trị của kết quả."
+      ],
+      "commonMistakes": [
+        "Bỏ qua dấu của giá trị lượng giác theo góc phần tư.",
+        "Nhầm chu kì $2\\pi$ của sin, cos với chu kì $\\pi$ của tan, cot."
+      ],
+      "theory": [
+        "**Góc lượng giác và giá trị lượng giác**\nGóc lượng giác $(Ou,Ov)$ mô tả phép quay có hướng từ tia $Ou$ đến tia $Ov$. Chiều ngược kim đồng hồ là chiều dương; chiều kim đồng hồ là chiều âm. Các góc cùng tia đầu và tia cuối có số đo sai khác nhau một bội của $2\\pi$.\n\nTrên đường tròn lượng giác, điểm biểu diễn góc $\\alpha$ có tọa độ $M(\\cos\\alpha;\\sin\\alpha)$. Vì vậy dấu của $\\sin\\alpha$ và $\\cos\\alpha$ được xác định trực tiếp từ tọa độ của điểm $M$.\n\nKhi biết một giá trị lượng giác, dùng hệ thức cơ bản để tìm độ lớn của giá trị còn lại, sau đó dùng khoảng chứa góc để chọn dấu. Không được lấy căn rồi tự động chọn dấu dương.\n\nKhi xử lí góc, nên đưa số đo về một khoảng chuẩn bằng cách cộng hoặc trừ bội của $2\\pi$, rồi mới xác định góc phần tư và dấu. Khi biết một giá trị lượng giác, dùng hệ thức cơ bản để tìm độ lớn và dùng vị trí tia cuối để chọn dấu.",
+        "**Mục tiêu cần đạt**\n• Nhận biết số đo radian, góc cùng tia đầu–tia cuối và hệ thức Chasles.\n• Tính giá trị lượng giác bằng đường tròn lượng giác và xác định đúng dấu theo góc phần tư.",
+        "**Hệ thức Chasles**\n$$\\operatorname{sđ}(Ou,Ov)+\\operatorname{sđ}(Ov,Ow)=\\operatorname{sđ}(Ou,Ow)+2k\\pi$$\n• $k$: Số nguyên biểu diễn số vòng quay đầy đủ\n**Điều kiện áp dụng**\n• Ba tia $Ou,Ov,Ow$ có chung gốc $O$\n• $k\\in\\mathbb Z$",
+        "**Hệ thức lượng giác cơ bản**\n$$\\sin^2\\alpha+\\cos^2\\alpha=1$$\n• $\\alpha$: Góc lượng giác bất kỳ\n**Điều kiện áp dụng**\n• Đúng với mọi $\\alpha\\in\\mathbb R$",
+        "**Liên hệ tan và cot**\n$$\\tan\\alpha=\\frac{\\sin\\alpha}{\\cos\\alpha},\\qquad \\cot\\alpha=\\frac{\\cos\\alpha}{\\sin\\alpha}$$\n• $\\alpha$: Góc lượng giác\n**Điều kiện áp dụng**\n• $\\cos\\alpha\\ne0$ đối với $\\tan\\alpha$\n• $\\sin\\alpha\\ne0$ đối với $\\cot\\alpha$",
+        "**Ghi nhớ nhanh**\n• Góc cùng tia cuối: $\\alpha+2k\\pi$, $k\\in\\mathbb Z$.\n• Tọa độ điểm trên đường tròn lượng giác là $(\\cos\\alpha;\\sin\\alpha)$.\n• Tính độ lớn trước, chọn dấu sau theo góc phần tư.",
+        "**Ví dụ: Tính cos khi biết sin**\nCho $\\sin\\alpha=\\frac35$ và $\\frac\\pi2<\\alpha<\\pi$. Tính $\\cos\\alpha$.\n**Bước 1:** Từ $\\sin^2\\alpha+\\cos^2\\alpha=1$, suy ra $\\cos^2\\alpha=1-\\frac9{25}=\\frac{16}{25}$.\n**Bước 2:** Góc $\\alpha$ thuộc phần tư II nên $\\cos\\alpha<0$. Do đó $\\cos\\alpha=-\\frac45$.\n**Kết luận:** $\\cos\\alpha=-\\frac45$.",
+        "**Ví dụ: Tìm góc cùng tia cuối**\nTìm góc trong $[0;2\\pi)$ cùng tia cuối với $-17\\pi/6$.\n**Bước 1:** Cộng một bội thích hợp của $2\\pi$.\n**Bước 2:** $-17\\pi/6+4\\pi=7\\pi/6$.\n**Kết luận:** Góc cần tìm là $7\\pi/6$.",
+        "**Ví dụ: Tính giá trị theo góc phần tư**\nBiết $\\sin\\alpha=3/5$ và $\\alpha$ ở góc phần tư II. Tính $\\cos\\alpha$.\n**Bước 1:** Từ $\\sin^2\\alpha+\\cos^2\\alpha=1$, suy ra $|\\cos\\alpha|=4/5$.\n**Bước 2:** Cos âm ở góc phần tư II.\n**Kết luận:** $\\cos\\alpha=-4/5$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt01-st-angle",
+          "name": "Góc cùng tia cuối và đường tròn lượng giác",
+          "example": "Rút gọn số đo góc theo modulo $2\\pi$ và xác định góc phần tư.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt01-st-values",
+          "name": "Tính giá trị lượng giác",
+          "example": "Biết $\\sin\\alpha$ và khoảng chứa $\\alpha$, tính $\\cos\\alpha$.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m1-01",
+          "question": "Nếu $\\alpha$ thuộc phần tư III thì cặp dấu nào đúng?",
+          "options": [
+            "$\\sin\\alpha>0,\\cos\\alpha>0$",
+            "$\\sin\\alpha>0,\\cos\\alpha<0$",
+            "$\\sin\\alpha<0,\\cos\\alpha<0$",
+            "$\\sin\\alpha<0,\\cos\\alpha>0$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Ở phần tư III, cả tung độ và hoành độ của điểm trên đường tròn lượng giác đều âm."
+        },
+        {
+          "id": "cp-math11-m1-01-radian",
+          "question": "$180^\\circ$ bằng:",
+          "options": [
+            "$\\pi/2$ rad",
+            "$\\pi$ rad",
+            "$2\\pi$ rad",
+            "$180\\pi$ rad"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Quy đổi cơ bản $180^\\circ=\\pi$ rad."
+        },
+        {
+          "id": "cp-math11-m1-01-ray",
+          "question": "Hai góc cùng tia cuối hơn kém nhau:",
+          "options": [
+            "$k\\pi$",
+            "$2k\\pi$",
+            "$\\pi/2$",
+            "$2\\pi+1$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hiệu hai số đo phải là bội nguyên của một vòng đầy."
+        },
+        {
+          "id": "cp-math11-m1-01-sign",
+          "question": "Ở góc phần tư III, dấu của sin và cos là:",
+          "options": [
+            "Đều dương",
+            "Sin dương, cos âm",
+            "Đều âm",
+            "Sin âm, cos dương"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Cả tung độ và hoành độ của điểm trên đường tròn đều âm."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt02",
+      "topicId": "math11-t01",
+      "name": "Dạng 2: Biến đổi biểu thức lượng giác",
+      "slug": "bien-doi-bieu-thuc-luong-giac",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Sử dụng công thức cộng, nhân đôi, tích thành tổng và tổng thành tích để tính hoặc rút gọn.",
+      "recognitionSigns": [
+        "Biểu thức chứa tổng hoặc hiệu hai góc.",
+        "Đề yêu cầu rút gọn tích, tổng hoặc tính giá trị chính xác."
+      ],
+      "solvingSteps": [
+        "Nhận dạng cấu trúc biểu thức và chọn đúng nhóm công thức.",
+        "Biến đổi từng phần, giữ nguyên điều kiện và dấu.",
+        "Thu gọn kết quả rồi kiểm tra bằng một giá trị góc đặc biệt khi có thể."
+      ],
+      "commonMistakes": [
+        "Sai dấu trong công thức $\\cos(a+b)$.",
+        "Áp dụng công thức nhân đôi nhưng quên hệ số 2."
+      ],
+      "theory": [
+        "**Công thức và phép biến đổi lượng giác**\nCông thức cộng là nền tảng để suy ra các công thức góc nhân đôi và nhiều phép biến đổi khác. Một cách ghi nhớ an toàn: công thức sin giữ dấu ở giữa hai hạng; công thức cos đổi dấu ở hạng tích hai sin.\n\nKhông nên áp dụng công thức theo hình thức. Trước mỗi phép biến đổi, cần xác định mục tiêu: tạo góc đặc biệt, giảm số phép tính, chuyển tổng thành tích để giải phương trình, hoặc chuyển tích thành tổng để xử lí biểu thức.\n\nKhi biến đổi, giữ nguyên từng bước đủ rõ để kiểm tra dấu và hệ số. Các công thức tích–tổng đều có hệ số $\\frac12$ hoặc $2$ nên rất dễ bị bỏ sót.\n\nCó thể kiểm tra nhanh công thức bằng các góc đặc biệt như 0 hoặc $\\pi/2$. Với biểu thức phức tạp, xác định mục tiêu trước: tạo góc đặc biệt, hạ bậc, chuyển tổng thành tích để tìm nghiệm hoặc chuyển tích thành tổng để thu gọn.",
+        "**Mục tiêu cần đạt**\n• Phân biệt đúng dấu trong các công thức cộng.\n• Vận dụng công thức nhân đôi và biến đổi tích–tổng để tính, rút gọn biểu thức.",
+        "**Công thức cộng**\n$$\\sin(a\\pm b)=\\sin a\\cos b\\pm\\cos a\\sin b,\\qquad \\cos(a\\pm b)=\\cos a\\cos b\\mp\\sin a\\sin b$$\n• $a,b$: Các góc lượng giác\n**Điều kiện áp dụng**\n• Đúng với mọi $a,b\\in\\mathbb R$",
+        "**Công thức góc nhân đôi**\n$$\\sin2a=2\\sin a\\cos a,\\qquad \\cos2a=\\cos^2a-\\sin^2a$$\n• $a$: Góc lượng giác\n**Điều kiện áp dụng**\n• Đúng với mọi $a\\in\\mathbb R$",
+        "**Một công thức biến đổi tổng thành tích**\n$$\\cos a+\\cos b=2\\cos\\frac{a+b}{2}\\cos\\frac{a-b}{2}$$\n• $a,b$: Các góc lượng giác\n**Điều kiện áp dụng**\n• Đúng với mọi $a,b\\in\\mathbb R$",
+        "**Ghi nhớ nhanh**\n• Sin giữ dấu, cos đổi dấu trong công thức cộng.\n• Xác định đích biến đổi trước khi chọn công thức.\n• Luôn kiểm tra hệ số 2 hoặc $\\frac12$ trong công thức tích–tổng.",
+        "**Ví dụ: Tính giá trị góc không đặc biệt**\nTính $\\cos75^\\circ$.\n**Bước 1:** Viết $75^\\circ=45^\\circ+30^\\circ$ và dùng công thức $\\cos(a+b)$.\n**Bước 2:** $\\cos75^\\circ=\\frac{\\sqrt2}{2}\\frac{\\sqrt3}{2}-\\frac{\\sqrt2}{2}\\frac12=\\frac{\\sqrt6-\\sqrt2}{4}$.\n**Kết luận:** $\\cos75^\\circ=\\frac{\\sqrt6-\\sqrt2}{4}$.",
+        "**Ví dụ: Khai thác góc nhân đôi**\nBiết $\\sin x=3/5$, $\\cos x=4/5$. Tính $\\sin2x$ và $\\cos2x$.\n**Bước 1:** $\\sin2x=2\\sin x\\cos x=24/25$.\n**Bước 2:** $\\cos2x=\\cos^2x-\\sin^2x=7/25$.\n**Kết luận:** $\\sin2x=24/25$, $\\cos2x=7/25$.",
+        "**Ví dụ: Rút gọn tổng thành tích**\nRút gọn $\\cos5x+\\cos3x$.\n**Bước 1:** Nửa tổng hai góc là $4x$.\n**Bước 2:** Nửa hiệu hai góc là $x$.\n**Bước 3:** Áp dụng công thức tổng hai cos.\n**Kết luận:** $2\\cos4x\\cos x$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt02-st-addition",
+          "name": "Công thức cộng và góc nhân đôi",
+          "example": "Tính $\\cos 75^\\circ$ hoặc rút gọn biểu thức chứa $\\sin 2x$.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt02-st-product-sum",
+          "name": "Biến đổi tích–tổng",
+          "example": "Biến đổi $\\cos a+\\cos b$ thành tích.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m1-02",
+          "question": "Công thức nào đúng?",
+          "options": [
+            "$\\cos(a+b)=\\cos a\\cos b+\\sin a\\sin b$",
+            "$\\cos(a+b)=\\cos a\\cos b-\\sin a\\sin b$",
+            "$\\sin(a+b)=\\sin a\\cos b-\\cos a\\sin b$",
+            "$\\sin2a=\\sin a\\cos a$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Công thức cos của tổng có dấu trừ giữa hai tích."
+        },
+        {
+          "id": "cp-math11-m1-02-sine",
+          "question": "$\\sin(a+b)$ bằng:",
+          "options": [
+            "$\\sin a\\cos b+\\cos a\\sin b$",
+            "$\\sin a\\sin b+\\cos a\\cos b$",
+            "$\\sin a\\cos b-\\cos a\\sin b$",
+            "$\\cos a\\cos b-\\sin a\\sin b$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Sin của tổng giữ dấu cộng."
+        },
+        {
+          "id": "cp-math11-m1-02-double",
+          "question": "$\\sin2x$ bằng:",
+          "options": [
+            "$\\sin x\\cos x$",
+            "$2\\sin x\\cos x$",
+            "$2\\sin x$",
+            "$\\sin^2x$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Công thức góc nhân đôi có hệ số 2."
+        },
+        {
+          "id": "cp-math11-m1-02-product",
+          "question": "$\\cos a+\\cos b$ được đổi thành:",
+          "options": [
+            "$2\\cos\\frac{a+b}2\\cos\\frac{a-b}2$",
+            "$2\\sin\\frac{a+b}2\\sin\\frac{a-b}2$",
+            "$\\cos(a+b)$",
+            "$\\cos(a-b)$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Đây là công thức tổng thành tích của hai cos."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt03",
+      "topicId": "math11-t01",
+      "name": "Dạng 3: Hàm số lượng giác và đồ thị",
+      "slug": "ham-so-luong-giac-va-do-thi",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Xác định tập xác định, tập giá trị, chu kì, tính chẵn lẻ, đơn điệu và đọc đồ thị lượng giác.",
+      "recognitionSigns": [
+        "Đề hỏi tính chất của $y=\\sin x$, $y=\\cos x$, $y=\\tan x$ hoặc $y=\\cot x$.",
+        "Đề cho đồ thị tuần hoàn hoặc yêu cầu nhận dạng đồ thị."
+      ],
+      "solvingSteps": [
+        "Xác định hàm lượng giác và điều kiện xác định.",
+        "Dùng đường tròn lượng giác hoặc đồ thị chuẩn để suy ra tính chất.",
+        "Đối chiếu chu kì, tập giá trị và các điểm đặc biệt để kết luận."
+      ],
+      "commonMistakes": [
+        "Cho rằng $\\tan x$ có tập giá trị bị chặn.",
+        "Nhầm $\\sin x$ là hàm chẵn và $\\cos x$ là hàm lẻ."
+      ],
+      "theory": [
+        "**Hàm số lượng giác và đồ thị**\nBốn hàm số lượng giác được xác định từ đường tròn lượng giác. Hàm $\\sin x$ và $\\cos x$ có tập xác định $\\mathbb R$, tập giá trị $[-1;1]$ và chu kì $2\\pi$. Hàm $\\tan x$ và $\\cot x$ có tập giá trị $\\mathbb R$, chu kì $\\pi$ nhưng bị gián đoạn tại những điểm mẫu số bằng 0.\n\n$\\sin x$ và $\\tan x$ là các hàm lẻ; $\\cos x$ là hàm chẵn; $\\cot x$ là hàm lẻ trên miền xác định. Tính chẵn lẻ giúp suy ra tính đối xứng của đồ thị.\n\nKhi đọc đồ thị, cần kiểm tra đồng thời chu kì, vị trí nghiệm, điểm cực trị và đường tiệm cận đứng. Chỉ một đặc điểm thường chưa đủ để nhận dạng chắc chắn.\n\nVới hàm dạng $y=A\\sin(ax+b)+d$ hoặc $A\\cos(ax+b)+d$, biên độ là $|A|$, chu kì là $2\\pi/|a|$ và đường trung bình là $y=d$. Việc kết hợp ba đặc điểm này giúp nhận dạng đồ thị chắc chắn hơn.",
+        "**Mục tiêu cần đạt**\n• Xác định miền xác định, tập giá trị, tính chẵn lẻ và chu kì của bốn hàm lượng giác.\n• Đọc các điểm đặc biệt và khoảng đơn điệu trên đồ thị.",
+        "**Tính tuần hoàn**\n$$\\sin(x+2\\pi)=\\sin x,\\quad \\cos(x+2\\pi)=\\cos x,\\quad \\tan(x+\\pi)=\\tan x$$\n• $x$: Biến số thực thuộc miền xác định của hàm tương ứng\n**Điều kiện áp dụng**\n• $x\\in\\mathbb R$ đối với sin, cos\n• $x\\ne\\frac\\pi2+k\\pi$ đối với tan",
+        "**Miền xác định của tan và cot**\n$$D_{\\tan}=\\mathbb R\\setminus\\left\\{\\frac\\pi2+k\\pi\\right\\},\\qquad D_{\\cot}=\\mathbb R\\setminus\\{k\\pi\\}$$\n• $k$: Số nguyên\n**Điều kiện áp dụng**\n• $k\\in\\mathbb Z$",
+        "**Ghi nhớ nhanh**\n• Sin, cos có chu kì $2\\pi$; tan, cot có chu kì $\\pi$.\n• Sin, tan, cot là hàm lẻ; cos là hàm chẵn.\n• Tan và cot không xác định tại các điểm làm mẫu số bằng 0.",
+        "**Ví dụ: Tìm tập xác định**\nTìm tập xác định của $y=\\tan(2x)$.\n**Bước 1:** Hàm tan xác định khi $\\cos(2x)\\ne0$, tức $2x\\ne\\frac\\pi2+k\\pi$.\n**Bước 2:** Chia hai vế cho 2: $x\\ne\\frac\\pi4+k\\frac\\pi2$, với $k\\in\\mathbb Z$.\n**Kết luận:** $D=\\mathbb R\\setminus\\left\\{\\frac\\pi4+k\\frac\\pi2\\mid k\\in\\mathbb Z\\right\\}$.",
+        "**Ví dụ: Đọc tham số đồ thị**\nXác định biên độ, chu kì và tập giá trị của $y=3\\sin(2x)-1$.\n**Bước 1:** Biên độ là $|3|=3$.\n**Bước 2:** Chu kì là $2\\pi/2=\\pi$.\n**Bước 3:** Dịch tập $[-3;3]$ xuống 1 đơn vị.\n**Kết luận:** Biên độ 3, chu kì $\\pi$, tập giá trị $[-4;2]$.",
+        "**Ví dụ: Miền xác định hàm tan**\nTìm tập xác định của $y=\\tan(3x-\\pi/2)$.\n**Bước 1:** Cần $3x-\\pi/2\\ne\\pi/2+k\\pi$.\n**Bước 2:** Suy ra $3x\\ne\\pi+k\\pi$.\n**Kết luận:** $x\\ne(k+1)\\pi/3$, $k\\in\\mathbb Z$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt03-st-properties",
+          "name": "Miền xác định và tính chất hàm",
+          "example": "Tìm tập xác định hoặc chu kì của một hàm lượng giác.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt03-st-graph",
+          "name": "Đọc và nhận dạng đồ thị",
+          "example": "Nhận dạng hàm số từ đồ thị trên một chu kì.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m1-03",
+          "question": "Khẳng định nào đúng?",
+          "options": [
+            "$y=\\sin x$ là hàm chẵn",
+            "$y=\\cos x$ là hàm lẻ",
+            "$y=\\tan x$ có chu kì $\\pi$",
+            "$y=\\cot x$ xác định với mọi số thực"
+          ],
+          "correctAnswer": "C",
+          "explanation": "$\\tan(x+\\pi)=\\tan x$, nên hàm tan có chu kì $\\pi$."
+        },
+        {
+          "id": "cp-math11-m1-03-period-sin",
+          "question": "Chu kì của $y=\\sin(4x)$ là:",
+          "options": [
+            "$2\\pi$",
+            "$\\pi$",
+            "$\\pi/2$",
+            "$\\pi/4$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "$T=2\\pi/4=\\pi/2$."
+        },
+        {
+          "id": "cp-math11-m1-03-range",
+          "question": "Tập giá trị của $y=2\\cos x+1$ là:",
+          "options": [
+            "$[-1;3]$",
+            "$[-2;2]$",
+            "$[0;3]$",
+            "$\\mathbb R$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Nhân $[-1;1]$ với 2 rồi cộng 1."
+        },
+        {
+          "id": "cp-math11-m1-03-parity",
+          "question": "Hàm nào sau đây là hàm chẵn?",
+          "options": [
+            "$\\sin x$",
+            "$\\cos x$",
+            "$\\tan x$",
+            "$\\cot x$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$\\cos(-x)=\\cos x$."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt04",
+      "topicId": "math11-t01",
+      "name": "Dạng 4: Phương trình lượng giác cơ bản",
+      "slug": "phuong-trinh-luong-giac-co-ban",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Giải phương trình sin, cos, tan, cot cơ bản và phương trình đưa trực tiếp về dạng cơ bản.",
+      "recognitionSigns": [
+        "Phương trình có thể đưa về $\\sin u=m$, $\\cos u=m$, $\\tan u=m$ hoặc $\\cot u=m$.",
+        "Đề yêu cầu nghiệm tổng quát, nghiệm trên khoảng hoặc nghiệm gần đúng."
+      ],
+      "solvingSteps": [
+        "Kiểm tra điều kiện tồn tại của phương trình và xác định hàm lượng giác chính.",
+        "Đưa phương trình về dạng cơ bản rồi áp dụng đúng công thức nghiệm.",
+        "Giải biến trung gian, lọc nghiệm theo miền và kiểm tra lại."
+      ],
+      "commonMistakes": [
+        "Thiếu một họ nghiệm của phương trình sin hoặc cos.",
+        "Quên chia hệ số của biến khi giải phương trình dạng $\\sin(ax+b)=m$."
+      ],
+      "theory": [
+        "**Phương trình lượng giác cơ bản**\nPhương trình lượng giác cơ bản được giải bằng cách đối chiếu giá trị trên đường tròn hoặc đồ thị lượng giác. Với sin và cos thường có hai họ nghiệm trong một chu kì; với tan và cot có một họ nghiệm theo chu kì $\\pi$.\n\nTrước khi viết nghiệm cần kiểm tra điều kiện tồn tại: $|m|\\le1$ đối với $\\sin u=m$ và $\\cos u=m$. Sau khi tìm nghiệm của biến trung gian $u$, phải giải tiếp phương trình theo biến $x$.\n\nNếu đề giới hạn nghiệm trên một đoạn hoặc khoảng, hãy viết nghiệm tổng quát trước rồi tìm các số nguyên $k$ thỏa miền. Không nên chỉ nhìn đồ thị và liệt kê thiếu nghiệm ở đầu mút.\n\nKhi tìm nghiệm trên một miền, hãy viết nghiệm tổng quát trước, giải bất đẳng thức theo tham số nguyên $k$, rồi kiểm tra riêng các đầu mút. Với phương trình bậc hai theo một giá trị lượng giác, đặt ẩn phụ nhưng phải giữ điều kiện $[-1;1]$ cho sin hoặc cos.",
+        "**Mục tiêu cần đạt**\n• Viết đúng công thức nghiệm của bốn phương trình lượng giác cơ bản.\n• Giải phương trình đưa trực tiếp về dạng cơ bản và lọc nghiệm theo miền.",
+        "**Nghiệm phương trình sin**\n$$\\sin x=\\sin\\alpha\\Leftrightarrow\\begin{cases}x=\\alpha+2k\\pi\\\\x=\\pi-\\alpha+2k\\pi\\end{cases}$$\n• $k$: Số nguyên\n• $\\alpha$: Góc có giá trị sin đã biết\n**Điều kiện áp dụng**\n• $k\\in\\mathbb Z$",
+        "**Nghiệm phương trình cos**\n$$\\cos x=\\cos\\alpha\\Leftrightarrow x=\\pm\\alpha+2k\\pi$$\n• $k$: Số nguyên\n• $\\alpha$: Góc có giá trị cos đã biết\n**Điều kiện áp dụng**\n• $k\\in\\mathbb Z$",
+        "**Nghiệm phương trình tan**\n$$\\tan x=\\tan\\alpha\\Leftrightarrow x=\\alpha+k\\pi$$\n• $k$: Số nguyên\n• $\\alpha$: Góc có giá trị tan đã biết\n**Điều kiện áp dụng**\n• $k\\in\\mathbb Z$\n• Các biểu thức tan phải xác định",
+        "**Ghi nhớ nhanh**\n• Sin và cos: kiểm tra $|m|\\le1$.\n• Sin thường có hai họ nghiệm; tan và cot có chu kì nghiệm $\\pi$.\n• Giải xong biến trung gian rồi mới lọc nghiệm theo miền.",
+        "**Ví dụ: Giải phương trình có góc bội**\nGiải phương trình $\\cos(2x)=\\cos\\frac\\pi3$.\n**Bước 1:** Dùng công thức nghiệm cos: $2x=\\pm\\frac\\pi3+k2\\pi$.\n**Bước 2:** Chia hai vế cho 2: $x=\\pm\\frac\\pi6+k\\pi$, với $k\\in\\mathbb Z$.\n**Kết luận:** $x=\\pm\\frac\\pi6+k\\pi$, $k\\in\\mathbb Z$.",
+        "**Ví dụ: Lọc nghiệm trên đoạn**\nGiải $\\sin x=1/2$ trên $[0;2\\pi]$.\n**Bước 1:** Nghiệm tổng quát: $x=\\pi/6+2k\\pi$ hoặc $x=5\\pi/6+2k\\pi$.\n**Bước 2:** Lọc các giá trị nằm trong đoạn.\n**Kết luận:** $x=\\pi/6$ hoặc $x=5\\pi/6$.",
+        "**Ví dụ: Phương trình bậc hai theo cos**\nGiải $2\\cos^2x-3\\cos x+1=0$.\n**Bước 1:** Đặt $t=\\cos x\\in[-1;1]$.\n**Bước 2:** $(2t-1)(t-1)=0$, nên $t=1/2$ hoặc $t=1$.\n**Bước 3:** Giải hai phương trình cos cơ bản.\n**Kết luận:** $x=\\pm\\pi/3+2k\\pi$ hoặc $x=2k\\pi$, $k\\in\\mathbb Z$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt04-st-basic",
+          "name": "Bốn phương trình lượng giác cơ bản",
+          "example": "Giải $\\sin x=\\frac12$ hoặc $\\tan x=1$.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt04-st-transformed",
+          "name": "Phương trình đưa trực tiếp về dạng cơ bản",
+          "example": "Giải $\\cos(2x)=\\cos\\frac{\\pi}{3}$.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m1-04",
+          "question": "Nghiệm của $\\tan x=1$ là:",
+          "options": [
+            "$x=\\frac\\pi4+k\\pi$",
+            "$x=\\frac\\pi4+k2\\pi$",
+            "$x=\\pm\\frac\\pi4+k2\\pi$",
+            "$x=\\frac{3\\pi}4+k\\pi$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "$1=\\tan\\frac\\pi4$ và hàm tan có chu kì $\\pi$."
+        },
+        {
+          "id": "cp-math11-m1-04-cos",
+          "question": "$\\cos x=1$ có nghiệm:",
+          "options": [
+            "$x=k\\pi$",
+            "$x=2k\\pi$",
+            "$x=\\pi/2+k\\pi$",
+            "$x=\\pi+2k\\pi$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Cos bằng 1 tại các góc trọn vòng."
+        },
+        {
+          "id": "cp-math11-m1-04-existence",
+          "question": "Phương trình $\\sin x=3/2$:",
+          "options": [
+            "Có một nghiệm",
+            "Có hai nghiệm",
+            "Có vô số nghiệm",
+            "Vô nghiệm"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Sin chỉ nhận giá trị trong $[-1;1]$."
+        },
+        {
+          "id": "cp-math11-m1-04-count",
+          "question": "$\\cos x=0$ có bao nhiêu nghiệm trên $[0;2\\pi]$?",
+          "options": [
+            "$1$",
+            "$2$",
+            "$3$",
+            "$4$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hai nghiệm là $\\pi/2$ và $3\\pi/2$."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt05",
+      "topicId": "math11-t02",
+      "name": "Dạng 5: Dãy số và tính chất",
+      "slug": "day-so-va-tinh-chat",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tìm số hạng từ công thức hoặc truy hồi, biểu diễn dãy và xét tính tăng, giảm, bị chặn.",
+      "recognitionSigns": [
+        "Đề cho $u_n$, bảng số hạng hoặc quy tắc xác định $u_{n+1}$ từ $u_n$.",
+        "Đề hỏi số hạng, chỉ số, tính tăng giảm hoặc cận của dãy."
+      ],
+      "solvingSteps": [
+        "Xác định cách cho dãy và miền chỉ số.",
+        "Thay chỉ số hoặc tính lần lượt theo hệ thức truy hồi.",
+        "Khi xét đơn điệu, phân tích dấu của $u_{n+1}-u_n$ hoặc tỉ số phù hợp."
+      ],
+      "commonMistakes": [
+        "Nhầm chỉ số $n$ với giá trị số hạng $u_n$.",
+        "Kết luận đơn điệu chỉ từ vài số hạng đầu."
+      ],
+      "theory": [
+        "**Dãy số: cách cho dãy và tính chất**\nDãy số là một hàm số xác định trên tập các số nguyên dương hoặc một tập hữu hạn gồm các số nguyên dương đầu tiên. Giá trị tại $n$ được kí hiệu là $u_n$ và gọi là số hạng thứ $n$. Vì vậy, chỉ số $n$ và giá trị $u_n$ là hai đại lượng khác nhau.\n\nMột dãy có thể được cho bằng cách liệt kê, bằng công thức số hạng tổng quát $u_n=f(n)$, hoặc bằng hệ thức truy hồi. Với dãy truy hồi, phải biết đủ số hạng đầu và quy tắc tính số hạng sau từ các số hạng trước.\n\nDãy tăng nếu $u_{n+1}>u_n$ với mọi $n$ hợp lệ; dãy giảm nếu $u_{n+1}<u_n$. Cách thường dùng là xét dấu $u_{n+1}-u_n$. Dãy bị chặn trên nếu tồn tại $M$ sao cho $u_n\\le M$ với mọi $n$, và bị chặn dưới nếu tồn tại $m$ sao cho $u_n\\ge m$.\n\nVới dãy cho bởi công thức, tìm chỉ số là giải phương trình theo số nguyên dương $n$. Với dãy truy hồi, nên lập bảng vài số hạng để hiểu quy luật nhưng mọi kết luận đơn điệu hoặc bị chặn vẫn cần chứng minh cho mọi chỉ số.",
+        "**Mục tiêu cần đạt**\n• Nhận biết dãy hữu hạn, dãy vô hạn và ba cách cho dãy thường gặp.\n• Tính số hạng từ công thức tổng quát hoặc hệ thức truy hồi; xét tăng, giảm và bị chặn.",
+        "**Tiêu chuẩn hiệu để xét đơn điệu**\n$$u_{n+1}-u_n>0\\Rightarrow (u_n)\\text{ tăng};\\qquad u_{n+1}-u_n<0\\Rightarrow (u_n)\\text{ giảm}$$\n• $u_n$: Số hạng thứ $n$ của dãy\n• $n$: Chỉ số nguyên dương thuộc miền xác định\n**Điều kiện áp dụng**\n• Bất đẳng thức phải đúng với mọi $n$ hợp lệ",
+        "**Dãy bị chặn**\n$$m\\le u_n\\le M$$\n• $m$: Một cận dưới của dãy\n• $M$: Một cận trên của dãy\n**Điều kiện áp dụng**\n• Bất đẳng thức đúng với mọi số hạng của dãy",
+        "**Ghi nhớ nhanh**\n• $u_n$ là giá trị số hạng, còn $n$ là vị trí của số hạng.\n• Dãy truy hồi cần số hạng đầu và quy tắc truy hồi.\n• Không kết luận đơn điệu chỉ từ vài số hạng; phải chứng minh cho mọi $n$.",
+        "**Ví dụ: Tính số hạng và xét tính tăng**\nCho $u_n=2n-1$. Tính $u_5$ và xét tính tăng của dãy.\n**Bước 1:** Thay $n=5$: $u_5=2\\cdot5-1=9$.\n**Bước 2:** $u_{n+1}-u_n=[2(n+1)-1]-(2n-1)=2>0$ với mọi $n$, nên dãy tăng.\n**Kết luận:** $u_5=9$ và dãy $(u_n)$ tăng.",
+        "**Ví dụ: Tìm chỉ số của số hạng**\nCho $u_n=4n-7$. Số 45 là số hạng thứ mấy?\n**Bước 1:** Giải $4n-7=45$.\n**Bước 2:** $4n=52$, suy ra $n=13$ và đây là số nguyên dương.\n**Kết luận:** 45 là số hạng thứ 13.",
+        "**Ví dụ: Tính dãy truy hồi**\nCho $u_1=1$, $u_{n+1}=2u_n+1$. Tính $u_4$.\n**Bước 1:** $u_2=3$, $u_3=7$.\n**Bước 2:** $u_4=2\\cdot7+1=15$.\n**Kết luận:** $u_4=15$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt05-st-explicit",
+          "name": "Dãy cho bởi liệt kê hoặc công thức tổng quát",
+          "example": "Với $u_n=2n-1$, tính $u_5$ hoặc tìm chỉ số của một số hạng.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt05-st-recursive",
+          "name": "Dãy truy hồi và tính chất",
+          "example": "Tính các số hạng đầu từ hệ thức truy hồi hoặc xét dấu $u_{n+1}-u_n$.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m2-01",
+          "question": "Cho $u_1=2$, $u_{n+1}=u_n+3$. Giá trị $u_3$ là:",
+          "options": [
+            "$5$",
+            "$8$",
+            "$9$",
+            "$11$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$u_2=2+3=5$ và $u_3=5+3=8$."
+        },
+        {
+          "id": "cp-math11-m2-01-index",
+          "question": "Cho $u_n=3n+1$. Số 16 là số hạng thứ:",
+          "options": [
+            "$4$",
+            "$5$",
+            "$6$",
+            "$7$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Giải $3n+1=16$ được $n=5$."
+        },
+        {
+          "id": "cp-math11-m2-01-monotone",
+          "question": "Muốn chứng minh dãy tăng, thường xét:",
+          "options": [
+            "$u_1$",
+            "$u_{n+1}-u_n$",
+            "$u_n^2$",
+            "Chỉ ba số hạng đầu"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Cần chứng minh hiệu dương với mọi chỉ số hợp lệ."
+        },
+        {
+          "id": "cp-math11-m2-01-start",
+          "question": "Dãy truy hồi cần thêm dữ kiện nào để xác định?",
+          "options": [
+            "Số hạng đầu thích hợp",
+            "Một cận trên",
+            "Tổng vô hạn",
+            "Đạo hàm"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Quy tắc truy hồi cần điểm khởi đầu."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt06",
+      "topicId": "math11-t02",
+      "name": "Dạng 6: Cấp số cộng",
+      "slug": "cap-so-cong",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nhận biết và vận dụng công sai, số hạng tổng quát, tính chất trung bình cộng và tổng hữu hạn.",
+      "recognitionSigns": [
+        "Hiệu hai số hạng liên tiếp không đổi.",
+        "Tình huống thực tế tăng hoặc giảm một lượng cố định sau mỗi bước."
+      ],
+      "solvingSteps": [
+        "Xác định $u_1$, công sai $d$ và đại lượng cần tìm.",
+        "Chọn công thức $u_n=u_1+(n-1)d$ hoặc công thức tổng.",
+        "Giải phương trình theo chỉ số rồi kiểm tra chỉ số nguyên dương."
+      ],
+      "commonMistakes": [
+        "Viết $nd$ thay cho $(n-1)d$.",
+        "Nhầm công thức tổng cấp số cộng với tổng cấp số nhân."
+      ],
+      "theory": [
+        "**Cấp số cộng**\nCấp số cộng là dãy số mà kể từ số hạng thứ hai, mỗi số hạng bằng số hạng đứng ngay trước cộng với một số không đổi $d$. Số $d$ gọi là công sai. Vì thế hiệu $u_{n+1}-u_n$ phải không đổi.\n\nTừ $u_1$ đến $u_n$ có đúng $n-1$ lần cộng công sai, nên $u_n=u_1+(n-1)d$. Ba số liên tiếp $u_{k-1},u_k,u_{k+1}$ thỏa $2u_k=u_{k-1}+u_{k+1}$.\n\nTổng $n$ số hạng đầu có thể tính bằng trung bình cộng của số đầu và số cuối nhân với số số hạng. Trong bài toán thực tế, trước hết phải xác định hàng hoặc chu kì đầu tiên tương ứng với $u_1$, tránh lệch một bước.\n\nTrong bài toán ngược, có thể lập hệ từ hai số hạng để tìm $u_1,d$. Với các số hạng có chỉ số đối xứng, $u_p+u_q=2u_{(p+q)/2}$ khi chỉ số giữa là số nguyên; tính chất này giúp rút gọn nhiều bài khó.",
+        "**Mục tiêu cần đạt**\n• Nhận biết cấp số cộng và xác định công sai.\n• Tính số hạng tổng quát, tổng hữu hạn và mô hình hóa đại lượng thay đổi đều.",
+        "**Số hạng tổng quát của cấp số cộng**\n$$u_n=u_1+(n-1)d$$\n• $u_1$: Số hạng đầu\n• $d$: Công sai\n• $n$: Chỉ số nguyên dương\n**Điều kiện áp dụng**\n• $n\\ge1$",
+        "**Tổng $n$ số hạng đầu**\n$$S_n=\\frac{n(u_1+u_n)}2=\\frac n2\\left[2u_1+(n-1)d\\right]$$\n• $S_n$: Tổng $u_1+u_2+\\cdots+u_n$\n• $n$: Số số hạng được cộng\n**Điều kiện áp dụng**\n• $n$ là số nguyên dương",
+        "**Ghi nhớ nhanh**\n• Cấp số cộng có hiệu hai số hạng liên tiếp không đổi.\n• Số lần cộng từ $u_1$ đến $u_n$ là $n-1$.\n• $S_n$ bằng số số hạng nhân trung bình cộng của số đầu và số cuối.",
+        "**Ví dụ: Tìm số hạng và tổng**\nCho cấp số cộng có $u_1=3$, $d=2$. Tính $u_{10}$ và $S_{10}$.\n**Bước 1:** $u_{10}=3+(10-1)\\cdot2=21$.\n**Bước 2:** $S_{10}=\\frac{10(3+21)}2=120$.\n**Kết luận:** $u_{10}=21$, $S_{10}=120$.",
+        "**Ví dụ: Tìm cấp số cộng từ hai số hạng**\nCho $u_3=7$, $u_9=25$. Tìm $u_1$ và $d$.\n**Bước 1:** Lấy hiệu: $u_9-u_3=6d=18$, nên $d=3$.\n**Bước 2:** $u_1=u_3-2d=1$.\n**Kết luận:** $u_1=1$, $d=3$.",
+        "**Ví dụ: Mô hình số ghế**\nHàng đầu có 18 ghế, mỗi hàng sau thêm 2 ghế. Tính tổng số ghế của 10 hàng.\n**Bước 1:** $u_{10}=18+9\\cdot2=36$.\n**Bước 2:** $S_{10}=10(18+36)/2$.\n**Kết luận:** Có 270 ghế."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt06-st-term",
+          "name": "Công sai và số hạng tổng quát",
+          "example": "Tìm $u_n$, $d$ hoặc vị trí của một số hạng.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt06-st-sum",
+          "name": "Tổng hữu hạn và bài toán thực tế",
+          "example": "Tính $S_n$ hoặc mô hình số ghế tăng đều theo hàng.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m2-02",
+          "question": "Cấp số cộng có $u_1=5$, $d=-2$. Số hạng $u_4$ là:",
+          "options": [
+            "$-3$",
+            "$-1$",
+            "$1$",
+            "$3$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$u_4=5+(4-1)(-2)=-1$."
+        },
+        {
+          "id": "cp-math11-m2-02-difference",
+          "question": "Cấp số cộng có $u_2=5$, $u_6=17$. Công sai bằng:",
+          "options": [
+            "$2$",
+            "$3$",
+            "$4$",
+            "$6$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$u_6-u_2=4d=12$."
+        },
+        {
+          "id": "cp-math11-m2-02-middle",
+          "question": "Ba số $4,x,12$ lập thành cấp số cộng. $x$ bằng:",
+          "options": [
+            "$6$",
+            "$8$",
+            "$10$",
+            "$16$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Số giữa là trung bình cộng của hai số ngoài."
+        },
+        {
+          "id": "cp-math11-m2-02-sum",
+          "question": "$1+2+\\cdots+10$ bằng:",
+          "options": [
+            "$45$",
+            "$50$",
+            "$55$",
+            "$60$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "$10(1+10)/2=55$."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt07",
+      "topicId": "math11-t02",
+      "name": "Dạng 7: Cấp số nhân",
+      "slug": "cap-so-nhan",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nhận biết và vận dụng công bội, số hạng tổng quát, tính chất trung bình nhân và tổng hữu hạn.",
+      "recognitionSigns": [
+        "Tỉ số hai số hạng liên tiếp không đổi khi số hạng trước khác 0.",
+        "Tình huống thực tế tăng hoặc giảm theo cùng một tỉ lệ sau mỗi chu kì."
+      ],
+      "solvingSteps": [
+        "Xác định $u_1$, công bội $q$ và số lần nhân.",
+        "Dùng $u_n=u_1q^{n-1}$ hoặc công thức tổng phù hợp.",
+        "Kiểm tra trường hợp $q=1$, dấu của $q$ và ý nghĩa thực tế của kết quả."
+      ],
+      "commonMistakes": [
+        "Dùng số mũ $n$ thay vì $n-1$.",
+        "Cộng tỉ lệ phần trăm tuyến tính thay vì lũy thừa theo số chu kì."
+      ],
+      "theory": [
+        "**Cấp số nhân**\nCấp số nhân là dãy số mà kể từ số hạng thứ hai, mỗi số hạng bằng số hạng đứng ngay trước nhân với một số không đổi $q$. Số $q$ gọi là công bội. Khi số hạng trước khác 0, tỉ số $\\frac{u_{n+1}}{u_n}$ phải không đổi.\n\nTừ $u_1$ đến $u_n$ có $n-1$ lần nhân với $q$, nên $u_n=u_1q^{n-1}$. Ba số hạng liên tiếp thỏa $u_k^2=u_{k-1}u_{k+1}$. Nếu $q<0$, dấu các số hạng khác 0 luân phiên; không được mặc định dãy tăng.\n\nVới $q\\ne1$, tổng $n$ số hạng đầu được tính bằng $S_n=u_1\\frac{1-q^n}{1-q}$. Mô hình tăng $r\\%$ mỗi chu kì có công bội $1+\\frac r{100}$; mô hình giảm $r\\%$ có công bội $1-\\frac r{100}$.\n\nTrong bài toán ngược, tỉ số hai số hạng cho một lũy thừa của $q$; cần xét thêm dấu hoặc điều kiện thực tế để chọn công bội. Với tăng trưởng theo phần trăm, số mũ là số chu kì đã trôi qua, nên phải tránh lệch một chu kì.",
+        "**Mục tiêu cần đạt**\n• Nhận biết cấp số nhân và xác định công bội.\n• Tính số hạng tổng quát, tổng hữu hạn và vận dụng trong mô hình tăng trưởng theo tỉ lệ.",
+        "**Số hạng tổng quát của cấp số nhân**\n$$u_n=u_1q^{n-1}$$\n• $u_1$: Số hạng đầu\n• $q$: Công bội\n• $n$: Chỉ số nguyên dương\n**Điều kiện áp dụng**\n• $n\\ge1$",
+        "**Tổng $n$ số hạng đầu**\n$$S_n=u_1\\frac{1-q^n}{1-q}$$\n• $S_n$: Tổng $u_1+u_2+\\cdots+u_n$\n• $q$: Công bội\n**Điều kiện áp dụng**\n• $q\\ne1$\n• $n$ là số nguyên dương",
+        "**Ghi nhớ nhanh**\n• Cấp số nhân nhân với cùng công bội, không cộng cùng một lượng.\n• Số mũ trong $u_n$ là $n-1$.\n• Tăng $r\\%$ mỗi chu kì tương ứng công bội $1+\\frac r{100}$.",
+        "**Ví dụ: Tìm số hạng và tổng**\nCho cấp số nhân có $u_1=2$, $q=3$. Tính $u_5$ và $S_5$.\n**Bước 1:** $u_5=2\\cdot3^{5-1}=162$.\n**Bước 2:** $S_5=2\\frac{1-3^5}{1-3}=242$.\n**Kết luận:** $u_5=162$, $S_5=242$.",
+        "**Ví dụ: Tìm công bội từ hai số hạng**\nCấp số nhân có $u_2=6$, $u_5=162$ và $q>0$. Tìm $q,u_1$.\n**Bước 1:** $u_5/u_2=q^3=27$, nên $q=3$.\n**Bước 2:** $u_1=u_2/q=2$.\n**Kết luận:** $q=3$, $u_1=2$.",
+        "**Ví dụ: Mô hình tăng trưởng**\nMột quần thể ban đầu 1000 cá thể, tăng 20% mỗi năm. Tính số lượng sau 3 năm.\n**Bước 1:** Công bội tăng trưởng là $1+20/100=1{,}2$.\n**Bước 2:** Sau 3 chu kì: $1000\\cdot1{,}2^3$.\n**Kết luận:** Có 1728 cá thể."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt07-st-term",
+          "name": "Công bội và số hạng tổng quát",
+          "example": "Tìm $u_n$, $q$ hoặc vị trí của một số hạng.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt07-st-sum",
+          "name": "Tổng hữu hạn và mô hình tăng trưởng",
+          "example": "Tính $S_n$ hoặc mô hình số lượng tăng theo cùng tỉ lệ.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m2-03",
+          "question": "Cấp số nhân có $u_1=3$, $q=2$. Số hạng $u_4$ là:",
+          "options": [
+            "$12$",
+            "$18$",
+            "$24$",
+            "$48$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "$u_4=3\\cdot2^{4-1}=24$."
+        },
+        {
+          "id": "cp-math11-m2-03-ratio",
+          "question": "Cấp số nhân có $u_1=2$, $u_3=18$, $q>0$. Công bội bằng:",
+          "options": [
+            "$2$",
+            "$3$",
+            "$6$",
+            "$9$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$2q^2=18$, nên $q=3$."
+        },
+        {
+          "id": "cp-math11-m2-03-middle",
+          "question": "Ba số dương $2,x,8$ lập thành cấp số nhân. $x$ bằng:",
+          "options": [
+            "$3$",
+            "$4$",
+            "$5$",
+            "$6$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$x^2=2\\cdot8=16$."
+        },
+        {
+          "id": "cp-math11-m2-03-percent",
+          "question": "Đại lượng tăng 15% mỗi chu kì có công bội:",
+          "options": [
+            "$0{,}15$",
+            "$0{,}85$",
+            "$1{,}15$",
+            "$15$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Giá trị mới bằng 115% giá trị cũ."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt08",
+      "topicId": "math11-t03",
+      "name": "Dạng 8: Lập và đọc bảng số liệu ghép nhóm",
+      "slug": "lap-doc-bang-ghep-nhom",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Đọc khoảng nhóm, tần số, tần số tương đối, độ dài nhóm và giá trị đại diện; ghép nhóm dữ liệu thô.",
+      "recognitionSigns": [
+        "Dữ liệu được chia thành các khoảng dạng $[a;b)$.",
+        "Đề yêu cầu lập bảng hoặc đọc thông tin của một nhóm."
+      ],
+      "solvingSteps": [
+        "Xác định quy ước đầu mút và độ dài mỗi nhóm.",
+        "Đếm tần số hoặc cộng tổng tần số.",
+        "Dùng trung điểm nhóm làm giá trị đại diện khi cần."
+      ],
+      "commonMistakes": [
+        "Đếm giá trị ở đầu mút phải vào sai nhóm.",
+        "Nhầm tần số với tần số tương đối."
+      ],
+      "theory": [
+        "**Mẫu số liệu ghép nhóm**\nMẫu số liệu ghép nhóm chia miền giá trị thành các khoảng không giao nhau, thường viết $[a_i;a_{i+1})$. Tần số $n_i$ là số quan sát thuộc nhóm thứ $i$; cỡ mẫu là tổng các tần số.\n\nQuy ước $[a;b)$ nhận đầu mút trái $a$ nhưng không nhận đầu mút phải $b$. Các nhóm kề nhau nhờ đó không đếm trùng dữ liệu ở ranh giới.\n\nGiá trị đại diện của nhóm là trung điểm $x_i=\\frac{a_i+a_{i+1}}2$. Khi thay mọi giá trị trong nhóm bằng $x_i$, ta mất chi tiết dữ liệu gốc nhưng thuận tiện cho việc ước lượng.\n\nQuy trình lập bảng: chọn các khoảng liên tiếp không chồng lấn; xếp từng quan sát theo đúng quy ước đầu mút; kiểm tra tổng tần số bằng cỡ mẫu; sau đó mới tính tần số tương đối và giá trị đại diện.",
+        "**Mục tiêu cần đạt**\n• Đọc và lập bảng tần số ghép nhóm.\n• Xác định cỡ mẫu, độ dài nhóm, tần số tương đối và giá trị đại diện.",
+        "**Cỡ mẫu**\n$$n=n_1+n_2+\\cdots+n_k$$\n• $n_i$: Tần số nhóm thứ $i$\n**Điều kiện áp dụng**\n• $n_i$ là số nguyên không âm",
+        "**Giá trị đại diện**\n$$x_i=\\frac{a_i+a_{i+1}}2$$\n• $a_i,a_{i+1}$: Hai đầu mút của nhóm\n**Điều kiện áp dụng**\n• Nhóm có dạng $[a_i;a_{i+1})$",
+        "**Tần số tương đối**\n$$f_i=\\frac{n_i}{n}$$\n• $f_i$: Tần số tương đối nhóm thứ $i$\n**Điều kiện áp dụng**\n• $n>0$",
+        "**Ghi nhớ nhanh**\n• Cỡ mẫu bằng tổng tần số.\n• $[a;b)$ chứa $a$ nhưng không chứa $b$.\n• Giá trị đại diện là trung điểm nhóm.",
+        "**Ví dụ: Đọc bảng ghép nhóm**\nHai nhóm $[0;10)$, $[10;20)$ có tần số lần lượt 4 và 6. Tìm cỡ mẫu và giá trị đại diện.\n**Bước 1:** $n=4+6=10$.\n**Bước 2:** Hai giá trị đại diện là $5$ và $15$.\n**Kết luận:** Cỡ mẫu 10; các giá trị đại diện là 5 và 15.",
+        "**Ví dụ: Ghép dữ liệu thô**\nGhép các giá trị $5,8,10,14,19$ vào $[0;10)$ và $[10;20)$.\n**Bước 1:** 5 và 8 thuộc nhóm đầu.\n**Bước 2:** 10, 14 và 19 thuộc nhóm thứ hai vì nhóm nhận đầu mút trái.\n**Kết luận:** Hai tần số lần lượt là 2 và 3.",
+        "**Ví dụ: Tần số tương đối**\nMột nhóm có tần số 12 trong mẫu 40 quan sát. Tính tần số tương đối.\n**Bước 1:** Dùng $f_i=n_i/n$.\n**Bước 2:** $f_i=12/40=0{,}3$.\n**Kết luận:** Tần số tương đối là $0{,}3=30\\%$. "
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt08-st-read",
+          "name": "Đọc bảng ghép nhóm",
+          "example": "Tìm cỡ mẫu, nhóm có tần số lớn nhất hoặc tần số tương đối.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt08-st-group",
+          "name": "Ghép nhóm và giá trị đại diện",
+          "example": "Xếp dữ liệu vào nhóm và tính trung điểm nhóm.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m3-01",
+          "question": "Giá trị 20 thuộc nhóm nào trong hai nhóm $[10;20)$ và $[20;30)$?",
+          "options": [
+            "$[10;20)$",
+            "$[20;30)$",
+            "Cả hai nhóm",
+            "Không nhóm nào"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đầu mút phải bị loại khỏi nhóm trước và là đầu mút trái của nhóm sau."
+        },
+        {
+          "id": "cp-math11-m3-01-size",
+          "question": "Các tần số là 3, 7, 10. Cỡ mẫu bằng:",
+          "options": [
+            "$10$",
+            "$17$",
+            "$20$",
+            "$30$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Cộng tất cả tần số."
+        },
+        {
+          "id": "cp-math11-m3-01-midpoint",
+          "question": "Giá trị đại diện của $[10;20)$ là:",
+          "options": [
+            "$10$",
+            "$15$",
+            "$20$",
+            "$30$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Lấy trung điểm của hai đầu mút."
+        },
+        {
+          "id": "cp-math11-m3-01-relative",
+          "question": "Tổng tần số tương đối của một bảng đầy đủ bằng:",
+          "options": [
+            "$0$",
+            "$1$",
+            "$n$",
+            "$100$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Các nhóm chia toàn bộ mẫu."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt09",
+      "topicId": "math11-t03",
+      "name": "Dạng 9: Các số đặc trưng của mẫu ghép nhóm",
+      "slug": "so-dac-trung-mau-ghep-nhom",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Ước lượng số trung bình, trung vị, tứ phân vị và mốt từ bảng tần số ghép nhóm.",
+      "recognitionSigns": [
+        "Đề cho khoảng nhóm và tần số.",
+        "Đề hỏi xu thế trung tâm hoặc vị trí chia mẫu."
+      ],
+      "solvingSteps": [
+        "Tính cỡ mẫu, giá trị đại diện và tần số tích lũy.",
+        "Xác định đúng nhóm chứa đại lượng cần tìm.",
+        "Thay vào công thức nội suy và giải thích kết quả là xấp xỉ."
+      ],
+      "commonMistakes": [
+        "Dùng cận trên thay cho giá trị đại diện khi tính trung bình.",
+        "Dùng tần số riêng thay cho tần số tích lũy để tìm nhóm trung vị."
+      ],
+      "theory": [
+        "**Các số đặc trưng đo xu thế trung tâm**\nSố trung bình của mẫu ghép nhóm được ước lượng bằng trung bình có trọng số của các giá trị đại diện. Nhóm chứa mốt là nhóm có tần số lớn nhất; công thức mốt còn xét chênh lệch với hai nhóm kề.\n\nĐể tìm trung vị hoặc tứ phân vị, trước hết lập tần số tích lũy và xác định nhóm chứa vị trí $\\frac n2$, $\\frac n4$ hoặc $\\frac{3n}{4}$. Sau đó nội suy tuyến tính trong nhóm.\n\nCác kết quả là xấp xỉ vì không biết vị trí chính xác của từng quan sát trong mỗi nhóm. Khi giải thích, phải ghi đơn vị và nói rõ đại lượng đại diện cho xu thế trung tâm hay vị trí chia mẫu.\n\nTrước khi tính các số đặc trưng, nên bổ sung ba cột: giá trị đại diện, tích $n_ix_i$ và tần số tích lũy. Trung bình dùng hai cột đầu; trung vị và tứ phân vị dùng cột tích lũy; mốt dùng tần số nhóm lớn nhất và hai nhóm kề.",
+        "**Mục tiêu cần đạt**\n• Ước lượng số trung bình và mốt.\n• Xác định nhóm chứa và nội suy trung vị, tứ phân vị.\n• Giải thích kết quả theo bối cảnh.",
+        "**Số trung bình**\n$$\\bar x\\approx\\frac{n_1x_1+\\cdots+n_kx_k}{n}$$\n• $x_i$: Giá trị đại diện nhóm thứ $i$\n• $n_i$: Tần số nhóm thứ $i$\n**Điều kiện áp dụng**\n• $n=\\sum n_i>0$",
+        "**Trung vị ghép nhóm**\n$$M_e=L+\\frac{\\frac n2-F}{f}h$$\n• $L$: Cận dưới nhóm chứa trung vị\n• $F$: Tần số tích lũy trước nhóm\n• $f$: Tần số của nhóm\n• $h$: Độ dài nhóm\n**Điều kiện áp dụng**\n• $f>0$",
+        "**Mốt ghép nhóm**\n$$M_o=L+\\frac{f_m-f_{m-1}}{2f_m-f_{m-1}-f_{m+1}}h$$\n• $f_m$: Tần số nhóm chứa mốt\n• $f_{m-1},f_{m+1}$: Tần số hai nhóm kề\n**Điều kiện áp dụng**\n• Mẫu có nhóm tần số lớn nhất phù hợp để nội suy",
+        "**Ghi nhớ nhanh**\n• Dùng trung điểm nhóm khi tính trung bình.\n• Dùng tần số tích lũy để xác định nhóm trung vị và tứ phân vị.\n• Kết quả từ bảng ghép nhóm là xấp xỉ.",
+        "**Ví dụ: Ước lượng số trung bình**\nHai nhóm $[0;10)$, $[10;20)$ có tần số 2 và 3. Ước lượng số trung bình.\n**Bước 1:** Giá trị đại diện là 5 và 15; cỡ mẫu bằng 5.\n**Bước 2:** $\\bar x\\approx\\frac{2\\cdot5+3\\cdot15}{5}=11$.\n**Kết luận:** $\\bar x\\approx11$.",
+        "**Ví dụ: Nội suy trung vị**\nCác nhóm $[0;10)$, $[10;20)$, $[20;30)$ có tần số 4, 8, 8. Ước lượng trung vị.\n**Bước 1:** Cỡ mẫu 20, vị trí trung vị là 10.\n**Bước 2:** Nhóm chứa trung vị là $[10;20)$, với $L=10,F=4,f=8,h=10$.\n**Bước 3:** Thay vào công thức nội suy.\n**Kết luận:** $M_e\\approx17{,}5$.",
+        "**Ví dụ: Nội suy mốt**\nNhóm $[10;20)$ có tần số 8; hai nhóm kề có tần số 5 và 3. Ước lượng mốt.\n**Bước 1:** Nhóm mốt có $L=10,h=10,f_m=8$.\n**Bước 2:** Thay $f_{m-1}=5,f_{m+1}=3$ vào công thức.\n**Kết luận:** $M_o\\approx13{,}75$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt09-st-mean-mode",
+          "name": "Số trung bình và mốt",
+          "example": "Ước lượng $\\bar x$ hoặc $M_o$ từ bảng nhóm.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt09-st-median-quartile",
+          "name": "Trung vị và tứ phân vị",
+          "example": "Tìm nhóm chứa và nội suy $M_e,Q_1,Q_3$.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m3-02",
+          "question": "Để xác định nhóm chứa trung vị, đại lượng nào cần dùng?",
+          "options": [
+            "Tần số tương đối duy nhất",
+            "Tần số tích lũy",
+            "Cận trên lớn nhất",
+            "Độ dài nhóm nhỏ nhất"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Tần số tích lũy cho biết vị trí $n/2$ rơi vào nhóm nào."
+        },
+        {
+          "id": "cp-math11-m3-02-mean",
+          "question": "Khi tính trung bình ghép nhóm, dùng:",
+          "options": [
+            "Cận trên nhóm",
+            "Giá trị đại diện nhóm",
+            "Chỉ tần số lớn nhất",
+            "Tần số tích lũy duy nhất"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Trung bình là trung bình có trọng số của các trung điểm nhóm."
+        },
+        {
+          "id": "cp-math11-m3-02-median",
+          "question": "Nhóm trung vị được xác định bằng:",
+          "options": [
+            "Tần số tích lũy",
+            "Độ dài nhóm lớn nhất",
+            "Cận dưới nhỏ nhất",
+            "Giá trị đại diện lớn nhất"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Cần xác định vị trí $n/2$ rơi vào nhóm nào."
+        },
+        {
+          "id": "cp-math11-m3-02-quartile",
+          "question": "Khoảng tứ phân vị bằng:",
+          "options": [
+            "$Q_1+Q_3$",
+            "$Q_3-Q_1$",
+            "$Q_2-Q_1$",
+            "$Q_3/Q_1$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đây là định nghĩa khoảng tứ phân vị."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt10",
+      "topicId": "math11-t04",
+      "name": "Dạng 10: Quan hệ liên thuộc và giao tuyến",
+      "slug": "lien-thuoc-giao-tuyen",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Xác định mặt phẳng, giao điểm, giao tuyến và nhận dạng hình chóp, tứ diện.",
+      "recognitionSigns": [
+        "Đề hỏi điểm, đường thuộc mặt phẳng.",
+        "Đề yêu cầu tìm giao tuyến hoặc giao điểm."
+      ],
+      "solvingSteps": [
+        "Chọn hai điểm chung để xác định giao tuyến.",
+        "Dựng đường phụ trong mặt phẳng khi tìm giao điểm.",
+        "Kiểm tra các đối tượng thực sự cùng thuộc mặt phẳng."
+      ],
+      "commonMistakes": [
+        "Nối hai điểm không cùng thuộc cả hai mặt phẳng.",
+        "Suy luận từ hình vẽ thay cho quan hệ đã cho."
+      ],
+      "theory": [
+        "**Đường thẳng và mặt phẳng trong không gian**\nMột mặt phẳng được xác định duy nhất bởi ba điểm không thẳng hàng; một đường thẳng và một điểm ngoài nó; hoặc hai đường thẳng cắt nhau. Hình vẽ chỉ là biểu diễn, nên mọi kết luận liên thuộc phải dựa trên giả thiết.\n\nHai mặt phẳng phân biệt có điểm chung thì giao nhau theo một đường thẳng. Muốn tìm giao tuyến, tìm hai điểm phân biệt cùng thuộc cả hai mặt phẳng. Muốn tìm giao điểm của đường thẳng với mặt phẳng, thường đặt đường thẳng vào một mặt phẳng phụ rồi tìm giao tuyến.\n\nHình chóp $S.A_1A_2\\ldots A_n$ có đỉnh $S$ ngoài mặt phẳng đáy. Tứ diện là hình chóp tam giác; hai cạnh không cùng một mặt được gọi là hai cạnh đối.\n\nKhi tìm giao tuyến, hãy lập danh sách các đối tượng thuộc từng mặt phẳng và ưu tiên các giao điểm đã có sẵn. Nếu mới có một điểm chung, dựng thêm điểm thứ hai bằng cách cho một đường trong mặt phẳng này cắt một đường trong mặt phẳng kia.",
+        "**Mục tiêu cần đạt**\n• Nhận biết quan hệ liên thuộc và ba cách xác định mặt phẳng.\n• Tìm giao điểm, giao tuyến; nhận biết hình chóp và tứ diện.",
+        "**Giao tuyến qua hai điểm chung**\n$$A,B\\in(P)\\cap(Q),\\ A\\ne B\\Rightarrow(P)\\cap(Q)=AB$$\n• $(P),(Q)$: Hai mặt phẳng phân biệt\n**Điều kiện áp dụng**\n• $A,B$ là hai điểm chung phân biệt",
+        "**Ghi nhớ nhanh**\n• Ba điểm xác định mặt phẳng phải không thẳng hàng.\n• Giao tuyến cần hai điểm chung.\n• Không suy luận quan hệ chỉ bằng mắt từ hình vẽ.",
+        "**Ví dụ: Ví dụ định hướng**\nTrong hình chóp $S.ABCD$, biết $O=AC\\cap BD$. Tìm giao tuyến của $(SAC)$ và $(SBD)$.\n**Bước 1:** $S$ thuộc cả hai mặt phẳng.\n**Bước 2:** $O$ thuộc $AC$ và $BD$, nên thuộc cả hai mặt phẳng.\n**Kết luận:** Giao tuyến là $SO$.",
+        "**Ví dụ: Giao tuyến qua cạnh chung**\nXác định giao tuyến của $(ABC)$ và $(ABD)$ trong tứ diện $ABCD$.\n**Bước 1:** Hai điểm $A,B$ cùng thuộc cả hai mặt phẳng.\n**Bước 2:** $A\\ne B$ nên chúng xác định đường thẳng chung.\n**Kết luận:** Giao tuyến là $AB$.",
+        "**Ví dụ: Giao tuyến trong tứ diện**\n$M\\in AC$, $N\\in AD$. Tìm giao tuyến của $(BMN)$ và $(ACD)$.\n**Bước 1:** $M,N$ thuộc $(BMN)$.\n**Bước 2:** $M,N$ cũng thuộc $(ACD)$.\n**Kết luận:** Giao tuyến là $MN$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt10-st-incidence",
+          "name": "Quan hệ liên thuộc và xác định mặt phẳng",
+          "example": "Chọn cách xác định một mặt phẳng.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt10-st-intersection",
+          "name": "Giao điểm và giao tuyến",
+          "example": "Tìm giao tuyến của hai mặt phẳng trong hình chóp.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m4-01",
+          "question": "Dữ kiện nào xác định duy nhất một mặt phẳng?",
+          "options": [
+            "Ba điểm bất kỳ",
+            "Ba điểm không thẳng hàng",
+            "Hai điểm",
+            "Một đường thẳng"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Ba điểm không thẳng hàng xác định duy nhất một mặt phẳng."
+        },
+        {
+          "id": "cp-math11-m4-01-line-plane",
+          "question": "Hai điểm phân biệt thuộc một mặt phẳng thì đường qua chúng:",
+          "options": [
+            "Thuộc mặt phẳng",
+            "Song song mặt phẳng",
+            "Vuông góc mặt phẳng",
+            "Chỉ có đoạn nối thuộc mặt phẳng"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Mặt phẳng chứa trọn đường thẳng qua hai điểm."
+        },
+        {
+          "id": "cp-math11-m4-01-intersection",
+          "question": "Hai mặt phẳng phân biệt có hai điểm chung phân biệt thì giao tuyến là:",
+          "options": [
+            "Đường qua hai điểm",
+            "Một điểm",
+            "Một mặt phẳng",
+            "Không tồn tại"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Hai điểm xác định đường thẳng chung."
+        },
+        {
+          "id": "cp-math11-m4-01-tetra",
+          "question": "Tứ diện có số mặt tam giác là:",
+          "options": [
+            "$3$",
+            "$4$",
+            "$5$",
+            "$6$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Mỗi cách bỏ một trong bốn đỉnh tạo một mặt."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt11",
+      "topicId": "math11-t04",
+      "name": "Dạng 11: Vị trí hai đường thẳng",
+      "slug": "hai-duong-thang-song-song",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân biệt cắt, song song, chéo nhau và vận dụng định lí về hai đường song song.",
+      "recognitionSigns": [
+        "Hai đường nằm trên các mặt khác nhau của hình không gian.",
+        "Đề yêu cầu chứng minh hai đường song song."
+      ],
+      "solvingSteps": [
+        "Kiểm tra đồng phẳng.",
+        "Xét điểm chung hoặc phương.",
+        "Dùng đường thứ ba hoặc định lí trong mặt phẳng."
+      ],
+      "commonMistakes": [
+        "Cho rằng không cắt là song song.",
+        "Kết luận chéo nhau mà chưa loại khả năng đồng phẳng."
+      ],
+      "theory": [
+        "**Hai đường thẳng song song trong không gian**\nHai đường thẳng trong không gian có thể trùng nhau, cắt nhau, song song hoặc chéo nhau. Hai đường song song phải đồng phẳng và không có điểm chung; hai đường chéo nhau không đồng phẳng.\n\nNếu hai đường thẳng phân biệt cùng song song với đường thẳng thứ ba thì chúng song song với nhau. Trong một mặt phẳng, có thể dùng đường trung bình, định lí Thalès hoặc các tính chất hình phẳng đã biết.\n\nĐể chứng minh chéo nhau, thường chỉ ra chúng thuộc hai mặt phẳng khác nhau và không thể cùng nằm trong một mặt phẳng; không đủ nếu chỉ quan sát rằng chúng không cắt trên hình.\n\nQuy trình phân loại hai đường: kiểm tra có đồng phẳng không; nếu đồng phẳng thì xét có điểm chung hay không; nếu không đồng phẳng thì kết luận chéo nhau. “Không cắt” một mình chưa đủ để kết luận song song.",
+        "**Mục tiêu cần đạt**\n• Phân loại bốn vị trí tương đối của hai đường thẳng.\n• Vận dụng tính chất cơ bản để chứng minh song song.",
+        "**Tính chất bắc cầu**\n$$a\\parallel c,\\ b\\parallel c,\\ a\\ne b\\Rightarrow a\\parallel b$$\n• $a,b,c$: Các đường thẳng trong không gian\n**Điều kiện áp dụng**\n• $a,b$ phân biệt",
+        "**Ghi nhớ nhanh**\n• Song song: đồng phẳng và không cắt.\n• Chéo nhau: không đồng phẳng.\n• Có thể dùng một đường thứ ba làm cầu nối song song.",
+        "**Ví dụ: Ví dụ định hướng**\nTrong hình hộp $ABCD.A\\prime B\\prime C\\prime D\\prime$, chứng minh $AB\\parallel C\\prime D\\prime$.\n**Bước 1:** $AB\\parallel CD$ trong đáy.\n**Bước 2:** $CD\\parallel C\\prime D\\prime$ theo các cạnh tương ứng của hình hộp.\n**Kết luận:** $AB\\parallel C\\prime D\\prime$.",
+        "**Ví dụ: Nhận biết hai đường chéo nhau**\nTrong tứ diện $ABCD$, xác định vị trí của $AB$ và $CD$.\n**Bước 1:** Hai cạnh không có điểm chung.\n**Bước 2:** Nếu cùng thuộc một mặt phẳng thì cả bốn đỉnh đồng phẳng, trái với tứ diện.\n**Kết luận:** $AB$ và $CD$ chéo nhau.",
+        "**Ví dụ: Chứng minh song song bằng Thalès**\nTrong tam giác $SAB$, $SM/SA=SN/SB$. Chứng minh $MN\\parallel AB$.\n**Bước 1:** $M,N$ nằm lần lượt trên $SA,SB$.\n**Bước 2:** Hai tỉ số tính từ đỉnh $S$ bằng nhau.\n**Kết luận:** Theo Thalès đảo, $MN\\parallel AB$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt11-st-position",
+          "name": "Vị trí tương đối",
+          "example": "Phân biệt hai đường song song và chéo nhau.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt11-st-proof",
+          "name": "Chứng minh song song",
+          "example": "Dùng tính chất bắc cầu hoặc đường trung bình.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m4-02",
+          "question": "Hai đường thẳng chéo nhau là hai đường:",
+          "options": [
+            "Không có điểm chung",
+            "Không đồng phẳng",
+            "Cùng vuông góc một đường",
+            "Cùng nằm trong một mặt phẳng"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Dấu hiệu phân biệt cốt lõi của hai đường chéo nhau là không đồng phẳng."
+        },
+        {
+          "id": "cp-math11-m4-02-parallel",
+          "question": "Hai đường song song phải:",
+          "options": [
+            "Không đồng phẳng",
+            "Đồng phẳng và không cắt",
+            "Cắt nhau",
+            "Vuông góc"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đây là định nghĩa trong không gian."
+        },
+        {
+          "id": "cp-math11-m4-02-skew",
+          "question": "Hai đường chéo nhau là hai đường:",
+          "options": [
+            "Không đồng phẳng",
+            "Đồng phẳng",
+            "Song song",
+            "Trùng nhau"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Không đồng phẳng là dấu hiệu quyết định."
+        },
+        {
+          "id": "cp-math11-m4-02-transitive",
+          "question": "Nếu $a\\parallel c$, $b\\parallel c$ và $a\\ne b$ thì:",
+          "options": [
+            "$a\\parallel b$",
+            "$a\\perp b$",
+            "$a,b$ chéo nhau",
+            "$a$ cắt $b$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Dùng tính chất bắc cầu."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt12",
+      "topicId": "math11-t04",
+      "name": "Dạng 12: Đường thẳng song song mặt phẳng",
+      "slug": "duong-thang-song-song-mat-phang",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Nhận biết, chứng minh và khai thác đường thẳng song song với mặt phẳng.",
+      "recognitionSigns": [
+        "Một đường ngoài mặt phẳng song song với đường nằm trong mặt phẳng.",
+        "Mặt phẳng phụ chứa đường thẳng cắt mặt phẳng đã cho."
+      ],
+      "solvingSteps": [
+        "Tìm đường nằm trong mặt phẳng làm đường chuẩn.",
+        "Chứng minh hai đường song song.",
+        "Dùng tính chất giao tuyến khi cần."
+      ],
+      "commonMistakes": [
+        "Quên chứng minh đường thẳng không nằm trong mặt phẳng.",
+        "Dùng một đường bất kỳ không thuộc mặt phẳng."
+      ],
+      "theory": [
+        "**Đường thẳng song song với mặt phẳng**\nĐường thẳng $d$ song song với mặt phẳng $(P)$ khi chúng không có điểm chung. Điều kiện thường dùng: $d$ không nằm trong $(P)$ và $d$ song song với một đường thẳng $a$ nằm trong $(P)$.\n\nNếu $d\\parallel(P)$ và mặt phẳng $(Q)$ chứa $d$ cắt $(P)$ theo giao tuyến $a$, thì $a\\parallel d$. Tính chất này giúp tìm phương của giao tuyến mà không cần xác định hai điểm cụ thể.\n\nKhi chứng minh, cần nêu rõ đường chuẩn nằm trong mặt phẳng và loại trường hợp đường cần xét nằm luôn trong mặt phẳng.\n\nNgoài điều kiện nhận biết, cần phân biệt rõ $d\\parallel(P)$ với $d\\subset(P)$. Trong bài giao tuyến, mặt phẳng phụ chứa $d$ phải thực sự cắt $(P)$; khi đó giao tuyến có cùng phương với $d$.",
+        "**Mục tiêu cần đạt**\n• Nhận biết và chứng minh đường thẳng song song với mặt phẳng.\n• Dùng tính chất giao tuyến của mặt phẳng phụ.",
+        "**Điều kiện song song đường–mặt**\n$$a\\subset(P),\\ d\\parallel a,\\ d\\not\\subset(P)\\Rightarrow d\\parallel(P)$$\n• $d,a$: Hai đường thẳng\n• $(P)$: Mặt phẳng\n**Điều kiện áp dụng**\n• $a$ nằm trong $(P)$",
+        "**Ghi nhớ nhanh**\n• Tìm một đường chuẩn nằm trong mặt phẳng.\n• Phải loại trường hợp đường nằm trong mặt phẳng.\n• Mặt phẳng phụ cho giao tuyến song song với đường đã cho.",
+        "**Ví dụ: Ví dụ định hướng**\nTrong hình chóp $S.ABC$, $M,N$ là trung điểm $SA,SB$. Chứng minh $MN\\parallel(ABC)$.\n**Bước 1:** $MN\\parallel AB$ theo đường trung bình tam giác $SAB$.\n**Bước 2:** $AB\\subset(ABC)$ và $MN$ không nằm trong đáy.\n**Kết luận:** $MN\\parallel(ABC)$.",
+        "**Ví dụ: Đường trung bình song song mặt phẳng**\nTrong tứ diện $SABC$, $M,N$ là trung điểm $SA,SB$. Chứng minh $MN\\parallel(ABC)$.\n**Bước 1:** $MN\\parallel AB$ trong tam giác $SAB$.\n**Bước 2:** $AB\\subset(ABC)$ và $MN$ không nằm trong đáy.\n**Kết luận:** $MN\\parallel(ABC)$.",
+        "**Ví dụ: Phương của giao tuyến**\n$d\\parallel(P)$; $(Q)$ chứa $d$ và cắt $(P)$ theo $a$. Tìm quan hệ giữa $a,d$.\n**Bước 1:** Nếu $a$ cắt $d$ thì $d$ có điểm chung với $(P)$, mâu thuẫn.\n**Bước 2:** $a,d$ cùng thuộc $(Q)$.\n**Kết luận:** $a\\parallel d$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt12-st-condition",
+          "name": "Điều kiện và nhận biết",
+          "example": "Nhận biết $d\\parallel(P)$.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt12-st-application",
+          "name": "Chứng minh và giao tuyến",
+          "example": "Tìm giao tuyến song song với đường đã cho.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m4-03",
+          "question": "Nếu $d\\parallel a$, $a\\subset(P)$ và $d\\not\\subset(P)$ thì:",
+          "options": [
+            "$d\\subset(P)$",
+            "$d\\parallel(P)$",
+            "$d\\perp(P)$",
+            "$d$ cắt $(P)$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đây là điều kiện cơ bản để đường thẳng song song với mặt phẳng."
+        },
+        {
+          "id": "cp-math11-m4-03-outside",
+          "question": "Điều kiện $d\\parallel a$, $a\\subset(P)$ cần bổ sung:",
+          "options": [
+            "$d\\not\\subset(P)$",
+            "$d\\perp a$",
+            "$d=a$",
+            "$a\\perp(P)$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Phải loại trường hợp đường nằm trong mặt phẳng."
+        },
+        {
+          "id": "cp-math11-m4-03-common",
+          "question": "Nếu $d\\parallel(P)$ thì số điểm chung là:",
+          "options": [
+            "$0$",
+            "$1$",
+            "$2$",
+            "Vô số"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Theo định nghĩa đường song song mặt phẳng."
+        },
+        {
+          "id": "cp-math11-m4-03-auxiliary",
+          "question": "Mặt phẳng phụ chứa $d\\parallel(P)$ cắt $(P)$ theo $a$ thì:",
+          "options": [
+            "$a\\parallel d$",
+            "$a\\perp d$",
+            "$a=d$",
+            "$a$ chéo $d$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Tính chất giao tuyến của mặt phẳng phụ."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt13",
+      "topicId": "math11-t04",
+      "name": "Dạng 13: Hai mặt phẳng song song và Thalès",
+      "slug": "hai-mat-phang-song-song",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chứng minh hai mặt phẳng song song, dùng Thalès không gian và tính chất lăng trụ, hình hộp.",
+      "recognitionSigns": [
+        "Mỗi mặt phẳng chứa hai đường cắt nhau tương ứng song song.",
+        "Các mặt phẳng song song cắt hai cát tuyến."
+      ],
+      "solvingSteps": [
+        "Chọn hai đường cắt nhau làm chuẩn.",
+        "Thiết lập các cặp song song.",
+        "Áp dụng tỉ số Thalès hoặc tính chất lăng trụ."
+      ],
+      "commonMistakes": [
+        "Chỉ chứng minh một cặp đường song song.",
+        "Ghép sai các đoạn tương ứng trong Thalès."
+      ],
+      "theory": [
+        "**Hai mặt phẳng song song, Thalès và lăng trụ**\nHai mặt phẳng song song nếu không có điểm chung. Nếu một mặt phẳng chứa hai đường thẳng cắt nhau cùng song song với mặt phẳng kia thì hai mặt phẳng song song.\n\nHai mặt phẳng song song bị cắt bởi mặt phẳng thứ ba tạo ra hai giao tuyến song song. Ba mặt phẳng đôi một song song chắn trên hai cát tuyến các đoạn tương ứng tỉ lệ; đây là định lí Thalès trong không gian.\n\nTrong lăng trụ, hai đáy là các đa giác bằng nhau nằm trên hai mặt phẳng song song; các cạnh bên song song và bằng nhau, các mặt bên là hình bình hành. Hình hộp là lăng trụ có đáy là hình bình hành.\n\nĐể chứng minh hai mặt phẳng song song, nên chọn hai đường cắt nhau dễ nhận thấy trong một mặt phẳng và tìm hai phương tương ứng trong mặt phẳng kia. Khi dùng Thalès không gian, hãy ghi thứ tự các mặt phẳng song song để ghép đúng các đoạn chắn.",
+        "**Mục tiêu cần đạt**\n• Chứng minh và khai thác hai mặt phẳng song song.\n• Vận dụng Thalès trong không gian và tính chất lăng trụ, hình hộp.",
+        "**Thalès trong không gian**\n$$\\frac{AB}{BC}=\\frac{A\\prime B\\prime}{B\\prime C\\prime}$$\n• $A,B,C$: Giao điểm trên cát tuyến thứ nhất\n• $A\\prime,B\\prime,C\\prime$: Giao điểm tương ứng trên cát tuyến thứ hai\n**Điều kiện áp dụng**\n• Ba mặt phẳng qua các cặp điểm tương ứng đôi một song song",
+        "**Ghi nhớ nhanh**\n• Chứng minh mặt phẳng song song cần hai phương cắt nhau.\n• Giao tuyến với mặt phẳng thứ ba song song nhau.\n• Ghép đúng các đoạn tương ứng khi dùng Thalès.",
+        "**Ví dụ: Ví dụ định hướng**\nBa mặt phẳng song song cắt hai cát tuyến tại $A,B,C$ và $A\\prime,B\\prime,C\\prime$. Biết $AB/BC=2/3$, $B\\prime C\\prime=6$. Tính $A\\prime B\\prime$.\n**Bước 1:** $\\frac{A\\prime B\\prime}{B\\prime C\\prime}=\\frac{AB}{BC}=\\frac23$.\n**Bước 2:** $A\\prime B\\prime=6\\cdot\\frac23=4$.\n**Kết luận:** $A\\prime B\\prime=4$.",
+        "**Ví dụ: Hai mặt phẳng đối diện**\nChứng minh hai mặt đáy của hình hộp song song.\n**Bước 1:** Trong đáy thứ nhất chọn hai cạnh cắt nhau.\n**Bước 2:** Hai cạnh tương ứng ở đáy thứ hai lần lượt song song với chúng.\n**Kết luận:** Hai mặt phẳng đáy song song.",
+        "**Ví dụ: Thalès trên hai cát tuyến**\nBa mặt phẳng song song chắn các đoạn tương ứng 4,6 và 10,$x$. Tìm $x$.\n**Bước 1:** Lập tỉ lệ $4/6=10/x$.\n**Bước 2:** Nhân chéo được $4x=60$.\n**Kết luận:** $x=15$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt13-st-planes",
+          "name": "Điều kiện hai mặt phẳng song song",
+          "example": "Chứng minh hai mặt phẳng song song.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt13-st-thales",
+          "name": "Thalès, lăng trụ và hình hộp",
+          "example": "Tính tỉ số đoạn hoặc nhận dạng mặt bên.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m4-04",
+          "question": "Mặt bên của một lăng trụ là:",
+          "options": [
+            "Tam giác",
+            "Hình bình hành",
+            "Hình tròn",
+            "Hình thang bất kỳ"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Các cạnh bên song song và bằng nhau nên mỗi mặt bên là hình bình hành."
+        },
+        {
+          "id": "cp-math11-m4-04-two-directions",
+          "question": "Chứng minh hai mặt phẳng song song thường cần:",
+          "options": [
+            "Một cặp đường song song",
+            "Hai cặp đường cắt nhau tương ứng song song",
+            "Một điểm chung",
+            "Một góc vuông"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Cần xác định hai phương độc lập của mặt phẳng."
+        },
+        {
+          "id": "cp-math11-m4-04-section",
+          "question": "Hai mặt phẳng song song cắt mặt phẳng thứ ba theo hai giao tuyến:",
+          "options": [
+            "Song song",
+            "Vuông góc",
+            "Cắt nhau",
+            "Trùng nhau luôn"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Tính chất của hai mặt phẳng song song."
+        },
+        {
+          "id": "cp-math11-m4-04-prism",
+          "question": "Các cạnh bên của lăng trụ:",
+          "options": [
+            "Song song và bằng nhau",
+            "Vuông góc nhau",
+            "Cắt nhau",
+            "Không bằng nhau"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Đây là tính chất cơ bản của lăng trụ."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt14",
+      "topicId": "math11-t04",
+      "name": "Dạng 14: Phép chiếu song song",
+      "slug": "phep-chieu-song-song",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Xác định ảnh qua phép chiếu song song và hình biểu diễn của hình không gian.",
+      "recognitionSigns": [
+        "Các đường chiếu cùng phương.",
+        "Đề hỏi tính chất nào được bảo toàn trên hình biểu diễn."
+      ],
+      "solvingSteps": [
+        "Xác định mặt phẳng và phương chiếu.",
+        "Chiếu từng điểm đặc trưng.",
+        "Dùng tính thẳng hàng, song song và tỉ số được bảo toàn."
+      ],
+      "commonMistakes": [
+        "Cho rằng bảo toàn mọi góc và độ dài.",
+        "Dùng phương chiếu song song với mặt phẳng chiếu."
+      ],
+      "theory": [
+        "**Phép chiếu song song và hình biểu diễn**\nCho mặt phẳng chiếu $(P)$ và phương $l$ không song song với $(P)$. Ảnh của điểm $M$ là giao điểm $M\\prime$ của $(P)$ với đường qua $M$ song song $l$.\n\nPhép chiếu song song bảo toàn tính thẳng hàng, thứ tự điểm trên một đường, tính song song và tỉ số của hai đoạn cùng nằm trên một đường hoặc trên hai đường song song. Nó không bảo toàn độ dài hay góc nói chung.\n\nHình biểu diễn phải giữ các quan hệ liên thuộc và song song cần thiết. Đường tròn thường được biểu diễn bằng elip; đoạn bị che có thể vẽ nét đứt theo quy ước.\n\nKhi đọc hình biểu diễn, chỉ dùng các quan hệ được phép bảo toàn hoặc được kí hiệu rõ. Độ dài và góc nhìn thấy trên hình có thể bị biến dạng; vì vậy không được suy ra vuông góc hay bằng nhau chỉ bằng quan sát.",
+        "**Mục tiêu cần đạt**\n• Nhận biết mặt phẳng chiếu, phương chiếu và ảnh.\n• Dùng tính chất phép chiếu để vẽ, đọc hình biểu diễn.",
+        "**Bảo toàn tỉ số trên các đường song song**\n$$\\frac{AB}{CD}=\\frac{A\\prime B\\prime}{C\\prime D\\prime}$$\n• $A\\prime,B\\prime,C\\prime,D\\prime$: Các ảnh qua phép chiếu song song\n**Điều kiện áp dụng**\n• $AB$ và $CD$ cùng phương hoặc cùng nằm trên một đường",
+        "**Ghi nhớ nhanh**\n• Phương chiếu không song song mặt phẳng chiếu.\n• Bảo toàn thẳng hàng, song song và một số tỉ số.\n• Không bảo toàn độ dài và góc nói chung.",
+        "**Ví dụ: Ví dụ định hướng**\nQua phép chiếu song song, $A,B,C$ thẳng hàng và $AB=BC$. Biết ảnh là $A\\prime,B\\prime,C\\prime$. So sánh $A\\prime B\\prime$ và $B\\prime C\\prime$.\n**Bước 1:** Phép chiếu bảo toàn tỉ số trên một đường.\n**Bước 2:** $A\\prime B\\prime/B\\prime C\\prime=AB/BC=1$.\n**Kết luận:** $A\\prime B\\prime=B\\prime C\\prime$.",
+        "**Ví dụ: Bảo toàn tỉ số**\n$A,B,C$ thẳng hàng, $AB=3BC$. So sánh tỉ số các đoạn ảnh.\n**Bước 1:** Phép chiếu song song bảo toàn tỉ số trên một đường nếu ảnh không suy biến.\n**Bước 2:** $A_1B_1/B_1C_1=AB/BC$.\n**Kết luận:** $A_1B_1/B_1C_1=3$.",
+        "**Ví dụ: Ảnh của hình bình hành**\nGiải thích vì sao ảnh không suy biến của hình bình hành vẫn là hình bình hành.\n**Bước 1:** Hai cặp cạnh đối ban đầu song song.\n**Bước 2:** Phép chiếu song song bảo toàn tính song song.\n**Kết luận:** Ảnh có hai cặp cạnh đối song song nên là hình bình hành."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt14-st-image",
+          "name": "Ảnh và tính chất phép chiếu",
+          "example": "Xác định ảnh của điểm, đoạn, đường tròn.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt14-st-representation",
+          "name": "Hình biểu diễn không gian",
+          "example": "Chọn hình biểu diễn đúng của hình khối.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m4-05",
+          "question": "Phép chiếu song song luôn bảo toàn tính chất nào?",
+          "options": [
+            "Độ dài",
+            "Số đo góc",
+            "Tính thẳng hàng",
+            "Hình tròn"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Ba điểm thẳng hàng được chiếu thành ba điểm thẳng hàng."
+        },
+        {
+          "id": "cp-math11-m4-05-angle",
+          "question": "Phép chiếu song song có bảo toàn góc không?",
+          "options": [
+            "Luôn có",
+            "Không nói chung",
+            "Chỉ góc vuông",
+            "Chỉ góc nhọn"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Góc có thể bị biến dạng bởi phương chiếu."
+        },
+        {
+          "id": "cp-math11-m4-05-circle",
+          "question": "Đường tròn thường được biểu diễn thành:",
+          "options": [
+            "Elip",
+            "Tam giác",
+            "Đoạn thẳng luôn",
+            "Hình vuông"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Hình chiếu song song không suy biến của đường tròn thường là elip."
+        },
+        {
+          "id": "cp-math11-m4-05-hidden",
+          "question": "Cạnh khuất thường được vẽ bằng:",
+          "options": [
+            "Nét đứt",
+            "Nét đỏ",
+            "Không vẽ",
+            "Nét kép"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Đây là quy ước hình biểu diễn."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt15",
+      "topicId": "math11-t05",
+      "name": "Dạng 15: Giới hạn dãy số",
+      "slug": "gioi-han-day-so",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tính giới hạn hữu hạn, vô cực và tổng cấp số nhân lùi vô hạn.",
+      "recognitionSigns": [
+        "Đề chứa kí hiệu giới hạn hoặc yêu cầu xét tính liên tục.",
+        "Cần kiểm tra điều kiện trước khi áp dụng phép toán."
+      ],
+      "solvingSteps": [
+        "Nhận dạng loại giới hạn hoặc điểm cần xét.",
+        "Biến đổi biểu thức và áp dụng quy tắc phù hợp.",
+        "Kiểm tra giới hạn một phía, miền xác định hoặc giá trị hàm."
+      ],
+      "commonMistakes": [
+        "Thay trực tiếp khi gặp dạng vô định.",
+        "Bỏ qua điều kiện mẫu khác 0 hoặc hai giới hạn một phía."
+      ],
+      "theory": [
+        "**Giới hạn của dãy số**\nDãy $(u_n)$ có giới hạn $L$ nếu khi $n$ tăng không giới hạn, $u_n$ tiến gần tùy ý tới $L$. Các giới hạn cơ bản: $1/n^k\\to0$ với $k>0$ và $q^n\\to0$ khi $|q|<1$.\n\nCác phép cộng, trừ, nhân, chia giới hạn được dùng khi các giới hạn thành phần tồn tại và mẫu có giới hạn khác 0. Với phân thức theo $n$, chia tử và mẫu cho lũy thừa bậc cao nhất.\n\nNếu $|q|<1$, tổng cấp số nhân lùi vô hạn $u_1+u_1q+u_1q^2+\\cdots$ hội tụ. Giới hạn $+\\infty$ hoặc $-\\infty$ mô tả độ lớn tăng không bị chặn cùng dấu.\n\nQuy trình chọn phương pháp: nhận dạng giới hạn cơ bản; với phân thức thì chuẩn hóa theo lũy thừa bậc cao nhất; với căn thức thì cân nhắc nhân liên hợp; với dãy kẹp giữa hai dãy cùng giới hạn thì dùng định lí kẹp.\n\nTrong bài toán thực tế, trước khi dùng tổng cấp số nhân vô hạn phải xác định đúng số hạng đầu, công bội và kiểm tra $|q|<1$.",
+        "**Mục tiêu cần đạt**\n• Nhận biết trực giác và tính giới hạn hữu hạn, vô cực.\n• Tính tổng cấp số nhân lùi vô hạn.",
+        "**Giới hạn cơ bản**\n$$\\lim_{n\\to\\infty}\\frac1{n^k}=0,\\quad \\lim_{n\\to\\infty}q^n=0$$\n• $k$: Số thực dương\n• $q$: Công bội\n**Điều kiện áp dụng**\n• $k>0$\n• $|q|<1$",
+        "**Tổng cấp số nhân lùi vô hạn**\n$$S=\\frac{u_1}{1-q}$$\n• $u_1$: Số hạng đầu\n• $q$: Công bội\n**Điều kiện áp dụng**\n• $|q|<1$",
+        "**Ghi nhớ nhanh**\n• Chia cho lũy thừa bậc cao nhất khi xử lí phân thức.\n• $q^n\\to0$ chỉ khi $|q|<1$.\n• Tổng nhân lùi vô hạn cần $|q|<1$.",
+        "**Ví dụ: Giới hạn phân thức**\nTính $\\lim\\frac{2n+1}{n+3}$.\n**Bước 1:** Chia tử và mẫu cho $n$.\n**Bước 2:** Giới hạn bằng $(2+0)/(1+0)=2$.\n**Kết luận:** Giới hạn bằng 2.",
+        "**Ví dụ: Giới hạn có căn thức**\nTính $\\lim_{n\\to\\infty}n(\\sqrt{n^2+1}-n)$.\n**Bước 1:** Nhân và chia với biểu thức liên hợp $\\sqrt{n^2+1}+n$.\n**Bước 2:** Ta được $\\dfrac{1}{\\sqrt{1+1/n^2}+1}$.\n**Bước 3:** Cho $n\\to\\infty$, mẫu tiến tới 2.\n**Kết luận:** Giới hạn bằng $\\dfrac12$.",
+        "**Ví dụ: Tổng quãng đường nảy của quả bóng**\nMột quả bóng rơi từ độ cao 10 m. Sau mỗi lần chạm đất, bóng nảy lên bằng một nửa độ cao trước đó. Tính tổng quãng đường bóng đi được.\n**Bước 1:** Lần rơi đầu dài 10 m.\n**Bước 2:** Các quãng đường đi lên có tổng $5+2{,}5+\\cdots=10$ m.\n**Bước 3:** Các quãng đường đi xuống sau lần đầu cũng có tổng 10 m.\n**Kết luận:** Tổng quãng đường là 30 m."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt15-st-finite",
+          "name": "Giới hạn hữu hạn",
+          "example": "Tính giới hạn phân thức theo $n$.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt15-st-infinite",
+          "name": "Giới hạn vô cực và tổng vô hạn",
+          "example": "Xét dấu vô cực hoặc tính tổng nhân lùi.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m5-01",
+          "question": "$\\lim 1/n$ bằng:",
+          "options": [
+            "$1$",
+            "$0$",
+            "$+\\infty$",
+            "$-\\infty$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Nghịch đảo số nguyên dương tiến tới 0."
+        },
+        {
+          "id": "cp-math11-m5-01-condition",
+          "question": "Điều kiện để $q^n\\to0$ khi $n\\to\\infty$ là:",
+          "options": [
+            "$q>1$",
+            "$q<1$",
+            "$|q|<1$",
+            "$q\\ne1$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Cần $-1<q<1$."
+        },
+        {
+          "id": "cp-math11-m5-01-series",
+          "question": "Tổng $3+\\dfrac32+\\dfrac34+\\cdots$ bằng:",
+          "options": [
+            "$3$",
+            "$6$",
+            "$9$",
+            "$12$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$S=3/(1-1/2)=6$."
+        },
+        {
+          "id": "cp-math11-m5-01-recurrence",
+          "question": "Nếu một dãy hội tụ có giới hạn $L$ và $u_{n+1}=(u_n+2)/3$ thì $L$ bằng:",
+          "options": [
+            "$1$",
+            "$2$",
+            "$3$",
+            "$4$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "$L=(L+2)/3$, suy ra $L=1$."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt16",
+      "topicId": "math11-t05",
+      "name": "Dạng 16: Giới hạn hàm số",
+      "slug": "gioi-han-ham-so",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tính giới hạn tại điểm, một phía, tại vô cực và giới hạn vô cực.",
+      "recognitionSigns": [
+        "Đề chứa kí hiệu giới hạn hoặc yêu cầu xét tính liên tục.",
+        "Cần kiểm tra điều kiện trước khi áp dụng phép toán."
+      ],
+      "solvingSteps": [
+        "Nhận dạng loại giới hạn hoặc điểm cần xét.",
+        "Biến đổi biểu thức và áp dụng quy tắc phù hợp.",
+        "Kiểm tra giới hạn một phía, miền xác định hoặc giá trị hàm."
+      ],
+      "commonMistakes": [
+        "Thay trực tiếp khi gặp dạng vô định.",
+        "Bỏ qua điều kiện mẫu khác 0 hoặc hai giới hạn một phía."
+      ],
+      "theory": [
+        "**Giới hạn của hàm số**\nGiới hạn $\\lim_{x\\to x_0}f(x)=L$ mô tả giá trị $f(x)$ tiến tới khi $x$ gần $x_0$, không yêu cầu $x=x_0$. Giới hạn hai phía tồn tại khi giới hạn trái và phải bằng nhau.\n\nNếu thay trực tiếp không tạo dạng vô định, có thể dùng các phép toán giới hạn. Với $0/0$, thường phân tích nhân tử, rút gọn hoặc nhân liên hợp trước khi lấy giới hạn.\n\nTại vô cực, so sánh bậc cao nhất. Với giới hạn vô cực tại điểm, phải xét dấu của thừa số tiến tới 0 và có thể cần tách hai phía.\n\nThứ tự xử lí hiệu quả: thay trực tiếp để nhận dạng; nếu gặp $0/0$ thì phân tích nhân tử hoặc nhân liên hợp; nếu $x\\to\\pm\\infty$ thì chuẩn hóa theo bậc cao nhất; nếu mẫu tiến tới 0 thì lập bảng dấu và xét từng phía.\n\nGiới hạn đặc biệt $\\lim_{x\\to0}\\dfrac{\\sin x}{x}=1$ có thể kết hợp với phép đổi biến.",
+        "**Mục tiêu cần đạt**\n• Nhận biết giới hạn tại điểm, một phía và tại vô cực.\n• Tính giới hạn bằng phép toán và biến đổi đại số.",
+        "**Điều kiện giới hạn hai phía**\n$$\\lim_{x\\to x_0}f(x)=L\\Leftrightarrow\\lim_{x\\to x_0^-}f(x)=\\lim_{x\\to x_0^+}f(x)=L$$\n• $x_0$: Điểm tiến tới\n**Điều kiện áp dụng**\n• Hai giới hạn một phía tồn tại",
+        "**Tỉ số đa thức cùng bậc**\n$$\\lim_{x\\to\\pm\\infty}\\frac{a_nx^n+\\cdots}{b_nx^n+\\cdots}=\\frac{a_n}{b_n}$$\n• $a_n,b_n$: Hệ số bậc cao nhất\n**Điều kiện áp dụng**\n• $b_n\\ne0$",
+        "**Ghi nhớ nhanh**\n• Giới hạn không phụ thuộc giá trị hàm đúng tại điểm.\n• Hai giới hạn một phía phải bằng nhau.\n• Khử dạng $0/0$ trước khi tính.",
+        "**Ví dụ: Khử dạng vô định**\nTính $\\lim_{x\\to2}\\frac{x^2-4}{x-2}$.\n**Bước 1:** Phân tích $x^2-4=(x-2)(x+2)$.\n**Bước 2:** Rút gọn rồi lấy giới hạn $x+2\\to4$.\n**Kết luận:** Giới hạn bằng 4.",
+        "**Ví dụ: Giới hạn lượng giác**\nTính $\\lim_{x\\to0}\\dfrac{\\sin 3x}{\\sin 5x}$.\n**Bước 1:** Tách thành $\\dfrac{\\sin 3x}{3x}\\cdot\\dfrac{5x}{\\sin 5x}\\cdot\\dfrac35$.\n**Bước 2:** Hai tỉ số lượng giác đầu tiên đều tiến tới 1.\n**Kết luận:** Giới hạn bằng $\\dfrac35$.",
+        "**Ví dụ: Khử dạng vô định bằng liên hợp**\nTính $\\lim_{x\\to0}\\dfrac{\\sqrt{1+2x}-\\sqrt{1-x}}{x}$.\n**Bước 1:** Nhân tử và mẫu với tổng hai căn thức.\n**Bước 2:** Tử số mới là $3x$.\n**Bước 3:** Rút gọn $x$ rồi cho $x\\to0$.\n**Kết luận:** Giới hạn bằng $\\dfrac32$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt16-st-point",
+          "name": "Giới hạn tại điểm và một phía",
+          "example": "Thay trực tiếp hoặc khử dạng $0/0$.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt16-st-infinity",
+          "name": "Giới hạn tại vô cực",
+          "example": "So sánh bậc và xét dấu.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m5-02",
+          "question": "Nếu giới hạn trái là 1, giới hạn phải là 2 thì giới hạn hai phía:",
+          "options": [
+            "Bằng 1",
+            "Bằng 2",
+            "Bằng 3",
+            "Không tồn tại"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Hai giới hạn một phía không bằng nhau."
+        },
+        {
+          "id": "cp-math11-m5-02-sided",
+          "question": "$\\lim_{x\\to0}\\dfrac{|x|}{x}$:",
+          "options": [
+            "Bằng $-1$",
+            "Bằng $0$",
+            "Bằng $1$",
+            "Không tồn tại"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Giới hạn trái bằng $-1$, giới hạn phải bằng 1."
+        },
+        {
+          "id": "cp-math11-m5-02-infinity",
+          "question": "$\\lim_{x\\to+\\infty}\\dfrac{3x^2-x}{2x^2+1}$ bằng:",
+          "options": [
+            "$0$",
+            "$\\dfrac32$",
+            "$2$",
+            "$+\\infty$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Lấy tỉ số hai hệ số bậc cao nhất."
+        },
+        {
+          "id": "cp-math11-m5-02-sign",
+          "question": "$\\lim_{x\\to2^+}\\dfrac1{x-2}$ bằng:",
+          "options": [
+            "$-\\infty$",
+            "$+\\infty$",
+            "$0$",
+            "$1$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Mẫu dương và tiến tới 0."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt17",
+      "topicId": "math11-t05",
+      "name": "Dạng 17: Hàm số liên tục",
+      "slug": "ham-so-lien-tuc",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Xét liên tục tại điểm, trên miền và xác định tham số để hàm ghép liên tục.",
+      "recognitionSigns": [
+        "Đề chứa kí hiệu giới hạn hoặc yêu cầu xét tính liên tục.",
+        "Cần kiểm tra điều kiện trước khi áp dụng phép toán."
+      ],
+      "solvingSteps": [
+        "Nhận dạng loại giới hạn hoặc điểm cần xét.",
+        "Biến đổi biểu thức và áp dụng quy tắc phù hợp.",
+        "Kiểm tra giới hạn một phía, miền xác định hoặc giá trị hàm."
+      ],
+      "commonMistakes": [
+        "Thay trực tiếp khi gặp dạng vô định.",
+        "Bỏ qua điều kiện mẫu khác 0 hoặc hai giới hạn một phía."
+      ],
+      "theory": [
+        "**Hàm số liên tục**\nHàm $f$ liên tục tại $x_0$ khi xác định tại $x_0$, tồn tại giới hạn tại đó và giới hạn bằng $f(x_0)$. Thiếu một trong ba điều kiện thì hàm không liên tục tại điểm.\n\nHàm đa thức liên tục trên $\\mathbb R$; hàm phân thức, căn thức và lượng giác liên tục trên tập xác định. Tổng, hiệu, tích của các hàm liên tục vẫn liên tục; thương liên tục tại nơi mẫu khác 0.\n\nVới hàm cho từng đoạn, chỉ cần kiểm tra tại các điểm nối bằng hai giới hạn một phía và giá trị hàm. Trên đoạn đóng, tính liên tục còn hỗ trợ nhận biết sự tồn tại nghiệm khi hàm đổi dấu.\n\nVới hàm từng đoạn: xác định điểm nối; tính giới hạn trái và phải; so sánh hai giới hạn; cuối cùng so sánh với giá trị hàm.\n\nNếu $f$ liên tục trên $[a;b]$ và $f(a)f(b)<0$ thì tồn tại ít nhất một $c\\in(a;b)$ sao cho $f(c)=0$. Kết luận này không tự động bảo đảm nghiệm duy nhất.",
+        "**Mục tiêu cần đạt**\n• Xét liên tục tại điểm và trên miền.\n• Nhận biết tính liên tục của hàm sơ cấp và hàm ghép từng đoạn.",
+        "**Liên tục tại một điểm**\n$$\\lim_{x\\to x_0}f(x)=f(x_0)$$\n• $x_0$: Điểm thuộc tập xác định\n**Điều kiện áp dụng**\n• $f(x_0)$ xác định\n• Giới hạn tồn tại",
+        "**Ghi nhớ nhanh**\n• Liên tục cần giới hạn bằng giá trị hàm.\n• Hàm sơ cấp liên tục trên tập xác định.\n• Hàm từng đoạn phải kiểm tra điểm nối.",
+        "**Ví dụ: Tìm tham số liên tục**\nCho $f(x)=(x^2-1)/(x-1)$ khi $x\\ne1$ và $f(1)=a$. Tìm $a$.\n**Bước 1:** Rút gọn nhánh đầu thành $x+1$.\n**Bước 2:** $\\lim_{x\\to1}f(x)=2$, nên chọn $a=2$.\n**Kết luận:** $a=2$.",
+        "**Ví dụ: Bổ sung giá trị để hàm liên tục**\nĐặt $f(x)=\\dfrac{\\sqrt{x+3}-2}{x-1}$ với $x\\ne1$. Chọn $f(1)$ để hàm liên tục tại 1.\n**Bước 1:** Nhân liên hợp được $f(x)=1/(\\sqrt{x+3}+2)$.\n**Bước 2:** Giới hạn khi $x\\to1$ bằng $1/4$.\n**Bước 3:** Giá trị tại 1 phải bằng giới hạn.\n**Kết luận:** Chọn $f(1)=\\dfrac14$.",
+        "**Ví dụ: Chứng minh phương trình có nghiệm**\nChứng minh $x^3+x-1=0$ có ít nhất một nghiệm trong $(0;1)$.\n**Bước 1:** Đặt $f(x)=x^3+x-1$, liên tục trên $[0;1]$.\n**Bước 2:** $f(0)=-1$, $f(1)=1$ nên tích hai giá trị âm.\n**Bước 3:** Áp dụng định lí giá trị trung gian.\n**Kết luận:** Có ít nhất một nghiệm thuộc $(0;1)$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt17-st-point",
+          "name": "Liên tục tại một điểm",
+          "example": "So sánh giới hạn với giá trị hàm.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt17-st-domain",
+          "name": "Liên tục trên miền và ứng dụng",
+          "example": "Xác định miền liên tục hoặc tham số.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m5-03",
+          "question": "Hàm $1/x$ liên tục trên:",
+          "options": [
+            "$\\mathbb R$",
+            "$(-\\infty;0)$ và $(0;+\\infty)$",
+            "$[0;+\\infty)$",
+            "Chỉ tại 0"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hàm phân thức liên tục trên tập xác định $x\\ne0$."
+        },
+        {
+          "id": "cp-math11-m5-03-conditions",
+          "question": "Để $f$ liên tục tại $x_0$, cần:",
+          "options": [
+            "Chỉ $f(x_0)$ xác định",
+            "Chỉ giới hạn tồn tại",
+            "Chỉ giới hạn bằng 0",
+            "Xác định, có giới hạn và giới hạn bằng giá trị hàm"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Đây là đủ ba điều kiện của định nghĩa."
+        },
+        {
+          "id": "cp-math11-m5-03-rational",
+          "question": "Hàm $\\dfrac{x+1}{x^2-4}$ liên tục tại mọi điểm thỏa:",
+          "options": [
+            "$x\\ne\\pm2$",
+            "$x>2$",
+            "$x<2$",
+            "$x\\ne0$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Mẫu phải khác 0."
+        },
+        {
+          "id": "cp-math11-m5-03-ivt",
+          "question": "Nếu $f$ liên tục trên $[a;b]$ và $f(a)f(b)<0$ thì chắc chắn:",
+          "options": [
+            "Có đúng một nghiệm",
+            "Không có nghiệm",
+            "Có ít nhất một nghiệm trong $(a;b)$",
+            "Mọi điểm đều là nghiệm"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Định lí giá trị trung gian bảo đảm ít nhất một nghiệm."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt18",
+      "topicId": "math11-t06",
+      "name": "Dạng 18: Lũy thừa số mũ thực",
+      "slug": "luy-thua-so-mu-thuc",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề 18: Lũy thừa số mũ thực",
+      "recognitionSigns": [
+        "Biểu thức chứa số mũ biến thiên hoặc lôgarit.",
+        "Cần kiểm tra cơ số, đối số và chiều đơn điệu."
+      ],
+      "solvingSteps": [
+        "Kiểm tra điều kiện xác định.",
+        "Đưa về cùng cơ số hoặc áp dụng đúng tính chất.",
+        "Giải và đối chiếu điều kiện, bối cảnh."
+      ],
+      "commonMistakes": [
+        "Dùng sai quy tắc lũy thừa hoặc lôgarit của tổng.",
+        "Quên đổi chiều khi cơ số thuộc $(0;1)$."
+      ],
+      "theory": [
+        "**Lũy thừa với số mũ thực**\nVới cơ số dương $a$, lũy thừa $a^\\alpha$ được xác định cho mọi số thực $\\alpha$. Với số mũ hữu tỉ $m/n$, lũy thừa liên hệ với căn bậc $n$; điều kiện cơ số cần được xét khi dùng căn.\n\nCác quy tắc nhân, chia cùng cơ số và lũy thừa của lũy thừa tiếp tục đúng với số mũ thực khi các biểu thức xác định. Không được biến tổng hai lũy thừa thành một lũy thừa.\n\nMô hình tăng theo tỉ lệ thường có dạng $A=A_0(1+r)^t$; số chu kì nằm ở số mũ.\n\nKhi rút gọn, nên đưa các căn và lũy thừa về cùng một cơ số rồi thực hiện phép toán trên số mũ. Với số mũ vô tỉ, cơ số phải dương.\n\nTrong mô hình tăng hoặc giảm, số mũ biểu diễn số chu kì đã trôi qua. Cần đổi đơn vị thời gian về đúng độ dài một chu kì trước khi thay số.",
+        "**Mục tiêu cần đạt**\n• Nắm định nghĩa, điều kiện và tính chất của lũy thừa với số mũ thực.\n• Vận dụng trong tính toán và tình huống phù hợp.",
+        "**Quy tắc lũy thừa**\n$$a^ma^n=a^{m+n},\\quad \\frac{a^m}{a^n}=a^{m-n},\\quad(a^m)^n=a^{mn}$$\n• $a$: Cơ số dương\n• $m,n$: Số thực\n**Điều kiện áp dụng**\n• $a>0$",
+        "**Số mũ hữu tỉ**\n$$a^{m/n}=\\sqrt[n]{a^m}$$\n• $m$: Số nguyên\n• $n$: Số nguyên dương\n**Điều kiện áp dụng**\n• $a>0$\n• $n>0$",
+        "**Ghi nhớ nhanh**\n• Cộng số mũ khi nhân cùng cơ số.\n• Nhân số mũ khi nâng một lũy thừa lên lũy thừa.\n• Cơ số của lũy thừa số mũ thực phải dương.",
+        "**Ví dụ: Ví dụ định hướng**\nRút gọn $2^3\\cdot2^{-1}$.\n**Bước 1:** Cộng số mũ: $2^{3-1}=2^2$.\n**Bước 2:** Tính được 4.\n**Kết luận:** Kết quả bằng 4.",
+        "**Ví dụ: Rút gọn lũy thừa hữu tỉ**\nTính $(\\sqrt[3]{4}\\cdot\\sqrt[4]{8})^{12}$.\n**Bước 1:** Đưa về cơ số 2: $2^{2/3}\\cdot2^{3/4}$.\n**Bước 2:** Trong ngoặc được $2^{17/12}$.\n**Bước 3:** Nâng lên lũy thừa 12 được $2^{17}$.\n**Kết luận:** Giá trị bằng $2^{17}=131072$.",
+        "**Ví dụ: Mô hình chu kì bán rã**\nMột mẫu chất ban đầu có 160 mg và chu kì bán rã 2 giờ. Sau 8 giờ còn bao nhiêu?\n**Bước 1:** Đã trải qua $8/2=4$ chu kì.\n**Bước 2:** Khối lượng còn lại là $160(1/2)^4$.\n**Kết luận:** Còn lại 10 mg."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt18-st-rules",
+          "name": "Quy tắc lũy thừa",
+          "example": "Rút gọn tích, thương, lũy thừa của lũy thừa.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt18-st-radical",
+          "name": "Số mũ hữu tỉ và ứng dụng",
+          "example": "Đổi căn sang lũy thừa và tính giá trị.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m6-01",
+          "question": "$a^m\\cdot a^n$ bằng:",
+          "options": [
+            "$a^{mn}$",
+            "$a^{m+n}$",
+            "$2a^{m+n}$",
+            "$a^{m-n}$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Nhân cùng cơ số thì cộng số mũ."
+        },
+        {
+          "id": "cp-math11-m6-01-domain",
+          "question": "Để $a^{\\sqrt2}$ được xác định theo lũy thừa số mũ thực, điều kiện là:",
+          "options": [
+            "$a\\ne0$",
+            "$a>0$",
+            "$a\\ge0$",
+            "$a>1$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Cơ số phải dương."
+        },
+        {
+          "id": "cp-math11-m6-01-value",
+          "question": "$81^{3/4}$ bằng:",
+          "options": [
+            "$9$",
+            "$18$",
+            "$27$",
+            "$64$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "$81=3^4$ nên kết quả là $3^3=27$."
+        },
+        {
+          "id": "cp-math11-m6-01-equation",
+          "question": "Nghiệm dương của $x^{3/2}=27$ là:",
+          "options": [
+            "$3$",
+            "$6$",
+            "$8$",
+            "$9$"
+          ],
+          "correctAnswer": "D",
+          "explanation": "$x=27^{2/3}=9$."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt19",
+      "topicId": "math11-t06",
+      "name": "Dạng 19: Phép tính lôgarit",
+      "slug": "phep-tinh-logarit",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề 19: Phép tính lôgarit",
+      "recognitionSigns": [
+        "Biểu thức chứa số mũ biến thiên hoặc lôgarit.",
+        "Cần kiểm tra cơ số, đối số và chiều đơn điệu."
+      ],
+      "solvingSteps": [
+        "Kiểm tra điều kiện xác định.",
+        "Đưa về cùng cơ số hoặc áp dụng đúng tính chất.",
+        "Giải và đối chiếu điều kiện, bối cảnh."
+      ],
+      "commonMistakes": [
+        "Dùng sai quy tắc lũy thừa hoặc lôgarit của tổng.",
+        "Quên đổi chiều khi cơ số thuộc $(0;1)$."
+      ],
+      "theory": [
+        "**Lôgarit**\n$\\log_ab$ là số mũ phải đặt lên cơ số $a$ để được $b$. Điều kiện bắt buộc: $a>0$, $a\\ne1$, $b>0$.\n\nLôgarit biến tích thành tổng, thương thành hiệu và đưa số mũ xuống làm hệ số. Không có công thức tách $\\log_a(x+y)$.\n\nCông thức đổi cơ số cho phép tính lôgarit bằng máy tính và chuyển các cơ số khác nhau về cùng một cơ số.\n\nTrước mỗi phép biến đổi, hãy lập bộ lọc điều kiện: cơ số dương và khác 1, mọi đối số dương. Sau khi giải, nghiệm phải được đối chiếu lại với các điều kiện này.\n\nCác tích dạng $\\log_ab\\,\\log_bc$ có thể ghép thành $\\log_ac$.",
+        "**Mục tiêu cần đạt**\n• Nắm định nghĩa, điều kiện và tính chất của lôgarit.\n• Vận dụng trong tính toán và tình huống phù hợp.",
+        "**Định nghĩa lôgarit**\n$$\\log_ab=\\alpha\\Leftrightarrow a^\\alpha=b$$\n• $a$: Cơ số\n• $b$: Đối số\n**Điều kiện áp dụng**\n• $a>0$\n• $a\\ne1$\n• $b>0$",
+        "**Tính chất lôgarit**\n$$\\log_a(xy)=\\log_ax+\\log_ay,\\quad\\log_a\\frac{x}{y}=\\log_ax-\\log_ay$$\n• $x,y$: Các số dương\n**Điều kiện áp dụng**\n• $x>0$\n• $y>0$",
+        "**Đổi cơ số**\n$$\\log_ab=\\frac{\\log_cb}{\\log_ca}$$\n• $c$: Cơ số mới\n**Điều kiện áp dụng**\n• $c>0$\n• $c\\ne1$",
+        "**Ghi nhớ nhanh**\n• Đối số lôgarit phải dương.\n• $\\log_a1=0$, $\\log_aa=1$.\n• Lôgarit của tích mới tách thành tổng.",
+        "**Ví dụ: Ví dụ định hướng**\nTính $\\log_2 8$.\n**Bước 1:** Giải $2^x=8$.\n**Bước 2:** Vì $2^3=8$, suy ra $x=3$.\n**Kết luận:** $\\log_2 8=3$.",
+        "**Ví dụ: Chuỗi đổi cơ số**\nTính $\\log_2 3\\cdot\\log_3 5\\cdot\\log_5 8$.\n**Bước 1:** Dùng $\\log_ab\\cdot\\log_bc=\\log_ac$.\n**Bước 2:** Biểu thức bằng $\\log_2 8$.\n**Kết luận:** Giá trị bằng 3.",
+        "**Ví dụ: Kết hợp hai cơ số lôgarit**\nGiải $\\log_2x+\\log_4x=6$.\n**Bước 1:** Điều kiện $x>0$. Đặt $t=\\log_2x$ thì $\\log_4x=t/2$.\n**Bước 2:** Giải $t+t/2=6$ được $t=4$.\n**Bước 3:** $\\log_2x=4$ nên $x=16$.\n**Kết luận:** Nghiệm $x=16$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt19-st-definition",
+          "name": "Định nghĩa và giá trị cơ bản",
+          "example": "Tính $\\log_ab$ từ $a^x=b$.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt19-st-properties",
+          "name": "Tính chất và đổi cơ số",
+          "example": "Rút gọn tổng, hiệu lôgarit.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m6-02",
+          "question": "$\\log_a1$ bằng:",
+          "options": [
+            "$0$",
+            "$1$",
+            "$a$",
+            "Không xác định"
+          ],
+          "correctAnswer": "A",
+          "explanation": "$a^0=1$."
+        },
+        {
+          "id": "cp-math11-m6-02-sum",
+          "question": "Khẳng định nào đúng với mọi $x,y>0$?",
+          "options": [
+            "$\\log_a(x+y)=\\log_ax+\\log_ay$",
+            "$\\log_a(x+y)=\\log_ax\\cdot\\log_ay$",
+            "$\\log_a(x+y)=\\log_a(x/y)$",
+            "Không có công thức tách lôgarit của tổng như trên"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Tính chất lôgarit không áp dụng trực tiếp cho tổng."
+        },
+        {
+          "id": "cp-math11-m6-02-condition",
+          "question": "$\\log_{x-1}(x+1)$ xác định khi:",
+          "options": [
+            "$x>-1$",
+            "$x>1$ và $x\\ne2$",
+            "$x>0$",
+            "$x\\ne1$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Cần $x-1>0$, $x-1\\ne1$ và $x+1>0$."
+        },
+        {
+          "id": "cp-math11-m6-02-calculate",
+          "question": "Nếu $\\log_2a=3$, $\\log_2b=-1$ thì $\\log_4(a^2b)$ bằng:",
+          "options": [
+            "$2$",
+            "$\\dfrac52$",
+            "$3$",
+            "$5$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$\\log_2(a^2b)=5$ nên đổi sang cơ số 4 được $5/2$."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt20",
+      "topicId": "math11-t06",
+      "name": "Dạng 20: Hàm số mũ và lôgarit",
+      "slug": "ham-so-mu-logarit",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề 20: Hàm số mũ và lôgarit",
+      "recognitionSigns": [
+        "Biểu thức chứa số mũ biến thiên hoặc lôgarit.",
+        "Cần kiểm tra cơ số, đối số và chiều đơn điệu."
+      ],
+      "solvingSteps": [
+        "Kiểm tra điều kiện xác định.",
+        "Đưa về cùng cơ số hoặc áp dụng đúng tính chất.",
+        "Giải và đối chiếu điều kiện, bối cảnh."
+      ],
+      "commonMistakes": [
+        "Dùng sai quy tắc lũy thừa hoặc lôgarit của tổng.",
+        "Quên đổi chiều khi cơ số thuộc $(0;1)$."
+      ],
+      "theory": [
+        "**Hàm số mũ và hàm số lôgarit**\nHàm mũ $y=a^x$ xác định trên $\\mathbb R$, nhận giá trị dương và đi qua $(0;1)$. Hàm lôgarit $y=\\log_ax$ xác định trên $(0;+\\infty)$ và đi qua $(1;0)$.\n\nNếu $a>1$, cả hai hàm tăng; nếu $0<a<1$, cả hai hàm giảm. Hai đồ thị cùng cơ số đối xứng qua đường $y=x$ vì hai hàm ngược nhau.\n\nTăng trưởng, lãi kép và phân rã theo tỉ lệ được mô hình hóa bằng hàm mũ; cần phân biệt số chu kì với thời điểm ban đầu.\n\nKhi đọc đồ thị, cần theo dõi miền xác định, tập giá trị, giao điểm cố định, tính đơn điệu và phép tịnh tiến. Chẳng hạn $y=a^{x-h}+k$ là đồ thị $y=a^x$ dịch sang phải $h$ đơn vị và lên trên $k$ đơn vị.\n\nNếu cần tìm thời gian trong mô hình thực tế, đưa bất đẳng thức về dạng lũy thừa rồi dùng lôgarit; kết quả số chu kì nguyên phải được làm tròn theo tình huống.",
+        "**Mục tiêu cần đạt**\n• Nắm định nghĩa, điều kiện và tính chất của hàm số mũ và hàm số lôgarit.\n• Vận dụng trong tính toán và tình huống phù hợp.",
+        "**Miền xác định và tập giá trị**\n$$D_{a^x}=\\mathbb R,\\ T_{a^x}=(0;+\\infty);\\quad D_{\\log_ax}=(0;+\\infty),\\ T_{\\log_ax}=\\mathbb R$$\n• $a$: Cơ số\n**Điều kiện áp dụng**\n• $a>0$\n• $a\\ne1$",
+        "**Tăng trưởng theo tỉ lệ**\n$$A_n=A_0(1+r)^n$$\n• $r$: Tỉ lệ tăng mỗi chu kì\n• $n$: Số chu kì\n**Điều kiện áp dụng**\n• $1+r>0$",
+        "**Ghi nhớ nhanh**\n• Hàm mũ luôn dương.\n• Hàm log chỉ nhận đối số dương.\n• Cơ số lớn hơn 1: tăng; cơ số giữa 0 và 1: giảm.",
+        "**Ví dụ: Ví dụ định hướng**\nTính số tiền sau 2 năm khi gửi 100 triệu, lãi kép 10%/năm.\n**Bước 1:** Dùng $A=100(1+0{,}1)^2$.\n**Bước 2:** Tính được $121$.\n**Kết luận:** Số tiền là 121 triệu đồng.",
+        "**Ví dụ: Khai thác tính chất hàm mũ**\nTìm giá trị nhỏ nhất của $2^x+2^{-x}$.\n**Bước 1:** Đặt $t=2^x>0$, biểu thức thành $t+1/t$.\n**Bước 2:** Theo AM-GM, $t+1/t\\ge2$.\n**Bước 3:** Dấu bằng khi $t=1$, tức $x=0$.\n**Kết luận:** Giá trị nhỏ nhất là 2.",
+        "**Ví dụ: Tìm số chu kì tăng trưởng**\nMột quần thể có 1000 cá thể và tăng 10% mỗi năm. Ít nhất sau bao nhiêu năm đạt 2000?\n**Bước 1:** Cần $(1{,}1)^n\\ge2$.\n**Bước 2:** Suy ra $n\\ge\\dfrac{\\log2}{\\log1{,}1}\\approx7{,}27$.\n**Bước 3:** Chọn số năm nguyên nhỏ nhất thỏa điều kiện.\n**Kết luận:** Ít nhất 8 năm."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt20-st-properties",
+          "name": "Tính chất và đồ thị",
+          "example": "Nhận dạng miền, chiều biến thiên, tiệm cận.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt20-st-model",
+          "name": "Mô hình tăng trưởng",
+          "example": "Tính lãi kép hoặc tăng trưởng.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m6-03",
+          "question": "Đồ thị $y=a^x$ luôn đi qua:",
+          "options": [
+            "$(0;0)$",
+            "$(0;1)$",
+            "$(1;0)$",
+            "$(1;1)$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$a^0=1$."
+        },
+        {
+          "id": "cp-math11-m6-03-range",
+          "question": "Tập giá trị của $y=3^{x^2}$ là:",
+          "options": [
+            "$(0;+\\infty)$",
+            "$[1;+\\infty)$",
+            "$(-\\infty;1]$",
+            "$\\mathbb R$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$x^2\\ge0$ nên $3^{x^2}\\ge1$."
+        },
+        {
+          "id": "cp-math11-m6-03-decay",
+          "question": "Một đại lượng giảm 20% mỗi chu kì thì hệ số nhân là:",
+          "options": [
+            "$0{,}2$",
+            "$1{,}2$",
+            "$0{,}8$",
+            "$-0{,}2$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Đại lượng còn 80%, tức 0,8 lần."
+        },
+        {
+          "id": "cp-math11-m6-03-ph",
+          "question": "Nếu $[H^+]=10^{-5}$ và $\\mathrm{pH}=-\\log_{10}[H^+]$ thì pH bằng:",
+          "options": [
+            "$-5$",
+            "$0$",
+            "$1$",
+            "$5$"
+          ],
+          "correctAnswer": "D",
+          "explanation": "$-\\log_{10}(10^{-5})=5$."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt21",
+      "topicId": "math11-t06",
+      "name": "Dạng 21: Phương trình và bất phương trình mũ–lôgarit",
+      "slug": "phuong-trinh-bat-phuong-trinh-mu-logarit",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Chuyên đề 21: Phương trình và bất phương trình mũ–lôgarit",
+      "recognitionSigns": [
+        "Biểu thức chứa số mũ biến thiên hoặc lôgarit.",
+        "Cần kiểm tra cơ số, đối số và chiều đơn điệu."
+      ],
+      "solvingSteps": [
+        "Kiểm tra điều kiện xác định.",
+        "Đưa về cùng cơ số hoặc áp dụng đúng tính chất.",
+        "Giải và đối chiếu điều kiện, bối cảnh."
+      ],
+      "commonMistakes": [
+        "Dùng sai quy tắc lũy thừa hoặc lôgarit của tổng.",
+        "Quên đổi chiều khi cơ số thuộc $(0;1)$."
+      ],
+      "theory": [
+        "**Phương trình và bất phương trình mũ–lôgarit**\nPhương trình mũ cơ bản $a^x=b$ có nghiệm $x=\\log_ab$ khi $b>0$. Nếu hai vế đưa được về cùng cơ số hợp lệ thì so sánh số mũ.\n\nPhương trình lôgarit phải đặt điều kiện đối số dương trước khi biến đổi. Với cùng cơ số, tính đơn ánh cho phép so sánh đối số.\n\nTrong bất phương trình, hàm tăng giữ chiều và hàm giảm đổi chiều. Vì vậy cơ số $a>1$ và $0<a<1$ phải được tách rõ.\n\nVới biểu thức chứa $a^{2x}$ và $a^x$, đặt $t=a^x>0$ để đưa về bài toán đại số. Điều kiện $t>0$ phải được dùng khi chọn nghiệm.\n\nVới bài lôgarit, thứ tự an toàn là: đặt điều kiện; biến đổi và giải; đối chiếu nghiệm; kết luận. Cơ số trong $(0;1)$ làm đảo chiều bất phương trình.",
+        "**Mục tiêu cần đạt**\n• Nắm định nghĩa, điều kiện và tính chất của phương trình và bất phương trình mũ–lôgarit.\n• Vận dụng trong tính toán và tình huống phù hợp.",
+        "**Phương trình cơ bản**\n$$a^x=b\\Leftrightarrow x=\\log_ab;\\qquad\\log_ax=b\\Leftrightarrow x=a^b$$\n• $a$: Cơ số\n• $b$: Hằng số\n**Điều kiện áp dụng**\n• $a>0$\n• $a\\ne1$\n• $b>0$ cho phương trình mũ",
+        "**So sánh cùng cơ số**\n$$a^u>a^v\\Leftrightarrow\\begin{cases}u>v,&a>1\\\\u<v,&0<a<1\\end{cases}$$\n• $u,v$: Biểu thức số mũ\n**Điều kiện áp dụng**\n• $a>0$\n• $a\\ne1$",
+        "**Ghi nhớ nhanh**\n• Đưa về cùng cơ số khi có thể.\n• Lôgarit luôn cần đối số dương.\n• Cơ số nhỏ hơn 1 làm đổi chiều bất phương trình.",
+        "**Ví dụ: Ví dụ định hướng**\nGiải $2^{x+1}=8$.\n**Bước 1:** Viết $8=2^3$.\n**Bước 2:** $x+1=3$, nên $x=2$.\n**Kết luận:** Nghiệm $x=2$.",
+        "**Ví dụ: Đặt ẩn phụ cho phương trình mũ**\nGiải $4^x-5\\cdot2^x+4=0$.\n**Bước 1:** Đặt $t=2^x>0$, khi đó $4^x=t^2$.\n**Bước 2:** Giải $t^2-5t+4=0$ được $t=1$ hoặc $t=4$.\n**Bước 3:** Suy ra $x=0$ hoặc $x=2$.\n**Kết luận:** Tập nghiệm $\\{0;2\\}$.",
+        "**Ví dụ: Bất phương trình lôgarit có điều kiện**\nGiải $\\log_2(x^2-1)\\le3$.\n**Bước 1:** Điều kiện $x<-1$ hoặc $x>1$.\n**Bước 2:** Vì cơ số lớn hơn 1, suy ra $x^2-1\\le8$.\n**Bước 3:** Giải $x^2\\le9$ rồi giao với điều kiện.\n**Kết luận:** Tập nghiệm $[-3;-1)\\cup(1;3]$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt21-st-equation",
+          "name": "Phương trình cơ bản",
+          "example": "Đưa về cùng cơ số.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt21-st-inequality",
+          "name": "Bất phương trình cơ bản",
+          "example": "Xét cơ số và điều kiện.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m6-04",
+          "question": "Nghiệm của $\\log_2x=3$ là:",
+          "options": [
+            "$x=3$",
+            "$x=5$",
+            "$x=6$",
+            "$x=8$"
+          ],
+          "correctAnswer": "D",
+          "explanation": "$x=2^3=8$."
+        },
+        {
+          "id": "cp-math11-m6-04-order",
+          "question": "Với $0<a<1$, $a^u>a^v$ tương đương:",
+          "options": [
+            "$u>v$",
+            "$u<v$",
+            "$u=v$",
+            "$u\\ge v$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hàm mũ cơ số thuộc $(0;1)$ nghịch biến."
+        },
+        {
+          "id": "cp-math11-m6-04-domain",
+          "question": "Điều kiện của $\\log_2(x-1)+\\log_2(x+2)=3$ là:",
+          "options": [
+            "$x>-2$",
+            "$x\\ne1$",
+            "$x>1$",
+            "$x<1$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Cả hai đối số phải dương."
+        },
+        {
+          "id": "cp-math11-m6-04-quadratic",
+          "question": "Nghiệm của $3^{2x}-10\\cdot3^x+9=0$ là:",
+          "options": [
+            "$x=0$ hoặc $x=2$",
+            "$x=1$ hoặc $x=2$",
+            "$x=-1$ hoặc $x=1$",
+            "$x=0$ hoặc $x=1$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Đặt $t=3^x$, được $(t-1)(t-9)=0$."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt22",
+      "topicId": "math11-t07",
+      "name": "Dạng 22: Góc và hai đường thẳng vuông góc",
+      "slug": "d-ng-22-g-c-v-hai-ng-th-ng-vu-ng-g-c",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng 22: Góc và hai đường thẳng vuông góc",
+      "recognitionSigns": [
+        "Đề cho hình không gian với quan hệ vuông góc, hình chiếu, khoảng cách hoặc thể tích.",
+        "Cần xác định đúng đường cao/hình chiếu trước khi tính."
+      ],
+      "solvingSteps": [
+        "Dựng hoặc nhận diện đối tượng vuông góc chuẩn.",
+        "Đưa bài toán về tam giác vuông hoặc công thức hình khối.",
+        "Tính và kiểm tra đơn vị, điều kiện."
+      ],
+      "commonMistakes": [
+        "Suy luận từ hình vẽ thay cho giả thiết.",
+        "Chọn sai hình chiếu, đường cao hoặc hệ số $1/3$."
+      ],
+      "theory": [
+        "**Góc giữa hai đường thẳng**\nGóc giữa hai đường trong không gian là góc giữa hai đường thẳng lần lượt song song với chúng và cùng đi qua một điểm. Góc được chọn trong khoảng từ $0^\\circ$ đến $90^\\circ$.\n\nHai đường vuông góc khi góc giữa chúng bằng $90^\\circ$; chúng có thể cắt nhau hoặc chéo nhau. Có thể chứng minh bằng tích vô hướng, định lí Pythagore hoặc chuyển sang các đường song song cắt nhau.\n\nQuy trình tính góc: chọn vectơ chỉ phương hoặc thay hai đường chéo nhau bằng hai đường song song cùng qua một điểm; tính góc nhọn hoặc vuông; kiểm tra kết quả thuộc $[0^\\circ;90^\\circ]$.",
+        "**Mục tiêu cần đạt**\n• Nhận biết và giải thích góc giữa hai đường thẳng.\n• Vận dụng trong tính toán và mô hình không gian đơn giản.",
+        "**Góc giữa hai đường**\n$$\\cos\\theta=\\frac{|\\vec u\\cdot\\vec v|}{|\\vec u||\\vec v|}$$\n• $\\vec u,\\vec v$: Vectơ chỉ phương của hai đường\n**Điều kiện áp dụng**\n• $0^\\circ\\le\\theta\\le90^\\circ$",
+        "**Ghi nhớ nhanh**\n• Vuông góc không bắt buộc cắt nhau.\n• Dùng các đường song song qua cùng điểm để xác định góc.\n• Tích vô hướng bằng 0 cho góc vuông.",
+        "**Ví dụ: Ví dụ định hướng**\nTrong lập phương, tính góc giữa hai cạnh kề $AB,AD$.\n**Bước 1:** Hai cạnh cùng nằm trong đáy vuông.\n**Bước 2:** $AB\\perp AD$.\n**Kết luận:** Góc bằng $90^\\circ$.",
+        "**Ví dụ: Tính góc bằng tích vô hướng**\nHai đường có vectơ chỉ phương $(1;0;1)$ và $(1;1;0)$. Tính góc giữa chúng.\n**Bước 1:** Tích vô hướng bằng 1.\n**Bước 2:** Mỗi vectơ có độ dài $\\sqrt2$.\n**Bước 3:** $\\cos\\theta=1/2$.\n**Kết luận:** Góc bằng $60^\\circ$.",
+        "**Ví dụ: Góc giữa hai đường chéo nhau**\nTrong lập phương, tính góc giữa $AC$ và $A_1B$.\n**Bước 1:** Chọn vectơ chỉ phương $(1;1;0)$ và $(1;0;-1)$.\n**Bước 2:** Cosin góc bằng $1/(\\sqrt2\\sqrt2)=1/2$.\n**Kết luận:** Góc bằng $60^\\circ$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt22-st-angle",
+          "name": "Góc giữa hai đường",
+          "example": "Tính góc qua hai đường song song cắt nhau.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt22-st-proof",
+          "name": "Chứng minh vuông góc",
+          "example": "Dùng tam giác hoặc quan hệ song song.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m7-01",
+          "question": "Hai đường chéo nhau có thể vuông góc không?",
+          "options": [
+            "Có",
+            "Không",
+            "Chỉ khi bằng nhau",
+            "Chỉ trong mặt phẳng"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Góc được xác định qua các đường song song cùng đi qua một điểm."
+        },
+        {
+          "id": "cp-math11-m7-01-dot",
+          "question": "Hai vectơ chỉ phương có tích vô hướng bằng 0 thì hai đường:",
+          "options": [
+            "Song song",
+            "Vuông góc",
+            "Trùng nhau",
+            "Không xác định"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Tích vô hướng bằng 0 cho góc $90^\\circ$."
+        },
+        {
+          "id": "cp-math11-m7-01-range",
+          "question": "Góc giữa hai đường thẳng trong không gian thuộc:",
+          "options": [
+            "$[0^\\circ;90^\\circ]$",
+            "$[0^\\circ;180^\\circ]$",
+            "$(90^\\circ;180^\\circ)$",
+            "$\\mathbb R$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Theo quy ước, lấy góc không tù lớn nhất là $90^\\circ$."
+        },
+        {
+          "id": "cp-math11-m7-01-skew",
+          "question": "Hai đường chéo nhau có thể vuông góc không?",
+          "options": [
+            "Có",
+            "Không",
+            "Chỉ khi cùng độ dài",
+            "Chỉ trong mặt phẳng"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Vuông góc được xác định qua hai đường song song tương ứng cùng đi qua một điểm."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt23",
+      "topicId": "math11-t07",
+      "name": "Dạng 23: Đường thẳng vuông góc mặt phẳng",
+      "slug": "d-ng-23-ng-th-ng-vu-ng-g-c-m-t-ph-ng",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng 23: Đường thẳng vuông góc mặt phẳng",
+      "recognitionSigns": [
+        "Đề cho hình không gian với quan hệ vuông góc, hình chiếu, khoảng cách hoặc thể tích.",
+        "Cần xác định đúng đường cao/hình chiếu trước khi tính."
+      ],
+      "solvingSteps": [
+        "Dựng hoặc nhận diện đối tượng vuông góc chuẩn.",
+        "Đưa bài toán về tam giác vuông hoặc công thức hình khối.",
+        "Tính và kiểm tra đơn vị, điều kiện."
+      ],
+      "commonMistakes": [
+        "Suy luận từ hình vẽ thay cho giả thiết.",
+        "Chọn sai hình chiếu, đường cao hoặc hệ số $1/3$."
+      ],
+      "theory": [
+        "**Đường thẳng vuông góc với mặt phẳng**\nĐường $d$ vuông góc với mặt phẳng $(P)$ nếu nó vuông góc với mọi đường trong $(P)$. Điều kiện thực hành: $d$ vuông góc với hai đường cắt nhau nằm trong $(P)$.\n\nNếu $d\\perp(P)$ thì mọi đường song song với $d$ cũng vuông góc $(P)$; mọi mặt phẳng chứa $d$ vuông góc $(P)$. Định lí ba đường vuông góc liên hệ một đường trong mặt phẳng với đường xiên và hình chiếu của đường xiên.\n\nKhi chứng minh đường vuông góc mặt phẳng, phải chỉ rõ hai đường cắt nhau nằm trong mặt phẳng. Định lí ba đường vuông góc được dùng sau khi xác định đúng đường xiên và hình chiếu của nó.",
+        "**Mục tiêu cần đạt**\n• Nhận biết và giải thích đường thẳng vuông góc với mặt phẳng.\n• Vận dụng trong tính toán và mô hình không gian đơn giản.",
+        "**Điều kiện đường–mặt vuông góc**\n$$d\\perp a,\\ d\\perp b,\\ a,b\\subset(P),\\ a\\cap b\\ne\\varnothing\\Rightarrow d\\perp(P)$$\n• $d,a,b$: Các đường thẳng\n**Điều kiện áp dụng**\n• $a,b$ cắt nhau trong $(P)$",
+        "**Ghi nhớ nhanh**\n• Cần hai đường cắt nhau trong mặt phẳng.\n• Đường vuông góc mặt phẳng vuông góc mọi đường qua chân.\n• Định lí ba đường vuông góc dùng hình chiếu.",
+        "**Ví dụ: Ví dụ định hướng**\nTrong hình chóp, $SA\\perp AB$ và $SA\\perp AC$, $AB,AC$ cắt nhau. Kết luận?\n**Bước 1:** $AB,AC\\subset(ABC)$.\n**Bước 2:** $SA\\perp(ABC)$.\n**Kết luận:** $SA\\perp(ABC)$.",
+        "**Ví dụ: Nhận diện đường cao hình chóp**\n$SA\\perp AB$, $SA\\perp AC$ và $AB,AC$ cắt nhau trong đáy. Chứng minh $SA\\perp(ABC)$.\n**Bước 1:** Hai đường $AB,AC$ cùng thuộc $(ABC)$ và cắt nhau tại $A$.\n**Bước 2:** $SA$ vuông góc với cả hai đường.\n**Kết luận:** Theo điều kiện đường–mặt, $SA\\perp(ABC)$.",
+        "**Ví dụ: Định lí ba đường vuông góc**\n$SA\\perp(ABC)$ và $AB\\perp BC$. Chứng minh $SB\\perp BC$.\n**Bước 1:** $AB$ là hình chiếu của đường xiên $SB$ lên đáy.\n**Bước 2:** $BC$ nằm trong đáy và vuông góc với hình chiếu $AB$.\n**Kết luận:** Theo định lí ba đường vuông góc, $SB\\perp BC$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt23-st-condition",
+          "name": "Điều kiện và tính chất",
+          "example": "Chứng minh đường vuông góc mặt phẳng.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt23-st-three-lines",
+          "name": "Định lí ba đường vuông góc",
+          "example": "Liên hệ đường và hình chiếu.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m7-02",
+          "question": "Vuông góc với mấy đường cắt nhau trong mặt phẳng là đủ?",
+          "options": [
+            "Một",
+            "Hai",
+            "Ba",
+            "Vô số bắt buộc"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hai đường cắt nhau xác định các phương của mặt phẳng."
+        },
+        {
+          "id": "cp-math11-m7-02-two-lines",
+          "question": "Để chứng minh $d\\perp(P)$, cần chứng minh $d$ vuông góc với:",
+          "options": [
+            "Một đường bất kỳ",
+            "Hai đường cắt nhau trong $(P)$",
+            "Hai đường song song trong $(P)$",
+            "Một điểm trong $(P)$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hai đường cắt nhau xác định hai phương của mặt phẳng."
+        },
+        {
+          "id": "cp-math11-m7-02-parallel",
+          "question": "Nếu $d\\perp(P)$ và $e\\parallel d$ thì:",
+          "options": [
+            "$e\\parallel(P)$",
+            "$e\\perp(P)$",
+            "$e\\subset(P)$",
+            "Không kết luận"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đường song song với pháp tuyến cũng vuông góc mặt phẳng."
+        },
+        {
+          "id": "cp-math11-m7-02-projection",
+          "question": "Định lí ba đường vuông góc liên hệ đường xiên với:",
+          "options": [
+            "Độ dài cạnh",
+            "Hình chiếu của đường xiên",
+            "Một mặt phẳng song song",
+            "Thể tích"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Phải xác định hình chiếu vuông góc của đường xiên lên mặt phẳng."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt24",
+      "topicId": "math11-t07",
+      "name": "Dạng 24: Phép chiếu và góc đường–mặt",
+      "slug": "d-ng-24-ph-p-chi-u-v-g-c-ng-m-t",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng 24: Phép chiếu và góc đường–mặt",
+      "recognitionSigns": [
+        "Đề cho hình không gian với quan hệ vuông góc, hình chiếu, khoảng cách hoặc thể tích.",
+        "Cần xác định đúng đường cao/hình chiếu trước khi tính."
+      ],
+      "solvingSteps": [
+        "Dựng hoặc nhận diện đối tượng vuông góc chuẩn.",
+        "Đưa bài toán về tam giác vuông hoặc công thức hình khối.",
+        "Tính và kiểm tra đơn vị, điều kiện."
+      ],
+      "commonMistakes": [
+        "Suy luận từ hình vẽ thay cho giả thiết.",
+        "Chọn sai hình chiếu, đường cao hoặc hệ số $1/3$."
+      ],
+      "theory": [
+        "**Phép chiếu vuông góc và góc đường–mặt**\nHình chiếu vuông góc của điểm $M$ lên $(P)$ là chân $H$ của đường vuông góc từ $M$ đến $(P)$. Hình chiếu của đường xiên $AB$ là đường qua hình chiếu hai điểm, nếu không suy biến.\n\nGóc giữa đường $d$ và mặt phẳng $(P)$ là góc giữa $d$ và hình chiếu vuông góc của nó trên $(P)$, thuộc $[0^\\circ,90^\\circ]$. Góc phẳng nhị diện được dựng trong mặt phẳng vuông góc cạnh nhị diện.\n\nTrong tam giác vuông tạo bởi đường xiên, hình chiếu và thành phần vuông góc, có thể dùng sin, cos hoặc tan. Góc giữa đường và mặt phẳng là góc phụ với góc giữa đường và pháp tuyến.",
+        "**Mục tiêu cần đạt**\n• Nhận biết và giải thích phép chiếu vuông góc và góc đường–mặt.\n• Vận dụng trong tính toán và mô hình không gian đơn giản.",
+        "**Góc đường–mặt trong tam giác vuông**\n$$\\sin\\alpha=\\frac{AH}{AM}$$\n• $AH$: Thành phần vuông góc mặt phẳng\n• $AM$: Đoạn xiên\n**Điều kiện áp dụng**\n• $H$ là hình chiếu của $M$ trên mặt phẳng",
+        "**Ghi nhớ nhanh**\n• Góc đường–mặt dùng hình chiếu của đường.\n• Đường vuông góc mặt phẳng tạo góc $90^\\circ$.\n• Góc nhị diện cần mặt phẳng vuông góc cạnh.",
+        "**Ví dụ: Ví dụ định hướng**\n$AH\\perp(P)$, $HM$ là hình chiếu của $AM$. Góc giữa $AM$ và $(P)$ là?\n**Bước 1:** Dùng định nghĩa góc đường–mặt.\n**Bước 2:** Góc cần tìm là $\\widehat{AMH}$.\n**Kết luận:** $\\widehat{AMH}$.",
+        "**Ví dụ: Tính góc đường–mặt**\n$AH\\perp(P)$, $AH=3$, $HM=4$. Tính góc giữa $AM$ và $(P)$.\n**Bước 1:** Hình chiếu của $AM$ là $HM$.\n**Bước 2:** Tam giác $AHM$ vuông tại $H$ và $AM=5$.\n**Bước 3:** $\\sin\\alpha=AH/AM=3/5$.\n**Kết luận:** $\\alpha\\approx36{,}87^\\circ$.",
+        "**Ví dụ: Dùng góc với pháp tuyến**\nMột đường tạo với pháp tuyến của mặt phẳng góc $25^\\circ$. Tính góc đường–mặt.\n**Bước 1:** Góc đường–mặt và góc đường–pháp tuyến là hai góc phụ nhau.\n**Bước 2:** Tính $90^\\circ-25^\\circ$.\n**Kết luận:** Góc bằng $65^\\circ$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt24-st-projection",
+          "name": "Hình chiếu vuông góc",
+          "example": "Xác định ảnh vuông góc.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt24-st-angle",
+          "name": "Góc đường–mặt và nhị diện",
+          "example": "Tính qua tam giác vuông.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m7-03",
+          "question": "Đường vuông góc mặt phẳng tạo với mặt phẳng góc:",
+          "options": [
+            "$0^\\circ$",
+            "$30^\\circ$",
+            "$60^\\circ$",
+            "$90^\\circ$"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Hình chiếu suy biến thành một điểm nên góc bằng $90^\\circ$."
+        },
+        {
+          "id": "cp-math11-m7-03-parallel",
+          "question": "Đường song song mặt phẳng tạo với mặt phẳng góc:",
+          "options": [
+            "$0^\\circ$",
+            "$30^\\circ$",
+            "$60^\\circ$",
+            "$90^\\circ$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Đường và hình chiếu của nó song song hoặc trùng phương."
+        },
+        {
+          "id": "cp-math11-m7-03-perpendicular",
+          "question": "Đường vuông góc mặt phẳng tạo với mặt phẳng góc:",
+          "options": [
+            "$0^\\circ$",
+            "$30^\\circ$",
+            "$60^\\circ$",
+            "$90^\\circ$"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Đây là trường hợp góc lớn nhất."
+        },
+        {
+          "id": "cp-math11-m7-03-complement",
+          "question": "Đường tạo với pháp tuyến góc $40^\\circ$ thì tạo với mặt phẳng góc:",
+          "options": [
+            "$40^\\circ$",
+            "$45^\\circ$",
+            "$50^\\circ$",
+            "$90^\\circ$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Hai góc phụ nhau."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt25",
+      "topicId": "math11-t07",
+      "name": "Dạng 25: Hai mặt phẳng vuông góc",
+      "slug": "d-ng-25-hai-m-t-ph-ng-vu-ng-g-c",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng 25: Hai mặt phẳng vuông góc",
+      "recognitionSigns": [
+        "Đề cho hình không gian với quan hệ vuông góc, hình chiếu, khoảng cách hoặc thể tích.",
+        "Cần xác định đúng đường cao/hình chiếu trước khi tính."
+      ],
+      "solvingSteps": [
+        "Dựng hoặc nhận diện đối tượng vuông góc chuẩn.",
+        "Đưa bài toán về tam giác vuông hoặc công thức hình khối.",
+        "Tính và kiểm tra đơn vị, điều kiện."
+      ],
+      "commonMistakes": [
+        "Suy luận từ hình vẽ thay cho giả thiết.",
+        "Chọn sai hình chiếu, đường cao hoặc hệ số $1/3$."
+      ],
+      "theory": [
+        "**Hai mặt phẳng vuông góc**\nHai mặt phẳng vuông góc khi góc giữa chúng bằng $90^\\circ$. Điều kiện thường dùng: một mặt phẳng chứa một đường thẳng vuông góc với mặt phẳng kia.\n\nNếu $(P)\\perp(Q)$ theo giao tuyến $a$ và một đường trong $(P)$ vuông góc $a$, thì đường đó vuông góc $(Q)$. Lăng trụ đứng có cạnh bên vuông góc đáy; hình hộp chữ nhật và lập phương là các trường hợp đặc biệt.\n\nMuốn chứng minh hai mặt phẳng vuông góc, cách ngắn nhất thường là tìm một đường nằm trong mặt phẳng thứ nhất và vuông góc mặt phẳng thứ hai. Khi hai mặt phẳng đã vuông góc, có thể khai thác giao tuyến để suy ra đường–mặt vuông góc.",
+        "**Mục tiêu cần đạt**\n• Nhận biết và giải thích hai mặt phẳng vuông góc.\n• Vận dụng trong tính toán và mô hình không gian đơn giản.",
+        "**Điều kiện hai mặt phẳng vuông góc**\n$$d\\subset(P),\\ d\\perp(Q)\\Rightarrow(P)\\perp(Q)$$\n• $d$: Đường nằm trong mặt phẳng thứ nhất\n**Điều kiện áp dụng**\n• $d\\subset(P)$",
+        "**Ghi nhớ nhanh**\n• Tìm một đường trong mặt phẳng này vuông góc mặt phẳng kia.\n• Mặt bên lăng trụ đứng vuông góc đáy.\n• Hai mặt phẳng chỉ có một cặp đường vuông góc chưa đủ.",
+        "**Ví dụ: Ví dụ định hướng**\nNếu $SA\\perp(ABC)$ và $SA\\subset(SAB)$ thì:\n**Bước 1:** Dùng điều kiện hai mặt phẳng vuông góc.\n**Bước 2:** $(SAB)\\perp(ABC)$.\n**Kết luận:** Hai mặt phẳng vuông góc.",
+        "**Ví dụ: Chứng minh hai mặt phẳng vuông góc**\n$SA\\perp(ABC)$ và $SA\\subset(SAB)$. Chứng minh $(SAB)\\perp(ABC)$.\n**Bước 1:** Mặt phẳng $(SAB)$ chứa đường $SA$.\n**Bước 2:** $SA$ vuông góc với mặt phẳng $(ABC)$.\n**Kết luận:** Theo điều kiện đủ, $(SAB)\\perp(ABC)$.",
+        "**Ví dụ: Khai thác giao tuyến**\n$(P)\\perp(Q)$ theo giao tuyến $a$. Đường $b\\subset(P)$ và $b\\perp a$. Kết luận quan hệ giữa $b$ và $(Q)$.\n**Bước 1:** Dùng tính chất của hai mặt phẳng vuông góc theo giao tuyến.\n**Bước 2:** $b$ nằm trong một mặt phẳng và vuông góc giao tuyến.\n**Kết luận:** $b\\perp(Q)$. "
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt25-st-condition",
+          "name": "Điều kiện hai mặt phẳng vuông góc",
+          "example": "Tìm đường vuông góc mặt phẳng.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt25-st-solids",
+          "name": "Hình khối đứng và đều",
+          "example": "Khai thác cạnh bên, đáy, tâm.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m7-04",
+          "question": "Cạnh bên lăng trụ đứng có quan hệ với đáy:",
+          "options": [
+            "Song song",
+            "Vuông góc",
+            "Nằm trong đáy",
+            "Chéo nhau"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đó là định nghĩa lăng trụ đứng."
+        },
+        {
+          "id": "cp-math11-m7-04-angle",
+          "question": "Góc giữa hai mặt phẳng vuông góc bằng:",
+          "options": [
+            "$0^\\circ$",
+            "$45^\\circ$",
+            "$60^\\circ$",
+            "$90^\\circ$"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Theo định nghĩa."
+        },
+        {
+          "id": "cp-math11-m7-04-line",
+          "question": "Nếu $d\\subset(P)$ và $d\\perp(Q)$ thì:",
+          "options": [
+            "$(P)\\parallel(Q)$",
+            "$(P)\\perp(Q)$",
+            "$(P)=(Q)$",
+            "Không kết luận"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Mặt phẳng chứa một đường vuông góc mặt phẳng kia."
+        },
+        {
+          "id": "cp-math11-m7-04-prism",
+          "question": "Mặt bên của lăng trụ đứng có quan hệ với đáy:",
+          "options": [
+            "Song song",
+            "Vuông góc",
+            "Trùng nhau",
+            "Không cố định"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Mặt bên chứa cạnh bên vuông góc đáy."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt26",
+      "topicId": "math11-t07",
+      "name": "Dạng 26: Khoảng cách trong không gian",
+      "slug": "d-ng-26-kho-ng-c-ch-trong-kh-ng-gian",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng 26: Khoảng cách trong không gian",
+      "recognitionSigns": [
+        "Đề cho hình không gian với quan hệ vuông góc, hình chiếu, khoảng cách hoặc thể tích.",
+        "Cần xác định đúng đường cao/hình chiếu trước khi tính."
+      ],
+      "solvingSteps": [
+        "Dựng hoặc nhận diện đối tượng vuông góc chuẩn.",
+        "Đưa bài toán về tam giác vuông hoặc công thức hình khối.",
+        "Tính và kiểm tra đơn vị, điều kiện."
+      ],
+      "commonMistakes": [
+        "Suy luận từ hình vẽ thay cho giả thiết.",
+        "Chọn sai hình chiếu, đường cao hoặc hệ số $1/3$."
+      ],
+      "theory": [
+        "**Khoảng cách trong không gian**\nKhoảng cách từ điểm đến đường hoặc mặt phẳng là độ dài đoạn vuông góc. Các khoảng cách giữa hai đối tượng song song được quy về khoảng cách từ một điểm của đối tượng này đến đối tượng kia.\n\nKhoảng cách giữa hai đường chéo nhau là độ dài đường vuông góc chung. Trong trường hợp một đường vuông góc với mặt phẳng chứa đường kia, việc dựng đường vuông góc chung được đơn giản hóa.\n\nChiến lược khoảng cách: quy đối tượng cần tính về khoảng cách điểm–mặt hoặc điểm–đường; dựng đoạn vuông góc; sau đó tìm độ dài bằng tam giác vuông, diện tích hoặc thể tích. Không dùng một đoạn nối tùy ý làm khoảng cách.",
+        "**Mục tiêu cần đạt**\n• Nhận biết và giải thích khoảng cách trong không gian.\n• Vận dụng trong tính toán và mô hình không gian đơn giản.",
+        "**Khoảng cách điểm–mặt**\n$$d(M,(P))=MH$$\n• $H$: Hình chiếu vuông góc của $M$ lên $(P)$\n**Điều kiện áp dụng**\n• $MH\\perp(P)$",
+        "**Ghi nhớ nhanh**\n• Khoảng cách là đoạn vuông góc ngắn nhất.\n• Đối tượng song song: chọn điểm thuận lợi.\n• Đường chéo nhau cần đường vuông góc chung.",
+        "**Ví dụ: Ví dụ định hướng**\n$MH\\perp(P)$ và $MH=5$. Tính $d(M,(P))$.\n**Bước 1:** $H$ là hình chiếu của $M$.\n**Bước 2:** Khoảng cách bằng $MH=5$.\n**Kết luận:** Khoảng cách bằng 5.",
+        "**Ví dụ: Khoảng cách điểm–mặt**\n$SA\\perp(ABC)$ và $SA=7$. Tính $d(S,(ABC))$.\n**Bước 1:** $A$ là hình chiếu vuông góc của $S$ lên đáy.\n**Bước 2:** Khoảng cách bằng độ dài đoạn vuông góc $SA$.\n**Kết luận:** Khoảng cách bằng 7.",
+        "**Ví dụ: Khoảng cách hai mặt phẳng song song**\nMột hình hộp chữ nhật cao 8. Tính khoảng cách giữa hai mặt phẳng đáy.\n**Bước 1:** Hai đáy song song.\n**Bước 2:** Cạnh bên vuông góc với cả hai đáy và dài 8.\n**Kết luận:** Khoảng cách bằng 8."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt26-st-basic",
+          "name": "Khoảng cách điểm–đường–mặt",
+          "example": "Dựng đoạn vuông góc.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt26-st-objects",
+          "name": "Khoảng cách giữa các đối tượng",
+          "example": "Dùng mặt phẳng song song hoặc vuông góc chung.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m7-05",
+          "question": "Khoảng cách từ điểm đến mặt phẳng là độ dài:",
+          "options": [
+            "Đoạn bất kỳ",
+            "Đoạn vuông góc",
+            "Đường xiên dài nhất",
+            "Giao tuyến"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đoạn vuông góc là ngắn nhất."
+        },
+        {
+          "id": "cp-math11-m7-05-zero",
+          "question": "Nếu $M\\in(P)$ thì $d(M,(P))$ bằng:",
+          "options": [
+            "$0$",
+            "$1$",
+            "$MH$",
+            "$+\\infty$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Điểm nằm ngay trên mặt phẳng."
+        },
+        {
+          "id": "cp-math11-m7-05-shortest",
+          "question": "Đoạn ngắn nhất từ điểm đến mặt phẳng là:",
+          "options": [
+            "Đoạn xiên bất kỳ",
+            "Đoạn vuông góc",
+            "Đường chéo",
+            "Giao tuyến"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đây là tính chất cực tiểu của đoạn vuông góc."
+        },
+        {
+          "id": "cp-math11-m7-05-skew",
+          "question": "Khoảng cách giữa hai đường chéo nhau là độ dài:",
+          "options": [
+            "Một đường bất kỳ",
+            "Đường vuông góc chung",
+            "Một hình chiếu bất kỳ",
+            "Tổng hai đường"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Theo định nghĩa khoảng cách hai đường chéo nhau."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt27",
+      "topicId": "math11-t07",
+      "name": "Dạng 27: Thể tích hình khối",
+      "slug": "d-ng-27-th-t-ch-h-nh-kh-i",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng 27: Thể tích hình khối",
+      "recognitionSigns": [
+        "Đề cho hình không gian với quan hệ vuông góc, hình chiếu, khoảng cách hoặc thể tích.",
+        "Cần xác định đúng đường cao/hình chiếu trước khi tính."
+      ],
+      "solvingSteps": [
+        "Dựng hoặc nhận diện đối tượng vuông góc chuẩn.",
+        "Đưa bài toán về tam giác vuông hoặc công thức hình khối.",
+        "Tính và kiểm tra đơn vị, điều kiện."
+      ],
+      "commonMistakes": [
+        "Suy luận từ hình vẽ thay cho giả thiết.",
+        "Chọn sai hình chiếu, đường cao hoặc hệ số $1/3$."
+      ],
+      "theory": [
+        "**Thể tích**\nThể tích lăng trụ và hình hộp bằng diện tích đáy nhân chiều cao. Chiều cao là khoảng cách giữa hai mặt phẳng đáy, không phải luôn là cạnh bên.\n\nThể tích hình chóp bằng một phần ba diện tích đáy nhân chiều cao. Cần xác định đúng chân đường cao và đơn vị khối; hình chóp đều có chân đường cao tại tâm đáy.\n\nTrước khi thay công thức thể tích, phải tính đúng diện tích đáy và chiều cao vuông góc với đáy. Với khối ghép hoặc bài toán thực tế, có thể dùng cộng–trừ thể tích và đổi đơn vị sau cùng.",
+        "**Mục tiêu cần đạt**\n• Nhận biết và giải thích thể tích.\n• Vận dụng trong tính toán và mô hình không gian đơn giản.",
+        "**Công thức thể tích**\n$$V_{\\text{lăng trụ}}=Bh,\\qquad V_{\\text{chóp}}=\\frac13Bh$$\n• $B$: Diện tích đáy\n• $h$: Chiều cao\n**Điều kiện áp dụng**\n• $B,h>0$",
+        "**Ghi nhớ nhanh**\n• Lăng trụ: $Bh$.\n• Hình chóp: $Bh/3$.\n• Chiều cao phải vuông góc đáy.",
+        "**Ví dụ: Ví dụ định hướng**\nHình chóp có $B=12$, $h=6$. Tính thể tích.\n**Bước 1:** Dùng $V=Bh/3$.\n**Bước 2:** $V=12\\cdot6/3=24$.\n**Kết luận:** Thể tích bằng 24.",
+        "**Ví dụ: Lăng trụ đáy tam giác**\nLăng trụ đứng có đáy là tam giác vuông cạnh góc vuông 3 và 4, chiều cao 10. Tính thể tích.\n**Bước 1:** Diện tích đáy $B=3\\cdot4/2=6$.\n**Bước 2:** $V=Bh=6\\cdot10$.\n**Kết luận:** Thể tích bằng 60.",
+        "**Ví dụ: Tứ diện vuông**\nTứ diện có ba cạnh đôi một vuông góc tại một đỉnh, dài 3, 4, 5. Tính thể tích.\n**Bước 1:** Chọn tam giác vuông cạnh 3,4 làm đáy, diện tích bằng 6.\n**Bước 2:** Cạnh còn lại dài 5 là chiều cao.\n**Bước 3:** $V=6\\cdot5/3$.\n**Kết luận:** Thể tích bằng 10."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt27-st-prism",
+          "name": "Lăng trụ và hình hộp",
+          "example": "Dùng $V=Bh$.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt27-st-pyramid",
+          "name": "Hình chóp",
+          "example": "Dùng $V=Bh/3$.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m7-06",
+          "question": "Thể tích lăng trụ có đáy $B$, cao $h$ là:",
+          "options": [
+            "$Bh$",
+            "$Bh/2$",
+            "$Bh/3$",
+            "$3Bh$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Lăng trụ dùng $V=Bh$."
+        },
+        {
+          "id": "cp-math11-m7-06-prism",
+          "question": "Lăng trụ có thể tích 72, diện tích đáy 9. Chiều cao bằng:",
+          "options": [
+            "$6$",
+            "$8$",
+            "$9$",
+            "$12$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$h=V/B=8$."
+        },
+        {
+          "id": "cp-math11-m7-06-pyramid",
+          "question": "Chóp có diện tích đáy 15, chiều cao 6. Thể tích bằng:",
+          "options": [
+            "$30$",
+            "$45$",
+            "$60$",
+            "$90$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "$V=15\\cdot6/3=30$."
+        },
+        {
+          "id": "cp-math11-m7-06-ratio",
+          "question": "Chóp và lăng trụ cùng đáy, cùng chiều cao. Tỉ số thể tích chóp/lăng trụ là:",
+          "options": [
+            "$1/3$",
+            "$1/2$",
+            "$1$",
+            "$3$"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Hai công thức lần lượt là $Bh/3$ và $Bh$."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt28",
+      "topicId": "math11-t08",
+      "name": "Dạng 28: Hợp, giao và độc lập",
+      "slug": "d-ng-28-h-p-giao-v-c-l-p",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng 28: Hợp, giao và độc lập",
+      "recognitionSigns": [
+        "Đề mô tả hai biến cố hoặc nhiều giai đoạn ngẫu nhiên.",
+        "Cần xác định hợp, giao, độc lập hoặc biến cố đối."
+      ],
+      "solvingSteps": [
+        "Gọi và mô tả biến cố rõ ràng.",
+        "Chọn công thức cộng, nhân, tổ hợp hoặc sơ đồ cây.",
+        "Kiểm tra kết quả thuộc $[0;1]$."
+      ],
+      "commonMistakes": [
+        "Nhầm xung khắc với độc lập.",
+        "Bỏ phần giao trong công thức cộng hoặc nhân khi chưa có độc lập."
+      ],
+      "theory": [
+        "**Biến cố hợp, giao, đối và độc lập**\nBiến cố $A\\cup B$ xảy ra khi ít nhất một trong $A,B$ xảy ra; $A\\cap B$ xảy ra khi cả hai cùng xảy ra. Biến cố đối $\\overline A$ xảy ra khi $A$ không xảy ra.\n\nHai biến cố xung khắc nếu $A\\cap B=\\varnothing$. Hai biến cố độc lập nếu việc xảy ra của biến cố này không làm thay đổi xác suất biến cố kia; về tính toán, $P(A\\cap B)=P(A)P(B)$.\n\nXung khắc và độc lập là hai khái niệm khác nhau. Nếu hai biến cố xung khắc có xác suất dương thì chúng không độc lập.\n\nNên dịch từng từ khóa sang phép toán tập hợp trước khi tính: “ít nhất một” là hợp, “đồng thời” là giao, “không” là biến cố đối, “đúng một” phải loại các phần giao. Kiểm tra độc lập bằng xác suất, không dựa vào cảm giác.",
+        "**Mục tiêu cần đạt**\n• Nhận biết hợp, giao, đối, xung khắc.\n• Phân biệt xung khắc với độc lập.",
+        "**Hợp, giao, đối**\n$$A\\cup B,\\quad A\\cap B,\\quad\\overline A$$\n• $A,B$: Các biến cố\n**Điều kiện áp dụng**\n• Các biến cố trong cùng phép thử",
+        "**Điều kiện độc lập**\n$$P(A\\cap B)=P(A)P(B)$$\n• $P$: Xác suất\n**Điều kiện áp dụng**\n• $A,B$ độc lập",
+        "**Ghi nhớ nhanh**\n• Hợp: ít nhất một; giao: đồng thời.\n• Biến cố đối có xác suất $1-P(A)$.\n• Xung khắc không đồng nghĩa độc lập.",
+        "**Ví dụ: Mô tả giao**\nGieo xúc xắc. $A$: ra số chẵn, $B$: ra số lớn hơn 3. Tìm $A\\cap B$.\n**Bước 1:** $A=\\{2,4,6\\}$, $B=\\{4,5,6\\}$.\n**Bước 2:** Giao là các phần tử chung.\n**Kết luận:** $A\\cap B=\\{4,6\\}$.",
+        "**Ví dụ: Phân tích hợp và giao**\nGieo xúc xắc; $A$ là số chẵn, $B$ là số lớn hơn 4. Tìm $A\\cup B$ và $A\\cap B$.\n**Bước 1:** $A=\\{2,4,6\\}$, $B=\\{5,6\\}$.\n**Bước 2:** Lấy tất cả phần tử cho hợp và phần tử chung cho giao.\n**Kết luận:** $A\\cup B=\\{2,4,5,6\\}$, $A\\cap B=\\{6\\}$.",
+        "**Ví dụ: Kiểm tra độc lập**\n$P(A)=0{,}3$, $P(B)=0{,}6$, $P(A\\cap B)=0{,}18$. Hai biến cố có độc lập không?\n**Bước 1:** Tính $P(A)P(B)=0{,}3\\cdot0{,}6=0{,}18$.\n**Bước 2:** So sánh với xác suất giao đã cho.\n**Kết luận:** Hai biến cố độc lập."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt28-st-events",
+          "name": "Biến cố hợp, giao, đối",
+          "example": "Biểu diễn bằng tập hợp hoặc lời.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt28-st-independent",
+          "name": "Xung khắc và độc lập",
+          "example": "Phân biệt hai khái niệm.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m8-01",
+          "question": "$A\\cup B$ xảy ra khi:",
+          "options": [
+            "Chỉ A",
+            "Chỉ B",
+            "Ít nhất một trong A, B",
+            "Không biến cố nào"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Đây là định nghĩa biến cố hợp."
+        },
+        {
+          "id": "cp-math11-m8-01-union",
+          "question": "Từ khóa “ít nhất một” tương ứng với:",
+          "options": [
+            "Biến cố hợp",
+            "Biến cố giao",
+            "Biến cố đối",
+            "Biến cố rỗng"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Hợp xảy ra khi ít nhất một biến cố xảy ra."
+        },
+        {
+          "id": "cp-math11-m8-01-complement",
+          "question": "Nếu $P(A)=0{,}35$ thì $P(\\overline A)$ bằng:",
+          "options": [
+            "$0{,}35$",
+            "$0{,}65$",
+            "$1{,}35$",
+            "$0$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Lấy $1-0{,}35$."
+        },
+        {
+          "id": "cp-math11-m8-01-exclusive",
+          "question": "Hai biến cố xung khắc có xác suất dương thì:",
+          "options": [
+            "Độc lập",
+            "Không độc lập",
+            "Luôn cùng xác suất",
+            "Có hợp bằng 1"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Xác suất giao bằng 0 nhưng tích hai xác suất dương."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt29",
+      "topicId": "math11-t08",
+      "name": "Dạng 29: Công thức cộng xác suất",
+      "slug": "d-ng-29-c-ng-th-c-c-ng-x-c-su-t",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng 29: Công thức cộng xác suất",
+      "recognitionSigns": [
+        "Đề mô tả hai biến cố hoặc nhiều giai đoạn ngẫu nhiên.",
+        "Cần xác định hợp, giao, độc lập hoặc biến cố đối."
+      ],
+      "solvingSteps": [
+        "Gọi và mô tả biến cố rõ ràng.",
+        "Chọn công thức cộng, nhân, tổ hợp hoặc sơ đồ cây.",
+        "Kiểm tra kết quả thuộc $[0;1]$."
+      ],
+      "commonMistakes": [
+        "Nhầm xung khắc với độc lập.",
+        "Bỏ phần giao trong công thức cộng hoặc nhân khi chưa có độc lập."
+      ],
+      "theory": [
+        "**Công thức cộng xác suất**\nKhi cộng $P(A)$ và $P(B)$, các kết quả thuộc $A\\cap B$ bị đếm hai lần nên phải trừ một lần. Nếu $A,B$ xung khắc thì phần giao bằng 0.\n\nBiến cố “ít nhất một” thường thuận lợi khi dùng biến cố đối “không có”. Trong mô hình đồng khả năng, có thể đếm số kết quả thuận lợi bằng quy tắc tổ hợp rồi chia cỡ không gian mẫu.\n\nSau khi tính, cần kiểm tra xác suất trong $[0;1]$ và diễn giải đúng “hoặc” theo nghĩa ít nhất một.\n\nQuy trình dùng công thức cộng: mô tả $A,B$; xác định phần giao; thay công thức; kiểm tra kết quả. Với “ít nhất một”, hãy so sánh cách cộng trực tiếp với cách lấy 1 trừ xác suất không có lần nào xảy ra.",
+        "**Mục tiêu cần đạt**\n• Tính xác suất biến cố hợp.\n• Dùng biến cố đối và tổ hợp trong bài toán đơn giản.",
+        "**Công thức cộng**\n$$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$$\n• $A,B$: Hai biến cố\n**Điều kiện áp dụng**\n• Cùng phép thử",
+        "**Biến cố đối**\n$$P(\\overline A)=1-P(A)$$\n• $\\overline A$: Biến cố đối của A\n**Điều kiện áp dụng**\n• $A$ thuộc không gian mẫu đang xét",
+        "**Ghi nhớ nhanh**\n• Luôn trừ phần giao.\n• Xung khắc thì $P(A\\cap B)=0$.\n• “Ít nhất một” thường dùng biến cố đối.",
+        "**Ví dụ: Dùng công thức cộng**\n$P(A)=0{,}5$, $P(B)=0{,}4$, $P(A\\cap B)=0{,}2$. Tính $P(A\\cup B)$.\n**Bước 1:** Áp dụng công thức cộng.\n**Bước 2:** $0{,}5+0{,}4-0{,}2=0{,}7$.\n**Kết luận:** $P(A\\cup B)=0{,}7$.",
+        "**Ví dụ: Tìm xác suất giao**\n$P(A\\cup B)=0{,}8$, $P(A)=0{,}5$, $P(B)=0{,}4$. Tính $P(A\\cap B)$.\n**Bước 1:** Từ công thức cộng, chuyển vế phần giao.\n**Bước 2:** $P(A\\cap B)=0{,}5+0{,}4-0{,}8$.\n**Kết luận:** $P(A\\cap B)=0{,}1$.",
+        "**Ví dụ: Dùng biến cố đối**\nMột phép thử độc lập có xác suất thành công $0{,}2$ mỗi lần. Tính xác suất có ít nhất một lần thành công trong 3 lần.\n**Bước 1:** Biến cố đối là cả ba lần đều thất bại.\n**Bước 2:** Xác suất biến cố đối là $0{,}8^3=0{,}512$.\n**Bước 3:** Lấy 1 trừ xác suất này.\n**Kết luận:** Xác suất bằng $0{,}488$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt29-st-formula",
+          "name": "Áp dụng công thức cộng",
+          "example": "Tính $P(A\\cup B)$.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt29-st-counting",
+          "name": "Tổ hợp và biến cố đối",
+          "example": "Đếm trường hợp hoặc dùng phần bù.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m8-02",
+          "question": "Nếu A, B xung khắc thì $P(A\\cup B)$ bằng:",
+          "options": [
+            "$P(A)P(B)$",
+            "$P(A)+P(B)$",
+            "$P(A)-P(B)$",
+            "$0$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Phần giao bằng 0."
+        },
+        {
+          "id": "cp-math11-m8-02-intersection",
+          "question": "Trong công thức cộng, phần giao bị:",
+          "options": [
+            "Không đếm",
+            "Đếm hai lần",
+            "Đếm ba lần",
+            "Luôn bằng 1"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Nó có mặt trong cả $P(A)$ và $P(B)$."
+        },
+        {
+          "id": "cp-math11-m8-02-exclusive",
+          "question": "Nếu $A,B$ xung khắc thì $P(A\\cup B)$ bằng:",
+          "options": [
+            "$P(A)P(B)$",
+            "$P(A)+P(B)$",
+            "$P(A)-P(B)$",
+            "$0$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Phần giao bằng 0."
+        },
+        {
+          "id": "cp-math11-m8-02-at-least",
+          "question": "Biến cố đối của “ít nhất một lần thành công” là:",
+          "options": [
+            "Đúng một lần thành công",
+            "Mọi lần đều thành công",
+            "Không lần nào thành công",
+            "Hai lần thành công"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Đây là cặp biến cố phủ toàn bộ không gian mẫu và không giao nhau."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt30",
+      "topicId": "math11-t08",
+      "name": "Dạng 30: Công thức nhân xác suất",
+      "slug": "d-ng-30-c-ng-th-c-nh-n-x-c-su-t",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Dạng 30: Công thức nhân xác suất",
+      "recognitionSigns": [
+        "Đề mô tả hai biến cố hoặc nhiều giai đoạn ngẫu nhiên.",
+        "Cần xác định hợp, giao, độc lập hoặc biến cố đối."
+      ],
+      "solvingSteps": [
+        "Gọi và mô tả biến cố rõ ràng.",
+        "Chọn công thức cộng, nhân, tổ hợp hoặc sơ đồ cây.",
+        "Kiểm tra kết quả thuộc $[0;1]$."
+      ],
+      "commonMistakes": [
+        "Nhầm xung khắc với độc lập.",
+        "Bỏ phần giao trong công thức cộng hoặc nhân khi chưa có độc lập."
+      ],
+      "theory": [
+        "**Công thức nhân và sơ đồ cây**\nNếu $A,B$ độc lập, xác suất cả hai cùng xảy ra bằng tích hai xác suất. Công thức này không được dùng chỉ vì hai biến cố “trông khác nhau”; tính độc lập phải được cho hoặc chứng minh.\n\nTrong sơ đồ cây, mỗi nhánh biểu diễn một kết quả có điều kiện. Xác suất của một đường đi bằng tích xác suất trên các nhánh; xác suất của biến cố gồm nhiều đường đi rời nhau bằng tổng các tích.\n\nBài toán chọn có hoàn lại thường tạo các lần độc lập; không hoàn lại thường làm xác suất ở lần sau thay đổi.\n\nTrong bài nhiều giai đoạn, ghi xác suất có điều kiện trên từng nhánh. Nhân dọc một đường đi và chỉ cộng các đường đi rời nhau cùng tạo nên biến cố cần tìm. Chọn không hoàn lại thường làm mẫu số và xác suất nhánh sau thay đổi.",
+        "**Mục tiêu cần đạt**\n• Tính giao của hai biến cố độc lập.\n• Dùng sơ đồ cây cho phép thử nhiều giai đoạn.",
+        "**Công thức nhân cho biến cố độc lập**\n$$P(A\\cap B)=P(A)P(B)$$\n• $A,B$: Hai biến cố độc lập\n**Điều kiện áp dụng**\n• $A,B$ độc lập",
+        "**Quy tắc đường đi**\n$$P(\\text{đường đi})=p_1p_2\\cdots p_n$$\n• $p_i$: Xác suất nhánh thứ i\n**Điều kiện áp dụng**\n• Các xác suất là xác suất theo nhánh tương ứng",
+        "**Ghi nhớ nhanh**\n• Độc lập mới được nhân trực tiếp.\n• Nhân theo một đường đi, cộng các đường đi phù hợp.\n• Không hoàn lại thường không độc lập.",
+        "**Ví dụ: Hai lần độc lập**\nTung đồng xu cân đối hai lần. Xác suất cả hai lần ngửa?\n**Bước 1:** Mỗi lần ngửa có xác suất $1/2$ và hai lần độc lập.\n**Bước 2:** Nhân: $1/2\\cdot1/2=1/4$.\n**Kết luận:** Xác suất bằng $1/4$.",
+        "**Ví dụ: Sơ đồ cây không hoàn lại**\nHộp có 3 bi đỏ, 2 bi xanh. Rút 2 bi không hoàn lại. Tính xác suất đỏ rồi xanh.\n**Bước 1:** Nhánh đầu đỏ có xác suất $3/5$.\n**Bước 2:** Sau khi đã rút đỏ, nhánh xanh có xác suất $2/4$.\n**Bước 3:** Nhân dọc đường đi.\n**Kết luận:** Xác suất bằng $3/10$.",
+        "**Ví dụ: Cộng các đường đi**\nChọn hộp I với xác suất $0{,}4$, hộp II với xác suất $0{,}6$. Xác suất lấy bi đỏ tương ứng là $0{,}7$ và $0{,}2$. Tính xác suất lấy được bi đỏ.\n**Bước 1:** Đường qua hộp I có xác suất $0{,}4\\cdot0{,}7$.\n**Bước 2:** Đường qua hộp II có xác suất $0{,}6\\cdot0{,}2$.\n**Bước 3:** Hai đường rời nhau nên cộng lại.\n**Kết luận:** Xác suất bằng $0{,}4$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt30-st-independent",
+          "name": "Biến cố độc lập",
+          "example": "Tính $P(A\\cap B)$.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt30-st-tree",
+          "name": "Sơ đồ cây và ứng dụng",
+          "example": "Nhân theo nhánh, cộng các nhánh.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m8-03",
+          "question": "Trên một đường đi của sơ đồ cây, ta:",
+          "options": [
+            "Cộng xác suất nhánh",
+            "Nhân xác suất nhánh",
+            "Lấy hiệu",
+            "Lấy lớn nhất"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Quy tắc nhân áp dụng dọc theo đường đi."
+        },
+        {
+          "id": "cp-math11-m8-03-path",
+          "question": "Trên một đường đi của sơ đồ cây, ta:",
+          "options": [
+            "Cộng xác suất nhánh",
+            "Nhân xác suất nhánh",
+            "Lấy hiệu",
+            "Lấy trung bình"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đây là quy tắc nhân theo đường đi."
+        },
+        {
+          "id": "cp-math11-m8-03-paths",
+          "question": "Các đường đi rời nhau cùng tạo biến cố cần tìm được:",
+          "options": [
+            "Nhân với nhau",
+            "Cộng xác suất",
+            "Lấy hiệu",
+            "Bỏ qua"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Các đường đi rời nhau là các trường hợp xung khắc."
+        },
+        {
+          "id": "cp-math11-m8-03-replacement",
+          "question": "Rút không hoàn lại thường làm các lần rút:",
+          "options": [
+            "Độc lập",
+            "Không độc lập",
+            "Xung khắc hoàn toàn",
+            "Có xác suất bằng nhau"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Thành phần hộp thay đổi sau lần rút trước."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt31",
+      "topicId": "math11-t09",
+      "name": "Dạng 31: Định nghĩa và ý nghĩa của đạo hàm",
+      "slug": "dao-ham-31",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tính đạo hàm bằng định nghĩa; xác định hệ số góc, tiếp tuyến và tốc độ biến thiên tức thời.",
+      "recognitionSigns": [
+        "Đề yêu cầu tính tốc độ biến thiên, tiếp tuyến hoặc đạo hàm của một biểu thức.",
+        "Cần xác định đúng hàm số, điểm lấy đạo hàm và điều kiện xác định."
+      ],
+      "solvingSteps": [
+        "Xác định công thức hoặc định nghĩa đạo hàm phù hợp.",
+        "Tính cẩn thận, đặc biệt với tích, thương và hàm hợp.",
+        "Rút gọn kết quả, kiểm tra điều kiện và diễn giải theo ngữ cảnh."
+      ],
+      "commonMistakes": [
+        "Bỏ giới hạn trong định nghĩa hoặc nhầm đạo hàm với tỉ số biến thiên.",
+        "Quên đạo hàm hàm bên trong hay nhầm đạo hàm cấp hai với bình phương."
+      ],
+      "theory": [
+        "**Định nghĩa và ý nghĩa của đạo hàm**\nCho hàm số $y=f(x)$ xác định quanh $x_0$. Khi biến số thay đổi từ $x_0$ đến $x$, tỉ số $\\dfrac{f(x)-f(x_0)}{x-x_0}$ mô tả tốc độ biến thiên trung bình. Cho $x$ tiến tới $x_0$ biến tỉ số này thành tốc độ biến thiên tức thời.\n\nNếu giới hạn hữu hạn của tỉ số biến thiên tồn tại thì giới hạn đó là đạo hàm của $f$ tại $x_0$. Có thể đặt $\\Delta x=x-x_0$ rồi cho $\\Delta x\\to0$. Khi tính bằng định nghĩa: lập tỉ số, biến đổi để khử dạng $0/0$, sau đó mới lấy giới hạn.\n\nĐạo hàm tại $x_0$ tồn tại khi đạo hàm bên trái và bên phải cùng tồn tại, hữu hạn và bằng nhau. Hàm khả vi tại một điểm thì liên tục tại điểm đó; chiều ngược lại không luôn đúng, chẳng hạn $f(x)=|x|$ liên tục nhưng không có đạo hàm tại 0.\n\nVề hình học, $f^{\\prime}(x_0)$ là hệ số góc của tiếp tuyến với đồ thị $y=f(x)$ tại $M(x_0;f(x_0))$. Vì vậy tiếp tuyến có phương trình $y-f(x_0)=f^{\\prime}(x_0)(x-x_0)$. Nếu đạo hàm bằng 0 thì tiếp tuyến song song với trục $Ox$.\n\nNếu $s=s(t)$ là quãng đường hoặc tọa độ của vật theo thời gian thì vận tốc tức thời là $v(t)=s^{\\prime}(t)$. Tương tự, đạo hàm biểu diễn tốc độ thay đổi tức thời của nhiệt độ, điện lượng hoặc đại lượng thực tế khác; đơn vị của đạo hàm bằng đơn vị đại lượng chia cho đơn vị biến.\n\nSố $e\\approx2{,}71828$ xuất hiện từ mô hình lãi kép liên tục và có thể nhận biết qua giới hạn $e=\\lim\\limits_{n\\to\\infty}\\left(1+\\dfrac1n\\right)^n$. Số này là cơ số tự nhiên của hàm mũ và lôgarit.\n\nQuy trình an toàn khi dùng định nghĩa: tính $f(x_0)$; lập tỉ số số gia; biến đổi với $h\\ne0$; lấy giới hạn; nếu hàm từng đoạn thì phải so sánh hai đạo hàm một phía. Với tiếp tuyến, luôn xác định đủ tiếp điểm và hệ số góc trước khi viết phương trình.",
+        "**Mục tiêu cần đạt**\n• Nhận biết bài toán tốc độ biến thiên tức thời và định nghĩa đạo hàm tại một điểm.\n• Tính đạo hàm của hàm số đơn giản bằng định nghĩa và xét sự tồn tại bằng đạo hàm một phía.\n• Dùng ý nghĩa hình học để xác định hệ số góc, viết tiếp tuyến và nhận biết số e.",
+        "**Đạo hàm tại một điểm**\n$$f^{\\prime}(x_0)=\\lim_{x\\to x_0}\\frac{f(x)-f(x_0)}{x-x_0}$$\n• $x_0$: Điểm cần tính đạo hàm\n• $f$: Hàm số xác định trong lân cận của điểm\n**Điều kiện áp dụng**\n• Giới hạn tồn tại và hữu hạn",
+        "**Dạng số gia**\n$$f^{\\prime}(x_0)=\\lim_{h\\to0}\\frac{f(x_0+h)-f(x_0)}{h}$$\n• $h$: Số gia của biến số\n**Điều kiện áp dụng**\n• $h\\ne0$ trước khi lấy giới hạn\n• Giới hạn tồn tại và hữu hạn",
+        "**Phương trình tiếp tuyến**\n$$y-f(x_0)=f^{\\prime}(x_0)(x-x_0)$$\n• $M(x_0;f(x_0))$: Tiếp điểm\n• $f^{\\prime}(x_0)$: Hệ số góc tiếp tuyến\n**Điều kiện áp dụng**\n• $f$ có đạo hàm tại $x_0$",
+        "**Vận tốc tức thời**\n$$v(t_0)=s^{\\prime}(t_0)$$\n• $s(t)$: Tọa độ hoặc quãng đường theo thời gian\n• $v(t_0)$: Vận tốc tức thời tại thời điểm $t_0$\n**Điều kiện áp dụng**\n• $s$ có đạo hàm tại $t_0$",
+        "**Một giới hạn xác định số e**\n$$e=\\lim_{n\\to\\infty}\\left(1+\\frac1n\\right)^n$$\n• $n$: Số lần ghép lãi trong mô hình lãi kép\n**Điều kiện áp dụng**\n• $n$ là số nguyên dương",
+        "**Ghi nhớ nhanh**\n• Đạo hàm là giới hạn của tỉ số biến thiên, không phải một tỉ số tại $x=x_0$.\n• Đạo hàm hai phía tồn tại khi hai đạo hàm một phía bằng nhau và hữu hạn.\n• Hệ số góc tiếp tuyến và tốc độ biến thiên tức thời đều được biểu diễn bằng đạo hàm.\n• Viết tiếp tuyến phải tính đủ $x_0$, $f(x_0)$ và $f^{\\prime}(x_0)$.",
+        "**Ví dụ: Tính đạo hàm bằng định nghĩa**\nDùng định nghĩa tính đạo hàm của $f(x)=x^2$ tại $x_0=2$.\n**Bước 1:** Lập tỉ số $\\dfrac{f(2+h)-f(2)}{h}=\\dfrac{(2+h)^2-4}{h}$.\n**Bước 2:** Với $h\\ne0$, rút gọn được $\\dfrac{4h+h^2}{h}=4+h$.\n**Bước 3:** Cho $h\\to0$, giới hạn bằng 4.\n**Kết luận:** $f^{\\prime}(2)=4$.",
+        "**Ví dụ: Viết phương trình tiếp tuyến**\nViết tiếp tuyến của đồ thị $y=x^2$ tại điểm có hoành độ 1.\n**Bước 1:** Tiếp điểm là $M(1;1)$ và $f^{\\prime}(x)=2x$.\n**Bước 2:** Hệ số góc tại $x_0=1$ là $f^{\\prime}(1)=2$.\n**Bước 3:** Dùng $y-1=2(x-1)$ rồi rút gọn.\n**Kết luận:** $y=2x-1$.",
+        "**Ví dụ: Kiểm tra đạo hàm một phía**\nXét sự tồn tại đạo hàm của $f(x)=|x|$ tại $x=0$.\n**Bước 1:** Với $h>0$, $[f(h)-f(0)]/h=h/h=1$.\n**Bước 2:** Với $h<0$, $[f(h)-f(0)]/h=(-h)/h=-1$.\n**Bước 3:** Hai giới hạn một phía không bằng nhau.\n**Kết luận:** Hàm không có đạo hàm tại 0."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt31-st-definition",
+          "name": "Định nghĩa và sự tồn tại",
+          "example": "Dùng giới hạn tỉ số biến thiên.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt31-st-meaning",
+          "name": "Ý nghĩa và tiếp tuyến",
+          "example": "Hệ số góc, tiếp tuyến, vận tốc tức thời và số e.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m9-01-definition",
+          "question": "Đạo hàm của $f$ tại $x_0$ biểu diễn đại lượng nào sau đây?",
+          "options": [
+            "Giá trị lớn nhất của hàm số",
+            "Tốc độ biến thiên tức thời tại $x_0$",
+            "Tốc độ biến thiên trung bình trên mọi khoảng",
+            "Diện tích phía dưới đồ thị"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đạo hàm là giới hạn của tốc độ biến thiên trung bình khi độ dài khoảng tiến tới 0."
+        },
+        {
+          "id": "cp-math11-m9-01-continuity",
+          "question": "Nếu hàm có đạo hàm tại $x_0$ thì hàm:",
+          "options": [
+            "Chắc chắn liên tục tại $x_0$",
+            "Chắc chắn gián đoạn",
+            "Có giá trị bằng 0",
+            "Có tiếp tuyến đứng"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Khả vi tại một điểm kéo theo liên tục tại điểm đó."
+        },
+        {
+          "id": "cp-math11-m9-01-tangent",
+          "question": "Nếu $f^{\\prime}(x_0)=0$ thì tiếp tuyến tại điểm đó:",
+          "options": [
+            "Song song $Oy$",
+            "Song song $Ox$",
+            "Luôn đi qua gốc tọa độ",
+            "Không tồn tại"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hệ số góc tiếp tuyến bằng 0."
+        },
+        {
+          "id": "cp-math11-m9-01-velocity",
+          "question": "Nếu $s(t)$ là tọa độ thì vận tốc tức thời là:",
+          "options": [
+            "$s(t)^2$",
+            "$s^{\\prime}(t)$",
+            "$s^{\\prime\\prime}(t)$",
+            "$1/s(t)$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Vận tốc là tốc độ biến thiên tức thời của tọa độ theo thời gian."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt32",
+      "topicId": "math11-t09",
+      "name": "Dạng 32: Các quy tắc tính đạo hàm",
+      "slug": "dao-ham-32",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tính đạo hàm của hàm số sơ cấp và vận dụng quy tắc tổng, tích, thương, hàm hợp.",
+      "recognitionSigns": [
+        "Đề yêu cầu tính tốc độ biến thiên, tiếp tuyến hoặc đạo hàm của một biểu thức.",
+        "Cần xác định đúng hàm số, điểm lấy đạo hàm và điều kiện xác định."
+      ],
+      "solvingSteps": [
+        "Xác định công thức hoặc định nghĩa đạo hàm phù hợp.",
+        "Tính cẩn thận, đặc biệt với tích, thương và hàm hợp.",
+        "Rút gọn kết quả, kiểm tra điều kiện và diễn giải theo ngữ cảnh."
+      ],
+      "commonMistakes": [
+        "Bỏ giới hạn trong định nghĩa hoặc nhầm đạo hàm với tỉ số biến thiên.",
+        "Quên đạo hàm hàm bên trong hay nhầm đạo hàm cấp hai với bình phương."
+      ],
+      "theory": [
+        "**Các quy tắc tính đạo hàm**\nCác công thức đạo hàm cơ bản giúp thay thế việc dùng định nghĩa trong mỗi bài toán. Cần nhận dạng hàm ngoài cùng trước: tổng, tích, thương hay hàm hợp; sau đó áp dụng quy tắc tương ứng từ ngoài vào trong.\n\nĐối với lũy thừa, $(x^n)^{\\prime}=nx^{n-1}$. Công thức căn bậc hai là trường hợp số mũ $1/2$ nhưng đạo hàm chỉ xác định khi $x>0$. Đạo hàm của hằng số bằng 0 và đạo hàm của hàm bậc nhất $ax+b$ bằng $a$.\n\nCác hàm lượng giác có công thức riêng: sin đổi thành cos, cos đổi thành trừ sin; tan và cot có mẫu bình phương. Phải giữ điều kiện xác định của hàm số ban đầu.\n\nVới hàm mũ, cơ số $e$ cho đạo hàm không đổi dạng; cơ số $a$ sinh thêm hệ số $\\ln a$. Với lôgarit, $\\ln x$ có đạo hàm $1/x$ và $\\log_a x$ có thêm $\\ln a$ ở mẫu.\n\nĐạo hàm của tích không phải tích hai đạo hàm và đạo hàm của thương không phải thương hai đạo hàm. Với hàm hợp $y=f(u(x))$, sau khi đạo hàm hàm ngoài theo $u$ phải nhân với $u^{\\prime}(x)$. Đây là hệ số thường bị bỏ quên.\n\nKhi biểu thức có nhiều lớp, nên đánh dấu hàm ngoài và hàm trong trước khi đạo hàm. Sau cùng, kiểm tra lại ba lỗi phổ biến: thiếu một hạng của quy tắc tích, đảo sai thứ tự tử của quy tắc thương và quên nhân đạo hàm hàm trong.",
+        "**Mục tiêu cần đạt**\n• Ghi nhớ đạo hàm của các hàm số sơ cấp cơ bản trong đúng miền xác định.\n• Sử dụng đúng quy tắc đạo hàm của tổng, hiệu, tích, thương và hàm hợp.\n• Tính đạo hàm trong bài toán đại số, lượng giác, mũ–lôgarit và thực tiễn đơn giản.",
+        "**Hằng số, lũy thừa và căn**\n$$(C)^{\\prime}=0,\\quad(x^n)^{\\prime}=nx^{n-1},\\quad(\\sqrt{x})^{\\prime}=\\frac1{2\\sqrt{x}}$$\n• $C$: Hằng số\n• $n$: Số nguyên dương\n**Điều kiện áp dụng**\n• $x>0$ đối với đạo hàm của $\\sqrt{x}$",
+        "**Đạo hàm lượng giác**\n$$(\\sin x)^{\\prime}=\\cos x,\\quad(\\cos x)^{\\prime}=-\\sin x,\\quad(\\tan x)^{\\prime}=\\frac1{\\cos^2x},\\quad(\\cot x)^{\\prime}=-\\frac1{\\sin^2x}$$\n• $x$: Biến số\n**Điều kiện áp dụng**\n• $\\cos x\\ne0$ đối với $\\tan x$\n• $\\sin x\\ne0$ đối với $\\cot x$",
+        "**Đạo hàm mũ và lôgarit**\n$$(e^x)^{\\prime}=e^x,\\quad(a^x)^{\\prime}=a^x\\ln a,\\quad(\\ln x)^{\\prime}=\\frac1x,\\quad(\\log_ax)^{\\prime}=\\frac1{x\\ln a}$$\n• $a$: Cơ số của hàm mũ hoặc lôgarit\n**Điều kiện áp dụng**\n• $a>0$, $a\\ne1$\n• $x>0$ đối với hàm lôgarit",
+        "**Tổng, tích và thương**\n$$(u\\pm v)^{\\prime}=u^{\\prime}\\pm v^{\\prime},\\quad(uv)^{\\prime}=u^{\\prime}v+uv^{\\prime},\\quad\\left(\\frac uv\\right)^{\\prime}=\\frac{u^{\\prime}v-uv^{\\prime}}{v^2}$$\n• $u,v$: Các hàm số có đạo hàm\n**Điều kiện áp dụng**\n• $v\\ne0$ trong quy tắc thương",
+        "**Đạo hàm hàm hợp**\n$$\\bigl(f(u(x))\\bigr)^{\\prime}=f^{\\prime}(u(x))u^{\\prime}(x)$$\n• $f$: Hàm bên ngoài\n• $u$: Hàm bên trong\n**Điều kiện áp dụng**\n• $u$ và $f$ có đạo hàm tại các điểm tương ứng",
+        "**Ghi nhớ nhanh**\n• Nhận dạng phép toán ngoài cùng trước khi lấy đạo hàm.\n• Tích dùng $u^{\\prime}v+uv^{\\prime}$; thương dùng mẫu $v^2$.\n• Hàm hợp luôn cần nhân với đạo hàm của hàm bên trong.\n• Giữ điều kiện xác định của căn thức, thương, tan, cot và lôgarit.",
+        "**Ví dụ: Quy tắc tích**\nTính đạo hàm của $y=x^2\\sin x$.\n**Bước 1:** Đặt $u=x^2$, $v=\\sin x$ nên $u^{\\prime}=2x$, $v^{\\prime}=\\cos x$.\n**Bước 2:** Áp dụng $(uv)^{\\prime}=u^{\\prime}v+uv^{\\prime}$.\n**Kết luận:** $y^{\\prime}=2x\\sin x+x^2\\cos x$.",
+        "**Ví dụ: Quy tắc hàm hợp**\nTính đạo hàm của $y=(2x+1)^3$.\n**Bước 1:** Hàm ngoài là $u^3$, hàm trong là $u=2x+1$.\n**Bước 2:** Đạo hàm hàm ngoài là $3u^2$ và $u^{\\prime}=2$.\n**Bước 3:** Nhân hai kết quả theo quy tắc hàm hợp.\n**Kết luận:** $y^{\\prime}=6(2x+1)^2$.",
+        "**Ví dụ: Kết hợp quy tắc thương và hàm hợp**\nTính đạo hàm của $y=\\dfrac{\\ln(1+x^2)}{x}$ với $x\\ne0$.\n**Bước 1:** Đặt $u=\\ln(1+x^2)$, $v=x$.\n**Bước 2:** $u^{\\prime}=2x/(1+x^2)$ và $v^{\\prime}=1$.\n**Bước 3:** Dùng quy tắc thương $(u/v)^{\\prime}=(u^{\\prime}v-uv^{\\prime})/v^2$.\n**Kết luận:** $y^{\\prime}=\\dfrac{2x^2/(1+x^2)-\\ln(1+x^2)}{x^2}$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt32-st-elementary",
+          "name": "Đạo hàm hàm sơ cấp",
+          "example": "Đa thức, căn thức, lượng giác, mũ và lôgarit.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt32-st-rules",
+          "name": "Quy tắc và hàm hợp",
+          "example": "Tổng, hiệu, tích, thương và hàm hợp.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m9-02-rules",
+          "question": "Đạo hàm của $y=(3x-1)^2$ là:",
+          "options": [
+            "$2(3x-1)$",
+            "$6(3x-1)$",
+            "$6x-2$",
+            "$(3x-1)^2$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đạo hàm hàm ngoài là $2(3x-1)$ rồi nhân đạo hàm hàm trong bằng 3."
+        },
+        {
+          "id": "cp-math11-m9-02-product",
+          "question": "$(uv)^{\\prime}$ bằng:",
+          "options": [
+            "$u^{\\prime}v^{\\prime}$",
+            "$u^{\\prime}v+uv^{\\prime}$",
+            "$u^{\\prime}+v^{\\prime}$",
+            "$uv$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đây là quy tắc đạo hàm của tích."
+        },
+        {
+          "id": "cp-math11-m9-02-chain",
+          "question": "Đạo hàm của $(2x+1)^3$ là:",
+          "options": [
+            "$3(2x+1)^2$",
+            "$6(2x+1)^2$",
+            "$6x^2$",
+            "$(2x+1)^2$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đạo hàm hàm ngoài rồi nhân đạo hàm hàm trong bằng 2."
+        },
+        {
+          "id": "cp-math11-m9-02-log",
+          "question": "Đạo hàm của $\\ln(1+x^2)$ là:",
+          "options": [
+            "$1/(1+x^2)$",
+            "$2x/(1+x^2)$",
+            "$2x\\ln x$",
+            "$\\ln(2x)$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Dùng quy tắc hàm hợp với hàm trong $1+x^2$."
+        }
+      ]
+    },
+    {
+      "id": "math11-qt33",
+      "topicId": "math11-t09",
+      "name": "Dạng 33: Đạo hàm cấp hai",
+      "slug": "dao-ham-33",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tính đạo hàm cấp hai và giải thích ý nghĩa cơ học qua vận tốc, gia tốc.",
+      "recognitionSigns": [
+        "Đề yêu cầu tính tốc độ biến thiên, tiếp tuyến hoặc đạo hàm của một biểu thức.",
+        "Cần xác định đúng hàm số, điểm lấy đạo hàm và điều kiện xác định."
+      ],
+      "solvingSteps": [
+        "Xác định công thức hoặc định nghĩa đạo hàm phù hợp.",
+        "Tính cẩn thận, đặc biệt với tích, thương và hàm hợp.",
+        "Rút gọn kết quả, kiểm tra điều kiện và diễn giải theo ngữ cảnh."
+      ],
+      "commonMistakes": [
+        "Bỏ giới hạn trong định nghĩa hoặc nhầm đạo hàm với tỉ số biến thiên.",
+        "Quên đạo hàm hàm bên trong hay nhầm đạo hàm cấp hai với bình phương."
+      ],
+      "theory": [
+        "**Đạo hàm cấp hai**\nNếu hàm số $f$ có đạo hàm $f^{\\prime}$ và $f^{\\prime}$ tiếp tục có đạo hàm thì đạo hàm của $f^{\\prime}$ được gọi là đạo hàm cấp hai của $f$, kí hiệu $f^{\\prime\\prime}$ hoặc $y^{\\prime\\prime}$. Ta lấy đạo hàm lần lượt hai lần, không bình phương kết quả lần thứ nhất.\n\nKhi tính, nên viết rõ $f^{\\prime}(x)$ trước rồi mới tính $f^{\\prime\\prime}(x)$. Mỗi lần đều phải áp dụng lại đầy đủ quy tắc tích, thương hoặc hàm hợp nếu biểu thức vẫn có cấu trúc tương ứng.\n\nTrong chuyển động thẳng có tọa độ $s(t)$, vận tốc là đạo hàm cấp một $v(t)=s^{\\prime}(t)$ và gia tốc là đạo hàm của vận tốc: $a(t)=v^{\\prime}(t)=s^{\\prime\\prime}(t)$. Nếu $s$ đo bằng mét và $t$ bằng giây thì vận tốc có đơn vị m/s, gia tốc có đơn vị m/s$^2$.\n\nKhi đề cho trực tiếp hàm vận tốc $v(t)$, chỉ cần lấy một đạo hàm để tìm gia tốc. Khi đề cho hàm tọa độ $s(t)$, phải lấy hai đạo hàm. Luôn thay đúng thời điểm sau khi đã tìm được hàm cần dùng.\n\nĐạo hàm cấp hai có thể tiếp tục chứa tích, thương hoặc hàm hợp, vì vậy mỗi lần đạo hàm đều phải áp dụng lại các quy tắc đầy đủ. Trong bài chuyển động, dấu của vận tốc mô tả chiều chuyển động còn dấu của gia tốc mô tả chiều biến thiên của vận tốc; không nên đồng nhất hai dấu này.",
+        "**Mục tiêu cần đạt**\n• Nhận biết đạo hàm cấp hai là đạo hàm của đạo hàm cấp một.\n• Tính đạo hàm cấp hai của hàm đa thức, lượng giác, mũ và lôgarit đơn giản.\n• Giải thích vận tốc và gia tốc trong mô hình chuyển động.",
+        "**Đạo hàm cấp hai**\n$$f^{\\prime\\prime}(x)=\\left(f^{\\prime}(x)\\right)^{\\prime}$$\n• $f^{\\prime}$: Đạo hàm cấp một\n• $f^{\\prime\\prime}$: Đạo hàm cấp hai\n**Điều kiện áp dụng**\n• $f^{\\prime}$ có đạo hàm tại điểm đang xét",
+        "**Vận tốc và gia tốc**\n$$v(t)=s^{\\prime}(t),\\qquad a(t)=v^{\\prime}(t)=s^{\\prime\\prime}(t)$$\n• $s(t)$: Tọa độ theo thời gian\n• $v(t)$: Vận tốc tức thời\n• $a(t)$: Gia tốc tức thời\n**Điều kiện áp dụng**\n• $s$ có đạo hàm cấp hai tại thời điểm đang xét",
+        "**Ghi nhớ nhanh**\n• $f^{\\prime\\prime}$ là đạo hàm của $f^{\\prime}$, không phải $(f^{\\prime})^2$.\n• Cho tọa độ thì đạo hàm hai lần để tìm gia tốc; cho vận tốc thì đạo hàm một lần.\n• Đơn vị gia tốc là đơn vị độ dài chia cho bình phương đơn vị thời gian.\n• Thay thời điểm sau khi đã tìm đúng hàm vận tốc hoặc gia tốc.",
+        "**Ví dụ: Tính đạo hàm cấp hai**\nTìm đạo hàm cấp hai của $f(x)=x^3-2x$.\n**Bước 1:** Đạo hàm lần thứ nhất: $f^{\\prime}(x)=3x^2-2$.\n**Bước 2:** Đạo hàm lần thứ hai: $f^{\\prime\\prime}(x)=6x$.\n**Kết luận:** $f^{\\prime\\prime}(x)=6x$.",
+        "**Ví dụ: Tính gia tốc**\nMột vật có tọa độ $s(t)=t^3-2t$. Tính gia tốc tại $t=2$.\n**Bước 1:** Vận tốc: $v(t)=s^{\\prime}(t)=3t^2-2$.\n**Bước 2:** Gia tốc: $a(t)=v^{\\prime}(t)=6t$.\n**Bước 3:** Thay $t=2$ được $a(2)=12$.\n**Kết luận:** Gia tốc tại $t=2$ bằng $12$ đơn vị độ dài trên đơn vị thời gian bình phương.",
+        "**Ví dụ: Đạo hàm cấp hai của một tích**\nTính $f^{\\prime\\prime}(x)$ với $f(x)=xe^x$.\n**Bước 1:** $f^{\\prime}(x)=e^x+xe^x=e^x(1+x)$.\n**Bước 2:** Lấy đạo hàm lần nữa và tiếp tục dùng quy tắc tích.\n**Bước 3:** $f^{\\prime\\prime}(x)=e^x(1+x)+e^x$.\n**Kết luận:** $f^{\\prime\\prime}(x)=e^x(x+2)$."
+      ],
+      "subTypes": [
+        {
+          "id": "math11-qt33-st-second",
+          "name": "Tính đạo hàm cấp hai",
+          "example": "Lấy đạo hàm liên tiếp hai lần.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "math11-qt33-st-mechanics",
+          "name": "Vận tốc và gia tốc",
+          "example": "Dùng $v=s'$ và $a=s''=v'$.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "cp-math11-m9-03-second",
+          "question": "Nếu $s(t)$ là tọa độ thì gia tốc tức thời bằng:",
+          "options": [
+            "$s(t)^2$",
+            "$s^{\\prime}(t)$",
+            "$s^{\\prime\\prime}(t)$",
+            "$1/s(t)$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Vận tốc là đạo hàm cấp một của tọa độ và gia tốc là đạo hàm của vận tốc."
+        },
+        {
+          "id": "cp-math11-m9-03-not-square",
+          "question": "Đạo hàm cấp hai $f^{\\prime\\prime}$ là:",
+          "options": [
+            "$(f^{\\prime})^2$",
+            "Đạo hàm của $f^{\\prime}$",
+            "$2f^{\\prime}$",
+            "$f^2$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đó là phép lấy đạo hàm liên tiếp hai lần."
+        },
+        {
+          "id": "cp-math11-m9-03-velocity",
+          "question": "Nếu đề cho trực tiếp $v(t)$, gia tốc được tính bằng:",
+          "options": [
+            "$v(t)^2$",
+            "$v^{\\prime}(t)$",
+            "$v^{\\prime\\prime}(t)$",
+            "$1/v(t)$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Gia tốc là đạo hàm của vận tốc."
+        },
+        {
+          "id": "cp-math11-m9-03-unit",
+          "question": "Nếu quãng đường đo bằng m và thời gian bằng s, đơn vị gia tốc là:",
+          "options": [
+            "m",
+            "$\\mathrm{m/s}$",
+            "$\\mathrm{m/s^2}$",
+            "$\\mathrm{s/m}$"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Gia tốc là đạo hàm bậc hai của vị trí theo thời gian."
+        }
+      ]
+    }
+  ]
+}

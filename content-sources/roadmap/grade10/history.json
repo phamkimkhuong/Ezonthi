@@ -1,0 +1,1329 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "2026.09.1",
+  "updatedAt": "2026-09-16T12:27:54.993Z",
+  "grade": "grade10",
+  "subject": "history",
+  "subjectName": "Lịch sử 10",
+  "icon": "Scroll",
+  "themeColor": "#f59e0b",
+  "badge": "Chương trình mới",
+  "stats": {
+    "totalTopics": 7,
+    "totalQuestionTypes": 14,
+    "estimatedTotalMinutes": 420
+  },
+  "topics": [
+    {
+      "id": "g10-his-topic-1",
+      "name": "Chủ đề 1: Lịch sử và Sử học",
+      "slug": "lich-su-va-su-hoc",
+      "orderIndex": 1,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chủ đề 1: Lịch sử và Sử học",
+      "estimatedMinutes": 60,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "g10-his-type-1",
+        "g10-his-type-2"
+      ]
+    },
+    {
+      "id": "g10-his-topic-2",
+      "name": "Chủ đề 2: Vai trò của Sử học",
+      "slug": "vai-tro-cua-su-hoc",
+      "orderIndex": 2,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chủ đề 2: Vai trò của Sử học",
+      "estimatedMinutes": 60,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "g10-his-type-3",
+        "g10-his-type-4"
+      ]
+    },
+    {
+      "id": "g10-his-topic-3",
+      "name": "Chủ đề 3: Một số nền văn minh thế giới thời kì cổ - trung đại",
+      "slug": "van-minh-the-gioi-co-trung-dai",
+      "orderIndex": 3,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chủ đề 3: Một số nền văn minh thế giới thời kì cổ - trung đại",
+      "estimatedMinutes": 60,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "g10-his-type-5",
+        "g10-his-type-6"
+      ]
+    },
+    {
+      "id": "g10-his-topic-4",
+      "name": "Chủ đề 4: Các cuộc cách mạng công nghiệp trong lịch sử thế giới",
+      "slug": "cac-cuoc-cach-mang-cong-nghiep",
+      "orderIndex": 4,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chủ đề 4: Các cuộc cách mạng công nghiệp trong lịch sử thế giới",
+      "estimatedMinutes": 60,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "g10-his-type-7",
+        "g10-his-type-8"
+      ]
+    },
+    {
+      "id": "g10-his-topic-5",
+      "name": "Chủ đề 5: Văn minh Đông Nam Á thời kì cổ - trung đại",
+      "slug": "van-minh-dong-nam-a-co-trung-dai",
+      "orderIndex": 5,
+      "tier": 2,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chủ đề 5: Văn minh Đông Nam Á thời kì cổ - trung đại",
+      "estimatedMinutes": 60,
+      "difficulty": "medium",
+      "questionTypeIds": [
+        "g10-his-type-9",
+        "g10-his-type-10"
+      ]
+    },
+    {
+      "id": "g10-his-topic-6",
+      "name": "Chủ đề 6: Một số nền văn minh trên đất nước Việt Nam (trước năm 1858)",
+      "slug": "van-minh-tren-dat-nuoc-viet-nam",
+      "orderIndex": 6,
+      "tier": 3,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chủ đề 6: Một số nền văn minh trên đất nước Việt Nam (trước năm 1858)",
+      "estimatedMinutes": 60,
+      "difficulty": "hard",
+      "questionTypeIds": [
+        "g10-his-type-11",
+        "g10-his-type-12"
+      ]
+    },
+    {
+      "id": "g10-his-topic-7",
+      "name": "Chủ đề 7: Cộng đồng các dân tộc Việt Nam",
+      "slug": "cong-dong-cac-dan-toc-viet-nam",
+      "orderIndex": 7,
+      "tier": 3,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chủ đề 7: Cộng đồng các dân tộc Việt Nam",
+      "estimatedMinutes": 60,
+      "difficulty": "hard",
+      "questionTypeIds": [
+        "g10-his-type-13",
+        "g10-his-type-14"
+      ]
+    }
+  ],
+  "questionTypes": [
+    {
+      "id": "g10-his-type-1",
+      "topicId": "g10-his-topic-1",
+      "name": "Hiện thực lịch sử & Nhận thức lịch sử",
+      "slug": "hien-thuc-va-nhan-thuc-lich-su",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Phân biệt hiện thực lịch sử khách quan và nhận thức lịch sử mang tính chủ quan của con người.",
+      "recognitionSigns": [
+        "Câu hỏi yêu cầu phân biệt sự kiện diễn ra khách quan và sự ghi chép/đánh giá của nhà sử học",
+        "Đề cập tới đối tượng, nhiệm vụ, chức năng của Sử học"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn giữa sự thật lịch sử khách quan với đánh giá cá nhân của nhà nghiên cứu",
+        "Cho rằng nhận thức lịch sử là bất biến không thể thay đổi khi có nguồn tư liệu mới",
+        "Ghi nhớ nhầm: “Hiện thực lịch sử là mọi câu chuyện được sáng tác về quá khứ.”"
+      ],
+      "theory": [
+        "Hiện thực lịch sử là toàn bộ những gì đã thực sự diễn ra trong quá khứ. Hiện thực lịch sử tồn tại khách quan và không thể thay đổi.",
+        "Nhận thức lịch sử là hiểu biết của con người về hiện thực lịch sử. Nhận thức lịch sử được hình thành qua nghiên cứu và có thể được bổ sung.",
+        "Sử học nghiên cứu toàn bộ quá khứ của loài người. Đối tượng của Sử học bao quát mọi lĩnh vực trong quá khứ loài người.",
+        "Chức năng khoa học của Sử học là khôi phục hiện thực lịch sử và rút ra bản chất, quy luật. Khôi phục quá khứ khách quan là chức năng khoa học cơ bản của Sử học.",
+        "Tri thức lịch sử góp phần giáo dục truyền thống và rút ra bài học cho hiện tại. Sử học giúp giáo dục tư tưởng, tình cảm và cung cấp kinh nghiệm lịch sử.",
+        "Nghiên cứu lịch sử phải bảo đảm tính trung thực, khách quan và tiến bộ. Trung thực và khách quan là yêu cầu nền tảng của nghiên cứu lịch sử.",
+        "Phát hiện sử liệu mới có thể bổ sung hoặc điều chỉnh nhận thức lịch sử. Quá khứ không đổi nhưng hiểu biết của con người về quá khứ có thể phát triển."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-1-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về hiện thực lịch sử.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-1-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với nhận thức lịch sử.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-1-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về hiện thực lịch sử.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-1-checkpoint-1",
+          "question": "Nhận định nào đúng về hiện thực lịch sử?",
+          "options": [
+            "Hiện thực lịch sử là toàn bộ những gì đã thực sự diễn ra trong quá khứ.",
+            "Hiện thực lịch sử là mọi câu chuyện được sáng tác về quá khứ.",
+            "Hiện thực lịch sử thay đổi theo ý kiến của người nghiên cứu.",
+            "Hiện thực lịch sử chỉ gồm các cuộc chiến tranh."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Hiện thực lịch sử tồn tại khách quan và không thể thay đổi."
+        },
+        {
+          "id": "g10-his-type-1-checkpoint-2",
+          "question": "Khi ôn tập nhận thức lịch sử, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Nhận thức lịch sử chính là toàn bộ sự kiện đã xảy ra.",
+            "Nhận thức lịch sử là hiểu biết của con người về hiện thực lịch sử.",
+            "Nhận thức lịch sử luôn đầy đủ và bất biến.",
+            "Nhận thức lịch sử không cần dựa vào sử liệu."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Nhận thức lịch sử được hình thành qua nghiên cứu và có thể được bổ sung."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k01-01-q1"
+    },
+    {
+      "id": "g10-his-type-2",
+      "topicId": "g10-his-topic-1",
+      "name": "Tri thức lịch sử & Phương pháp khai thác sử liệu",
+      "slug": "tri-thuc-lich-su-va-su-lieu",
+      "difficulty": "easy",
+      "examFrequency": "medium",
+      "description": "Ứng dụng tri thức lịch sử trong đời sống và quy trình phân loại, xử lý các nguồn sử liệu.",
+      "recognitionSigns": [
+        "Hỏi về các loại hình sử liệu (sử liệu chữ viết, hiện vật, truyền miệng)",
+        "Hỏi về ý nghĩa của việc học tập lịch sử suốt đời"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Coi truyền thuyết hoặc ca dao là sử liệu gốc hoàn toàn chính xác mà không đối chứng",
+        "Không phân biệt được sử liệu trực tiếp (gốc) và sử liệu gián tiếp",
+        "Ghi nhớ nhầm: “Trống đồng thuộc sử liệu truyền miệng.”"
+      ],
+      "theory": [
+        "Trống đồng, công cụ và di tích khảo cổ thuộc sử liệu hiện vật. Sử liệu hiện vật là những dấu tích vật chất còn lại từ quá khứ.",
+        "Văn bia, sắc phong và châu bản thuộc sử liệu chữ viết. Chữ viết lưu lại thông tin về con người và xã hội trong quá khứ.",
+        "Truyền thuyết và sử thi dân gian thuộc sử liệu truyền miệng. Sử liệu truyền miệng có giá trị nhưng cần được kiểm chứng và đối chiếu.",
+        "Sử liệu gốc xuất hiện trực tiếp trong thời gian hoặc không gian của sự kiện được nghiên cứu. Nguồn gốc trực tiếp làm tăng giá trị của sử liệu nhưng vẫn phải khảo chứng.",
+        "Khảo chứng giúp xác định nguồn gốc, tính xác thực và độ tin cậy của sử liệu. Không nên sử dụng một nguồn lịch sử trước khi kiểm tra và đối chiếu.",
+        "Tri thức lịch sử rộng lớn và liên tục được bổ sung nên con người cần học tập suốt đời. Nguồn tư liệu và kết quả nghiên cứu mới làm tri thức lịch sử ngày càng phong phú.",
+        "Hiểu lịch sử giúp con người nhận thức cội nguồn và rút kinh nghiệm cho hiện tại. Tri thức lịch sử có giá trị trong đời sống, giáo dục và định hướng tương lai."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-2-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về sử liệu hiện vật.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-2-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với sử liệu chữ viết.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-2-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về sử liệu hiện vật.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-2-checkpoint-1",
+          "question": "Nhận định nào đúng về sử liệu hiện vật?",
+          "options": [
+            "Trống đồng, công cụ và di tích khảo cổ thuộc sử liệu hiện vật.",
+            "Trống đồng thuộc sử liệu truyền miệng.",
+            "Di tích khảo cổ thuộc sử liệu chữ viết.",
+            "Công cụ cổ không thể cung cấp thông tin lịch sử."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Sử liệu hiện vật là những dấu tích vật chất còn lại từ quá khứ."
+        },
+        {
+          "id": "g10-his-type-2-checkpoint-2",
+          "question": "Khi ôn tập sử liệu chữ viết, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Văn bia chỉ là sử liệu truyền miệng.",
+            "Văn bia, sắc phong và châu bản thuộc sử liệu chữ viết.",
+            "Sắc phong thuộc sử liệu hình ảnh.",
+            "Châu bản không có giá trị nghiên cứu lịch sử."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Chữ viết lưu lại thông tin về con người và xã hội trong quá khứ."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k02-01-q1"
+    },
+    {
+      "id": "g10-his-type-3",
+      "topicId": "g10-his-topic-2",
+      "name": "Sử học với các lĩnh vực khoa học liên ngành",
+      "slug": "su-hoc-voi-cac-nganh-khoa-hoc",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Mối quan hệ hỗ trợ hai chiều giữa Sử học với Khoa học Xã hội & Khoa học Tự nhiên.",
+      "recognitionSigns": [
+        "Đề cập tới việc ứng dụng phương pháp Cacbon 14 (C14), ADN, Địa lý, Ngữ văn trong nghiên cứu lịch sử",
+        "Hỏi về tính liên ngành của Sử học"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Cho rằng Sử học chỉ liên quan tới ngành Văn học hay Địa lý mà không cần Khoa học tự nhiên",
+        "Ghi nhớ nhầm: “Khảo cổ học chỉ nghiên cứu sinh vật đang sống.”"
+      ],
+      "theory": [
+        "Khảo cổ học cung cấp di tích, di vật để nghiên cứu những xã hội trong quá khứ. Di tích và di vật là nguồn sử liệu đặc biệt quan trọng của Sử học.",
+        "Địa lí học giúp xác định không gian và điều kiện tự nhiên của sự kiện lịch sử. Mọi sự kiện lịch sử đều diễn ra trong một không gian cụ thể.",
+        "Phương pháp cacbon 14 hỗ trợ xác định niên đại của di vật hữu cơ. Đây là ứng dụng của khoa học tự nhiên trong xác định niên đại khảo cổ.",
+        "Phân tích ADN có thể cung cấp bằng chứng về nguồn gốc và quan hệ huyết thống của cư dân. Dữ liệu di truyền bổ sung bằng chứng cho nghiên cứu lịch sử con người.",
+        "Ngôn ngữ học giúp giải mã văn tự và tìm hiểu sự giao lưu giữa các cộng đồng. Dấu vết ngôn ngữ phản ánh nguồn gốc và quan hệ văn hóa.",
+        "Sử học phối hợp nhiều ngành để kiểm chứng và làm phong phú nhận thức về quá khứ. Nhiều phương pháp và nguồn bằng chứng giúp kết luận lịch sử vững chắc hơn.",
+        "Tri thức lịch sử vừa tiếp nhận thành tựu ngành khác vừa cung cấp bối cảnh cho các ngành đó. Quan hệ giữa Sử học và các ngành khoa học là quan hệ tương tác hai chiều."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-3-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về Sử học và Khảo cổ học.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-3-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với Sử học và Địa lí học.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-3-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về Sử học và Khảo cổ học.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-3-checkpoint-1",
+          "question": "Nhận định nào đúng về Sử học và Khảo cổ học?",
+          "options": [
+            "Khảo cổ học cung cấp di tích, di vật để nghiên cứu những xã hội trong quá khứ.",
+            "Khảo cổ học chỉ nghiên cứu sinh vật đang sống.",
+            "Khảo cổ học không liên quan thời kì chưa có chữ viết.",
+            "Di vật khảo cổ chỉ có giá trị trưng bày."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Di tích và di vật là nguồn sử liệu đặc biệt quan trọng của Sử học."
+        },
+        {
+          "id": "g10-his-type-3-checkpoint-2",
+          "question": "Khi ôn tập Sử học và Địa lí học, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Địa lí học giúp xác định niên đại bằng cacbon phóng xạ.",
+            "Địa lí học giúp xác định không gian và điều kiện tự nhiên của sự kiện lịch sử.",
+            "Không gian địa lí không ảnh hưởng lịch sử.",
+            "Bản đồ không thể dùng trong nghiên cứu lịch sử."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Mọi sự kiện lịch sử đều diễn ra trong một không gian cụ thể."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k03-01-q1"
+    },
+    {
+      "id": "g10-his-type-4",
+      "topicId": "g10-his-topic-2",
+      "name": "Sử học với Du lịch & Bảo tồn di sản",
+      "slug": "su-hoc-voi-du-lich-di-san",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Mối quan hệ giữa phát triển du lịch, bảo tồn di sản văn hóa và vai trò định hướng của Sử học.",
+      "recognitionSigns": [
+        "Hỏi về việc phát triển du lịch lịch sử - di sản",
+        "Hỏi về nguyên tắc bảo tồn di sản (giữ nguyên yếu tố gốc)"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn giữa việc \"làm mới hoàn toàn di sản\" với \"bảo tồn giữ nguyên yếu tố gốc\"",
+        "Ghi nhớ nhầm: “Bảo tồn di sản không cần biết nguồn gốc lịch sử.”"
+      ],
+      "theory": [
+        "Nghiên cứu lịch sử cung cấp cơ sở khoa học để nhận diện và bảo tồn giá trị di sản. Hiểu đúng lịch sử là điều kiện để bảo tồn đúng giá trị của di sản.",
+        "Bảo tồn cần tôn trọng yếu tố gốc và tính xác thực của di sản. Tính nguyên gốc và xác thực là yêu cầu quan trọng của bảo tồn.",
+        "Di sản lịch sử, văn hóa là nguồn tài nguyên quan trọng để phát triển du lịch. Khai thác hợp lí giúp quảng bá di sản và tạo nguồn lực cho bảo tồn.",
+        "Du lịch bền vững phải hài hòa giữa khai thác kinh tế và bảo vệ di sản. Khai thác quá mức có thể làm suy giảm hoặc phá hủy di sản.",
+        "Bảo tàng lưu giữ, nghiên cứu, trưng bày và giáo dục về di sản. Bảo tàng kết nối công chúng với các bằng chứng của quá khứ.",
+        "Số hóa giúp lưu trữ, phổ biến và hỗ trợ nghiên cứu di sản. Công nghệ hỗ trợ tiếp cận di sản nhưng không thay thế bảo tồn bản gốc.",
+        "Cộng đồng địa phương là chủ thể quan trọng trong gìn giữ và phát huy giá trị di sản. Sự tham gia của cộng đồng giúp việc bảo tồn phù hợp và bền vững."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-4-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về vai trò của Sử học với di sản.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-4-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với nguyên tắc bảo tồn.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-4-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về vai trò của Sử học với di sản.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-4-checkpoint-1",
+          "question": "Nhận định nào đúng về vai trò của Sử học với di sản?",
+          "options": [
+            "Nghiên cứu lịch sử cung cấp cơ sở khoa học để nhận diện và bảo tồn giá trị di sản.",
+            "Bảo tồn di sản không cần biết nguồn gốc lịch sử.",
+            "Sử học chỉ có vai trò quảng cáo điểm đến.",
+            "Có thể phục dựng di sản hoàn toàn theo trí tưởng tượng."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Hiểu đúng lịch sử là điều kiện để bảo tồn đúng giá trị của di sản."
+        },
+        {
+          "id": "g10-his-type-4-checkpoint-2",
+          "question": "Khi ôn tập nguyên tắc bảo tồn, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Bảo tồn là thay toàn bộ vật liệu cũ bằng vật liệu mới.",
+            "Bảo tồn cần tôn trọng yếu tố gốc và tính xác thực của di sản.",
+            "Di sản càng được trang trí hiện đại càng có giá trị.",
+            "Có thể thay đổi tùy ý cấu trúc di tích để thu hút khách."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Tính nguyên gốc và xác thực là yêu cầu quan trọng của bảo tồn."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k04-01-q1"
+    },
+    {
+      "id": "g10-his-type-5",
+      "topicId": "g10-his-topic-3",
+      "name": "Thành tựu các nền văn minh phương Đông cổ - trung đại",
+      "slug": "van-minh-phuong-dong-co-trung-dai",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đặc điểm và thành tựu tiêu biểu của văn minh Ai Cập, Ấn Độ, Trung Hoa.",
+      "recognitionSigns": [
+        "Hỏi về Kim tự tháp, Chữ tượng hình, Nho giáo, Phật giáo, Ấn Độ giáo, 4 phát minh lớn Trung Quốc (giấy, in, thuốc súng, la bàn)"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn giữa chữ tượng hình Ai Cập với chữ Hán Trung Quốc hoặc chữ Phạn Ấn Độ",
+        "Nhầm nguồn gốc của các tôn giáo lớn (Phật giáo bắt nguồn từ Ấn Độ, không phải Trung Quốc)",
+        "Ghi nhớ nhầm: “Văn minh Ai Cập hình thành bên sông Hằng.”"
+      ],
+      "theory": [
+        "Văn minh Ai Cập hình thành và phát triển gắn với sông Nin. Sông Nin cung cấp nước và phù sa cho nông nghiệp Ai Cập.",
+        "Kim tự tháp và chữ tượng hình là những thành tựu tiêu biểu của Ai Cập cổ đại. Kim tự tháp thể hiện trình độ kiến trúc và toán học cao của người Ai Cập.",
+        "Ấn Độ là quê hương của Phật giáo và Ấn Độ giáo. Các tôn giáo bắt nguồn từ Ấn Độ có ảnh hưởng rộng ở châu Á.",
+        "Người Ấn Độ sáng tạo hệ chữ số tự nhiên có số 0. Hệ chữ số Ấn Độ được người Ả Rập truyền bá rộng rãi.",
+        "Giấy, kĩ thuật in, thuốc súng và la bàn là bốn phát minh lớn của Trung Hoa cổ - trung đại. Bốn phát minh này ảnh hưởng sâu rộng đến lịch sử thế giới.",
+        "Nho giáo do Khổng Tử khởi xướng và có ảnh hưởng lớn ở Trung Hoa. Nho giáo trở thành hệ tư tưởng quan trọng của xã hội phong kiến Trung Hoa.",
+        "Các nền văn minh phương Đông cổ đại thường hình thành ở lưu vực những con sông lớn. Sông ngòi tạo điều kiện cho nông nghiệp và sự ra đời nhà nước sớm."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-5-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về văn minh Ai Cập cổ đại.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-5-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với thành tựu Ai Cập.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-5-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về văn minh Ai Cập cổ đại.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-5-checkpoint-1",
+          "question": "Nhận định nào đúng về văn minh Ai Cập cổ đại?",
+          "options": [
+            "Văn minh Ai Cập hình thành và phát triển gắn với sông Nin.",
+            "Văn minh Ai Cập hình thành bên sông Hằng.",
+            "Ai Cập cổ đại nằm ở Đông Á.",
+            "Điều kiện sông ngòi không ảnh hưởng nông nghiệp Ai Cập."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Sông Nin cung cấp nước và phù sa cho nông nghiệp Ai Cập."
+        },
+        {
+          "id": "g10-his-type-5-checkpoint-2",
+          "question": "Khi ôn tập thành tựu Ai Cập, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Kim tự tháp là thành tựu của La Mã.",
+            "Kim tự tháp và chữ tượng hình là những thành tựu tiêu biểu của Ai Cập cổ đại.",
+            "Người Ai Cập sáng tạo chữ Hán.",
+            "Ai Cập không có thành tựu về kiến trúc."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Kim tự tháp thể hiện trình độ kiến trúc và toán học cao của người Ai Cập."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k05-01-q1"
+    },
+    {
+      "id": "g10-his-type-6",
+      "topicId": "g10-his-topic-3",
+      "name": "Thành tựu các nền văn minh phương Tây cổ - trung đại",
+      "slug": "van-minh-phuong-tay-co-trung-dai",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Thành tựu nổi bật của văn minh Hy Lạp - La Mã cổ đại và Phong trào Văn hóa Phục hưng.",
+      "recognitionSigns": [
+        "Hỏi về thể chế dân chủ Aten, Đấu trường Colosseum, Đền Parthenon, Hệ chữ cái Latinh, Văn hóa Phục hưng"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Cho rằng thể chế dân chủ chủ chốt xuất hiện ở phương Đông thời cổ đại",
+        "Ghi nhớ nhầm: “Hy Lạp cổ đại phát triển hoàn toàn tách biệt với biển.”"
+      ],
+      "theory": [
+        "Điều kiện biển và nhiều đảo tạo thuận lợi cho thương mại hàng hải của Hy Lạp. Địa hình và biển góp phần hình thành các thành bang và thương mại.",
+        "A-ten là thành bang tiêu biểu cho thể chế dân chủ chủ nô ở Hy Lạp cổ đại. Nền dân chủ A-ten có tiến bộ nhưng vẫn loại trừ phụ nữ, kiều dân và nô lệ.",
+        "Hệ chữ cái Hy Lạp và chữ La-tinh có ảnh hưởng lớn đến chữ viết phương Tây. Chữ La-tinh là cơ sở của nhiều hệ chữ viết hiện nay.",
+        "Luật La Mã là một thành tựu có ảnh hưởng lâu dài đối với pháp luật phương Tây. Tư duy pháp lí La Mã đóng góp quan trọng cho lịch sử luật pháp.",
+        "Đền Pác-tê-nông gắn với Hy Lạp, còn đấu trường Cô-li-dê gắn với La Mã. Hai công trình là biểu tượng kiến trúc của Hy Lạp và La Mã cổ đại.",
+        "Phong trào Phục hưng đề cao giá trị con người và tinh thần nhân văn. Tư tưởng nhân văn là nội dung nổi bật của văn hóa Phục hưng.",
+        "Phục hưng góp phần giải phóng tư tưởng và mở đường cho văn hóa Tây Âu phát triển. Phong trào tạo chuyển biến lớn về tư tưởng, văn học, nghệ thuật và khoa học."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-6-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về văn minh Hy Lạp cổ đại.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-6-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với dân chủ A-ten.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-6-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về văn minh Hy Lạp cổ đại.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-6-checkpoint-1",
+          "question": "Nhận định nào đúng về văn minh Hy Lạp cổ đại?",
+          "options": [
+            "Điều kiện biển và nhiều đảo tạo thuận lợi cho thương mại hàng hải của Hy Lạp.",
+            "Hy Lạp cổ đại phát triển hoàn toàn tách biệt với biển.",
+            "Kinh tế Hy Lạp chỉ dựa vào trồng lúa nước.",
+            "Hy Lạp nằm ở lưu vực sông Nin."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Địa hình và biển góp phần hình thành các thành bang và thương mại."
+        },
+        {
+          "id": "g10-his-type-6-checkpoint-2",
+          "question": "Khi ôn tập dân chủ A-ten, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Mọi cư dân A-ten đều có quyền chính trị như nhau.",
+            "A-ten là thành bang tiêu biểu cho thể chế dân chủ chủ nô ở Hy Lạp cổ đại.",
+            "Dân chủ A-ten là nền dân chủ hiện đại hoàn chỉnh.",
+            "A-ten là một vương quốc ở Ai Cập."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Nền dân chủ A-ten có tiến bộ nhưng vẫn loại trừ phụ nữ, kiều dân và nô lệ."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k06-01-q1"
+    },
+    {
+      "id": "g10-his-type-7",
+      "topicId": "g10-his-topic-4",
+      "name": "Cách mạng công nghiệp thời kì cận đại (Lần 1 & 2)",
+      "slug": "cach-mang-cong-nghiep-can-dai",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Bối cảnh, thành tựu và tác động của Cách mạng công nghiệp lần thứ nhất và thứ hai.",
+      "recognitionSigns": [
+        "Hỏi về động cơ hơi nước của James Watt, động cơ đốt trong, dòng điện, dây chuyền sản xuất"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Nhầm máy hơi nước (Lần 1) với động cơ điện (Lần 2)",
+        "Ghi nhớ nhầm: “Cách mạng công nghiệp lần thứ nhất bắt đầu ở Nhật Bản thế kỉ XXI.”"
+      ],
+      "theory": [
+        "Cách mạng công nghiệp lần thứ nhất bắt đầu ở Anh vào nửa sau thế kỉ XVIII. Anh có những điều kiện thuận lợi về vốn, nhân công, kĩ thuật và thị trường.",
+        "Máy hơi nước được cải tiến đã thúc đẩy cơ giới hóa sản xuất và giao thông. Năng lượng hơi nước là biểu tượng của Cách mạng công nghiệp lần thứ nhất.",
+        "Ngành dệt là một trong những ngành mở đầu quá trình cơ giới hóa ở Anh. Nhu cầu dệt may thúc đẩy nhiều phát minh máy kéo sợi và máy dệt.",
+        "Điện và động cơ đốt trong là những thành tựu tiêu biểu của Cách mạng công nghiệp lần thứ hai. Nguồn năng lượng mới làm thay đổi mạnh sản xuất và giao thông.",
+        "Dây chuyền sản xuất góp phần tạo ra sản phẩm với số lượng lớn và giá thành thấp hơn. Tổ chức sản xuất mới nâng cao năng suất lao động.",
+        "Các cuộc cách mạng công nghiệp làm năng suất tăng và thúc đẩy công nghiệp hóa. Máy móc và nguồn năng lượng mới tạo bước nhảy của lực lượng sản xuất.",
+        "Công nghiệp hóa thúc đẩy đô thị hóa và làm biến đổi cơ cấu xã hội. Bên cạnh tiến bộ, công nghiệp hóa cũng tạo vấn đề lao động và môi trường."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-7-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về nơi khởi đầu Cách mạng công nghiệp lần thứ nhất.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-7-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với máy hơi nước.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-7-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về nơi khởi đầu Cách mạng công nghiệp lần thứ nhất.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-7-checkpoint-1",
+          "question": "Nhận định nào đúng về nơi khởi đầu Cách mạng công nghiệp lần thứ nhất?",
+          "options": [
+            "Cách mạng công nghiệp lần thứ nhất bắt đầu ở Anh vào nửa sau thế kỉ XVIII.",
+            "Cách mạng công nghiệp lần thứ nhất bắt đầu ở Nhật Bản thế kỉ XXI.",
+            "Cuộc cách mạng này bắt đầu đồng thời ở mọi quốc gia.",
+            "Cuộc cách mạng này mở đầu bằng Internet."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Anh có những điều kiện thuận lợi về vốn, nhân công, kĩ thuật và thị trường."
+        },
+        {
+          "id": "g10-his-type-7-checkpoint-2",
+          "question": "Khi ôn tập máy hơi nước, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Máy hơi nước là thành tựu tiêu biểu của Cách mạng công nghiệp lần thứ tư.",
+            "Máy hơi nước được cải tiến đã thúc đẩy cơ giới hóa sản xuất và giao thông.",
+            "Máy hơi nước chỉ được dùng trong nông nghiệp.",
+            "Máy hơi nước làm sản xuất thủ công phát triển thay cho máy móc."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Năng lượng hơi nước là biểu tượng của Cách mạng công nghiệp lần thứ nhất."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k07-01-q1"
+    },
+    {
+      "id": "g10-his-type-8",
+      "topicId": "g10-his-topic-4",
+      "name": "Cách mạng công nghiệp thời kì hiện đại (Lần 3 & 4)",
+      "slug": "cach-mang-cong-nghiep-hien-dai",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Sự phát triển và tác động sâu rộng của Cách mạng công nghiệp lần 3 (CNTT) và lần 4 (AI, Big Data, IoT).",
+      "recognitionSigns": [
+        "Hỏi về máy tính điện tử, Internet, Trí tuệ nhân tạo (AI), Internet vạn vật (IoT), Công nghệ sinh học"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn giữa công nghệ máy tính ban đầu (Lần 3) với Trí tuệ nhân tạo thông minh (Lần 4)",
+        "Ghi nhớ nhầm: “Máy hơi nước là nền tảng chính của lần thứ ba.”"
+      ],
+      "theory": [
+        "Điện tử, máy tính và công nghệ thông tin là nền tảng của Cách mạng công nghiệp lần thứ ba. Cuộc cách mạng này còn được gọi là cách mạng số.",
+        "Internet góp phần kết nối và trao đổi thông tin trên phạm vi toàn cầu. Mạng máy tính tạo ra thay đổi lớn trong liên lạc, kinh tế và đời sống.",
+        "Máy tính và thiết bị điện tử tạo điều kiện tự động hóa nhiều công đoạn sản xuất. Tự động hóa nâng năng suất nhưng cũng làm thay đổi nhu cầu lao động.",
+        "AI, dữ liệu lớn và Internet vạn vật là công nghệ tiêu biểu của Cách mạng công nghiệp lần thứ tư. Đặc trưng nổi bật là kết nối thông minh giữa thế giới số và thế giới thực.",
+        "Internet vạn vật kết nối thiết bị để thu thập và trao đổi dữ liệu. Các thiết bị kết nối có thể hỗ trợ nhà thông minh, y tế và công nghiệp.",
+        "Công nghệ số có thể nâng cao năng suất và tạo ra sản phẩm, dịch vụ mới. Các công nghệ mới mở rộng khả năng sáng tạo và kết nối.",
+        "Cách mạng công nghiệp hiện đại đặt ra vấn đề về việc làm, an ninh mạng và khoảng cách số. Con người cần nâng cao kĩ năng và sử dụng công nghệ có trách nhiệm."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-8-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về Cách mạng công nghiệp lần thứ ba.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-8-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với Internet.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-8-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về Cách mạng công nghiệp lần thứ ba.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-8-checkpoint-1",
+          "question": "Nhận định nào đúng về Cách mạng công nghiệp lần thứ ba?",
+          "options": [
+            "Điện tử, máy tính và công nghệ thông tin là nền tảng của Cách mạng công nghiệp lần thứ ba.",
+            "Máy hơi nước là nền tảng chính của lần thứ ba.",
+            "Lần thứ ba diễn ra trước lần thứ nhất.",
+            "Lần thứ ba không liên quan tự động hóa."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Cuộc cách mạng này còn được gọi là cách mạng số."
+        },
+        {
+          "id": "g10-his-type-8-checkpoint-2",
+          "question": "Khi ôn tập Internet, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Internet là phát minh của thời cổ đại.",
+            "Internet góp phần kết nối và trao đổi thông tin trên phạm vi toàn cầu.",
+            "Internet chỉ dùng để điều khiển máy hơi nước.",
+            "Internet làm việc truyền thông tin chậm hơn."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Mạng máy tính tạo ra thay đổi lớn trong liên lạc, kinh tế và đời sống."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k08-01-q1"
+    },
+    {
+      "id": "g10-his-type-9",
+      "topicId": "g10-his-topic-5",
+      "name": "Cơ sở hình thành văn minh Đông Nam Á",
+      "slug": "co-so-hinh-thanh-van-minh-dong-nam-a",
+      "difficulty": "easy",
+      "examFrequency": "medium",
+      "description": "Các yếu tố tự nhiên, xã hội và văn hóa làm nền tảng cho văn minh Đông Nam Á cổ - trung đại.",
+      "recognitionSigns": [
+        "Hỏi về khí hậu nhiệt đới gió mùa, nông nghiệp lúa nước, giao thoa văn hóa Ấn Độ - Trung Hoa"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Cho rằng văn minh Đông Nam Á hoàn toàn là sản phẩm sao chép từ Ấn Độ hoặc Trung Quốc",
+        "Ghi nhớ nhầm: “Đông Nam Á hoàn toàn tách biệt các tuyến biển.”"
+      ],
+      "theory": [
+        "Đông Nam Á nằm trên tuyến giao thông nối Ấn Độ Dương với Thái Bình Dương. Vị trí cầu nối tạo điều kiện giao thương và tiếp xúc văn hóa.",
+        "Khí hậu nhiệt đới gió mùa thuận lợi cho sự phát triển nông nghiệp lúa nước. Nhiệt, ẩm và hệ thống sông ngòi là cơ sở của nền nông nghiệp lúa nước.",
+        "Văn hóa bản địa là nền tảng quan trọng của văn minh Đông Nam Á. Cư dân bản địa tiếp nhận ảnh hưởng bên ngoài trên nền văn hóa sẵn có.",
+        "Đông Nam Á tiếp thu nhiều yếu tố từ Ấn Độ như tôn giáo, chữ viết và nghệ thuật. Ảnh hưởng Ấn Độ được tiếp nhận có chọn lọc và biến đổi sáng tạo.",
+        "Một bộ phận Đông Nam Á tiếp nhận ảnh hưởng Trung Hoa qua quá trình giao lưu lâu dài. Mức độ và cách thức tiếp nhận khác nhau giữa các quốc gia.",
+        "Sự phát triển kinh tế và xã hội góp phần hình thành các quốc gia sơ kì ở Đông Nam Á. Nông nghiệp, thương mại và phân hóa xã hội tạo cơ sở cho nhà nước.",
+        "Văn minh Đông Nam Á vừa có nét tương đồng khu vực vừa đa dạng theo từng cộng đồng. Nền tảng lúa nước và giao lưu tạo nét chung, còn điều kiện riêng tạo sự đa dạng."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-9-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về vị trí Đông Nam Á.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-9-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với điều kiện tự nhiên.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-9-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về vị trí Đông Nam Á.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-9-checkpoint-1",
+          "question": "Nhận định nào đúng về vị trí Đông Nam Á?",
+          "options": [
+            "Đông Nam Á nằm trên tuyến giao thông nối Ấn Độ Dương với Thái Bình Dương.",
+            "Đông Nam Á hoàn toàn tách biệt các tuyến biển.",
+            "Đông Nam Á nằm ở trung tâm châu Âu.",
+            "Vị trí địa lí không ảnh hưởng giao lưu văn hóa."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Vị trí cầu nối tạo điều kiện giao thương và tiếp xúc văn hóa."
+        },
+        {
+          "id": "g10-his-type-9-checkpoint-2",
+          "question": "Khi ôn tập điều kiện tự nhiên, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Khí hậu Đông Nam Á chủ yếu là hàn đới.",
+            "Khí hậu nhiệt đới gió mùa thuận lợi cho sự phát triển nông nghiệp lúa nước.",
+            "Lúa nước không liên quan điều kiện sông ngòi.",
+            "Gió mùa khiến nông nghiệp không thể hình thành."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Nhiệt, ẩm và hệ thống sông ngòi là cơ sở của nền nông nghiệp lúa nước."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k09-01-q1"
+    },
+    {
+      "id": "g10-his-type-10",
+      "topicId": "g10-his-topic-5",
+      "name": "Thành tựu tiêu biểu của văn minh Đông Nam Á",
+      "slug": "thanh-tuu-van-minh-dong-nam-a",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Các công trình kiến trúc, tôn giáo, chữ viết và tác phẩm nghệ thuật đặc sắc của Đông Nam Á.",
+      "recognitionSigns": [
+        "Hỏi về Quần thể Angkor Wat (Campuchia), Đền Borobudur (Indonesia), Chùa Thạt Luổng (Lào)"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn địa điểm của Angkor Wat (Campuchia) với Borobudur (Indonesia)",
+        "Ghi nhớ nhầm: “Tín ngưỡng bản địa biến mất hoàn toàn từ thời cổ đại.”"
+      ],
+      "theory": [
+        "Cư dân Đông Nam Á duy trì nhiều tín ngưỡng bản địa như thờ tự nhiên và thờ tổ tiên. Tín ngưỡng bản địa cùng tồn tại với các tôn giáo du nhập.",
+        "Phật giáo, Ấn Độ giáo, Hồi giáo và Thiên Chúa giáo đều có ảnh hưởng ở Đông Nam Á. Sự đa dạng tôn giáo phản ánh quá trình giao lưu rộng mở.",
+        "Nhiều dân tộc Đông Nam Á sáng tạo chữ viết riêng trên cơ sở tiếp thu chữ viết bên ngoài. Tiếp thu và sáng tạo là đặc điểm nổi bật của văn hóa khu vực.",
+        "Ăng-co Vát là công trình kiến trúc nổi tiếng của Campuchia. Công trình là thành tựu tiêu biểu của kiến trúc Khmer.",
+        "Bô-rô-bu-đua là quần thể kiến trúc Phật giáo nổi tiếng ở Indonesia. Công trình thể hiện trình độ kiến trúc và điêu khắc cao của Java cổ.",
+        "Văn học Đông Nam Á phát triển cả dòng dân gian và dòng văn học viết. Nhiều tác phẩm tiếp thu cốt truyện bên ngoài rồi bản địa hóa.",
+        "Kiến trúc và điêu khắc Đông Nam Á kết hợp ảnh hưởng bên ngoài với bản sắc bản địa. Sự tiếp biến sáng tạo làm nên phong cách riêng của từng quốc gia."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-10-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về tín ngưỡng Đông Nam Á.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-10-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với tôn giáo ở Đông Nam Á.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-10-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về tín ngưỡng Đông Nam Á.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-10-checkpoint-1",
+          "question": "Nhận định nào đúng về tín ngưỡng Đông Nam Á?",
+          "options": [
+            "Cư dân Đông Nam Á duy trì nhiều tín ngưỡng bản địa như thờ tự nhiên và thờ tổ tiên.",
+            "Tín ngưỡng bản địa biến mất hoàn toàn từ thời cổ đại.",
+            "Cư dân Đông Nam Á chỉ có một tôn giáo duy nhất.",
+            "Thờ tổ tiên bắt nguồn từ Cách mạng công nghiệp."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Tín ngưỡng bản địa cùng tồn tại với các tôn giáo du nhập."
+        },
+        {
+          "id": "g10-his-type-10-checkpoint-2",
+          "question": "Khi ôn tập tôn giáo ở Đông Nam Á, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Đông Nam Á không tiếp nhận tôn giáo bên ngoài.",
+            "Phật giáo, Ấn Độ giáo, Hồi giáo và Thiên Chúa giáo đều có ảnh hưởng ở Đông Nam Á.",
+            "Chỉ Nho giáo tồn tại trong toàn khu vực.",
+            "Hồi giáo ra đời tại Đông Nam Á cổ đại."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Sự đa dạng tôn giáo phản ánh quá trình giao lưu rộng mở."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k10-01-q1"
+    },
+    {
+      "id": "g10-his-type-11",
+      "topicId": "g10-his-topic-6",
+      "name": "Các nền văn minh cổ trên đất nước Việt Nam",
+      "slug": "cac-nen-van-minh-co-viet-nam",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đặc điểm và thành tựu của Văn minh Văn Lang - Âu Lạc, Chăm-pa và Phù Nam.",
+      "recognitionSigns": [
+        "Hỏi về Trống đồng Đông Sơn, Kỹ thuật đúc đồng, Tháp Chăm, Văn hóa Óc Eo, Thương cảng Óc Eo"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Nhầm không gian địa lý giữa 3 nền văn minh cổ trên đất nước Việt Nam",
+        "Ghi nhớ nhầm: “Văn minh Văn Lang - Âu Lạc chỉ phát triển ở Nam Bộ.”"
+      ],
+      "theory": [
+        "Văn minh Văn Lang - Âu Lạc phát triển ở khu vực Bắc Bộ và Bắc Trung Bộ. Không gian các lưu vực sông lớn là địa bàn cư trú chủ yếu của cư dân Việt cổ.",
+        "Trống đồng là thành tựu tiêu biểu của văn hóa Đông Sơn. Trống đồng phản ánh trình độ luyện kim và đời sống tinh thần phong phú.",
+        "Thành Cổ Loa gắn với nhà nước Âu Lạc thời An Dương Vương. Cấu trúc thành phản ánh bước phát triển về tổ chức và kĩ thuật quân sự.",
+        "Văn minh Chăm-pa phát triển chủ yếu ở miền Trung Việt Nam. Vị trí ven biển tạo điều kiện cho Chăm-pa giao lưu rộng rãi.",
+        "Thánh địa Mỹ Sơn và hệ thống tháp Chăm là thành tựu kiến trúc nổi bật của Chăm-pa. Kiến trúc Chăm thể hiện sự tiếp thu và bản địa hóa văn hóa Ấn Độ.",
+        "Văn minh Phù Nam phát triển ở khu vực Nam Bộ, gắn với văn hóa Óc Eo. Di tích Óc Eo cho thấy hoạt động thủ công và thương mại phát triển.",
+        "Các nền văn minh cổ trên đất Việt Nam đều có cơ sở bản địa và giao lưu với bên ngoài. Giao lưu văn hóa không làm mất đi bản sắc riêng của mỗi nền văn minh."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-11-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về văn minh Văn Lang - Âu Lạc.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-11-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với văn hóa Đông Sơn.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-11-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về văn minh Văn Lang - Âu Lạc.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-11-checkpoint-1",
+          "question": "Nhận định nào đúng về văn minh Văn Lang - Âu Lạc?",
+          "options": [
+            "Văn minh Văn Lang - Âu Lạc phát triển ở khu vực Bắc Bộ và Bắc Trung Bộ.",
+            "Văn minh Văn Lang - Âu Lạc chỉ phát triển ở Nam Bộ.",
+            "Văn minh này hình thành ở lưu vực sông Nin.",
+            "Văn minh này ra đời sau năm 1858."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Không gian các lưu vực sông lớn là địa bàn cư trú chủ yếu của cư dân Việt cổ."
+        },
+        {
+          "id": "g10-his-type-11-checkpoint-2",
+          "question": "Khi ôn tập văn hóa Đông Sơn, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Trống đồng là sản phẩm của văn minh La Mã.",
+            "Trống đồng là thành tựu tiêu biểu của văn hóa Đông Sơn.",
+            "Cư dân Đông Sơn không biết luyện kim.",
+            "Đông Sơn chỉ nổi bật với chữ viết La-tinh."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Trống đồng phản ánh trình độ luyện kim và đời sống tinh thần phong phú."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k11-01-q1"
+    },
+    {
+      "id": "g10-his-type-12",
+      "topicId": "g10-his-topic-6",
+      "name": "Cơ sở & Thành tựu đỉnh cao của Văn minh Đại Việt",
+      "slug": "van-minh-dai-viet",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Hành trình phát triển và các thành tựu rực rỡ trên các lĩnh vực của Văn minh Đại Việt thời phong kiến.",
+      "recognitionSigns": [
+        "Hỏi về Văn Miếu - Quốc Tử Giám, Luật Hồng Đức, Binh thư yếu lược, Chữ Nôm, Thăng Long"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Cho rằng Văn minh Đại Việt chỉ sao chép hoàn toàn mô hình phong kiến Trung Hoa mà không có sáng tạo độc lập",
+        "Ghi nhớ nhầm: “Văn minh Đại Việt hoàn toàn sao chép văn minh Trung Hoa.”"
+      ],
+      "theory": [
+        "Văn minh Đại Việt kế thừa truyền thống bản địa và tiếp thu có chọn lọc văn hóa bên ngoài. Tinh thần độc lập giúp người Việt tiếp biến các ảnh hưởng bên ngoài.",
+        "Nhà nước quân chủ trung ương tập quyền từng bước được xây dựng và hoàn thiện. Tổ chức nhà nước là một thành tựu chính trị quan trọng của Đại Việt.",
+        "Nông nghiệp lúa nước giữ vai trò chủ đạo trong kinh tế Đại Việt. Nông nghiệp phát triển cùng thủ công nghiệp và hoạt động trao đổi buôn bán.",
+        "Văn Miếu và Quốc Tử Giám là những biểu tượng của giáo dục Nho học Đại Việt. Giáo dục và khoa cử góp phần đào tạo nhân tài cho đất nước.",
+        "Quốc triều hình luật là bộ luật tiêu biểu được hoàn thiện dưới thời Lê sơ. Bộ luật phản ánh bước phát triển của nhà nước và pháp luật Đại Việt.",
+        "Chữ Nôm được người Việt sáng tạo trên cơ sở chữ Hán để ghi tiếng Việt. Chữ Nôm thể hiện ý thức tự chủ và sức sáng tạo văn hóa của người Việt.",
+        "Tinh thần yêu nước, độc lập và ý thức cộng đồng là những nét nổi bật của văn minh Đại Việt. Lịch sử dựng nước và giữ nước góp phần định hình bản sắc Đại Việt."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-12-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về cơ sở hình thành văn minh Đại Việt.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-12-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với nhà nước Đại Việt.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-12-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về cơ sở hình thành văn minh Đại Việt.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-12-checkpoint-1",
+          "question": "Nhận định nào đúng về cơ sở hình thành văn minh Đại Việt?",
+          "options": [
+            "Văn minh Đại Việt kế thừa truyền thống bản địa và tiếp thu có chọn lọc văn hóa bên ngoài.",
+            "Văn minh Đại Việt hoàn toàn sao chép văn minh Trung Hoa.",
+            "Văn minh Đại Việt không kế thừa thời kì trước.",
+            "Văn minh Đại Việt tách biệt mọi giao lưu khu vực."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Tinh thần độc lập giúp người Việt tiếp biến các ảnh hưởng bên ngoài."
+        },
+        {
+          "id": "g10-his-type-12-checkpoint-2",
+          "question": "Khi ôn tập nhà nước Đại Việt, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Đại Việt không có bộ máy nhà nước.",
+            "Nhà nước quân chủ trung ương tập quyền từng bước được xây dựng và hoàn thiện.",
+            "Mọi làng xã bị xóa bỏ hoàn toàn.",
+            "Nhà nước Đại Việt tổ chức theo mô hình thành bang Hy Lạp."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Tổ chức nhà nước là một thành tựu chính trị quan trọng của Đại Việt."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k12-01-q1"
+    },
+    {
+      "id": "g10-his-type-13",
+      "topicId": "g10-his-topic-7",
+      "name": "Đời sống vật chất & tinh thần cộng đồng dân tộc Việt Nam",
+      "slug": "doi-song-cong-dong-cac-dan-toc",
+      "difficulty": "easy",
+      "examFrequency": "medium",
+      "description": "Nét đặc sắc trong đời sống văn hóa, phong tục, lễ hội của 54 dân tộc Việt Nam.",
+      "recognitionSigns": [
+        "Hỏi về nhà sàn, trang phục thổ cẩm, cồng chiêng Tây Nguyên, Hò/Lý Nam Bộ, lễ hội Cầu ngư"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Đánh giá thấp vai trò của văn hóa các dân tộc thiểu số trong bức tranh tổng thể văn hóa Việt Nam",
+        "Ghi nhớ nhầm: “Việt Nam chỉ có một dân tộc duy nhất.”"
+      ],
+      "theory": [
+        "Việt Nam là quốc gia thống nhất gồm 54 dân tộc. Các dân tộc cùng chung sống và góp phần xây dựng đất nước.",
+        "Dân tộc Kinh có số dân đông nhất trong cộng đồng các dân tộc Việt Nam. Bên cạnh dân tộc Kinh còn có 53 dân tộc thiểu số.",
+        "Các dân tộc Việt Nam cư trú xen kẽ và phân bố trên nhiều vùng địa hình. Quá trình cư trú và giao lưu lâu dài tạo quan hệ gắn bó giữa các dân tộc.",
+        "Nhà ở, trang phục và phương thức sản xuất của các dân tộc thích ứng với môi trường sống. Sự đa dạng vật chất phản ánh kinh nghiệm thích nghi của từng cộng đồng.",
+        "Ngôn ngữ, lễ hội, tín ngưỡng và nghệ thuật dân gian của các dân tộc rất phong phú. Mỗi dân tộc đóng góp những giá trị riêng cho văn hóa Việt Nam.",
+        "Không gian văn hóa cồng chiêng Tây Nguyên là một di sản văn hóa phi vật thể tiêu biểu. Cồng chiêng gắn với đời sống cộng đồng và nghi lễ của nhiều dân tộc Tây Nguyên.",
+        "Văn hóa các dân tộc Việt Nam thống nhất trong sự đa dạng. Mỗi bản sắc riêng đều là một bộ phận của nền văn hóa chung."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-13-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về thành phần dân tộc Việt Nam.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-13-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với dân tộc đa số.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-13-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về thành phần dân tộc Việt Nam.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-13-checkpoint-1",
+          "question": "Nhận định nào đúng về thành phần dân tộc Việt Nam?",
+          "options": [
+            "Việt Nam là quốc gia thống nhất gồm 54 dân tộc.",
+            "Việt Nam chỉ có một dân tộc duy nhất.",
+            "Mỗi dân tộc cư trú trong một quốc gia riêng.",
+            "Các dân tộc thiểu số không thuộc cộng đồng Việt Nam."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Các dân tộc cùng chung sống và góp phần xây dựng đất nước."
+        },
+        {
+          "id": "g10-his-type-13-checkpoint-2",
+          "question": "Khi ôn tập dân tộc đa số, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Dân tộc Kinh là dân tộc có số dân ít nhất.",
+            "Dân tộc Kinh có số dân đông nhất trong cộng đồng các dân tộc Việt Nam.",
+            "Mọi dân tộc có số dân bằng nhau.",
+            "Dân tộc Kinh chỉ cư trú ở miền núi cao."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Bên cạnh dân tộc Kinh còn có 53 dân tộc thiểu số."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k13-01-q1"
+    },
+    {
+      "id": "g10-his-type-14",
+      "topicId": "g10-his-topic-7",
+      "name": "Khối đại đoàn kết dân tộc trong lịch sử Việt Nam",
+      "slug": "khoi-dai-doan-ket-dan-toc",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Truyền thống đoàn kết, giữ nước và vai trò chiến lược của khối đại đoàn kết dân tộc.",
+      "recognitionSigns": [
+        "Hỏi về Hội nghị Diên Hồng, truyền thống \"Nhiễu điều phủ lấy giá gương\", chính sách đoàn kết dân tộc"
+      ],
+      "solvingSteps": [
+        "Bước 1: Xác định từ khóa về thời gian, địa điểm, nhân vật hoặc thành tựu.",
+        "Bước 2: Nhớ lại thẻ kiến thức tương ứng trong bài học.",
+        "Bước 3: Loại phương án ghép sai sự kiện, thời kì hoặc địa điểm."
+      ],
+      "commonMistakes": [
+        "Cho rằng chiến thắng lịch sử chỉ nhờ vào tài quân sự của tướng lĩnh mà quên mất sức mạnh đoàn kết toàn dân",
+        "Ghi nhớ nhầm: “Đoàn kết chỉ hình thành do nhu cầu du lịch.”"
+      ],
+      "theory": [
+        "Nhu cầu trị thủy và chống ngoại xâm góp phần sớm gắn kết các cộng đồng người Việt. Lao động và bảo vệ cuộc sống chung tạo nên truyền thống cố kết cộng đồng.",
+        "Đại đoàn kết dân tộc là nguồn sức mạnh quan trọng trong dựng nước và giữ nước. Sự đồng lòng giúp dân tộc vượt qua thiên tai, ngoại xâm và khó khăn.",
+        "Hội nghị Diên Hồng thể hiện tinh thần đồng lòng chống quân Nguyên - Mông thời Trần. Hình ảnh các bô lão đồng thanh quyết chiến là biểu tượng của đoàn kết.",
+        "Các triều đại chú trọng gắn kết cộng đồng và củng cố quan hệ với vùng biên viễn. Đoàn kết các cộng đồng giúp củng cố quốc gia thống nhất.",
+        "Mặt trận Việt Minh ra đời năm 1941, góp phần tập hợp lực lượng cho Cách mạng tháng Tám. Việt Minh phát huy sức mạnh đoàn kết toàn dân vì mục tiêu độc lập.",
+        "Hồ Chí Minh coi đại đoàn kết toàn dân tộc là vấn đề có ý nghĩa chiến lược. Đoàn kết rộng rãi và lâu dài là nguồn lực của cách mạng Việt Nam.",
+        "Các dân tộc bình đẳng, đoàn kết, tôn trọng và giúp nhau cùng phát triển. Bình đẳng và tôn trọng sự đa dạng củng cố khối đại đoàn kết toàn dân tộc."
+      ],
+      "subTypes": [
+        {
+          "id": "g10-his-type-14-foundation",
+          "name": "Kiến thức nền tảng",
+          "example": "Nhận biết kiến thức chính về cơ sở hình thành đoàn kết dân tộc.",
+          "recognitionSigns": [
+            "Hỏi trực tiếp khái niệm, sự kiện, nhân vật, thời gian hoặc địa điểm."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-14-association",
+          "name": "Ghép sự kiện và đặc điểm",
+          "example": "Chọn cách ghép đúng đối với vai trò của đại đoàn kết.",
+          "recognitionSigns": [
+            "Yêu cầu nối đúng sự kiện với thời kì, địa điểm, thành tựu hoặc ý nghĩa."
+          ],
+          "targetQuestionCount": 8
+        },
+        {
+          "id": "g10-his-type-14-misconception",
+          "name": "Sửa nhận định dễ nhầm",
+          "example": "Phát hiện và sửa một ghi chép sai về cơ sở hình thành đoàn kết dân tộc.",
+          "recognitionSigns": [
+            "Đề đưa ra một nhận định sai hoặc gần đúng và yêu cầu chọn cách sửa."
+          ],
+          "targetQuestionCount": 8
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "g10-his-type-14-checkpoint-1",
+          "question": "Nhận định nào đúng về cơ sở hình thành đoàn kết dân tộc?",
+          "options": [
+            "Nhu cầu trị thủy và chống ngoại xâm góp phần sớm gắn kết các cộng đồng người Việt.",
+            "Đoàn kết chỉ hình thành do nhu cầu du lịch.",
+            "Các cộng đồng không cần hợp tác trong sản xuất.",
+            "Chống ngoại xâm luôn làm các cộng đồng chia rẽ."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Lao động và bảo vệ cuộc sống chung tạo nên truyền thống cố kết cộng đồng."
+        },
+        {
+          "id": "g10-his-type-14-checkpoint-2",
+          "question": "Khi ôn tập vai trò của đại đoàn kết, thẻ kiến thức nào chính xác?",
+          "options": [
+            "Mọi thắng lợi chỉ do một cá nhân quyết định.",
+            "Đại đoàn kết dân tộc là nguồn sức mạnh quan trọng trong dựng nước và giữ nước.",
+            "Đoàn kết không có vai trò trong thời bình.",
+            "Sức mạnh dân tộc không liên quan sự tham gia của nhân dân."
+          ],
+          "correctAnswer": "B",
+          "explanation": "Sự đồng lòng giúp dân tộc vượt qua thiên tai, ngoại xâm và khó khăn."
+        }
+      ],
+      "exampleQuestionId": "g10-his-k14-01-q1"
+    }
+  ]
+}

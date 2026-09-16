@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-09-16T12:28:29.026Z",
+  "grades": [
+    {
+      "id": "grade9",
+      "name": "Lớp 9 (Ôn Thi Vào 10)",
+      "subjects": [
+        {
+          "id": "math",
+          "name": "Toán 9 (Vào 10)",
+          "icon": "Calculator",
+          "color": "#6366f1",
+          "badge": "Tuyển sinh",
+          "bundleUrl": "roadmap/grade9/math.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 6,
+          "totalQuestionTypes": 8
+        },
+        {
+          "id": "english",
+          "name": "Tiếng Anh 9 (Vào 10)",
+          "icon": "Languages",
+          "color": "#10b981",
+          "badge": "Tuyển sinh",
+          "bundleUrl": "roadmap/grade9/english.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 3,
+          "totalQuestionTypes": 12
+        }
+      ]
+    },
+    {
+      "id": "grade10",
+      "name": "Lớp 10 (GDPT 2018)",
+      "subjects": [
+        {
+          "id": "math",
+          "name": "Toán học 10",
+          "icon": "Calculator",
+          "color": "#6366f1",
+          "badge": "Chương trình mới",
+          "bundleUrl": "roadmap/grade10/math.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 9,
+          "totalQuestionTypes": 23
+        },
+        {
+          "id": "english",
+          "name": "Tiếng Anh 10",
+          "icon": "Languages",
+          "color": "#10b981",
+          "badge": "Chương trình mới",
+          "bundleUrl": "roadmap/grade10/english.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 11,
+          "totalQuestionTypes": 73
+        },
+        {
+          "id": "physics",
+          "name": "Vật lý 10",
+          "icon": "Atom",
+          "color": "#0ea5e9",
+          "badge": "Chương trình mới",
+          "bundleUrl": "roadmap/grade10/physics.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 7,
+          "totalQuestionTypes": 59
+        },
+        {
+          "id": "chemistry",
+          "name": "Hóa học 10",
+          "icon": "FlaskConical",
+          "color": "#14b8a6",
+          "badge": "Chương trình mới",
+          "bundleUrl": "roadmap/grade10/chemistry.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 9,
+          "totalQuestionTypes": 44
+        },
+        {
+          "id": "biology",
+          "name": "Sinh học 10",
+          "icon": "Dna",
+          "color": "#84cc16",
+          "badge": "Chương trình mới",
+          "bundleUrl": "roadmap/grade10/biology.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 8,
+          "totalQuestionTypes": 44
+        },
+        {
+          "id": "history",
+          "name": "Lịch sử 10",
+          "icon": "Scroll",
+          "color": "#f59e0b",
+          "badge": "Chương trình mới",
+          "bundleUrl": "roadmap/grade10/history.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 7,
+          "totalQuestionTypes": 14
+        }
+      ]
+    },
+    {
+      "id": "grade11",
+      "name": "Lớp 11 (GDPT 2018)",
+      "subjects": [
+        {
+          "id": "math",
+          "name": "Toán học 11",
+          "icon": "Calculator",
+          "color": "#6366f1",
+          "badge": "Nâng cao",
+          "bundleUrl": "roadmap/grade11/math.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 9,
+          "totalQuestionTypes": 33
+        },
+        {
+          "id": "english",
+          "name": "Tiếng Anh 11",
+          "icon": "Languages",
+          "color": "#10b981",
+          "badge": "Nâng cao",
+          "bundleUrl": "roadmap/grade11/english.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 10,
+          "totalQuestionTypes": 60
+        },
+        {
+          "id": "physics",
+          "name": "Vật lý 11",
+          "icon": "Atom",
+          "color": "#0ea5e9",
+          "badge": "Nâng cao",
+          "bundleUrl": "roadmap/grade11/physics.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 4,
+          "totalQuestionTypes": 31
+        },
+        {
+          "id": "chemistry",
+          "name": "Hóa học 11",
+          "icon": "FlaskConical",
+          "color": "#14b8a6",
+          "badge": "Nâng cao",
+          "bundleUrl": "roadmap/grade11/chemistry.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 7,
+          "totalQuestionTypes": 89
+        },
+        {
+          "id": "biology",
+          "name": "Sinh học 11",
+          "icon": "Dna",
+          "color": "#84cc16",
+          "badge": "Nâng cao",
+          "bundleUrl": "roadmap/grade11/biology.json",
+          "contentVersion": "2026.09.1",
+          "totalTopics": 5,
+          "totalQuestionTypes": 52
+        }
+      ]
+    }
+  ]
+}

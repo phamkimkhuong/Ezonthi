@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "326319018998",
+    "project_id": "on-thi-vao-10-7d87c",
+    "storage_bucket": "on-thi-vao-10-7d87c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326319018998:android:263831d31d7ad3838dedd7",
+        "android_client_info": {
+          "package_name": "com.ezonthi.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326319018998-731rc7er3jca47uhl4ht670j4lpnp7sa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ezonthi.app",
+            "certificate_hash": "171caeca2b02e0a02ad44e7d933538f149d34f81"
+          }
+        },
+        {
+          "client_id": "326319018998-73pqsa6c3nj5jbd0tulch4m0e1ajemc9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKnALThi7OI7t-0VTRbRD6AXXr-xegaA8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326319018998-73pqsa6c3nj5jbd0tulch4m0e1ajemc9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,2655 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "2026.09.1",
+  "updatedAt": "2026-09-16T12:28:08.435Z",
+  "grade": "grade11",
+  "subject": "physics",
+  "subjectName": "Vật lý 11",
+  "icon": "Atom",
+  "themeColor": "#0ea5e9",
+  "badge": "Nâng cao",
+  "stats": {
+    "totalTopics": 4,
+    "totalQuestionTypes": 31,
+    "estimatedTotalMinutes": 930
+  },
+  "topics": [
+    {
+      "id": "phy11-t01",
+      "name": "Chương I: Dao động",
+      "slug": "chuong-1-dao-dong",
+      "orderIndex": 1,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương I: Dao động",
+      "estimatedMinutes": 180,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "phy11-qt01",
+        "phy11-qt02",
+        "phy11-qt03",
+        "phy11-qt04",
+        "phy11-qt05",
+        "phy11-qt06"
+      ]
+    },
+    {
+      "id": "phy11-t02",
+      "name": "Chương II: Sóng",
+      "slug": "chuong-2-song",
+      "orderIndex": 2,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương II: Sóng",
+      "estimatedMinutes": 240,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "phy11-qt07",
+        "phy11-qt08",
+        "phy11-qt09",
+        "phy11-qt10",
+        "phy11-qt11",
+        "phy11-qt12",
+        "phy11-qt13",
+        "phy11-qt14"
+      ]
+    },
+    {
+      "id": "phy11-t03",
+      "name": "Chương III: Điện trường",
+      "slug": "chuong-3-dien-truong",
+      "orderIndex": 3,
+      "tier": 1,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương III: Điện trường",
+      "estimatedMinutes": 270,
+      "difficulty": "easy",
+      "questionTypeIds": [
+        "phy11-qt15",
+        "phy11-qt16",
+        "phy11-qt17",
+        "phy11-qt18",
+        "phy11-qt19",
+        "phy11-qt20",
+        "phy11-qt21",
+        "phy11-qt22",
+        "phy11-qt23"
+      ]
+    },
+    {
+      "id": "phy11-t04",
+      "name": "Chương IV: Dòng điện và mạch điện",
+      "slug": "chuong-4-dong-dien-va-mach-dien",
+      "orderIndex": 4,
+      "tier": 3,
+      "description": "Kiến thức trọng tâm và phương pháp giải Chương IV: Dòng điện và mạch điện",
+      "estimatedMinutes": 240,
+      "difficulty": "hard",
+      "questionTypeIds": [
+        "phy11-qt24",
+        "phy11-qt25",
+        "phy11-qt26",
+        "phy11-qt27",
+        "phy11-qt28",
+        "phy11-qt29",
+        "phy11-qt30",
+        "phy11-qt31"
+      ]
+    }
+  ],
+  "questionTypes": [
+    {
+      "id": "phy11-qt01",
+      "topicId": "phy11-t01",
+      "name": "Dạng 1: Xác định các đại lượng đặc trưng của Dao động điều hòa (A, T, f, omega, phi)",
+      "slug": "dai-luong-dac-trung-dao-dong",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Xác định biên độ A, chu kỳ T, tần số f, tần số góc omega và pha ban đầu phi từ phương trình li độ x = A*cos(omega*t + phi).",
+      "recognitionSigns": [
+        "Đề cho phương trình x = A cos(omega t + phi) và yêu cầu tìm A, T, f, omega, phi."
+      ],
+      "solvingSteps": [
+        "Đưa phương trình về dạng chuẩn $x = A \\cos(\\omega t + \\varphi)$.",
+        "Đọc trực tiếp $A$, $\\omega$, $\\varphi$ từ phương trình.",
+        "Tính $T = \\frac{2\\pi}{\\omega}$ và $f = \\frac{\\omega}{2\\pi}$."
+      ],
+      "commonMistakes": [
+        "Quên đổi hàm $-\\cos$ hoặc $\\sin$ về hàm $+\\cos$ chuẩn.",
+        "Nhầm lẫn giữa pha ban đầu $\\varphi$ và pha tại thời điểm $t$ $(\\omega t + \\varphi)$."
+      ],
+      "theory": [
+        "**Dao động điều hòa và các đại lượng đặc trưng**\nDao động là chuyển động qua lại quanh vị trí cân bằng. Dao động tuần hoàn lặp lại trạng thái sau những khoảng thời gian bằng nhau. Dao động điều hòa là dao động có li độ biến thiên theo hàm cos hoặc sin của thời gian. Biên độ là độ lệch lớn nhất tính từ vị trí cân bằng và luôn dương; pha cho biết trạng thái dao động tại một thời điểm.",
+        "**Mục tiêu cần đạt**\n• Nhận biết dao động, dao động tuần hoàn và dao động điều hòa.\n• Đọc được biên độ, chu kì, tần số, tần số góc và pha từ phương trình hoặc đồ thị.\n• Đổi đúng giữa chu kì, tần số và tần số góc.",
+        "**Phương trình li độ**\n$$x=A\\cos(\\omega t+\\varphi)$$\n• $x$: li độ tại thời điểm t; đơn vị: m hoặc cm\n• $A$: biên độ dao động; đơn vị: m hoặc cm; A > 0\n• $\\omega$: tần số góc; đơn vị: rad/s\n• $t$: thời gian; đơn vị: s\n• $\\varphi$: pha ban đầu; đơn vị: rad\n**Điều kiện áp dụng**\n• Gốc thời gian và chiều dương phải được chọn rõ ràng.\n**Ghi chú**\n• Pha tại thời điểm t là $\\omega t+\\varphi$.",
+        "**Quan hệ chu kì – tần số – tần số góc**\n$$f=\\frac{1}{T},\\qquad \\omega=2\\pi f=\\frac{2\\pi}{T}$$\n• $T$: chu kì; đơn vị: s\n• $f$: tần số; đơn vị: Hz\n• $\\omega$: tần số góc; đơn vị: rad/s\n**Điều kiện áp dụng**\n• Các đại lượng mô tả cùng một dao động.",
+        "**Ghi nhớ nhanh**\n• Khoảng thời gian giữa hai trạng thái giống hệt nhau gần nhất là một chu kì.\n• Khoảng cách giữa hai biên bằng $2A$, không phải A.\n• Hệ số âm trước cos phải được chuyển vào pha; biên độ không nhận giá trị âm.",
+        "**Ví dụ: Đọc phương trình dao động**\nVật dao động theo $x=4\\cos(5\\pi t-\\pi/3)$ cm. Tìm A, T và f.\n**Bước 1:** Đối chiếu dạng chuẩn được $A=4$ cm và $\\omega=5\\pi$ rad/s.\n**Bước 2:** Tính $T=2\\pi/\\omega=0,4$ s.\n**Bước 3:** Tính $f=1/T=2,5$ Hz.\n**Kết luận:** $A=4$ cm, $T=0,4$ s, $f=2,5$ Hz.",
+        "**Ví dụ: Lập phương trình từ trạng thái ban đầu**\nVật có $A=5$ cm, $T=1$ s; tại $t=0$ vật qua vị trí cân bằng theo chiều âm. Lập phương trình dạng cos.\n**Bước 1:** Tính $\\omega=2\\pi/T=2\\pi$ rad/s.\n**Bước 2:** Điều kiện $x(0)=0$ cho $\\cos\\varphi=0$.\n**Bước 3:** Vì $v(0)=-\\omega A\\sin\\varphi<0$, chọn $\\varphi=\\pi/2$.\n**Kết luận:** $x=5\\cos(2\\pi t+\\pi/2)$ cm."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt01-st-equation",
+          "name": "Đọc đại lượng từ phương trình dao động",
+          "example": "Xác định A, ω, φ từ x = A cos(ωt + φ).",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt01-st-graph",
+          "name": "Đọc đại lượng từ đồ thị li độ–thời gian",
+          "example": "Xác định A và T từ đồ thị x–t.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m1-characteristics",
+          "question": "Đại lượng nào luôn dương trong phương trình dao động điều hòa dạng chuẩn?",
+          "options": [
+            "Li độ x",
+            "Pha ban đầu",
+            "Biên độ A",
+            "Vận tốc v"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Biên độ là độ lớn cực đại của li độ nên A luôn dương."
+        },
+        {
+          "id": "phy11-check-m1-characteristics-2",
+          "question": "Hai trạng thái cùng li độ nhưng ngược chiều chuyển động có chắc chắn cùng pha không?",
+          "options": [
+            "Có",
+            "Không",
+            "Chỉ khi ở biên",
+            "Chỉ khi ở cân bằng"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Cùng pha đòi hỏi đồng thời cùng li độ và cùng chiều chuyển động."
+        },
+        {
+          "id": "phy11-check-m1-characteristics-3",
+          "question": "Trong dạng chuẩn, nếu hệ số trước cos âm thì thao tác đúng là",
+          "options": [
+            "Nhận biên độ âm",
+            "Bỏ dấu âm",
+            "Chuyển dấu âm vào pha thêm $\\pi$",
+            "Đổi tần số góc"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Biên độ luôn dương; $-\\cos\\alpha=\\cos(\\alpha+\\pi)$."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt02",
+      "topicId": "phy11-t01",
+      "name": "Dạng 2: Vận tốc và Gia tốc trong Dao động điều hòa",
+      "slug": "van-toc-gia-toc-dao-dong",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tính vận tốc v = x' và gia tốc a = v' = -omega^2 * x, mối liên hệ v vuông pha với x và a ngược pha với x.",
+      "recognitionSigns": [
+        "Đề yêu cầu tính vận tốc cực đại, gia tốc cực đại hoặc vận tốc tại vị trí bất kỳ."
+      ],
+      "solvingSteps": [
+        "Viết phương trình $x(t)$, suy ra phương trình $v(t)$ và $a(t)$.",
+        "Chọn hệ thức phù hợp với dữ kiện và thống nhất đơn vị.",
+        "Sử dụng công thức độc lập thời gian: $A^2 = x^2 + \\frac{v^2}{\\omega^2}$ rồi kiểm tra dấu và chiều chuyển động."
+      ],
+      "commonMistakes": [
+        "Nhầm vị trí $v_{\\max}$ và $a_{\\max}$.",
+        "Quên dấu trừ trong công thức $a = -\\omega^2 x$."
+      ],
+      "theory": [
+        "**Li độ, vận tốc và gia tốc trong dao động điều hòa**\nVận tốc cho biết chiều và mức độ nhanh chậm của chuyển động. Vận tốc sớm pha $\\pi/2$ so với li độ và đạt độ lớn cực đại tại vị trí cân bằng. Gia tốc luôn hướng về vị trí cân bằng, ngược pha với li độ và đạt độ lớn cực đại tại hai biên.",
+        "**Mục tiêu cần đạt**\n• Viết được biểu thức vận tốc và gia tốc từ phương trình li độ.\n• Xác định được giá trị cực đại và trạng thái chuyển động.\n• Vận dụng hệ thức độc lập thời gian.",
+        "**Vận tốc và vận tốc cực đại**\n$$v=-\\omega A\\sin(\\omega t+\\varphi),\\qquad v_{\\max}=\\omega A$$\n• $v$: vận tốc tức thời; đơn vị: m/s hoặc cm/s\n• $v_{\\max}$: độ lớn vận tốc cực đại; đơn vị: m/s hoặc cm/s\n**Điều kiện áp dụng**\n• Đơn vị của A phải thống nhất với đơn vị vận tốc cần tìm.",
+        "**Gia tốc và gia tốc cực đại**\n$$a=-\\omega^2x,\\qquad a_{\\max}=\\omega^2A$$\n• $a$: gia tốc tức thời; đơn vị: m/s² hoặc cm/s²\n• $a_{\\max}$: độ lớn gia tốc cực đại; đơn vị: m/s² hoặc cm/s²\n**Điều kiện áp dụng**\n• Dấu của a được xác định từ dấu của x.",
+        "**Hệ thức độc lập thời gian**\n$$v^2=\\omega^2\\left(A^2-x^2\\right)$$\n• $x$: li độ; đơn vị: m hoặc cm\n• $v$: vận tốc; đơn vị: m/s hoặc cm/s\n**Điều kiện áp dụng**\n• A và x dùng cùng đơn vị; công thức cho độ lớn v, chiều phải xét riêng.",
+        "**Ghi nhớ nhanh**\n• Tại vị trí cân bằng: $|v|=v_{\\max}$ và $a=0$.\n• Tại hai biên: $v=0$ và $|a|=a_{\\max}$.\n• Nếu x và v cùng dấu, vật đang đi xa vị trí cân bằng; trái dấu thì đang đi về.",
+        "**Ví dụ: Tìm vận tốc tại một li độ**\nDao động có $A=5$ cm, $\\omega=4$ rad/s. Tìm độ lớn v khi $x=3$ cm.\n**Bước 1:** Dùng $v^2=\\omega^2(A^2-x^2)$.\n**Bước 2:** Thay số: $|v|=4\\sqrt{5^2-3^2}=16$ cm/s.\n**Bước 3:** Muốn biết dấu của v cần thêm chiều chuyển động.\n**Kết luận:** $|v|=16$ cm/s.",
+        "**Ví dụ: Xác định dấu vận tốc và gia tốc**\nVật ở $x=-A/2$ và đang đi về vị trí cân bằng. Xác định dấu của v và a.\n**Bước 1:** Vật ở phía âm và đi về cân bằng nên chuyển động theo chiều dương: $v>0$.\n**Bước 2:** Dùng $a=-\\omega^2x$; vì $x<0$ nên $a>0$.\n**Kết luận:** $v>0$ và $a>0$."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt02-st-extrema",
+          "name": "Giá trị cực đại của vận tốc và gia tốc",
+          "example": "Tính vmax và amax từ A, ω.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt02-st-state",
+          "name": "Trạng thái dao động tại một thời điểm hoặc vị trí",
+          "example": "Xác định x, v, a và chiều chuyển động.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m1-motion",
+          "question": "Khi vật ở biên dương, gia tốc có chiều nào?",
+          "options": [
+            "Chiều dương",
+            "Chiều âm, về vị trí cân bằng",
+            "Bằng không",
+            "Cùng chiều vận tốc"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$a=-\\omega^2x$ nên x dương thì a âm."
+        },
+        {
+          "id": "phy11-check-m1-motion-2",
+          "question": "Tại vị trí cân bằng, đại lượng nào có độ lớn cực đại?",
+          "options": [
+            "Li độ",
+            "Vận tốc",
+            "Gia tốc",
+            "Thế năng"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Tại $x=0$, tốc độ đạt $\\omega A$ còn gia tốc bằng 0."
+        },
+        {
+          "id": "phy11-check-m1-motion-3",
+          "question": "Khi vật ở biên âm, gia tốc hướng",
+          "options": [
+            "Theo chiều âm",
+            "Theo chiều dương",
+            "Bằng 0",
+            "Theo chiều vận tốc"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Gia tốc luôn hướng về vị trí cân bằng."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt03",
+      "topicId": "phy11-t01",
+      "name": "Dạng 3: Năng lượng trong dao động điều hòa",
+      "slug": "nang-luong-dao-dong-dieu-hoa",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân tích động năng, thế năng, cơ năng và sự chuyển hóa năng lượng theo vị trí hoặc thời gian.",
+      "recognitionSigns": [
+        "Đề nhắc đến động năng, thế năng, cơ năng hoặc tỉ số năng lượng.",
+        "Dữ kiện có vị trí x, biên độ A hoặc vận tốc v."
+      ],
+      "solvingSteps": [
+        "Xác định mô hình dao động và mốc thế năng.",
+        "Viết quan hệ năng lượng phù hợp và thống nhất đơn vị.",
+        "Giải đại lượng cần tìm rồi kiểm tra giới hạn tại biên và vị trí cân bằng."
+      ],
+      "commonMistakes": [
+        "Cho rằng động năng hoặc thế năng luôn bảo toàn.",
+        "Bỏ qua điều kiện mô hình lí tưởng khi dùng bảo toàn cơ năng."
+      ],
+      "theory": [
+        "**Năng lượng trong dao động điều hòa**\nTrong dao động điều hòa lí tưởng, động năng và thế năng liên tục chuyển hóa cho nhau nhưng tổng cơ năng không đổi. Với con lắc lò xo chọn mốc thế năng tại vị trí cân bằng, thế năng phụ thuộc bình phương li độ. Ở biên toàn bộ cơ năng là thế năng; tại vị trí cân bằng toàn bộ cơ năng là động năng.",
+        "**Mục tiêu cần đạt**\n• Mô tả được sự chuyển hóa giữa động năng và thế năng.\n• Tính được cơ năng và năng lượng tại một trạng thái.\n• Nêu đúng điều kiện bảo toàn cơ năng.",
+        "**Thế năng và động năng**\n$$W_t=\\frac12kx^2,\\qquad W_đ=\\frac12mv^2$$\n• $k$: độ cứng lò xo; đơn vị: N/m\n• $m$: khối lượng vật; đơn vị: kg\n• $x$: li độ; đơn vị: m\n• $v$: vận tốc; đơn vị: m/s\n**Điều kiện áp dụng**\n• Mốc thế năng đàn hồi được chọn tại vị trí cân bằng.",
+        "**Cơ năng dao động**\n$$W=W_đ+W_t=\\frac12kA^2=\\frac12m\\omega^2A^2$$\n• $W$: cơ năng; đơn vị: J\n• $A$: biên độ; đơn vị: m\n**Điều kiện áp dụng**\n• Bỏ qua ma sát và lực cản; hệ dao động lí tưởng.",
+        "**Ghi nhớ nhanh**\n• Động năng và thế năng không bảo toàn riêng lẻ.\n• Tỉ số $W_t/W=x^2/A^2$ và $W_đ/W=1-x^2/A^2$.\n• Cơ năng tỉ lệ với bình phương biên độ.",
+        "**Ví dụ: Tỉ lệ động năng tại một vị trí**\nVật dao động điều hòa tại $|x|=0,6A$. Hỏi động năng chiếm bao nhiêu phần trăm cơ năng?\n**Bước 1:** Tính $W_t/W=x^2/A^2=0,6^2=0,36$.\n**Bước 2:** Suy ra $W_đ/W=1-0,36=0,64$.\n**Kết luận:** Động năng chiếm $64\\%$ cơ năng.",
+        "**Ví dụ: Tìm li độ từ tỉ lệ năng lượng**\nTại vị trí nào động năng bằng ba lần thế năng?\n**Bước 1:** $W=W_đ+W_t=4W_t$ nên $W_t/W=1/4$.\n**Bước 2:** Mà $W_t/W=x^2/A^2$, suy ra $|x|=A/2$.\n**Kết luận:** $x=\\pm A/2$."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt03-st-state",
+          "name": "Năng lượng tại một trạng thái",
+          "example": "Tìm động năng, thế năng tại li độ x.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt03-st-conservation",
+          "name": "Bảo toàn và chuyển hóa năng lượng",
+          "example": "Tìm vận tốc hoặc vị trí từ bảo toàn cơ năng.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m1-energy",
+          "question": "Tại vị trí cân bằng của dao động lí tưởng, đại lượng nào cực đại?",
+          "options": [
+            "Thế năng",
+            "Động năng",
+            "Li độ",
+            "Gia tốc"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Tại x = 0, thế năng nhỏ nhất và động năng cực đại."
+        },
+        {
+          "id": "phy11-check-m1-energy-2",
+          "question": "Nếu biên độ tăng gấp đôi thì cơ năng tăng",
+          "options": [
+            "2 lần",
+            "4 lần",
+            "8 lần",
+            "Không đổi"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Cơ năng tỉ lệ với bình phương biên độ."
+        },
+        {
+          "id": "phy11-check-m1-energy-3",
+          "question": "Tại vị trí cân bằng của dao động lí tưởng",
+          "options": [
+            "Thế năng cực đại",
+            "Động năng bằng 0",
+            "Động năng cực đại",
+            "Cơ năng bằng 0"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Li độ bằng 0 làm thế năng nhỏ nhất và động năng cực đại."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt04",
+      "topicId": "phy11-t01",
+      "name": "Dạng 4: Dao động tắt dần và dao động cưỡng bức",
+      "slug": "dao-dong-tat-dan-cuong-buc",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Nhận diện, so sánh và giải thích dao động tắt dần, dao động cưỡng bức.",
+      "recognitionSigns": [
+        "Biên độ giảm theo thời gian hoặc hệ chịu ngoại lực tuần hoàn.",
+        "Đề hỏi nguyên nhân mất năng lượng hay trạng thái ổn định."
+      ],
+      "solvingSteps": [
+        "Xác định lực cản và ngoại lực tác dụng lên hệ.",
+        "Phân loại dao động theo nguồn duy trì năng lượng.",
+        "Giải thích sự biến thiên biên độ và tần số bằng đặc điểm của loại dao động."
+      ],
+      "commonMistakes": [
+        "Cho rằng tần số dao động cưỡng bức luôn bằng tần số riêng.",
+        "Đồng nhất dao động duy trì với dao động cưỡng bức."
+      ],
+      "theory": [
+        "**Dao động tắt dần và dao động cưỡng bức**\nDao động tắt dần là dao động có biên độ và cơ năng giảm dần vì lực cản thực hiện công âm. Dao động cưỡng bức xuất hiện khi hệ chịu ngoại lực tuần hoàn; sau giai đoạn chuyển tiếp, hệ dao động ổn định theo tần số của ngoại lực. Biên độ cưỡng bức phụ thuộc độ lệch giữa tần số kích thích và tần số riêng, đồng thời phụ thuộc lực cản.",
+        "**Mục tiêu cần đạt**\n• Phân biệt dao động tự do, tắt dần và cưỡng bức.\n• Giải thích sự giảm biên độ do mất mát năng lượng.\n• Xác định tần số của dao động cưỡng bức ở trạng thái ổn định.",
+        "**Ghi nhớ nhanh**\n• Lực cản càng lớn, dao động thường tắt càng nhanh.\n• Tần số cưỡng bức ổn định bằng tần số ngoại lực, không mặc định bằng tần số riêng.\n• Ngoại lực tuần hoàn cung cấp năng lượng để bù phần bị tiêu hao.",
+        "**Ví dụ: Nhận diện dao động cưỡng bức**\nMột bệ máy có tần số riêng 4 Hz, chịu lực tuần hoàn 6 Hz. Khi ổn định bệ rung với tần số nào?\n**Bước 1:** Xác định đây là dao động cưỡng bức.\n**Bước 2:** Tần số ổn định bằng tần số ngoại lực.\n**Kết luận:** Bệ rung với tần số 6 Hz.",
+        "**Ví dụ: Tần số của dao động cưỡng bức**\nHệ có tần số riêng 3 Hz, chịu ngoại lực tuần hoàn 4 Hz. Khi ổn định, hệ dao động với tần số nào?\n**Bước 1:** Ở trạng thái cưỡng bức ổn định, tần số hệ bằng tần số ngoại lực.\n**Bước 2:** Tần số riêng chỉ chi phối mức biên độ đáp ứng.\n**Kết luận:** Hệ dao động với tần số 4 Hz."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt04-st-damped",
+          "name": "Dao động tắt dần",
+          "example": "Đọc đồ thị biên độ giảm và giải thích tổn hao.",
+          "targetQuestionCount": 6
+        },
+        {
+          "id": "phy11-qt04-st-forced",
+          "name": "Dao động cưỡng bức",
+          "example": "Xác định tần số trạng thái ổn định.",
+          "targetQuestionCount": 6
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m1-damped-forced",
+          "question": "Đại lượng nào giảm dần trong dao động tắt dần?",
+          "options": [
+            "Cơ năng",
+            "Thời gian",
+            "Khối lượng",
+            "Tần số ngoại lực"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Lực cản làm cơ năng của hệ giảm theo thời gian."
+        },
+        {
+          "id": "phy11-check-m1-damped-forced-2",
+          "question": "Trong dao động tắt dần, cơ năng chuyển chủ yếu thành",
+          "options": [
+            "Nhiệt năng và dạng năng lượng khác",
+            "Điện năng vô hạn",
+            "Khối lượng",
+            "Tần số"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Lực cản thực hiện công âm và làm tiêu hao cơ năng."
+        },
+        {
+          "id": "phy11-check-m1-damped-forced-3",
+          "question": "Tần số của dao động cưỡng bức ổn định bằng",
+          "options": [
+            "Tần số riêng trong mọi trường hợp",
+            "Tần số ngoại lực",
+            "Hiệu hai tần số",
+            "Không xác định"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Ngoại lực tuần hoàn quyết định tần số dao động cưỡng bức ổn định."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt05",
+      "topicId": "phy11-t01",
+      "name": "Dạng 5: Cộng hưởng và ứng dụng",
+      "slug": "cong-huong-va-ung-dung",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Xác định điều kiện cộng hưởng và đánh giá lợi ích, tác hại trong thực tiễn.",
+      "recognitionSigns": [
+        "Biên độ cưỡng bức đạt cực đại khi thay đổi tần số.",
+        "Tình huống liên quan rung mạnh của cầu, máy hoặc nhạc cụ."
+      ],
+      "solvingSteps": [
+        "Xác định tần số riêng và tần số lực cưỡng bức.",
+        "Kiểm tra điều kiện gần bằng nhau và vai trò lực cản.",
+        "Kết luận cộng hưởng rồi đánh giá tác động trong bối cảnh."
+      ],
+      "commonMistakes": [
+        "Cho rằng mọi dao động cưỡng bức đều cộng hưởng.",
+        "Bỏ qua ảnh hưởng của lực cản đến độ cao và độ rộng đỉnh cộng hưởng."
+      ],
+      "theory": [
+        "**Hiện tượng cộng hưởng**\nCộng hưởng là trường hợp đặc biệt của dao động cưỡng bức khi tần số ngoại lực bằng hoặc rất gần tần số riêng, làm biên độ ổn định đạt giá trị lớn. Lực cản nhỏ tạo đỉnh cộng hưởng cao và hẹp; lực cản lớn làm biên độ cực đại nhỏ hơn. Cộng hưởng có thể được khai thác trong nhạc cụ nhưng cũng có thể gây rung nguy hiểm cho cầu, nhà và máy móc.",
+        "**Mục tiêu cần đạt**\n• Nêu được điều kiện xảy ra cộng hưởng.\n• Giải thích ảnh hưởng của lực cản tới đỉnh cộng hưởng.\n• Phân tích lợi ích và tác hại của cộng hưởng.",
+        "**Ghi nhớ nhanh**\n• Không phải mọi dao động cưỡng bức đều là cộng hưởng.\n• Điều kiện cốt lõi: $f\\approx f_0$.\n• Có thể hạn chế cộng hưởng có hại bằng đổi tần số kích thích hoặc tăng giảm chấn.",
+        "**Ví dụ: Tránh cộng hưởng của máy**\nMáy có tốc độ quay làm tần số kích thích gần tần số riêng của bệ và rung mạnh. Nên xử lí thế nào?\n**Bước 1:** Nhận diện hệ đang ở gần cộng hưởng.\n**Bước 2:** Điều chỉnh tốc độ quay để tần số kích thích rời xa tần số riêng hoặc tăng giảm chấn.\n**Kết luận:** Tránh vùng tần số cộng hưởng và bổ sung giảm chấn phù hợp.",
+        "**Ví dụ: Đổi tốc độ quay sang tần số kích thích**\nMáy quay 900 vòng/phút, kết cấu có tần số riêng 15 Hz. Đánh giá nguy cơ cộng hưởng.\n**Bước 1:** Đổi $900$ vòng/phút thành $900/60=15$ vòng/s.\n**Bước 2:** Tần số kích thích 15 Hz trùng tần số riêng.\n**Kết luận:** Có nguy cơ cộng hưởng rõ rệt."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt05-st-condition",
+          "name": "Điều kiện và đường cong cộng hưởng",
+          "example": "Đọc đồ thị biên độ–tần số.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt05-st-application",
+          "name": "Lợi ích và tác hại",
+          "example": "Đề xuất cách hạn chế cộng hưởng có hại.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m1-resonance",
+          "question": "Khi nào biên độ cưỡng bức thường lớn nhất?",
+          "options": [
+            "Khi ngoại lực bằng 0",
+            "Khi tần số kích thích gần tần số riêng",
+            "Khi không có dao động",
+            "Khi khối lượng bằng 0"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đó là điều kiện gần cộng hưởng."
+        },
+        {
+          "id": "phy11-check-m1-resonance-2",
+          "question": "Tăng lực cản thường làm đỉnh cộng hưởng",
+          "options": [
+            "Cao hơn và hẹp hơn",
+            "Thấp hơn",
+            "Dịch tới tần số vô hạn",
+            "Không đổi"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Lực cản lớn làm năng lượng mất nhiều hơn nên biên độ cực đại giảm."
+        },
+        {
+          "id": "phy11-check-m1-resonance-3",
+          "question": "Muốn hạn chế cộng hưởng có hại, có thể",
+          "options": [
+            "Luôn giảm lực cản",
+            "Đưa tần số riêng gần tần số kích thích",
+            "Tăng giảm chấn hoặc dịch tần số riêng",
+            "Tăng biên độ ngoại lực"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Hai hướng chính là hạ đỉnh đáp ứng và tránh vùng trùng tần số."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt06",
+      "topicId": "phy11-t01",
+      "name": "Dạng 6: Thực nghiệm khảo sát dao động",
+      "slug": "thuc-nghiem-khao-sat-dao-dong",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Lựa chọn phương án, xử lí dữ liệu và đánh giá kết quả thí nghiệm dao động.",
+      "recognitionSigns": [
+        "Đề cho sơ đồ thiết bị, bảng số liệu hoặc chuỗi ảnh chuyển động.",
+        "Yêu cầu xác định đại lượng đo, xử lí sai số hoặc kết luận."
+      ],
+      "solvingSteps": [
+        "Xác định mục tiêu, biến đo và dụng cụ.",
+        "Chọn cách thu thập, biểu diễn và xử lí dữ liệu.",
+        "Đối chiếu kết quả với mô hình rồi nêu sai số và giới hạn kết luận."
+      ],
+      "commonMistakes": [
+        "Tính đại lượng từ quá ít chu kì làm sai số tương đối lớn.",
+        "Kết luận vượt quá độ chính xác của dữ liệu."
+      ],
+      "theory": [
+        "**Khảo sát dao động bằng thực nghiệm**\nMột thí nghiệm dao động đáng tin cậy phải nêu rõ đại lượng cần đo, dụng cụ, quy trình và điều kiện giữ không đổi. Để giảm sai số phản xạ khi bấm giờ, nên đo thời gian của nhiều chu kì rồi chia cho số chu kì. Với video, tốc độ khung hình cho phép đổi số khung thành thời gian. Cần lặp phép đo, lấy trung bình và kiểm tra giá trị lệch xa trước khi kết luận.",
+        "**Mục tiêu cần đạt**\n• Xác định mục tiêu, biến đo và biến kiểm soát.\n• Đo chu kì bằng đồng hồ, cảm biến hoặc video.\n• Xử lí phép đo lặp và nhận diện dữ liệu ngoại lai.",
+        "**Suy ra chu kì và tần số từ phép đo**\n$$T=\\frac{t_N}{N},\\qquad f=\\frac{1}{T}=\\frac{N}{t_N}$$\n• $t_N$: thời gian của N dao động; đơn vị: s\n• $N$: số dao động toàn phần\n• $T$: chu kì trung bình; đơn vị: s\n• $f$: tần số; đơn vị: Hz\n**Điều kiện áp dụng**\n• Đếm đúng số khoảng chu kì và đo từ hai trạng thái cùng pha.",
+        "**Ghi nhớ nhanh**\n• Đo nhiều chu kì giúp giảm sai số tương đối do thao tác bấm giờ.\n• Chỉ thay một biến độc lập khi khảo sát quan hệ nhân quả.\n• Giá trị ngoại lai cần được kiểm tra, không tự động đưa vào trung bình.",
+        "**Ví dụ: Xử lí phép đo nhiều chu kì**\nBa lần đo thời gian 10 dao động là 12,1 s; 12,3 s; 12,2 s. Tìm chu kì trung bình.\n**Bước 1:** Tính thời gian trung bình: $(12,1+12,3+12,2)/3=12,2$ s.\n**Bước 2:** Chia cho 10 dao động: $T=12,2/10=1,22$ s.\n**Kết luận:** $T=1,22$ s.",
+        "**Ví dụ: Đếm đúng số khoảng chu kì**\nTừ đỉnh thứ nhất đến đỉnh thứ sáu của đồ thị cách nhau 2,5 s. Tính chu kì.\n**Bước 1:** Sáu đỉnh tạo năm khoảng thời gian bằng chu kì.\n**Bước 2:** Tính $T=2,5/5=0,50$ s.\n**Kết luận:** $T=0,50$ s."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt06-st-design",
+          "name": "Thiết kế và quy trình đo",
+          "example": "Chọn dụng cụ và các bước đo chu kì.",
+          "targetQuestionCount": 6
+        },
+        {
+          "id": "phy11-qt06-st-data",
+          "name": "Xử lí dữ liệu thực nghiệm",
+          "example": "Tính chu kì trung bình từ bảng số liệu.",
+          "targetQuestionCount": 6
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m1-experiment",
+          "question": "Cách nào giảm sai số phản xạ khi dùng đồng hồ bấm giây?",
+          "options": [
+            "Đo một phần tư chu kì",
+            "Đo nhiều chu kì rồi chia",
+            "Chỉ đo một lần",
+            "Không cần chọn mốc"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Tổng thời gian lớn hơn làm sai số thao tác chiếm tỉ lệ nhỏ hơn."
+        },
+        {
+          "id": "phy11-check-m1-experiment-2",
+          "question": "Sáu đỉnh liên tiếp tạo ra bao nhiêu khoảng chu kì?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "12"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Số khoảng giữa N mốc liên tiếp là N−1."
+        },
+        {
+          "id": "phy11-check-m1-experiment-3",
+          "question": "Một giá trị lệch xa các lần đo còn lại nên được xử lí đầu tiên bằng cách",
+          "options": [
+            "Xóa ngay không kiểm tra",
+            "Kiểm tra thao tác và điều kiện đo",
+            "Luôn lấy làm kết quả",
+            "Nhân đôi giá trị"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Cần xác định nguyên nhân ngoại lai trước khi quyết định giữ hay loại dữ liệu."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt07",
+      "topicId": "phy11-t02",
+      "name": "Dạng 7: Đọc đồ thị và mô tả sóng",
+      "slug": "doc-do-thi-mo-ta-song",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Xác định biên độ, bước sóng, chu kì, tần số và pha từ các đồ thị mô tả sóng.",
+      "recognitionSigns": [
+        "Đề cho đồ thị u–x hoặc u–t.",
+        "Yêu cầu đọc bước sóng, chu kì hay trạng thái dao động."
+      ],
+      "solvingSteps": [
+        "Xác định loại đồ thị và đại lượng trên từng trục.",
+        "Đọc khoảng lặp theo không gian hoặc thời gian.",
+        "Suy ra đại lượng còn lại và kiểm tra đơn vị."
+      ],
+      "commonMistakes": [
+        "Nhầm đồ thị không gian với đồ thị thời gian.",
+        "Đọc khoảng giữa hai điểm bất kì thay vì hai trạng thái cùng pha gần nhất."
+      ],
+      "theory": [
+        "**Mô tả sóng và đọc đồ thị sóng**\nSóng là sự lan truyền dao động trong không gian. Đồ thị $u-x$ là ảnh của nhiều phần tử tại cùng một thời điểm: khoảng lặp theo trục x là bước sóng. Đồ thị $u-t$ mô tả một phần tử theo thời gian: khoảng lặp theo trục t là chu kì. Biên độ được đọc từ độ dịch chuyển cực đại so với vị trí cân bằng.",
+        "**Mục tiêu cần đạt**\n• Phân biệt đồ thị độ dịch chuyển–vị trí với độ dịch chuyển–thời gian.\n• Đọc biên độ, bước sóng, chu kì và tần số.\n• Xác định khoảng cách hoặc thời gian giữa các trạng thái cùng pha.",
+        "**Các đại lượng đặc trưng**\n$$f=\\frac1T,\\qquad k=\\frac{2\\pi}{\\lambda},\\qquad \\Delta\\varphi=\\frac{2\\pi\\Delta x}{\\lambda}$$\n• $T$: chu kì dao động của một phần tử; đơn vị: s\n• $f$: tần số; đơn vị: Hz\n• $\\lambda$: bước sóng; đơn vị: m\n• $k$: số sóng; đơn vị: rad/m\n**Điều kiện áp dụng**\n• Độ lệch pha theo không gian được xét tại cùng một thời điểm.",
+        "**Ghi nhớ nhanh**\n• Hai đỉnh gần nhau trên $u-x$ cách nhau $\\lambda$.\n• Hai đỉnh gần nhau trên $u-t$ cách nhau T.\n• Đỉnh đến hõm gần nhất ứng với nửa bước sóng hoặc nửa chu kì.",
+        "**Ví dụ: Đọc ảnh dạng sóng**\nHai đỉnh liên tiếp trên đồ thị $u-x$ ở 0,20 m và 0,80 m; biên trên là 3 cm. Tìm A và $\\lambda$.\n**Bước 1:** Biên độ là độ dịch chuyển cực đại: $A=3$ cm.\n**Bước 2:** Bước sóng là khoảng hai đỉnh: $\\lambda=0,80-0,20=0,60$ m.\n**Kết luận:** $A=3$ cm và $\\lambda=0,60$ m.",
+        "**Ví dụ: Phân biệt đồ thị không gian và thời gian**\nMột đồ thị $u-x$ có hai đỉnh liên tiếp cách 1,8 m. Một đồ thị $u-t$ tại M có hai đỉnh cách 0,30 s. Xác định $\\lambda$ và T.\n**Bước 1:** Khoảng lặp trên đồ thị $u-x$ là bước sóng: $\\lambda=1,8$ m.\n**Bước 2:** Khoảng lặp trên đồ thị $u-t$ là chu kì: $T=0,30$ s.\n**Kết luận:** $\\lambda=1,8$ m và $T=0,30$ s."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt07-st-space",
+          "name": "Đồ thị độ dịch chuyển–vị trí",
+          "example": "Đọc A và λ từ đồ thị u–x.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt07-st-time",
+          "name": "Đồ thị độ dịch chuyển–thời gian",
+          "example": "Đọc A và T từ đồ thị u–t.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m2-description",
+          "question": "Trên đồ thị u–t, khoảng giữa hai đỉnh liên tiếp là đại lượng nào?",
+          "options": [
+            "Biên độ",
+            "Bước sóng",
+            "Chu kì",
+            "Tốc độ sóng"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Trục ngang là thời gian nên khoảng lặp là chu kì."
+        },
+        {
+          "id": "phy11-check-m2-description-2",
+          "question": "Khoảng giữa hai đỉnh liên tiếp trên đồ thị $u-x$ biểu diễn",
+          "options": [
+            "Chu kì",
+            "Bước sóng",
+            "Tần số",
+            "Tốc độ phần tử"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Trục ngang là vị trí nên khoảng lặp là bước sóng."
+        },
+        {
+          "id": "phy11-check-m2-description-3",
+          "question": "Khoảng từ một đỉnh tới đáy gần nhất trên ảnh sóng bằng",
+          "options": [
+            "$\\lambda/4$",
+            "$\\lambda/2$",
+            "$\\lambda$",
+            "$2\\lambda$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đỉnh và đáy gần nhất lệch nhau nửa chu kì không gian."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt08",
+      "topicId": "phy11-t02",
+      "name": "Dạng 8: Tốc độ truyền sóng và năng lượng",
+      "slug": "toc-do-truyen-song-nang-luong",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng v = λf và giải thích sự truyền năng lượng của sóng.",
+      "recognitionSigns": [
+        "Dữ kiện chứa v, λ, f hoặc T.",
+        "Đề hỏi vật chất hay năng lượng được truyền theo sóng."
+      ],
+      "solvingSteps": [
+        "Đổi các đại lượng về đơn vị thống nhất.",
+        "Chọn v = λf hoặc v = λ/T.",
+        "Tính toán rồi giải thích kết quả theo cơ chế truyền sóng."
+      ],
+      "commonMistakes": [
+        "Nhầm tốc độ truyền sóng với tốc độ dao động của phần tử.",
+        "Cho rằng phần tử môi trường đi theo sóng."
+      ],
+      "theory": [
+        "**Tốc độ truyền sóng và sự truyền năng lượng**\nTrong thời gian một chu kì, trạng thái dao động truyền đi một bước sóng. Tốc độ truyền sóng phụ thuộc môi trường; khi nguồn đổi tần số trong cùng môi trường, tốc độ gần như giữ nguyên và bước sóng thay đổi. Các phần tử môi trường chỉ dao động quanh vị trí cân bằng và truyền tương tác cho phần tử kế cận.",
+        "**Mục tiêu cần đạt**\n• Vận dụng quan hệ giữa tốc độ, bước sóng và tần số.\n• Phân biệt tốc độ truyền sóng với tốc độ dao động của phần tử.\n• Giải thích sóng truyền năng lượng nhưng không chuyển toàn bộ vật chất theo sóng.",
+        "**Tốc độ truyền sóng**\n$$v=\\frac{\\lambda}{T}=\\lambda f$$\n• $v$: tốc độ truyền sóng; đơn vị: m/s\n• $\\lambda$: bước sóng; đơn vị: m\n• $T$: chu kì; đơn vị: s\n• $f$: tần số; đơn vị: Hz\n**Điều kiện áp dụng**\n• Các đại lượng phải thuộc cùng một sóng trong cùng môi trường.",
+        "**Ghi nhớ nhanh**\n• Không đồng nhất v với vận tốc tức thời của phần tử môi trường.\n• Trong cùng môi trường, f tăng thì $\\lambda$ giảm.\n• Năng lượng và trạng thái dao động lan truyền; phần tử vật chất không đi theo sóng đến nơi nhận.",
+        "**Ví dụ: Tính bước sóng**\nSóng truyền với tốc độ 12 m/s và tần số 4 Hz. Tìm bước sóng.\n**Bước 1:** Dùng $\\lambda=v/f$.\n**Bước 2:** Thay số: $\\lambda=12/4=3$ m.\n**Kết luận:** $\\lambda=3$ m.",
+        "**Ví dụ: Đếm số khoảng thời gian**\nTừ đỉnh sóng thứ nhất đến đỉnh thứ 11 qua M mất 2,0 s. Tốc độ sóng 5 m/s. Tính bước sóng.\n**Bước 1:** Mười một đỉnh tạo mười chu kì: $T=2,0/10=0,20$ s.\n**Bước 2:** Tính $\\lambda=vT=5\\times0,20=1,0$ m.\n**Kết luận:** $\\lambda=1,0$ m."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt08-st-calculation",
+          "name": "Tính v, λ, f, T",
+          "example": "Tính bước sóng từ tốc độ và tần số.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt08-st-energy",
+          "name": "Truyền năng lượng",
+          "example": "Giải thích vật nổi không đi theo gợn sóng.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m2-speed",
+          "question": "Một chiếc lá nổi làm gì khi gợn sóng đi qua?",
+          "options": [
+            "Đi theo sóng tới bờ",
+            "Dao động quanh vị trí cân bằng",
+            "Đứng yên tuyệt đối",
+            "Chuyển động thẳng đều"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Phần tử và vật nổi dao động cục bộ, không được sóng mang đi toàn bộ."
+        },
+        {
+          "id": "phy11-check-m2-speed-energy-2",
+          "question": "Khi sóng truyền, phần tử môi trường",
+          "options": [
+            "Đi theo sóng tới vô hạn",
+            "Dao động quanh vị trí cân bằng",
+            "Luôn đứng yên",
+            "Biến thành năng lượng"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Sóng truyền trạng thái dao động và năng lượng, không tải vật chất theo cùng tốc độ."
+        },
+        {
+          "id": "phy11-check-m2-speed-energy-3",
+          "question": "Nguồn giữ nguyên f, tốc độ truyền giảm thì bước sóng",
+          "options": [
+            "Tăng",
+            "Giảm",
+            "Không đổi",
+            "Bằng 0"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Theo $\\lambda=v/f$, với f không đổi thì λ biến thiên cùng chiều với v."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt09",
+      "topicId": "phy11-t02",
+      "name": "Dạng 9: Phân loại sóng ngang và sóng dọc",
+      "slug": "phan-loai-song-ngang-doc",
+      "difficulty": "easy",
+      "examFrequency": "medium",
+      "description": "Phân loại sóng theo quan hệ giữa phương dao động và phương truyền sóng.",
+      "recognitionSigns": [
+        "Đề mô tả phương dao động của phần tử.",
+        "Yêu cầu phân loại hoặc chọn môi trường truyền."
+      ],
+      "solvingSteps": [
+        "Xác định phương truyền sóng.",
+        "Xác định phương dao động của phần tử.",
+        "So sánh hai phương và kết luận loại sóng."
+      ],
+      "commonMistakes": [
+        "Phân loại theo hình dạng đường sóng vẽ trên giấy.",
+        "Cho rằng sóng âm trong không khí là sóng ngang."
+      ],
+      "theory": [
+        "**Sóng ngang, sóng dọc và môi trường truyền**\nSóng ngang có phương dao động của phần tử vuông góc phương truyền; sóng trên dây căng là ví dụ điển hình. Sóng dọc có phương dao động trùng phương truyền và xuất hiện dưới dạng các vùng nén–dãn; âm trong không khí là sóng dọc. Sóng cơ truyền nhờ tương tác giữa các phần tử môi trường nên không truyền được trong chân không.",
+        "**Mục tiêu cần đạt**\n• Phân loại sóng theo quan hệ giữa phương dao động và phương truyền.\n• Nêu được ví dụ sóng ngang, sóng dọc.\n• Giải thích vì sao sóng cơ cần môi trường vật chất.",
+        "**Ghi nhớ nhanh**\n• Không phân loại sóng chỉ dựa vào đường hình sin được vẽ.\n• Cần xác định cả phương dao động thật của phần tử và phương truyền.\n• Sóng âm có thể truyền trong rắn, lỏng và khí nhưng không truyền trong chân không.",
+        "**Ví dụ: Phân loại sóng trên lò xo**\nCác vòng lò xo nén–dãn dọc theo trục, vùng nén truyền theo trục. Đây là sóng gì?\n**Bước 1:** Phương dao động của vòng lò xo trùng phương truyền.\n**Bước 2:** Kết luận là sóng dọc.\n**Kết luận:** Sóng dọc.",
+        "**Ví dụ: Phân loại từ phương dao động**\nCác vòng lò xo dao động dọc theo trục trong khi vùng nén truyền dọc trục. Đây là sóng gì?\n**Bước 1:** Phương dao động của vòng lò xo song song phương truyền.\n**Bước 2:** Theo định nghĩa, đó là sóng dọc.\n**Kết luận:** Sóng dọc."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt09-st-classify",
+          "name": "Phân loại từ mô tả",
+          "example": "Phân loại sóng trên dây và sóng âm.",
+          "targetQuestionCount": 6
+        },
+        {
+          "id": "phy11-qt09-st-medium",
+          "name": "Loại sóng và môi trường",
+          "example": "Chọn môi trường truyền được sóng cơ.",
+          "targetQuestionCount": 6
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m2-wave-types",
+          "question": "Sóng âm trong không khí thuộc loại nào?",
+          "options": [
+            "Sóng ngang",
+            "Sóng dọc",
+            "Sóng điện từ",
+            "Sóng không mang năng lượng"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Các phần tử không khí dao động theo phương truyền của vùng nén–dãn."
+        },
+        {
+          "id": "phy11-check-m2-wave-types-2",
+          "question": "Sóng trên dây căng thường là sóng ngang vì",
+          "options": [
+            "Phần tử dao động vuông góc phương truyền",
+            "Dây nằm ngang",
+            "Sóng có hình sin",
+            "Tốc độ không đổi"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Phân loại dựa trên quan hệ giữa hai phương, không dựa vào hình vẽ."
+        },
+        {
+          "id": "phy11-check-m2-wave-types-3",
+          "question": "Sóng cơ không truyền được trong",
+          "options": [
+            "Chất rắn",
+            "Chất lỏng",
+            "Chất khí",
+            "Chân không"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Sóng cơ cần môi trường vật chất để truyền biến dạng."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt10",
+      "topicId": "phy11-t02",
+      "name": "Dạng 10: Thực hành đo tần số âm",
+      "slug": "thuc-hanh-do-tan-so-am",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Lựa chọn phương án và xử lí tín hiệu để xác định tần số âm.",
+      "recognitionSigns": [
+        "Đề cho dao động kí, micro hoặc đồ thị tín hiệu âm.",
+        "Yêu cầu xác định chu kì, tần số hay sai số."
+      ],
+      "solvingSteps": [
+        "Xác định đại lượng trực tiếp đọc từ tín hiệu.",
+        "Đo nhiều chu kì và tính giá trị trung bình.",
+        "Đổi sang tần số rồi đánh giá độ phân giải và sai số."
+      ],
+      "commonMistakes": [
+        "Đọc một chu kì quá ngắn gây sai số lớn.",
+        "Nhầm thang thời gian trên màn hình."
+      ],
+      "theory": [
+        "**Thực hành đo tần số của sóng âm**\nMicro biến dao động áp suất của âm thành tín hiệu điện. Dao động kí hoặc phần mềm hiển thị tín hiệu theo thời gian. Cần điều chỉnh tín hiệu đủ rõ, không cắt đỉnh; chọn nhiều chu kì ổn định, đo tổng thời gian rồi chia. Mười một đỉnh liên tiếp chỉ tạo mười khoảng chu kì.",
+        "**Mục tiêu cần đạt**\n• Mô tả được vai trò của nguồn âm, micro và thiết bị hiển thị.\n• Đo nhiều chu kì trên tín hiệu rồi tính tần số.\n• Nhận diện nhiễu, cắt đỉnh và sai thang thời gian.",
+        "**Tần số từ tín hiệu nhiều chu kì**\n$$T=\\frac{\\Delta t}{N},\\qquad f=\\frac{N}{\\Delta t}$$\n• $\\Delta t$: tổng thời gian của N chu kì; đơn vị: s\n• $N$: số khoảng chu kì\n• $f$: tần số âm; đơn vị: Hz\n**Điều kiện áp dụng**\n• Hai mốc đo phải là hai trạng thái cùng pha.",
+        "**Ghi nhớ nhanh**\n• Đọc đúng đơn vị ms và s trên trục thời gian.\n• Đo nhiều chu kì để giảm sai số tương đối.\n• Giảm nhiễu môi trường và tránh tín hiệu bị cắt đỉnh.",
+        "**Ví dụ: Tần số từ dao động kí**\nTín hiệu có 5 chu kì trong 10 ms. Tìm tần số.\n**Bước 1:** $T=10\\text{ ms}/5=2$ ms $=0,002$ s.\n**Bước 2:** $f=1/T=500$ Hz.\n**Kết luận:** $f=500$ Hz.",
+        "**Ví dụ: Đo nhiều chu kì trên tín hiệu**\nTrên màn hình, khoảng từ đỉnh thứ nhất đến đỉnh thứ chín là 16 ms. Tính tần số.\n**Bước 1:** Chín đỉnh tạo tám chu kì: $T=16/8=2$ ms.\n**Bước 2:** Đổi $T=0,002$ s và tính $f=1/T=500$ Hz.\n**Kết luận:** $f=500$ Hz."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt10-st-procedure",
+          "name": "Thiết bị và quy trình đo",
+          "example": "Sắp xếp các bước dùng micro và phần mềm.",
+          "targetQuestionCount": 6
+        },
+        {
+          "id": "phy11-qt10-st-signal",
+          "name": "Xử lí tín hiệu âm",
+          "example": "Tính f từ đồ thị điện áp–thời gian.",
+          "targetQuestionCount": 6
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m2-sound-frequency",
+          "question": "Vì sao nên đo nhiều chu kì tín hiệu?",
+          "options": [
+            "Để đổi tần số nguồn",
+            "Để giảm sai số tương đối",
+            "Để tăng tốc độ âm",
+            "Để loại bỏ micro"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Sai số đọc hai đầu chiếm tỉ lệ nhỏ hơn trên một khoảng thời gian dài."
+        },
+        {
+          "id": "phy11-check-m2-sound-frequency-2",
+          "question": "Đo tám chu kì thay vì một chu kì chủ yếu giúp",
+          "options": [
+            "Tăng tần số thật",
+            "Giảm sai số tương đối khi đọc thời gian",
+            "Đổi loại âm",
+            "Loại mọi sai số hệ thống"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Khoảng đo dài hơn làm sai số đọc chiếm tỉ lệ nhỏ hơn."
+        },
+        {
+          "id": "phy11-check-m2-sound-frequency-3",
+          "question": "$2$ ms bằng",
+          "options": [
+            "$2$ s",
+            "$0,2$ s",
+            "$0,02$ s",
+            "$0,002$ s"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Một mili giây bằng $10^{-3}$ giây."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt11",
+      "topicId": "phy11-t02",
+      "name": "Dạng 11: Phổ và ứng dụng sóng điện từ",
+      "slug": "pho-song-dien-tu",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Sắp xếp các miền phổ và liên hệ bước sóng, tần số, năng lượng với ứng dụng.",
+      "recognitionSigns": [
+        "Đề nêu tên miền sóng điện từ hoặc ứng dụng.",
+        "Yêu cầu so sánh λ, f hay mức năng lượng."
+      ],
+      "solvingSteps": [
+        "Đặt miền sóng vào đúng thứ tự phổ.",
+        "Dùng c = λf để suy ra chiều biến thiên.",
+        "Đối chiếu đặc trưng với ứng dụng hoặc yêu cầu an toàn."
+      ],
+      "commonMistakes": [
+        "Cho rằng sóng điện từ cần môi trường truyền.",
+        "Sắp xếp λ và f cùng chiều."
+      ],
+      "theory": [
+        "**Sóng điện từ và phổ sóng điện từ**\nSóng điện từ là điện từ trường lan truyền trong không gian và không cần môi trường vật chất. Trong chân không, mọi miền phổ truyền với cùng tốc độ c. Theo chiều tăng tần số có thể ghi nhớ: sóng vô tuyến, vi ba, hồng ngoại, ánh sáng nhìn thấy, tử ngoại, tia X, tia gamma; bước sóng biến thiên theo chiều ngược lại.",
+        "**Mục tiêu cần đạt**\n• Nêu được sóng điện từ truyền được trong chân không.\n• Sắp xếp các miền phổ theo tần số hoặc bước sóng.\n• Liên hệ mỗi miền với ứng dụng và yêu cầu an toàn.",
+        "**Quan hệ sóng điện từ trong chân không**\n$$c=\\lambda f\\approx3,0\\times10^8\\ \\text{m/s}$$\n• $c$: tốc độ ánh sáng trong chân không; đơn vị: m/s\n• $\\lambda$: bước sóng; đơn vị: m\n• $f$: tần số; đơn vị: Hz\n**Điều kiện áp dụng**\n• Giá trị c dùng cho chân không, gần đúng cho không khí.",
+        "**Ghi nhớ nhanh**\n• Tần số tăng thì bước sóng giảm.\n• Hồng ngoại liên quan điều khiển từ xa và ảnh nhiệt; tia X dùng tạo ảnh xương.\n• Bức xạ năng lượng cao cần kiểm soát thời gian, khoảng cách và che chắn.",
+        "**Ví dụ: Tần số sóng vô tuyến**\nSóng có bước sóng 3 m trong chân không. Tìm tần số.\n**Bước 1:** $f=c/\\lambda$.\n**Bước 2:** $f=3\\times10^8/3=10^8$ Hz.\n**Kết luận:** $f=100$ MHz.",
+        "**Ví dụ: So sánh tần số từ bước sóng**\nHai bức xạ có bước sóng $600$ nm và $300$ nm trong chân không. So sánh tần số.\n**Bước 1:** Trong chân không, cả hai truyền với cùng tốc độ c.\n**Bước 2:** Vì $f=c/\\lambda$, bước sóng giảm một nửa làm tần số tăng gấp đôi.\n**Kết luận:** Bức xạ 300 nm có tần số gấp đôi bức xạ 600 nm."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt11-st-spectrum",
+          "name": "Thứ tự và đại lượng phổ",
+          "example": "So sánh λ của tia hồng ngoại và tử ngoại.",
+          "targetQuestionCount": 6
+        },
+        {
+          "id": "phy11-qt11-st-application",
+          "name": "Ứng dụng và an toàn",
+          "example": "Ghép miền sóng với ứng dụng phù hợp.",
+          "targetQuestionCount": 6
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m2-em",
+          "question": "Miền nào có bước sóng ngắn hơn ánh sáng nhìn thấy?",
+          "options": [
+            "Hồng ngoại",
+            "Sóng vô tuyến",
+            "Tử ngoại",
+            "Vi ba"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Tử ngoại có tần số cao hơn nên bước sóng ngắn hơn."
+        },
+        {
+          "id": "phy11-check-m2-electromagnetic-2",
+          "question": "Sóng điện từ có truyền được trong chân không không?",
+          "options": [
+            "Có",
+            "Không",
+            "Chỉ tia sáng",
+            "Chỉ sóng vô tuyến"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Sóng điện từ không cần môi trường vật chất."
+        },
+        {
+          "id": "phy11-check-m2-electromagnetic-3",
+          "question": "Trong chân không, bức xạ có bước sóng ngắn hơn thì",
+          "options": [
+            "Tần số nhỏ hơn",
+            "Tần số lớn hơn",
+            "Tốc độ lớn hơn c",
+            "Không có năng lượng"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Do $c=\\lambda f$ không đổi, λ và f biến thiên ngược chiều."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt12",
+      "topicId": "phy11-t02",
+      "name": "Dạng 12: Giao thoa sóng",
+      "slug": "giao-thoa-song",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Xác định điều kiện giao thoa, cực đại–cực tiểu và xử lí dữ liệu giao thoa.",
+      "recognitionSigns": [
+        "Có hai nguồn kết hợp hoặc hệ vân.",
+        "Đề hỏi hiệu đường đi, vị trí cực đại–cực tiểu hoặc khoảng vân."
+      ],
+      "solvingSteps": [
+        "Kiểm tra điều kiện kết hợp và quy ước pha.",
+        "Tính hiệu đường đi hoặc dùng quan hệ hình học phù hợp.",
+        "Áp điều kiện cực đại–cực tiểu rồi kiểm tra miền nghiệm."
+      ],
+      "commonMistakes": [
+        "Dùng sai điều kiện do bỏ qua pha ban đầu.",
+        "Không giới hạn nghiệm trong vùng quan sát."
+      ],
+      "theory": [
+        "**Giao thoa sóng**\nGiao thoa là sự tổng hợp của hai sóng kết hợp tạo nên các vị trí tăng cường và triệt tiêu ổn định. Hai nguồn kết hợp phải cùng tần số và có độ lệch pha không đổi. Với hai nguồn cùng pha, hiệu đường đi quyết định trạng thái tại điểm khảo sát. Trên đoạn nối hai nguồn cùng pha, các cực đại liên tiếp cách nhau $\\lambda/2$.",
+        "**Mục tiêu cần đạt**\n• Nêu được điều kiện hai nguồn kết hợp.\n• Xác định cực đại, cực tiểu với hai nguồn cùng pha.\n• Xử lí khoảng cách giữa các cực trị trên đoạn nối hai nguồn.",
+        "**Điều kiện cực đại – cực tiểu với hai nguồn cùng pha**\n$$\\text{Cực đại: }|d_2-d_1|=k\\lambda;\\qquad \\text{Cực tiểu: }|d_2-d_1|=\\left(k+\\frac12\\right)\\lambda$$\n• $d_1,d_2$: khoảng cách từ điểm khảo sát tới hai nguồn; đơn vị: m\n• $k$: số nguyên\n• $\\lambda$: bước sóng; đơn vị: m\n**Điều kiện áp dụng**\n• Hai nguồn kết hợp và cùng pha.",
+        "**Ghi nhớ nhanh**\n• Cùng tần số chưa đủ; độ lệch pha giữa hai nguồn phải ổn định.\n• Trên trung trực hai nguồn cùng pha, hiệu đường đi bằng 0 nên là cực đại trung tâm.\n• Cần giới hạn nghiệm trong miền hình học của bài.",
+        "**Ví dụ: Xác định cực trị**\nHai nguồn cùng pha có $\\lambda=2$ cm. Tại M, $|d_2-d_1|=5$ cm. M thuộc cực đại hay cực tiểu?\n**Bước 1:** $5\\text{ cm}=2,5\\lambda$.\n**Bước 2:** Hiệu đường đi là nửa nguyên lần bước sóng nên M là cực tiểu.\n**Kết luận:** M là cực tiểu giao thoa.",
+        "**Ví dụ: Nguồn ngược pha**\nHai nguồn ngược pha. Tại M có $|d_2-d_1|=2,5\\lambda$. M là cực đại hay cực tiểu?\n**Bước 1:** Nguồn ngược pha cho cực đại khi hiệu đường đi bằng nửa nguyên lần bước sóng.\n**Bước 2:** $2,5\\lambda=(2+1/2)\\lambda$ nên thỏa điều kiện cực đại.\n**Kết luận:** M là điểm cực đại."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt12-st-path",
+          "name": "Hiệu đường đi và cực trị",
+          "example": "Xác định điểm cực đại từ d2 − d1.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "phy11-qt12-st-fringe",
+          "name": "Khoảng vân và dữ liệu giao thoa",
+          "example": "Tính λ từ khoảng vân.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m2-interference",
+          "question": "Hai nguồn cùng tần số nhưng lệch pha thay đổi ngẫu nhiên có tạo hệ ổn định không?",
+          "options": [
+            "Luôn có",
+            "Không bảo đảm",
+            "Mọi điểm đều cực đại",
+            "Mọi điểm đều cực tiểu"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Nguồn kết hợp cần độ lệch pha không đổi."
+        },
+        {
+          "id": "phy11-check-m2-interference-2",
+          "question": "Hai nguồn cùng pha, trên trung trực của đoạn nối nguồn có",
+          "options": [
+            "Hiệu đường đi bằng 0 và cực đại",
+            "Hiệu đường đi bằng λ/2",
+            "Luôn cực tiểu",
+            "Không giao thoa"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Mọi điểm trên trung trực cách đều hai nguồn nên hai sóng tới cùng pha."
+        },
+        {
+          "id": "phy11-check-m2-interference-3",
+          "question": "Trên đoạn nối hai nguồn cùng pha, hai cực đại liên tiếp cách",
+          "options": [
+            "$\\lambda/4$",
+            "$\\lambda/2$",
+            "$\\lambda$",
+            "$2\\lambda$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hiệu đường đi thay đổi hai lần nhanh hơn tọa độ trên đoạn nối nguồn."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt13",
+      "topicId": "phy11-t02",
+      "name": "Dạng 13: Sóng dừng trên dây",
+      "slug": "song-dung-tren-day",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Nhận diện nút–bụng và vận dụng điều kiện sóng dừng cho các biên khác nhau.",
+      "recognitionSigns": [
+        "Dây có các nút, bụng cố định.",
+        "Đề cho chiều dài dây, số bó sóng hoặc điều kiện đầu dây."
+      ],
+      "solvingSteps": [
+        "Xác định điều kiện tại hai đầu dây.",
+        "Biểu diễn số đoạn λ/2 hoặc λ/4 trên chiều dài.",
+        "Tìm λ, f hoặc số nút–bụng và kiểm tra bằng hình."
+      ],
+      "commonMistakes": [
+        "Dùng cùng công thức cho mọi điều kiện biên.",
+        "Đếm số nút bằng số bó sóng."
+      ],
+      "theory": [
+        "**Sóng dừng trên dây**\nSóng dừng hình thành do chồng chất hai sóng cùng tần số, cùng phương truyền ngược chiều. Nút là vị trí có biên độ bằng 0; bụng là vị trí có biên độ cực đại. Hai nút hoặc hai bụng liên tiếp cách nhau $\\lambda/2$; một nút và bụng gần nhất cách nhau $\\lambda/4$. Đầu cố định là nút, đầu tự do lí tưởng là bụng.",
+        "**Mục tiêu cần đạt**\n• Giải thích sự hình thành sóng dừng từ sóng tới và sóng phản xạ.\n• Nhận biết nút, bụng và khoảng cách giữa chúng.\n• Vận dụng điều kiện biên cho dây hai đầu cố định hoặc một đầu tự do.",
+        "**Dây có hai đầu cùng loại biên**\n$$L=n\\frac{\\lambda}{2},\\qquad n=1,2,3,\\ldots$$\n• $L$: chiều dài dây; đơn vị: m\n• $n$: số bó sóng\n• $\\lambda$: bước sóng; đơn vị: m\n**Điều kiện áp dụng**\n• Hai đầu đều là nút hoặc hai đầu đều là bụng.",
+        "**Dây một đầu nút, một đầu bụng**\n$$L=(2n+1)\\frac{\\lambda}{4},\\qquad n=0,1,2,\\ldots$$\n• $L$: chiều dài dây; đơn vị: m\n• $n$: bậc mode bắt đầu từ 0\n**Điều kiện áp dụng**\n• Một đầu cố định và một đầu tự do lí tưởng.",
+        "**Ghi nhớ nhanh**\n• Phải xác định điều kiện hai đầu trước khi chọn công thức.\n• Dây hai đầu cố định có n bó sóng thì có n + 1 nút.\n• Tần số được tìm tiếp bằng $f=v/\\lambda$.",
+        "**Ví dụ: Ba bó sóng trên dây**\nDây dài 1,2 m, hai đầu cố định, có 3 bó sóng. Tìm bước sóng.\n**Bước 1:** $L=3\\lambda/2$.\n**Bước 2:** $\\lambda=2L/3=0,8$ m.\n**Kết luận:** $\\lambda=0,8$ m.",
+        "**Ví dụ: Tần số cơ bản của dây biên hỗn hợp**\nDây dài 0,60 m, một đầu cố định một đầu tự do, tốc độ sóng 48 m/s. Tính tần số cơ bản.\n**Bước 1:** Mode cơ bản có $L=\\lambda/4$, nên $\\lambda=4L=2,4$ m.\n**Bước 2:** Tính $f_1=v/\\lambda=48/2,4=20$ Hz.\n**Kết luận:** $f_1=20$ Hz."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt13-st-fixed",
+          "name": "Hai đầu cùng loại biên",
+          "example": "Dây hai đầu cố định có n bó sóng.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "phy11-qt13-st-mixed",
+          "name": "Hai đầu khác loại biên",
+          "example": "Một đầu cố định, một đầu tự do.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m2-standing",
+          "question": "Khoảng cách giữa hai nút liên tiếp là bao nhiêu?",
+          "options": [
+            "$\\lambda/4$",
+            "$\\lambda/2$",
+            "$\\lambda$",
+            "$2\\lambda$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Hai nút liên tiếp cách nhau nửa bước sóng."
+        },
+        {
+          "id": "phy11-check-m2-standing-wave-2",
+          "question": "Dây hai đầu cố định có 4 bó sóng thì có bao nhiêu nút kể cả hai đầu?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "8"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Số nút bằng số bó cộng một."
+        },
+        {
+          "id": "phy11-check-m2-standing-wave-3",
+          "question": "Biên hỗn hợp chỉ cho phép các họa âm",
+          "options": [
+            "Mọi số nguyên",
+            "Số lẻ",
+            "Số chẵn",
+            "Số nguyên tố"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Điều kiện $L=(2n+1)\\lambda/4$ tạo các tần số lẻ của tần số cơ bản."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt14",
+      "topicId": "phy11-t02",
+      "name": "Dạng 14: Thực hành đo tốc độ truyền âm",
+      "slug": "thuc-hanh-do-toc-do-am",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Thiết kế, xử lí dữ liệu và đánh giá phép đo tốc độ truyền âm.",
+      "recognitionSigns": [
+        "Đề cho ống cộng hưởng, micro hoặc thời gian truyền.",
+        "Yêu cầu tính tốc độ và đánh giá sai số."
+      ],
+      "solvingSteps": [
+        "Xác định đại lượng đo trực tiếp và mô hình liên hệ.",
+        "Xử lí nhiều lần đo hoặc đồ thị để tìm λ hay thời gian.",
+        "Tính tốc độ, nêu sai số chính và cách cải thiện."
+      ],
+      "commonMistakes": [
+        "Không hiệu chỉnh chiều dài hữu hiệu của cột khí khi cần.",
+        "Dùng một lần đo duy nhất để kết luận."
+      ],
+      "theory": [
+        "**Thực hành đo tốc độ truyền âm**\nCó thể đo tốc độ âm bằng ống cộng hưởng hoặc bằng hai micro. Trong ống một đầu kín, hiệu hai chiều dài cộng hưởng liên tiếp bằng nửa bước sóng; cách lấy hiệu giúp giảm ảnh hưởng của hiệu chỉnh đầu ống. Với hai micro, đo khoảng cách và độ trễ của cùng một xung âm. Nhiệt độ không khí, vị trí cảm biến và độ phân giải thời gian là các nguồn sai số chính.",
+        "**Mục tiêu cần đạt**\n• Mô tả phép đo bằng cộng hưởng hoặc độ trễ thời gian.\n• Xử lí nhiều lần đo để tìm bước sóng hoặc tốc độ.\n• Nêu nguồn sai số và biện pháp cải thiện.",
+        "**Phương pháp cộng hưởng**\n$$\\lambda=2\\Delta L,\\qquad v=\\lambda f$$\n• $\\Delta L$: hiệu hai chiều dài cộng hưởng liên tiếp; đơn vị: m\n• $\\lambda$: bước sóng âm; đơn vị: m\n• $f$: tần số nguồn âm; đơn vị: Hz\n**Điều kiện áp dụng**\n• Hai trạng thái cộng hưởng phải liên tiếp và cùng điều kiện thí nghiệm.",
+        "**Phương pháp độ trễ**\n$$v=\\frac{\\Delta s}{\\Delta t}$$\n• $\\Delta s$: khoảng cách chênh lệch đường truyền; đơn vị: m\n• $\\Delta t$: độ trễ thời gian; đơn vị: s\n**Điều kiện áp dụng**\n• Hai cảm biến ghi cùng một tín hiệu và đồng bộ thời gian.",
+        "**Ghi nhớ nhanh**\n• Đổi mili giây sang giây trước khi tính.\n• Dùng nhiều cặp cộng hưởng hoặc nhiều lần đo và lấy trung bình.\n• Khoảng cách lớn hơn có thể giảm sai số tương đối do độ phân giải thời gian, nếu tín hiệu vẫn đủ rõ.",
+        "**Ví dụ: Đo bằng hai micro**\nHai micro cách nhau 1,70 m nhận cùng xung lệch nhau 5,0 ms. Tìm tốc độ âm.\n**Bước 1:** $5,0$ ms $=0,005$ s.\n**Bước 2:** $v=1,70/0,005=340$ m/s.\n**Kết luận:** $v=340$ m/s.",
+        "**Ví dụ: Lấy trung bình nhiều lần đo**\nBốn lần đo tốc độ âm cho 338, 342, 341 và 339 m/s. Tính giá trị trung bình.\n**Bước 1:** Cộng bốn kết quả được 1360 m/s.\n**Bước 2:** Chia cho 4: $\\bar v=340$ m/s.\n**Kết luận:** $\\bar v=340$ m/s."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt14-st-resonance",
+          "name": "Phương pháp cộng hưởng",
+          "example": "Tìm λ từ hai vị trí cộng hưởng liên tiếp.",
+          "targetQuestionCount": 6
+        },
+        {
+          "id": "phy11-qt14-st-time",
+          "name": "Phương pháp thời gian truyền",
+          "example": "Tính v từ quãng đường và độ trễ.",
+          "targetQuestionCount": 6
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m2-sound-speed",
+          "question": "Hai vị trí cộng hưởng liên tiếp trong ống cách nhau đại lượng nào?",
+          "options": [
+            "$\\lambda/4$",
+            "$\\lambda/2$",
+            "$\\lambda$",
+            "$2\\lambda$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Các mode cộng hưởng liên tiếp hơn kém nhau nửa bước sóng."
+        },
+        {
+          "id": "phy11-check-m2-sound-speed-2",
+          "question": "Trong phương pháp hai micro, tốc độ âm được tính bằng",
+          "options": [
+            "$v=\\Delta t/s$",
+            "$v=s/\\Delta t$",
+            "$v=s\\Delta t$",
+            "$v=1/(s\\Delta t)$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Tốc độ bằng quãng đường truyền chia độ trễ thời gian."
+        },
+        {
+          "id": "phy11-check-m2-sound-speed-3",
+          "question": "Tăng khoảng cách hai micro, vẫn đo chính xác độ trễ, thường giúp",
+          "options": [
+            "Giảm sai số tương đối thời gian",
+            "Tốc độ thật tăng",
+            "Âm đổi tần số",
+            "Không cần đổi ms sang s"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Độ trễ lớn hơn làm cùng sai số tuyệt đối thời gian chiếm tỉ lệ nhỏ hơn."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt15",
+      "topicId": "phy11-t03",
+      "name": "Dạng 15: Lực Coulomb giữa các điện tích điểm",
+      "slug": "luc-coulomb",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Xác định phương, chiều, độ lớn và tổng hợp lực tương tác điện.",
+      "recognitionSigns": [
+        "Có các điện tích điểm và khoảng cách giữa chúng.",
+        "Yêu cầu lực điện hoặc trạng thái cân bằng."
+      ],
+      "solvingSteps": [
+        "Vẽ vị trí và xác định dấu từng điện tích.",
+        "Tính từng lực Coulomb trong cùng hệ đơn vị.",
+        "Tổng hợp vector lực và kiểm tra chiều."
+      ],
+      "commonMistakes": [
+        "Bỏ giá trị tuyệt đối khi tính độ lớn.",
+        "Cộng đại số lực mà không xét phương chiều."
+      ],
+      "theory": [
+        "**Điện tích và định luật Coulomb**\nHai điện tích cùng dấu đẩy nhau, trái dấu hút nhau. Lực Coulomb có phương trùng đường thẳng nối hai điện tích; hai lực tương tác tạo thành một cặp trực đối. Khi có nhiều điện tích nguồn, lực tổng hợp tác dụng lên điện tích khảo sát bằng tổng vector các lực thành phần.",
+        "**Mục tiêu cần đạt**\n• Xác định đúng phương, chiều của lực tương tác giữa hai điện tích điểm.\n• Tính độ lớn lực Coulomb trong không khí hoặc chân không.\n• Tổng hợp các lực điện bằng quy tắc vector.",
+        "**Độ lớn lực Coulomb**\n$$F=k\\frac{|q_1q_2|}{r^2}$$\n• $F$: độ lớn lực tương tác điện; đơn vị: N\n• $q_1,q_2$: các điện tích điểm; đơn vị: C\n• $r$: khoảng cách giữa hai điện tích; đơn vị: m\n• $k$: hằng số Coulomb; đơn vị: N·m²/C²; $k\\approx9,0\\times10^9$ trong chân không\n**Điều kiện áp dụng**\n• Các vật được coi là điện tích điểm; công thức trên dùng cho chân không hoặc gần đúng trong không khí.\n**Ghi chú**\n• Giá trị tuyệt đối chỉ dùng để tính độ lớn; chiều lực phải xét từ dấu điện tích.",
+        "**Nguyên lí chồng chất lực điện**\n$$\\vec F=\\vec F_1+\\vec F_2+\\cdots$$\n• $\\vec F_i$: lực do điện tích nguồn thứ i gây ra; đơn vị: N\n**Điều kiện áp dụng**\n• Các lực thành phần đều tác dụng lên cùng điện tích khảo sát.",
+        "**Ghi nhớ nhanh**\n• Đổi microcoulomb, nanocoulomb và centimet về đơn vị SI trước khi thay số.\n• Không cộng độ lớn nếu các lực không cùng phương, cùng chiều.\n• Lực Coulomb tỉ lệ nghịch với bình phương khoảng cách.",
+        "**Ví dụ: Lực giữa hai điện tích**\nHai điện tích $q_1=2\\,\\mu C$, $q_2=-3\\,\\mu C$ cách nhau 0,30 m trong không khí. Tính lực tương tác.\n**Bước 1:** Hai điện tích trái dấu nên hút nhau dọc theo đường nối hai điện tích.\n**Bước 2:** Thay số: $F=9\\times10^9\\,|2\\times10^{-6}\\cdot(-3\\times10^{-6})|/0,30^2=0,60$ N.\n**Kết luận:** Hai điện tích hút nhau với lực có độ lớn $0,60$ N.",
+        "**Ví dụ: Kiểm tra mô hình: Điện tích và định luật Coulomb**\nKhi xử lí một tình huống thuộc “Điện tích và định luật Coulomb”, cần kiểm tra những điểm nào trước khi kết luận?\n**Bước 1:** Đổi microcoulomb, nanocoulomb và centimet về đơn vị SI trước khi thay số.\n**Bước 2:** Không cộng độ lớn nếu các lực không cùng phương, cùng chiều.\n**Bước 3:** Đổi đơn vị, thực hiện phép tính và kiểm tra chiều hoặc dấu của kết quả.\n**Kết luận:** Lực Coulomb tỉ lệ nghịch với bình phương khoảng cách."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt15-st-pair",
+          "name": "Tương tác hai điện tích",
+          "example": "Tính lực giữa q1 và q2.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt15-st-superposition",
+          "name": "Tổng hợp nhiều lực điện",
+          "example": "Tìm hợp lực lên một điện tích.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m3-coulomb",
+          "question": "Giữ nguyên hai điện tích và tăng khoảng cách lên gấp đôi thì lực Coulomb thay đổi thế nào?",
+          "options": [
+            "Tăng 2 lần",
+            "Giảm 2 lần",
+            "Giảm 4 lần",
+            "Không đổi"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Vì $F$ tỉ lệ nghịch với $r^2$, khoảng cách gấp đôi làm lực còn một phần tư."
+        },
+        {
+          "id": "phy11-theory-m3-coulomb-check-2",
+          "question": "Điểm cần ghi nhớ khi học “Điện tích và định luật Coulomb” là",
+          "options": [
+            "Đổi microcoulomb, nanocoulomb và centimet về đơn vị SI trước khi thay số.",
+            "Bỏ qua dấu của điện tích.",
+            "Không cần đổi đơn vị.",
+            "Luôn cộng các độ lớn như số vô hướng."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Đổi microcoulomb, nanocoulomb và centimet về đơn vị SI trước khi thay số."
+        },
+        {
+          "id": "phy11-theory-m3-coulomb-check-3",
+          "question": "Thao tác kiểm tra phù hợp nhất sau khi giải bài “Điện tích và định luật Coulomb” là",
+          "options": [
+            "Chỉ kiểm tra chữ số cuối.",
+            "Bỏ qua chiều vector.",
+            "Kiểm tra đơn vị, dấu và điều kiện áp dụng.",
+            "Thay mọi điện tích bằng số dương."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kết quả vật lí chỉ có ý nghĩa khi đúng đơn vị, dấu, chiều và điều kiện mô hình."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt16",
+      "topicId": "phy11-t03",
+      "name": "Dạng 16: Khái niệm và vector cường độ điện trường",
+      "slug": "khai-niem-cuong-do-dien-truong",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân biệt điện trường với lực điện và xác định vector E từ lực tác dụng lên điện tích thử.",
+      "recognitionSigns": [
+        "Đề hỏi điện trường tại một điểm hoặc lực lên điện tích thử.",
+        "Có quan hệ F = qE."
+      ],
+      "solvingSteps": [
+        "Xác định điện tích nguồn và điểm khảo sát.",
+        "Dùng định nghĩa vector E = F/q với quy ước dấu.",
+        "Tách đặc trưng điện trường khỏi điện tích thử."
+      ],
+      "commonMistakes": [
+        "Cho rằng E phụ thuộc điện tích thử.",
+        "Quên đổi chiều vector khi điện tích thử âm."
+      ],
+      "theory": [
+        "**Điện trường và vector cường độ điện trường**\nĐiện trường tồn tại xung quanh điện tích và tác dụng lực điện lên điện tích khác đặt trong nó. Cường độ điện trường tại một điểm đặc trưng cho khả năng tác dụng lực của điện trường tại điểm đó, do các điện tích nguồn quyết định và không phụ thuộc điện tích thử.",
+        "**Mục tiêu cần đạt**\n• Nêu được điện trường là môi trường truyền tương tác điện.\n• Phân biệt cường độ điện trường với lực điện.\n• Xác định lực tác dụng lên điện tích dương hoặc âm đặt trong điện trường.",
+        "**Định nghĩa cường độ điện trường**\n$$\\vec E=\\frac{\\vec F}{q_0}$$\n• $\\vec E$: vector cường độ điện trường; đơn vị: N/C hoặc V/m\n• $\\vec F$: lực điện tác dụng lên điện tích thử dương; đơn vị: N\n• $q_0$: điện tích thử dương đủ nhỏ; đơn vị: C\n**Điều kiện áp dụng**\n• Điện tích thử đủ nhỏ để không làm thay đổi đáng kể điện trường đang khảo sát.",
+        "**Lực điện trong điện trường**\n$$\\vec F=q\\vec E$$\n• $q$: điện tích đặt trong điện trường; đơn vị: C\n**Điều kiện áp dụng**\n• Nếu q dương, lực cùng chiều E; nếu q âm, lực ngược chiều E.",
+        "**Ghi nhớ nhanh**\n• E là đặc trưng của điện trường; F còn phụ thuộc điện tích q đặt vào trường.\n• Chiều của E là chiều lực tác dụng lên điện tích thử dương.\n• Đơn vị N/C tương đương V/m.",
+        "**Ví dụ: Lực lên điện tích âm**\nTại một điểm có $E=2,0\\times10^4$ N/C hướng sang phải. Đặt electron có điện tích $-1,6\\times10^{-19}$ C tại đó.\n**Bước 1:** Tính độ lớn $F=|q|E=1,6\\times10^{-19}\\cdot2,0\\times10^4=3,2\\times10^{-15}$ N.\n**Bước 2:** Electron mang điện âm nên lực ngược chiều điện trường.\n**Kết luận:** $F=3,2\\times10^{-15}$ N, hướng sang trái.",
+        "**Ví dụ: Kiểm tra mô hình: Điện trường và vector cường độ điện trường**\nKhi xử lí một tình huống thuộc “Điện trường và vector cường độ điện trường”, cần kiểm tra những điểm nào trước khi kết luận?\n**Bước 1:** E là đặc trưng của điện trường; F còn phụ thuộc điện tích q đặt vào trường.\n**Bước 2:** Chiều của E là chiều lực tác dụng lên điện tích thử dương.\n**Bước 3:** Đổi đơn vị, thực hiện phép tính và kiểm tra chiều hoặc dấu của kết quả.\n**Kết luận:** Đơn vị N/C tương đương V/m."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt16-st-concept",
+          "name": "Nhận thức khái niệm điện trường",
+          "example": "Phân biệt E và F.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt16-st-force",
+          "name": "Quan hệ lực–điện trường",
+          "example": "Tìm F tác dụng lên điện tích q.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m3-field-concept",
+          "question": "Thay điện tích thử dương bằng điện tích thử nhỏ hơn tại cùng điểm thì E thay đổi thế nào?",
+          "options": [
+            "Tăng",
+            "Giảm",
+            "Đổi chiều",
+            "Không đổi"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Cường độ điện trường do điện tích nguồn quyết định, không phụ thuộc điện tích thử."
+        },
+        {
+          "id": "phy11-theory-m3-field-concept-check-2",
+          "question": "Điểm cần ghi nhớ khi học “Điện trường và vector cường độ điện trường” là",
+          "options": [
+            "E là đặc trưng của điện trường; F còn phụ thuộc điện tích q đặt vào trường.",
+            "Bỏ qua dấu của điện tích.",
+            "Không cần đổi đơn vị.",
+            "Luôn cộng các độ lớn như số vô hướng."
+          ],
+          "correctAnswer": "A",
+          "explanation": "E là đặc trưng của điện trường; F còn phụ thuộc điện tích q đặt vào trường."
+        },
+        {
+          "id": "phy11-theory-m3-field-concept-check-3",
+          "question": "Thao tác kiểm tra phù hợp nhất sau khi giải bài “Điện trường và vector cường độ điện trường” là",
+          "options": [
+            "Chỉ kiểm tra chữ số cuối.",
+            "Bỏ qua chiều vector.",
+            "Kiểm tra đơn vị, dấu và điều kiện áp dụng.",
+            "Thay mọi điện tích bằng số dương."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kết quả vật lí chỉ có ý nghĩa khi đúng đơn vị, dấu, chiều và điều kiện mô hình."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt17",
+      "topicId": "phy11-t03",
+      "name": "Dạng 17: Điện trường của điện tích điểm và hệ điện tích",
+      "slug": "dien-truong-dien-tich-diem",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Vận dụng E = k|Q|/r² và nguyên lí chồng chất điện trường.",
+      "recognitionSigns": [
+        "Yêu cầu E tại một điểm do một hoặc nhiều điện tích.",
+        "Dữ kiện có vị trí hình học và khoảng cách."
+      ],
+      "solvingSteps": [
+        "Vẽ từng vector điện trường thành phần.",
+        "Tính độ lớn từng thành phần bằng E = k|Q|/r².",
+        "Tổng hợp vector theo hình học hoặc tọa độ."
+      ],
+      "commonMistakes": [
+        "Gán chiều E theo dấu điện tích thử.",
+        "Cộng độ lớn khi các vector không cùng phương."
+      ],
+      "theory": [
+        "**Điện trường của điện tích điểm và hệ điện tích**\nĐiện trường của điện tích điểm có phương theo đường nối điện tích nguồn với điểm khảo sát. Vector E hướng ra xa điện tích dương và hướng về điện tích âm. Điện trường tổng hợp của nhiều điện tích bằng tổng vector các điện trường thành phần.",
+        "**Mục tiêu cần đạt**\n• Tính điện trường do một điện tích điểm gây ra.\n• Xác định đúng chiều vector điện trường theo dấu điện tích nguồn.\n• Vận dụng nguyên lí chồng chất điện trường.",
+        "**Điện trường của điện tích điểm**\n$$E=k\\frac{|Q|}{r^2}$$\n• $Q$: điện tích nguồn; đơn vị: C\n• $r$: khoảng cách từ nguồn đến điểm khảo sát; đơn vị: m\n• $E$: độ lớn cường độ điện trường; đơn vị: N/C\n**Điều kiện áp dụng**\n• Nguồn được coi là điện tích điểm; môi trường là chân không hoặc gần đúng không khí.",
+        "**Nguyên lí chồng chất điện trường**\n$$\\vec E=\\vec E_1+\\vec E_2+\\cdots$$\n• $\\vec E_i$: điện trường do nguồn thứ i gây ra; đơn vị: N/C\n**Điều kiện áp dụng**\n• Các vector thành phần được xác định tại cùng một điểm khảo sát.",
+        "**Ghi nhớ nhanh**\n• Chiều E phụ thuộc dấu điện tích nguồn, không phụ thuộc điện tích thử.\n• Tại điểm giữa hai điện tích cùng dấu bằng nhau, hai vector E triệt tiêu.\n• Với các vector vuông góc, dùng định lí Pythagore để tính độ lớn tổng hợp.",
+        "**Ví dụ: Điện trường của điện tích điểm**\nĐiện tích $Q=-4\\,\\text{nC}$. Tìm E tại điểm cách Q 0,20 m.\n**Bước 1:** Tính $E=9\\times10^9\\cdot4\\times10^{-9}/0,20^2=900$ N/C.\n**Bước 2:** Q âm nên vector E hướng từ điểm khảo sát về Q.\n**Kết luận:** $E=900$ N/C, hướng về điện tích Q.",
+        "**Ví dụ: Kiểm tra mô hình: Điện trường của điện tích điểm và hệ điện tích**\nKhi xử lí một tình huống thuộc “Điện trường của điện tích điểm và hệ điện tích”, cần kiểm tra những điểm nào trước khi kết luận?\n**Bước 1:** Chiều E phụ thuộc dấu điện tích nguồn, không phụ thuộc điện tích thử.\n**Bước 2:** Tại điểm giữa hai điện tích cùng dấu bằng nhau, hai vector E triệt tiêu.\n**Bước 3:** Đổi đơn vị, thực hiện phép tính và kiểm tra chiều hoặc dấu của kết quả.\n**Kết luận:** Với các vector vuông góc, dùng định lí Pythagore để tính độ lớn tổng hợp."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt17-st-single",
+          "name": "Điện trường một điện tích điểm",
+          "example": "Tìm E cách Q một khoảng r.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "phy11-qt17-st-system",
+          "name": "Chồng chất điện trường",
+          "example": "Tìm E tổng hợp của hai điện tích.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m3-point-charge-field",
+          "question": "Vector điện trường do điện tích âm gây ra tại một điểm hướng thế nào?",
+          "options": [
+            "Ra xa điện tích",
+            "Về phía điện tích",
+            "Luôn hướng lên",
+            "Phụ thuộc điện tích thử"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Đường sức và vector E hướng vào điện tích âm."
+        },
+        {
+          "id": "phy11-theory-m3-point-charge-field-check-2",
+          "question": "Điểm cần ghi nhớ khi học “Điện trường của điện tích điểm và hệ điện tích” là",
+          "options": [
+            "Chiều E phụ thuộc dấu điện tích nguồn, không phụ thuộc điện tích thử.",
+            "Bỏ qua dấu của điện tích.",
+            "Không cần đổi đơn vị.",
+            "Luôn cộng các độ lớn như số vô hướng."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Chiều E phụ thuộc dấu điện tích nguồn, không phụ thuộc điện tích thử."
+        },
+        {
+          "id": "phy11-theory-m3-point-charge-field-check-3",
+          "question": "Thao tác kiểm tra phù hợp nhất sau khi giải bài “Điện trường của điện tích điểm và hệ điện tích” là",
+          "options": [
+            "Chỉ kiểm tra chữ số cuối.",
+            "Bỏ qua chiều vector.",
+            "Kiểm tra đơn vị, dấu và điều kiện áp dụng.",
+            "Thay mọi điện tích bằng số dương."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kết quả vật lí chỉ có ý nghĩa khi đúng đơn vị, dấu, chiều và điều kiện mô hình."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt18",
+      "topicId": "phy11-t03",
+      "name": "Dạng 18: Đường sức và phổ điện trường",
+      "slug": "duong-suc-dien",
+      "difficulty": "medium",
+      "examFrequency": "medium",
+      "description": "Đọc, vẽ và đánh giá tính hợp lệ của đường sức điện.",
+      "recognitionSigns": [
+        "Đề cho hình đường sức hoặc yêu cầu phác họa.",
+        "Yêu cầu so sánh độ mạnh điện trường theo mật độ đường sức."
+      ],
+      "solvingSteps": [
+        "Xác định điện tích nguồn và tính đối xứng.",
+        "Áp dụng chiều, tiếp tuyến và quy tắc không cắt nhau.",
+        "Đối chiếu mật độ đường sức với độ lớn E."
+      ],
+      "commonMistakes": [
+        "Cho các đường sức cắt nhau.",
+        "Cho rằng hạt mang điện luôn chuyển động đúng theo đường sức."
+      ],
+      "theory": [
+        "**Đường sức điện và phổ đường sức**\nĐường sức điện là đường có tiếp tuyến tại mỗi điểm trùng phương và chiều của vector E tại điểm đó. Đường sức đi ra từ điện tích dương và đi vào điện tích âm hoặc kéo dài tới vô cực. Nơi đường sức được vẽ mau hơn biểu diễn điện trường mạnh hơn.",
+        "**Mục tiêu cần đạt**\n• Đọc được chiều và độ mạnh tương đối từ hình đường sức.\n• Vẽ đường sức của điện tích điểm, hai điện tích và điện trường đều.\n• Nhận diện hình biểu diễn đường sức không hợp lệ.",
+        "**Ghi nhớ nhanh**\n• Các đường sức không cắt nhau vì tại một điểm E chỉ có một phương, chiều xác định.\n• Đường sức điện tĩnh không phải quỹ đạo bắt buộc của hạt mang điện.\n• Điện trường đều được biểu diễn bằng các đường thẳng song song, cùng chiều và cách đều.",
+        "**Ví dụ: Đánh giá hình đường sức**\nMột hình vẽ có hai đường sức cắt nhau tại điểm M. Hình đó có hợp lệ không?\n**Bước 1:** Tại M, tiếp tuyến của mỗi đường sức cho một hướng của E.\n**Bước 2:** Hai đường cắt nhau sẽ cho hai hướng E khác nhau tại cùng một điểm, điều này không thể xảy ra.\n**Kết luận:** Hình không hợp lệ; các đường sức điện không cắt nhau.",
+        "**Ví dụ: Kiểm tra mô hình: Đường sức điện và phổ đường sức**\nKhi xử lí một tình huống thuộc “Đường sức điện và phổ đường sức”, cần kiểm tra những điểm nào trước khi kết luận?\n**Bước 1:** Các đường sức không cắt nhau vì tại một điểm E chỉ có một phương, chiều xác định.\n**Bước 2:** Đường sức điện tĩnh không phải quỹ đạo bắt buộc của hạt mang điện.\n**Bước 3:** Đổi đơn vị, thực hiện phép tính và kiểm tra chiều hoặc dấu của kết quả.\n**Kết luận:** Điện trường đều được biểu diễn bằng các đường thẳng song song, cùng chiều và cách đều."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt18-st-read",
+          "name": "Đọc phổ đường sức",
+          "example": "So sánh E tại hai vùng.",
+          "targetQuestionCount": 6
+        },
+        {
+          "id": "phy11-qt18-st-draw",
+          "name": "Vẽ và kiểm tra đường sức",
+          "example": "Chọn hình đúng của lưỡng cực.",
+          "targetQuestionCount": 6
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m3-field-lines",
+          "question": "Vùng có đường sức mau hơn biểu diễn điều gì?",
+          "options": [
+            "Điện thế luôn bằng không",
+            "Điện trường mạnh hơn",
+            "Không có lực điện",
+            "Điện tích thử âm"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Mật độ đường sức được dùng để biểu diễn độ lớn tương đối của điện trường."
+        },
+        {
+          "id": "phy11-theory-m3-field-lines-check-2",
+          "question": "Điểm cần ghi nhớ khi học “Đường sức điện và phổ đường sức” là",
+          "options": [
+            "Các đường sức không cắt nhau vì tại một điểm E chỉ có một phương, chiều xác định.",
+            "Bỏ qua dấu của điện tích.",
+            "Không cần đổi đơn vị.",
+            "Luôn cộng các độ lớn như số vô hướng."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Các đường sức không cắt nhau vì tại một điểm E chỉ có một phương, chiều xác định."
+        },
+        {
+          "id": "phy11-theory-m3-field-lines-check-3",
+          "question": "Thao tác kiểm tra phù hợp nhất sau khi giải bài “Đường sức điện và phổ đường sức” là",
+          "options": [
+            "Chỉ kiểm tra chữ số cuối.",
+            "Bỏ qua chiều vector.",
+            "Kiểm tra đơn vị, dấu và điều kiện áp dụng.",
+            "Thay mọi điện tích bằng số dương."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kết quả vật lí chỉ có ý nghĩa khi đúng đơn vị, dấu, chiều và điều kiện mô hình."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt19",
+      "topicId": "phy11-t03",
+      "name": "Dạng 19: Điện trường đều và hiệu điện thế",
+      "slug": "dien-truong-deu",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng E = U/d, lực điện và công trong điện trường đều.",
+      "recognitionSigns": [
+        "Hai bản phẳng song song hoặc điện trường có E không đổi.",
+        "Dữ kiện gồm U, d, E hoặc q."
+      ],
+      "solvingSteps": [
+        "Xác định chiều điện trường và khoảng cách theo phương đường sức.",
+        "Dùng E = |U|/d và F = |q|E.",
+        "Giữ đúng dấu khi tính công hoặc hiệu điện thế."
+      ],
+      "commonMistakes": [
+        "Dùng độ dài đường đi thay cho hình chiếu theo đường sức.",
+        "Bỏ đổi đơn vị khoảng cách."
+      ],
+      "theory": [
+        "**Điện trường đều**\nĐiện trường đều có vector E như nhau tại mọi điểm. Giữa hai bản kim loại phẳng song song tích điện trái dấu, bỏ qua hiệu ứng mép, điện trường gần đều và hướng từ bản dương sang bản âm. Điện thế giảm theo chiều điện trường.",
+        "**Mục tiêu cần đạt**\n• Nhận biết điện trường đều từ vector hoặc đường sức.\n• Vận dụng quan hệ giữa E, hiệu điện thế và khoảng cách.\n• Tính lực và công của lực điện trong điện trường đều.",
+        "**Cường độ điện trường giữa hai bản**\n$$E=\\frac{|U|}{d}$$\n• $U$: hiệu điện thế giữa hai bản; đơn vị: V\n• $d$: khoảng cách giữa hai bản theo phương đường sức; đơn vị: m\n**Điều kiện áp dụng**\n• Điện trường đều; d đo theo phương của đường sức.",
+        "**Công của lực điện**\n$$A=qEs\\cos\\alpha$$\n• $s$: độ dài độ dời; đơn vị: m\n• $\\alpha$: góc giữa độ dời và vector E\n**Điều kiện áp dụng**\n• E không đổi trên toàn bộ độ dời.",
+        "**Ghi nhớ nhanh**\n• Khoảng cách d trong $E=|U|/d$ không phải một đường đi tùy ý.\n• Điện tích dương chịu lực cùng chiều E; điện tích âm chịu lực ngược chiều E.\n• Độ dời vuông góc E thì công của lực điện bằng không.",
+        "**Ví dụ: Điện trường giữa hai bản**\nHai bản song song cách nhau 2,0 cm, hiệu điện thế 600 V. Tính E.\n**Bước 1:** Đổi $d=2,0\\times10^{-2}$ m.\n**Bước 2:** Tính $E=600/(2,0\\times10^{-2})=3,0\\times10^4$ V/m.\n**Kết luận:** $E=3,0\\times10^4$ V/m.",
+        "**Ví dụ: Kiểm tra mô hình: Điện trường đều**\nKhi xử lí một tình huống thuộc “Điện trường đều”, cần kiểm tra những điểm nào trước khi kết luận?\n**Bước 1:** Khoảng cách d trong $E=|U|/d$ không phải một đường đi tùy ý.\n**Bước 2:** Điện tích dương chịu lực cùng chiều E; điện tích âm chịu lực ngược chiều E.\n**Bước 3:** Đổi đơn vị, thực hiện phép tính và kiểm tra chiều hoặc dấu của kết quả.\n**Kết luận:** Độ dời vuông góc E thì công của lực điện bằng không."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt19-st-field",
+          "name": "E, U và khoảng cách",
+          "example": "Tính E giữa hai bản tụ.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt19-st-force-work",
+          "name": "Lực và công điện",
+          "example": "Tính công dịch chuyển điện tích.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m3-uniform-field",
+          "question": "Trong điện trường đều, dịch chuyển vuông góc với đường sức thì công lực điện bằng bao nhiêu?",
+          "options": [
+            "$qEs$",
+            "$-qEs$",
+            "0",
+            "Phụ thuộc khối lượng"
+          ],
+          "correctAnswer": "C",
+          "explanation": "Khi $\\alpha=90^\\circ$ thì $\\cos\\alpha=0$."
+        },
+        {
+          "id": "phy11-theory-m3-uniform-field-check-2",
+          "question": "Điểm cần ghi nhớ khi học “Điện trường đều” là",
+          "options": [
+            "Khoảng cách d trong $E=|U|/d$ không phải một đường đi tùy ý.",
+            "Bỏ qua dấu của điện tích.",
+            "Không cần đổi đơn vị.",
+            "Luôn cộng các độ lớn như số vô hướng."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Khoảng cách d trong $E=|U|/d$ không phải một đường đi tùy ý."
+        },
+        {
+          "id": "phy11-theory-m3-uniform-field-check-3",
+          "question": "Thao tác kiểm tra phù hợp nhất sau khi giải bài “Điện trường đều” là",
+          "options": [
+            "Chỉ kiểm tra chữ số cuối.",
+            "Bỏ qua chiều vector.",
+            "Kiểm tra đơn vị, dấu và điều kiện áp dụng.",
+            "Thay mọi điện tích bằng số dương."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kết quả vật lí chỉ có ý nghĩa khi đúng đơn vị, dấu, chiều và điều kiện mô hình."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt20",
+      "topicId": "phy11-t03",
+      "name": "Dạng 20: Chuyển động điện tích trong điện trường đều",
+      "slug": "chuyen-dong-dien-tich-trong-dien-truong",
+      "difficulty": "hard",
+      "examFrequency": "medium",
+      "description": "Phân tích chuyển động thẳng biến đổi hoặc quỹ đạo cong của hạt mang điện.",
+      "recognitionSigns": [
+        "Hạt mang điện đi vào vùng điện trường đều.",
+        "Vận tốc ban đầu cùng phương hoặc vuông góc E."
+      ],
+      "solvingSteps": [
+        "Xác định chiều lực từ dấu q và vector E.",
+        "Tách chuyển động theo các trục và tính gia tốc qE/m.",
+        "Dùng phương trình động học để tìm quỹ đạo hoặc trạng thái."
+      ],
+      "commonMistakes": [
+        "Cho lực cùng chiều E với mọi điện tích.",
+        "Trộn chuyển động theo hai trục."
+      ],
+      "theory": [
+        "**Chuyển động của điện tích trong điện trường đều**\nTrong điện trường đều và bỏ qua trọng lực, hạt mang điện chịu lực điện không đổi nên có gia tốc không đổi. Nếu vận tốc đầu cùng phương E, chuyển động là thẳng biến đổi đều. Nếu vận tốc đầu vuông góc E, chuyển động theo phương ban đầu là đều và theo phương lực điện là biến đổi đều, tạo quỹ đạo parabol.",
+        "**Mục tiêu cần đạt**\n• Xác định gia tốc của hạt mang điện.\n• Phân tích chuyển động dọc hoặc vuông góc đường sức.\n• Viết phương trình quỹ đạo trong trường hợp phù hợp.",
+        "**Gia tốc của hạt mang điện**\n$$\\vec a=\\frac{q\\vec E}{m}$$\n• $m$: khối lượng hạt; đơn vị: kg\n• $q$: điện tích của hạt; đơn vị: C\n**Điều kiện áp dụng**\n• Điện trường đều; bỏ qua các lực khác hoặc đã xét riêng.",
+        "**Chuyển động vào vuông góc đường sức**\n$$x=v_0t,\\qquad y=\\frac12\\frac{qE}{m}t^2$$\n• $v_0$: vận tốc đầu theo trục x; đơn vị: m/s\n• $x,y$: tọa độ theo hai trục đã chọn; đơn vị: m\n**Điều kiện áp dụng**\n• Chọn Ox theo vận tốc đầu, Oy theo chiều E; hạt đi vào tại gốc tọa độ.\n**Ghi chú**\n• Dấu của y phụ thuộc dấu q và quy ước chiều Oy.",
+        "**Ghi nhớ nhanh**\n• Luôn xác định chiều lực từ dấu q trước khi viết phương trình.\n• Không trộn vận tốc hoặc gia tốc giữa hai trục vuông góc.\n• Electron lệch ngược chiều E.",
+        "**Ví dụ: Gia tốc của proton**\nProton có $q=1,6\\times10^{-19}$ C, $m=1,67\\times10^{-27}$ kg trong điện trường $E=10^4$ V/m.\n**Bước 1:** Proton dương nên gia tốc cùng chiều E.\n**Bước 2:** Tính $a=qE/m\\approx9,58\\times10^{11}$ m/s².\n**Kết luận:** $a\\approx9,58\\times10^{11}$ m/s², cùng chiều E.",
+        "**Ví dụ: Kiểm tra mô hình: Chuyển động của điện tích trong điện trường đều**\nKhi xử lí một tình huống thuộc “Chuyển động của điện tích trong điện trường đều”, cần kiểm tra những điểm nào trước khi kết luận?\n**Bước 1:** Luôn xác định chiều lực từ dấu q trước khi viết phương trình.\n**Bước 2:** Không trộn vận tốc hoặc gia tốc giữa hai trục vuông góc.\n**Bước 3:** Đổi đơn vị, thực hiện phép tính và kiểm tra chiều hoặc dấu của kết quả.\n**Kết luận:** Electron lệch ngược chiều E."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt20-st-collinear",
+          "name": "Chuyển động dọc đường sức",
+          "example": "Tìm vận tốc sau khi qua hiệu điện thế.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "phy11-qt20-st-perpendicular",
+          "name": "Chuyển động vuông góc đường sức",
+          "example": "Tìm độ lệch của chùm hạt.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m3-charged-particle",
+          "question": "Hạt có vận tốc đầu vuông góc E và chịu lực điện không đổi có quỹ đạo gì?",
+          "options": [
+            "Đường tròn",
+            "Parabol",
+            "Đường thẳng đều",
+            "Elip"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Một phương chuyển động đều, phương vuông góc biến đổi đều nên quỹ đạo là parabol."
+        },
+        {
+          "id": "phy11-theory-m3-charged-particle-check-2",
+          "question": "Điểm cần ghi nhớ khi học “Chuyển động của điện tích trong điện trường đều” là",
+          "options": [
+            "Luôn xác định chiều lực từ dấu q trước khi viết phương trình.",
+            "Bỏ qua dấu của điện tích.",
+            "Không cần đổi đơn vị.",
+            "Luôn cộng các độ lớn như số vô hướng."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Luôn xác định chiều lực từ dấu q trước khi viết phương trình."
+        },
+        {
+          "id": "phy11-theory-m3-charged-particle-check-3",
+          "question": "Thao tác kiểm tra phù hợp nhất sau khi giải bài “Chuyển động của điện tích trong điện trường đều” là",
+          "options": [
+            "Chỉ kiểm tra chữ số cuối.",
+            "Bỏ qua chiều vector.",
+            "Kiểm tra đơn vị, dấu và điều kiện áp dụng.",
+            "Thay mọi điện tích bằng số dương."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kết quả vật lí chỉ có ý nghĩa khi đúng đơn vị, dấu, chiều và điều kiện mô hình."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt21",
+      "topicId": "phy11-t03",
+      "name": "Dạng 21: Công của lực điện và thế năng điện",
+      "slug": "cong-luc-dien-the-nang",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Liên hệ công lực điện với độ biến thiên thế năng.",
+      "recognitionSigns": [
+        "Đề hỏi công, thế năng hoặc độ biến thiên thế năng.",
+        "Điện tích dịch chuyển giữa hai vị trí."
+      ],
+      "solvingSteps": [
+        "Xác định trạng thái đầu–cuối và quy ước dấu.",
+        "Dùng A = Wt1 − Wt2 hoặc quan hệ điện trường đều.",
+        "Kiểm tra dấu bằng chiều lực và xu hướng biến thiên thế năng."
+      ],
+      "commonMistakes": [
+        "Nhầm A = ΔWt thay vì A = −ΔWt.",
+        "Cho rằng công phụ thuộc đường đi trong điện trường tĩnh."
+      ],
+      "theory": [
+        "**Công của lực điện và thế năng điện**\nLực điện tĩnh là lực thế: công khi điện tích dịch chuyển giữa hai điểm không phụ thuộc đường đi, chỉ phụ thuộc vị trí đầu và cuối. Khi lực điện sinh công dương, thế năng điện giảm; khi ngoại lực thực hiện công chống lại lực điện, thế năng có thể tăng.",
+        "**Mục tiêu cần đạt**\n• Liên hệ công lực điện với độ biến thiên thế năng.\n• Xác định dấu của công và sự tăng giảm thế năng.\n• Vận dụng tính chất thế của điện trường tĩnh.",
+        "**Công và độ biến thiên thế năng**\n$$A_{MN}=W_M-W_N=-\\Delta W$$\n• $A_{MN}$: công của lực điện từ M đến N; đơn vị: J\n• $W_M,W_N$: thế năng tại M và N; đơn vị: J\n• $\\Delta W$: độ biến thiên thế năng $W_N-W_M$; đơn vị: J\n**Điều kiện áp dụng**\n• Xét công của lực điện trong điện trường tĩnh.",
+        "**Ghi nhớ nhanh**\n• Không viết $A=\\Delta W$; công lực điện bằng âm độ biến thiên thế năng.\n• Công lực điện trên một đường kín bằng không.\n• Mốc thế năng có thể chọn tùy ý, nhưng độ biến thiên thế năng không phụ thuộc mốc.",
+        "**Ví dụ: Thế năng sau khi lực điện sinh công**\nLực điện thực hiện công $3,0\\times10^{-4}$ J khi điện tích đi từ M đến N. Biết $W_M=5,0\\times10^{-4}$ J.\n**Bước 1:** Dùng $A_{MN}=W_M-W_N$.\n**Bước 2:** Suy ra $W_N=W_M-A_{MN}=2,0\\times10^{-4}$ J.\n**Kết luận:** $W_N=2,0\\times10^{-4}$ J.",
+        "**Ví dụ: Kiểm tra mô hình: Công của lực điện và thế năng điện**\nKhi xử lí một tình huống thuộc “Công của lực điện và thế năng điện”, cần kiểm tra những điểm nào trước khi kết luận?\n**Bước 1:** Không viết $A=\\Delta W$; công lực điện bằng âm độ biến thiên thế năng.\n**Bước 2:** Công lực điện trên một đường kín bằng không.\n**Bước 3:** Đổi đơn vị, thực hiện phép tính và kiểm tra chiều hoặc dấu của kết quả.\n**Kết luận:** Mốc thế năng có thể chọn tùy ý, nhưng độ biến thiên thế năng không phụ thuộc mốc."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt21-st-work",
+          "name": "Công của lực điện",
+          "example": "Tính A khi q dịch chuyển.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt21-st-energy",
+          "name": "Biến thiên thế năng",
+          "example": "Tìm Wt2 từ công lực điện.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m3-potential-energy",
+          "question": "Khi công của lực điện dương thì thế năng điện thay đổi thế nào?",
+          "options": [
+            "Tăng",
+            "Giảm",
+            "Không đổi",
+            "Luôn bằng không"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$A=-\\Delta W>0$ nên $\\Delta W<0$."
+        },
+        {
+          "id": "phy11-theory-m3-potential-energy-check-2",
+          "question": "Điểm cần ghi nhớ khi học “Công của lực điện và thế năng điện” là",
+          "options": [
+            "Không viết $A=\\Delta W$; công lực điện bằng âm độ biến thiên thế năng.",
+            "Bỏ qua dấu của điện tích.",
+            "Không cần đổi đơn vị.",
+            "Luôn cộng các độ lớn như số vô hướng."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Không viết $A=\\Delta W$; công lực điện bằng âm độ biến thiên thế năng."
+        },
+        {
+          "id": "phy11-theory-m3-potential-energy-check-3",
+          "question": "Thao tác kiểm tra phù hợp nhất sau khi giải bài “Công của lực điện và thế năng điện” là",
+          "options": [
+            "Chỉ kiểm tra chữ số cuối.",
+            "Bỏ qua chiều vector.",
+            "Kiểm tra đơn vị, dấu và điều kiện áp dụng.",
+            "Thay mọi điện tích bằng số dương."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kết quả vật lí chỉ có ý nghĩa khi đúng đơn vị, dấu, chiều và điều kiện mô hình."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt22",
+      "topicId": "phy11-t03",
+      "name": "Dạng 22: Điện thế và hiệu điện thế",
+      "slug": "dien-the-hieu-dien-the",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Vận dụng V = W/q, U = A/q và quan hệ giữa điện thế với điện trường.",
+      "recognitionSigns": [
+        "Đề cho điện thế tại điểm, hiệu điện thế hoặc công dịch chuyển.",
+        "Yêu cầu dấu và chiều biến thiên điện thế."
+      ],
+      "solvingSteps": [
+        "Phân biệt điện thế tại điểm và hiệu điện thế giữa hai điểm.",
+        "Chọn quan hệ V, U, A, q phù hợp với quy ước.",
+        "Kiểm tra dấu bằng chiều điện trường và dấu điện tích."
+      ],
+      "commonMistakes": [
+        "Đồng nhất điện thế với hiệu điện thế.",
+        "Đảo thứ tự chỉ số trong UAB."
+      ],
+      "theory": [
+        "**Điện thế và hiệu điện thế**\nĐiện thế V đặc trưng riêng cho điện trường tại một điểm về phương diện tạo thế năng trên một đơn vị điện tích. Hiệu điện thế giữa hai điểm là độ chênh điện thế có thứ tự. Điện thế giảm theo chiều vector điện trường.",
+        "**Mục tiêu cần đạt**\n• Phân biệt điện thế tại một điểm với hiệu điện thế giữa hai điểm.\n• Vận dụng quan hệ giữa công, điện tích và hiệu điện thế.\n• Xác định chiều giảm điện thế trong điện trường.",
+        "**Điện thế tại một điểm**\n$$V=\\frac{W}{q}$$\n• $V$: điện thế; đơn vị: V\n• $W$: thế năng điện của điện tích q; đơn vị: J\n• $q$: điện tích đặt tại điểm xét; đơn vị: C\n**Điều kiện áp dụng**\n• W và V được xác định theo cùng mốc thế năng, điện thế.",
+        "**Hiệu điện thế và công**\n$$U_{MN}=V_M-V_N=\\frac{A_{MN}}{q}$$\n• $U_{MN}$: hiệu điện thế từ M đến N; đơn vị: V\n• $A_{MN}$: công của lực điện khi q đi từ M đến N; đơn vị: J\n**Điều kiện áp dụng**\n• Giữ đúng thứ tự chỉ số M, N trong toàn bộ phép tính.",
+        "**Ghi nhớ nhanh**\n• V là giá trị tại một điểm; U là hiệu giữa hai điểm.\n• Đổi thứ tự chỉ số làm đổi dấu: $U_{NM}=-U_{MN}$.\n• Điện tích dương tự chuyển động theo chiều giảm điện thế nếu chỉ chịu lực điện.",
+        "**Ví dụ: Công qua hiệu điện thế**\nĐiện tích $q=2,0\\,\\mu C$ đi từ M đến N với $U_{MN}=50$ V. Tính công lực điện.\n**Bước 1:** Đổi $q=2,0\\times10^{-6}$ C.\n**Bước 2:** Tính $A_{MN}=qU_{MN}=2,0\\times10^{-6}\\cdot50=1,0\\times10^{-4}$ J.\n**Kết luận:** $A_{MN}=1,0\\times10^{-4}$ J.",
+        "**Ví dụ: Kiểm tra mô hình: Điện thế và hiệu điện thế**\nKhi xử lí một tình huống thuộc “Điện thế và hiệu điện thế”, cần kiểm tra những điểm nào trước khi kết luận?\n**Bước 1:** V là giá trị tại một điểm; U là hiệu giữa hai điểm.\n**Bước 2:** Đổi thứ tự chỉ số làm đổi dấu: $U_{NM}=-U_{MN}$.\n**Bước 3:** Đổi đơn vị, thực hiện phép tính và kiểm tra chiều hoặc dấu của kết quả.\n**Kết luận:** Điện tích dương tự chuyển động theo chiều giảm điện thế nếu chỉ chịu lực điện."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt22-st-potential",
+          "name": "Điện thế tại một điểm",
+          "example": "Tính V từ thế năng và điện tích.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "phy11-qt22-st-voltage",
+          "name": "Hiệu điện thế và công",
+          "example": "Tính A từ q và UAB.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m3-potential-voltage",
+          "question": "Nếu $V_M=20$ V và $V_N=50$ V thì $U_{MN}$ bằng bao nhiêu?",
+          "options": [
+            "70 V",
+            "30 V",
+            "-30 V",
+            "-70 V"
+          ],
+          "correctAnswer": "C",
+          "explanation": "$U_{MN}=V_M-V_N=20-50=-30$ V."
+        },
+        {
+          "id": "phy11-theory-m3-potential-voltage-check-2",
+          "question": "Điểm cần ghi nhớ khi học “Điện thế và hiệu điện thế” là",
+          "options": [
+            "V là giá trị tại một điểm; U là hiệu giữa hai điểm.",
+            "Bỏ qua dấu của điện tích.",
+            "Không cần đổi đơn vị.",
+            "Luôn cộng các độ lớn như số vô hướng."
+          ],
+          "correctAnswer": "A",
+          "explanation": "V là giá trị tại một điểm; U là hiệu giữa hai điểm."
+        },
+        {
+          "id": "phy11-theory-m3-potential-voltage-check-3",
+          "question": "Thao tác kiểm tra phù hợp nhất sau khi giải bài “Điện thế và hiệu điện thế” là",
+          "options": [
+            "Chỉ kiểm tra chữ số cuối.",
+            "Bỏ qua chiều vector.",
+            "Kiểm tra đơn vị, dấu và điều kiện áp dụng.",
+            "Thay mọi điện tích bằng số dương."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kết quả vật lí chỉ có ý nghĩa khi đúng đơn vị, dấu, chiều và điều kiện mô hình."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt23",
+      "topicId": "phy11-t03",
+      "name": "Dạng 23: Tụ điện và điện dung",
+      "slug": "tu-dien-dien-dung",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng Q = CU, đọc thông số tụ và phân tích ứng dụng.",
+      "recognitionSigns": [
+        "Đề cho tụ điện, điện dung, điện tích hoặc hiệu điện thế.",
+        "Có thông số định mức hoặc ứng dụng tích–phóng điện."
+      ],
+      "solvingSteps": [
+        "Xác định loại tụ và các đại lượng Q, C, U.",
+        "Đổi đơn vị rồi dùng Q = CU.",
+        "So sánh với giới hạn định mức và kết luận an toàn."
+      ],
+      "commonMistakes": [
+        "Nhầm điện dung phụ thuộc Q hoặc U của cùng tụ lí tưởng.",
+        "Bỏ qua điện áp định mức."
+      ],
+      "theory": [
+        "**Tụ điện và điện dung**\nTụ điện gồm hai vật dẫn đặt gần nhau và ngăn cách bởi lớp điện môi. Khi nối với nguồn, hai bản tích các điện tích có độ lớn bằng nhau và trái dấu. Điện dung đặc trưng cho khả năng tích điện của tụ, phụ thuộc cấu tạo và điện môi, không phụ thuộc Q hay U trong giới hạn làm việc của tụ lí tưởng.",
+        "**Mục tiêu cần đạt**\n• Nêu được cấu tạo và công dụng cơ bản của tụ điện.\n• Vận dụng quan hệ giữa điện tích, điện dung và hiệu điện thế.\n• Đọc điện dung, điện áp định mức và sử dụng tụ an toàn.",
+        "**Định nghĩa điện dung**\n$$C=\\frac{Q}{U},\\qquad Q=CU$$\n• $C$: điện dung của tụ; đơn vị: F\n• $Q$: độ lớn điện tích trên mỗi bản; đơn vị: C\n• $U$: hiệu điện thế giữa hai bản; đơn vị: V\n**Điều kiện áp dụng**\n• Tụ làm việc dưới điện áp định mức và điện môi chưa bị đánh thủng.",
+        "**Điện dung tụ phẳng**\n$$C=\\varepsilon_0\\varepsilon_r\\frac{S}{d}$$\n• $S$: diện tích phần đối diện của mỗi bản; đơn vị: m²\n• $d$: khoảng cách giữa hai bản; đơn vị: m\n• $\\varepsilon_r$: hằng số điện môi tương đối\n**Điều kiện áp dụng**\n• Hai bản phẳng song song, khoảng cách nhỏ so với kích thước bản; bỏ qua hiệu ứng mép.",
+        "**Ghi nhớ nhanh**\n• Các tiền tố thường gặp: $1\\,\\mu F=10^{-6}$ F, $1\\,nF=10^{-9}$ F, $1\\,pF=10^{-12}$ F.\n• Không đặt tụ vào điện áp vượt giá trị định mức.\n• Tụ có thể còn tích điện sau khi ngắt nguồn; cần quy trình phóng điện an toàn.",
+        "**Ví dụ: Điện tích của tụ**\nTụ $C=20\\,\\mu F$ được đặt dưới hiệu điện thế 12 V. Tìm Q.\n**Bước 1:** Đổi $C=20\\times10^{-6}$ F.\n**Bước 2:** Tính $Q=CU=20\\times10^{-6}\\cdot12=2,4\\times10^{-4}$ C.\n**Kết luận:** $Q=2,4\\times10^{-4}$ C hay $240\\,\\mu C$.",
+        "**Ví dụ: Kiểm tra mô hình: Tụ điện và điện dung**\nKhi xử lí một tình huống thuộc “Tụ điện và điện dung”, cần kiểm tra những điểm nào trước khi kết luận?\n**Bước 1:** Các tiền tố thường gặp: $1\\,\\mu F=10^{-6}$ F, $1\\,nF=10^{-9}$ F, $1\\,pF=10^{-12}$ F.\n**Bước 2:** Không đặt tụ vào điện áp vượt giá trị định mức.\n**Bước 3:** Đổi đơn vị, thực hiện phép tính và kiểm tra chiều hoặc dấu của kết quả.\n**Kết luận:** Tụ có thể còn tích điện sau khi ngắt nguồn; cần quy trình phóng điện an toàn."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt23-st-capacitance",
+          "name": "Q, C và U",
+          "example": "Tính điện tích của tụ đã nạp.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt23-st-application",
+          "name": "Thông số và ứng dụng tụ",
+          "example": "Chọn tụ phù hợp cho thiết bị.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m3-capacitor",
+          "question": "Với một tụ lí tưởng cố định, tăng U gấp đôi thì điện dung C thay đổi thế nào?",
+          "options": [
+            "Tăng đôi",
+            "Giảm đôi",
+            "Tăng bốn lần",
+            "Không đổi"
+          ],
+          "correctAnswer": "D",
+          "explanation": "Điện dung phụ thuộc cấu tạo và điện môi; Q tăng theo U để C không đổi."
+        },
+        {
+          "id": "phy11-theory-m3-capacitor-check-2",
+          "question": "Điểm cần ghi nhớ khi học “Tụ điện và điện dung” là",
+          "options": [
+            "Các tiền tố thường gặp: $1\\,\\mu F=10^{-6}$ F, $1\\,nF=10^{-9}$ F, $1\\,pF=10^{-12}$ F.",
+            "Bỏ qua dấu của điện tích.",
+            "Không cần đổi đơn vị.",
+            "Luôn cộng các độ lớn như số vô hướng."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Các tiền tố thường gặp: $1\\,\\mu F=10^{-6}$ F, $1\\,nF=10^{-9}$ F, $1\\,pF=10^{-12}$ F."
+        },
+        {
+          "id": "phy11-theory-m3-capacitor-check-3",
+          "question": "Thao tác kiểm tra phù hợp nhất sau khi giải bài “Tụ điện và điện dung” là",
+          "options": [
+            "Chỉ kiểm tra chữ số cuối.",
+            "Bỏ qua chiều vector.",
+            "Kiểm tra đơn vị, dấu và điều kiện áp dụng.",
+            "Thay mọi điện tích bằng số dương."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kết quả vật lí chỉ có ý nghĩa khi đúng đơn vị, dấu, chiều và điều kiện mô hình."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt24",
+      "topicId": "phy11-t04",
+      "name": "Dạng 24: Cường độ dòng điện ở mức vi mô",
+      "slug": "cuong-do-dong-dien-vi-mo",
+      "difficulty": "hard",
+      "examFrequency": "medium",
+      "description": "Vận dụng quan hệ giữa dòng điện với mật độ hạt tải, tiết diện và tốc độ trôi.",
+      "recognitionSigns": [
+        "Đề cho mật độ hạt tải n, tiết diện S và tốc độ trôi v.",
+        "Yêu cầu giải thích cơ chế dòng điện trong kim loại."
+      ],
+      "solvingSteps": [
+        "Xác định loại hạt tải và độ lớn điện tích.",
+        "Đổi đơn vị n, S, v về SI.",
+        "Dùng I = Sn|q|v và kiểm tra bậc độ lớn."
+      ],
+      "commonMistakes": [
+        "Nhầm tốc độ trôi với tốc độ truyền tín hiệu.",
+        "Bỏ hệ số điện tích của hạt tải."
+      ],
+      "theory": [
+        "**Cường độ dòng điện ở mức vi mô**\nTrong kim loại, electron tự do chuyển động nhiệt hỗn loạn; khi có điện trường, chúng có thêm chuyển động có hướng ngược chiều điện trường. Chiều dòng điện quy ước là chiều chuyển động của điện tích dương nên ngược chiều chuyển động có hướng của electron. Tốc độ trôi của hạt tải rất nhỏ so với tốc độ thiết lập điện trường trong mạch.",
+        "**Mục tiêu cần đạt**\n• Giải thích dòng điện là chuyển động có hướng của hạt tải điện.\n• Liên hệ cường độ dòng điện với mật độ hạt, tiết diện và tốc độ trôi.\n• Phân biệt tốc độ trôi với tốc độ lan truyền tín hiệu điện.",
+        "**Cường độ dòng điện theo mô hình vi mô**\n$$I=n|q|Sv_d$$\n• $I$: cường độ dòng điện; đơn vị: A\n• $n$: mật độ hạt tải điện; đơn vị: m⁻³\n• $|q|$: độ lớn điện tích mỗi hạt tải; đơn vị: C\n• $S$: diện tích tiết diện dây; đơn vị: m²\n• $v_d$: tốc độ dịch chuyển có hướng; đơn vị: m/s\n**Điều kiện áp dụng**\n• Mật độ hạt và tốc độ trôi được coi gần như đều trên tiết diện dây.",
+        "**Ghi nhớ nhanh**\n• Đổi $\\text{mm}^2$ sang $\\text{m}^2$ trước khi tính.\n• Dùng độ lớn điện tích hạt tải để tính độ lớn I.\n• Electron không chạy từ công tắc đến bóng đèn với tốc độ của tín hiệu điện.",
+        "**Ví dụ: Tính dòng điện từ hạt tải**\nDây có $n=8,5\\times10^{28}$ m⁻³, $S=1,0$ mm², $v_d=7,4\\times10^{-5}$ m/s; mỗi electron có $|e|=1,6\\times10^{-19}$ C.\n**Bước 1:** Đổi $S=1,0\\times10^{-6}$ m².\n**Bước 2:** Tính $I=n|e|Sv_d\\approx1,0$ A.\n**Kết luận:** $I\\approx1,0$ A.",
+        "**Ví dụ: Kiểm tra mô hình: Cường độ dòng điện ở mức vi mô**\nKhi giải một bài thuộc “Cường độ dòng điện ở mức vi mô”, cần kiểm tra những yếu tố nào để tránh dùng công thức máy móc?\n**Bước 1:** Đổi $\\text{mm}^2$ sang $\\text{m}^2$ trước khi tính.\n**Bước 2:** Dùng độ lớn điện tích hạt tải để tính độ lớn I.\n**Bước 3:** Đổi đơn vị, tính toán rồi đối chiếu giới hạn an toàn và độ lớn kết quả.\n**Kết luận:** Electron không chạy từ công tắc đến bóng đèn với tốc độ của tín hiệu điện."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt24-st-microscopic",
+          "name": "Tính I từ mô hình vi mô",
+          "example": "Tính I từ n, S, v.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "phy11-qt24-st-drift",
+          "name": "Suy ra tốc độ trôi hoặc mật độ hạt",
+          "example": "Tìm v khi biết I.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m4-microscopic-current",
+          "question": "Trong kim loại, chiều chuyển động có hướng của electron so với chiều dòng điện quy ước thế nào?",
+          "options": [
+            "Cùng chiều",
+            "Ngược chiều",
+            "Vuông góc",
+            "Không xác định"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Electron mang điện âm nên chuyển động có hướng ngược chiều dòng điện quy ước."
+        },
+        {
+          "id": "phy11-theory-m4-microscopic-current-check-2",
+          "question": "Nhận định cần ghi nhớ trong “Cường độ dòng điện ở mức vi mô” là",
+          "options": [
+            "Đổi $\\text{mm}^2$ sang $\\text{m}^2$ trước khi tính.",
+            "Mọi linh kiện luôn có điện trở không đổi.",
+            "Không cần quan tâm công suất định mức.",
+            "Có thể bỏ qua mọi điện trở trong."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Đổi $\\text{mm}^2$ sang $\\text{m}^2$ trước khi tính."
+        },
+        {
+          "id": "phy11-theory-m4-microscopic-current-check-3",
+          "question": "Sau khi tính trong chủ đề “Cường độ dòng điện ở mức vi mô”, bước kiểm tra phù hợp là",
+          "options": [
+            "Chỉ nhìn số chữ số.",
+            "Luôn coi mạch bị ngắn.",
+            "Kiểm tra đơn vị, trạng thái mạch và giới hạn an toàn.",
+            "Bỏ qua chiều dòng điện."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kiểm tra trạng thái mạch và giới hạn định mức giúp phát hiện kết quả vô lí hoặc không an toàn."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt25",
+      "topicId": "phy11-t04",
+      "name": "Dạng 25: Điện lượng và cường độ dòng điện",
+      "slug": "dien-luong-cuong-do-dong-dien",
+      "difficulty": "easy",
+      "examFrequency": "high",
+      "description": "Vận dụng I = Δq/Δt và ý nghĩa đơn vị ampere, coulomb.",
+      "recognitionSigns": [
+        "Đề cho điện lượng qua tiết diện trong một khoảng thời gian.",
+        "Yêu cầu số electron hoặc thời gian truyền điện lượng."
+      ],
+      "solvingSteps": [
+        "Xác định điện lượng và khoảng thời gian.",
+        "Dùng I = Δq/Δt hoặc q = Ne.",
+        "Đổi đơn vị và kiểm tra dấu, số hạt."
+      ],
+      "commonMistakes": [
+        "Nhầm điện lượng với cường độ dòng điện.",
+        "Quên điện tích nguyên tố khi đổi sang số electron."
+      ],
+      "theory": [
+        "**Điện lượng và cường độ dòng điện**\nCường độ dòng điện cho biết lượng điện tích dịch chuyển qua một tiết diện thẳng của vật dẫn trong một đơn vị thời gian. Dòng điện không đổi có chiều và cường độ không thay đổi theo thời gian. Một ampere tương ứng một coulomb điện lượng qua tiết diện trong một giây.",
+        "**Mục tiêu cần đạt**\n• Nêu được ý nghĩa của cường độ dòng điện.\n• Tính điện lượng qua tiết diện dây trong một khoảng thời gian.\n• Quy đổi điện lượng thành số hạt tải điện.",
+        "**Định nghĩa cường độ dòng điện**\n$$I=\\frac{\\Delta q}{\\Delta t}$$\n• $\\Delta q$: điện lượng qua tiết diện; đơn vị: C\n• $\\Delta t$: khoảng thời gian khảo sát; đơn vị: s\n**Điều kiện áp dụng**\n• I là giá trị trung bình trong khoảng thời gian; với dòng không đổi, I có giá trị không đổi.",
+        "**Điện lượng và số hạt tải**\n$$\\Delta q=N|q_0|$$\n• $N$: số hạt tải đi qua tiết diện\n• $|q_0|$: độ lớn điện tích mỗi hạt; đơn vị: C\n**Điều kiện áp dụng**\n• Các hạt tải được xét cùng loại và có cùng độ lớn điện tích.",
+        "**Ghi nhớ nhanh**\n• Coulomb là đơn vị điện lượng; ampere là đơn vị cường độ dòng điện.\n• Số hạt N không âm và thường phải là số nguyên trong mô hình đếm hạt.\n• Với electron, dùng $|e|=1,6\\times10^{-19}$ C khi tính số lượng.",
+        "**Ví dụ: Điện lượng qua dây**\nDòng điện không đổi 0,50 A chạy trong dây trong 2 phút. Tính điện lượng qua tiết diện.\n**Bước 1:** Đổi thời gian: $t=2\\times60=120$ s.\n**Bước 2:** Tính $q=It=0,50\\times120=60$ C.\n**Kết luận:** $q=60$ C.",
+        "**Ví dụ: Kiểm tra mô hình: Điện lượng và cường độ dòng điện**\nKhi giải một bài thuộc “Điện lượng và cường độ dòng điện”, cần kiểm tra những yếu tố nào để tránh dùng công thức máy móc?\n**Bước 1:** Coulomb là đơn vị điện lượng; ampere là đơn vị cường độ dòng điện.\n**Bước 2:** Số hạt N không âm và thường phải là số nguyên trong mô hình đếm hạt.\n**Bước 3:** Đổi đơn vị, tính toán rồi đối chiếu giới hạn an toàn và độ lớn kết quả.\n**Kết luận:** Với electron, dùng $|e|=1,6\\times10^{-19}$ C khi tính số lượng."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt25-st-charge",
+          "name": "I, q và thời gian",
+          "example": "Tính q qua dây trong t giây.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt25-st-carriers",
+          "name": "Số hạt tải điện",
+          "example": "Tính số electron qua tiết diện.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m4-charge-current",
+          "question": "Dòng điện 2 A truyền điện lượng bao nhiêu qua tiết diện trong 3 s?",
+          "options": [
+            "0,67 C",
+            "1,5 C",
+            "5 C",
+            "6 C"
+          ],
+          "correctAnswer": "D",
+          "explanation": "$q=It=2\\times3=6$ C."
+        },
+        {
+          "id": "phy11-theory-m4-charge-current-check-2",
+          "question": "Nhận định cần ghi nhớ trong “Điện lượng và cường độ dòng điện” là",
+          "options": [
+            "Coulomb là đơn vị điện lượng; ampere là đơn vị cường độ dòng điện.",
+            "Mọi linh kiện luôn có điện trở không đổi.",
+            "Không cần quan tâm công suất định mức.",
+            "Có thể bỏ qua mọi điện trở trong."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Coulomb là đơn vị điện lượng; ampere là đơn vị cường độ dòng điện."
+        },
+        {
+          "id": "phy11-theory-m4-charge-current-check-3",
+          "question": "Sau khi tính trong chủ đề “Điện lượng và cường độ dòng điện”, bước kiểm tra phù hợp là",
+          "options": [
+            "Chỉ nhìn số chữ số.",
+            "Luôn coi mạch bị ngắn.",
+            "Kiểm tra đơn vị, trạng thái mạch và giới hạn an toàn.",
+            "Bỏ qua chiều dòng điện."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kiểm tra trạng thái mạch và giới hạn định mức giúp phát hiện kết quả vô lí hoặc không an toàn."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt26",
+      "topicId": "phy11-t04",
+      "name": "Dạng 26: Điện trở và sự phụ thuộc nhiệt độ",
+      "slug": "dien-tro-va-nhiet-do",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Phân tích điện trở theo vật liệu, kích thước, nhiệt độ và đặc tính điện trở nhiệt.",
+      "recognitionSigns": [
+        "Dữ kiện có chiều dài, tiết diện, điện trở suất hoặc nhiệt độ.",
+        "Đề cho đồ thị R–T hay điện trở nhiệt."
+      ],
+      "solvingSteps": [
+        "Xác định yếu tố hình học, vật liệu và nhiệt độ.",
+        "Chọn quan hệ điện trở phù hợp và đổi đơn vị.",
+        "Tính hoặc đọc đồ thị rồi giải thích chiều biến thiên."
+      ],
+      "commonMistakes": [
+        "Nhầm điện trở với điện trở suất.",
+        "Áp dụng quan hệ tuyến tính ngoài khoảng nhiệt độ cho phép."
+      ],
+      "theory": [
+        "**Điện trở và sự phụ thuộc nhiệt độ**\nĐiện trở đặc trưng cho mức cản trở dòng điện của vật dẫn. Với dây đồng chất, tiết diện đều, điện trở tăng theo chiều dài, giảm khi tiết diện tăng và phụ thuộc vật liệu qua điện trở suất. Điện trở kim loại thường tăng khi nhiệt độ tăng; điện trở nhiệt NTC thường giảm điện trở khi nhiệt độ tăng, còn PTC có chiều biến thiên ngược lại trong vùng làm việc.",
+        "**Mục tiêu cần đạt**\n• Phân biệt điện trở với điện trở suất.\n• Phân tích ảnh hưởng của vật liệu và kích thước đến điện trở.\n• Mô tả gần đúng sự phụ thuộc nhiệt độ và điện trở nhiệt.",
+        "**Điện trở của dây dẫn**\n$$R=\\rho\\frac{\\ell}{S}$$\n• $R$: điện trở; đơn vị: Ω\n• $\\rho$: điện trở suất của vật liệu; đơn vị: Ω·m\n• $\\ell$: chiều dài dây; đơn vị: m\n• $S$: diện tích tiết diện; đơn vị: m²\n**Điều kiện áp dụng**\n• Dây đồng chất, tiết diện đều và xét tại nhiệt độ xác định.",
+        "**Gần đúng tuyến tính theo nhiệt độ**\n$$R=R_0\\left[1+\\alpha(T-T_0)\\right]$$\n• $R_0$: điện trở tại nhiệt độ $T_0$; đơn vị: Ω\n• $\\alpha$: hệ số nhiệt điện trở; đơn vị: K⁻¹\n• $T-T_0$: độ biến thiên nhiệt độ; đơn vị: K hoặc °C\n**Điều kiện áp dụng**\n• Chỉ dùng trong khoảng nhiệt độ mà quan hệ tuyến tính là gần đúng phù hợp.",
+        "**Ghi nhớ nhanh**\n• R phụ thuộc cả vật liệu, hình học và nhiệt độ; $\\rho$ là đặc trưng vật liệu tại nhiệt độ cho trước.\n• Không áp dụng tuyến tính ngoài khoảng được cung cấp.\n• NTC và PTC phải được nhận diện từ đặc tuyến hoặc mô tả linh kiện.",
+        "**Ví dụ: Điện trở của dây**\nDây có $\\rho=1,7\\times10^{-8}$ Ω·m, dài 10 m, tiết diện 1,0 mm². Tính R.\n**Bước 1:** Đổi $S=1,0\\times10^{-6}$ m².\n**Bước 2:** Tính $R=1,7\\times10^{-8}\\cdot10/(1,0\\times10^{-6})=0,17$ Ω.\n**Kết luận:** $R=0,17$ Ω.",
+        "**Ví dụ: Kiểm tra mô hình: Điện trở và sự phụ thuộc nhiệt độ**\nKhi giải một bài thuộc “Điện trở và sự phụ thuộc nhiệt độ”, cần kiểm tra những yếu tố nào để tránh dùng công thức máy móc?\n**Bước 1:** R phụ thuộc cả vật liệu, hình học và nhiệt độ; $\\rho$ là đặc trưng vật liệu tại nhiệt độ cho trước.\n**Bước 2:** Không áp dụng tuyến tính ngoài khoảng được cung cấp.\n**Bước 3:** Đổi đơn vị, tính toán rồi đối chiếu giới hạn an toàn và độ lớn kết quả.\n**Kết luận:** NTC và PTC phải được nhận diện từ đặc tuyến hoặc mô tả linh kiện."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt26-st-material",
+          "name": "Điện trở vật dẫn",
+          "example": "Tính R từ ρ, l, S.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt26-st-temperature",
+          "name": "Nhiệt độ và điện trở nhiệt",
+          "example": "Đọc đặc tính thermistor.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m4-resistance-temperature",
+          "question": "Giữ nguyên vật liệu và chiều dài, tăng tiết diện dây gấp đôi thì R thế nào?",
+          "options": [
+            "Tăng đôi",
+            "Giảm một nửa",
+            "Tăng bốn lần",
+            "Không đổi"
+          ],
+          "correctAnswer": "B",
+          "explanation": "$R$ tỉ lệ nghịch với tiết diện S."
+        },
+        {
+          "id": "phy11-theory-m4-resistance-temperature-check-2",
+          "question": "Nhận định cần ghi nhớ trong “Điện trở và sự phụ thuộc nhiệt độ” là",
+          "options": [
+            "R phụ thuộc cả vật liệu, hình học và nhiệt độ; $\\rho$ là đặc trưng vật liệu tại nhiệt độ cho trước.",
+            "Mọi linh kiện luôn có điện trở không đổi.",
+            "Không cần quan tâm công suất định mức.",
+            "Có thể bỏ qua mọi điện trở trong."
+          ],
+          "correctAnswer": "A",
+          "explanation": "R phụ thuộc cả vật liệu, hình học và nhiệt độ; $\\rho$ là đặc trưng vật liệu tại nhiệt độ cho trước."
+        },
+        {
+          "id": "phy11-theory-m4-resistance-temperature-check-3",
+          "question": "Sau khi tính trong chủ đề “Điện trở và sự phụ thuộc nhiệt độ”, bước kiểm tra phù hợp là",
+          "options": [
+            "Chỉ nhìn số chữ số.",
+            "Luôn coi mạch bị ngắn.",
+            "Kiểm tra đơn vị, trạng thái mạch và giới hạn an toàn.",
+            "Bỏ qua chiều dòng điện."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kiểm tra trạng thái mạch và giới hạn định mức giúp phát hiện kết quả vô lí hoặc không an toàn."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt27",
+      "topicId": "phy11-t04",
+      "name": "Dạng 27: Đặc tuyến dòng điện–điện áp",
+      "slug": "dac-tuyen-dong-dien-dien-ap",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Đọc, vẽ và phân tích đặc tuyến I–U của vật dẫn hoặc linh kiện.",
+      "recognitionSigns": [
+        "Đề cho bảng hoặc đồ thị I–U.",
+        "Yêu cầu nhận diện linh kiện tuyến tính hay phi tuyến."
+      ],
+      "solvingSteps": [
+        "Đọc đúng trục và đơn vị của đặc tuyến.",
+        "Tính hệ số góc hoặc tỉ số U/I tại điểm cần xét.",
+        "Kết luận tính tuyến tính và sự thay đổi điện trở."
+      ],
+      "commonMistakes": [
+        "Lấy hệ số góc I/U nhưng gọi là điện trở.",
+        "Suy ra R không đổi từ một điểm dữ liệu."
+      ],
+      "theory": [
+        "**Đặc tuyến dòng điện–điện áp**\nĐặc tuyến dòng điện–điện áp biểu diễn sự phụ thuộc của I vào U. Với vật dẫn tuân theo định luật Ohm ở nhiệt độ không đổi, đồ thị I theo U là đường thẳng qua gốc. Linh kiện phi tuyến có tỉ số U/I thay đổi theo điểm làm việc nên không thể dùng một điện trở không đổi cho toàn đặc tuyến.",
+        "**Mục tiêu cần đạt**\n• Đọc đúng trục và đơn vị trên đặc tuyến I–U.\n• Phân biệt vật dẫn tuyến tính với linh kiện phi tuyến.\n• Suy ra điện trở từ đặc tuyến trong trường hợp phù hợp.",
+        "**Hệ số góc đặc tuyến I–U của vật dẫn Ohm**\n$$\\frac{\\Delta I}{\\Delta U}=\\frac1R$$\n• $\\Delta I/\\Delta U$: hệ số góc khi trục đứng là I và trục ngang là U; đơn vị: A/V\n• $R$: điện trở không đổi của vật dẫn; đơn vị: Ω\n**Điều kiện áp dụng**\n• Đặc tuyến là đường thẳng qua gốc và nhiệt độ vật dẫn được giữ không đổi.",
+        "**Tỉ số tại một điểm làm việc**\n$$R=\\frac{U}{I}$$\n• $U$: điện áp tại điểm đang xét; đơn vị: V\n• $I$: dòng điện tại điểm đang xét; đơn vị: A\n**Điều kiện áp dụng**\n• Với linh kiện phi tuyến, giá trị này chỉ mô tả điểm làm việc đang xét, không phải hằng số toàn đặc tuyến.",
+        "**Ghi nhớ nhanh**\n• Nếu đồ thị là I theo U, hệ số góc là $1/R$, không phải R.\n• Nếu đồ thị là U theo I, hệ số góc mới bằng R với vật dẫn Ohm.\n• Luôn đọc nhãn trục và hệ số đơn vị trước khi tính.",
+        "**Ví dụ: Điện trở từ đồ thị I–U**\nĐường thẳng I–U qua điểm $U=6$ V, $I=0,30$ A. Tìm R.\n**Bước 1:** Đường thẳng qua gốc cho thấy vật dẫn tuân theo Ohm trong miền khảo sát.\n**Bước 2:** Tính $R=U/I=6/0,30=20$ Ω.\n**Kết luận:** $R=20$ Ω.",
+        "**Ví dụ: Kiểm tra mô hình: Đặc tuyến dòng điện–điện áp**\nKhi giải một bài thuộc “Đặc tuyến dòng điện–điện áp”, cần kiểm tra những yếu tố nào để tránh dùng công thức máy móc?\n**Bước 1:** Nếu đồ thị là I theo U, hệ số góc là $1/R$, không phải R.\n**Bước 2:** Nếu đồ thị là U theo I, hệ số góc mới bằng R với vật dẫn Ohm.\n**Bước 3:** Đổi đơn vị, tính toán rồi đối chiếu giới hạn an toàn và độ lớn kết quả.\n**Kết luận:** Luôn đọc nhãn trục và hệ số đơn vị trước khi tính."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt27-st-ohmic",
+          "name": "Đặc tuyến vật dẫn Ohm",
+          "example": "Tìm R từ đường thẳng I–U.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt27-st-nonlinear",
+          "name": "Đặc tuyến phi tuyến",
+          "example": "So sánh R tại hai điểm của linh kiện.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m4-current-voltage-characteristic",
+          "question": "Trên đồ thị I theo U của điện trở Ohm, đường nào có độ dốc lớn hơn ứng với R thế nào?",
+          "options": [
+            "R lớn hơn",
+            "R nhỏ hơn",
+            "R bằng không mọi trường hợp",
+            "Không liên quan"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Độ dốc bằng $1/R$, nên dốc lớn hơn thì R nhỏ hơn."
+        },
+        {
+          "id": "phy11-theory-m4-current-voltage-characteristic-check-2",
+          "question": "Nhận định cần ghi nhớ trong “Đặc tuyến dòng điện–điện áp” là",
+          "options": [
+            "Nếu đồ thị là I theo U, hệ số góc là $1/R$, không phải R.",
+            "Mọi linh kiện luôn có điện trở không đổi.",
+            "Không cần quan tâm công suất định mức.",
+            "Có thể bỏ qua mọi điện trở trong."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Nếu đồ thị là I theo U, hệ số góc là $1/R$, không phải R."
+        },
+        {
+          "id": "phy11-theory-m4-current-voltage-characteristic-check-3",
+          "question": "Sau khi tính trong chủ đề “Đặc tuyến dòng điện–điện áp”, bước kiểm tra phù hợp là",
+          "options": [
+            "Chỉ nhìn số chữ số.",
+            "Luôn coi mạch bị ngắn.",
+            "Kiểm tra đơn vị, trạng thái mạch và giới hạn an toàn.",
+            "Bỏ qua chiều dòng điện."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kiểm tra trạng thái mạch và giới hạn định mức giúp phát hiện kết quả vô lí hoặc không an toàn."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt28",
+      "topicId": "phy11-t04",
+      "name": "Dạng 28: Định luật Ohm",
+      "slug": "dinh-luat-ohm",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Vận dụng U = IR trong đúng điều kiện và giải mạch điện trở cơ bản.",
+      "recognitionSigns": [
+        "Đề cho U, I, R của vật dẫn hoặc đoạn mạch.",
+        "Yêu cầu kiểm tra vật dẫn có tuân theo Ohm."
+      ],
+      "solvingSteps": [
+        "Xác định đoạn mạch và điều kiện nhiệt độ.",
+        "Viết U = IR cho đúng phần mạch.",
+        "Giải đại lượng và đối chiếu với đặc tuyến hoặc giới hạn vật lí."
+      ],
+      "commonMistakes": [
+        "Cho rằng mọi linh kiện luôn tuân theo Ohm.",
+        "Dùng sai hiệu điện thế của đoạn mạch đang xét."
+      ],
+      "theory": [
+        "**Định luật Ohm và mạch điện trở**\nĐịnh luật Ohm cho biết cường độ dòng điện qua vật dẫn tỉ lệ thuận với hiệu điện thế hai đầu khi các điều kiện vật lí, đặc biệt nhiệt độ, không đổi. Trong mạch nối tiếp, dòng điện qua các phần tử bằng nhau; trong mạch song song, hiệu điện thế trên các nhánh bằng nhau.",
+        "**Mục tiêu cần đạt**\n• Vận dụng định luật Ohm đúng cho đoạn mạch đang xét.\n• Nêu được điều kiện vật dẫn có điện trở không đổi.\n• Tính điện trở tương đương của mạch nối tiếp hoặc song song cơ bản.",
+        "**Định luật Ohm**\n$$U=IR$$\n• $U$: hiệu điện thế hai đầu đoạn mạch; đơn vị: V\n• $I$: cường độ dòng điện qua đoạn mạch; đơn vị: A\n• $R$: điện trở của đoạn mạch; đơn vị: Ω\n**Điều kiện áp dụng**\n• Áp dụng cho vật dẫn Ohm trong điều kiện điện trở được coi không đổi.",
+        "**Điện trở tương đương**\n$$R_{nt}=R_1+R_2+\\cdots,\\qquad \\frac1{R_{ss}}=\\frac1{R_1}+\\frac1{R_2}+\\cdots$$\n• $R_{nt}$: điện trở tương đương nối tiếp; đơn vị: Ω\n• $R_{ss}$: điện trở tương đương song song; đơn vị: Ω\n**Điều kiện áp dụng**\n• Các điện trở được nhận diện đúng là nối tiếp hoặc song song.",
+        "**Ghi nhớ nhanh**\n• Không mặc định mọi linh kiện phi tuyến đều có R không đổi.\n• Mạch nối tiếp có $R_{tđ}$ lớn hơn từng điện trở thành phần.\n• Mạch song song có $R_{tđ}$ nhỏ hơn điện trở nhánh nhỏ nhất.",
+        "**Ví dụ: Hai điện trở nối tiếp**\nHai điện trở 10 Ω và 20 Ω nối tiếp dưới hiệu điện thế 6 V. Tính dòng điện.\n**Bước 1:** Tính $R_{tđ}=10+20=30$ Ω.\n**Bước 2:** Áp dụng Ohm: $I=U/R_{tđ}=6/30=0,20$ A.\n**Kết luận:** $I=0,20$ A.",
+        "**Ví dụ: Kiểm tra mô hình: Định luật Ohm và mạch điện trở**\nKhi giải một bài thuộc “Định luật Ohm và mạch điện trở”, cần kiểm tra những yếu tố nào để tránh dùng công thức máy móc?\n**Bước 1:** Không mặc định mọi linh kiện phi tuyến đều có R không đổi.\n**Bước 2:** Mạch nối tiếp có $R_{tđ}$ lớn hơn từng điện trở thành phần.\n**Bước 3:** Đổi đơn vị, tính toán rồi đối chiếu giới hạn an toàn và độ lớn kết quả.\n**Kết luận:** Mạch song song có $R_{tđ}$ nhỏ hơn điện trở nhánh nhỏ nhất."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt28-st-basic",
+          "name": "U, I và R",
+          "example": "Tính I qua điện trở.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt28-st-condition",
+          "name": "Điều kiện áp dụng định luật Ohm",
+          "example": "Đánh giá linh kiện từ bảng I–U.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m4-ohm-law",
+          "question": "Hai điện trở 6 Ω và 3 Ω mắc song song có điện trở tương đương bằng bao nhiêu?",
+          "options": [
+            "9 Ω",
+            "3 Ω",
+            "2 Ω",
+            "1 Ω"
+          ],
+          "correctAnswer": "C",
+          "explanation": "$1/R=1/6+1/3=1/2$ nên $R=2$ Ω."
+        },
+        {
+          "id": "phy11-theory-m4-ohm-law-check-2",
+          "question": "Nhận định cần ghi nhớ trong “Định luật Ohm và mạch điện trở” là",
+          "options": [
+            "Không mặc định mọi linh kiện phi tuyến đều có R không đổi.",
+            "Mọi linh kiện luôn có điện trở không đổi.",
+            "Không cần quan tâm công suất định mức.",
+            "Có thể bỏ qua mọi điện trở trong."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Không mặc định mọi linh kiện phi tuyến đều có R không đổi."
+        },
+        {
+          "id": "phy11-theory-m4-ohm-law-check-3",
+          "question": "Sau khi tính trong chủ đề “Định luật Ohm và mạch điện trở”, bước kiểm tra phù hợp là",
+          "options": [
+            "Chỉ nhìn số chữ số.",
+            "Luôn coi mạch bị ngắn.",
+            "Kiểm tra đơn vị, trạng thái mạch và giới hạn an toàn.",
+            "Bỏ qua chiều dòng điện."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kiểm tra trạng thái mạch và giới hạn định mức giúp phát hiện kết quả vô lí hoặc không an toàn."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt29",
+      "topicId": "phy11-t04",
+      "name": "Dạng 29: Nguồn điện, suất điện động và điện trở trong",
+      "slug": "nguon-dien-suat-dien-dong",
+      "difficulty": "hard",
+      "examFrequency": "high",
+      "description": "Vận dụng quan hệ của nguồn điện trong mạch kín và phân tích hiệu điện thế cực nguồn.",
+      "recognitionSigns": [
+        "Nguồn có suất điện động E và điện trở trong r.",
+        "Đề hỏi dòng mạch kín, điện áp mạch ngoài hoặc hiệu suất nguồn."
+      ],
+      "solvingSteps": [
+        "Vẽ mạch và xác định điện trở mạch ngoài.",
+        "Dùng I = E/(R + r) và U = E − Ir khi phát điện.",
+        "Kiểm tra trường hợp hở mạch, ngắn mạch và dấu điện áp."
+      ],
+      "commonMistakes": [
+        "Đồng nhất suất điện động với hiệu điện thế cực nguồn khi có dòng.",
+        "Bỏ điện trở trong khi tính dòng mạch kín."
+      ],
+      "theory": [
+        "**Nguồn điện, suất điện động và điện trở trong**\nNguồn điện thực hiện công để tách và dịch chuyển điện tích, duy trì hiệu điện thế giữa hai cực. Suất điện động đặc trưng cho công của lực lạ trên một đơn vị điện tích. Nguồn thực có điện trở trong r nên khi phát điện, điện áp hai cực thường nhỏ hơn suất điện động.",
+        "**Mục tiêu cần đạt**\n• Nêu được vai trò của nguồn và ý nghĩa suất điện động.\n• Phân biệt suất điện động với điện áp hai cực khi có dòng.\n• Vận dụng định luật Ohm cho mạch kín và đánh giá các trạng thái tải.",
+        "**Định nghĩa suất điện động**\n$$\\mathcal{E}=\\frac{A_{nguồn}}{q}$$\n• $\\mathcal{E}$: suất điện động của nguồn; đơn vị: V\n• $A_{nguồn}$: công của lực lạ trong nguồn; đơn vị: J\n• $q$: điện lượng được dịch chuyển; đơn vị: C\n**Điều kiện áp dụng**\n• Công được tính cho quá trình dịch chuyển điện tích bên trong nguồn.",
+        "**Mạch kín đơn giản**\n$$I=\\frac{\\mathcal{E}}{R+r},\\qquad U=\\mathcal{E}-Ir=IR$$\n• $R$: điện trở mạch ngoài; đơn vị: Ω\n• $r$: điện trở trong của nguồn; đơn vị: Ω\n• $U$: hiệu điện thế hai cực nguồn khi phát điện; đơn vị: V\n**Điều kiện áp dụng**\n• Một nguồn đang phát điện trong mạch kín đơn giản, dây nối coi như có điện trở không đáng kể.",
+        "**Ghi nhớ nhanh**\n• Hở mạch lí tưởng: $I=0$ nên $U=\\mathcal{E}$.\n• Ngắn mạch: $R\\approx0$, dòng $I_{sc}=\\mathcal{E}/r$ có thể rất lớn và nguy hiểm.\n• Không bỏ điện trở trong khi đề cho r khác không.",
+        "**Ví dụ: Nguồn mắc với tải**\nNguồn có $\\mathcal{E}=6$ V, $r=1$ Ω nối với $R=5$ Ω. Tìm I và U.\n**Bước 1:** Tính $I=\\mathcal{E}/(R+r)=6/(5+1)=1$ A.\n**Bước 2:** Tính $U=IR=1\\cdot5=5$ V, cũng bằng $6-1\\cdot1$.\n**Kết luận:** $I=1$ A và $U=5$ V.",
+        "**Ví dụ: Kiểm tra mô hình: Nguồn điện, suất điện động và điện trở trong**\nKhi giải một bài thuộc “Nguồn điện, suất điện động và điện trở trong”, cần kiểm tra những yếu tố nào để tránh dùng công thức máy móc?\n**Bước 1:** Hở mạch lí tưởng: $I=0$ nên $U=\\mathcal{E}$.\n**Bước 2:** Ngắn mạch: $R\\approx0$, dòng $I_{sc}=\\mathcal{E}/r$ có thể rất lớn và nguy hiểm.\n**Bước 3:** Đổi đơn vị, tính toán rồi đối chiếu giới hạn an toàn và độ lớn kết quả.\n**Kết luận:** Không bỏ điện trở trong khi đề cho r khác không."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt29-st-closed",
+          "name": "Mạch kín có điện trở trong",
+          "example": "Tính I và U của nguồn.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "phy11-qt29-st-state",
+          "name": "Hở mạch, ngắn mạch và hiệu suất",
+          "example": "So sánh U ở các chế độ tải.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m4-source-emf",
+          "question": "Khi nguồn đang phát điện và I khác 0, điện áp cực nguồn liên hệ thế nào với suất điện động?",
+          "options": [
+            "$U=\\mathcal{E}+Ir$",
+            "$U=\\mathcal{E}-Ir$",
+            "$U=Ir$",
+            "$U=0$"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Một phần suất điện động bị sụt trên điện trở trong: $U=\\mathcal{E}-Ir$."
+        },
+        {
+          "id": "phy11-theory-m4-source-emf-check-2",
+          "question": "Nhận định cần ghi nhớ trong “Nguồn điện, suất điện động và điện trở trong” là",
+          "options": [
+            "Hở mạch lí tưởng: $I=0$ nên $U=\\mathcal{E}$.",
+            "Mọi linh kiện luôn có điện trở không đổi.",
+            "Không cần quan tâm công suất định mức.",
+            "Có thể bỏ qua mọi điện trở trong."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Hở mạch lí tưởng: $I=0$ nên $U=\\mathcal{E}$."
+        },
+        {
+          "id": "phy11-theory-m4-source-emf-check-3",
+          "question": "Sau khi tính trong chủ đề “Nguồn điện, suất điện động và điện trở trong”, bước kiểm tra phù hợp là",
+          "options": [
+            "Chỉ nhìn số chữ số.",
+            "Luôn coi mạch bị ngắn.",
+            "Kiểm tra đơn vị, trạng thái mạch và giới hạn an toàn.",
+            "Bỏ qua chiều dòng điện."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kiểm tra trạng thái mạch và giới hạn định mức giúp phát hiện kết quả vô lí hoặc không an toàn."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt30",
+      "topicId": "phy11-t04",
+      "name": "Dạng 30: Điện năng và công suất điện",
+      "slug": "dien-nang-cong-suat-dien",
+      "difficulty": "medium",
+      "examFrequency": "high",
+      "description": "Tính điện năng, công suất và đánh giá sử dụng điện hiệu quả, an toàn.",
+      "recognitionSigns": [
+        "Đề cho công suất định mức, thời gian sử dụng hoặc số điện.",
+        "Yêu cầu chi phí, năng lượng hay điều kiện an toàn."
+      ],
+      "solvingSteps": [
+        "Xác định chế độ hoạt động và công suất thực tế.",
+        "Dùng A = Pt và các biểu thức công suất phù hợp.",
+        "Đổi đơn vị năng lượng rồi đánh giá hiệu quả, an toàn."
+      ],
+      "commonMistakes": [
+        "Nhầm kW với kWh.",
+        "Mặc định thiết bị luôn hoạt động đúng công suất định mức."
+      ],
+      "theory": [
+        "**Điện năng và công suất điện**\nĐiện năng mà đoạn mạch tiêu thụ bằng công của lực điện thực hiện trong đoạn mạch. Công suất cho biết tốc độ tiêu thụ hoặc chuyển hóa điện năng. Công suất định mức chỉ đạt khi thiết bị hoạt động đúng điện áp và điều kiện do nhà sản xuất quy định.",
+        "**Mục tiêu cần đạt**\n• Tính điện năng và công suất của thiết bị.\n• Đổi đúng giữa joule và kilowatt-hour.\n• Đánh giá sử dụng điện hiệu quả và an toàn từ thông số định mức.",
+        "**Điện năng và công suất**\n$$A=UIt=Pt,\\qquad P=UI$$\n• $A$: điện năng tiêu thụ; đơn vị: J hoặc kWh\n• $P$: công suất điện; đơn vị: W\n• $t$: thời gian hoạt động; đơn vị: s hoặc h\n**Điều kiện áp dụng**\n• U và I được coi không đổi trong khoảng thời gian khảo sát; đơn vị phải đồng bộ.",
+        "**Công suất và nhiệt lượng trên điện trở**\n$$P=I^2R=\\frac{U^2}{R},\\qquad Q=I^2Rt$$\n• $Q$: nhiệt lượng tỏa ra trên điện trở; đơn vị: J\n• $R$: điện trở của phần tử; đơn vị: Ω\n**Điều kiện áp dụng**\n• Phần tử thuần điện trở và áp dụng được định luật Ohm.",
+        "**Ghi nhớ nhanh**\n• $1\\,\\text{kWh}=3,6\\times10^6$ J; kW là công suất, kWh là năng lượng.\n• Không dùng công suất định mức nếu thiết bị không hoạt động đúng điện áp định mức.\n• Cần xét tổng công suất tải, giới hạn dây dẫn và thiết bị bảo vệ khi đánh giá an toàn.",
+        "**Ví dụ: Điện năng của thiết bị**\nẤm điện 1,5 kW hoạt động 20 phút mỗi ngày trong 30 ngày. Tính điện năng.\n**Bước 1:** Đổi tổng thời gian: $20/60\\times30=10$ h.\n**Bước 2:** Tính $A=Pt=1,5\\times10=15$ kWh.\n**Kết luận:** Điện năng tiêu thụ là 15 kWh.",
+        "**Ví dụ: Kiểm tra mô hình: Điện năng và công suất điện**\nKhi giải một bài thuộc “Điện năng và công suất điện”, cần kiểm tra những yếu tố nào để tránh dùng công thức máy móc?\n**Bước 1:** $1\\,\\text{kWh}=3,6\\times10^6$ J; kW là công suất, kWh là năng lượng.\n**Bước 2:** Không dùng công suất định mức nếu thiết bị không hoạt động đúng điện áp định mức.\n**Bước 3:** Đổi đơn vị, tính toán rồi đối chiếu giới hạn an toàn và độ lớn kết quả.\n**Kết luận:** Cần xét tổng công suất tải, giới hạn dây dẫn và thiết bị bảo vệ khi đánh giá an toàn."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt30-st-calculation",
+          "name": "Điện năng và công suất",
+          "example": "Tính điện năng tiêu thụ trong tháng.",
+          "targetQuestionCount": 9
+        },
+        {
+          "id": "phy11-qt30-st-application",
+          "name": "Hiệu quả và an toàn điện",
+          "example": "Chọn thiết bị hoặc dây dẫn phù hợp.",
+          "targetQuestionCount": 9
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m4-energy-power",
+          "question": "Đơn vị nào là đơn vị điện năng?",
+          "options": [
+            "kW",
+            "kWh",
+            "A",
+            "V/s"
+          ],
+          "correctAnswer": "B",
+          "explanation": "kWh là tích công suất với thời gian nên là đơn vị năng lượng."
+        },
+        {
+          "id": "phy11-theory-m4-energy-power-check-2",
+          "question": "Nhận định cần ghi nhớ trong “Điện năng và công suất điện” là",
+          "options": [
+            "$1\\,\\text{kWh}=3,6\\times10^6$ J; kW là công suất, kWh là năng lượng.",
+            "Mọi linh kiện luôn có điện trở không đổi.",
+            "Không cần quan tâm công suất định mức.",
+            "Có thể bỏ qua mọi điện trở trong."
+          ],
+          "correctAnswer": "A",
+          "explanation": "$1\\,\\text{kWh}=3,6\\times10^6$ J; kW là công suất, kWh là năng lượng."
+        },
+        {
+          "id": "phy11-theory-m4-energy-power-check-3",
+          "question": "Sau khi tính trong chủ đề “Điện năng và công suất điện”, bước kiểm tra phù hợp là",
+          "options": [
+            "Chỉ nhìn số chữ số.",
+            "Luôn coi mạch bị ngắn.",
+            "Kiểm tra đơn vị, trạng thái mạch và giới hạn an toàn.",
+            "Bỏ qua chiều dòng điện."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kiểm tra trạng thái mạch và giới hạn định mức giúp phát hiện kết quả vô lí hoặc không an toàn."
+        }
+      ]
+    },
+    {
+      "id": "phy11-qt31",
+      "topicId": "phy11-t04",
+      "name": "Dạng 31: Thực hành đo suất điện động và điện trở trong",
+      "slug": "thuc-hanh-do-suat-dien-dong-dien-tro-trong",
+      "difficulty": "hard",
+      "examFrequency": "medium",
+      "description": "Thiết kế mạch đo, xử lí dữ liệu U–I và đánh giá phép đo nguồn điện.",
+      "recognitionSigns": [
+        "Đề cho sơ đồ vôn kế–ampe kế hoặc bảng U–I.",
+        "Yêu cầu tìm E, r hay đánh giá sai số."
+      ],
+      "solvingSteps": [
+        "Kiểm tra cách mắc dụng cụ và giới hạn đo.",
+        "Dùng U = E − rI hoặc đồ thị U–I.",
+        "Suy ra E, r rồi phân tích sai số và an toàn."
+      ],
+      "commonMistakes": [
+        "Mắc ampe kế song song với nguồn.",
+        "Đọc sai dấu hệ số góc của đồ thị U–I."
+      ],
+      "theory": [
+        "**Thực hành đo suất điện động và điện trở trong**\nMắc ampe kế nối tiếp để đo dòng mạch và vôn kế song song với hai cực nguồn để đo điện áp. Thay đổi biến trở để thu nhiều cặp $(I,U)$ trong giới hạn an toàn. Theo $U=\\mathcal{E}-rI$, đồ thị U theo I gần là đường thẳng: tung độ gốc cho suất điện động và độ lớn hệ số góc cho điện trở trong.",
+        "**Mục tiêu cần đạt**\n• Mắc đúng ampe kế, vôn kế và biến trở trong mạch đo.\n• Xử lí bảng hoặc đồ thị U–I để xác định suất điện động và điện trở trong.\n• Nhận diện nguồn sai số và thực hiện phép đo an toàn.",
+        "**Phương trình tuyến tính của phép đo**\n$$U=\\mathcal{E}-rI$$\n• $U$: điện áp cực nguồn đo được; đơn vị: V\n• $I$: dòng điện mạch ngoài; đơn vị: A\n• $\\mathcal{E}$: tung độ gốc của đồ thị U–I; đơn vị: V\n• $-r$: hệ số góc của đồ thị U–I; đơn vị: V/A\n**Điều kiện áp dụng**\n• Nguồn ổn định, r gần như không đổi và dụng cụ đo làm việc trong giới hạn.",
+        "**Tính từ hai điểm đo**\n$$r=-\\frac{U_2-U_1}{I_2-I_1},\\qquad \\mathcal{E}=U+rI$$\n• $U_1,U_2$: hai giá trị điện áp đo được; đơn vị: V\n• $I_1,I_2$: hai giá trị dòng điện tương ứng; đơn vị: A\n**Điều kiện áp dụng**\n• Hai điểm khác nhau nằm trên đường xu hướng tuyến tính; nên dùng nhiều điểm và đường khớp để giảm sai số.",
+        "**Ghi nhớ nhanh**\n• Không mắc ampe kế trực tiếp song song với nguồn vì có thể gây ngắn mạch.\n• Trên đồ thị U theo I, hệ số góc âm và $r$ là độ lớn của hệ số góc.\n• Mở khóa K khi không đo; đọc đúng giới hạn đo và đơn vị dụng cụ.",
+        "**Ví dụ: Xử lí hai điểm U–I**\nHai điểm đo là $(I_1=0,20\\,A;U_1=1,40\\,V)$ và $(I_2=0,60\\,A;U_2=1,20\\,V)$.\n**Bước 1:** Tính $r=-(1,20-1,40)/(0,60-0,20)=0,50$ Ω.\n**Bước 2:** Tính $\\mathcal{E}=U_1+rI_1=1,40+0,50\\cdot0,20=1,50$ V.\n**Kết luận:** $r=0,50$ Ω và $\\mathcal{E}=1,50$ V.",
+        "**Ví dụ: Kiểm tra mô hình: Thực hành đo suất điện động và điện trở trong**\nKhi giải một bài thuộc “Thực hành đo suất điện động và điện trở trong”, cần kiểm tra những yếu tố nào để tránh dùng công thức máy móc?\n**Bước 1:** Không mắc ampe kế trực tiếp song song với nguồn vì có thể gây ngắn mạch.\n**Bước 2:** Trên đồ thị U theo I, hệ số góc âm và $r$ là độ lớn của hệ số góc.\n**Bước 3:** Đổi đơn vị, tính toán rồi đối chiếu giới hạn an toàn và độ lớn kết quả.\n**Kết luận:** Mở khóa K khi không đo; đọc đúng giới hạn đo và đơn vị dụng cụ."
+      ],
+      "subTypes": [
+        {
+          "id": "phy11-qt31-st-circuit",
+          "name": "Sơ đồ và quy trình đo",
+          "example": "Chọn cách mắc ampe kế, vôn kế.",
+          "targetQuestionCount": 12
+        },
+        {
+          "id": "phy11-qt31-st-data",
+          "name": "Xử lí bảng và đồ thị U–I",
+          "example": "Tìm E và r từ đường thẳng.",
+          "targetQuestionCount": 12
+        }
+      ],
+      "theoryCheckpoints": [
+        {
+          "id": "phy11-check-m4-source-experiment",
+          "question": "Trên đồ thị U theo I, đại lượng nào bằng độ lớn hệ số góc?",
+          "options": [
+            "Suất điện động",
+            "Điện trở trong",
+            "Điện lượng",
+            "Công suất"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Từ $U=\\mathcal{E}-rI$, hệ số góc bằng $-r$."
+        },
+        {
+          "id": "phy11-theory-m4-source-experiment-check-2",
+          "question": "Nhận định cần ghi nhớ trong “Thực hành đo suất điện động và điện trở trong” là",
+          "options": [
+            "Không mắc ampe kế trực tiếp song song với nguồn vì có thể gây ngắn mạch.",
+            "Mọi linh kiện luôn có điện trở không đổi.",
+            "Không cần quan tâm công suất định mức.",
+            "Có thể bỏ qua mọi điện trở trong."
+          ],
+          "correctAnswer": "A",
+          "explanation": "Không mắc ampe kế trực tiếp song song với nguồn vì có thể gây ngắn mạch."
+        },
+        {
+          "id": "phy11-theory-m4-source-experiment-check-3",
+          "question": "Sau khi tính trong chủ đề “Thực hành đo suất điện động và điện trở trong”, bước kiểm tra phù hợp là",
+          "options": [
+            "Chỉ nhìn số chữ số.",
+            "Luôn coi mạch bị ngắn.",
+            "Kiểm tra đơn vị, trạng thái mạch và giới hạn an toàn.",
+            "Bỏ qua chiều dòng điện."
+          ],
+          "correctAnswer": "C",
+          "explanation": "Kiểm tra trạng thái mạch và giới hạn định mức giúp phát hiện kết quả vô lí hoặc không an toàn."
+        }
+      ]
+    }
+  ]
+}
