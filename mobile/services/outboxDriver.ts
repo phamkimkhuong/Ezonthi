@@ -1,6 +1,6 @@
 import {
   prepareBatch, canonicalPayload, acknowledgeBatch, mergeCanonical,
-  type LearningAccount, type CanonicalRecord,
+  type LearningAccount, type CanonicalRecord, type CanonicalMistake,
 } from './accountLearningState';
 
 export interface CanonicalAck {
@@ -17,7 +17,7 @@ export interface OutboxDependencies {
   update(update: (account: LearningAccount) => LearningAccount): void;
   flush(): Promise<void>;
   send(payload: { expectedUserId: string; operationId: string; attempts: NonNullable<ReturnType<typeof canonicalPayload>>[] }): Promise<CanonicalAck>;
-  pull(): Promise<{ records: CanonicalRecord[]; xp: number }>;
+  pull(): Promise<{ records: CanonicalRecord[]; xp: number; mistakes?: CanonicalMistake[] }>;
 }
 
 export async function runOutbox(dependencies: OutboxDependencies): Promise<boolean> {
@@ -55,8 +55,10 @@ export async function runOutbox(dependencies: OutboxDependencies): Promise<boole
     if (!d.isCurrent()) return false;
     const snapshot = await d.pull();
     d.update(account => ({
-      ...mergeCanonical(account, snapshot.records, snapshot.xp),
+      ...mergeCanonical(account, snapshot.records, snapshot.xp, snapshot.mistakes),
       lastSyncedAt: new Date().toISOString(),
+      syncError: account.attempts.some(a => a.syncStatus === 'blocked')
+        ? 'Có bài bị từ chối hoặc xung đột. Bản trên máy vẫn được giữ.' : null,
     }));
     await d.flush();
     return !d.getAccount().attempts.some(a => a.syncStatus === 'pending' || a.syncStatus === 'blocked');

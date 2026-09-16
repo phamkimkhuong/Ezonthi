@@ -643,3 +643,5 @@ export interface AffiliateValidationResult {
   finalAmount?: number;
   message?: string;
 }
+
+export * from './roadmapContract';

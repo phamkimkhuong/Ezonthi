@@ -5,6 +5,7 @@ import { storageService } from '../../services/storage';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
 import { getTopics, getQuestionTypes } from '../../data';
+import { useRoadmapBundle } from '../../services/roadmapService';
 import {
   Bookmark,
   Award,
@@ -59,9 +60,17 @@ export const Dashboard: React.FC = () => {
   const readLessonsSet = new Set(readLessons);
   const completedLessonsSet = new Set(progress.completedLessons);
 
-  // 1. Lấy danh sách chuyên đề & dạng bài của môn/lớp hiện tại theo đúng thứ tự
-  const topics = getTopics(selectedGrade, selectedSubject);
-  const questionTypes = getQuestionTypes(selectedGrade, selectedSubject);
+  // 1. Lấy danh sách chuyên đề & dạng bài từ Cloud R2 (fallback runtime data)
+  const { bundle: roadmapBundle } = useRoadmapBundle(selectedGrade, selectedSubject);
+  const topics = useMemo(() => {
+    if (roadmapBundle?.topics?.length) return roadmapBundle.topics;
+    return getTopics(selectedGrade, selectedSubject);
+  }, [roadmapBundle, selectedGrade, selectedSubject]);
+
+  const questionTypes = useMemo(() => {
+    if (roadmapBundle?.questionTypes?.length) return roadmapBundle.questionTypes;
+    return getQuestionTypes(selectedGrade, selectedSubject);
+  }, [roadmapBundle, selectedGrade, selectedSubject]);
 
   const sequentialTypes: any[] = [];
   [1, 2, 3].forEach(tierId => {

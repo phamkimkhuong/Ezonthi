@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAppStore } from '@/services/store';
 import { storageService } from '@/services/storage';
-import { getLearningOutcomes, getTopics, getQuestionTypes } from '@/data';
+import { getLearningOutcomes } from '@/data';
+import { useRoadmapBundle } from '@/services/roadmapService';
+import type { RoadmapQuestionType } from '@/types/roadmapContract';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { getDifficultyTheme, getSubjectTheme, getTierTheme } from '@/utils/theme';
@@ -10,7 +12,6 @@ import { getSubjectName, getSubjectIcon, isQuestionTypePremiumLocked } from '@/u
 import { LatexRenderer } from '../../components/common/LatexRenderer';
 import { ConfirmationModal } from '../../components/common/ConfirmationModal';
 import { authService } from '../../services/authService';
-import type { QuestionType } from '../../types';
 import { ChemistryVideoDashboard } from './components/ChemistryVideoDashboard';
 import { BiologyVideoDashboard } from './components/BiologyVideoDashboard';
 import { PhysicsVideoDashboard } from './components/PhysicsVideoDashboard';
@@ -67,8 +68,9 @@ export const Roadmap: React.FC = () => {
     localStorage.setItem(`otv10_roadmap_view_${selectedSubject}_${selectedGrade}`, newView);
   };
 
-  const topics = getTopics(selectedGrade, selectedSubject);
-  const questionTypes = getQuestionTypes(selectedGrade, selectedSubject);
+  const { bundle, loading: bundleLoading } = useRoadmapBundle(selectedGrade, selectedSubject);
+  const topics = React.useMemo(() => bundle?.topics || [], [bundle]);
+  const questionTypes = React.useMemo(() => bundle?.questionTypes || [], [bundle]);
   const learningOutcomes = getLearningOutcomes(selectedGrade, selectedSubject);
 
   const [modalConfig, setModalConfig] = useState<{
@@ -93,7 +95,7 @@ export const Roadmap: React.FC = () => {
 
   // Gom nhóm dạng bài theo từng Chuyên đề (Topic) để quản lý mở khóa độc lập theo chương
   const typesByTopic = React.useMemo(() => {
-    const map = new Map<string, QuestionType[]>();
+    const map = new Map<string, RoadmapQuestionType[]>();
     topics.forEach(t => {
       map.set(t.id, questionTypes.filter(type => type.topicId === t.id));
     });
@@ -376,9 +378,24 @@ export const Roadmap: React.FC = () => {
             </div>
           )}
 
-          {/* Render từng Chặng */}
-          <div className="space-y-16">
-            {tiers.map((tier) => {
+          {/* Skeleton Loading State khi lần đầu tải từ R2 */}
+          {bundleLoading && !bundle ? (
+            <div className="space-y-12 animate-pulse pt-4">
+              {[1, 2, 3].map((s) => (
+                <div key={s} className="space-y-4">
+                  <div className="h-20 bg-slate-200/70 dark:bg-slate-800/70 rounded-2xl" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="h-32 bg-slate-200/50 dark:bg-slate-800/50 rounded-xl" />
+                    <div className="h-32 bg-slate-200/50 dark:bg-slate-800/50 rounded-xl" />
+                    <div className="h-32 bg-slate-200/50 dark:bg-slate-800/50 rounded-xl" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            /* Render từng Chặng */
+            <div className="space-y-16">
+              {tiers.map((tier) => {
               const tierTopics = topics.filter(t => t.tier === tier.id);
 
               // Lọc ra các chuyên đề có ít nhất 1 dạng bài được hiển thị
@@ -555,6 +572,7 @@ export const Roadmap: React.FC = () => {
               );
             })}
           </div>
+          )}
         </>
       )}
 

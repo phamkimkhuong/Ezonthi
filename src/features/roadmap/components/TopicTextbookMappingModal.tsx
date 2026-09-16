@@ -1,13 +1,14 @@
 import React from 'react';
 import { X, BookOpen, ExternalLink, Sparkles } from 'lucide-react';
 import type { LearningOutcome, QuestionType } from '../../../types';
+import type { RoadmapQuestionType } from '@/types/roadmapContract';
 
 interface TopicTextbookMappingModalProps {
   isOpen: boolean;
   onClose: () => void;
   topicName: string;
   outcomes: LearningOutcome[];
-  questionTypes: QuestionType[];
+  questionTypes: Array<QuestionType | RoadmapQuestionType>;
   onOpenTextbookPage?: (bookName: string, pages: number[]) => void;
 }
 

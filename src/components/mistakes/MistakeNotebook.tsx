@@ -4,6 +4,7 @@ import { storageService } from '../../services/storage';
 import { progressService } from '../../services/progressService';
 import { aiService } from '../../services/aiService';
 import { getQuestionTypes, getQuestions, getSolutions } from '../../data';
+import { useRoadmapBundle } from '../../services/roadmapService';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
 import { LatexRenderer } from '../../components/common/LatexRenderer';
@@ -152,7 +153,8 @@ export const MistakeNotebook: React.FC = () => {
   const [latestAttempt, setLatestAttempt] = useState<UserAttempt | null>(null);
   const [showAuthModal, setShowAuthModal] = useState(false);
 
-  const questionTypes = getQuestionTypes(selectedGrade, selectedSubject);
+  const { bundle: roadmapBundle } = useRoadmapBundle(selectedGrade, selectedSubject);
+  const questionTypes = roadmapBundle?.questionTypes?.length ? roadmapBundle.questionTypes : getQuestionTypes(selectedGrade, selectedSubject);
   const questions = getQuestions(selectedGrade, selectedSubject);
   const solutions = getSolutions(selectedGrade, selectedSubject);
 

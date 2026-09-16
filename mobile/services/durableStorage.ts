@@ -8,14 +8,32 @@ export interface StringStorage {
 export function createDurableStorage(storage: StringStorage) {
   let tail: Promise<void> = Promise.resolve();
   let failure: unknown;
+  let readFailed = false;
   const enqueue = (operation: () => Promise<unknown>) => {
     tail = tail.then(operation).then(() => { failure = undefined; }, error => { failure = error; });
     return tail;
   };
   return {
-    getItem: (key: string) => storage.getItem(key),
-    setItem: (key: string, value: string) => enqueue(() => storage.setItem(key, value)),
-    removeItem: (key: string) => enqueue(() => storage.removeItem(key)),
+    async getItem(key: string) {
+      try {
+        const raw = await storage.getItem(key);
+        if (raw) {
+          const saved = JSON.parse(raw);
+          if (saved.version !== 2 && !await storage.getItem(`${key}:before-v2`)) {
+            await storage.setItem(`${key}:before-v2`, raw);
+          }
+        }
+        return raw;
+      } catch (error) { readFailed = true; throw error; }
+    },
+    setItem: (key: string, value: string) => enqueue(() => {
+      if (readFailed) throw new Error('Không ghi đè dữ liệu cũ sau lỗi đọc/hydration.');
+      return storage.setItem(key, value);
+    }),
+    removeItem: (key: string) => enqueue(() => {
+      if (readFailed) throw new Error('Không xóa dữ liệu cũ sau lỗi đọc/hydration.');
+      return storage.removeItem(key);
+    }),
     async flush() {
       await tail;
       if (failure) throw failure;

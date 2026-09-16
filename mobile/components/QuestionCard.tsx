@@ -1,11 +1,13 @@
-import { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { useState, useRef, useEffect } from 'react';
+import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import { CheckCircle2, XCircle, Lightbulb, Bot, Sparkles } from 'lucide-react-native';
 import { MathRenderer } from './MathRenderer';
 import { MobileQuestion, DataService } from '../services/dataService';
 import { HapticService } from '../services/hapticService';
 import { useUserStore } from '../stores';
+import { flushLearningStorage } from '../stores/useUserStore';
+import { newLocalId } from '../services/accountLearningState';
 
 interface QuestionCardProps {
   question: MobileQuestion;
@@ -18,9 +20,24 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({ question, onNext, is
   const router = useRouter();
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState<boolean>(false);
-  const { recordAttempt, hapticEnabled } = useUserStore();
+  const { recordAttempt, hapticEnabled, activeScope, storageError } = useUserStore();
+  const attemptId = useRef(`att_${newLocalId()}`);
+  const answerLock = useRef(false);
+  const [isSaved, setIsSaved] = useState(false);
 
   const scope = DataService.getTopicScope(question.topicId);
+  useEffect(() => {
+    if (!selectedLetter || isSaved || storageError || answerLock.current) return;
+    let alive = true;
+    void flushLearningStorage().then(() => {
+      const state = useUserStore.getState();
+      if (alive && state.activeScope === activeScope && state.attempts.some(a => a.id === attemptId.current)) {
+        setIsSaved(true); onAnswer?.(selectedLetter === question.correctAnswer);
+      }
+    }).catch(() => {});
+    return () => { alive = false; };
+  }, [storageError, selectedLetter, isSaved, activeScope]);
+
   const subjectName = scope ? DataService.getSubject(question.subjectId, scope.gradeId)?.name || 'Môn học' : 'Môn học';
   const topicName = DataService.getTopic(question.topicId)?.title || '';
 
@@ -42,8 +59,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({ question, onNext, is
     });
   };
 
-  const handleSelectOption = (optionStr: string) => {
-    if (isAnswered) return;
+  const handleSelectOption = async (optionStr: string) => {
+    if (isAnswered || answerLock.current) return;
+    answerLock.current = true;
 
     const letter = optionStr.charAt(0).toUpperCase();
     setSelectedLetter(letter);
@@ -59,8 +77,13 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({ question, onNext, is
       }
     }
 
-    recordAttempt(question.id, question.topicId, question.subjectId, correct, letter, correct ? 10 : 0);
-    onAnswer?.(correct);
+    try {
+      await recordAttempt(question.id, question.topicId, question.subjectId, correct, letter, correct ? 10 : 0,
+        attemptId.current, 0, activeScope);
+      if (useUserStore.getState().activeScope === activeScope) { setIsSaved(true); onAnswer?.(correct); }
+    } catch {
+      Alert.alert('Chưa lưu được câu trả lời', 'Giữ ứng dụng mở và dùng nút Thử lưu trước khi tiếp tục.');
+    } finally { answerLock.current = false; }
   };
 
   return (
@@ -200,6 +223,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({ question, onNext, is
             {onNext && (
               <TouchableOpacity
                 onPress={onNext}
+                disabled={!isSaved}
                 activeOpacity={0.8}
                 className="flex-1 bg-indigo-600 hover:bg-indigo-500 p-3.5 rounded-xl flex-row items-center justify-center space-x-2 gap-2 shadow-md shadow-indigo-500/20"
               >

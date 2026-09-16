@@ -6,7 +6,8 @@ import {
   ScrollView,
   StatusBar,
   Alert,
-  Modal
+  Modal,
+  AppState
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter } from 'expo-router';
@@ -29,128 +30,154 @@ import { MathRenderer } from '../../components/MathRenderer';
 import { useUserStore } from '../../stores';
 import { formatSecondsToTimer } from '../../utils';
 import { HapticService } from '../../services/hapticService';
+import { newLocalId, remainingExamSeconds, type ExamDraft } from '../../services/accountLearningState';
 
 export default function ExamDetailScreen() {
   const router = useRouter();
   const { examId } = useLocalSearchParams<{ examId: string }>();
-  const { recordAttempt, hapticEnabled } = useUserStore();
+  const { activeScope, isHydrated, hapticEnabled, saveExamDraft, submitExamDraft } = useUserStore();
 
   const [exam, setExam] = useState<Exam | null>(null);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [currentIndex, setIndex] = useState<number>(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [timeLeft, setTimeLeft] = useState<number>(0);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [result, setResult] = useState<ExamResult | null>(null);
   const [showPalette, setShowPalette] = useState<boolean>(false);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const draftRef = useRef<ExamDraft | null>(null);
+  const scopeRef = useRef(activeScope);
+  const submissionLock = useRef(false);
+  const submitRef = useRef<(force?: boolean) => void>(() => {});
 
-  useEffect(() => {
-    if (examId) {
-      const foundExam = getExamById(examId);
-      if (foundExam) {
-        setExam(foundExam);
-        setTimeLeft(foundExam.durationMinutes * 60);
-      }
-    }
-  }, [examId]);
-
-  // Bộ đếm ngược thời gian
-  useEffect(() => {
-    if (!exam || isSubmitted || timeLeft <= 0) return;
-
-    timerRef.current = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          clearInterval(timerRef.current!);
-          handleSubmitExam(true);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [exam, isSubmitted, timeLeft]);
-
-  const formatTime = formatSecondsToTimer;
-
-  const handleSelectAnswer = (letter: string) => {
-    if (isSubmitted || !exam) return;
-    const q = exam.questions[currentIndex];
-    if (!q) return;
-
-    if (hapticEnabled) HapticService.selection();
-
-    setAnswers((prev) => ({
-      ...prev,
-      [q.id]: letter
-    }));
-  };
-
-  const handleSubmitExam = (force = false) => {
-    if (!exam || isSubmitted) return;
-
-    const unansweredCount = exam.questions.filter((q) => !answers[q.id]).length;
-
-    if (!force && unansweredCount > 0) {
-      Alert.alert(
-        'Xác nhận nộp bài',
-        `Em vẫn còn ${unansweredCount} câu chưa chọn đáp án. Em có chắc chắn muốn nộp bài không?`,
-        [
-          { text: 'Làm tiếp', style: 'cancel' },
-          { text: 'Nộp bài ngay', style: 'destructive', onPress: () => processSubmission() }
-        ]
-      );
-      return;
-    }
-
-    processSubmission();
-  };
-
-  const processSubmission = () => {
-    if (!exam) return;
-    if (timerRef.current) clearInterval(timerRef.current);
-
-    const timeSpent = exam.durationMinutes * 60 - timeLeft;
-    const examResult = evaluateExam(exam, answers, timeSpent);
-    setResult(examResult);
-    setIsSubmitted(true);
-
-    if (hapticEnabled) HapticService.success();
-
-    // Ghi nhận lịch sử cho từng câu hỏi vào Zustand & Sổ lỗi sai
-    exam.questions.forEach((q) => {
-      const selected = answers[q.id];
-      const isCorrect = selected === q.correctAnswer;
-      const xpEarned = isCorrect ? (examResult.score10 >= 8.0 ? 15 : 10) : 0;
-      recordAttempt(q.id, q.topicId, q.subjectId, isCorrect, selected || '', xpEarned);
+  const persistDraft = (draft: ExamDraft) => {
+    draftRef.current = draft;
+    void saveExamDraft(scopeRef.current, draft).catch(() => {
+      // Store exposes disk errors globally; no silent success claim.
     });
   };
 
-  const handleExit = () => {
-    if (!isSubmitted) {
-      Alert.alert(
-        'Thoát khỏi phòng thi?',
-        'Bài thi đang diễn ra sẽ không được lưu nếu em thoát ra giữa chừng.',
-        [
-          { text: 'Ở lại thi', style: 'cancel' },
-          { text: 'Rời phòng', style: 'destructive', onPress: () => router.back() }
-        ]
-      );
-    } else {
-      router.back();
+  useEffect(() => {
+    if (!isHydrated || !examId) return;
+    scopeRef.current = activeScope;
+    submissionLock.current = false;
+    const existing = useUserStore.getState().accounts[activeScope]?.examDrafts[examId];
+    const foundExam = getExamById(examId);
+    if (!foundExam) { setExam(null); draftRef.current = null; return; }
+    const now = Date.now();
+    const draft: ExamDraft = existing || {
+      sessionId: newLocalId(), exam: foundExam, startedAt: now,
+      deadlineAt: now + foundExam.durationMinutes * 60_000, answers: {}, currentIndex: 0,
+    };
+    draftRef.current = draft;
+    setExam(draft.exam);
+    setAnswers(draft.answers);
+    setIndex(draft.currentIndex);
+    setTimeLeft(remainingExamSeconds(draft));
+    setIsSubmitted(!!draft.submittedAt);
+    setResult(draft.result || null);
+    setShowPalette(false);
+    if (!existing) persistDraft(draft);
+  }, [examId, activeScope, isHydrated]);
+
+  useEffect(() => {
+    if (!exam || isSubmitted) return;
+    const tick = () => {
+      const draft = draftRef.current;
+      if (!draft || draft.submittedAt || useUserStore.getState().activeScope !== scopeRef.current) return;
+      const seconds = remainingExamSeconds(draft);
+      setTimeLeft(seconds);
+      if (seconds === 0) submitRef.current(true);
+    };
+    tick();
+    const timer = setInterval(tick, 1000);
+    const foreground = AppState.addEventListener('change', state => { if (state === 'active') tick(); });
+    return () => { clearInterval(timer); foreground.remove(); };
+  }, [exam, isSubmitted, activeScope]);
+
+  const formatTime = formatSecondsToTimer;
+
+  const setCurrentIndex = (value: number | ((previous: number) => number)) => {
+    const draft = draftRef.current;
+    if (!draft || useUserStore.getState().activeScope !== scopeRef.current) return;
+    const next = typeof value === 'function' ? value(draft.currentIndex) : value;
+    setIndex(next);
+    persistDraft({ ...draft, currentIndex: next });
+  };
+
+  const handleSelectAnswer = (letter: string) => {
+    const draft = draftRef.current;
+    if (!draft || draft.submittedAt || submissionLock.current || !exam ||
+        useUserStore.getState().activeScope !== scopeRef.current) return;
+    if (remainingExamSeconds(draft) === 0) { submitRef.current(true); return; }
+    const q = draft.exam.questions[draft.currentIndex];
+    if (!q) return;
+    if (hapticEnabled) HapticService.selection();
+    const updated = { ...draft, answers: { ...draft.answers, [q.id]: letter } };
+    setAnswers(updated.answers);
+    persistDraft(updated);
+  };
+
+  const processSubmission = async () => {
+    const draft = draftRef.current;
+    const scope = scopeRef.current;
+    if (!draft || isSubmitted || submissionLock.current || useUserStore.getState().activeScope !== scope) return;
+    submissionLock.current = true;
+    const now = Date.now();
+    const timeSpent = Math.min(draft.exam.durationMinutes * 60, Math.max(0, Math.floor((now - draft.startedAt) / 1000)));
+    const submitted: ExamDraft = draft.submittedAt ? draft : {
+      ...draft, submittedAt: now, result: evaluateExam(draft.exam, draft.answers, timeSpent),
+    };
+    draftRef.current = submitted;
+    try {
+      // Result and all question attempts enter one durable account snapshot.
+      await submitExamDraft(scope, submitted);
+      if (useUserStore.getState().activeScope !== scope || draftRef.current?.sessionId !== submitted.sessionId) return;
+      setResult(submitted.result!);
+      setIsSubmitted(true);
+      if (hapticEnabled) HapticService.success();
+    } catch {
+      Alert.alert('Chưa lưu được bài thi', 'Bài vẫn được giữ trong bộ nhớ. Giữ ứng dụng mở và bấm nộp lại để thử lưu, hoặc dùng nút Thử lưu ở thông báo.');
+    } finally { submissionLock.current = false; }
+  };
+
+  const handleSubmitExam = (force = false) => {
+    const draft = draftRef.current;
+    if (!draft || isSubmitted || submissionLock.current) return;
+    const unansweredCount = draft.exam.questions.filter(q => !draft.answers[q.id]).length;
+    if (!force && unansweredCount > 0 && !draft.submittedAt) {
+      Alert.alert('Xác nhận nộp bài', `Em vẫn còn ${unansweredCount} câu chưa chọn đáp án. Em có chắc chắn muốn nộp bài không?`, [
+        { text: 'Làm tiếp', style: 'cancel' },
+        { text: 'Nộp bài ngay', style: 'destructive', onPress: () => { void processSubmission(); } },
+      ]);
+      return;
     }
+    void processSubmission();
+  };
+  submitRef.current = handleSubmitExam;
+
+  const handleExit = () => {
+    if (useUserStore.getState().storageError) {
+      Alert.alert('Bản nháp chưa lưu', 'Vui lòng thử lưu trước khi rời bài thi.');
+      return;
+    }
+    if (!isSubmitted) {
+      Alert.alert('Rời phòng thi?', 'Bản nháp được giữ trên thiết bị cho tài khoản này. Đồng hồ vẫn chạy khi rời phòng hoặc tắt ứng dụng.', [
+        { text: 'Làm tiếp', style: 'cancel' },
+        { text: 'Rời phòng', onPress: () => router.back() },
+      ]);
+    } else router.back();
   };
 
   const handleRestart = () => {
-    if (!exam) return;
-    setAnswers({});
-    setCurrentIndex(0);
-    setTimeLeft(exam.durationMinutes * 60);
-    setIsSubmitted(false);
-    setResult(null);
+    if (!exam || submissionLock.current) return;
+    const now = Date.now();
+    const draft: ExamDraft = { sessionId: newLocalId(), exam,
+      startedAt: now, deadlineAt: now + exam.durationMinutes * 60_000,
+      answers: {}, currentIndex: 0,
+    };
+    persistDraft(draft);
+    setAnswers({}); setIndex(0); setTimeLeft(remainingExamSeconds(draft));
+    setIsSubmitted(false); setResult(null);
   };
 
   if (!exam) {

@@ -2,19 +2,17 @@ import { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Switch, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Bell, Volume2, Vibrate, RefreshCcw, Sparkles, Clock, LogIn, LogOut } from 'lucide-react-native';
-import { signOut } from 'firebase/auth';
+import { MobileAuthService } from '../../services/authService';
 import { ReminderModal } from '../../components/ReminderModal';
 import { useUserStore } from '../../stores';
 import { formatHourMinute } from '../../utils';
 import { NotificationService } from '../../services/notificationService';
-import { auth } from '../../services/firebase';
 
 export default function SettingsScreen() {
   const router = useRouter();
   const [reminderModalVisible, setReminderModalVisible] = useState(false);
   const {
     user,
-    setUser,
     reminderHour,
     reminderMinute,
     reminderEnabled,
@@ -48,9 +46,8 @@ export default function SettingsScreen() {
         style: 'destructive',
         onPress: async () => {
           try {
-            await signOut(auth);
-          } catch { }
-          setUser(null);
+            await MobileAuthService.signOut();
+          } catch { Alert.alert('Chưa đăng xuất', 'Dữ liệu chưa lưu hoặc phiên đăng nhập chưa đóng. Vui lòng thử lại.'); }
         }
       }
     ]);
@@ -59,7 +56,7 @@ export default function SettingsScreen() {
   const handleReset = () => {
     Alert.alert(
       'Xác nhận đặt lại tiến độ?',
-      'Toàn bộ điểm XP và lịch sử bài làm sẽ được thiết lập lại từ đầu.',
+      'Chỉ đặt lại dữ liệu đã đồng bộ trên thiết bị. Bài chờ đồng bộ và bản nháp được giữ; dữ liệu cloud sẽ được tải lại.',
       [
         { text: 'Hủy', style: 'cancel' },
         { text: 'Đặt lại', style: 'destructive', onPress: resetProgress }

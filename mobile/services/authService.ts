@@ -2,7 +2,8 @@ import { GoogleAuthProvider, signInWithCredential, signOut as fbSignOut } from '
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { auth } from './firebase';
 import { UserProfile, useUserStore } from '../stores';
-import { CloudSyncService } from './cloudSyncService';
+import { flushLearningStorage, waitForLearningHydration } from '../stores/useUserStore';
+import { VocabularyService } from './vocabularyService';
 
 export const MobileAuthService = {
   /**
@@ -22,10 +23,11 @@ export const MobileAuthService = {
       isAnonymous: false,
     };
 
+    await waitForLearningHydration();
+    await VocabularyService.migrateLegacyProgress();
+    if (auth.currentUser?.uid !== profile.uid) throw new Error('Tài khoản đã thay đổi.');
     useUserStore.getState().setUser(profile);
-
-    // Kéo và gộp dữ liệu học tập từ Firestore về máy
-    await CloudSyncService.pullAndMergeFromCloud(profile);
+    await flushLearningStorage();
 
     return profile;
   },
@@ -34,16 +36,13 @@ export const MobileAuthService = {
    * Đăng xuất tài khoản
    */
   async signOut(): Promise<void> {
+    await flushLearningStorage();
     try {
       await GoogleSignin.signOut();
     } catch (e) {
       // Bỏ qua nếu chưa đăng nhập qua Google
     }
-    try {
-      await fbSignOut(auth);
-    } catch (e) {
-      console.warn('Lỗi đăng xuất Firebase:', e);
-    }
+    await fbSignOut(auth);
     useUserStore.getState().setUser(null);
   }
 };

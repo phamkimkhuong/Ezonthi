@@ -13,6 +13,7 @@
     "check": "node scripts/tests/checkRepoHygiene.mjs && tsc -b --noEmit && eslint .",
     "type-check": "tsc -b --noEmit",
     "lint": "eslint .",
+    "export:roadmap": "node scripts/tools/exportRoadmapToR2.mjs",
     "validate:content": "node scripts/validators/runAllValidators.mjs",
     "validate:grade10": "node scripts/validators/runAllValidators.mjs --grade=10",
     "validate:grade11": "node scripts/validators/runAllValidators.mjs --grade=11",

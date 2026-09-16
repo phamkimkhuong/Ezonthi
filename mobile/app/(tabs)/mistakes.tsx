@@ -16,7 +16,7 @@ import { HapticService } from '../../services/hapticService';
 
 export default function MistakesScreen() {
   const router = useRouter();
-  const { mistakes, resolveMistake } = useUserStore();
+  const { mistakes, resolveMistake, activeScope } = useUserStore();
   const [filter, setFilter] = useState<'all' | 'pending' | 'fixed'>('pending');
   const [retestQuestionId, setRetestQuestionId] = useState<string | null>(null);
 
@@ -33,16 +33,17 @@ export default function MistakesScreen() {
   const pendingCount = mistakes.filter(m => m.reviewStatus !== 'fixed').length;
   const fixedCount = mistakes.filter(m => m.reviewStatus === 'fixed').length;
 
-  const handleRetestAnswer = (questionId: string, selectedLetter: string, correctAnswer: string) => {
+  const handleRetestAnswer = async (questionId: string, selectedLetter: string, correctAnswer: string) => {
     const isCorrect = selectedLetter === correctAnswer;
+    try { await resolveMistake(questionId, isCorrect, selectedLetter, activeScope); }
+    catch { Alert.alert('Chưa lưu được bài ôn', 'Vui lòng thử lưu trước khi tiếp tục.'); return; }
+    if (useUserStore.getState().activeScope !== activeScope) return;
     if (isCorrect) {
       HapticService.success();
-      resolveMistake(questionId, true);
       Alert.alert('Chính xác! 🎉', 'Bạn đã khắc phục thành công lỗi sai này.');
       setRetestQuestionId(null);
     } else {
       HapticService.warning();
-      resolveMistake(questionId, false);
       Alert.alert('Chưa đúng! 💡', `Đáp án đúng là ${correctAnswer}. Hãy đọc kỹ lại lời giải bên dưới nhé.`);
     }
   };

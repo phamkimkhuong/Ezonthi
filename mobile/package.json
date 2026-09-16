@@ -13,7 +13,10 @@
     "build-a-preview": "npx eas-cli build -p android --profile preview",
     "build-a-dev": "npx eas-cli build -p android --profile development",
     "update-preview": "npx eas-cli update --channel preview --auto",
-    "update-prod": "npx eas-cli update --channel production --auto"
+    "update-prod": "npx eas-cli update --channel production --auto",
+    "test:learning": "node --test tests/learning-sync.test.cjs",
+    "test": "node --test tests/content-contract.test.cjs tests/learning-sync.test.cjs",
+    "test:backend": "node --test tests/backend-contract.test.cjs"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",

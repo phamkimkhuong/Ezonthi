@@ -126,7 +126,7 @@ export default function SubjectsScreen() {
             const mastery = isAvailable ? topicMastery[topic.id] : undefined;
             const score = mastery?.score ?? 0;
             const stars = mastery?.stars ?? 0;
-            const isMastered = stars === 3 || score >= 80;
+            const isMastered = !!mastery?.hasEnoughEvidence && score >= 80;
 
             return (
               <TouchableOpacity

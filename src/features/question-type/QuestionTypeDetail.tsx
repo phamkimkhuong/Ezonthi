@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import '@fontsource/source-serif-4/vietnamese-400.css';
 import '@fontsource/source-serif-4/vietnamese-600.css';
 import '@fontsource/source-serif-4/vietnamese-700.css';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getQuestionTypes, getQuestions, getSolutions, getLearningOutcomes } from '@/data';
+import { getQuestions, getSolutions, getLearningOutcomes } from '@/data';
+import { useRoadmapBundle } from '@/services/roadmapService';
+import type { RoadmapQuestionType } from '@/types/roadmapContract';
 import { useAppStore } from '@/services/store';
 import { Tabs, TabItem } from '@/components/ui/tabs';
 import { authService } from '@/services/authService';
 import { TextbookDrawer } from '@/components/common/TextbookDrawer';
-import { QuestionType, Question, Solution } from '@/types';
+import { Question, Solution } from '@/types';
 import { Button } from '@/components/ui/button';
 import { LatexRenderer } from '@/components/common/LatexRenderer';
 import {
@@ -60,7 +62,7 @@ export const QuestionTypeDetail: React.FC = () => {
   }, []);
 
   const routeSubject = getSubjectFromQuestionTypeId(questionTypeId) ?? selectedSubject;
-  const routeQuestionTypes = getQuestionTypes(selectedGrade, routeSubject);
+  const { bundle, loading: bundleLoading } = useRoadmapBundle(selectedGrade, routeSubject);
   const routeQuestions = getQuestions(selectedGrade, routeSubject);
   const routeSolutions = getSolutions(selectedGrade, routeSubject);
 
@@ -71,10 +73,11 @@ export const QuestionTypeDetail: React.FC = () => {
     }
   }, [questionTypeId, selectedSubject, setSubject]);
 
-  // Tìm dạng bài trực tiếp trong quá trình render (Derived State)
-  const detail: QuestionType | null = questionTypeId
-    ? (routeQuestionTypes.find(t => t.id === questionTypeId) || null)
-    : null;
+  // Tìm dạng bài trực tiếp trong quá trình render (Derived State từ R2 Bundle)
+  const detail: RoadmapQuestionType | null = useMemo(() => {
+    if (!questionTypeId || !bundle) return null;
+    return bundle.questionTypes.find(t => t.id === questionTypeId) || null;
+  }, [questionTypeId, bundle]);
 
   // Tìm câu hỏi mẫu đi kèm trực tiếp (Derived State)
   const exampleQuestion: Question | null = detail
@@ -212,6 +215,16 @@ export const QuestionTypeDetail: React.FC = () => {
         return [];
     }
   }, [activeTab, detail, exampleQuestion, exampleSolution]);
+
+  if (bundleLoading && !detail) {
+    return (
+      <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 space-y-6 animate-pulse">
+        <div className="h-8 w-48 bg-slate-200/70 dark:bg-slate-800/70 rounded-lg" />
+        <div className="h-28 bg-slate-200/70 dark:bg-slate-800/70 rounded-2xl" />
+        <div className="h-64 bg-slate-200/50 dark:bg-slate-800/50 rounded-2xl" />
+      </div>
+    );
+  }
 
   if (!detail) {
     return (

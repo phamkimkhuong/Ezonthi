@@ -11,6 +11,7 @@ node_modules
 .pnpm-store
 dist
 dist-ssr
+dist-roadmap
 *.local
 
 # Mobile / Expo cache
@@ -43,6 +44,7 @@ functions/lib
 functions/content/answer-catalog.json
 functions/src/generated/
 mobile/.expo
+docs
 tmp
 
 # Scratch & Temporary Agent files

@@ -4,6 +4,7 @@ import {
   ENGLISH_10_VOCABULARY,
   IVocabItem,
 } from '../../src/data/grade10/english/vocabulary/english10Vocabulary';
+import { useUserStore, flushLearningStorage } from '../stores/useUserStore';
 import { STORAGE_KEYS } from '../constants/storageKeys';
 import { triggerHaptic, HapticType } from '../utils/haptics';
 import { speakWord } from '../utils/speech';
@@ -51,57 +52,49 @@ export const VocabularyService = {
   },
 
   /**
-   * Đọc danh sách ID các từ đã thuộc từ AsyncStorage
+   * Đọc danh sách ID các từ đã thuộc từ Store hoặc AsyncStorage
    */
   async getMasteredWordIds(): Promise<string[]> {
-    try {
-      const raw = await AsyncStorage.getItem(STORAGE_KEYS.VOCAB_MASTERED_WORDS);
-      return raw ? JSON.parse(raw) : [];
-    } catch {
-      return [];
-    }
+    const state = useUserStore.getState();
+    const value = state.accounts[state.activeScope]?.vocabulary?.mastered || [];
+    return [...value];
   },
 
   /**
    * Bật/Tắt trạng thái đã thuộc của 1 từ
    */
   async toggleMasteredWord(wordId: string): Promise<boolean> {
-    try {
-      const ids = await this.getMasteredWordIds();
-      const exists = ids.includes(wordId);
-      const updated = exists ? ids.filter(id => id !== wordId) : [...ids, wordId];
-      await AsyncStorage.setItem(STORAGE_KEYS.VOCAB_MASTERED_WORDS, JSON.stringify(updated));
-      return !exists;
-    } catch {
-      return false;
-    }
+    const state = useUserStore.getState();
+    const scope = state.activeScope;
+    const ids = state.accounts[scope]?.vocabulary?.mastered || [];
+    const exists = ids.includes(wordId);
+    state.updateAccount(scope, account => ({ ...account, vocabulary: { ...account.vocabulary,
+      mastered: exists ? ids.filter(id => id !== wordId) : [...ids, wordId] } }));
+    await flushLearningStorage();
+    return !exists;
   },
 
   /**
    * Đọc danh sách ID các từ được đánh dấu sao (Starred/Bookmark)
    */
   async getStarredWordIds(): Promise<string[]> {
-    try {
-      const raw = await AsyncStorage.getItem(STORAGE_KEYS.VOCAB_STARRED_WORDS);
-      return raw ? JSON.parse(raw) : [];
-    } catch {
-      return [];
-    }
+    const state = useUserStore.getState();
+    const value = state.accounts[state.activeScope]?.vocabulary?.starred || [];
+    return [...value];
   },
 
   /**
    * Bật/Tắt dấu sao cho 1 từ
    */
   async toggleStarredWord(wordId: string): Promise<boolean> {
-    try {
-      const ids = await this.getStarredWordIds();
-      const exists = ids.includes(wordId);
-      const updated = exists ? ids.filter(id => id !== wordId) : [...ids, wordId];
-      await AsyncStorage.setItem(STORAGE_KEYS.VOCAB_STARRED_WORDS, JSON.stringify(updated));
-      return !exists;
-    } catch {
-      return false;
-    }
+    const state = useUserStore.getState();
+    const scope = state.activeScope;
+    const ids = state.accounts[scope]?.vocabulary?.starred || [];
+    const exists = ids.includes(wordId);
+    state.updateAccount(scope, account => ({ ...account, vocabulary: { ...account.vocabulary,
+      starred: exists ? ids.filter(id => id !== wordId) : [...ids, wordId] } }));
+    await flushLearningStorage();
+    return !exists;
   },
 
   /**
@@ -131,27 +124,57 @@ export const VocabularyService = {
    * Lưu điểm kỷ lục Quiz của Unit
    */
   async saveQuizHighScore(unitKey: string, score: number): Promise<void> {
-    try {
-      const raw = await AsyncStorage.getItem(STORAGE_KEYS.VOCAB_QUIZ_SCORES);
-      const scores: Record<string, number> = raw ? JSON.parse(raw) : {};
-      if (!scores[unitKey] || score > scores[unitKey]) {
-        scores[unitKey] = score;
-        await AsyncStorage.setItem(STORAGE_KEYS.VOCAB_QUIZ_SCORES, JSON.stringify(scores));
-      }
-    } catch (e) {
-      console.warn('Lỗi lưu điểm Quiz:', e);
-    }
+    if (!Number.isFinite(score) || score < 0) throw new Error('Điểm quiz không hợp lệ.');
+    const state = useUserStore.getState();
+    state.updateAccount(state.activeScope, account => ({ ...account, vocabulary: { ...account.vocabulary,
+      quizScores: { ...account.vocabulary.quizScores, [unitKey]: Math.max(account.vocabulary.quizScores[unitKey] || 0, score) } } }));
+    await flushLearningStorage();
   },
 
   /**
    * Đọc điểm kỷ lục Quiz
    */
   async getQuizHighScores(): Promise<Record<string, number>> {
+    const state = useUserStore.getState();
+    const value = state.accounts[state.activeScope]?.vocabulary?.quizScores || {};
+    return { ...value };
+  },
+
+  /**
+   * Chuyển đổi dữ liệu tiến độ từ vựng cũ sang cấu trúc scoped account mới
+   */
+  async migrateLegacyProgress(): Promise<void> {
     try {
-      const raw = await AsyncStorage.getItem(STORAGE_KEYS.VOCAB_QUIZ_SCORES);
-      return raw ? JSON.parse(raw) : {};
-    } catch {
-      return {};
+      const { legacyScope, legacyVocabularyMigrated } = useUserStore.getState();
+      if (!legacyScope || legacyVocabularyMigrated) return;
+      const [masteredRaw, starredRaw, scoresRaw] = await Promise.all([
+        AsyncStorage.getItem(STORAGE_KEYS.VOCAB_MASTERED_WORDS),
+        AsyncStorage.getItem(STORAGE_KEYS.VOCAB_STARRED_WORDS),
+        AsyncStorage.getItem(STORAGE_KEYS.VOCAB_QUIZ_SCORES),
+      ]);
+      const mastered = masteredRaw ? JSON.parse(masteredRaw) : [];
+      const starred = starredRaw ? JSON.parse(starredRaw) : [];
+      const quizScores = scoresRaw ? JSON.parse(scoresRaw) : {};
+      if (useUserStore.getState().legacyVocabularyMigrated) return;
+      if (!Array.isArray(mastered) || !Array.isArray(starred) || typeof quizScores !== 'object' || !quizScores) {
+        return;
+      }
+      useUserStore.getState().updateAccount(legacyScope, account => {
+        const vocab = account?.vocabulary || { mastered: [], starred: [], quizScores: {} };
+        return {
+          ...account,
+          vocabulary: {
+            mastered: [...new Set([...(vocab.mastered || []), ...mastered.filter((id: unknown) => typeof id === 'string')])],
+            starred: [...new Set([...(vocab.starred || []), ...starred.filter((id: unknown) => typeof id === 'string')])],
+            quizScores: { ...quizScores, ...(vocab.quizScores || {}) },
+            migrated: true,
+          },
+        };
+      });
+      useUserStore.setState({ legacyVocabularyMigrated: true });
+      await flushLearningStorage();
+    } catch (e) {
+      console.warn('Chưa chuyển được dữ liệu từ vựng cũ:', e);
     }
   },
 

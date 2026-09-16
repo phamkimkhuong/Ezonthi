@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { AppState, View, Text } from 'react-native';
 import { Stack, router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -13,38 +14,49 @@ import { OfflineBanner } from '../components/OfflineBanner';
 import '../global.css';
 
 import { CloudSyncService } from '../services/cloudSyncService';
+import { waitForLearningHydration } from '../stores/useUserStore';
+import { VocabularyService } from '../services/vocabularyService';
 
 function RootLayout() {
-  const { isConnected } = useNetworkStatus();
-  const { reminderHour, reminderMinute, reminderEnabled, streak, setUser } = useUserStore();
+  const [authReady, setAuthReady] = useState(false);
+  const { isConnected, isInternetReachable } = useNetworkStatus();
+  const { reminderHour, reminderMinute, reminderEnabled, streak, setUser, isHydrated, activeScope } = useUserStore();
 
   useEffect(() => {
-    // Lắng nghe trạng thái đăng nhập Firebase Auth để đồng bộ vào Zustand Store
-    const unsubscribeAuth = onAuthStateChanged(auth, (firebaseUser) => {
-      if (firebaseUser) {
-        const profile = {
-          uid: firebaseUser.uid,
-          email: firebaseUser.email,
+    let revision = 0;
+    const unsubscribeAuth = onAuthStateChanged(auth, firebaseUser => {
+      const current = ++revision;
+      void (async () => {
+        await waitForLearningHydration();
+        try { await VocabularyService.migrateLegacyProgress(); }
+        catch (error) { console.warn('Chưa chuyển được dữ liệu từ vựng cũ:', error); }
+        if (current !== revision) return;
+        setUser(firebaseUser ? {
+          uid: firebaseUser.uid, email: firebaseUser.email,
           displayName: firebaseUser.displayName || firebaseUser.email?.split('@')[0] || null,
-          photoURL: firebaseUser.photoURL,
-          isAnonymous: firebaseUser.isAnonymous,
-        };
-        setUser(profile);
-        if (!firebaseUser.isAnonymous) {
-          CloudSyncService.pullAndMergeFromCloud(profile);
-        }
-      }
+          photoURL: firebaseUser.photoURL, isAnonymous: firebaseUser.isAnonymous,
+        } : null);
+        setAuthReady(true);
+      })().catch(error => { console.warn('Khởi tạo dữ liệu tài khoản chưa hoàn tất:', error); setAuthReady(true); });
     });
-
-    return () => unsubscribeAuth();
+    return () => { revision++; unsubscribeAuth(); };
   }, [setUser]);
 
-  // Tự động đẩy dữ liệu lên Firestore khi có kết nối mạng
   useEffect(() => {
-    if (isConnected) {
-      CloudSyncService.syncToCloud();
-    }
-  }, [isConnected]);
+    if (!isHydrated || !isConnected || !isInternetReachable) return;
+    let debounce: ReturnType<typeof setTimeout> | undefined;
+    const schedule = () => {
+      if (debounce) clearTimeout(debounce);
+      debounce = setTimeout(() => { void CloudSyncService.syncToCloud(); }, 750);
+    };
+    const unsubscribe = useUserStore.subscribe((state, previous) => {
+      if (state.activeScope !== previous.activeScope || state.attempts !== previous.attempts) schedule();
+    });
+    const foreground = AppState.addEventListener('change', state => { if (state === 'active') schedule(); });
+    const retry = setInterval(schedule, 30_000);
+    schedule();
+    return () => { unsubscribe(); foreground.remove(); clearInterval(retry); if (debounce) clearTimeout(debounce); };
+  }, [isConnected, isInternetReachable, isHydrated]);
 
   useEffect(() => {
     // Xin quyền và đặt lịch thông báo hàng ngày khi mở app
@@ -63,11 +75,14 @@ function RootLayout() {
     return () => subscription.remove();
   }, [reminderHour, reminderMinute, reminderEnabled, streak]);
 
+  if (!isHydrated || !authReady) {
+    return <SafeAreaProvider><OfflineBanner /><View className="flex-1 bg-slate-950 items-center justify-center"><Text className="text-slate-300">Đang khôi phục dữ liệu tài khoản…</Text></View></SafeAreaProvider>;
+  }
   return (
     <SafeAreaProvider>
       <StatusBar style="light" />
       <OfflineBanner />
-      <Stack
+      <Stack key={activeScope}
         screenOptions={{
           headerStyle: {
             backgroundColor: '#0f172a',

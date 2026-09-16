@@ -23,6 +23,11 @@ export interface CanonicalRecord {
   ingestedAt?: string;
   teacherFeedback?: string;
 }
+export interface CanonicalMistake {
+  id: string; questionId: string; wrongAnswer: string;
+  reviewStatus: 'new' | 'reviewing' | 'fixed'; reviewCount: number;
+  lastAttemptedAt: string; nextReviewAt: string;
+}
 export interface SyncBatch { operationId: string; attemptIds: string[] }
 export interface ExamDraft {
   sessionId: string;
@@ -38,11 +43,13 @@ export interface LearningAccount {
   selectedGrade: GradeId;
   attempts: UserAttempt[];
   canonicalRecords: Record<string, CanonicalRecord>;
+  canonicalMistakes?: Record<string, CanonicalMistake>;
   serverXp: number;
   batch: SyncBatch | null;
   syncError: string | null;
   lastSyncedAt: string | null;
   examDrafts: Record<string, ExamDraft>;
+  examDraftArchive?: Record<string, ExamDraft>;
   vocabulary: { mastered: string[]; starred: string[]; quizScores: Record<string, number>; migrated?: boolean };
 }
 export const emptyAccount = (): LearningAccount => ({
@@ -75,7 +82,7 @@ export function fromCanonical(record: CanonicalRecord): UserAttempt | null {
   };
 }
 
-export function mergeCanonical(account: LearningAccount, records: CanonicalRecord[], serverXp: number): LearningAccount {
+export function mergeCanonical(account: LearningAccount, records: CanonicalRecord[], serverXp: number, serverMistakes?: CanonicalMistake[]): LearningAccount {
   const canonicalRecords = { ...account.canonicalRecords };
   const attempts = new Map(account.attempts.map(a => [a.id, a]));
   for (const record of records) {
@@ -89,7 +96,9 @@ export function mergeCanonical(account: LearningAccount, records: CanonicalRecor
     if (projected && local?.syncStatus !== 'pending' && local?.syncStatus !== 'blocked') attempts.set(record.id, projected);
     else if (projected && !local) attempts.set(record.id, projected);
   }
-  return { ...account, canonicalRecords, serverXp, attempts: [...attempts.values()] };
+  return { ...account, canonicalRecords,
+    ...(serverMistakes ? { canonicalMistakes: Object.fromEntries(serverMistakes.map(m => [m.questionId, m])) } : {}),
+    serverXp, attempts: [...attempts.values()] };
 }
 
 export function prepareBatch(account: LearningAccount): LearningAccount {
@@ -113,6 +122,7 @@ export function acknowledgeBatch(account: LearningAccount, operationId: string, 
       id: attempt.id, questionId: `${MOBILE_CONTENT_PREFIX}${attempt.questionId}`,
       questionTypeId: `${MOBILE_CONTENT_PREFIX}${attempt.topicId}`, userAnswer: attempt.selectedAnswer,
       createdAt: attempt.answeredAt, timeSpent: attempt.timeSpent || 0, isCorrect: attempt.isCorrect,
+      gradingStatus: 'pending', // ACK confirms persistence; pull supplies the server verdict.
     }) || { ...attempt, syncStatus: 'acknowledged' as const };
     if (conflicts.has(attempt.id) || rejectedCount > 0) return { ...attempt, syncStatus: 'blocked' as const };
     return attempt;
@@ -130,12 +140,22 @@ export function importGuest(target: LearningAccount, guest: LearningAccount): Le
   for (const attempt of guest.attempts) {
     if (!attempts.has(attempt.id)) attempts.set(attempt.id, { ...attempt, syncStatus: 'pending' });
   }
-  return { ...target, attempts: [...attempts.values()], examDrafts: { ...guest.examDrafts, ...target.examDrafts },
+  const targetVocab = target.vocabulary || { mastered: [], starred: [], quizScores: {} };
+  const guestVocab = guest.vocabulary || { mastered: [], starred: [], quizScores: {} };
+  const examDrafts = { ...target.examDrafts };
+  const examDraftArchive = { ...target.examDraftArchive, ...guest.examDraftArchive };
+  for (const [examId, draft] of Object.entries(guest.examDrafts)) {
+    const existing = examDrafts[examId];
+    if (existing && existing.sessionId !== draft.sessionId) examDraftArchive[existing.sessionId] = existing;
+    // Continue the session just used as guest; retain the older account session as an archive.
+    examDrafts[examId] = draft;
+  }
+  return { ...target, attempts: [...attempts.values()], examDrafts, examDraftArchive,
     vocabulary: {
-      mastered: [...new Set([...target.vocabulary.mastered, ...guest.vocabulary.mastered])],
-      starred: [...new Set([...target.vocabulary.starred, ...guest.vocabulary.starred])],
-      quizScores: Object.fromEntries([...new Set([...Object.keys(target.vocabulary.quizScores), ...Object.keys(guest.vocabulary.quizScores)])]
-        .map(key => [key, Math.max(target.vocabulary.quizScores[key] || 0, guest.vocabulary.quizScores[key] || 0)])),
+      mastered: [...new Set([...(targetVocab.mastered || []), ...(guestVocab.mastered || [])])],
+      starred: [...new Set([...(targetVocab.starred || []), ...(guestVocab.starred || [])])],
+      quizScores: Object.fromEntries([...new Set([...Object.keys(targetVocab.quizScores || {}), ...Object.keys(guestVocab.quizScores || {})])]
+        .map(key => [key, Math.max((targetVocab.quizScores || {})[key] || 0, (guestVocab.quizScores || {})[key] || 0)])),
     },
   };
 }
@@ -162,6 +182,12 @@ export function projectAccount(account: LearningAccount) {
   for (const attempt of latest.values()) {
     if (attempt.isCorrect) continue;
     const canonical = account.canonicalRecords[attempt.id];
+    const serverMistake = account.canonicalMistakes?.[`${MOBILE_CONTENT_PREFIX}${attempt.questionId}`];
+    if (attempt.syncStatus === 'acknowledged' && serverMistake) {
+      if (serverMistake.reviewStatus !== 'fixed') mistakes.push({ ...serverMistake, questionId: attempt.questionId,
+        topicId: attempt.topicId, subjectId: attempt.subjectId });
+      continue;
+    }
     mistakes.push({ id: `mis_${attempt.questionId}`, questionId: attempt.questionId,
       topicId: attempt.topicId, subjectId: attempt.subjectId, wrongAnswer: attempt.selectedAnswer,
       reviewStatus: 'new', reviewCount: account.attempts.filter(a => a.questionId === attempt.questionId && !a.isCorrect).length,

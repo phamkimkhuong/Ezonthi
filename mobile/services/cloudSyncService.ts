@@ -1,9 +1,9 @@
-import { collection, doc, getDoc, getDocs, query, orderBy, documentId, limit, startAfter, type QueryDocumentSnapshot } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, query, orderBy, documentId, limit, startAfter, type QueryDocumentSnapshot, type QuerySnapshot } from 'firebase/firestore';
 import { httpsCallable } from 'firebase/functions';
 import { auth, db, functions } from './firebase';
 import { useUserStore, type UserProfile } from '../stores';
 import { flushLearningStorage, waitForLearningHydration } from '../stores/useUserStore';
-import { accountScope, emptyAccount, type CanonicalRecord } from './accountLearningState';
+import { accountScope, emptyAccount, type CanonicalRecord, type CanonicalMistake } from './accountLearningState';
 import { runOutbox, type CanonicalAck } from './outboxDriver';
 
 let running: Promise<boolean> | null = null;
@@ -35,12 +35,21 @@ export const CloudSyncService = {
         do {
           if (auth.currentUser?.uid !== uid) throw new Error('Tài khoản đã thay đổi.');
           const base = collection(db, 'users', uid, 'learning_attempts');
-          const page = await getDocs(query(base, orderBy(documentId()), ...(cursor ? [startAfter(cursor)] : []), limit(200)));
+          const page: QuerySnapshot = await getDocs(query(base, orderBy(documentId()), ...(cursor ? [startAfter(cursor)] : []), limit(200)));
           records.push(...page.docs.map(item => item.data() as CanonicalRecord));
           cursor = page.size === 200 ? page.docs.at(-1) : undefined;
         } while (cursor);
+        const mistakes: CanonicalMistake[] = [];
+        cursor = undefined;
+        do {
+          if (auth.currentUser?.uid !== uid) throw new Error('Tài khoản đã thay đổi.');
+          const base = collection(db, 'users', uid, 'learning_mistakes');
+          const page: QuerySnapshot = await getDocs(query(base, orderBy(documentId()), ...(cursor ? [startAfter(cursor)] : []), limit(200)));
+          mistakes.push(...page.docs.map(item => item.data() as CanonicalMistake));
+          cursor = page.size === 200 ? page.docs.at(-1) : undefined;
+        } while (cursor);
         const userDoc = await getDoc(doc(db, 'users', uid));
-        return { records, xp: Number(userDoc.data()?.stats?.xpScore) || 0 };
+        return { records, mistakes, xp: Number(userDoc.data()?.stats?.xpScore) || 0 };
       },
     }).then(ok => {
       if (ok) { failures = 0; nextRetryAt = Date.now() + 30_000; }
