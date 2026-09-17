@@ -20,7 +20,7 @@ import QuestionStimulusRenderer from '@/components/common/QuestionStimulusRender
 import { Button } from '@/components/ui/button';
 import type { Question, Solution, SubjectCode } from '@/types';
 import { ROUTES } from '@/constants/routes';
-import { MathLoginRequired } from '@/components/common/MathLoginRequired';
+import { authService } from '@/services/authService';
 import { progressService } from '@/services/progressService';
 import { useAppStore } from '@/services/store';
 import { cn } from '@/utils/cn';
@@ -99,13 +99,12 @@ const optionLetters = ['A', 'B', 'C', 'D'];
 export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> = ({ config }) => {
   const navigate = useNavigate();
   const { selectedGrade, selectedSubject, user } = useAppStore();
-  const progressKey = user?.uid ? `${config.storageKeyPrefix}${user.uid}` : '';
-  const bookmarksKey = user?.uid ? `${config.storageKeyPrefix}bookmarks_${user.uid}` : '';
+  const progressKey = `${config.storageKeyPrefix}${user?.uid || 'guest'}`;
+  const bookmarksKey = `${config.storageKeyPrefix}bookmarks_${user?.uid || 'guest'}`;
 
   const [progress, setProgress] = useState<StoredProgress>(() => {
-    if (!user?.uid) return {};
     try {
-      const saved = localStorage.getItem(`${config.storageKeyPrefix}${user.uid}`);
+      const saved = localStorage.getItem(`${config.storageKeyPrefix}${user?.uid || 'guest'}`);
       return saved ? JSON.parse(saved) : {};
     } catch {
       return {};
@@ -113,9 +112,8 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
   });
 
   const [bookmarks, setBookmarks] = useState<StoredBookmarks>(() => {
-    if (!user?.uid) return {};
     try {
-      const saved = localStorage.getItem(`${config.storageKeyPrefix}bookmarks_${user.uid}`);
+      const saved = localStorage.getItem(`${config.storageKeyPrefix}bookmarks_${user?.uid || 'guest'}`);
       return saved ? JSON.parse(saved) : {};
     } catch {
       return {};
@@ -128,17 +126,26 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isBookmarkOnlyFilter, setIsBookmarkOnlyFilter] = useState(false);
 
-  // Tải và đồng bộ 2 chiều giữa LocalStorage và Firestore (cả tiến độ làm bài & bài tâm đắc)
+  // Tải và đồng bộ 2 chiều giữa LocalStorage và Firestore (kế thừa trọn vẹn dữ liệu guest khi đăng nhập)
   useEffect(() => {
     if (!user?.uid) {
-      setProgress({});
-      setBookmarks({});
+      try {
+        const savedProgress = localStorage.getItem(`${config.storageKeyPrefix}guest`);
+        setProgress(savedProgress ? JSON.parse(savedProgress) : {});
+        const savedBookmarks = localStorage.getItem(`${config.storageKeyPrefix}bookmarks_guest`);
+        setBookmarks(savedBookmarks ? JSON.parse(savedBookmarks) : {});
+      } catch {
+        setProgress({});
+        setBookmarks({});
+      }
       return;
     }
 
     let isMounted = true;
     const currentProgressKey = `${config.storageKeyPrefix}${user.uid}`;
     const currentBookmarksKey = `${config.storageKeyPrefix}bookmarks_${user.uid}`;
+    const guestProgressKey = `${config.storageKeyPrefix}guest`;
+    const guestBookmarksKey = `${config.storageKeyPrefix}bookmarks_guest`;
 
     const syncWithCloud = async () => {
       try {
@@ -154,6 +161,14 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
           localAttempts = {};
         }
 
+        let guestAttempts: StoredProgress = {};
+        try {
+          const savedG = localStorage.getItem(guestProgressKey);
+          guestAttempts = savedG ? JSON.parse(savedG) : {};
+        } catch {
+          guestAttempts = {};
+        }
+
         let localBookmarks: StoredBookmarks = {};
         try {
           const savedB = localStorage.getItem(currentBookmarksKey);
@@ -162,10 +177,26 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
           localBookmarks = {};
         }
 
-        // Smart merge attempts: ưu tiên bản ghi có thời gian mới hơn
+        let guestBookmarks: StoredBookmarks = {};
+        try {
+          const savedGB = localStorage.getItem(guestBookmarksKey);
+          guestBookmarks = savedGB ? JSON.parse(savedGB) : {};
+        } catch {
+          guestBookmarks = {};
+        }
+
+        // Smart merge attempts: kế thừa guest attempts và so khớp với Cloud
         const mergedAttempts: StoredProgress = { ...localAttempts };
         let hasNewAttemptsFromCloud = false;
         let hasNewAttemptsFromLocal = false;
+
+        for (const [qId, guestAttempt] of Object.entries(guestAttempts)) {
+          const existing = mergedAttempts[qId];
+          if (!existing || new Date(guestAttempt.updatedAt).getTime() > new Date(existing.updatedAt).getTime()) {
+            mergedAttempts[qId] = guestAttempt;
+            hasNewAttemptsFromLocal = true;
+          }
+        }
 
         for (const [qId, cloudAttempt] of Object.entries(cloudAttempts)) {
           const localAttempt = mergedAttempts[qId];
@@ -178,7 +209,7 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
           }
         }
 
-        for (const [qId, localAttempt] of Object.entries(localAttempts)) {
+        for (const [qId, localAttempt] of Object.entries(mergedAttempts)) {
           const cloudAttempt = cloudAttempts[qId];
           if (!cloudAttempt || new Date(localAttempt.updatedAt).getTime() > new Date(cloudAttempt.updatedAt).getTime()) {
             hasNewAttemptsFromLocal = true;
@@ -186,15 +217,15 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
           }
         }
 
-        if (hasNewAttemptsFromCloud || hasNewAttemptsFromLocal) {
+        if (hasNewAttemptsFromCloud || hasNewAttemptsFromLocal || Object.keys(guestAttempts).length > 0) {
           setProgress(mergedAttempts);
           localStorage.setItem(currentProgressKey, JSON.stringify(mergedAttempts));
         }
 
-        // Smart merge bookmarks: hợp nhất danh sách bài tâm đắc 2 chiều
-        const mergedBookmarks: StoredBookmarks = { ...localBookmarks };
+        // Smart merge bookmarks: hợp nhất danh sách bài tâm đắc (gồm cả guest bookmarks)
+        const mergedBookmarks: StoredBookmarks = { ...localBookmarks, ...guestBookmarks };
         let hasNewBookmarksFromCloud = false;
-        let hasNewBookmarksFromLocal = false;
+        let hasNewBookmarksFromLocal = Object.keys(guestBookmarks).length > 0;
 
         for (const [qId, cloudBookmark] of Object.entries(cloudBookmarks)) {
           if (!mergedBookmarks[qId]) {
@@ -203,7 +234,7 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
           }
         }
 
-        for (const qId of Object.keys(localBookmarks)) {
+        for (const qId of Object.keys(mergedBookmarks)) {
           if (!cloudBookmarks[qId]) {
             hasNewBookmarksFromLocal = true;
             void progressService.saveAdvancedBookmarkToFirestore(user.uid, config.subjectKey, qId, true);
@@ -213,6 +244,14 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
         if (hasNewBookmarksFromCloud || hasNewBookmarksFromLocal) {
           setBookmarks(mergedBookmarks);
           localStorage.setItem(currentBookmarksKey, JSON.stringify(mergedBookmarks));
+        }
+
+        // Xóa sạch dữ liệu guest sau khi kế thừa hoàn tất
+        if (Object.keys(guestAttempts).length > 0) {
+          localStorage.removeItem(guestProgressKey);
+        }
+        if (Object.keys(guestBookmarks).length > 0) {
+          localStorage.removeItem(guestBookmarksKey);
         }
       } catch (err) {
         console.error('Lỗi đồng bộ dữ liệu nâng cao từ Firestore:', err);
@@ -226,7 +265,6 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
   }, [config.storageKeyPrefix, config.subjectKey, user?.uid]);
 
   const toggleBookmark = (questionId: string) => {
-    if (!user?.uid) return;
     const willBookmark = !bookmarks[questionId];
     const nextBookmarks: StoredBookmarks = { ...bookmarks };
     if (willBookmark) {
@@ -235,10 +273,10 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
       delete nextBookmarks[questionId];
     }
     setBookmarks(nextBookmarks);
-    if (bookmarksKey) {
-      localStorage.setItem(bookmarksKey, JSON.stringify(nextBookmarks));
+    localStorage.setItem(bookmarksKey, JSON.stringify(nextBookmarks));
+    if (user?.uid) {
+      void progressService.saveAdvancedBookmarkToFirestore(user.uid, config.subjectKey, questionId, willBookmark);
     }
-    void progressService.saveAdvancedBookmarkToFirestore(user.uid, config.subjectKey, questionId, willBookmark);
   };
 
   const topicQuestions = useMemo(
@@ -281,7 +319,7 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
   };
 
   const submitAnswer = () => {
-    if (!currentQuestion || !selectedAnswer || isSubmitted || !user?.uid) return;
+    if (!currentQuestion || !selectedAnswer || isSubmitted) return;
     const attempt: StoredAttempt = {
       answer: selectedAnswer,
       isCorrect: selectedAnswer === currentQuestion.correctAnswer,
@@ -292,20 +330,18 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
       [currentQuestion.id]: attempt
     };
     setProgress(nextProgress);
-    if (progressKey) {
-      localStorage.setItem(progressKey, JSON.stringify(nextProgress));
-    }
+    localStorage.setItem(progressKey, JSON.stringify(nextProgress));
     setIsSubmitted(true);
 
-    // Đồng bộ ngay lên Firestore chạy ngầm
-    void progressService.saveAdvancedAttemptToFirestore(user.uid, config.subjectKey, currentQuestion.id, attempt);
+    // Đồng bộ ngay lên Firestore chạy ngầm nếu đã đăng nhập
+    if (user?.uid) {
+      void progressService.saveAdvancedAttemptToFirestore(user.uid, config.subjectKey, currentQuestion.id, attempt);
+    }
   };
 
   const clearProgress = () => {
     if (!window.confirm(`Xóa toàn bộ tiến độ làm bài ${config.title}? (Danh sách bài tâm đắc vẫn được giữ lại)`)) return;
-    if (progressKey) {
-      localStorage.removeItem(progressKey);
-    }
+    localStorage.removeItem(progressKey);
     setProgress({});
     resetQuestionState();
 
@@ -338,6 +374,30 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
         <Helmet>
           <title>{config.seoTitle}</title>
         </Helmet>
+
+        {/* Khung thông báo Chế độ xem thử dành cho khách */}
+        {!user && (
+          <div className="bg-primary/7 border border-primary/20 border-l-4 border-l-primary rounded-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4 w-full mx-auto">
+            <div className="space-y-1 text-left">
+              <h3 className="text-sm font-black text-foreground">Bạn đang xem chuyên đề nâng cao ở chế độ xem thử</h3>
+              <p className="text-[11px] text-muted-foreground font-semibold">
+                Kết quả làm bài và bài tâm đắc được lưu tạm trên máy. Đăng nhập tài khoản để đồng bộ tiến trình học tập lên đám mây.
+              </p>
+            </div>
+            <button
+              onClick={async () => {
+                try {
+                  await authService.signInWithGoogle();
+                } catch (err: any) {
+                  alert(err.message || 'Lỗi đăng nhập bằng Google.');
+                }
+              }}
+              className="px-6 py-2.5 font-bold text-xs bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl transition-all cursor-pointer shadow-md active:scale-95 shrink-0"
+            >
+              Đăng nhập ngay
+            </button>
+          </div>
+        )}
 
         <section className="relative overflow-hidden rounded-[28px] border border-slate-200/70 dark:border-slate-700/60 bg-[linear-gradient(135deg,rgba(8,145,178,0.12),rgba(255,255,255,0.92)_48%,rgba(249,115,22,0.10))] dark:bg-[linear-gradient(135deg,rgba(8,145,178,0.16),rgba(15,23,42,0.96)_48%,rgba(249,115,22,0.12))] p-6 sm:p-9 shadow-sm">
           <div className="absolute -right-14 -top-16 w-52 h-52 rounded-full bg-cyan-400/10 blur-3xl" />
@@ -426,30 +486,6 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
 
   const activeTopic = config.topics.find(topic => topic.id === activeTopicId)!;
 
-  if (!user) {
-    return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6">
-        <Helmet>
-          <title>{activeTopic?.shortTitle ? `${activeTopic.shortTitle} nâng cao – ${config.subjectLabel} | ezonthi` : config.seoTitle}</title>
-        </Helmet>
-        <button
-          onClick={() => setActiveTopicId(null)}
-          className="inline-flex items-center gap-1.5 text-xs font-black text-cyan-700 dark:text-cyan-400 hover:underline cursor-pointer"
-        >
-          <ArrowLeft size={14} /> Danh sách chuyên đề
-        </button>
-        <div className="max-w-xl mx-auto py-6">
-          <MathLoginRequired
-            title="Yêu cầu đăng nhập luyện tập"
-            description={`Mảng "${activeTopic?.title || config.title}" (HSG & Chuyên) yêu cầu lưu trữ lịch sử làm bài và đồng bộ tiến độ học tập trên Cloud nên bạn cần đăng nhập để bắt đầu làm bài.`}
-            onBack={() => setActiveTopicId(null)}
-            backText="Quay lại danh sách chuyên đề"
-          />
-        </div>
-      </div>
-    );
-  }
-
   const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
   const topicCompletedCount = topicQuestions.filter(q => progress[q.id]).length;
   const topicCorrectCount = topicQuestions.filter(q => progress[q.id]?.isCorrect).length;
@@ -465,6 +501,30 @@ export const AdvancedPracticePage: React.FC<{ config: AdvancedPracticeConfig }> 
       <Helmet>
         <title>{activeTopic.shortTitle} nâng cao – {config.subjectLabel} | ezonthi</title>
       </Helmet>
+
+      {/* Khung thông báo Chế độ xem thử dành cho khách */}
+      {!user && (
+        <div className="bg-primary/7 border border-primary/20 border-l-4 border-l-primary rounded-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4 w-full mx-auto">
+          <div className="space-y-1 text-left">
+            <h3 className="text-sm font-black text-foreground">Bạn đang luyện tập chuyên đề ở chế độ xem thử</h3>
+            <p className="text-[11px] text-muted-foreground font-semibold">
+              Kết quả làm bài và bài tâm đắc được lưu tạm trên máy. Đăng nhập tài khoản để đồng bộ điểm số lên đám mây và bảo toàn tiến trình học tập.
+            </p>
+          </div>
+          <button
+            onClick={async () => {
+              try {
+                await authService.signInWithGoogle();
+              } catch (err: any) {
+                alert(err.message || 'Lỗi đăng nhập bằng Google.');
+              }
+            }}
+            className="px-6 py-2.5 font-bold text-xs bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl transition-all cursor-pointer shadow-md active:scale-95 shrink-0"
+          >
+            Đăng nhập ngay
+          </button>
+        </div>
+      )}
 
       {/* Header Chuyên đề: Phân 2 tầng rõ ràng, không bị truncate và không scrollbar */}
       <div className="rounded-2xl border border-border/70 bg-card p-4 sm:p-5 shadow-sm space-y-4">

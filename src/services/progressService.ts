@@ -1,6 +1,6 @@
 import { db, functions } from './firebase';
 import { doc, setDoc, collection, getDocs, query, getDoc, arrayUnion, updateDoc, deleteField, orderBy, limit, startAfter, documentId, where } from 'firebase/firestore';
-import { UserAttempt, UserMistake, UserProgress, ExamResult, ActiveExamSession } from '../types';
+import { UserAttempt, UserMistake, UserProgress, ExamResult, ActiveExamSession, ExamSummaryMap, ExamSummaryItem } from '../types';
 import { User } from 'firebase/auth';
 import { storageService } from './storage';
 import { useAppStore } from './store';
@@ -115,6 +115,16 @@ export const progressService = {
       const guestCheckpoints = storageService.getPassedTheoryCheckpoints('guest');
       const localExams = storageService.getExamResults(userId);
       const guestExams = storageService.getExamResults('guest');
+      const guestActiveSessions = storageService.getActiveExamSessions('guest');
+      if (guestActiveSessions.length > 0) {
+        guestActiveSessions.forEach(guestSession => {
+          const localSession = storageService.getActiveExamSession(userId, guestSession.sourceExamId);
+          if (!localSession || new Date(guestSession.lastSavedAt).getTime() > new Date(localSession.lastSavedAt).getTime()) {
+            storageService.saveActiveExamSession(userId, guestSession);
+            void this.saveActiveExamSessionToFirestore(userId, guestSession);
+          }
+        });
+      }
 
       await httpsCallable(functions, 'migrateLearningData')({});
       await syncAttemptChunks(userId, pending);
@@ -279,17 +289,112 @@ export const progressService = {
     const current = storageService.getMistakes(userId);
     storageService.saveMistakesLocal(userId, mergeMistakes(current, [{ ...mistake, userId }]));
   },
-  // Lưu kết quả thi thử lên Firestore
+  // Lưu kết quả thi thử lên Firestore & cập nhật document tóm tắt duy nhất (1 Document Summary)
   async saveExamResult(userId: string, result: ExamResult): Promise<void> {
     try {
+      // 1. Lưu bản ghi chi tiết đầy đủ (Lazy Load khi cần xem lại bài giải)
       const examRef = doc(db, `users/${userId}/exam_results`, safeDocId(result.examId, `exam-${Date.now()}`));
       await setDoc(examRef, {
         ...result,
         syncedAt: new Date().toISOString()
       }, { merge: true });
       logger.dbWrite('Lưu kết quả thi thử (users/{userId}/exam_results)', 1);
+
+      // 2. Cập nhật Document tóm tắt duy nhất (Chỉ tốn 1 Read khi mở menu thi thử)
+      const examKey = result.sourceExamId || result.examId;
+      const summaryRef = doc(db, `users/${userId}/progress/exam_summary`);
+      
+      const localSummary = storageService.getExamSummaryMap(userId);
+      const existing = localSummary[examKey];
+      const bestScore = existing ? Math.max(existing.bestScore, result.score) : result.score;
+      const attemptsCount = (existing?.attemptsCount ?? 0) + 1;
+
+      const summaryItem: ExamSummaryItem = {
+        bestScore,
+        lastScore: result.score,
+        attemptsCount,
+        lastCompletedAt: result.completedAt,
+        lastExamId: result.examId,
+        lastTimeSpent: result.timeSpent
+      };
+
+      await setDoc(summaryRef, {
+        [examKey]: summaryItem,
+        updatedAt: new Date().toISOString()
+      }, { merge: true });
+      logger.dbWrite('Cập nhật document tóm tắt thi thử (users/{userId}/progress/exam_summary)', 1);
     } catch (e) {
       logger.error('Lưu kết quả thi thử', e);
+    }
+  },
+
+  // Lấy Document Tóm Tắt Thi Thử (Chỉ 1 lượt Read Firestore duy nhất cho toàn bộ danh sách đề thi!)
+  async getExamSummary(userId: string): Promise<ExamSummaryMap> {
+    try {
+      const localSummary = storageService.getExamSummaryMap(userId);
+      if (!userId || userId === 'guest') {
+        return localSummary;
+      }
+
+      const summaryRef = doc(db, `users/${userId}/progress/exam_summary`);
+      const snapshot = await getDoc(summaryRef);
+      logger.dbRead('Tải document tóm tắt thi thử (1 read)', 1);
+
+      if (snapshot.exists()) {
+        const data = snapshot.data();
+        const remoteSummary: ExamSummaryMap = {};
+        for (const [key, value] of Object.entries(data)) {
+          if (key !== 'updatedAt' && typeof value === 'object' && value !== null) {
+            remoteSummary[key] = value as ExamSummaryItem;
+          }
+        }
+        // Hợp nhất dữ liệu
+        const merged: ExamSummaryMap = { ...localSummary };
+        for (const [key, val] of Object.entries(remoteSummary)) {
+          if (!merged[key]) {
+            merged[key] = val;
+          } else {
+            const isValNewer = new Date(val.lastCompletedAt).getTime() >= new Date(merged[key].lastCompletedAt).getTime();
+            merged[key] = {
+              bestScore: Math.max(merged[key].bestScore, val.bestScore),
+              lastScore: isValNewer ? val.lastScore : merged[key].lastScore,
+              attemptsCount: Math.max(merged[key].attemptsCount, val.attemptsCount),
+              lastCompletedAt: isValNewer ? val.lastCompletedAt : merged[key].lastCompletedAt,
+              lastExamId: isValNewer ? val.lastExamId : merged[key].lastExamId,
+              lastTimeSpent: val.lastTimeSpent ?? merged[key].lastTimeSpent
+            };
+          }
+        }
+        return merged;
+      }
+      return localSummary;
+    } catch (e) {
+      logger.error('Tải document tóm tắt thi thử', e);
+      return storageService.getExamSummaryMap(userId);
+    }
+  },
+
+  // Lấy chi tiết 1 bài thi từ Firestore (Chỉ 1 Read theo nhu cầu khi học sinh bấm "Xem lại bài thi")
+  async getExamResultDetail(userId: string, examId: string): Promise<ExamResult | null> {
+    try {
+      const local = storageService.getExamResultById(userId, examId);
+      if (local) return local;
+
+      if (!userId || userId === 'guest') return null;
+
+      const examRef = doc(db, `users/${userId}/exam_results`, safeDocId(examId, examId));
+      const snapshot = await getDoc(examRef);
+      logger.dbRead('Tải chi tiết 1 bài thi (1 read)', 1);
+
+      if (snapshot.exists()) {
+        const result = snapshot.data() as ExamResult;
+        storageService.saveExamResult(userId, result);
+        return result;
+      }
+      return null;
+    } catch (e) {
+      logger.error('Tải chi tiết bài thi', e);
+      return null;
     }
   },
 

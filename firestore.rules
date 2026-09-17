@@ -207,6 +207,11 @@ service cloud.firestore {
         allow create, update, delete: if false;
       }
 
+      match /exam_meta/{metaDoc} {
+        allow read, write: if isOwner(userId);
+        allow read: if isTeacher();
+      }
+
       match /chats/{chatId} {
         allow read, write: if isOwner(userId);
         allow read: if isTeacher();

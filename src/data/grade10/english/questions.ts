@@ -1,6 +1,7 @@
 import { Question } from '@/types';
 import { g10EnglishDeepeningQuestions } from './skillsDeepening';
 import { g10EnglishSkillQuestions } from './skillsExpansion';
+import { g10EnglishAssessmentWritingQuestions } from './assessments/writingQuestions';
 import { normalizeEnglishPracticeChoice } from './practiceChoiceNormalizer';
 
 const modules = import.meta.glob('./modules/module*/index.ts', { eager: true });
@@ -26,7 +27,8 @@ const enrichedQuestions: Question[] = [
     representationType: question.representationType ?? 'text' as const
   })),
   ...g10EnglishSkillQuestions,
-  ...g10EnglishDeepeningQuestions
+  ...g10EnglishDeepeningQuestions,
+  ...g10EnglishAssessmentWritingQuestions
 ];
 
 export const g10EnglishQuestions: Question[] = enrichedQuestions.map(normalizeEnglishPracticeChoice);

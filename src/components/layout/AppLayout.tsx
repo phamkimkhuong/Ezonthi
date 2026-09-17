@@ -224,6 +224,40 @@ export const AppLayout: React.FC = () => {
     }
   }, [user]);
 
+  // Khóa triệt để thanh cuộn của window/body trên Desktop để App Shell (sidebar + main) không bao giờ bị đẩy trôi
+  useEffect(() => {
+    const prevBodyOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = document.documentElement.style.overflow;
+    const prevBodyHeight = document.body.style.height;
+    const prevHtmlHeight = document.documentElement.style.height;
+
+    const applyLayoutScrollLock = () => {
+      if (window.innerWidth >= 768) {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.height = '100%';
+        document.documentElement.style.height = '100%';
+        window.scrollTo(0, 0);
+      } else {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+        document.body.style.height = '';
+        document.documentElement.style.height = '';
+      }
+    };
+
+    applyLayoutScrollLock();
+    window.addEventListener('resize', applyLayoutScrollLock);
+
+    return () => {
+      window.removeEventListener('resize', applyLayoutScrollLock);
+      document.body.style.overflow = prevBodyOverflow;
+      document.documentElement.style.overflow = prevHtmlOverflow;
+      document.body.style.height = prevBodyHeight;
+      document.documentElement.style.height = prevHtmlHeight;
+    };
+  }, []);
+
   // Cập nhật tiêu đề động (Dynamic Title SEO)
   useEffect(() => {
     const path = location.pathname;
@@ -430,8 +464,12 @@ export const AppLayout: React.FC = () => {
     ROUTES.NEWS
   ].some(route => location.pathname === route || location.pathname.startsWith(`${route}/`));
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
-    <div className="min-h-screen md:min-h-0 md:h-screen md:overflow-hidden bg-background text-foreground flex flex-col md:flex-row font-sans transition-colors duration-200">
+    <div className="min-h-screen md:min-h-0 md:h-screen md:overflow-hidden bg-background text-foreground flex flex-col md:flex-row font-sans transition-colors duration-200 overscroll-none">
       {shouldNoIndex && (
         <Helmet>
           <meta name="robots" content="noindex, follow" />
@@ -515,7 +553,7 @@ export const AppLayout: React.FC = () => {
         id="sidebar-navigation"
         className={`
         fixed md:sticky top-0 left-0 bottom-0 z-50 md:z-30
-        glass flex flex-col h-screen overflow-y-auto
+        glass flex flex-col h-screen overflow-y-auto overscroll-contain
         transition-all duration-300 md:translate-x-0
         ${effectiveCollapsed ? 'w-64 md:w-22' : 'w-64 md:w-68'}
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
@@ -796,7 +834,7 @@ export const AppLayout: React.FC = () => {
         </div>
       </aside>
 
-      <main className="flex-1 flex flex-col min-h-screen md:min-h-0 md:max-h-screen md:overflow-y-auto bg-background">
+      <main className="flex-1 flex flex-col min-h-screen md:min-h-0 md:max-h-screen md:overflow-y-auto bg-background overscroll-contain">
 
         <header className="hidden md:flex items-center justify-between px-8 py-4.5 bg-card/60 backdrop-blur-lg border-b border-border/30 shadow-sm sticky top-0 z-20">
           <div className="flex items-center gap-4.5">

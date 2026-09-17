@@ -559,6 +559,17 @@ export interface ExamResult {
   }>;
 }
 
+export interface ExamSummaryItem {
+  bestScore: number;
+  lastScore: number;
+  attemptsCount: number;
+  lastCompletedAt: string;
+  lastExamId: string;
+  lastTimeSpent?: number;
+}
+
+export type ExamSummaryMap = Record<string, ExamSummaryItem>;
+
 export interface ActiveExamSession {
   examId: string;
   sourceExamId: string;

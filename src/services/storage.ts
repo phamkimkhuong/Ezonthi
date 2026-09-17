@@ -1,4 +1,4 @@
-import type { UserAttempt, UserMistake, UserProgress, ExamResult, ActiveExamSession } from '../types';
+import type { UserAttempt, UserMistake, UserProgress, ExamResult, ActiveExamSession, ExamSummaryMap } from '../types';
 import { calculateMasteryEvidence } from '../utils/theme';
 
 const KEYS = {
@@ -372,6 +372,41 @@ export const storageService = {
     return map[userId] || [];
   },
 
+  getExamResultById(userId: string = 'guest', examId: string): ExamResult | undefined {
+    const results = this.getExamResults(userId);
+    return results.find(r => r.examId === examId);
+  },
+
+  getExamSummaryMap(userId: string = 'guest'): ExamSummaryMap {
+    const results = this.getExamResults(userId);
+    const summary: ExamSummaryMap = {};
+    for (const r of results) {
+      const examKey = r.sourceExamId || r.examId;
+      if (!summary[examKey]) {
+        summary[examKey] = {
+          bestScore: r.score,
+          lastScore: r.score,
+          attemptsCount: 1,
+          lastCompletedAt: r.completedAt,
+          lastExamId: r.examId,
+          lastTimeSpent: r.timeSpent
+        };
+      } else {
+        summary[examKey].attemptsCount += 1;
+        if (r.score > summary[examKey].bestScore) {
+          summary[examKey].bestScore = r.score;
+        }
+        if (new Date(r.completedAt).getTime() >= new Date(summary[examKey].lastCompletedAt).getTime()) {
+          summary[examKey].lastScore = r.score;
+          summary[examKey].lastCompletedAt = r.completedAt;
+          summary[examKey].lastExamId = r.examId;
+          summary[examKey].lastTimeSpent = r.timeSpent;
+        }
+      }
+    }
+    return summary;
+  },
+
   saveExamResult(userId: string = 'guest', result: ExamResult): void {
     const map = readExamResultsMap();
     if (!map[userId]) {
@@ -411,6 +446,10 @@ export const storageService = {
     const checkpointMap = readTheoryCheckpointMap();
     delete checkpointMap.guest;
     writeToStorage(KEYS.THEORY_CHECKPOINTS, checkpointMap);
+
+    const activeExamMap = readActiveExamMap();
+    delete activeExamMap.guest;
+    writeToStorage(KEYS.ACTIVE_EXAM, activeExamMap);
   },
 
   getReadLessons(userId: string): string[] {
