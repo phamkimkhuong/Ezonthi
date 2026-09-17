@@ -6,7 +6,7 @@ import { progressService } from '@/services/progressService';
 import { logCustomEvent } from '@/services/firebase';
 import { getPracticeQuestions, getQuestionTypes, getSolutions, getTopics } from '@/data';
 import { Button } from '@/components/ui/button';
-import { MathLoginRequired } from '@/components/common/MathLoginRequired';
+import { authService } from '@/services/authService';
 
 import { Question, Solution, StructuredAnswer, UserAttempt, SubjectCode } from '@/types';
 import { AlertTriangle, BookOpenCheck, ArrowLeft, Crown } from 'lucide-react';
@@ -421,11 +421,12 @@ export const PracticeEngine: React.FC = () => {
     const currentQ = questions[currentIdx];
     if (!currentQ) return;
 
-    if (loadedQuestionIdRef.current === currentQ.id) {
+    const cacheKey = `${currentQ.id}_${user?.uid || 'guest'}_${progressVersion}`;
+    if (loadedQuestionIdRef.current === cacheKey) {
       return;
     }
 
-    loadedQuestionIdRef.current = currentQ.id;
+    loadedQuestionIdRef.current = cacheKey;
 
     const userId = user?.uid || 'guest';
     const userAttemptsLocal = storageService.getAttempts(userId);
@@ -447,7 +448,7 @@ export const PracticeEngine: React.FC = () => {
       clearUpload();
       setPastAttempts([]);
     }
-  }, [currentIdx, questionTypeId, questions, user, isExamMode, clearUpload]);
+  }, [currentIdx, questionTypeId, questions, user, progressVersion, isExamMode, clearUpload]);
 
   const handleExamSubmit = useCallback(async (isTimeOut = false) => {
     if (isExamSubmitted) return;
@@ -949,15 +950,6 @@ export const PracticeEngine: React.FC = () => {
 
   // Render switches
 
-  if (questionTypeId !== undefined && !user) {
-    return (
-      <MathLoginRequired
-        title="Yêu cầu đăng nhập luyện tập"
-        description="Bạn cần đăng nhập học tập để thực hiện các bài tập giải đề, lưu lịch sử tiến trình học tập và nhận đánh giá phản hồi từ AI."
-      />
-    );
-  }
-
   if ((questionTypeId === 'eng-qt6' || (isGrade10English && questionTypeId === undefined)) && isConfiguringExam) {
     return (
       <ExamConfigView
@@ -1167,6 +1159,30 @@ export const PracticeEngine: React.FC = () => {
         robots="noindex, follow"
         jsonLd={practiceBreadcrumbs}
       />
+
+      {/* Khung thông báo Chế độ luyện tập xem thử dành cho khách */}
+      {!user && (
+        <div className="bg-primary/7 border border-primary/20 border-l-4 border-l-primary rounded-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4 w-full mx-auto">
+          <div className="space-y-1 text-left">
+            <h3 className="text-sm font-black text-foreground">Bạn đang luyện tập ở chế độ xem thử</h3>
+            <p className="text-[11px] text-muted-foreground font-semibold">
+              Kết quả làm bài được lưu tạm trên máy. Đăng nhập tài khoản để đồng bộ điểm số lên đám mây, tích lũy XP và bảo toàn tiến trình học tập.
+            </p>
+          </div>
+          <button
+            onClick={async () => {
+              try {
+                await authService.signInWithGoogle();
+              } catch (err: any) {
+                alert(err.message || 'Lỗi đăng nhập bằng Google.');
+              }
+            }}
+            className="px-6 py-2.5 font-bold text-xs bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl transition-all cursor-pointer shadow-md active:scale-95 shrink-0"
+          >
+            Đăng nhập ngay
+          </button>
+        </div>
+      )}
       {adaptivePracticeStatus && adaptivePracticeStatus.holdoutQuestionCount > 0 && (
         <AdaptivePracticeStatus
           status={adaptivePracticeStatus}

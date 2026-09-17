@@ -67,10 +67,6 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
   };
 
   const requireAuth = (action: () => void) => {
-    if (!user) {
-      setShowLoginConfirm(true);
-      return;
-    }
     action();
   };
   const theme = getSubjectTheme(routeSubject);
@@ -586,6 +582,30 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
         </p>
       </div>
 
+      {/* Khung thông báo Chế độ luyện tập xem thử dành cho khách */}
+      {!user && (
+        <div className="bg-primary/7 border border-primary/20 border-l-4 border-l-primary rounded-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4 w-full mx-auto">
+          <div className="space-y-1 text-left">
+            <h3 className="text-sm font-black text-foreground">Bạn đang luyện tập ở chế độ xem thử</h3>
+            <p className="text-[11px] text-muted-foreground font-semibold">
+              Kết quả làm bài được lưu tạm trên máy. Đăng nhập tài khoản để đồng bộ tiến trình học tập lên đám mây và mở khóa lưu vết đầy đủ.
+            </p>
+          </div>
+          <button
+            onClick={async () => {
+              try {
+                await authService.signInWithGoogle();
+              } catch (err: any) {
+                alert(err.message || 'Lỗi đăng nhập bằng Google.');
+              }
+            }}
+            className="px-6 py-2.5 font-bold text-xs bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl transition-all cursor-pointer shadow-md active:scale-95 shrink-0"
+          >
+            Đăng nhập ngay
+          </button>
+        </div>
+      )}
+
       {topics.map((topic) => {
         const topicQTypes = qTypes.filter(qt => qt.topicId === topic.id);
         if (topicQTypes.length === 0) return null;
@@ -927,7 +947,7 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
       <ConfirmationModal
         isOpen={showLoginConfirm}
         title="Yêu cầu đăng nhập học tập"
-        description="Bạn cần đăng nhập học tập để bắt đầu luyện tập dạng bài này, lưu lịch sử tiến trình học tập và nhận đánh giá từ AI."
+        description="Bạn cần đăng nhập học tập để bắt đầu luyện tập dạng bài này và lưu lịch sử tiến trình học tập."
         confirmLabel="Đăng nhập với Google"
         cancelLabel="Hủy bỏ"
         onConfirm={async () => {

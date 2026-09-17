@@ -2,6 +2,7 @@ import { initializeApp } from 'firebase/app';
 import {
   initializeAuth,
   getAuth,
+  browserPopupRedirectResolver,
   indexedDBLocalPersistence,
   browserLocalPersistence,
   browserSessionPersistence
@@ -34,7 +35,8 @@ try {
       indexedDBLocalPersistence,
       browserLocalPersistence,
       browserSessionPersistence
-    ]
+    ],
+    popupRedirectResolver: browserPopupRedirectResolver
   });
 } catch {
   authInstance = getAuth(app);

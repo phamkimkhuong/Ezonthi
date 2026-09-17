@@ -92,7 +92,6 @@ on-thi-vao-10/
 │   │   ├── ui/                   # Primitives (Button, Card, Progress, Tabs) - theo chuẩn shadcn/ui
 │   │   ├── common/
 │   │   │   ├── LatexRenderer.tsx         # Render công thức LaTeX bằng KaTeX
-│   │   │   ├── AiTutorPanel.tsx          # Panel chat AI gia sư (nhúng trong PracticeEngine)
 │   │   │   ├── AnswerFormRenderer.tsx    # Render form trả lời đa dạng (number, fraction, choice...)
 │   │   │   ├── ProofImageUploader.tsx    # Upload ảnh bài giải tay
 │   │   │   └── MathLoginRequired.tsx     # Guard yêu cầu đăng nhập
@@ -394,10 +393,9 @@ users/{userId}/examResults/{doc}  # ExamResult (cloud copy)
 
 ### Các tính năng AI:
 
-1. **AI Tutor Panel** (`AiTutorPanel.tsx`): Chat hỏi đáp nhúng trong PracticeEngine, có ngữ cảnh câu hỏi đang làm
-2. **General AI Tutor** (`GeneralAiTutor.tsx`): Chat AI tổng quát không gắn câu hỏi
-3. **Auto Evaluation**: AI chấm bài giải tay (ảnh upload) bằng `AiEvaluation` schema
-4. **RAG**: Tìm kiếm kiến thức liên quan từ cơ sở dữ liệu nội bộ
+1. **General AI Tutor** (`GeneralAiTutor.tsx`): Chat AI gia sư tổng quát theo từng môn học và khối lớp
+2. **Auto Evaluation**: AI chấm bài giải tay (ảnh upload) bằng `AiEvaluation` schema
+3. **RAG**: Tìm kiếm kiến thức liên quan từ cơ sở dữ liệu nội bộ
 
 ### Luồng gọi AI:
 

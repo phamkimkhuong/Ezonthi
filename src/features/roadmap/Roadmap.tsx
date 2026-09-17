@@ -140,17 +140,7 @@ export const Roadmap: React.FC = () => {
     return idxInTopic === firstLockedInTopicIdx;
   };
 
-  const handleSelectType = async (id: string) => {
-    if (!user) {
-      try {
-        await authService.signInWithGoogle();
-        navigate(`/question-types/${id}`);
-      } catch (err: any) {
-        alert(err.message || 'Lỗi đăng nhập bằng Google.');
-      }
-      return;
-    }
-
+  const handleSelectType = (id: string) => {
     if (!isUnlocked(id)) {
       const qType = questionTypes.find(t => t.id === id);
       const topicTypes = qType ? (typesByTopic.get(qType.topicId) || []) : [];

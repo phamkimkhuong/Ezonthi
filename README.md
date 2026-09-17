@@ -10,33 +10,32 @@
 Nền tảng công nghệ giáo dục (EdTech) học tập và ôn luyện cá nhân hóa dành cho học sinh từ **Lớp 9 (Ôn thi tuyển sinh vào 10)** đến **Lớp 10 & Lớp 11 THPT** theo chuẩn **Chương trình GDPT 2018**. Hệ thống tích hợp AI Gia Sư thông minh, ngân hàng đề bài chuẩn hóa đồ sộ, các chuyên đề nâng cao/Olympic, cùng kiến trúc **Local-First** cho trải nghiệm siêu mượt.
 
 🔗 **Website chính thức**: [ezonthi.com](https://ezonthi.com)  
-🔗 **Live Hosting**: [on-thi-vao-10.web.app](https://on-thi-vao-10.web.app)
 
 Runtime chuẩn của dự án là **Node.js 22 + npm 10.9**. Cài đặt bằng `npm ci` ở root và `npm --prefix functions ci`; xem [hướng dẫn phát triển và phát hành](docs/development-and-release.md). Route học chuẩn mang đủ lớp và môn, ví dụ `/app/grade11/english/roadmap`.
 
 ---
 
-## ✨ Điểm Nổi Bật
+## I. Điểm Nổi Bật
 
 | Tính năng | Chi tiết |
 |---|---|
-| 🧠 **AI Gia Sư (Google Gemini)** | Chat trực tiếp với AI để giải đáp thắc mắc, phân tích bài giải từng bước với kỹ thuật sư phạm (scaffolding: gợi mở tư duy, không mớm đáp án). |
-| 📚 **Đa Môn Học Toàn Diện** | Bao phủ 6 môn học cốt lõi: **Toán học, Tiếng Anh, Vật lý, Hóa học, Sinh học, Lịch sử** cho cả 3 khối lớp (9, 10, 11). |
-| 🏆 **Chuyên Đề Nâng Cao & Olympic** | 4 kho chuyên đề độc lập cho Toán 10, Vật lý 10, Hóa học 10, Sinh học 10 với 3 mức độ Khó/Rất khó/Cực khó; chống xem trước lời giải trước khi nộp. |
-| 🗺️ **Lộ Trình Học 3 Chặng** | Phân cấp theo Mastery Score: **Tier 1 (5-6 điểm)** → **Tier 2 (7-8 điểm)** → **Tier 3 (9-10 điểm)**; mở khóa dần tránh quá tải. |
-| ⚡ **Kiến Trúc Local-First** | Lưu trữ tức thì vào `LocalStorage`, học và làm bài offline mượt mà; tự động đồng bộ lên Firebase Cloud khi có kết nối mạng. |
-| 📓 **Sổ Lỗi Sai (Mistake Notebook)** | Tự động gom nhóm câu làm sai theo từng dạng bài, hỗ trợ cơ chế Spaced Retrieval để làm lại đến khi thành thạo và xóa lỗi. |
-| ⌨️ **Bàn Phím Toán Học Chuyên Dụng** | Bàn phím ảo tự động đổi layout theo từng dạng toán (Parabol, Vectơ, Lượng giác, Căn thức, Phân số) tối ưu riêng cho điện thoại & tablet. |
-| 📖 **Từ Vựng & Ngữ Pháp Tiếng Anh** | Tra cứu từ điển tích hợp, luyện thẻ ghi nhớ Flashcard từ vựng theo chủ đề (`/vocabulary`) và hệ thống lý thuyết ngữ pháp bài bản (`/grammar`). |
-| 👩‍🏫 **Dashboard Giáo Viên & Lớp Học** | Giáo viên duyệt bài tự luận qua ảnh chụp bài giải (`proof-upload`), chấm điểm, nhận xét và gửi thông báo cho học sinh. |
-| 📧 **Phát Bản Tin Email (Broadcast)** | Tích hợp gửi email thông báo qua Resend API từ domain `ezonthi.com`, tối ưu 1-Read directory & chia đợt gửi tránh vượt quota. |
-| 💳 **Thanh Toán PayOS & Affiliate** | Hỗ trợ đăng ký nâng cấp Premium tự động qua cổng thanh toán PayOS và quản lý mạng lưới tiếp thị liên kết (Affiliate). |
-| 🔥 **Gamification Kích Thích Học Tập** | Điểm kinh nghiệm XP, Thăng cấp (Level), Chuỗi học tập (Streak), Tặng sao (0-3⭐) và hiệu ứng Confetti rực rỡ khi hoàn thành bài học. |
-| 🚀 **Siêu Hiệu Năng & SEO Tĩnh** | Code-splitting giảm 93.3% kích thước bundle khởi động (từ 5.3MB xuống ~350KB); tự động tạo Static SEO Pages và Sitemap khi build. |
+|  **AI Gia Sư (Google Gemini)** | Chat trực tiếp với AI để giải đáp thắc mắc, phân tích bài giải từng bước với kỹ thuật sư phạm (scaffolding: gợi mở tư duy, không mớm đáp án). |
+|  **Đa Môn Học Toàn Diện** | Bao phủ 6 môn học cốt lõi: **Toán học, Tiếng Anh, Vật lý, Hóa học, Sinh học, Lịch sử** cho cả 3 khối lớp (9, 10, 11). |
+|  **Chuyên Đề Nâng Cao & Olympic** | 4 kho chuyên đề độc lập cho Toán 10, Vật lý 10, Hóa học 10, Sinh học 10 với 3 mức độ Khó/Rất khó/Cực khó; chống xem trước lời giải trước khi nộp. |
+|  **Lộ Trình Học 3 Chặng** | Phân cấp theo Mastery Score: **Tier 1 (5-6 điểm)** → **Tier 2 (7-8 điểm)** → **Tier 3 (9-10 điểm)**; mở khóa dần tránh quá tải. |
+|  **Kiến Trúc Local-First** | Lưu trữ tức thì vào `LocalStorage`, học và làm bài offline mượt mà; tự động đồng bộ lên Firebase Cloud khi có kết nối mạng. |
+|  **Sổ Lỗi Sai (Mistake Notebook)** | Tự động gom nhóm câu làm sai theo từng dạng bài, hỗ trợ cơ chế Spaced Retrieval để làm lại đến khi thành thạo và xóa lỗi. |
+|  **Bàn Phím Toán Học Chuyên Dụng** | Bàn phím ảo tự động đổi layout theo từng dạng toán (Parabol, Vectơ, Lượng giác, Căn thức, Phân số) tối ưu riêng cho điện thoại & tablet. |
+|  **Từ Vựng & Ngữ Pháp Tiếng Anh** | Tra cứu từ điển tích hợp, luyện thẻ ghi nhớ Flashcard từ vựng theo chủ đề (`/vocabulary`) và hệ thống lý thuyết ngữ pháp bài bản (`/grammar`). |
+|  **Dashboard Giáo Viên & Lớp Học** | Giáo viên duyệt bài tự luận qua ảnh chụp bài giải (`proof-upload`), chấm điểm, nhận xét và gửi thông báo cho học sinh. |
+|  **Phát Bản Tin Email (Broadcast)** | Tích hợp gửi email thông báo qua Resend API từ domain `ezonthi.com`, tối ưu 1-Read directory & chia đợt gửi tránh vượt quota. |
+|  **Thanh Toán PayOS & Affiliate** | Hỗ trợ đăng ký nâng cấp Premium tự động qua cổng thanh toán PayOS và quản lý mạng lưới tiếp thị liên kết (Affiliate). |
+|  **Gamification Kích Thích Học Tập** | Điểm kinh nghiệm XP, Thăng cấp (Level), Chuỗi học tập (Streak), Tặng sao (0-3⭐) và hiệu ứng Confetti rực rỡ khi hoàn thành bài học. |
+|  **Siêu Hiệu Năng & SEO Tĩnh** | Code-splitting giảm 93.3% kích thước bundle khởi động (từ 5.3MB xuống ~350KB); tự động tạo Static SEO Pages và Sitemap khi build. |
 
 ---
 
-## 📚 Ngân Hàng Dữ Liệu & Khóa Học Hiện Có
+## II. Ngân Hàng Dữ Liệu & Khóa Học Hiện Có
 
 Hệ thống được biên soạn bám sát **Chương trình GDPT 2018** (các bộ SGK: *Kết nối tri thức với cuộc sống*, *Cánh diều*, *Chân trời sáng tạo*).
 
@@ -66,7 +65,7 @@ Hệ thống được biên soạn bám sát **Chương trình GDPT 2018** (các
 
 ---
 
-## 🏗️ Kiến Trúc Hệ Thống
+## III. Kiến Trúc Hệ Thống
 
 ### 1. Mô Hình Dữ Liệu 5 Tầng Phân Cấp
 
@@ -142,7 +141,7 @@ Grade (grade9 | grade10 | grade11)
 
 ---
 
-## 🗺️ Cấu Trúc Thư Mục Dự Án
+## IV. Cấu Trúc Thư Mục Dự Án
 
 ```text
 on-thi-vao-10/
@@ -213,7 +212,7 @@ on-thi-vao-10/
 
 ---
 
-## ⚡ Hướng Dẫn Cài Đặt & Phát Triển
+## V. Hướng Dẫn Cài Đặt & Phát Triển
 
 ### Yêu Cầu Môi Trường
 - **Node.js**: Phiên bản 22.x
@@ -243,7 +242,7 @@ npm run validate:release
 
 ---
 
-## 🧪 Hệ Thống Scripts Kiểm Tra Dữ Liệu (QA & Validation)
+## VI. Hệ Thống Scripts Kiểm Tra Dữ Liệu (QA & Validation)
 
 Dự án sở hữu bộ scripts tự động hóa Master Validator giúp kiểm định toàn diện chất lượng mã nguồn và tính toàn vẹn dữ liệu:
 
@@ -268,7 +267,7 @@ npm run validate:release
 
 ---
 
-## 🚀 Quy Trình Build & Triển Khai (Deployment)
+## VII. Quy Trình Build & Triển Khai (Deployment)
 
 ```bash
 # 1. Build hoàn chỉnh (sinh sitemap + tsc + vite build + sinh trang SEO tĩnh)
@@ -287,7 +286,7 @@ npm run seed:grammar
 
 ---
 
-## 🧩 Quy Chuẩn Mở Rộng & Thêm Dữ Liệu Mới
+## VIII. Quy Chuẩn Mở Rộng & Thêm Dữ Liệu Mới
 
 ### 1. Thư Mục Dữ Liệu Chuẩn
 Khi bổ sung một môn học mới tại `src/data/grade{X}/{subject}/`, cần có 4 thành phần chính:
@@ -305,17 +304,16 @@ Khi bổ sung một môn học mới tại `src/data/grade{X}/{subject}/`, cần
 
 ## 📁 Tài Liệu Bổ Sung Trong Thư Mục `docs/`
 
-- [AGENT.md](file:///d:/a_duan/on-thi-vao-10/AGENT.md): Tài liệu kỹ thuật chi tiết dành cho các AI Agent phát triển dự án.
-- [content-guidelines.md](file:///d:/a_duan/on-thi-vao-10/docs/content-guidelines.md): Quy cách chuẩn hóa nội dung câu hỏi và phân phối kiến thức.
-- [question-authoring-guide.md](file:///d:/a_duan/on-thi-vao-10/docs/question-authoring-guide.md): Cẩm nang soạn thảo câu hỏi trắc nghiệm và tự luận.
-- [learning-roadmap.md](file:///d:/a_duan/on-thi-vao-10/docs/learning-roadmap.md): Khung lộ trình học tập 3 chặng.
-- [student-learning-flow.md](file:///d:/a_duan/on-thi-vao-10/docs/student-learning-flow.md): Sơ đồ luồng trải nghiệm người học.
-- [phase4-scale-and-metrics.md](docs/phase4-scale-and-metrics.md): Hợp đồng phân trang, quota AI, RAG V2, schema V4 và cổng số liệu trước khi mở rộng.
+- [AGENT.md]: Tài liệu kỹ thuật chi tiết dành cho các AI Agent phát triển dự án.
+- [content-guidelines.md](docs/content-guidelines.md): Quy cách chuẩn hóa nội dung câu hỏi và phân phối kiến thức.
+- [question-authoring-guide.md](docs/question-authoring-guide.md): Cẩm nang soạn thảo câu hỏi trắc nghiệm và tự luận.
+- [learning-roadmap.md](docs/learning-roadmap.md): Khung lộ trình học tập 3 chặng.
+- [student-learning-flow.md](docs/student-learning-flow.md): Sơ đồ luồng trải nghiệm người học.
 
 ---
 
 > [!NOTE]
-> Mọi thay đổi logic chấm điểm hoặc mô hình dữ liệu cần được cập nhật đồng bộ tại [src/types/index.ts](file:///d:/a_duan/on-thi-vao-10/src/types/index.ts) để đảm bảo an toàn kiểu dữ liệu (Type Safety) cho toàn bộ ứng dụng.
+> Mọi thay đổi logic chấm điểm hoặc mô hình dữ liệu cần được cập nhật đồng bộ tại [src/types/index.ts](src/types/index.ts) để đảm bảo an toàn kiểu dữ liệu (Type Safety) cho toàn bộ ứng dụng.
 
 > [!IMPORTANT]
 > Khi soạn thảo nội dung môn **Hóa học** theo chuẩn **GDPT 2018**: Thể tích mol của chất khí ở điều kiện chuẩn (đkc: 25°C, 1 bar) là **$24,79\text{ lít/mol}$**, tuyệt đối không dùng hằng số cũ $22,4\text{ lít/mol}$.

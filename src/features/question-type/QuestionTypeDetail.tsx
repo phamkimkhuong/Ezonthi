@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import '@fontsource/source-serif-4/vietnamese-400.css';
 import '@fontsource/source-serif-4/vietnamese-600.css';
 import '@fontsource/source-serif-4/vietnamese-700.css';
@@ -111,49 +111,70 @@ export const QuestionTypeDetail: React.FC = () => {
     ? isQuestionTypePremiumLocked(detail.id, 1, routeSubject, selectedGrade) && !isPremium
     : false;
 
+  const prevQuestionTypeIdRef = useRef<string | undefined>(undefined);
+  const prevUserUidRef = useRef<string | undefined>(undefined);
+
   useEffect(() => {
     if (!detail) return;
+
+    const isDifferentLesson = prevQuestionTypeIdRef.current !== questionTypeId;
+    const isUserJustLoggedIn = !prevUserUidRef.current && !!user?.uid;
+
+    prevQuestionTypeIdRef.current = questionTypeId;
+    prevUserUidRef.current = user?.uid;
+
     const defaultTab = detail.theory && detail.theory.length > 0
       ? 'theory'
       : (detail.subTypes && detail.subTypes.length > 0 ? 'subtypes' : 'recognition_mistakes');
 
-    setVisitedTabIds(new Set([defaultTab]));
-    setCheckpointAnswers({});
-    setActiveTab(defaultTab);
-    setShowLessonCompletedMsg(false);
+    if (isDifferentLesson) {
+      setVisitedTabIds(new Set([defaultTab]));
+      setCheckpointAnswers({});
+      setActiveTab(defaultTab);
+      setShowLessonCompletedMsg(false);
+    }
 
-    const userId = user?.uid || 'guest';
-    const readLessons = storageService.getReadLessons(userId);
+    const readLessons = user ? storageService.getReadLessons(user.uid) : [];
     const requiredCheckpointIds = (detail.theoryCheckpoints ?? []).map(item => item.id);
-    const storedCheckpointIds = new Set(storageService.getPassedTheoryCheckpoints(userId));
-    const restoredPassedIds = new Set(
-      requiredCheckpointIds.filter(id => storedCheckpointIds.has(id))
-    );
+    const storedCheckpointIds = new Set(user ? storageService.getPassedTheoryCheckpoints(user.uid) : []);
+    
+    const restoredPassedIds = isDifferentLesson
+      ? new Set(requiredCheckpointIds.filter(id => storedCheckpointIds.has(id)))
+      : new Set([...passedCheckpointIds, ...storedCheckpointIds]);
     setPassedCheckpointIds(restoredPassedIds);
+
     const hasPassedRequiredCheckpoints =
       requiredCheckpointIds.length === 0 ||
       requiredCheckpointIds.every(id => restoredPassedIds.has(id));
 
-    if (readLessons.includes(detail.id) && hasPassedRequiredCheckpoints) {
-      setShowLessonCompletedMsg(true);
-    } else {
-      const availableIds: string[] = [];
-      if (detail.theory && detail.theory.length > 0) availableIds.push('theory');
-      if (detail.subTypes && detail.subTypes.length > 0) availableIds.push('subtypes');
-      availableIds.push('recognition_mistakes');
-      availableIds.push('method');
-      availableIds.push('example');
+    const availableIds: string[] = [];
+    if (detail.theory && detail.theory.length > 0) availableIds.push('theory');
+    if (detail.subTypes && detail.subTypes.length > 0) availableIds.push('subtypes');
+    availableIds.push('recognition_mistakes');
+    availableIds.push('method');
+    availableIds.push('example');
 
+    if (user && readLessons.includes(detail.id) && hasPassedRequiredCheckpoints) {
+      setShowLessonCompletedMsg(true);
+    } else if (user) {
       if (availableIds.length === 1 && requiredCheckpointIds.length === 0) {
-        if (user) {
-          progressService.saveLessonRead(user.uid, detail.id);
-        } else {
-          storageService.saveLessonRead(userId, detail.id);
-        }
+        progressService.saveLessonRead(user.uid, detail.id);
         refreshProgress();
         setShowLessonCompletedMsg(true);
+      } else if (isUserJustLoggedIn && !isDifferentLesson) {
+        // Kế thừa phiên học thử: nếu khách đã xem hết các tab trong phiên này, tự động lưu ngay cho tài khoản mới
+        const hasVisitedAllTabs = availableIds.length > 0 && availableIds.every(id => visitedTabIds.has(id));
+        if (hasVisitedAllTabs && hasPassedRequiredCheckpoints) {
+          progressService.saveLessonRead(user.uid, detail.id);
+          restoredPassedIds.forEach(checkpointId => {
+            progressService.saveTheoryCheckpointPassed(user.uid, checkpointId);
+          });
+          refreshProgress();
+          setShowLessonCompletedMsg(true);
+        }
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [questionTypeId, detail, user, refreshProgress]);
 
   // Hủy đọc thoại khi rời trang
@@ -581,17 +602,14 @@ export const QuestionTypeDetail: React.FC = () => {
       requiredCheckpointIds.every(id => passedIds.has(id));
 
     if (hasVisitedAllTabs && hasPassedAllCheckpoints) {
-      const userId = user?.uid || 'guest';
-      const readLessons = storageService.getReadLessons(userId);
-      if (!readLessons.includes(detail.id)) {
-        if (user) {
+      if (user) {
+        const readLessons = storageService.getReadLessons(user.uid);
+        if (!readLessons.includes(detail.id)) {
           progressService.saveLessonRead(user.uid, detail.id);
-        } else {
-          storageService.saveLessonRead(userId, detail.id);
+          refreshProgress();
         }
-        refreshProgress();
+        setShowLessonCompletedMsg(true);
       }
-      setShowLessonCompletedMsg(true);
     }
   };
 
@@ -603,10 +621,8 @@ export const QuestionTypeDetail: React.FC = () => {
 
     if (user) {
       progressService.saveTheoryCheckpointPassed(user.uid, checkpointId);
-    } else {
-      storageService.saveTheoryCheckpointPassed('guest', checkpointId);
+      refreshProgress();
     }
-    refreshProgress();
 
     setPassedCheckpointIds(previous => {
       const next = new Set(previous);
@@ -688,6 +704,28 @@ export const QuestionTypeDetail: React.FC = () => {
         canonicalUrl={canonicalPath}
         jsonLd={jsonLdSchemas}
       />
+
+      {/* 🌟 Guest Mode Banner */}
+      {!user && (
+        <div className="bg-primary/7 border border-primary/20 border-l-4 border-l-primary rounded-xl p-5 flex flex-col md:flex-row items-center justify-between gap-4 w-full mx-auto">
+          <div className="space-y-1 text-left">
+            <h3 className="text-sm font-black text-foreground">Bạn đang xem bài học ở chế độ xem thử</h3>
+            <p className="text-[11px] text-muted-foreground font-semibold">Đăng nhập tài khoản để lưu tiến trình học tập, mở khóa toàn bộ lộ trình và bắt đầu thực hành luyện tập.</p>
+          </div>
+          <button
+            onClick={async () => {
+              try {
+                await authService.signInWithGoogle();
+              } catch (err: any) {
+                alert(err.message || 'Lỗi đăng nhập bằng Google.');
+              }
+            }}
+            className="px-6 py-2.5 font-bold text-xs bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl transition-all cursor-pointer shadow-md active:scale-95 shrink-0"
+          >
+            Đăng nhập ngay
+          </button>
+        </div>
+      )}
 
       {/* Header Dạng bài - Hero Section phẳng tràn viền mỏng nhẹ */}
       <div className="py-1 space-y-3 font-sans">
