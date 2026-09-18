@@ -126,6 +126,10 @@ questions.push(...skillsDeepening.g10EnglishDeepeningQuestions);
 solutions.push(...skillsDeepening.g10EnglishDeepeningSolutions);
 const deepeningStats = skillsDeepening.g10EnglishDeepeningStats;
 
+const assessmentWriting = readComputedModuleExports(path.join('assessments', 'writingQuestions.ts'));
+questions.push(...assessmentWriting.g10EnglishAssessmentWritingQuestions);
+solutions.push(...assessmentWriting.g10EnglishAssessmentWritingSolutions);
+
 const learningPath = readComputedModuleExports('learningPath.ts');
 const learningOutcomes = learningPath.g10EnglishOutcomes;
 const learningMisconceptions = learningPath.g10EnglishMisconceptions;
@@ -384,8 +388,8 @@ for (const [groupId, forms] of examsByParallelGroup) {
 if (learningOutcomes.length !== 40) errors.push(`Learning path cần 40 outcomes gồm Listening tự chọn và không gồm Speaking, hiện có ${learningOutcomes.length}.`);
 if (learningMisconceptions.length !== 20) errors.push(`Learning path cần 20 misconceptions, hiện có ${learningMisconceptions.length}.`);
 if (deepeningStats.unitCount !== 10) errors.push(`Skills deepening cần phủ 10 Unit, hiện có ${deepeningStats.unitCount}.`);
-if (deepeningStats.questionCountPerUnit !== 20) {
-  errors.push(`Skills deepening cần 20 hoạt động/Unit sau khi loại Speaking, hiện có ${deepeningStats.questionCountPerUnit}.`);
+if (deepeningStats.questionCountPerUnit !== 17) {
+  errors.push(`Skills deepening cần 17 hoạt động/Unit sau khi loại Speaking và Writing tự luận, hiện có ${deepeningStats.questionCountPerUnit}.`);
 }
 const speakingQuestions = questions.filter(question => (
   question.competency === 'english_speaking'
@@ -400,6 +404,14 @@ if (questionTypes.some(type => type.id.includes('-speaking'))) {
 }
 if (learningOutcomes.some(outcome => outcome.id.includes('-speaking'))) {
   errors.push('Không được xuất learning outcome Speaking lên English 10.');
+}
+const manualQuestions = questions.filter(question => (
+  question.validatorType === 'manual'
+  || question.answerSchema?.autoCheckMode === 'manual'
+  || question.responseType === 'constructed_response'
+));
+if (manualQuestions.length > 0) {
+  errors.push(`Không được xuất bài tự luận chấm tay lên English 10, còn ${manualQuestions.length} câu.`);
 }
 const listeningExtensionTopicId = 'eng10-listening-extension';
 const listeningQuestions = questions.filter(question => question.competency === 'english_listening');

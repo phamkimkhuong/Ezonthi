@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Crown, ArrowLeft, ChevronDown, ChevronUp } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
-import { QuestionType, SubjectCode } from '@/types';
+import { QuestionType, SubjectCode, GradeCode } from '@/types';
 import { getPracticeQuestions, getTopics } from '@/data';
 import { useAppStore } from '@/services/store';
 import { getSubjectTheme, getStarsFromScore } from '@/utils/theme';
@@ -12,7 +12,7 @@ import { storageService } from '@/services/storage';
 import { LatexRenderer } from '@/components/common/LatexRenderer';
 import { ConfirmationModal } from '@/components/common/ConfirmationModal';
 import { authService } from '@/services/authService';
-import { ROUTES } from '@/constants/routes';
+import { buildCoursePath } from '@/utils/courseRoutes';
 import { buildAdaptivePracticeSequence } from '../utils/adaptivePracticeSequence';
 import { isQuestionTypePremiumLocked } from '@/utils/subject';
 
@@ -54,7 +54,9 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
   questionTypeId,
 }) => {
   const navigate = useNavigate();
+  const { grade: routeGrade } = useParams<{ grade?: GradeCode }>();
   const { selectedGrade, user, progressVersion } = useAppStore();
+  const effectiveGrade = routeGrade || selectedGrade;
   const [premiumModalOpen, setPremiumModalOpen] = useState(false);
   const [showLoginConfirm, setShowLoginConfirm] = useState(false);
   const [collapsedTopics, setCollapsedTopics] = useState<Record<string, boolean>>({});
@@ -730,7 +732,7 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
                       if (qType.id === 'eng-qt6') {
                         setGrammarSection('dang1');
                       } else {
-                        navigate(ROUTES.PRACTICE_DETAIL(qType.id));
+                        navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice', qType.id));
                       }
                     });
                   };

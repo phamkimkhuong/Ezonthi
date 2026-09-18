@@ -43,8 +43,6 @@ const listeningExtensionTopicId = 'eng10-listening-extension';
 
 const readingSubtypeIds = ['gist', 'detail', 'vocabulary', 'reference', 'inference'];
 const listeningSubtypeIds = ['gist', 'detail', 'detail', 'inference'];
-const writingSubtypeIds = ['controlled', 'guided', 'extended'];
-const speakingSubtypeIds = ['individual', 'interaction', 'presentation'];
 
 const unitSpecs: EnglishSkillUnitSpec[] = [
   {
@@ -1546,6 +1544,19 @@ const unitSpecs: EnglishSkillUnitSpec[] = [
   }
 ];
 
+const writingExampleIdByUnit: Record<number, string> = {
+  1: 'eng10-exam-m1a-w1',
+  2: 'eng10-exam-m1a-w2',
+  3: 'eng10-exam-m1a-w3',
+  4: 'eng10-exam-f1a-w1',
+  5: 'eng10-exam-f1a-w2',
+  6: 'eng10-exam-m2a-w1',
+  7: 'eng10-exam-m2a-w2',
+  8: 'eng10-exam-m2a-w3',
+  9: 'eng10-exam-f2a-w1',
+  10: 'eng10-exam-f2a-w3'
+};
+
 const makeQuestionTypes = (
   spec: Pick<EnglishSkillUnitSpec, 'unit' | 'topicId' | 'theme'>
 ): QuestionType[] => [
@@ -1610,26 +1621,36 @@ const makeQuestionTypes = (
   {
     id: `eng10-skill-qt-u${spec.unit}-writing`,
     topicId: spec.topicId,
-    name: `Viết có hướng dẫn – ${spec.theme}`,
+    name: `Viết: Biến đổi & Nối câu – ${spec.theme}`,
     slug: `writing-u${spec.unit}`,
-    description: 'Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.',
-    exampleQuestionId: `eng10-skill-u${spec.unit}-w1`,
-    theory: ['Xác định người đọc và mục đích.', 'Lập ý theo claim–reason–example hoặc opening–body–closing.', 'Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp.'],
-    subTypes: [
-      { id: `eng10-u${spec.unit}-writing-controlled`, name: 'Đoạn ngắn có kiểm soát', example: '60–80 words', targetQuestionCount: 1 },
-      { id: `eng10-u${spec.unit}-writing-guided`, name: 'Bài viết có hướng dẫn', example: '90–120 words', targetQuestionCount: 1 },
-      { id: `eng10-u${spec.unit}-writing-extended`, name: 'Bài viết lập luận', example: '120–150 words', targetQuestionCount: 1 }
+    description: 'Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.',
+    exampleQuestionId: writingExampleIdByUnit[spec.unit] || 'eng10-exam-m1a-w1',
+    theory: [
+      'Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.',
+      'Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.',
+      'Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả).'
     ],
-    recognitionSigns: ['Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài.'],
-    solvingSteps: ['Gạch yêu cầu bắt buộc.', 'Lập dàn ý ngắn.', 'Viết bản nháp.', 'Soát theo rubric.'],
-    commonMistakes: ['Viết đúng ngữ pháp nhưng lạc yêu cầu.', 'Không có liên kết hoặc bằng chứng.'],
+    subTypes: [
+      { id: `eng10-u${spec.unit}-writing-controlled`, name: 'Biến đổi câu tương đương', example: 'Closest in meaning', targetQuestionCount: 1 },
+      { id: `eng10-u${spec.unit}-writing-guided`, name: 'Kết hợp câu', example: 'Best combines sentences', targetQuestionCount: 1 }
+    ],
+    recognitionSigns: ['Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines).'],
+    solvingSteps: [
+      'Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.',
+      'Xác định kiến thức ngữ pháp đang được kiểm tra.',
+      'So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa.'
+    ],
+    commonMistakes: [
+      'Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.',
+      'Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ.'
+    ],
     difficulty: 'medium',
     examFrequency: 'high',
     practiceCoverage: {
       targetQuestionCount: 3,
       minimumQuestionsPerSubType: 1,
-      requiredPracticeRoles: ['guided', 'near_transfer', 'far_transfer'],
-      requiredRepresentations: ['extended_response'],
+      requiredPracticeRoles: ['guided', 'near_transfer'],
+      requiredRepresentations: ['text'],
       masteryHoldoutCount: 1
     }
   },
@@ -1758,81 +1779,6 @@ const choiceSolution = (
   reviewSuggestions: [`Ôn chiến lược ${skill === 'r' ? 'đọc' : skill === 'l' ? 'nghe' : 'giao tiếp'} của Unit ${spec.unit}.`]
 });
 
-const openQuestion = (
-  spec: EnglishSkillUnitSpec,
-  skill: 'w' | 's',
-  index: number,
-  task: OpenTaskSpec
-): Question => {
-  const typeSkill = skill === 'w' ? 'writing' : 'speaking';
-  const subtype = skill === 'w' ? writingSubtypeIds[index] : speakingSubtypeIds[index];
-  return {
-    id: `eng10-skill-u${spec.unit}-${skill}${index + 1}`,
-    subjectId: 'english',
-    topicId: spec.topicId,
-    questionTypeId: `eng10-skill-qt-u${spec.unit}-${typeSkill}`,
-    content: task.prompt,
-    responseType: 'constructed_response',
-    correctAnswer: 'Chấm theo rubric',
-    difficulty: task.difficulty,
-    sourceType: 'manual',
-    validatorType: 'manual',
-    answerSchema: {
-      type: 'self-check',
-      fields: [{
-        key: 'response',
-        label: skill === 'w' ? 'Bài viết của em' : 'Dàn ý hoặc transcript phần nói của em',
-        valueType: 'text',
-        placeholder: skill === 'w' ? 'Viết câu trả lời bằng tiếng Anh...' : 'Nói thành tiếng, sau đó ghi lại các ý chính hoặc transcript...',
-        hint: task.minimumWords ? `Mục tiêu tối thiểu ${task.minimumWords} từ.` : 'Thực hành nói thành tiếng trước khi ghi ý chính.',
-        required: true
-      }],
-      proofImageRequired: false,
-      autoCheckMode: 'manual'
-    },
-    outcomeIds: [`eng10-lo-u${spec.unit}-${typeSkill}`],
-    competency: skill === 'w' ? 'english_writing' : 'english_speaking',
-    cognitiveLevel: task.difficulty === 'easy' ? 'recognition' : task.difficulty === 'medium' ? 'understanding' : 'application',
-    estimatedSeconds: task.difficulty === 'hard' ? 900 : task.difficulty === 'medium' ? 600 : 360,
-    subTypeId: `eng10-u${spec.unit}-${typeSkill}-${subtype}`,
-    practiceRole: roleByDifficulty(task.difficulty),
-    representationType: 'extended_response',
-    isMasteryHoldout: task.difficulty === 'hard'
-  };
-};
-
-const openSolution = (
-  spec: EnglishSkillUnitSpec,
-  skill: 'w' | 's',
-  index: number,
-  task: OpenTaskSpec
-): Solution => ({
-  id: `eng10-skill-sol-u${spec.unit}-${skill}${index + 1}`,
-  questionId: `eng10-skill-u${spec.unit}-${skill}${index + 1}`,
-  recognition: skill === 'w' ? 'Nhiệm vụ viết mở: lập ý và tự kiểm tra theo rubric.' : 'Nhiệm vụ nói mở: thực hành thành tiếng và tự đánh giá.',
-  detailedSteps: [
-    { order: 1, title: 'Lập kế hoạch', explanation: 'Xác định mục đích, 2–3 ý chính và ví dụ phù hợp.' },
-    { order: 2, title: 'Bài mẫu tham khảo', explanation: task.model }
-  ],
-  finalAnswer: task.model,
-  commonMistakes: skill === 'w'
-    ? ['Bỏ sót yêu cầu đề.', 'Liệt kê ý mà không liên kết.', 'Sao chép bài mẫu thay vì tự viết.']
-    : ['Chỉ đọc thầm.', 'Nói từng câu rời rạc.', 'Không phản hồi vai trò/người nghe.'],
-  reviewSuggestions: [`Dùng rubric Unit ${spec.unit} để sửa một lần rồi thực hiện lại.`],
-  rubric: skill === 'w'
-    ? [
-        { id: 'task', description: 'Hoàn thành đúng nhiệm vụ và phát triển đủ ý', points: 4, evidence: ['đúng chủ đề', 'đủ yêu cầu', 'có lý do hoặc ví dụ'] },
-        { id: 'organisation', description: 'Tổ chức và liên kết', points: 2, evidence: ['trình tự rõ', 'từ nối phù hợp'] },
-        { id: 'language', description: 'Từ vựng và ngữ pháp', points: 3, evidence: ['từ vựng chủ đề', 'cấu trúc Unit', 'lỗi không cản trở nghĩa'] },
-        { id: 'mechanics', description: 'Chính tả, dấu câu và độ dài', points: 1, evidence: ['dễ đọc', 'đạt độ dài'] }
-      ]
-    : [
-        { id: 'content', description: 'Ý rõ và phù hợp nhiệm vụ', points: 4, evidence: ['trả lời trực tiếp', 'có phát triển ý'] },
-        { id: 'delivery', description: 'Độ trôi chảy và phát âm', points: 2, evidence: ['nói thành tiếng', 'ngắt ý hợp lý'] },
-        { id: 'language', description: 'Ngôn ngữ phù hợp', points: 2, evidence: ['từ vựng chủ đề', 'cấu trúc tương đối chính xác'] },
-        { id: 'interaction', description: 'Phản hồi người nghe/tình huống', points: 2, evidence: ['mức độ lịch sự', 'phản hồi hoặc kết luận'] }
-      ]
-});
 
 const unit9QuestionTypeSpec = {
   unit: 9,
@@ -1873,17 +1819,15 @@ export const g10EnglishSkillQuestionTypes: QuestionType[] = [...unitSpecs, unit9
           : undefined
       };
     }
-    return { ...type, exampleQuestionId: 'eng10-deep-u9-w1' };
+    return { ...type, exampleQuestionId: 'eng10-exam-f2a-w1' };
   });
 
 export const g10EnglishSkillQuestions: Question[] = unitSpecs.flatMap(spec => [
   ...spec.readingQuestions.map((item, index) => choiceQuestion(spec, 'r', index, item)),
-  ...spec.listeningQuestions.map((item, index) => choiceQuestion(spec, 'l', index, item)),
-  ...spec.writingTasks.map((item, index) => openQuestion(spec, 'w', index, item))
+  ...spec.listeningQuestions.map((item, index) => choiceQuestion(spec, 'l', index, item))
 ]);
 
 export const g10EnglishSkillSolutions: Solution[] = unitSpecs.flatMap(spec => [
   ...spec.readingQuestions.map((item, index) => choiceSolution(spec, 'r', index, item)),
-  ...spec.listeningQuestions.map((item, index) => choiceSolution(spec, 'l', index, item)),
-  ...spec.writingTasks.map((item, index) => openSolution(spec, 'w', index, item))
+  ...spec.listeningQuestions.map((item, index) => choiceSolution(spec, 'l', index, item))
 ]);

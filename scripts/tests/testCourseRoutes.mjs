@@ -44,6 +44,14 @@ try {
     '/app/grade10/english/roadmap'
   );
   assert.equal(
+    changeCourseContext('/app/grade10/math/practice/math10-qt1', 'grade10', 'english'),
+    '/app/grade10/english/practice'
+  );
+  assert.equal(
+    changeCourseContext('/app/grade10/math/question-types/math10-qt1', 'grade10', 'english'),
+    '/app/grade10/english/roadmap'
+  );
+  assert.equal(
     changeCourseContext('/app/grade10/english/practice/eng10-qt1', 'grade11', 'english'),
     '/app/grade11/english/practice/eng10-qt1'
   );

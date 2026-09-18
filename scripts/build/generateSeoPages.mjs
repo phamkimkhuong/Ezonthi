@@ -106,7 +106,7 @@ function injectSeo(html, { title, description, canonicalUrl, robots = 'index, fo
     </style>
   </div>`;
 
-  return result.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root"><noscript><style>#app-initial-loader{display:none!important}</style>${body}</noscript>${initialLoader}</div>`);
+  return result.replace(/<div id="root">[\s\S]*?<\/div>(?=\s*<\/body>)/i, `<div id="root"><noscript><style>#app-initial-loader{display:none!important}</style>${body}</noscript>${initialLoader}</div>`);
 }
 
 function writePage(route, html) {
