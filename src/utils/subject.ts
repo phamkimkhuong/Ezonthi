@@ -1,4 +1,4 @@
-import type { SubjectCode } from '../types';
+import type { SubjectCode, GradeCode } from '../types';
 
 export const getSubjectFromQuestionTypeId = (questionTypeId?: string): SubjectCode | null => {
   if (!questionTypeId) return null;
@@ -10,6 +10,35 @@ export const getSubjectFromQuestionTypeId = (questionTypeId?: string): SubjectCo
   if (id.startsWith('bio')) return 'biology';
   if (id.startsWith('phy')) return 'physics';
   if (id.startsWith('his')) return 'history';
+  return null;
+};
+
+export const getGradeCodeFromQuestionTypeId = (questionTypeId?: string): GradeCode | null => {
+  if (!questionTypeId) return null;
+
+  // 1. Kiểm tra tiền tố g10-, g11-, g9-
+  const prefixMatch = questionTypeId.match(/^g(\d+)[-_]/i);
+  if (prefixMatch) {
+    const g = `grade${prefixMatch[1]}` as GradeCode;
+    if (g === 'grade9' || g === 'grade10' || g === 'grade11' || g === 'grade12') {
+      return g;
+    }
+  }
+
+  // 2. Kiểm tra các ID có gắn số khối như math10-, eng10-, chem10-, phy10-, bio10-, his10-, math11-, ...
+  const typeMatch = questionTypeId.match(/^(?:math|eng|chem|phy|bio|his|physics|chemistry|biology|history)(\d+)[-_]/i);
+  if (typeMatch) {
+    const g = `grade${typeMatch[1]}` as GradeCode;
+    if (g === 'grade9' || g === 'grade10' || g === 'grade11' || g === 'grade12') {
+      return g;
+    }
+  }
+
+  // 3. ID môn Toán và Tiếng Anh Lớp 9 dạng math-qt1, eng-qt1, ...
+  if (questionTypeId.startsWith('math-') || questionTypeId.startsWith('eng-')) {
+    return 'grade9';
+  }
+
   return null;
 };
 

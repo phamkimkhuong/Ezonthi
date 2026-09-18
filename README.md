@@ -9,9 +9,14 @@
 
 Nền tảng công nghệ giáo dục (EdTech) học tập và ôn luyện cá nhân hóa dành cho học sinh từ **Lớp 9 (Ôn thi tuyển sinh vào 10)** đến **Lớp 10 & Lớp 11 THPT** theo chuẩn **Chương trình GDPT 2018**. Hệ thống tích hợp AI Gia Sư thông minh, ngân hàng đề bài chuẩn hóa đồ sộ, các chuyên đề nâng cao/Olympic, cùng kiến trúc **Local-First** cho trải nghiệm siêu mượt.
 
-🔗 **Website chính thức**: [ezonthi.com](https://ezonthi.com)  
+---
 
-Runtime chuẩn của dự án là **Node.js 22 + npm 10.9**. Cài đặt bằng `npm ci` ở root và `npm --prefix functions ci`; xem [hướng dẫn phát triển và phát hành](docs/development-and-release.md). Route học chuẩn mang đủ lớp và môn, ví dụ `/app/grade11/english/roadmap`.
+### 🌐 Môi Trường Triển Khai (Live Deployments)
+
+| Môi trường | Nhánh Git | Trạng thái | URL Trực Tuyến | Mục đích |
+| :--- | :--- | :--- | :--- | :--- |
+| 🚀 **Production** | [`main`](https://github.com/phamkimkhuong/on-thi-vao-10/tree/main) | ![Production](https://img.shields.io/badge/Live-Production-success?logo=google-chrome&logoColor=white) | [ezonthi.com](https://ezonthi.com) | Hệ thống chính thức phục vụ học sinh |
+| 🧪 **Staging** | [`staging`](https://github.com/phamkimkhuong/on-thi-vao-10/tree/staging) | ![Staging](https://img.shields.io/badge/Preview-Staging-orange?logo=firebase&logoColor=white) | [ezonthi-staging-preview](https://on-thi-vao-10-7d87c--staging-sa0g3qjh.web.app) | Môi trường kiểm thử tính năng độc lập |
 
 ---
 
@@ -267,19 +272,71 @@ npm run validate:release
 
 ---
 
-## VII. Quy Trình Build & Triển Khai (Deployment)
+## VII. Quy Trình Phân Nhánh & Triển Khai (Branching & Deployment)
+
+Hệ thống áp dụng mô hình **2 tầng môi trường (Staging -> Production)** nhằm bảo vệ website chính thức (`ezonthi.com`) tuyệt đối không bị gián đoạn hay lỗi giao diện trong quá trình phát triển tính năng mới.
+
+### 1. Phân Định Nhánh & Môi Trường
+
+| Nhánh Git | Môi trường | Lệnh Deploy | URL Truy Cập | Mục đích |
+| :--- | :--- | :--- | :--- | :--- |
+| **`staging`** | **Staging (Kiểm thử)** | `npm run deploy:staging` | `https://on-thi-vao-10-7d87c--staging.web.app` | Thử nghiệm tính năng, kiểm thử giao diện, test thiết bị thực tế |
+| **`main`** | **Production (Chính thức)** | `npm run deploy` / `npm run deploy:prod` | `https://ezonthi.com` | Bản phát hành chính thức cho toàn bộ học sinh |
+
+> [!TIP]
+> **Khóa an toàn Branch Guard (`checkDeployBranch.mjs`)**: Nếu bạn đang đứng ở nhánh `staging` mà lỡ tay gõ lệnh `npm run deploy`, hệ thống sẽ **tự động chặn lại** và nhắc nhở dùng `npm run deploy:staging`, ngăn chặn 100% việc đẩy nhầm code thử nghiệm lên website production.
+
+---
+
+### 2. Quy Trình Chuẩn Cho Lập Trình Viên (SOP)
+
+#### Bước 1: Phát triển & Thử nghiệm trên nhánh `staging`
+Mọi thay đổi tính năng, sửa lỗi hoặc thêm dữ liệu môn học đều thực hiện trên nhánh `staging`:
+```bash
+# Đảm bảo đang đứng ở nhánh staging
+git checkout staging
+
+# Khởi chạy dev server cục bộ
+npm run dev
+```
+
+#### Bước 2: Deploy lên môi trường Staging để kiểm tra thực tế
+Sau khi code xong và muốn kiểm thử trên web hoặc mobile:
+```bash
+# Tự động build và deploy lên Firebase Hosting Channel "staging"
+npm run deploy:staging
+```
+*Firebase sẽ sinh đường link kiểm thử riêng biệt (không ảnh hưởng tới `ezonthi.com`). Hãy mở link này bằng chế độ Ẩn danh hoặc nhấn `Ctrl + F5` để test.*
+
+#### Bước 3: Nghiệm thu & Phát hành lên Production (`main`)
+Khi tính năng trên Staging đã hoạt động hoàn hảo và vượt qua toàn bộ bài test:
+```bash
+# 1. Commit và đẩy nhánh staging lên remote
+git add .
+git commit -m "feat: hoàn tất tính năng XYZ và kiểm thử trên staging"
+git push origin staging
+
+# 2. Chuyển sang nhánh main và merge staging vào
+git checkout main
+git merge staging
+git push origin main
+
+# 3. Deploy lên website chính thức ezonthi.com
+npm run deploy
+```
+
+---
+
+### 3. Các Lệnh Triển Khai Khác
 
 ```bash
 # 1. Build hoàn chỉnh (sinh sitemap + tsc + vite build + sinh trang SEO tĩnh)
 npm run build
 
-# 2. Deploy toàn bộ ứng dụng lên Firebase Hosting
-npm run deploy
-
-# 3. Deploy các quy tắc bảo mật Firestore Rules & Storage Rules
+# 2. Deploy các quy tắc bảo mật Firestore Rules & Storage Rules
 npm run deploy-rules
 
-# 4. Nạp dữ liệu tri thức tĩnh vào Cloud Functions (nếu cần)
+# 3. Nạp dữ liệu tri thức tĩnh vào Cloud Functions (nếu cần)
 npm run seed:knowledge
 npm run seed:grammar
 ```

@@ -375,3 +375,8 @@ export const getCourseBundle = (
   const cacheKey = `${grade}-${subject}`;
   return dataCache[cacheKey]?.courseBundle;
 };
+
+export const isSubjectDataLoaded = (grade: GradeCode, subject: SubjectCode): boolean => {
+  return Boolean(dataCache[`${grade}-${subject}`]);
+};
+

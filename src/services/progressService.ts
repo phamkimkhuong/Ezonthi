@@ -398,9 +398,24 @@ export const progressService = {
     }
   },
 
-  // Canonical source: one immutable document per attempt.
+  // Tải các attempt của đúng dạng bài hiện tại từ Firestore (Targeted Query)
   async getTopicAttempts(userId: string, questionTypeId: string): Promise<UserAttempt[]> {
-    return (await this.getAttempts(userId)).filter(attempt => attempt.questionTypeId === questionTypeId);
+    try {
+      if (!userId || userId === 'guest' || !questionTypeId) return [];
+      const base = collection(db, `users/${userId}/learning_attempts`);
+      const q = query(
+        base,
+        where('questionTypeId', '==', questionTypeId),
+        limit(50)
+      );
+      const snapshot = await getDocs(q);
+      logger.dbRead(`Tải bài làm dạng bài ${questionTypeId} (learning_attempts)`, snapshot.size || 1);
+      const items = snapshot.docs.map(item => ({ ...item.data(), id: item.id, synced: true } as UserAttempt));
+      return items.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    } catch (e) {
+      logger.error(`Tải bài làm dạng bài ${questionTypeId}`, e);
+      return [];
+    }
   },
 
   async getAttemptsPage(userId: string, cursor: AttemptHistoryCursor | null = null, pageSize = 100, historyBucket?: string): Promise<AttemptHistoryPage> {

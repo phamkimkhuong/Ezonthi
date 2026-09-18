@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "contentVersion": "2026.09.1",
-  "updatedAt": "2026-09-16T12:27:43.580Z",
+  "updatedAt": "2026-09-17T17:10:04.812Z",
   "grade": "grade10",
   "subject": "english",
   "subjectName": "Tiếng Anh 10",
@@ -1586,50 +1586,55 @@
     {
       "id": "eng10-skill-qt-u1-writing",
       "topicId": "eng10-t1",
-      "name": "Viết có hướng dẫn – Family Life",
+      "name": "Viết: Biến đổi & Nối câu – Family Life",
       "slug": "writing-u1",
       "difficulty": "medium",
       "examFrequency": "high",
-      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "description": "Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.",
       "recognitionSigns": [
-        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+        "Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines)."
       ],
       "solvingSteps": [
-        "Gạch yêu cầu bắt buộc.",
-        "Lập dàn ý ngắn.",
-        "Viết bản nháp.",
-        "Soát theo rubric."
+        "Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.",
+        "Xác định kiến thức ngữ pháp đang được kiểm tra.",
+        "So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa."
       ],
       "commonMistakes": [
-        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
-        "Không có liên kết hoặc bằng chứng."
+        "Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.",
+        "Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ."
       ],
       "theory": [
-        "Xác định người đọc và mục đích.",
-        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
-        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+        "Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.",
+        "Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.",
+        "Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả)."
       ],
       "subTypes": [
         {
           "id": "eng10-u1-writing-controlled",
-          "name": "Đoạn ngắn có kiểm soát",
-          "example": "60–80 words",
+          "name": "Biến đổi câu tương đương",
+          "example": "Closest in meaning",
           "targetQuestionCount": 1
         },
         {
           "id": "eng10-u1-writing-guided",
-          "name": "Bài viết có hướng dẫn",
-          "example": "90–120 words",
-          "targetQuestionCount": 1
-        },
-        {
-          "id": "eng10-u1-writing-extended",
-          "name": "Bài viết lập luận",
-          "example": "120–150 words",
+          "name": "Kết hợp câu",
+          "example": "Best combines sentences",
           "targetQuestionCount": 1
         }
       ],
-      "exampleQuestionId": "eng10-skill-u1-w1"
+      "exampleQuestionId": "eng10-exam-m1a-w1",
+      "practiceCoverage": {
+        "targetQuestionCount": 3,
+        "minimumQuestionsPerSubType": 1,
+        "requiredPracticeRoles": [
+          "guided",
+          "near_transfer"
+        ],
+        "requiredRepresentations": [
+          "text"
+        ],
+        "masteryHoldoutCount": 1
+      }
     },
     {
       "id": "eng10-skill-qt-u2-reading",
@@ -1740,50 +1745,55 @@
     {
       "id": "eng10-skill-qt-u2-writing",
       "topicId": "eng10-t2",
-      "name": "Viết có hướng dẫn – Humans and the Environment",
+      "name": "Viết: Biến đổi & Nối câu – Humans and the Environment",
       "slug": "writing-u2",
       "difficulty": "medium",
       "examFrequency": "high",
-      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "description": "Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.",
       "recognitionSigns": [
-        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+        "Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines)."
       ],
       "solvingSteps": [
-        "Gạch yêu cầu bắt buộc.",
-        "Lập dàn ý ngắn.",
-        "Viết bản nháp.",
-        "Soát theo rubric."
+        "Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.",
+        "Xác định kiến thức ngữ pháp đang được kiểm tra.",
+        "So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa."
       ],
       "commonMistakes": [
-        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
-        "Không có liên kết hoặc bằng chứng."
+        "Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.",
+        "Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ."
       ],
       "theory": [
-        "Xác định người đọc và mục đích.",
-        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
-        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+        "Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.",
+        "Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.",
+        "Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả)."
       ],
       "subTypes": [
         {
           "id": "eng10-u2-writing-controlled",
-          "name": "Đoạn ngắn có kiểm soát",
-          "example": "60–80 words",
+          "name": "Biến đổi câu tương đương",
+          "example": "Closest in meaning",
           "targetQuestionCount": 1
         },
         {
           "id": "eng10-u2-writing-guided",
-          "name": "Bài viết có hướng dẫn",
-          "example": "90–120 words",
-          "targetQuestionCount": 1
-        },
-        {
-          "id": "eng10-u2-writing-extended",
-          "name": "Bài viết lập luận",
-          "example": "120–150 words",
+          "name": "Kết hợp câu",
+          "example": "Best combines sentences",
           "targetQuestionCount": 1
         }
       ],
-      "exampleQuestionId": "eng10-skill-u2-w1"
+      "exampleQuestionId": "eng10-exam-m1a-w2",
+      "practiceCoverage": {
+        "targetQuestionCount": 3,
+        "minimumQuestionsPerSubType": 1,
+        "requiredPracticeRoles": [
+          "guided",
+          "near_transfer"
+        ],
+        "requiredRepresentations": [
+          "text"
+        ],
+        "masteryHoldoutCount": 1
+      }
     },
     {
       "id": "eng10-skill-qt-u3-reading",
@@ -1894,50 +1904,55 @@
     {
       "id": "eng10-skill-qt-u3-writing",
       "topicId": "eng10-t3",
-      "name": "Viết có hướng dẫn – Music",
+      "name": "Viết: Biến đổi & Nối câu – Music",
       "slug": "writing-u3",
       "difficulty": "medium",
       "examFrequency": "high",
-      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "description": "Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.",
       "recognitionSigns": [
-        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+        "Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines)."
       ],
       "solvingSteps": [
-        "Gạch yêu cầu bắt buộc.",
-        "Lập dàn ý ngắn.",
-        "Viết bản nháp.",
-        "Soát theo rubric."
+        "Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.",
+        "Xác định kiến thức ngữ pháp đang được kiểm tra.",
+        "So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa."
       ],
       "commonMistakes": [
-        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
-        "Không có liên kết hoặc bằng chứng."
+        "Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.",
+        "Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ."
       ],
       "theory": [
-        "Xác định người đọc và mục đích.",
-        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
-        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+        "Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.",
+        "Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.",
+        "Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả)."
       ],
       "subTypes": [
         {
           "id": "eng10-u3-writing-controlled",
-          "name": "Đoạn ngắn có kiểm soát",
-          "example": "60–80 words",
+          "name": "Biến đổi câu tương đương",
+          "example": "Closest in meaning",
           "targetQuestionCount": 1
         },
         {
           "id": "eng10-u3-writing-guided",
-          "name": "Bài viết có hướng dẫn",
-          "example": "90–120 words",
-          "targetQuestionCount": 1
-        },
-        {
-          "id": "eng10-u3-writing-extended",
-          "name": "Bài viết lập luận",
-          "example": "120–150 words",
+          "name": "Kết hợp câu",
+          "example": "Best combines sentences",
           "targetQuestionCount": 1
         }
       ],
-      "exampleQuestionId": "eng10-skill-u3-w1"
+      "exampleQuestionId": "eng10-exam-m1a-w3",
+      "practiceCoverage": {
+        "targetQuestionCount": 3,
+        "minimumQuestionsPerSubType": 1,
+        "requiredPracticeRoles": [
+          "guided",
+          "near_transfer"
+        ],
+        "requiredRepresentations": [
+          "text"
+        ],
+        "masteryHoldoutCount": 1
+      }
     },
     {
       "id": "eng10-skill-qt-u4-reading",
@@ -2048,50 +2063,55 @@
     {
       "id": "eng10-skill-qt-u4-writing",
       "topicId": "eng10-t4",
-      "name": "Viết có hướng dẫn – For a Better Community",
+      "name": "Viết: Biến đổi & Nối câu – For a Better Community",
       "slug": "writing-u4",
       "difficulty": "medium",
       "examFrequency": "high",
-      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "description": "Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.",
       "recognitionSigns": [
-        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+        "Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines)."
       ],
       "solvingSteps": [
-        "Gạch yêu cầu bắt buộc.",
-        "Lập dàn ý ngắn.",
-        "Viết bản nháp.",
-        "Soát theo rubric."
+        "Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.",
+        "Xác định kiến thức ngữ pháp đang được kiểm tra.",
+        "So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa."
       ],
       "commonMistakes": [
-        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
-        "Không có liên kết hoặc bằng chứng."
+        "Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.",
+        "Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ."
       ],
       "theory": [
-        "Xác định người đọc và mục đích.",
-        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
-        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+        "Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.",
+        "Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.",
+        "Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả)."
       ],
       "subTypes": [
         {
           "id": "eng10-u4-writing-controlled",
-          "name": "Đoạn ngắn có kiểm soát",
-          "example": "60–80 words",
+          "name": "Biến đổi câu tương đương",
+          "example": "Closest in meaning",
           "targetQuestionCount": 1
         },
         {
           "id": "eng10-u4-writing-guided",
-          "name": "Bài viết có hướng dẫn",
-          "example": "90–120 words",
-          "targetQuestionCount": 1
-        },
-        {
-          "id": "eng10-u4-writing-extended",
-          "name": "Bài viết lập luận",
-          "example": "120–150 words",
+          "name": "Kết hợp câu",
+          "example": "Best combines sentences",
           "targetQuestionCount": 1
         }
       ],
-      "exampleQuestionId": "eng10-skill-u4-w1"
+      "exampleQuestionId": "eng10-exam-f1a-w1",
+      "practiceCoverage": {
+        "targetQuestionCount": 3,
+        "minimumQuestionsPerSubType": 1,
+        "requiredPracticeRoles": [
+          "guided",
+          "near_transfer"
+        ],
+        "requiredRepresentations": [
+          "text"
+        ],
+        "masteryHoldoutCount": 1
+      }
     },
     {
       "id": "eng10-skill-qt-u5-reading",
@@ -2202,50 +2222,55 @@
     {
       "id": "eng10-skill-qt-u5-writing",
       "topicId": "eng10-t5",
-      "name": "Viết có hướng dẫn – Inventions",
+      "name": "Viết: Biến đổi & Nối câu – Inventions",
       "slug": "writing-u5",
       "difficulty": "medium",
       "examFrequency": "high",
-      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "description": "Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.",
       "recognitionSigns": [
-        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+        "Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines)."
       ],
       "solvingSteps": [
-        "Gạch yêu cầu bắt buộc.",
-        "Lập dàn ý ngắn.",
-        "Viết bản nháp.",
-        "Soát theo rubric."
+        "Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.",
+        "Xác định kiến thức ngữ pháp đang được kiểm tra.",
+        "So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa."
       ],
       "commonMistakes": [
-        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
-        "Không có liên kết hoặc bằng chứng."
+        "Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.",
+        "Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ."
       ],
       "theory": [
-        "Xác định người đọc và mục đích.",
-        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
-        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+        "Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.",
+        "Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.",
+        "Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả)."
       ],
       "subTypes": [
         {
           "id": "eng10-u5-writing-controlled",
-          "name": "Đoạn ngắn có kiểm soát",
-          "example": "60–80 words",
+          "name": "Biến đổi câu tương đương",
+          "example": "Closest in meaning",
           "targetQuestionCount": 1
         },
         {
           "id": "eng10-u5-writing-guided",
-          "name": "Bài viết có hướng dẫn",
-          "example": "90–120 words",
-          "targetQuestionCount": 1
-        },
-        {
-          "id": "eng10-u5-writing-extended",
-          "name": "Bài viết lập luận",
-          "example": "120–150 words",
+          "name": "Kết hợp câu",
+          "example": "Best combines sentences",
           "targetQuestionCount": 1
         }
       ],
-      "exampleQuestionId": "eng10-skill-u5-w1"
+      "exampleQuestionId": "eng10-exam-f1a-w2",
+      "practiceCoverage": {
+        "targetQuestionCount": 3,
+        "minimumQuestionsPerSubType": 1,
+        "requiredPracticeRoles": [
+          "guided",
+          "near_transfer"
+        ],
+        "requiredRepresentations": [
+          "text"
+        ],
+        "masteryHoldoutCount": 1
+      }
     },
     {
       "id": "eng10-skill-qt-u6-reading",
@@ -2356,50 +2381,55 @@
     {
       "id": "eng10-skill-qt-u6-writing",
       "topicId": "eng10-t6",
-      "name": "Viết có hướng dẫn – Gender Equality",
+      "name": "Viết: Biến đổi & Nối câu – Gender Equality",
       "slug": "writing-u6",
       "difficulty": "medium",
       "examFrequency": "high",
-      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "description": "Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.",
       "recognitionSigns": [
-        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+        "Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines)."
       ],
       "solvingSteps": [
-        "Gạch yêu cầu bắt buộc.",
-        "Lập dàn ý ngắn.",
-        "Viết bản nháp.",
-        "Soát theo rubric."
+        "Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.",
+        "Xác định kiến thức ngữ pháp đang được kiểm tra.",
+        "So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa."
       ],
       "commonMistakes": [
-        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
-        "Không có liên kết hoặc bằng chứng."
+        "Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.",
+        "Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ."
       ],
       "theory": [
-        "Xác định người đọc và mục đích.",
-        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
-        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+        "Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.",
+        "Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.",
+        "Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả)."
       ],
       "subTypes": [
         {
           "id": "eng10-u6-writing-controlled",
-          "name": "Đoạn ngắn có kiểm soát",
-          "example": "60–80 words",
+          "name": "Biến đổi câu tương đương",
+          "example": "Closest in meaning",
           "targetQuestionCount": 1
         },
         {
           "id": "eng10-u6-writing-guided",
-          "name": "Bài viết có hướng dẫn",
-          "example": "90–120 words",
-          "targetQuestionCount": 1
-        },
-        {
-          "id": "eng10-u6-writing-extended",
-          "name": "Bài viết lập luận",
-          "example": "120–150 words",
+          "name": "Kết hợp câu",
+          "example": "Best combines sentences",
           "targetQuestionCount": 1
         }
       ],
-      "exampleQuestionId": "eng10-skill-u6-w1"
+      "exampleQuestionId": "eng10-exam-m2a-w1",
+      "practiceCoverage": {
+        "targetQuestionCount": 3,
+        "minimumQuestionsPerSubType": 1,
+        "requiredPracticeRoles": [
+          "guided",
+          "near_transfer"
+        ],
+        "requiredRepresentations": [
+          "text"
+        ],
+        "masteryHoldoutCount": 1
+      }
     },
     {
       "id": "eng10-skill-qt-u7-reading",
@@ -2510,50 +2540,55 @@
     {
       "id": "eng10-skill-qt-u7-writing",
       "topicId": "eng10-t7",
-      "name": "Viết có hướng dẫn – Viet Nam and International Organisations",
+      "name": "Viết: Biến đổi & Nối câu – Viet Nam and International Organisations",
       "slug": "writing-u7",
       "difficulty": "medium",
       "examFrequency": "high",
-      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "description": "Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.",
       "recognitionSigns": [
-        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+        "Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines)."
       ],
       "solvingSteps": [
-        "Gạch yêu cầu bắt buộc.",
-        "Lập dàn ý ngắn.",
-        "Viết bản nháp.",
-        "Soát theo rubric."
+        "Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.",
+        "Xác định kiến thức ngữ pháp đang được kiểm tra.",
+        "So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa."
       ],
       "commonMistakes": [
-        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
-        "Không có liên kết hoặc bằng chứng."
+        "Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.",
+        "Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ."
       ],
       "theory": [
-        "Xác định người đọc và mục đích.",
-        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
-        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+        "Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.",
+        "Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.",
+        "Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả)."
       ],
       "subTypes": [
         {
           "id": "eng10-u7-writing-controlled",
-          "name": "Đoạn ngắn có kiểm soát",
-          "example": "60–80 words",
+          "name": "Biến đổi câu tương đương",
+          "example": "Closest in meaning",
           "targetQuestionCount": 1
         },
         {
           "id": "eng10-u7-writing-guided",
-          "name": "Bài viết có hướng dẫn",
-          "example": "90–120 words",
-          "targetQuestionCount": 1
-        },
-        {
-          "id": "eng10-u7-writing-extended",
-          "name": "Bài viết lập luận",
-          "example": "120–150 words",
+          "name": "Kết hợp câu",
+          "example": "Best combines sentences",
           "targetQuestionCount": 1
         }
       ],
-      "exampleQuestionId": "eng10-skill-u7-w1"
+      "exampleQuestionId": "eng10-exam-m2a-w2",
+      "practiceCoverage": {
+        "targetQuestionCount": 3,
+        "minimumQuestionsPerSubType": 1,
+        "requiredPracticeRoles": [
+          "guided",
+          "near_transfer"
+        ],
+        "requiredRepresentations": [
+          "text"
+        ],
+        "masteryHoldoutCount": 1
+      }
     },
     {
       "id": "eng10-skill-qt-u8-reading",
@@ -2664,50 +2699,55 @@
     {
       "id": "eng10-skill-qt-u8-writing",
       "topicId": "eng10-t8",
-      "name": "Viết có hướng dẫn – New Ways to Learn",
+      "name": "Viết: Biến đổi & Nối câu – New Ways to Learn",
       "slug": "writing-u8",
       "difficulty": "medium",
       "examFrequency": "high",
-      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "description": "Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.",
       "recognitionSigns": [
-        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+        "Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines)."
       ],
       "solvingSteps": [
-        "Gạch yêu cầu bắt buộc.",
-        "Lập dàn ý ngắn.",
-        "Viết bản nháp.",
-        "Soát theo rubric."
+        "Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.",
+        "Xác định kiến thức ngữ pháp đang được kiểm tra.",
+        "So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa."
       ],
       "commonMistakes": [
-        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
-        "Không có liên kết hoặc bằng chứng."
+        "Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.",
+        "Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ."
       ],
       "theory": [
-        "Xác định người đọc và mục đích.",
-        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
-        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+        "Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.",
+        "Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.",
+        "Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả)."
       ],
       "subTypes": [
         {
           "id": "eng10-u8-writing-controlled",
-          "name": "Đoạn ngắn có kiểm soát",
-          "example": "60–80 words",
+          "name": "Biến đổi câu tương đương",
+          "example": "Closest in meaning",
           "targetQuestionCount": 1
         },
         {
           "id": "eng10-u8-writing-guided",
-          "name": "Bài viết có hướng dẫn",
-          "example": "90–120 words",
-          "targetQuestionCount": 1
-        },
-        {
-          "id": "eng10-u8-writing-extended",
-          "name": "Bài viết lập luận",
-          "example": "120–150 words",
+          "name": "Kết hợp câu",
+          "example": "Best combines sentences",
           "targetQuestionCount": 1
         }
       ],
-      "exampleQuestionId": "eng10-skill-u8-w1"
+      "exampleQuestionId": "eng10-exam-m2a-w3",
+      "practiceCoverage": {
+        "targetQuestionCount": 3,
+        "minimumQuestionsPerSubType": 1,
+        "requiredPracticeRoles": [
+          "guided",
+          "near_transfer"
+        ],
+        "requiredRepresentations": [
+          "text"
+        ],
+        "masteryHoldoutCount": 1
+      }
     },
     {
       "id": "eng10-skill-qt-u10-reading",
@@ -2818,50 +2858,55 @@
     {
       "id": "eng10-skill-qt-u10-writing",
       "topicId": "eng10-t10",
-      "name": "Viết có hướng dẫn – Ecotourism",
+      "name": "Viết: Biến đổi & Nối câu – Ecotourism",
       "slug": "writing-u10",
       "difficulty": "medium",
       "examFrequency": "high",
-      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "description": "Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.",
       "recognitionSigns": [
-        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+        "Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines)."
       ],
       "solvingSteps": [
-        "Gạch yêu cầu bắt buộc.",
-        "Lập dàn ý ngắn.",
-        "Viết bản nháp.",
-        "Soát theo rubric."
+        "Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.",
+        "Xác định kiến thức ngữ pháp đang được kiểm tra.",
+        "So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa."
       ],
       "commonMistakes": [
-        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
-        "Không có liên kết hoặc bằng chứng."
+        "Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.",
+        "Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ."
       ],
       "theory": [
-        "Xác định người đọc và mục đích.",
-        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
-        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+        "Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.",
+        "Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.",
+        "Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả)."
       ],
       "subTypes": [
         {
           "id": "eng10-u10-writing-controlled",
-          "name": "Đoạn ngắn có kiểm soát",
-          "example": "60–80 words",
+          "name": "Biến đổi câu tương đương",
+          "example": "Closest in meaning",
           "targetQuestionCount": 1
         },
         {
           "id": "eng10-u10-writing-guided",
-          "name": "Bài viết có hướng dẫn",
-          "example": "90–120 words",
-          "targetQuestionCount": 1
-        },
-        {
-          "id": "eng10-u10-writing-extended",
-          "name": "Bài viết lập luận",
-          "example": "120–150 words",
+          "name": "Kết hợp câu",
+          "example": "Best combines sentences",
           "targetQuestionCount": 1
         }
       ],
-      "exampleQuestionId": "eng10-skill-u10-w1"
+      "exampleQuestionId": "eng10-exam-f2a-w3",
+      "practiceCoverage": {
+        "targetQuestionCount": 3,
+        "minimumQuestionsPerSubType": 1,
+        "requiredPracticeRoles": [
+          "guided",
+          "near_transfer"
+        ],
+        "requiredRepresentations": [
+          "text"
+        ],
+        "masteryHoldoutCount": 1
+      }
     },
     {
       "id": "eng10-skill-qt-u9-reading",
@@ -2966,50 +3011,55 @@
     {
       "id": "eng10-skill-qt-u9-writing",
       "topicId": "eng10-t9",
-      "name": "Viết có hướng dẫn – Protecting the Environment",
+      "name": "Viết: Biến đổi & Nối câu – Protecting the Environment",
       "slug": "writing-u9",
       "difficulty": "medium",
       "examFrequency": "high",
-      "description": "Lập dàn ý, viết và tự sửa bài theo mục đích, độ dài và rubric rõ ràng.",
+      "description": "Nhận diện cấu trúc tương đương, chuyển đổi câu và kết hợp câu đúng ngữ pháp và sát nghĩa theo chủ đề.",
       "recognitionSigns": [
-        "Đề yêu cầu tạo lập văn bản và nêu rõ mục đích/độ dài."
+        "Đề yêu cầu chọn câu có nghĩa gần nhất (closest in meaning) hoặc kết hợp hai câu tốt nhất (best combines)."
       ],
       "solvingSteps": [
-        "Gạch yêu cầu bắt buộc.",
-        "Lập dàn ý ngắn.",
-        "Viết bản nháp.",
-        "Soát theo rubric."
+        "Đọc câu gốc để nắm nghĩa trọng tâm và cấu trúc then chốt.",
+        "Xác định kiến thức ngữ pháp đang được kiểm tra.",
+        "So sánh các phương án A, B, C, D để loại trừ phương án sai thì, sai cấu trúc hoặc làm đổi nghĩa."
       ],
       "commonMistakes": [
-        "Viết đúng ngữ pháp nhưng lạc yêu cầu.",
-        "Không có liên kết hoặc bằng chứng."
+        "Chọn phương án đúng ngữ pháp nhưng ý nghĩa bị biến đổi hoặc không sát với câu gốc.",
+        "Nhầm lẫn giữa mệnh đề chỉ nguyên nhân và mệnh đề chỉ sự nhượng bộ."
       ],
       "theory": [
-        "Xác định người đọc và mục đích.",
-        "Lập ý theo claim–reason–example hoặc opening–body–closing.",
-        "Dành thời gian kiểm tra nội dung, liên kết, từ vựng và ngữ pháp."
+        "Phân tích thành phần câu gốc: chủ ngữ, động từ, tân ngữ, trạng từ/mệnh đề phụ.",
+        "Nhận diện các hiện tượng biến đổi tương đương: câu bị động, điều kiện, gián tiếp, liên từ, đảo ngữ.",
+        "Khi kết hợp hai câu: chọn liên từ hoặc cấu trúc nối câu phản ánh đúng mối quan hệ logic (nguyên nhân, nhượng bộ, mục đích, kết quả)."
       ],
       "subTypes": [
         {
           "id": "eng10-u9-writing-controlled",
-          "name": "Đoạn ngắn có kiểm soát",
-          "example": "60–80 words",
+          "name": "Biến đổi câu tương đương",
+          "example": "Closest in meaning",
           "targetQuestionCount": 1
         },
         {
           "id": "eng10-u9-writing-guided",
-          "name": "Bài viết có hướng dẫn",
-          "example": "90–120 words",
-          "targetQuestionCount": 1
-        },
-        {
-          "id": "eng10-u9-writing-extended",
-          "name": "Bài viết lập luận",
-          "example": "120–150 words",
+          "name": "Kết hợp câu",
+          "example": "Best combines sentences",
           "targetQuestionCount": 1
         }
       ],
-      "exampleQuestionId": "eng10-deep-u9-w1"
+      "exampleQuestionId": "eng10-exam-f2a-w1",
+      "practiceCoverage": {
+        "targetQuestionCount": 3,
+        "minimumQuestionsPerSubType": 1,
+        "requiredPracticeRoles": [
+          "guided",
+          "near_transfer"
+        ],
+        "requiredRepresentations": [
+          "text"
+        ],
+        "masteryHoldoutCount": 1
+      }
     },
     {
       "id": "eng10-deep-qt-u1-language-in-context",

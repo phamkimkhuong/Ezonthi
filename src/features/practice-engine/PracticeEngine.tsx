@@ -8,14 +8,15 @@ import { getPracticeQuestions, getQuestionTypes, getSolutions, getTopics } from 
 import { Button } from '@/components/ui/button';
 import { authService } from '@/services/authService';
 
-import { Question, Solution, StructuredAnswer, UserAttempt, SubjectCode } from '@/types';
+import { Question, Solution, StructuredAnswer, UserAttempt, SubjectCode, GradeCode } from '@/types';
 import { AlertTriangle, BookOpenCheck, ArrowLeft, Crown } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { getSubjectTheme } from '@/utils/theme';
 import { formatAnswerForDisplay, validateAnswer, isAnswerComplete } from '@/utils/answerValidator';
-import { getSubjectFromQuestionTypeId, getSubjectName, isQuestionTypePremiumLocked } from '@/utils/subject';
+import { getSubjectFromQuestionTypeId, getGradeCodeFromQuestionTypeId, getSubjectName, isQuestionTypePremiumLocked } from '@/utils/subject';
 import { SeoHead } from '@/components/common/SeoHead';
 import { createBreadcrumbSchema } from '@/utils/seoSchemas';
+import { buildCoursePath, isCourseContext } from '@/utils/courseRoutes';
 
 import confetti from 'canvas-confetti';
 
@@ -37,21 +38,28 @@ import {
 const getNow = () => Date.now();
 
 export const PracticeEngine: React.FC = () => {
-  const { questionTypeId } = useParams<{ questionTypeId: string }>();
+  const { grade: routeGradeParam, subject: routeSubjectParam, questionTypeId } = useParams<{
+    grade?: GradeCode;
+    subject?: SubjectCode;
+    questionTypeId?: string;
+  }>();
   const navigate = useNavigate();
   const { selectedSubject, selectedGrade, setSubject, user, progressVersion, refreshProgress, isPremium } = useAppStore();
   void progressVersion;
 
-  const routeSubject = (getSubjectFromQuestionTypeId(questionTypeId) ?? selectedSubject) as SubjectCode;
+  const effectiveGrade = (routeGradeParam && isCourseContext(routeGradeParam, routeSubjectParam)) ? routeGradeParam : selectedGrade;
+  const routeSubject = ((routeSubjectParam && isCourseContext(effectiveGrade, routeSubjectParam))
+    ? routeSubjectParam
+    : (getSubjectFromQuestionTypeId(questionTypeId) ?? selectedSubject)) as SubjectCode;
   const routeSubjectTheme = getSubjectTheme(routeSubject);
 
-  const currentQuestionTypes = useMemo(() => getQuestionTypes(selectedGrade, routeSubject), [selectedGrade, routeSubject]);
+  const currentQuestionTypes = useMemo(() => getQuestionTypes(effectiveGrade, routeSubject), [effectiveGrade, routeSubject]);
   const currentQuestions = useMemo(
-    () => getPracticeQuestions(selectedGrade, routeSubject),
-    [selectedGrade, routeSubject]
+    () => getPracticeQuestions(effectiveGrade, routeSubject),
+    [effectiveGrade, routeSubject]
   );
-  const currentSolutions = useMemo(() => getSolutions(selectedGrade, routeSubject), [selectedGrade, routeSubject]);
-  const isGrade10English = routeSubject === 'english' && selectedGrade === 'grade10';
+  const currentSolutions = useMemo(() => getSolutions(effectiveGrade, routeSubject), [effectiveGrade, routeSubject]);
+  const isGrade10English = routeSubject === 'english' && effectiveGrade === 'grade10';
   const grade10EnglishSelectionOptions = isGrade10English
     ? getTopics('grade10', 'english').map(topic => ({
         id: topic.id,
@@ -339,11 +347,29 @@ export const PracticeEngine: React.FC = () => {
   ]);
 
   useEffect(() => {
-    const subjectFromRoute = getSubjectFromQuestionTypeId(questionTypeId);
-    if (subjectFromRoute && subjectFromRoute !== selectedSubject) {
-      setSubject(subjectFromRoute);
+    if (!questionTypeId) return;
+    const inferredSubject = getSubjectFromQuestionTypeId(questionTypeId);
+    const inferredGrade = getGradeCodeFromQuestionTypeId(questionTypeId);
+
+    // Nếu đang ở trong URL ngữ cảnh khóa học (/app/:grade/:subject/...)
+    if (routeSubjectParam && inferredSubject && inferredSubject !== routeSubjectParam) {
+      // Bất đồng môn học giữa URL và questionTypeId (VD: /app/grade10/english/practice/math10-qt1)
+      // Điều hướng an toàn sang đúng URL môn học của questionTypeId thay vì ép Store gây vòng lặp vô hạn
+      const targetGrade = inferredGrade || effectiveGrade;
+      navigate(buildCoursePath(targetGrade, inferredSubject, 'practice', questionTypeId), { replace: true });
+      return;
     }
-  }, [questionTypeId, selectedSubject, setSubject]);
+
+    if (routeGradeParam && inferredGrade && inferredGrade !== routeGradeParam) {
+      navigate(buildCoursePath(inferredGrade, inferredSubject || routeSubjectParam || selectedSubject, 'practice', questionTypeId), { replace: true });
+      return;
+    }
+
+    // Với các route legacy không có routeSubjectParam:
+    if (!routeSubjectParam && inferredSubject && inferredSubject !== selectedSubject) {
+      setSubject(inferredSubject);
+    }
+  }, [questionTypeId, routeSubjectParam, routeGradeParam, effectiveGrade, selectedSubject, setSubject, navigate]);
 
   // Reset index và state khi chuyển đổi dạng bài hoặc môn học
   useEffect(() => {
@@ -373,12 +399,16 @@ export const PracticeEngine: React.FC = () => {
     }
   }, [selectedSubTense, resetQuestionState]);
 
+  const checkedTopicsRef = useRef<Set<string>>(new Set());
+
   // Khi LocalStorage trống (máy mới), tải attempt của dạng bài từ nguồn chuẩn.
   useEffect(() => {
     if (!user || !questionTypeId || isExamMode) return;
+    if (checkedTopicsRef.current.has(questionTypeId)) return;
 
     const localAttempts = storageService.getTopicAttemptsLocal(user.uid, questionTypeId);
     if (localAttempts.length === 0) {
+      checkedTopicsRef.current.add(questionTypeId);
       progressService.getTopicAttempts(user.uid, questionTypeId).then(remoteTopicAttempts => {
         if (remoteTopicAttempts.length > 0) {
           storageService.saveTopicAttemptsLocal(user.uid, questionTypeId, remoteTopicAttempts);
@@ -481,7 +511,7 @@ export const PracticeEngine: React.FC = () => {
         questionId: q.id,
         questionTypeId: q.questionTypeId,
         userAnswer: finalAns,
-        gradingMode: 'manual',
+        gradingMode: 'auto',
         isCorrect: correct,
         timeSpent: averageTimeSpent,
         createdAt: sessionTimestamp,
@@ -491,12 +521,13 @@ export const PracticeEngine: React.FC = () => {
       attemptsToSave.push(attemptData);
       storageService.saveAttempt(user?.uid || 'guest', attemptData);
 
-      logCustomEvent('request_teacher_grading', {
+      logCustomEvent('ai_grading_completed', {
         subjectId: routeSubject,
         examId: sessionId.toString(),
         questionTypeId: q.questionTypeId,
         questionId: q.id,
-        isExam: true
+        isExam: true,
+        isCorrect: correct
       });
 
       if (!correct && user) {
@@ -514,6 +545,7 @@ export const PracticeEngine: React.FC = () => {
         await Promise.all(
           attemptsToSave.map(attempt => progressService.saveAttempt(user.uid, attempt))
         );
+        await progressService.flushPendingAttempts(user.uid, questionTypeId);
       } catch (err) {
         console.error("Lỗi khi đồng bộ kết quả thi trắc nghiệm lên Firestore:", err);
       }
@@ -1036,7 +1068,7 @@ export const PracticeEngine: React.FC = () => {
     ? currentQuestionTypes.find(type => type.id === questionTypeId)
     : undefined;
   const requiresPhysics11Theory =
-    selectedGrade === 'grade11' &&
+    effectiveGrade === 'grade11' &&
     routeSubject === 'physics' &&
     Boolean(requestedQuestionType?.theory?.length);
   const practiceUserId = user?.uid || 'guest';
@@ -1053,7 +1085,7 @@ export const PracticeEngine: React.FC = () => {
     : true;
 
   const isDirectPracticePremiumLocked = questionTypeId
-    ? isQuestionTypePremiumLocked(questionTypeId, 1, routeSubject, selectedGrade) && !isPremium
+    ? isQuestionTypePremiumLocked(questionTypeId, 1, routeSubject, effectiveGrade) && !isPremium
     : false;
 
   if (isDirectPracticePremiumLocked) {
@@ -1070,7 +1102,7 @@ export const PracticeEngine: React.FC = () => {
         </p>
         <div className="flex items-center justify-center gap-3 pt-2">
           <Button
-            onClick={() => navigate('/practice')}
+            onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice'))}
             variant="outline"
             className="text-xs font-bold border border-border/50"
           >
@@ -1101,7 +1133,7 @@ export const PracticeEngine: React.FC = () => {
           ví dụ và câu tự kiểm tra. Bạn không cần mở thêm tài liệu ở trang khác.
         </p>
         <Button
-          onClick={() => navigate(`/question-types/${questionTypeId}`)}
+          onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'question-types', questionTypeId))}
           className="bg-cyan-600 text-xs font-bold text-white hover:bg-cyan-700"
         >
           <BookOpenCheck size={16} /> Quay lại học lý thuyết
@@ -1116,7 +1148,7 @@ export const PracticeEngine: React.FC = () => {
         <AlertTriangle size={40} className="mx-auto text-amber-500" />
         <h3 className="text-lg font-bold text-foreground">Chưa có câu hỏi luyện tập</h3>
         <p className="text-xs text-muted-foreground">Hiện tại hệ thống đang cập nhật ngân hàng đề cho dạng bài này. Vui lòng chọn dạng bài khác.</p>
-        <Button onClick={() => navigate('/practice')} variant="outline" className="text-xs font-bold border border-border/50">
+        <Button onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice'))} variant="outline" className="text-xs font-bold border border-border/50">
           Quay lại danh sách dạng bài
         </Button>
       </div>
@@ -1133,7 +1165,7 @@ export const PracticeEngine: React.FC = () => {
       : !selectedOption;
 
   const practiceSubjectName = getSubjectName(routeSubject);
-  const practiceGradeLabel = selectedGrade === 'grade9' ? 'Lớp 9' : selectedGrade === 'grade10' ? 'Lớp 10' : selectedGrade === 'grade11' ? 'Lớp 11' : 'Phổ thông';
+  const practiceGradeLabel = effectiveGrade === 'grade9' ? 'Lớp 9' : effectiveGrade === 'grade10' ? 'Lớp 10' : effectiveGrade === 'grade11' ? 'Lớp 11' : 'Phổ thông';
   const practiceTitle = requestedQuestionType
     ? `Luyện Tập: ${requestedQuestionType.name} - ${practiceSubjectName} ${practiceGradeLabel} | ezonthi`
     : `Luyện Tập Thực Chiến ${practiceSubjectName} ${practiceGradeLabel} | ezonthi`;
@@ -1141,13 +1173,13 @@ export const PracticeEngine: React.FC = () => {
     ? `Luyện tập thực chiến dạng bài ${requestedQuestionType.name} môn ${practiceSubjectName} ${practiceGradeLabel} có đáp án và giải thích chi tiết.`
     : `Luyện tập trắc nghiệm & tự luận các môn Toán, Tiếng Anh, Hóa học, Vật lý bám sát chương trình GDPT 2018.`;
 
-  const practiceCanonical = questionTypeId ? `/question-types/${questionTypeId}` : '/practice';
+  const practiceCanonical = questionTypeId ? buildCoursePath(effectiveGrade, routeSubject, 'question-types', questionTypeId) : buildCoursePath(effectiveGrade, routeSubject, 'practice');
 
   const practiceBreadcrumbs = createBreadcrumbSchema([
     { name: 'Trang chủ', item: '/' },
-    { name: practiceGradeLabel, item: '/roadmap' },
-    { name: `Luyện tập ${practiceSubjectName}`, item: '/practice' },
-    ...(requestedQuestionType ? [{ name: requestedQuestionType.name, item: `/practice/${requestedQuestionType.id}` }] : [])
+    { name: practiceGradeLabel, item: buildCoursePath(effectiveGrade, routeSubject, 'roadmap') },
+    { name: `Luyện tập ${practiceSubjectName}`, item: buildCoursePath(effectiveGrade, routeSubject, 'practice') },
+    ...(requestedQuestionType ? [{ name: requestedQuestionType.name, item: buildCoursePath(effectiveGrade, routeSubject, 'practice', requestedQuestionType.id) }] : [])
   ]);
 
   return (
@@ -1212,7 +1244,7 @@ export const PracticeEngine: React.FC = () => {
               } else if (questionTypeId === 'eng-qt6') {
                 setSelectedSubTense(null);
               } else {
-                navigate('/practice');
+                navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice'));
               }
             }}
             className="p-2 text-xs font-bold text-muted-foreground hover:text-foreground flex items-center justify-center cursor-pointer bg-secondary/50 hover:bg-secondary rounded-xl transition-all font-semibold"

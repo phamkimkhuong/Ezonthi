@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useParams } from 'react-router-dom';
 import { useAppStore } from '@/services/store';
 import { storageService } from '@/services/storage';
 import { getLearningOutcomes } from '@/data';
 import { useRoadmapBundle } from '@/services/roadmapService';
 import type { RoadmapQuestionType } from '@/types/roadmapContract';
+import type { GradeCode, SubjectCode } from '@/types';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { getDifficultyTheme, getSubjectTheme, getTierTheme } from '@/utils/theme';
@@ -19,15 +20,24 @@ import { TopicTextbookMappingModal } from './components/TopicTextbookMappingModa
 import { TextbookDrawer } from '../../components/common/TextbookDrawer';
 import { SeoHead } from '../../components/common/SeoHead';
 import { createCourseSchema, createBreadcrumbSchema } from '../../utils/seoSchemas';
+import { buildCoursePath, isCourseContext } from '@/utils/courseRoutes';
 
 export const Roadmap: React.FC = () => {
+  const { grade: routeGradeParam, subject: routeSubjectParam } = useParams<{
+    grade?: GradeCode;
+    subject?: SubjectCode;
+  }>();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const { selectedSubject, selectedGrade, progressVersion, isPremium, user } = useAppStore();
-  const subjectTheme = getSubjectTheme(selectedSubject);
+
+  const effectiveGrade = (routeGradeParam && isCourseContext(routeGradeParam, routeSubjectParam)) ? routeGradeParam : selectedGrade;
+  const effectiveSubject = (routeSubjectParam ?? selectedSubject) as SubjectCode;
+
+  const subjectTheme = getSubjectTheme(effectiveSubject);
   void progressVersion;
 
-  const hasVideos = selectedSubject === 'chemistry' || (selectedSubject === 'biology' && selectedGrade === 'grade10') || (selectedSubject === 'physics' && selectedGrade === 'grade10');
+  const hasVideos = effectiveSubject === 'chemistry' || (effectiveSubject === 'biology' && effectiveGrade === 'grade10') || (effectiveSubject === 'physics' && effectiveGrade === 'grade10');
 
   const getInitialView = (): 'roadmap' | 'videos' => {
     const paramView = searchParams.get('view');
@@ -68,10 +78,10 @@ export const Roadmap: React.FC = () => {
     localStorage.setItem(`otv10_roadmap_view_${selectedSubject}_${selectedGrade}`, newView);
   };
 
-  const { bundle, loading: bundleLoading } = useRoadmapBundle(selectedGrade, selectedSubject);
+  const { bundle, loading: bundleLoading } = useRoadmapBundle(effectiveGrade, effectiveSubject);
   const topics = React.useMemo(() => bundle?.topics || [], [bundle]);
   const questionTypes = React.useMemo(() => bundle?.questionTypes || [], [bundle]);
-  const learningOutcomes = getLearningOutcomes(selectedGrade, selectedSubject);
+  const learningOutcomes = getLearningOutcomes(effectiveGrade, effectiveSubject);
 
   const [modalConfig, setModalConfig] = useState<{
     isOpen: boolean;
@@ -181,7 +191,7 @@ export const Roadmap: React.FC = () => {
       });
       return;
     }
-    navigate(`/question-types/${id}`);
+    navigate(buildCoursePath(effectiveGrade, effectiveSubject, 'question-types', id));
   };
 
 

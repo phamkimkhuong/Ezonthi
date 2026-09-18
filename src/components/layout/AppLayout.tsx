@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useAppStore } from '../../services/store';
@@ -45,7 +45,7 @@ import { QuickLookupPopover } from '../dictionary/QuickLookupPopover';
 import { FloatingDictionaryWidget } from '../dictionary/FloatingDictionaryWidget';
 import { QuickLookupWrapper } from '../dictionary/QuickLookupWrapper';
 import { cn } from '../../utils/cn';
-import { getQuestionTypes, loadSubjectData } from '../../data';
+import { getQuestionTypes, loadSubjectData, isSubjectDataLoaded } from '../../data';
 import { getSubjectName, getSubjectIcon, getSubjectFromQuestionTypeId } from '../../utils/subject';
 import { ROUTES } from '../../constants/routes';
 import { changeCourseContext, COURSE_ROUTES, parseCoursePath } from '../../utils/courseRoutes';
@@ -200,7 +200,10 @@ export const AppLayout: React.FC = () => {
   useEffect(() => {
     let active = true;
     const load = async () => {
-      setIsLoadingData(true);
+      const alreadyLoaded = isSubjectDataLoaded(selectedGrade, selectedSubject);
+      if (!alreadyLoaded) {
+        setIsLoadingData(true);
+      }
       try {
         await loadSubjectData(selectedGrade, selectedSubject);
       } catch (err) {
@@ -464,9 +467,14 @@ export const AppLayout: React.FC = () => {
     ROUTES.NEWS
   ].some(route => location.pathname === route || location.pathname.startsWith(`${route}/`));
 
+  const prevSectionRef = useRef<string | undefined>(undefined);
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    const currentSectionKey = `${selectedGrade}_${selectedSubject}_${courseSection || location.pathname.split('/')[1] || ''}`;
+    if (prevSectionRef.current !== undefined && prevSectionRef.current !== currentSectionKey) {
+      window.scrollTo(0, 0);
+    }
+    prevSectionRef.current = currentSectionKey;
+  }, [courseSection, location.pathname, selectedGrade, selectedSubject]);
 
   return (
     <div className="min-h-screen md:min-h-0 md:h-screen md:overflow-hidden bg-background text-foreground flex flex-col md:flex-row font-sans transition-colors duration-200 overscroll-none">
@@ -1010,10 +1018,17 @@ export const AppLayout: React.FC = () => {
 
         {/* ⚡ Content Wrapper */}
         <div className={cn(
-          "flex-1 animate-fade-in",
+          "flex-1 animate-fade-in relative",
           courseSection === 'ai-tutor' || location.pathname.startsWith(ROUTES.AI_TUTOR) ? "p-2 md:p-3" : "p-4 md:p-8"
         )}>
-          {isLoadingData ? (
+          {/* Top Progress Bar khi nạp dữ liệu môn học trong nền */}
+          {isLoadingData && (
+            <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-primary/20 overflow-hidden pointer-events-none">
+              <div className="h-full bg-primary animate-pulse w-full" />
+            </div>
+          )}
+
+          {isLoadingData && !isSubjectDataLoaded(selectedGrade, selectedSubject) ? (
             <div className="flex h-[60vh] w-full items-center justify-center">
               <div className="flex flex-col items-center gap-3 text-center">
                 <Loader size={36} className="animate-spin text-primary" />

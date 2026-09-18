@@ -10,7 +10,7 @@ import { useAppStore } from '@/services/store';
 import { Tabs, TabItem } from '@/components/ui/tabs';
 import { authService } from '@/services/authService';
 import { TextbookDrawer } from '@/components/common/TextbookDrawer';
-import { Question, Solution } from '@/types';
+import { Question, Solution, GradeCode, SubjectCode } from '@/types';
 import { Button } from '@/components/ui/button';
 import { LatexRenderer } from '@/components/common/LatexRenderer';
 import {
@@ -28,15 +28,20 @@ import {
 } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { getSubjectTheme, getStarsFromScore } from '@/utils/theme';
-import { getSubjectFromQuestionTypeId, getSubjectName, getSubjectIcon, isQuestionTypePremiumLocked } from '@/utils/subject';
+import { getSubjectFromQuestionTypeId, getGradeCodeFromQuestionTypeId, getSubjectName, getSubjectIcon, isQuestionTypePremiumLocked } from '@/utils/subject';
 import { storageService } from '@/services/storage';
 import { progressService } from '@/services/progressService';
 import { convertLatexToSpeechText } from '@/utils/speech';
 import { SeoHead } from '@/components/common/SeoHead';
 import { createBreadcrumbSchema, createFAQSchema, createQuizSchema } from '@/utils/seoSchemas';
+import { buildCoursePath, isCourseContext } from '@/utils/courseRoutes';
 
 export const QuestionTypeDetail: React.FC = () => {
-  const { questionTypeId } = useParams<{ questionTypeId: string }>();
+  const { grade: routeGradeParam, subject: routeSubjectParam, questionTypeId } = useParams<{
+    grade?: GradeCode;
+    subject?: SubjectCode;
+    questionTypeId?: string;
+  }>();
   const navigate = useNavigate();
   const { selectedSubject, selectedGrade, setSubject, user, refreshProgress, isPremium } = useAppStore();
 
@@ -61,17 +66,34 @@ export const QuestionTypeDetail: React.FC = () => {
     };
   }, []);
 
-  const routeSubject = getSubjectFromQuestionTypeId(questionTypeId) ?? selectedSubject;
-  const { bundle, loading: bundleLoading } = useRoadmapBundle(selectedGrade, routeSubject);
-  const routeQuestions = getQuestions(selectedGrade, routeSubject);
-  const routeSolutions = getSolutions(selectedGrade, routeSubject);
+  const effectiveGrade = (routeGradeParam && isCourseContext(routeGradeParam, routeSubjectParam)) ? routeGradeParam : selectedGrade;
+  const routeSubject = ((routeSubjectParam && isCourseContext(effectiveGrade, routeSubjectParam))
+    ? routeSubjectParam
+    : (getSubjectFromQuestionTypeId(questionTypeId) ?? selectedSubject)) as SubjectCode;
+  const { bundle, loading: bundleLoading } = useRoadmapBundle(effectiveGrade, routeSubject);
+  const routeQuestions = getQuestions(effectiveGrade, routeSubject);
+  const routeSolutions = getSolutions(effectiveGrade, routeSubject);
 
   useEffect(() => {
-    const subjectFromRoute = getSubjectFromQuestionTypeId(questionTypeId);
-    if (subjectFromRoute && subjectFromRoute !== selectedSubject) {
-      setSubject(subjectFromRoute);
+    if (!questionTypeId) return;
+    const inferredSubject = getSubjectFromQuestionTypeId(questionTypeId);
+    const inferredGrade = getGradeCodeFromQuestionTypeId(questionTypeId);
+
+    if (routeSubjectParam && inferredSubject && inferredSubject !== routeSubjectParam) {
+      const targetGrade = inferredGrade || effectiveGrade;
+      navigate(buildCoursePath(targetGrade, inferredSubject, 'question-types', questionTypeId), { replace: true });
+      return;
     }
-  }, [questionTypeId, selectedSubject, setSubject]);
+
+    if (routeGradeParam && inferredGrade && inferredGrade !== routeGradeParam) {
+      navigate(buildCoursePath(inferredGrade, inferredSubject || routeSubjectParam || selectedSubject, 'question-types', questionTypeId), { replace: true });
+      return;
+    }
+
+    if (!routeSubjectParam && inferredSubject && inferredSubject !== selectedSubject) {
+      setSubject(inferredSubject);
+    }
+  }, [questionTypeId, routeSubjectParam, routeGradeParam, effectiveGrade, selectedSubject, setSubject, navigate]);
 
   // Tìm dạng bài trực tiếp trong quá trình render (Derived State từ R2 Bundle)
   const detail: RoadmapQuestionType | null = useMemo(() => {
@@ -99,16 +121,16 @@ export const QuestionTypeDetail: React.FC = () => {
   const [isPlayingSpeech, setIsPlayingSpeech] = useState(false);
   const [isTextbookOpen, setIsTextbookOpen] = useState(false);
 
-  const outcomes = getLearningOutcomes(selectedGrade, routeSubject);
+  const outcomes = getLearningOutcomes(effectiveGrade, routeSubject);
   const currentOutcome = outcomes.find(o => o.questionTypeIds.includes(detail?.id || ''));
   const textbookData = currentOutcome?.textbook;
   const requiresTheoryCompletion =
-    selectedGrade === 'grade11' &&
+    effectiveGrade === 'grade11' &&
     routeSubject === 'physics' &&
     Boolean(detail?.theory?.length);
   const isPracticeLockedByTheory = requiresTheoryCompletion && !showLessonCompletedMsg;
   const isTypeLockedByPremium = detail
-    ? isQuestionTypePremiumLocked(detail.id, 1, routeSubject, selectedGrade) && !isPremium
+    ? isQuestionTypePremiumLocked(detail.id, 1, routeSubject, effectiveGrade) && !isPremium
     : false;
 
   const prevQuestionTypeIdRef = useRef<string | undefined>(undefined);
@@ -643,7 +665,7 @@ export const QuestionTypeDetail: React.FC = () => {
     });
   };
 
-  const gradeLabel = selectedGrade === 'grade9' ? 'Lớp 9' : selectedGrade === 'grade10' ? 'Lớp 10' : selectedGrade === 'grade11' ? 'Lớp 11' : 'Phổ thông';
+  const gradeLabel = effectiveGrade === 'grade9' ? 'Lớp 9' : effectiveGrade === 'grade10' ? 'Lớp 10' : effectiveGrade === 'grade11' ? 'Lớp 11' : 'Phổ thông';
 
   const pageTitle = detail
     ? `${detail.name} - ${subjectName} ${gradeLabel} | ezonthi`
@@ -653,13 +675,13 @@ export const QuestionTypeDetail: React.FC = () => {
     ? `Hướng dẫn lý thuyết, phương pháp giải, bẫy thường gặp và bài tập mẫu dạng ${detail.name} môn ${subjectName} ${gradeLabel} bám sát chương trình GDPT mới.`
     : `Hệ thống dạng bài học tập môn ${subjectName} ${gradeLabel} chuẩn hóa giúp học sinh bứt phá điểm số.`;
 
-  const canonicalPath = detail ? `/question-types/${detail.id}` : '/roadmap';
+  const canonicalPath = detail ? buildCoursePath(effectiveGrade, routeSubject, 'question-types', detail.id) : buildCoursePath(effectiveGrade, routeSubject, 'roadmap');
 
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: 'Trang chủ', item: '/' },
-    { name: gradeLabel, item: '/roadmap' },
-    { name: `${subjectName} ${gradeLabel}`, item: '/roadmap' },
-    ...(detail ? [{ name: detail.name, item: `/question-types/${detail.id}` }] : [])
+    { name: gradeLabel, item: buildCoursePath(effectiveGrade, routeSubject, 'roadmap') },
+    { name: `${subjectName} ${gradeLabel}`, item: buildCoursePath(effectiveGrade, routeSubject, 'roadmap') },
+    ...(detail ? [{ name: detail.name, item: buildCoursePath(effectiveGrade, routeSubject, 'question-types', detail.id) }] : [])
   ]);
 
   const faqItems = detail
@@ -686,7 +708,7 @@ export const QuestionTypeDetail: React.FC = () => {
   const quizSchema = detail && quizQuestions.length > 0 ? createQuizSchema({
     name: `Tự kiểm tra lý thuyết: ${detail.name}`,
     description: `Bài tự kiểm tra lý thuyết dạng ${detail.name} môn ${subjectName} ${gradeLabel}`,
-    url: `/question-types/${detail.id}`,
+    url: buildCoursePath(effectiveGrade, routeSubject, 'question-types', detail.id),
     questions: quizQuestions
   }) : null;
 
@@ -732,7 +754,7 @@ export const QuestionTypeDetail: React.FC = () => {
         <div className="flex flex-wrap items-center gap-2">
           {/* Nút Back về lộ trình - Icon button inline gọn gàng */}
           <button
-            onClick={() => navigate('/roadmap?view=roadmap')}
+            onClick={() => navigate(`${buildCoursePath(effectiveGrade, routeSubject, 'roadmap')}?view=roadmap`)}
             className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-border/50 bg-card hover:bg-secondary text-foreground cursor-pointer transition-colors shrink-0 mr-0.5"
             aria-label="Quay về lộ trình học"
           >
@@ -740,7 +762,7 @@ export const QuestionTypeDetail: React.FC = () => {
           </button>
 
           <span className={cn('text-[10px] md:text-xs font-bold px-3 py-1 rounded-full shadow-xs border border-border/40', theme.badge)}>
-            {subjectIcon} {subjectName} {selectedGrade === 'grade9' ? 'Lớp 9' : selectedGrade === 'grade10' ? 'Lớp 10' : 'Lớp 11'}
+            {subjectIcon} {subjectName} {effectiveGrade === 'grade9' ? 'Lớp 9' : effectiveGrade === 'grade10' ? 'Lớp 10' : 'Lớp 11'}
           </span>
           <span className="inline-flex items-center gap-1.5 text-[10px] md:text-xs bg-secondary/60 text-muted-foreground border border-border/40 font-bold px-3 py-1 rounded-full uppercase tracking-wider">
             <span className={cn("w-1.5 h-1.5 rounded-full shrink-0",
@@ -905,7 +927,7 @@ export const QuestionTypeDetail: React.FC = () => {
                 <>
                   <Button
                     disabled={isPracticeLockedByTheory}
-                    onClick={() => navigate(`/practice/${detail.id}`)}
+                    onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice', detail.id))}
                     className={cn(
                       "w-full font-bold text-xs py-3.5 flex items-center justify-center gap-1.5 active:scale-[0.98] shadow-md transition-all hover:shadow-lg rounded-xl cursor-pointer",
                       theme.solid
@@ -941,7 +963,7 @@ export const QuestionTypeDetail: React.FC = () => {
             </div>
             <div className="flex justify-between items-center">
               <span>🎒 Khối lớp học tập:</span>
-              <span className="text-foreground font-bold">Lớp {selectedGrade === 'grade9' ? '9' : selectedGrade === 'grade10' ? '10' : '11'}</span>
+              <span className="text-foreground font-bold">Lớp {effectiveGrade === 'grade9' ? '9' : effectiveGrade === 'grade10' ? '10' : '11'}</span>
             </div>
           </div>
 
@@ -981,7 +1003,7 @@ export const QuestionTypeDetail: React.FC = () => {
         ) : (
           <Button
             disabled={isPracticeLockedByTheory}
-            onClick={() => navigate(`/practice/${detail.id}`)}
+            onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice', detail.id))}
             className={cn(
               "font-bold text-xs py-2.5 px-4 shrink-0 shadow-md text-white active:scale-95 transition-transform",
               theme.solid

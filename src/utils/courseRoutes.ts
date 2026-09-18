@@ -73,14 +73,19 @@ export const changeCourseContext = (
   const supportsAdvanced = grade === 'grade10' && ['math', 'physics', 'chemistry', 'biology'].includes(subject);
   const supportsVocabulary = grade === 'grade10' && subject === 'english';
   const supportsGrammar = subject === 'english';
-  const section = current.section === 'advanced' && !supportsAdvanced
+  let section = current.section === 'advanced' && !supportsAdvanced
     ? 'roadmap'
     : current.section === 'vocabulary' && !supportsVocabulary
       ? 'roadmap'
       : current.section === 'grammar' && !supportsGrammar
         ? 'roadmap'
         : current.section;
-  const keepDetail = section === current.section ? current.detailId : undefined;
+
+  const isSubjectChanging = current.subject !== subject;
+  if (isSubjectChanging && section === 'question-types') {
+    section = 'roadmap';
+  }
+  const keepDetail = (!isSubjectChanging && section === current.section) ? current.detailId : undefined;
   return buildCoursePath(grade, subject, section, keepDetail);
 };
 

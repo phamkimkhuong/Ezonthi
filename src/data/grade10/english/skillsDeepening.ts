@@ -60,13 +60,6 @@ interface ChoiceSeed {
   };
 }
 
-interface OpenSeed {
-  prompt: string;
-  model: string;
-  difficulty: Difficulty;
-  subtype: string;
-  minimumWords?: number;
-}
 
 const letters: ChoiceLetter[] = ['A', 'B', 'C', 'D'];
 const listeningExtensionTopicId = 'eng10-listening-extension';
@@ -1761,29 +1754,6 @@ const listeningSeeds = (spec: UnitDepthSpec): ChoiceSeed[] => [
   }
 ];
 
-const writingSeeds = (spec: UnitDepthSpec): OpenSeed[] => [
-  {
-    prompt: `Write an 80–100-word summary of “${spec.reading.title}”. Include the problem, response and one result. Do not copy whole sentences.`,
-    model: `The text describes a challenge connected with ${spec.theme.toLowerCase()} and shows how the people involved responded. Instead of choosing a quick or purely visible solution, they gathered information and adjusted their plan. A key result was ${spec.reading.detailTwoAnswer.toLowerCase()}. The experience suggests that ${spec.reason}. The project was not presented as perfect, but its evidence made the conclusion more useful and realistic.`,
-    difficulty: 'easy',
-    subtype: 'controlled',
-    minimumWords: 80
-  },
-  {
-    prompt: `Write a 120–150-word email to ${spec.stakeholder} proposing that they ${spec.action}. Explain the benefit, one limitation and a practical next step.`,
-    model: `Subject: A practical proposal for ${spec.theme}\nDear team,\nI suggest that we ${spec.action}. This would be valuable because ${spec.reason}. For example, ${spec.example}. We should also recognise one limitation: ${spec.counterpoint}. To manage it, we can begin with a small four-week trial, identify who is responsible and collect feedback from everyone affected. At the end of the trial, we should compare the results with our starting point and publish the next decision. This approach is practical, transparent and open to improvement rather than depending on a slogan alone.\nBest regards,\nA student representative`,
-    difficulty: 'medium',
-    subtype: 'guided',
-    minimumWords: 120
-  },
-  {
-    prompt: `Write a 150–180-word balanced opinion essay responding to: “${spec.opinionClaim}” Use evidence or an example from the Unit theme.`,
-    model: `The statement sounds simple, but it ignores how quality should be judged in ${spec.theme.toLowerCase()}. Supporters may argue that a clear single measure makes decisions faster. However, that measure can hide important differences in access, impact and long-term results. A stronger approach is to examine both outcomes and the process used to produce them. ${spec.example.charAt(0).toUpperCase() + spec.example.slice(1)}. This example shows why context matters. It is also necessary to consider ${spec.counterpoint}. Therefore, I do not fully accept the claim. A responsible decision should set a clear goal, gather relevant evidence, listen to affected people and review unintended effects. Such a method may take longer, but it leads to a conclusion that is fairer and more reliable than a convenient label or a single number.`,
-    difficulty: 'hard',
-    subtype: 'extended',
-    minimumWords: 150
-  }
-];
 
 const choiceQuestion = (
   spec: UnitDepthSpec,
@@ -1839,46 +1809,6 @@ const choiceQuestion = (
   };
 };
 
-const openQuestion = (
-  spec: UnitDepthSpec,
-  skill: 'w' | 's',
-  index: number,
-  seed: OpenSeed
-): Question => ({
-  id: `eng10-deep-u${spec.unit}-${skill}${index + 1}`,
-  subjectId: 'english',
-  topicId: spec.topicId,
-  questionTypeId: `eng10-skill-qt-u${spec.unit}-${skill === 'w' ? 'writing' : 'speaking'}`,
-  content: seed.prompt,
-  responseType: 'constructed_response',
-  correctAnswer: 'Chấm theo rubric',
-  difficulty: seed.difficulty,
-  sourceType: 'manual',
-  validatorType: 'manual',
-  answerSchema: {
-    type: 'self-check',
-    fields: [{
-      key: 'response',
-      label: skill === 'w' ? 'Bài viết của em' : 'Dàn ý hoặc transcript phần nói',
-      valueType: 'text',
-      placeholder: skill === 'w' ? 'Viết câu trả lời bằng tiếng Anh...' : 'Luyện nói thành tiếng rồi ghi lại ý chính...',
-      hint: seed.minimumWords ? `Mục tiêu tối thiểu ${seed.minimumWords} từ.` : 'Ghi âm bên ngoài nếu giáo viên yêu cầu; tại đây lưu dàn ý để tự đối chiếu.',
-      required: true
-    }],
-    proofImageRequired: false,
-    autoCheckMode: 'manual'
-  },
-  outcomeIds: [`eng10-lo-u${spec.unit}-${skill === 'w' ? 'writing' : 'speaking'}`],
-  competency: skill === 'w' ? 'english_writing' : 'english_speaking',
-  cognitiveLevel: seed.difficulty === 'easy' ? 'understanding' : 'application',
-  estimatedSeconds: skill === 'w'
-    ? seed.difficulty === 'hard' ? 1200 : seed.difficulty === 'medium' ? 900 : 600
-    : seed.difficulty === 'hard' ? 240 : seed.difficulty === 'medium' ? 180 : 120,
-  subTypeId: `eng10-u${spec.unit}-${skill === 'w' ? 'writing' : 'speaking'}-${seed.subtype}`,
-  practiceRole: seed.difficulty === 'easy' ? 'guided' : seed.difficulty === 'medium' ? 'near_transfer' : 'far_transfer',
-  representationType: 'extended_response',
-  isMasteryHoldout: seed.difficulty === 'hard'
-});
 
 const choiceSolution = (
   spec: UnitDepthSpec,
@@ -1917,61 +1847,24 @@ const choiceSolution = (
   };
 };
 
-const openSolution = (
-  spec: UnitDepthSpec,
-  skill: 'w' | 's',
-  index: number,
-  seed: OpenSeed
-): Solution => ({
-  id: `eng10-deep-sol-u${spec.unit}-${skill}${index + 1}`,
-  questionId: `eng10-deep-u${spec.unit}-${skill}${index + 1}`,
-  recognition: skill === 'w'
-    ? 'Bài viết tạo lập: kiểm tra đủ nội dung bắt buộc trước khi sửa ngôn ngữ.'
-    : 'Bài nói tạo lập: cần luyện thành tiếng, dùng dẫn đường và tương tác với người nghe.',
-  detailedSteps: [
-    { order: 1, title: 'Lập dàn ý', explanation: 'Xác định người đọc/nghe, mục đích, ba ý chính và bằng chứng.' },
-    { order: 2, title: 'Thực hiện', explanation: skill === 'w' ? 'Viết theo đoạn và dùng từ nối thể hiện quan hệ ý.' : 'Nói thành tiếng, ngắt ý và nhấn từ khóa.' },
-    { order: 3, title: 'Bài mẫu tham khảo', explanation: seed.model }
-  ],
-  finalAnswer: seed.model,
-  commonMistakes: skill === 'w'
-    ? ['Tóm tắt thành sao chép.', 'Thiếu phản biện hoặc bước hành động.', 'Không đạt độ dài.']
-    : ['Chỉ viết mà không luyện nói.', 'Đọc đều từng chữ.', 'Không phản hồi ý kiến đối lập.'],
-  reviewSuggestions: [`Tự chấm theo bốn tiêu chí rồi thực hiện lại nhiệm vụ Unit ${spec.unit}.`],
-  rubric: skill === 'w'
-    ? [
-        { id: 'task', description: 'Đúng thể loại, mục đích và đủ yêu cầu nội dung', points: 4, evidence: ['trả lời trực tiếp', 'đủ ý bắt buộc', 'có bằng chứng/ví dụ'] },
-        { id: 'organisation', description: 'Tổ chức và liên kết mạch lạc', points: 2, evidence: ['bố cục rõ', 'từ nối đúng quan hệ'] },
-        { id: 'language', description: 'Từ vựng và ngữ pháp phù hợp', points: 3, evidence: ['từ chủ đề', 'cấu trúc đa dạng', 'lỗi không cản nghĩa'] },
-        { id: 'mechanics', description: 'Chính tả, dấu câu và độ dài', points: 1, evidence: ['dễ đọc', 'đạt phạm vi từ'] }
-      ]
-    : [
-        { id: 'content', description: 'Ý và bằng chứng đáp ứng nhiệm vụ', points: 4, evidence: ['mở ý rõ', 'hai ý phát triển', 'kết luận/đề xuất'] },
-        { id: 'delivery', description: 'Độ trôi chảy, phát âm và ngắt ý', points: 2, evidence: ['nói thành tiếng', 'người nghe theo dõi được'] },
-        { id: 'language', description: 'Ngôn ngữ chủ đề và độ chính xác', points: 2, evidence: ['từ vựng phù hợp', 'lỗi không cản nghĩa'] },
-        { id: 'interaction', description: 'Phản hồi vai trò hoặc người nghe', points: 2, evidence: ['lịch sự', 'xử lý quan ngại', 'bước tiếp theo'] }
-      ]
-});
 
 export const g10EnglishDeepeningQuestionTypes: QuestionType[] = unitSpecs.map(languageQuestionType);
 
 export const g10EnglishDeepeningQuestions: Question[] = unitSpecs.flatMap(spec => [
   ...languageSeedsByUnit[spec.unit].map((seed, index) => languageQuestion(spec, index, seed)),
   ...readingSeeds(spec).map((seed, index) => choiceQuestion(spec, 'r', index, seed)),
-  ...listeningSeeds(spec).map((seed, index) => choiceQuestion(spec, 'l', index, seed)),
-  ...writingSeeds(spec).map((seed, index) => openQuestion(spec, 'w', index, seed))
+  ...listeningSeeds(spec).map((seed, index) => choiceQuestion(spec, 'l', index, seed))
 ]);
 
 export const g10EnglishDeepeningSolutions: Solution[] = unitSpecs.flatMap(spec => [
   ...languageSeedsByUnit[spec.unit].map((seed, index) => languageSolution(spec, index, seed)),
   ...readingSeeds(spec).map((seed, index) => choiceSolution(spec, 'r', index, seed)),
-  ...listeningSeeds(spec).map((seed, index) => choiceSolution(spec, 'l', index, seed)),
-  ...writingSeeds(spec).map((seed, index) => openSolution(spec, 'w', index, seed))
+  ...listeningSeeds(spec).map((seed, index) => choiceSolution(spec, 'l', index, seed))
 ]);
 
 export const g10EnglishDeepeningStats = {
   unitCount: unitSpecs.length,
   readingPassageCount: unitSpecs.length,
   listeningScriptCount: unitSpecs.length,
-  questionCountPerUnit: 20
+  questionCountPerUnit: 17
 } as const;

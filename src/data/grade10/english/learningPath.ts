@@ -161,15 +161,15 @@ export const g10EnglishOutcomes: LearningOutcome[] = unitSpecs.flatMap((spec, in
     {
       id: `eng10-lo-u${spec.unit}-writing`,
       topicId: spec.topicId,
-      title: `Writing – ${spec.theme}`,
-      description: `Lập ý, viết và tự chỉnh sửa đoạn văn có liên kết về ${spec.theme}, phù hợp mục đích và người đọc.`,
+      title: `Writing: Sentence Transformation & Combination – ${spec.theme}`,
+      description: `Nhận diện và áp dụng cấu trúc viết lại câu, nối câu tương đương theo chủ đề ${spec.theme}.`,
       scope: scopeForUnit(spec.unit),
       orderIndex: spec.unit * 10 + 4,
       questionTypeIds: [`eng10-skill-qt-u${spec.unit}-writing`],
       prerequisiteOutcomeIds: [languageOutcomeId, readingOutcomeId],
       misconceptionIds: [`eng10-mis-u${spec.unit}-language`],
       evidenceTypes: ['writing', 'application'],
-      estimatedMinutes: 50,
+      estimatedMinutes: 40,
       isCritical: true
     }
   ];

@@ -383,12 +383,6 @@ export const ExamIntroView: React.FC<ExamIntroViewProps> = ({
                               Đang làm dở
                             </span>
                           )}
-                          {examSummaryMap[selectedExamInGroup.id] && (
-                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-[9px] font-bold uppercase tracking-wider border border-emerald-500/25">
-                              <Award size={11} className="text-emerald-600 dark:text-emerald-400" />
-                              Cao nhất: {examSummaryMap[selectedExamInGroup.id].bestScore.toFixed(1)}đ
-                            </span>
-                          )}
                         </div>
 
                         {isGroupSelected ? (
