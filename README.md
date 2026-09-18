@@ -9,9 +9,14 @@
 
 Nền tảng công nghệ giáo dục (EdTech) học tập và ôn luyện cá nhân hóa dành cho học sinh từ **Lớp 9 (Ôn thi tuyển sinh vào 10)** đến **Lớp 10 & Lớp 11 THPT** theo chuẩn **Chương trình GDPT 2018**. Hệ thống tích hợp AI Gia Sư thông minh, ngân hàng đề bài chuẩn hóa đồ sộ, các chuyên đề nâng cao/Olympic, cùng kiến trúc **Local-First** cho trải nghiệm siêu mượt.
 
-🔗 **Website chính thức**: [ezonthi.com](https://ezonthi.com)  
+---
 
-Runtime chuẩn của dự án là **Node.js 22 + npm 10.9**. Cài đặt bằng `npm ci` ở root và `npm --prefix functions ci`; xem [hướng dẫn phát triển và phát hành](docs/development-and-release.md). Route học chuẩn mang đủ lớp và môn, ví dụ `/app/grade11/english/roadmap`.
+### 🌐 Môi Trường Triển Khai (Live Deployments)
+
+| Môi trường | Nhánh Git | Trạng thái | URL Trực Tuyến | Mục đích |
+| :--- | :--- | :--- | :--- | :--- |
+| 🚀 **Production** | [`main`](https://github.com/phamkimkhuong/on-thi-vao-10/tree/main) | ![Production](https://img.shields.io/badge/Live-Production-success?logo=google-chrome&logoColor=white) | [ezonthi.com](https://ezonthi.com) | Hệ thống chính thức phục vụ học sinh |
+| 🧪 **Staging** | [`staging`](https://github.com/phamkimkhuong/on-thi-vao-10/tree/staging) | ![Staging](https://img.shields.io/badge/Preview-Staging-orange?logo=firebase&logoColor=white) | [ezonthi-staging-preview](https://on-thi-vao-10-7d87c--staging-sa0g3qjh.web.app) | Môi trường kiểm thử tính năng độc lập |
 
 ---
 
