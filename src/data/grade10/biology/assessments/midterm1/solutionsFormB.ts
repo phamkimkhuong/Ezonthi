@@ -40,25 +40,5 @@ export const biologyMidterm1SolutionsFormB: Solution[] = [
   solved('bio10-assess-mid1-b-q17', 'Xác định yếu tố chủ động thay đổi, đại lượng đo và phạm vi có thể khái quát.', 'a Đúng: thời gian chiếu sáng được đặt các mức. b Sai: chiều cao tăng thêm là biến phụ thuộc. c Đúng: kiểm soát các điều kiện giảm nhiễu. d Sai: kết quả không đại diện cho mọi loài và mọi điều kiện.', 'a:Đ|b:S|c:Đ|d:S', ['Nhầm biến phụ thuộc với biến kiểm soát.', 'Khái quát quá phạm vi khảo sát.'], ['Thiết kế thí nghiệm', 'Giới hạn kết luận']),
   solved('bio10-assess-mid1-b-q18', 'Cụm kiểm tra quan hệ cấu trúc–chức năng của lipid và carbohydrate.', 'a Đúng: phospholipid lưỡng cực. b Sai: triglyceride gồm glycerol và acid béo, không phải polymer amino acid. c Đúng: glycogen dự trữ ở động vật. d Sai: cellulose và glycogen không ngọt, không tan tốt như đường đơn.', 'a:Đ|b:S|c:Đ|d:S', ['Gọi mọi đại phân tử là polymer amino acid.', 'Cho rằng mọi carbohydrate đều là đường ngọt.'], ['Lipid', 'Carbohydrate']),
   solved('bio10-assess-mid1-b-q19', 'Dựa vào hiện tượng đặc trưng để xác định từng phép thử dương, rồi mới đếm.', 'Iodine vàng nâu: tinh bột âm tính. Biuret tím: protein dương tính. Sudan III tạo lớp đỏ cam: lipid dương tính. Có 2 nhóm dương tính.', '2', ['Đếm số phép thử thay vì số kết quả dương.', 'Coi vàng nâu của iodine là dương tính.'], ['Thực hành nhận biết phân tử sinh học']),
-  solved('bio10-assess-mid1-b-q20', 'Cụm “tham gia cấu tạo ribosome” là dấu hiệu đặc trưng của ribosomal RNA.', 'Tên viết tắt của ribosomal RNA là rRNA.', 'rRNA', ['Trả lời mRNA hoặc tRNA.'], ['Các loại RNA']),
-  {
-    id: 'solution-bio10-assess-mid1-b-q21',
-    questionId: 'bio10-assess-mid1-b-q21',
-    recognition: 'Đây là dạng thiết kế thí nghiệm nhận biết chất: ghép đúng thuốc thử–mẫu, có đối chứng, dự đoán hiện tượng và giới hạn kết luận.',
-    detailedSteps: [
-      { order: 1, title: 'Bố trí phép thử và đối chứng', explanation: 'Chia mẫu vào ống sạch. Thêm Biuret vào M để thử protein; thêm iodine vào N để thử tinh bột. Dùng nước cất với từng thuốc thử làm đối chứng âm; nếu có thể bổ sung mẫu protein/tinh bột đã biết làm đối chứng dương.', points: 0.75 },
-      { order: 2, title: 'Dự đoán hiện tượng', explanation: 'M có protein/peptide phù hợp sẽ chuyển tím với Biuret. N có tinh bột sẽ chuyển xanh tím với iodine. Đối chứng âm không được cho màu dương tính.', points: 0.5 },
-      { order: 3, title: 'Kết luận và kiểm soát', explanation: 'Đối chiếu mẫu với đối chứng, dùng dụng cụ riêng hoặc rửa sạch để tránh nhiễm chéo và kết luận có điều kiện.', points: 0.5 },
-      { order: 4, title: 'Giới hạn bằng chứng', explanation: 'Phép thử là định tính, không xác định chính xác hàm lượng; âm tính có thể do nồng độ thấp hoặc lỗi thuốc thử/quy trình.', points: 0.25 }
-    ],
-    finalAnswer: 'Chấm theo rubric',
-    commonMistakes: ['Đổi nhầm Biuret và iodine.', 'Không dùng đối chứng.', 'Kết luận định lượng từ phép thử định tính.', 'Dùng chung dụng cụ gây nhiễm chéo.'],
-    reviewSuggestions: ['Thiết kế thí nghiệm', 'Thực hành nhận biết phân tử sinh học'],
-    rubric: [
-      { id: 'setup', description: 'Bố trí đúng hai phép thử và nêu được đối chứng.', points: 0.75, evidence: ['Biuret dùng cho M/protein', 'Iodine dùng cho N/tinh bột', 'Có đối chứng âm hoặc dương phù hợp'], commonErrors: ['Đổi nhầm thuốc thử', 'Không có đối chứng'] },
-      { id: 'observation', description: 'Dự đoán đúng hiện tượng dương tính.', points: 0.5, evidence: ['Biuret tím', 'Iodine xanh tím'] },
-      { id: 'conclusion', description: 'Kết luận dựa trên kết quả và kiểm soát quy trình.', points: 0.5, evidence: ['Đối chiếu đối chứng', 'Tránh nhiễm chéo', 'Kết luận có điều kiện'] },
-      { id: 'limitation', description: 'Nêu ít nhất một giới hạn hợp lí của phép thử.', points: 0.25, evidence: ['Không xác định chính xác hàm lượng', 'Âm tính giả do nồng độ/quy trình/thuốc thử'] }
-    ]
-  }
+  solved('bio10-assess-mid1-b-q20', 'Cụm “tham gia cấu tạo ribosome” là dấu hiệu đặc trưng của ribosomal RNA.', 'Tên viết tắt của ribosomal RNA là rRNA.', 'rRNA', ['Trả lời mRNA hoặc tRNA.'], ['Các loại RNA'])
 ];

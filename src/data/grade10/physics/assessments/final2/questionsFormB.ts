@@ -105,19 +105,12 @@ export const physicsFinal2QuestionsFormB: Question[] = [
   },
   {
     id: 'phy10-assess-final2-b-q19', subjectId: 'physics', topicId: 'phy10-t5', questionTypeId: 'phy10-qt50',
-    content: 'Vật chuyển động tròn đều với tốc độ 10 m/s trên bán kính 5 m. Gia tốc hướng tâm bằng bao nhiêu m/s²?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '20', acceptedAnswers: ['20', '20 m/s²', '20,0'], validatorType: 'number', points: 1,
+    content: 'Vật chuyển động tròn đều với tốc độ 10 m/s trên bán kính 5 m. Gia tốc hướng tâm bằng bao nhiêu m/s²?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '20', acceptedAnswers: ['20', '20 m/s²', '20,0'], validatorType: 'number', points: 2,
     outcomeIds: ['PHY10-M5-O03'], competency: 'physical_application', cognitiveLevel: 'application', estimatedSeconds: 90
   },
   {
     id: 'phy10-assess-final2-b-q20', subjectId: 'physics', topicId: 'phy10-t6', questionTypeId: 'phy10-qt56',
-    content: 'Lò xo k = 300 N/m chịu lực 12 N trong giới hạn đàn hồi. Độ dãn bằng bao nhiêu mét?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '0.04', acceptedAnswers: ['0.04', '0,04', '0.04 m', '0,04 m'], validatorType: 'number', points: 1,
+    content: 'Lò xo k = 300 N/m chịu lực 12 N trong giới hạn đàn hồi. Độ dãn bằng bao nhiêu mét?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '0.04', acceptedAnswers: ['0.04', '0,04', '0.04 m', '0,04 m'], validatorType: 'number', points: 2,
     outcomeIds: ['PHY10-M6-O03'], competency: 'physical_application', cognitiveLevel: 'application', estimatedSeconds: 90
-  },
-  {
-    id: 'phy10-assess-final2-b-q21', subjectId: 'physics', topicId: 'phy10-t3', questionTypeId: 'phy10-qt38',
-    stimulus: { id: 'phy10-final2-b-energy', title: 'Xe trượt trên đường ray', content: 'Xe khối lượng 1,5 kg được thả từ nghỉ ở độ cao 8,0 m và đi tới chân dốc với tốc độ 10,0 m/s. Lấy g = 10 m/s².' },
-    content: 'Hãy: (1) tính cơ năng ban đầu; (2) tính động năng tại chân dốc; (3) tính năng lượng chuyển thành nhiệt/âm và hiệu suất chuyển thế năng thành động năng; (4) nêu một nguồn sai số và một cải thiện phép đo.', responseType: 'constructed_response', difficulty: 'hard', sourceType: 'mock_exam', correctAnswer: 'Chấm theo rubric', validatorType: 'manual', points: 2,
-    answerSchema: { type: 'self-check', proofImageRequired: false, autoCheckMode: 'manual', fields: [{ key: 'response', label: 'Bài làm tự luận', valueType: 'text', placeholder: 'Trình bày cân bằng năng lượng, hiệu suất và đánh giá phép đo...', required: true }] },
-    outcomeIds: ['PHY10-M3-O04', 'PHY10-M3-O05', 'PHY10-M3-O06', 'PHY10-M3-O08'], competency: 'physical_inquiry', cognitiveLevel: 'application', estimatedSeconds: 480
   }
 ];

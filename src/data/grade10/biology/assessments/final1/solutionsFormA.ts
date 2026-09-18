@@ -29,23 +29,5 @@ export const biologyFinal1SolutionsFormA: Solution[] = [
   solved('bio10-assess-final1-a-q17', 'Xét từng phát biểu theo ba tiêu chí: cấu trúc chung, vật chất di truyền và sự phối hợp bào quan.', 'a Đúng: cả nhân sơ và nhân thực đều có ribosome. b Sai: nhân sơ có DNA ở vùng nhân. c Đúng: lưới nội chất hạt–Golgi phối hợp trong đường tiết. d Sai: số lượng bào quan thay đổi theo chức năng.', 'a:Đ|b:S|c:Đ|d:S', ['Cho nhân sơ không có DNA.', 'Học bào quan như các đơn vị độc lập.'], ['Tế bào nhân sơ', 'Hệ thống nội màng']),
   solved('bio10-assess-final1-a-q18', 'Đọc xu hướng khối lượng theo nồng độ rồi phân biệt dữ liệu quan sát với kết luận tuyệt đối.', 'a Đúng: số liệu giảm từ +8 xuống −7. b Đúng: ở 0% mẫu nhận nước. c Sai: điểm 0% thay đổi nằm giữa 5% và 10%, chưa xác định chính xác. d Sai: không thể khái quát cho mọi mô.', 'a:Đ|b:Đ|c:S|d:S', ['Chọn một nồng độ gần 0 rồi gọi là đẳng trương chính xác.', 'Khái quát vượt mẫu.'], ['Đọc dữ liệu thẩm thấu']),
   solved('bio10-assess-final1-a-q19', 'Độ phóng đại tổng cộng bằng độ phóng đại thị kính nhân vật kính.', '$10\\times40=400$ lần.', '400', ['Cộng 10 và 40.', 'Chỉ ghi độ phóng đại vật kính.'], ['Kính hiển vi']),
-  solved('bio10-assess-final1-a-q20', 'Dạng phần trăm thay đổi: lấy chênh lệch chia giá trị ban đầu rồi nhân 100%.', '$\\frac{5{,}40-5{,}00}{5{,}00}\\times100\%=8\%$.', '8', ['Chia cho khối lượng sau.', 'Quên nhân 100%.'], ['Xử lí dữ liệu thực nghiệm']),
-  {
-    id: 'solution-bio10-assess-final1-a-q21', questionId: 'bio10-assess-final1-a-q21',
-    recognition: 'Dạng thiết kế thí nghiệm thẩm thấu: cần chuẩn hóa mẫu, thay đổi một nồng độ, đo phần trăm đổi khối lượng và tìm nơi giá trị gần 0%.',
-    detailedSteps: [
-      { order: 1, title: 'Xác định biến và bố trí', explanation: 'Biến độc lập là nồng độ sucrose; biến phụ thuộc là phần trăm thay đổi khối lượng. Chuẩn hóa kích thước/khối lượng ban đầu, thể tích dung dịch, thời gian và nhiệt độ. Dung dịch 0% là mốc so sánh không sucrose.', points: 0.5 },
-      { order: 2, title: 'Tiến hành và đo', explanation: 'Cân từng mẫu, ngâm cùng thời gian, lấy ra thấm khô theo cùng cách rồi cân lại. Mỗi nồng độ dùng nhiều mẫu lặp độc lập.', points: 0.5 },
-      { order: 3, title: 'Xử lí và xác định khoảng', explanation: 'Tính % thay đổi = (sau−trước)/trước×100, lấy trung bình và vẽ đồ thị theo nồng độ. Khoảng đổi dấu hoặc giao gần 0% là khoảng gần đẳng trương.', points: 0.75 },
-      { order: 4, title: 'Độ tin cậy và giới hạn', explanation: 'Lặp mẫu, cắt đồng đều, kiểm soát thời gian/nhiệt độ và thấm khô thống nhất; muốn chính xác hơn phải thử thêm nồng độ trong khoảng đổi dấu.', points: 0.25 }
-    ],
-    finalAnswer: 'Chấm theo rubric', commonMistakes: ['Không chuẩn hóa kích thước mẫu.', 'Dùng khối lượng cuối thay mẫu số.', 'Gọi ngay một nồng độ đã thử là đẳng trương chính xác.', 'Không lặp mẫu.'],
-    reviewSuggestions: ['Thiết kế thí nghiệm', 'Thẩm thấu', 'Xử lí dữ liệu'],
-    rubric: [
-      { id: 'variables', description: 'Xác định đúng biến và điều kiện kiểm soát.', points: 0.5, evidence: ['Nồng độ là biến độc lập', '% đổi khối lượng là biến phụ thuộc', 'Chuẩn hóa mẫu/thời gian/thể tích/nhiệt độ'] },
-      { id: 'procedure', description: 'Quy trình cân–ngâm–thấm–cân và lặp mẫu hợp lí.', points: 0.5, evidence: ['Cân trước và sau', 'Thấm khô thống nhất', 'Có mẫu lặp'] },
-      { id: 'analysis', description: 'Tính và diễn giải đúng dữ liệu để tìm khoảng đẳng trương.', points: 0.75, evidence: ['Công thức phần trăm đúng', 'Tìm nơi gần 0% hoặc đổi dấu', 'Dùng trung bình/đồ thị'] },
-      { id: 'reliability', description: 'Nêu biện pháp tăng độ tin cậy hoặc tinh chỉnh nồng độ.', points: 0.25, evidence: ['Lặp mẫu hoặc thử thêm nồng độ trong khoảng đổi dấu'] }
-    ]
-  }
+  solved('bio10-assess-final1-a-q20', 'Dạng phần trăm thay đổi: lấy chênh lệch chia giá trị ban đầu rồi nhân 100%.', '$\\frac{5{,}40-5{,}00}{5{,}00}\\times100\%=8\%$.', '8', ['Chia cho khối lượng sau.', 'Quên nhân 100%.'], ['Xử lí dữ liệu thực nghiệm'])
 ];

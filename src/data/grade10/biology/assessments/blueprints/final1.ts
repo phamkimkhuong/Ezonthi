@@ -16,7 +16,6 @@ export const biologyFinal1Blueprint: AssessmentBlueprint = {
   sections: [
     { id: 'mcq', title: 'Phần I. Trắc nghiệm nhiều lựa chọn', itemCount: 16, points: 4, responseType: 'multiple_choice' },
     { id: 'tf', title: 'Phần II. Trắc nghiệm Đúng/Sai', itemCount: 2, points: 2, responseType: 'true_false_cluster' },
-    { id: 'short', title: 'Phần III. Trả lời ngắn', itemCount: 2, points: 2, responseType: 'short_answer' },
-    { id: 'essay', title: 'Phần IV. Tự luận/Thực nghiệm', itemCount: 1, points: 2, responseType: 'constructed_response' }
+    { id: 'short', title: 'Phần III. Trả lời ngắn', itemCount: 2, points: 4, responseType: 'short_answer' }
   ]
 };

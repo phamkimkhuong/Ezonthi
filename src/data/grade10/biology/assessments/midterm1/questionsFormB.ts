@@ -165,26 +165,12 @@ export const biologyMidterm1QuestionsFormB: Question[] = [
         rows: [{ test: 'Iodine', result: 'Vàng nâu' }, { test: 'Biuret', result: 'Tím' }, { test: 'Sudan III', result: 'Tạo lớp màu đỏ cam' }]
       }
     },
-    content: 'Có bao nhiêu nhóm chất trong ba nhóm tinh bột, protein và lipid cho kết quả dương tính ở mẫu S?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '2', acceptedAnswers: ['2', 'hai'], validatorType: 'number', points: 1,
+    content: 'Có bao nhiêu nhóm chất trong ba nhóm tinh bột, protein và lipid cho kết quả dương tính ở mẫu S?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '2', acceptedAnswers: ['2', 'hai'], validatorType: 'number', points: 2,
     outcomeIds: ['BIO10-M1-O08'], competency: 'biological_inquiry', cognitiveLevel: 'application', estimatedSeconds: 100, variantGroupId: 'bio10-mid1-short-test-01'
   },
   {
     id: 'bio10-assess-mid1-b-q20', subjectId: 'biology', topicId: 'bio10-t1', questionTypeId: 'bio10-qt18',
-    content: 'Loại RNA tham gia cấu tạo ribosome được gọi là gì? Chỉ viết tên viết tắt.', responseType: 'short_answer', difficulty: 'easy', sourceType: 'mock_exam', correctAnswer: 'rRNA', acceptedAnswers: ['rrna', 'rRNA', 'RRNA'], validatorType: 'exact', points: 1,
+    content: 'Loại RNA tham gia cấu tạo ribosome được gọi là gì? Chỉ viết tên viết tắt.', responseType: 'short_answer', difficulty: 'easy', sourceType: 'mock_exam', correctAnswer: 'rRNA', acceptedAnswers: ['rrna', 'rRNA', 'RRNA'], validatorType: 'exact', points: 2,
     outcomeIds: ['BIO10-M1-O06'], competency: 'biological_cognition', cognitiveLevel: 'recognition', estimatedSeconds: 45, variantGroupId: 'bio10-mid1-short-rna-01'
-  },
-  {
-    id: 'bio10-assess-mid1-b-q21', subjectId: 'biology', topicId: 'bio10-t1', questionTypeId: 'bio10-qt20',
-    stimulus: {
-      id: 'bio10-mid1-b-stimulus-essay', title: 'Tình huống thực nghiệm',
-      content: 'Có hai mẫu thực phẩm lỏng bị mất nhãn: mẫu M được nghi chứa protein, mẫu N được nghi chứa tinh bột. Phòng thực hành có thuốc thử Biuret, dung dịch iodine, nước cất và các ống nghiệm sạch.'
-    },
-    content: 'Hãy thiết kế thí nghiệm kiểm tra hai nhận định trên. Trình bày mẫu/thuốc thử sử dụng, đối chứng, hiện tượng dự kiến và giới hạn của kết luận.',
-    responseType: 'constructed_response', difficulty: 'hard', sourceType: 'mock_exam', correctAnswer: 'Chấm theo rubric', validatorType: 'manual', points: 2,
-    answerSchema: {
-      type: 'self-check', proofImageRequired: false, autoCheckMode: 'manual',
-      fields: [{ key: 'response', label: 'Bài làm tự luận', valueType: 'text', placeholder: 'Trình bày theo các ý: bố trí – đối chứng – hiện tượng – kết luận...', required: true }]
-    },
-    outcomeIds: ['BIO10-M0-O04', 'BIO10-M1-O08'], competency: 'biological_inquiry', cognitiveLevel: 'application', estimatedSeconds: 480, variantGroupId: 'bio10-mid1-essay-food-test-01'
   }
 ];

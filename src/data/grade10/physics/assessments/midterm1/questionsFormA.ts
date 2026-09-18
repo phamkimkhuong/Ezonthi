@@ -122,20 +122,12 @@ export const physicsMidterm1QuestionsFormA: Question[] = [
   },
   {
     id: 'phy10-assess-mid1-a-q19', subjectId: 'physics', topicId: 'phy10-t1', questionTypeId: 'phy10-qt10',
-    content: 'Một vật đi từ x = 10 m đến x = −14 m trong 4 s. Tính vận tốc trung bình, đơn vị m/s.', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '-6', acceptedAnswers: ['-6', '-6 m/s', '-6,0'], validatorType: 'number', points: 1,
+    content: 'Một vật đi từ x = 10 m đến x = −14 m trong 4 s. Tính vận tốc trung bình, đơn vị m/s.', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '-6', acceptedAnswers: ['-6', '-6 m/s', '-6,0'], validatorType: 'number', points: 2,
     outcomeIds: ['PHY10-M1-O02', 'PHY10-M1-O03'], competency: 'physical_cognition', cognitiveLevel: 'application', estimatedSeconds: 90
   },
   {
     id: 'phy10-assess-mid1-a-q20', subjectId: 'physics', topicId: 'phy10-t1', questionTypeId: 'phy10-qt14',
-    content: 'Vật có v₀ = 2 m/s, a = 3 m/s². Tính độ dịch chuyển sau 4 s, đơn vị mét.', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '32', acceptedAnswers: ['32', '32 m', '32,0'], validatorType: 'number', points: 1,
+    content: 'Vật có v₀ = 2 m/s, a = 3 m/s². Tính độ dịch chuyển sau 4 s, đơn vị mét.', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '32', acceptedAnswers: ['32', '32 m', '32,0'], validatorType: 'number', points: 2,
     outcomeIds: ['PHY10-M1-O07'], competency: 'physical_application', cognitiveLevel: 'application', estimatedSeconds: 100
-  },
-  {
-    id: 'phy10-assess-mid1-a-q21', subjectId: 'physics', topicId: 'phy10-t1', questionTypeId: 'phy10-qt15',
-    stimulus: { id: 'phy10-mid1-a-essay-data', title: 'Thí nghiệm xe chuyển động trên máng', dataTable: { caption: 'Tọa độ của xe theo thời gian', columns: [{ key: 't', label: 't (s)' }, { key: 'x', label: 'x (m)' }], rows: [{ t: 0, x: 0 }, { t: 1, x: 1 }, { t: 2, x: 4 }, { t: 3, x: 9 }] } },
-    content: 'Từ dữ liệu, hãy: (1) tính vận tốc trung bình trong từng khoảng 1 s; (2) nhận xét quy luật biến thiên vận tốc và ước lượng gia tốc; (3) nêu một giới hạn của kết luận và một cách cải thiện phép đo.',
-    responseType: 'constructed_response', difficulty: 'hard', sourceType: 'mock_exam', correctAnswer: 'Chấm theo rubric', validatorType: 'manual', points: 2,
-    answerSchema: { type: 'self-check', proofImageRequired: false, autoCheckMode: 'manual', fields: [{ key: 'response', label: 'Bài làm tự luận', valueType: 'text', placeholder: 'Trình bày phép tính, nhận xét và đánh giá dữ liệu...', required: true }] },
-    outcomeIds: ['PHY10-M1-O07', 'PHY10-M1-O08'], competency: 'physical_inquiry', cognitiveLevel: 'application', estimatedSeconds: 420
   }
 ];

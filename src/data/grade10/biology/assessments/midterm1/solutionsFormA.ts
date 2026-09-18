@@ -40,25 +40,5 @@ export const biologyMidterm1SolutionsFormA: Solution[] = [
   solved('bio10-assess-mid1-a-q17', 'Cụm Đúng/Sai yêu cầu xác định biến trước, sau đó đánh giá giới hạn kết luận.', 'a Sai: tỉ lệ nảy mầm là biến phụ thuộc. b Đúng: nồng độ NaCl được chủ động thay đổi. c Đúng: 0% là mốc không có tác động độ mặn. d Sai: dữ liệu chỉ áp dụng cho giống và khoảng nồng độ đã khảo sát.', 'a:S|b:Đ|c:Đ|d:S', ['Đánh đồng xu hướng trong mẫu với quy luật cho mọi loài.', 'Nhầm đại lượng đo với biến độc lập.'], ['Biến thí nghiệm', 'Giới hạn của kết luận']),
   solved('bio10-assess-mid1-a-q18', 'Mỗi phát biểu kiểm tra một quan hệ cấu trúc–chức năng, không chỉ định nghĩa tên gọi.', 'a Đúng: cả DNA và RNA là polymer nucleotide. b Sai: tRNA, rRNA có chức năng khác mRNA. c Đúng: trình tự amino acid chi phối cách gấp cuộn. d Sai: biến tính thường không phá toàn bộ liên kết peptide.', 'a:Đ|b:S|c:Đ|d:S', ['Gán chức năng mRNA cho mọi RNA.', 'Đồng nhất biến tính với thủy phân.'], ['Protein', 'Nucleic acid']),
   solved('bio10-assess-mid1-a-q19', 'Đếm số phép thử dương tính dựa trên màu đặc trưng, không đếm số phép thử đã làm.', 'Iodine xanh tím: tinh bột dương tính. Biuret tím: protein dương tính. Sudan III không tạo lớp đỏ cam: lipid âm tính. Có 2 nhóm dương tính.', '2', ['Đếm cả kết quả âm tính.', 'Nhầm màu của iodine với Biuret.'], ['Thực hành nhận biết phân tử sinh học']),
-  solved('bio10-assess-mid1-a-q20', 'Cụm “vận chuyển amino acid tới ribosome” là dấu hiệu đặc trưng của transfer RNA.', 'Tên viết tắt của transfer RNA là tRNA.', 'tRNA', ['Trả lời mRNA vì thấy từ “ribosome”.', 'Nhầm rRNA với tRNA.'], ['Các loại RNA']),
-  {
-    id: 'solution-bio10-assess-mid1-a-q21',
-    questionId: 'bio10-assess-mid1-a-q21',
-    recognition: 'Đây là dạng thiết kế thí nghiệm nhận biết chất: phải ghép đúng thuốc thử–mẫu, có đối chứng, dự đoán hiện tượng và giới hạn kết luận.',
-    detailedSteps: [
-      { order: 1, title: 'Bố trí phép thử và đối chứng', explanation: 'Chia mỗi mẫu vào ống riêng. Thêm iodine vào X để thử tinh bột; thêm Biuret vào Y để thử protein. Dùng ống nước cất với từng thuốc thử làm đối chứng âm; nếu có thể dùng mẫu tinh bột/protein đã biết làm đối chứng dương.', points: 0.75 },
-      { order: 2, title: 'Dự đoán hiện tượng', explanation: 'Nếu X chứa tinh bột, iodine chuyển xanh tím. Nếu Y chứa protein/peptide phù hợp, Biuret chuyển tím. Đối chứng âm phải không xuất hiện màu dương tính.', points: 0.5 },
-      { order: 3, title: 'Kết luận và kiểm soát', explanation: 'Chỉ kết luận nhận định được hỗ trợ trong điều kiện phép thử; ghi nhận kết quả đối chứng, dùng dụng cụ sạch và tránh nhiễm chéo.', points: 0.5 },
-      { order: 4, title: 'Giới hạn bằng chứng', explanation: 'Phép thử định tính không cho biết chính xác hàm lượng và kết quả âm tính không chứng minh tuyệt đối mẫu hoàn toàn không có chất nếu quy trình/thuốc thử không đạt.', points: 0.25 }
-    ],
-    finalAnswer: 'Chấm theo rubric',
-    commonMistakes: ['Không bố trí đối chứng.', 'Dùng sai thuốc thử.', 'Kết luận định lượng từ phép thử định tính.', 'Không kiểm soát nhiễm chéo.'],
-    reviewSuggestions: ['Thiết kế thí nghiệm', 'Thực hành nhận biết phân tử sinh học'],
-    rubric: [
-      { id: 'setup', description: 'Bố trí đúng hai phép thử và nêu được đối chứng.', points: 0.75, evidence: ['Iodine dùng cho X/tinh bột', 'Biuret dùng cho Y/protein', 'Có đối chứng âm hoặc dương phù hợp'], commonErrors: ['Đổi nhầm thuốc thử', 'Không có đối chứng'] },
-      { id: 'observation', description: 'Dự đoán đúng hiện tượng dương tính.', points: 0.5, evidence: ['Iodine xanh tím', 'Biuret tím'] },
-      { id: 'conclusion', description: 'Kết luận dựa trên kết quả và kiểm soát quy trình.', points: 0.5, evidence: ['Đối chiếu với đối chứng', 'Dụng cụ sạch/tránh nhiễm chéo', 'Kết luận có điều kiện'] },
-      { id: 'limitation', description: 'Nêu ít nhất một giới hạn hợp lí của phép thử.', points: 0.25, evidence: ['Định tính không xác định chính xác hàm lượng', 'Âm tính giả có thể do quy trình/thuốc thử'] }
-    ]
-  }
+  solved('bio10-assess-mid1-a-q20', 'Cụm “vận chuyển amino acid tới ribosome” là dấu hiệu đặc trưng của transfer RNA.', 'Tên viết tắt của transfer RNA là tRNA.', 'tRNA', ['Trả lời mRNA vì thấy từ “ribosome”.', 'Nhầm rRNA với tRNA.'], ['Các loại RNA'])
 ];

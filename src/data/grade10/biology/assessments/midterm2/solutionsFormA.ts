@@ -22,20 +22,5 @@ export const biologyMidterm2SolutionsFormA: Solution[] = [
   solved('bio10-assess-mid2-a-q17', 'Đọc cực đại và xu hướng hai phía, sau đó giới hạn kết luận trong enzyme đang xét.', 'a Đúng: 100 ở pH 7. b Sai: sau pH 7 hoạt tính giảm. c Đúng: pH ảnh hưởng ion hóa/cấu trúc. d Sai: không đại diện mọi enzyme.', 'a:Đ|b:S|c:Đ|d:S', ['Khái quát một enzyme cho mọi enzyme.'], ['Dữ liệu enzyme']),
   solved('bio10-assess-mid2-a-q18', 'Tách ba vấn đề: số lần nhân đôi, cách đếm NST và nguồn biến dị giao tử.', 'a Đúng. b Sai vì số tâm động chưa đổi sau S. c Đúng vì giảm phân giảm bộ NST, thụ tinh khôi phục. d Sai do phân li độc lập và trao đổi chéo.', 'a:Đ|b:S|c:Đ|d:S', ['Nhầm lượng DNA với số NST.', 'Cho giao tử giống nhau.'], ['Giảm phân và thụ tinh']),
   solved('bio10-assess-mid2-a-q19', 'Đếm các dòng có cột bọt ≥10 mm.', '25°C cho 12 mm và 37°C cho 20 mm; có 2 mức.', '2', ['Đếm cả 10°C hoặc 60°C.'], ['Thực hành catalase']),
-  solved('bio10-assess-mid2-a-q20', 'Mỗi lần nguyên phân đồng loạt làm số tế bào tăng gấp đôi.', 'Sau 4 lần: $2^4=16$ tế bào.', '16', ['Tính 2×4.', 'Không tính từ một tế bào ban đầu.'], ['Bài toán nguyên phân']),
-  {
-    id: 'solution-bio10-assess-mid2-a-q21', questionId: 'bio10-assess-mid2-a-q21', recognition: 'Dạng thiết kế thí nghiệm enzyme một biến: nhiệt độ là biến độc lập, hoạt tính được đại diện bằng oxygen/cột bọt trong cùng thời gian.',
-    detailedSteps: [
-      { order: 1, title: 'Biến và đối chứng', explanation: 'Nhiệt độ là biến độc lập; chiều cao cột bọt/thể tích O₂ trong cùng thời gian là biến phụ thuộc. Giữ lượng catalase, H₂O₂, pH, thể tích và thời gian giống nhau; có ống không enzyme hoặc enzyme đã đun sôi làm đối chứng âm.', points: 0.5 },
-      { order: 2, title: 'Quy trình', explanation: 'Cân bằng riêng enzyme và cơ chất ở từng nhiệt độ, trộn để bắt đầu đồng thời, đo cột bọt sau cùng một khoảng thời gian.', points: 0.5 },
-      { order: 3, title: 'Xử lí và kết luận', explanation: 'Lặp lại, tính trung bình, vẽ hoạt tính theo nhiệt độ; nhiệt độ có tín hiệu lớn nhất trong các mức đo là mức hoạt tính cao nhất, không khái quát ngoài phạm vi.', points: 0.75 },
-      { order: 4, title: 'Độ tin cậy', explanation: 'Dùng bể ổn nhiệt, mẫu lặp, dụng cụ định lượng khí tốt hơn cột bọt và kiểm soát thời điểm trộn.', points: 0.25 }
-    ], finalAnswer: 'Chấm theo rubric', commonMistakes: ['Không cân bằng nhiệt trước phản ứng.', 'Thay đổi lượng enzyme giữa các ống.', 'Không có đối chứng.', 'Gọi nhiệt độ đo cao nhất là tối ưu tuyệt đối.'], reviewSuggestions: ['Thực hành enzyme', 'Thiết kế thí nghiệm'],
-    rubric: [
-      { id: 'variables', description: 'Xác định biến và đối chứng phù hợp.', points: 0.5, evidence: ['Nhiệt độ là biến độc lập', 'O₂/cột bọt là biến phụ thuộc', 'Có điều kiện kiểm soát và đối chứng âm'] },
-      { id: 'procedure', description: 'Quy trình đo công bằng và đúng thời điểm.', points: 0.5, evidence: ['Cân bằng nhiệt', 'Bắt đầu đồng thời', 'Đo cùng thời gian'] },
-      { id: 'analysis', description: 'Lặp, xử lí dữ liệu và kết luận đúng giới hạn.', points: 0.75, evidence: ['Mẫu lặp/trung bình', 'Đồ thị hoặc so sánh', 'Không khái quát ngoài mức đo'] },
-      { id: 'reliability', description: 'Nêu biện pháp tăng độ tin cậy.', points: 0.25, evidence: ['Ổn nhiệt hoặc đo khí định lượng hoặc tăng số lần lặp'] }
-    ]
-  }
+  solved('bio10-assess-mid2-a-q20', 'Mỗi lần nguyên phân đồng loạt làm số tế bào tăng gấp đôi.', 'Sau 4 lần: $2^4=16$ tế bào.', '16', ['Tính 2×4.', 'Không tính từ một tế bào ban đầu.'], ['Bài toán nguyên phân'])
 ];

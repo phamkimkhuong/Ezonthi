@@ -22,20 +22,5 @@ export const biologyFinal2SolutionsFormA: Solution[] = [
   solved('bio10-assess-final2-a-q17', 'Đọc độ dốc để tìm pha tăng nhanh, đoạn gần ngang cho cân bằng và tránh khái quát tuyệt đối.', 'a Đúng: mật độ 1,2→31. b Đúng: 31→32 gần ổn định. c Sai: sinh và chết vẫn diễn ra. d Sai: thời gian pha phụ thuộc loài/điều kiện.', 'a:Đ|b:Đ|c:S|d:S', ['Cho pha cân bằng là ngừng sống.'], ['Đường cong sinh trưởng']),
   solved('bio10-assess-final2-a-q18', 'Đánh giá từng phát biểu theo phụ thuộc tế bào chủ, thuốc, phòng phối hợp và độ tin cậy nguồn.', 'a Đúng. b Sai: kháng sinh không đặc hiệu virus. c Đúng: các biện pháp bổ trợ nhau. d Sai: lượt chia sẻ không thay bằng chứng.', 'a:Đ|b:S|c:Đ|d:S', ['Tin phổ biến đồng nghĩa tin đúng.'], ['Virus và truyền thông']),
   solved('bio10-assess-final2-a-q19', 'Mỗi lần phân đôi trong điều kiện lí tưởng làm số tế bào gấp đôi.', '$2^5=32$ tế bào.', '32', ['Tính 2×5.'], ['Sinh trưởng vi khuẩn']),
-  solved('bio10-assess-final2-a-q20', 'Đếm các ngày có ca mới ≥10.', 'Ngày 3 có 13 và ngày 4 có 11; tổng 2 ngày.', '2', ['Đếm ngày 2 có 7.'], ['Dữ liệu dịch tễ']),
-  {
-    id: 'solution-bio10-assess-final2-a-q21', questionId: 'bio10-assess-final2-a-q21', recognition: 'Dạng dự án lên men một biến: nhiệt độ là biến độc lập; tốc độ acid hóa/đông sữa là tín hiệu; an toàn là tiêu chí bắt buộc.',
-    detailedSteps: [
-      { order: 1, title: 'Biến và bố trí', explanation: 'Nhiệt độ là biến độc lập; thời gian đạt pH/độ chua hoặc độ đông xác định là biến phụ thuộc. Giữ loại và thể tích sữa, lượng men, dụng cụ và thời gian đo giống nhau; có mẫu không men làm đối chứng âm.', points: 0.5 },
-      { order: 2, title: 'Quy trình và đo', explanation: 'Dụng cụ sạch, chia mẫu đồng đều, bổ sung men cùng lúc, ủ ở ba nhiệt độ; đo pH/độ chua hoặc thời gian đông theo lịch cố định.', points: 0.5 },
-      { order: 3, title: 'Lặp và kết luận', explanation: 'Mỗi nhiệt độ có mẫu lặp, tính trung bình và so sánh tốc độ; chỉ kết luận trong nhiệt độ và loại men khảo sát.', points: 0.5 },
-      { order: 4, title: 'An toàn', explanation: 'Không nếm mẫu nghiên cứu; loại bỏ khi bao bì phồng bất thường, mốc, mùi/màu lạ hoặc quy trình vệ sinh không bảo đảm.', points: 0.5 }
-    ], finalAnswer: 'Chấm theo rubric', commonMistakes: ['Không có mẫu lặp.', 'Thay đổi cả lượng men.', 'Đánh giá bằng nếm.', 'Dùng sản phẩm mốc/mùi lạ.'], reviewSuggestions: ['Dự án lên men', 'Thiết kế thí nghiệm'],
-    rubric: [
-      { id: 'variables', description: 'Xác định biến và đối chứng.', points: 0.5, evidence: ['Nhiệt độ độc lập', 'pH/thời gian đông phụ thuộc', 'Giữ giống lượng men/sữa', 'Có mẫu không men'] },
-      { id: 'procedure', description: 'Quy trình sạch và cách đo nhất quán.', points: 0.5, evidence: ['Dụng cụ sạch', 'Chia mẫu đồng đều', 'Đo theo lịch/cùng tiêu chí'] },
-      { id: 'analysis', description: 'Lặp, xử lí và kết luận đúng phạm vi.', points: 0.5, evidence: ['Mẫu lặp', 'Trung bình/so sánh', 'Giới hạn theo nhiệt độ và giống'] },
-      { id: 'safety', description: 'Nêu tiêu chí loại bỏ sản phẩm không an toàn.', points: 0.5, evidence: ['Không nếm mẫu', 'Loại mốc/mùi/màu/phồng bất thường'] }
-    ]
-  }
+  solved('bio10-assess-final2-a-q20', 'Đếm các ngày có ca mới ≥10.', 'Ngày 3 có 13 và ngày 4 có 11; tổng 2 ngày.', '2', ['Đếm ngày 2 có 7.'], ['Dữ liệu dịch tễ'])
 ];

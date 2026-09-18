@@ -29,23 +29,5 @@ export const biologyFinal1SolutionsFormB: Solution[] = [
   solved('bio10-assess-final1-b-q17', 'Đánh giá lần lượt cấu trúc chung, cấu trúc đặc trưng và sự chuyên hóa/phối hợp.', 'a Đúng: mọi tế bào có màng sinh chất. b Sai: thực vật và động vật đều có ti thể. c Đúng: hệ tiết protein phát triển. d Sai: bào quan phối hợp thành hệ thống.', 'a:Đ|b:S|c:Đ|d:S', ['Cho ti thể chỉ có ở động vật.', 'Cho bào quan độc lập.'], ['So sánh tế bào', 'Hệ thống nội màng']),
   solved('bio10-assess-final1-b-q18', 'Đọc chiều biến đổi khối lượng và đánh giá thiết kế, không suy diễn quá độ phân giải dữ liệu.', 'a Đúng: khối lượng giảm dần khi NaCl tăng. b Đúng: ở 0% mẫu nhận nước. c Sai: điểm 0% thay đổi nằm giữa 0,5% và 1,0%. d Sai: cần mẫu lặp để ước lượng sai số.', 'a:Đ|b:Đ|c:S|d:S', ['Gọi 0,5% là đẳng trương chính xác.', 'Cho một mẫu loại bỏ sai số.'], ['Đọc dữ liệu thẩm thấu']),
   solved('bio10-assess-final1-b-q19', 'Độ phóng đại tổng cộng bằng thị kính nhân vật kính.', '$10\\times20=200$ lần.', '200', ['Cộng hai độ phóng đại.'], ['Kính hiển vi']),
-  solved('bio10-assess-final1-b-q20', 'Đề hỏi độ lớn phần trăm giảm, lấy phần khối lượng mất chia khối lượng ban đầu.', '$\\frac{4{,}00-3{,}60}{4{,}00}\\times100\%=10\%$.', '10', ['Chia cho khối lượng cuối.', 'Ghi −10 dù đề hỏi độ lớn phần trăm giảm.'], ['Xử lí dữ liệu thực nghiệm']),
-  {
-    id: 'solution-bio10-assess-final1-b-q21', questionId: 'bio10-assess-final1-b-q21',
-    recognition: 'Dạng thiết kế thí nghiệm thẩm thấu: thay đổi nồng độ NaCl, đo phần trăm đổi khối lượng và tìm khoảng mà giá trị đổi dấu/gần 0%.',
-    detailedSteps: [
-      { order: 1, title: 'Xác định biến và bố trí', explanation: 'Biến độc lập là nồng độ NaCl; biến phụ thuộc là phần trăm thay đổi khối lượng. Giữ giống kích thước mẫu, thể tích, thời gian và nhiệt độ. Dung dịch 0% là mốc so sánh.', points: 0.5 },
-      { order: 2, title: 'Tiến hành và đo', explanation: 'Cân trước, ngâm các mẫu củ cải cùng thời gian, lấy ra thấm khô đồng nhất rồi cân sau; dùng nhiều mẫu lặp ở mỗi nồng độ.', points: 0.5 },
-      { order: 3, title: 'Xử lí và xác định khoảng', explanation: 'Tính % đổi khối lượng = (sau−trước)/trước×100, lấy trung bình và biểu diễn theo nồng độ. Khoảng giao 0%/đổi dấu là khoảng gần đẳng trương.', points: 0.75 },
-      { order: 4, title: 'Độ tin cậy và giới hạn', explanation: 'Chuẩn hóa lát cắt, lặp mẫu, kiểm soát điều kiện; thử thêm nồng độ trung gian trong khoảng đổi dấu để tăng độ phân giải.', points: 0.25 }
-    ],
-    finalAnswer: 'Chấm theo rubric', commonMistakes: ['Không thấm khô trước khi cân.', 'Không có mẫu lặp.', 'Chọn ngay nồng độ gần nhất làm giá trị chính xác.', 'Thay đổi đồng thời nhiều điều kiện.'],
-    reviewSuggestions: ['Thiết kế thí nghiệm', 'Thẩm thấu', 'Xử lí dữ liệu'],
-    rubric: [
-      { id: 'variables', description: 'Xác định đúng biến và điều kiện kiểm soát.', points: 0.5, evidence: ['NaCl là biến độc lập', '% đổi khối lượng là biến phụ thuộc', 'Kiểm soát mẫu/thời gian/thể tích/nhiệt độ'] },
-      { id: 'procedure', description: 'Quy trình cân–ngâm–thấm–cân và lặp mẫu hợp lí.', points: 0.5, evidence: ['Cân trước và sau', 'Thấm khô thống nhất', 'Có mẫu lặp'] },
-      { id: 'analysis', description: 'Tính và diễn giải đúng dữ liệu để tìm khoảng đẳng trương.', points: 0.75, evidence: ['Công thức phần trăm đúng', 'Tìm nơi gần 0% hoặc đổi dấu', 'Dùng trung bình/đồ thị'] },
-      { id: 'reliability', description: 'Nêu biện pháp tăng độ tin cậy hoặc tinh chỉnh nồng độ.', points: 0.25, evidence: ['Lặp mẫu hoặc thử thêm nồng độ trung gian'] }
-    ]
-  }
+  solved('bio10-assess-final1-b-q20', 'Đề hỏi độ lớn phần trăm giảm, lấy phần khối lượng mất chia khối lượng ban đầu.', '$\\frac{4{,}00-3{,}60}{4{,}00}\\times100\%=10\%$.', '10', ['Chia cho khối lượng cuối.', 'Ghi −10 dù đề hỏi độ lớn phần trăm giảm.'], ['Xử lí dữ liệu thực nghiệm'])
 ];

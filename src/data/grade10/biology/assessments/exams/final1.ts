@@ -1,10 +1,9 @@
 import type { MockExam } from '@/types';
 
 const instructions = [
-  'Thời gian làm bài 45 phút. Đề gồm 16 câu nhiều lựa chọn (4,0 điểm), 2 cụm Đúng/Sai (2,0 điểm), 2 câu trả lời ngắn (2,0 điểm) và 1 câu tự luận/thực nghiệm (2,0 điểm).',
+  'Thời gian làm bài 45 phút. Đề gồm 16 câu nhiều lựa chọn (4,0 điểm), 2 cụm Đúng/Sai (2,0 điểm) và 2 câu trả lời ngắn (4,0 điểm).',
   'Ở phần Đúng/Sai, chọn đủ bốn phát biểu trong mỗi cụm; phần trả lời ngắn chỉ ghi kết quả được yêu cầu.',
-  'Phần tự luận phải nêu biến, đối chứng, quy trình đo, cách xử lí dữ liệu và giới hạn kết luận.',
-  'Điểm 8,0 phần khách quan được chấm ngay; 2,0 điểm tự luận ở trạng thái chờ chấm theo rubric.'
+  'Sau khi nộp, hệ thống tự động chấm và hiển thị kết quả ngay lập tức.'
 ];
 
 export const biologyFinal1Exams: MockExam[] = [
@@ -17,7 +16,7 @@ export const biologyFinal1Exams: MockExam[] = [
       'bio10-assess-final1-a-q05', 'bio10-assess-final1-a-q06', 'bio10-assess-final1-a-q07', 'bio10-assess-final1-a-q08',
       'bio10-assess-final1-a-q09', 'bio10-assess-final1-a-q10', 'bio10-assess-final1-a-q11', 'bio10-assess-final1-a-q12',
       'bio10-assess-final1-a-q13', 'bio10-assess-final1-a-q14', 'bio10-assess-final1-a-q15', 'bio10-assess-final1-a-q16',
-      'bio10-assess-final1-a-q17', 'bio10-assess-final1-a-q18', 'bio10-assess-final1-a-q19', 'bio10-assess-final1-a-q20', 'bio10-assess-final1-a-q21'
+      'bio10-assess-final1-a-q17', 'bio10-assess-final1-a-q18', 'bio10-assess-final1-a-q19', 'bio10-assess-final1-a-q20'
     ]
   },
   {
@@ -29,7 +28,7 @@ export const biologyFinal1Exams: MockExam[] = [
       'bio10-assess-final1-b-q05', 'bio10-assess-final1-b-q06', 'bio10-assess-final1-b-q07', 'bio10-assess-final1-b-q08',
       'bio10-assess-final1-b-q09', 'bio10-assess-final1-b-q10', 'bio10-assess-final1-b-q11', 'bio10-assess-final1-b-q12',
       'bio10-assess-final1-b-q13', 'bio10-assess-final1-b-q14', 'bio10-assess-final1-b-q15', 'bio10-assess-final1-b-q16',
-      'bio10-assess-final1-b-q17', 'bio10-assess-final1-b-q18', 'bio10-assess-final1-b-q19', 'bio10-assess-final1-b-q20', 'bio10-assess-final1-b-q21'
+      'bio10-assess-final1-b-q17', 'bio10-assess-final1-b-q18', 'bio10-assess-final1-b-q19', 'bio10-assess-final1-b-q20'
     ]
   }
 ];

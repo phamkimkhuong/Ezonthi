@@ -106,19 +106,12 @@ export const physicsMidterm1QuestionsFormB: Question[] = [
   },
   {
     id: 'phy10-assess-mid1-b-q19', subjectId: 'physics', topicId: 'phy10-t1', questionTypeId: 'phy10-qt10',
-    content: 'Một vật đi từ x = −5 m đến x = 19 m trong 6 s. Tính vận tốc trung bình, đơn vị m/s.', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '4', acceptedAnswers: ['4', '4 m/s', '4,0'], validatorType: 'number', points: 1,
+    content: 'Một vật đi từ x = −5 m đến x = 19 m trong 6 s. Tính vận tốc trung bình, đơn vị m/s.', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '4', acceptedAnswers: ['4', '4 m/s', '4,0'], validatorType: 'number', points: 2,
     outcomeIds: ['PHY10-M1-O02', 'PHY10-M1-O03'], competency: 'physical_cognition', cognitiveLevel: 'application', estimatedSeconds: 85
   },
   {
     id: 'phy10-assess-mid1-b-q20', subjectId: 'physics', topicId: 'phy10-t1', questionTypeId: 'phy10-qt14',
-    content: 'Vật có v₀ = 10 m/s, a = −2 m/s². Tính độ dịch chuyển trong 3 s, đơn vị mét.', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '21', acceptedAnswers: ['21', '21 m', '21,0'], validatorType: 'number', points: 1,
+    content: 'Vật có v₀ = 10 m/s, a = −2 m/s². Tính độ dịch chuyển trong 3 s, đơn vị mét.', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '21', acceptedAnswers: ['21', '21 m', '21,0'], validatorType: 'number', points: 2,
     outcomeIds: ['PHY10-M1-O07'], competency: 'physical_application', cognitiveLevel: 'application', estimatedSeconds: 100
-  },
-  {
-    id: 'phy10-assess-mid1-b-q21', subjectId: 'physics', topicId: 'phy10-t1', questionTypeId: 'phy10-qt15',
-    stimulus: { id: 'phy10-mid1-b-essay-data', title: 'Dữ liệu vận tốc của xe', dataTable: { caption: 'Vận tốc theo thời gian', columns: [{ key: 't', label: 't (s)' }, { key: 'v', label: 'v (m/s)' }], rows: [{ t: 0, v: 2 }, { t: 1, v: 4 }, { t: 2, v: 6 }, { t: 3, v: 8 }] } },
-    content: 'Từ dữ liệu, hãy: (1) tính gia tốc trong từng khoảng 1 s; (2) nhận xét chuyển động và tính độ dịch chuyển trong 3 s; (3) nêu một giới hạn của dữ liệu và một cách cải thiện phép đo.', responseType: 'constructed_response', difficulty: 'hard', sourceType: 'mock_exam', correctAnswer: 'Chấm theo rubric', validatorType: 'manual', points: 2,
-    answerSchema: { type: 'self-check', proofImageRequired: false, autoCheckMode: 'manual', fields: [{ key: 'response', label: 'Bài làm tự luận', valueType: 'text', placeholder: 'Trình bày phép tính, mô hình chuyển động và đánh giá dữ liệu...', required: true }] },
-    outcomeIds: ['PHY10-M1-O07', 'PHY10-M1-O08'], competency: 'physical_inquiry', cognitiveLevel: 'application', estimatedSeconds: 420
   }
 ];

@@ -105,19 +105,12 @@ export const physicsFinal1QuestionsFormB: Question[] = [
   },
   {
     id: 'phy10-assess-final1-b-q19', subjectId: 'physics', topicId: 'phy10-t1', questionTypeId: 'phy10-qt16',
-    content: 'Một vật rơi tự do từ nghỉ trong 2,5 s, lấy g = 10 m/s². Tốc độ ngay trước khi kết thúc khoảng này bằng bao nhiêu m/s?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '25', acceptedAnswers: ['25', '25 m/s', '25,0'], validatorType: 'number', points: 1,
+    content: 'Một vật rơi tự do từ nghỉ trong 2,5 s, lấy g = 10 m/s². Tốc độ ngay trước khi kết thúc khoảng này bằng bao nhiêu m/s?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '25', acceptedAnswers: ['25', '25 m/s', '25,0'], validatorType: 'number', points: 2,
     outcomeIds: ['PHY10-M1-O09'], competency: 'physical_application', cognitiveLevel: 'application', estimatedSeconds: 80
   },
   {
     id: 'phy10-assess-final1-b-q20', subjectId: 'physics', topicId: 'phy10-t1', questionTypeId: 'phy10-qt17',
-    content: 'Một vật ném ngang với tốc độ 18 m/s và bay trong 2 s. Tầm xa theo phương ngang bằng bao nhiêu mét?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '36', acceptedAnswers: ['36', '36 m', '36,0'], validatorType: 'number', points: 1,
+    content: 'Một vật ném ngang với tốc độ 18 m/s và bay trong 2 s. Tầm xa theo phương ngang bằng bao nhiêu mét?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '36', acceptedAnswers: ['36', '36 m', '36,0'], validatorType: 'number', points: 2,
     outcomeIds: ['PHY10-M1-O10'], competency: 'physical_application', cognitiveLevel: 'application', estimatedSeconds: 85
-  },
-  {
-    id: 'phy10-assess-final1-b-q21', subjectId: 'physics', topicId: 'phy10-t2', questionTypeId: 'phy10-qt22',
-    stimulus: { id: 'phy10-final1-b-force-data', title: 'Thí nghiệm kéo xe trên mặt ngang', content: 'Lực cản được coi gần như không đổi trong miền khảo sát.', dataTable: { caption: 'Lực kéo và gia tốc đo được', columns: [{ key: 'F', label: 'F (N)' }, { key: 'a', label: 'a (m/s²)' }], rows: [{ F: 3, a: 0 }, { F: 6, a: 1 }, { F: 9, a: 2 }, { F: 12, a: 3 }] } },
-    content: 'Dựa vào định luật II Newton và dữ liệu: (1) xác định khối lượng xe; (2) xác định lực cản; (3) dự đoán gia tốc khi lực kéo là 15 N; (4) nêu một giới hạn và một cải thiện của phép đo.', responseType: 'constructed_response', difficulty: 'hard', sourceType: 'mock_exam', correctAnswer: 'Chấm theo rubric', validatorType: 'manual', points: 2,
-    answerSchema: { type: 'self-check', proofImageRequired: false, autoCheckMode: 'manual', fields: [{ key: 'response', label: 'Bài làm tự luận', valueType: 'text', placeholder: 'Lập mô hình lực, khai thác độ dốc và đánh giá dữ liệu...', required: true }] },
-    outcomeIds: ['PHY10-M2-O02', 'PHY10-M2-O04', 'PHY10-M2-O08'], competency: 'physical_inquiry', cognitiveLevel: 'application', estimatedSeconds: 480
   }
 ];

@@ -105,19 +105,12 @@ export const physicsMidterm2QuestionsFormA: Question[] = [
   },
   {
     id: 'phy10-assess-mid2-a-q19', subjectId: 'physics', topicId: 'phy10-t3', questionTypeId: 'phy10-qt37',
-    content: 'Vật được thả từ nghỉ ở độ cao 20 m, bỏ qua lực cản, lấy g = 10 m/s². Tốc độ tại mốc thế năng bằng 0 là bao nhiêu m/s?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '20', acceptedAnswers: ['20', '20 m/s', '20,0'], validatorType: 'number', points: 1,
+    content: 'Vật được thả từ nghỉ ở độ cao 20 m, bỏ qua lực cản, lấy g = 10 m/s². Tốc độ tại mốc thế năng bằng 0 là bao nhiêu m/s?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '20', acceptedAnswers: ['20', '20 m/s', '20,0'], validatorType: 'number', points: 2,
     outcomeIds: ['PHY10-M3-O07'], competency: 'physical_application', cognitiveLevel: 'application', estimatedSeconds: 100
   },
   {
     id: 'phy10-assess-mid2-a-q20', subjectId: 'physics', topicId: 'phy10-t4', questionTypeId: 'phy10-qt43',
-    content: 'Vật 2 kg chuyển động 4 m/s va chạm mềm với vật 2 kg đứng yên. Vận tốc chung sau va chạm bằng bao nhiêu m/s?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '2', acceptedAnswers: ['2', '2 m/s', '2,0'], validatorType: 'number', points: 1,
+    content: 'Vật 2 kg chuyển động 4 m/s va chạm mềm với vật 2 kg đứng yên. Vận tốc chung sau va chạm bằng bao nhiêu m/s?', responseType: 'short_answer', difficulty: 'medium', sourceType: 'mock_exam', correctAnswer: '2', acceptedAnswers: ['2', '2 m/s', '2,0'], validatorType: 'number', points: 2,
     outcomeIds: ['PHY10-M4-O03', 'PHY10-M4-O04'], competency: 'physical_application', cognitiveLevel: 'application', estimatedSeconds: 100
-  },
-  {
-    id: 'phy10-assess-mid2-a-q21', subjectId: 'physics', topicId: 'phy10-t3', questionTypeId: 'phy10-qt38',
-    stimulus: { id: 'phy10-mid2-a-motor', title: 'Thử nghiệm động cơ nâng vật', content: 'Động cơ nâng đều vật 2,0 kg lên cao 1,5 m trong 4,0 s. Lấy g = 10 m/s². Điện năng cung cấp trong lần thử là 40 J.' },
-    content: 'Hãy: (1) tính công có ích; (2) tính công suất có ích; (3) tính hiệu suất; (4) nêu dạng năng lượng hao phí và một cải thiện giúp kết luận thí nghiệm tin cậy hơn.', responseType: 'constructed_response', difficulty: 'hard', sourceType: 'mock_exam', correctAnswer: 'Chấm theo rubric', validatorType: 'manual', points: 2,
-    answerSchema: { type: 'self-check', proofImageRequired: false, autoCheckMode: 'manual', fields: [{ key: 'response', label: 'Bài làm tự luận', valueType: 'text', placeholder: 'Trình bày năng lượng, công suất, hiệu suất và đánh giá thí nghiệm...', required: true }] },
-    outcomeIds: ['PHY10-M3-O03', 'PHY10-M3-O04', 'PHY10-M3-O08'], competency: 'physical_inquiry', cognitiveLevel: 'application', estimatedSeconds: 450
   }
 ];

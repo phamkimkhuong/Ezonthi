@@ -21,15 +21,14 @@ export const physicsMidterm1Blueprint: AssessmentBlueprint = {
     'PHY10-M1-O05', 'PHY10-M1-O06', 'PHY10-M1-O07', 'PHY10-M1-O08'
   ],
   competencyWeights: {
-    physical_cognition: 0.4,
-    physical_inquiry: 0.25,
-    physical_application: 0.35
+    physical_cognition: 0.525,
+    physical_inquiry: 0.15,
+    physical_application: 0.325
   },
   difficultyWeights: { easy: 0.3, medium: 0.5, hard: 0.2 },
   sections: [
     { id: 'mcq', title: 'Phần I. Trắc nghiệm nhiều lựa chọn', itemCount: 16, points: 4, responseType: 'multiple_choice' },
     { id: 'tf', title: 'Phần II. Trắc nghiệm Đúng/Sai', itemCount: 2, points: 2, responseType: 'true_false_cluster' },
-    { id: 'short', title: 'Phần III. Trả lời ngắn', itemCount: 2, points: 2, responseType: 'short_answer' },
-    { id: 'essay', title: 'Phần IV. Tự luận/Thực nghiệm', itemCount: 1, points: 2, responseType: 'constructed_response' }
+    { id: 'short', title: 'Phần III. Trả lời ngắn', itemCount: 2, points: 4, responseType: 'short_answer' }
   ]
 };
