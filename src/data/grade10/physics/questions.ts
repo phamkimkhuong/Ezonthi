@@ -35,8 +35,6 @@ import { g10PhysicsModule6Expansion2Questions } from './modules/module6_solid_de
 import { g10PhysicsModule6GapFillQuestions } from './modules/module6_solid_deformation/practiceGapFill/questions';
 import { g10PhysicsModule6RemediationQuestions } from './modules/module6_solid_deformation/practiceRemediation';
 import { g10PhysicsPracticeMetadata } from './practiceMetadata';
-import { g10PhysicsPracticeChoices } from './practiceChoices';
-import { applyPhysics10PracticeChoice } from './practiceChoiceNormalizer';
 
 const moduleQuestions: Question[] = [
   ...g10PhysicsModule0Questions,
@@ -79,16 +77,9 @@ const moduleQuestions: Question[] = [
 const practiceMetadataByQuestionId = new Map(
   g10PhysicsPracticeMetadata.map(metadata => [metadata.questionId, metadata])
 );
-const choiceByQuestionId = new Map(
-  g10PhysicsPracticeChoices.map(choice => [choice.id, choice])
-);
 
-/** Aggregator: chuẩn hóa câu luyện tập về A–B–C–D rồi gắn metadata học tập. */
+/** Aggregator: giữ nguyên bản chất câu hỏi (trắc nghiệm hoặc tự luận điền số) và gắn metadata học tập. */
 export const g10PhysicsQuestions: Question[] = moduleQuestions.map(question => {
-  const normalizedQuestion = applyPhysics10PracticeChoice(
-    question,
-    choiceByQuestionId.get(question.id)
-  );
   const metadata = practiceMetadataByQuestionId.get(question.id);
-  return metadata ? { ...normalizedQuestion, ...metadata, id: question.id } : normalizedQuestion;
+  return metadata ? { ...question, ...metadata, id: question.id } : question;
 });

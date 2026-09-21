@@ -69,7 +69,13 @@ export function validateAiRequest(raw: unknown): GeminiProxyRequest {
       throw new AiRequestValidationError('Nội dung hội thoại quá dài.');
     }
   }
-  if (data.image !== undefined) validateImage(data.image);
+  if (data.image !== undefined) {
+    if (!data.image) {
+      delete (data as any).image;
+    } else {
+      validateImage(data.image);
+    }
+  }
   if (data.responseSchema !== undefined && byteLength(data.responseSchema) > AI_REQUEST_LIMITS.responseSchemaBytes) {
     throw new AiRequestValidationError('Response schema quá lớn.');
   }

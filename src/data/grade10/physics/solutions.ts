@@ -34,8 +34,6 @@ import { g10PhysicsModule6ExpansionSolutions } from './modules/module6_solid_def
 import { g10PhysicsModule6Expansion2Solutions } from './modules/module6_solid_deformation/practiceExpansion2/solutions';
 import { g10PhysicsModule6GapFillSolutions } from './modules/module6_solid_deformation/practiceGapFill/solutions';
 import { g10PhysicsModule6RemediationSolutions } from './modules/module6_solid_deformation/practiceRemediation';
-import { g10PhysicsQuestions } from './questions';
-import { applyPhysics10PracticeChoiceSolution } from './practiceChoiceNormalizer';
 
 /** Aggregator: không đặt dữ liệu lời giải thô tại file gốc. */
 const rawSolutions: Solution[] = [
@@ -76,14 +74,5 @@ const rawSolutions: Solution[] = [
   ...g10PhysicsModule6RemediationSolutions
 ];
 
-const questionById = new Map(
-  g10PhysicsQuestions.map(question => [question.id, question])
-);
-
-/** Aggregator: đồng bộ đáp án lời giải với lựa chọn A–B–C–D đã chuẩn hóa. */
-export const g10PhysicsSolutions: Solution[] = rawSolutions.map(solution =>
-  applyPhysics10PracticeChoiceSolution(
-    solution,
-    questionById.get(solution.questionId)
-  )
-);
+/** Aggregator: xuất trực tiếp lời giải chi tiết chuẩn khớp với câu hỏi. */
+export const g10PhysicsSolutions: Solution[] = rawSolutions;

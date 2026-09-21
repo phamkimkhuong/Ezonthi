@@ -69,14 +69,19 @@ export async function appendChatMessages(
         createdAt: now,
       });
     });
+    const isNew = !session.exists();
+    const derivedGrade = metadata?.gradeId || (courseKey.startsWith('grade') ? courseKey.split('_')[0] : 'grade9');
+    const derivedSubject = metadata?.subjectId || (courseKey.startsWith('grade') ? courseKey.split('_').slice(1).join('_') : courseKey);
+    const derivedTitle = metadata?.title || safeMessages[0]?.text.slice(0, 60) || 'Cuộc trò chuyện mới';
+
     transaction.set(targetSession, {
       messageCount: currentCount + safeMessages.length,
       updatedAt: now,
       storageVersion: 2,
-      ...(metadata && !session.exists ? {
-        title: metadata.title.slice(0, 120),
-        subjectId: metadata.subjectId,
-        gradeId: metadata.gradeId,
+      ...(isNew ? {
+        title: derivedTitle.slice(0, 120),
+        subjectId: derivedSubject,
+        gradeId: derivedGrade,
         createdAt: now,
       } : {}),
     }, { merge: true });

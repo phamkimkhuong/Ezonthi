@@ -17,6 +17,7 @@ import { getSubjectFromQuestionTypeId, getGradeCodeFromQuestionTypeId, getSubjec
 import { SeoHead } from '@/components/common/SeoHead';
 import { createBreadcrumbSchema } from '@/utils/seoSchemas';
 import { buildCoursePath, isCourseContext } from '@/utils/courseRoutes';
+import { revokeLocalProofImages } from '@/utils/proofImages';
 
 import confetti from 'canvas-confetti';
 
@@ -286,22 +287,32 @@ export const PracticeEngine: React.FC = () => {
     ? currentSolutions.find(s => s.questionId === questionAtIdx.id) || null
     : null;
 
-  const completedQuestionIds = useMemo(() => {
+  const questionStatusMap = useMemo(() => {
+    const statusMap = new Map<string, { isCompleted: boolean; isCorrect: boolean }>();
+
     if (isExamMode) {
-      if (!isExamSubmitted) {
-        return new Set(Object.keys(examAnswers));
+      if (isExamSubmitted) {
+        examQuestions.forEach(q => {
+          const ans = examAnswers[q.id] || '';
+          const correct = validateAnswer(q, ans);
+          statusMap.set(q.id, { isCompleted: true, isCorrect: correct });
+        });
       } else {
-        return new Set(examQuestions.map(q => q.id));
+        Object.keys(examAnswers).forEach(qId => {
+          statusMap.set(qId, { isCompleted: true, isCorrect: false });
+        });
       }
+      return statusMap;
     }
 
     const userId = user?.uid || 'guest';
     const attempts = storageService.getAttempts(userId);
+    const questionIdSet = new Set(questions.map(q => q.id));
 
     // Tìm lần làm gần nhất cho từng câu hỏi
     const latestAttemptsByQId: Record<string, UserAttempt> = {};
     attempts.forEach(a => {
-      if (a.questionTypeId === questionTypeId) {
+      if (questionIdSet.has(a.questionId)) {
         const existing = latestAttemptsByQId[a.questionId];
         if (!existing || new Date(a.createdAt).getTime() > new Date(existing.createdAt).getTime()) {
           latestAttemptsByQId[a.questionId] = a;
@@ -309,14 +320,29 @@ export const PracticeEngine: React.FC = () => {
       }
     });
 
-    const completed = new Set<string>();
-    Object.entries(latestAttemptsByQId).forEach(([qId]) => {
-      completed.add(qId);
+    Object.entries(latestAttemptsByQId).forEach(([qId, attempt]) => {
+      statusMap.set(qId, { isCompleted: true, isCorrect: attempt.isCorrect });
     });
 
+    // Nếu câu hỏi hiện tại có existingAttempt, đồng bộ ngay lập tức
+    if (existingAttempt && questionIdSet.has(existingAttempt.questionId)) {
+      statusMap.set(existingAttempt.questionId, {
+        isCompleted: true,
+        isCorrect: existingAttempt.isCorrect
+      });
+    }
+
     void progressVersion;
-    return completed;
-  }, [user, questionTypeId, progressVersion, isExamMode, isExamSubmitted, examAnswers, examQuestions]);
+    return statusMap;
+  }, [user, questions, progressVersion, isExamMode, isExamSubmitted, examAnswers, examQuestions, existingAttempt]);
+
+  const completedQuestionIds = useMemo(() => {
+    const set = new Set<string>();
+    questionStatusMap.forEach((status, qId) => {
+      if (status.isCompleted) set.add(qId);
+    });
+    return set;
+  }, [questionStatusMap]);
 
   const getSubTenseProgress = useCallback((qIds: string[]) => {
     const done = qIds.filter(id => completedQuestionIds.has(id)).length;
@@ -480,6 +506,48 @@ export const PracticeEngine: React.FC = () => {
     }
   }, [currentIdx, questionTypeId, questions, user, progressVersion, isExamMode, clearUpload]);
 
+  // Điều hướng chuyển câu đồng bộ (Zero-Jank / Single-Pass Render)
+  // Tính toán trước kết quả bài làm cũ ngay lập tức để đồng bộ trạng thái trong 1 render duy nhất,
+  // loại bỏ hoàn toàn hiện tượng chớp tắt QuestionCard và delay animation của ResultCard.
+  const navigateToQuestion = useCallback((targetIdx: number) => {
+    if (targetIdx < 0 || targetIdx >= questions.length) return;
+
+    revokeLocalProofImages(proofImages);
+    clearUpload();
+    setStructuredAnswer({});
+    setSelectedOption(null);
+    setIsSubmitting(false);
+    setSubmitError(null);
+    setHintLevel(0);
+    setQuestionStartAt(Date.now());
+
+    const targetQ = questions[targetIdx];
+    if (!targetQ) return;
+
+    const userId = user?.uid || 'guest';
+    const userAttemptsLocal = storageService.getAttempts(userId);
+    const attemptsForQ = userAttemptsLocal
+      .filter(a => a.questionId === targetQ.id)
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+
+    const latestAttempt = attemptsForQ[0] || null;
+    const cacheKey = `${targetQ.id}_${userId}_${progressVersion}`;
+    loadedQuestionIdRef.current = cacheKey;
+
+    setCurrentIdx(targetIdx);
+    if (latestAttempt) {
+      setExistingAttempt(latestAttempt);
+      setIsSubmitted(true);
+      setIsCorrect(latestAttempt.isCorrect);
+      setPastAttempts(attemptsForQ.slice(1, 3));
+    } else {
+      setExistingAttempt(null);
+      setIsSubmitted(false);
+      setIsCorrect(false);
+      setPastAttempts([]);
+    }
+  }, [questions, user, progressVersion, clearUpload, proofImages]);
+
   const handleExamSubmit = useCallback(async (isTimeOut = false) => {
     if (isExamSubmitted) return;
 
@@ -597,6 +665,8 @@ export const PracticeEngine: React.FC = () => {
 
   // Phím tắt bàn phím điều hướng chuyển câu (Mũi tên Trái ← / Phải →)
   useEffect(() => {
+    if (isExamMode) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
       const activeEl = document.activeElement;
       const isInput = activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || (activeEl as HTMLElement).isContentEditable);
@@ -605,23 +675,19 @@ export const PracticeEngine: React.FC = () => {
       if (e.key === 'ArrowRight') {
         if (currentIdx < questions.length - 1) {
           e.preventDefault();
-          clearUpload();
-          setCurrentIdx(prev => prev + 1);
-          resetQuestionState();
+          navigateToQuestion(currentIdx + 1);
         }
       } else if (e.key === 'ArrowLeft') {
         if (currentIdx > 0) {
           e.preventDefault();
-          clearUpload();
-          setCurrentIdx(prev => prev - 1);
-          resetQuestionState();
+          navigateToQuestion(currentIdx - 1);
         }
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIdx, questions.length, clearUpload, resetQuestionState]);
+  }, [currentIdx, questions.length, isExamMode, navigateToQuestion]);
 
   const startExamPractice = () => {
     if (examTenses.length === 0) {
@@ -860,14 +926,16 @@ export const PracticeEngine: React.FC = () => {
       }
     }
 
+    const userId = user?.uid || 'guest';
+    loadedQuestionIdRef.current = `${currentQ.id}_${userId}_${progressVersion + 1}`;
+
     refreshProgress();
   };
 
   const handleNext = () => {
     clearUpload();
     if (currentIdx < questions.length - 1) {
-      setCurrentIdx(currentIdx + 1);
-      resetQuestionState();
+      navigateToQuestion(currentIdx + 1);
     } else {
       const goBack = window.confirm('Chúc mừng bạn đã hoàn thành tất cả câu hỏi ôn tập của dạng bài này! Bạn có muốn quay lại danh sách không?');
       if (goBack) {
@@ -1265,26 +1333,36 @@ export const PracticeEngine: React.FC = () => {
         >
           {questions.map((q, idx) => {
             const isActive = idx === currentIdx;
-            const isCompleted = completedQuestionIds.has(q.id);
+            const status = questionStatusMap.get(q.id);
+            const isCompleted = Boolean(status?.isCompleted);
+            const isQuestionCorrect = Boolean(status?.isCorrect);
 
             return (
               <button
                 key={q.id}
                 data-bubble-index={idx}
-                onClick={() => {
-                  clearUpload();
-                  setCurrentIdx(idx);
-                  resetQuestionState();
-                }}
+                onClick={() => navigateToQuestion(idx)}
                 className={cn(
                   "w-7.5 h-7.5 rounded-lg flex items-center justify-center text-[10px] font-extrabold transition-all duration-150 cursor-pointer border active:scale-95 shrink-0",
                   isActive
-                    ? cn(routeSubjectTheme.solid, "shadow-sm scale-105")
+                    ? isCompleted
+                      ? isQuestionCorrect
+                        ? "bg-emerald-600 border-emerald-600 text-white shadow-sm scale-105 ring-2 ring-emerald-500/30"
+                        : "bg-rose-600 border-rose-600 text-white shadow-sm scale-105 ring-2 ring-rose-500/30"
+                      : cn(routeSubjectTheme.solid, "shadow-sm scale-105 ring-2 ring-primary/30")
                     : isCompleted
-                      ? "bg-emerald-500/10 dark:bg-emerald-500/20 border-emerald-500/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20"
+                      ? isQuestionCorrect
+                        ? "bg-emerald-500/10 dark:bg-emerald-500/20 border-emerald-500/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20"
+                        : "bg-rose-500/10 dark:bg-rose-500/20 border-rose-500/30 text-rose-700 dark:text-rose-300 hover:bg-rose-500/20 font-black"
                       : "bg-background border-border text-muted-foreground hover:text-foreground hover:bg-secondary/40"
                 )}
-                title={isCompleted ? `Câu ${idx + 1} (Đã nộp bài)` : `Câu ${idx + 1} (Chưa làm)`}
+                title={
+                  isCompleted
+                    ? isQuestionCorrect
+                      ? `Câu ${idx + 1} (Làm đúng ✅)`
+                      : `Câu ${idx + 1} (Làm sai ❌ - Nhấn để xem lại)`
+                    : `Câu ${idx + 1} (Chưa làm)`
+                }
               >
                 {idx + 1}
               </button>
@@ -1323,6 +1401,7 @@ export const PracticeEngine: React.FC = () => {
           questionsLength={questions.length}
           setCurrentIdx={setCurrentIdx}
           resetQuestionState={resetQuestionState}
+          onNavigateQuestion={navigateToQuestion}
           routeSubject={routeSubject}
           disableHints={Boolean(currentQuestion.isMasteryHoldout)}
         />
@@ -1344,6 +1423,7 @@ export const PracticeEngine: React.FC = () => {
           resetQuestionState={resetQuestionState}
           handleRetry={handleRetry}
           handleNext={handleNext}
+          onNavigateQuestion={navigateToQuestion}
         />
       )}
     </div>

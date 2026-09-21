@@ -518,7 +518,7 @@ export const GeneralAiTutor: React.FC = () => {
         temperature: 0.7,
         skipDiagnosis: true,
         chatId: currentSessionId,
-        image: base64Image
+        ...(base64Image ? { image: base64Image } : {})
       });
 
       const finalMessages = [...updatedMessages, { role: 'model', text: reply } as Message];
@@ -546,15 +546,19 @@ export const GeneralAiTutor: React.FC = () => {
       const finalMessages = [...messages, newUserMsg, { role: 'model', text: errorText } as Message];
       setMessages(finalMessages);
       if (currentSessionId && user?.uid) {
-        const failureMessages: Message[] = [
-          ...(persistedUserMessage ? [] : [newUserMsg]),
-          { role: 'model', text: errorText },
-        ];
-        await appendChatMessages(user.uid, chatPathKey, currentSessionId, failureMessages, isNewSession && !persistedUserMessage ? {
-          title: sessionTitle,
-          subjectId: subject,
-          gradeId: selectedGrade,
-        } : undefined);
+        try {
+          const failureMessages: Message[] = [
+            ...(persistedUserMessage ? [] : [newUserMsg]),
+            { role: 'model', text: errorText },
+          ];
+          await appendChatMessages(user.uid, chatPathKey, currentSessionId, failureMessages, isNewSession && !persistedUserMessage ? {
+            title: sessionTitle,
+            subjectId: subject,
+            gradeId: selectedGrade,
+          } : undefined);
+        } catch (appendErr) {
+          console.warn("Không thể lưu tin nhắn lỗi vào Firestore:", appendErr);
+        }
       }
     } finally {
       setIsLoading(false);

@@ -124,7 +124,13 @@ const numbersEqual = (left: number, right: number): boolean => {
 };
 
 const extractSingleNumber = (value: string): number | null => {
-  return parseStrictNumber(value);
+  const direct = parseStrictNumber(value);
+  if (direct !== null) return direct;
+  const clean = value.trim();
+  if (clean.endsWith('%')) {
+    return parseStrictNumber(clean.slice(0, -1));
+  }
+  return null;
 };
 
 const validateNumberAnswer = (question: Question, userAnswer: string): boolean => {
@@ -425,7 +431,7 @@ export function validateAnswer(question: Question, userAnswer: AnswerInput): boo
       return (question.acceptedAnswers?.length ?? 0) > 0 && matchesNormalizedCandidate(question, userAnswer);
     case 'exact':
     default:
-      return matchesNormalizedCandidate(question, userAnswer);
+      return matchesNormalizedCandidate(question, userAnswer) || validateNumberAnswer(question, userAnswer);
   }
 }
 

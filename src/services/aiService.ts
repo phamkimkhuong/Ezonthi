@@ -83,22 +83,53 @@ const normalizeAiEvaluation = (parsed: any): AiEvaluation => {
 
 export const aiService = {
   async callGemini(params: CallGeminiParams): Promise<string> {
-    try {
-      const callGeminiProxy = httpsCallable<CallGeminiParams, { text: string }>(
-        functions,
-        'callGeminiProxy'
-      );
-      const result = await callGeminiProxy(params);
-      console.log("[callGemini] Raw result:", result);
-      console.log("[callGemini] result.data:", result.data);
-      console.log("[callGemini] result.data.text:", result.data?.text);
-      return result.data.text;
-    } catch (err: any) {
-      console.error("Lỗi khi gọi callGeminiProxy:", err);
-      // Xử lý thông điệp thân thiện với người dùng
-      const message = err.message || 'Không nhận được câu trả lời từ AI.';
-      throw new Error(message, { cause: err });
+    const callGeminiProxy = httpsCallable<CallGeminiParams, { text: string }>(
+      functions,
+      'callGeminiProxy'
+    );
+
+    const cleanPayload: Record<string, unknown> = {};
+    for (const [key, value] of Object.entries(params)) {
+      if (value !== undefined && value !== null) {
+        cleanPayload[key] = value;
+      }
     }
+
+    let lastError: any = null;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        if (attempt > 0) {
+          await new Promise(res => setTimeout(res, 1200));
+        }
+        const result = await callGeminiProxy(cleanPayload as CallGeminiParams);
+        return result.data.text;
+      } catch (err: any) {
+        lastError = err;
+        const msg = String(err?.message || '');
+        const code = String(err?.code || '');
+        const isTransientNetwork =
+          msg.includes('network') ||
+          msg.includes('Failed to fetch') ||
+          msg.includes('internal') ||
+          code === 'internal' ||
+          code === 'unavailable';
+
+        if (!isTransientNetwork || attempt >= 1) break;
+        console.warn(`[callGemini] Gặp sự cố kết nối (${msg}), tự động thử lại...`);
+      }
+    }
+
+    console.error("Lỗi khi gọi callGeminiProxy:", lastError);
+    let message = lastError?.message || 'Không nhận được câu trả lời từ AI.';
+    if (
+      message.includes('internal') ||
+      message.includes('Failed to fetch') ||
+      lastError?.code === 'internal' ||
+      lastError?.code === 'unavailable'
+    ) {
+      message = 'Đường truyền mạng bị gián đoạn hoặc thay đổi kết nối (ERR_NETWORK_CHANGED). Bạn vui lòng kiểm tra mạng và bấm gửi lại nhé!';
+    }
+    throw new Error(message, { cause: lastError });
   },
 
   async gradeProofAttempt(

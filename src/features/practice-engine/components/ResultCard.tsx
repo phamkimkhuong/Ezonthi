@@ -6,7 +6,7 @@ import { Question, QuestionType, Solution, UserAttempt, SubjectCode } from '@/ty
 import { LocalProofImage, revokeLocalProofImages } from '@/utils/proofImages';
 import { cn } from '@/utils/cn';
 import { getSubjectTheme } from '@/utils/theme';
-import { CheckCircle, XCircle, HelpCircle, ArrowLeft, ArrowRight, ArrowDown, Languages } from 'lucide-react';
+import { CheckCircle, XCircle, ArrowLeft, ArrowRight, ArrowDown, Languages } from 'lucide-react';
 import { logCustomEvent } from '@/services/firebase';
 import { QuestionTypeGuidance } from './QuestionTypeGuidance';
 
@@ -27,6 +27,7 @@ interface ResultCardProps {
   resetQuestionState: () => void;
   handleRetry: () => void;
   handleNext: () => void;
+  onNavigateQuestion?: (idx: number) => void;
 }
 
 const cleanRecognitionText = (text: string): string => {
@@ -55,6 +56,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
   resetQuestionState,
   handleRetry,
   handleNext,
+  onNavigateQuestion,
 }) => {
   React.useEffect(() => {
     if (existingAttempt?.teacherFeedback) {
@@ -91,14 +93,6 @@ export const ResultCard: React.FC<ResultCardProps> = ({
     return { canRetry, daysRemaining, unlockDateStr };
   }, [existingAttempt]);
 
-  const showBannerFeedback = React.useMemo(() => {
-    if (!existingAttempt?.teacherFeedback) return false;
-    if (existingAttempt.aiEvaluation && existingAttempt.teacherFeedback === existingAttempt.aiEvaluation.summaryFeedback) {
-      return false;
-    }
-    return true;
-  }, [existingAttempt]);
-
   let displayOptions = currentQuestion.options;
   let cleanContent = currentQuestion.content;
   if (
@@ -113,8 +107,11 @@ export const ResultCard: React.FC<ResultCardProps> = ({
     }
   }
 
-  const userAnswerToShow = existingAttempt?.userAnswer || selectedOption;
-  const hasTypedAnswer = userAnswerToShow && userAnswerToShow !== "(Đã nộp ảnh bài làm)";
+  const isMultipleChoice = Boolean(displayOptions && displayOptions.length > 0);
+
+  const effectiveUserAnswer = (existingAttempt?.userAnswer || selectedOption || '').trim();
+  const cleanUserAnswer = effectiveUserAnswer.replace(/^[A-D][.)]\s*/, '').trim();
+  const userAnswerToShow = effectiveUserAnswer;
   const correctOptionIndex = ['A', 'B', 'C', 'D'].indexOf(currentQuestion.correctAnswer);
   const correctOptionText = correctOptionIndex >= 0
     ? displayOptions?.[correctOptionIndex]?.replace(/^[A-D][.)]\s*/, '').trim()
@@ -123,7 +120,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
   const [showTranslation, setShowTranslation] = useState(false);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start animate-fade-in">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
       <div className="lg:col-span-7 xl:col-span-6 space-y-5">
         {/* Đề bài (Xem lại câu hỏi) */}
         <div className="space-y-3 text-left">
@@ -169,40 +166,65 @@ export const ResultCard: React.FC<ResultCardProps> = ({
                 const letters = ['A', 'B', 'C', 'D'];
                 const letter = letters[oIdx] || String.fromCharCode(65 + oIdx);
                 // Lọc bỏ tiền tố dạng "A. " nếu có trong text
-                const cleanOpt = opt.replace(/^[A-D]\.\s*/, '');
+                const cleanOpt = opt.replace(/^[A-D]\.\s*/, '').trim();
                 const translatedOpt = currentQuestion.translation?.options?.[oIdx]?.replace(/^[A-D]\.\s*/, '');
-                const isSelected = selectedOption === letter || selectedOption === cleanOpt || selectedOption === opt;
-                const isCorrectAnswer = currentQuestion.correctAnswer === letter || currentQuestion.correctAnswer === cleanOpt || currentQuestion.correctAnswer === opt;
+
+                const isSelected = Boolean(
+                  effectiveUserAnswer && (
+                    effectiveUserAnswer === letter ||
+                    effectiveUserAnswer.startsWith(letter + '.') ||
+                    effectiveUserAnswer.startsWith(letter + ')') ||
+                    effectiveUserAnswer === opt ||
+                    effectiveUserAnswer === cleanOpt ||
+                    (cleanUserAnswer && cleanUserAnswer === cleanOpt)
+                  )
+                );
+
+                const cleanCorrect = currentQuestion.correctAnswer?.replace(/^[A-D][.)]\s*/, '').trim();
+                const isCorrectAnswer = Boolean(
+                  currentQuestion.correctAnswer && (
+                    currentQuestion.correctAnswer === letter ||
+                    currentQuestion.correctAnswer.startsWith(letter + '.') ||
+                    currentQuestion.correctAnswer.startsWith(letter + ')') ||
+                    currentQuestion.correctAnswer === opt ||
+                    currentQuestion.correctAnswer === cleanOpt ||
+                    (cleanCorrect && cleanCorrect === cleanOpt)
+                  )
+                );
+
+                const isUserWrongChoice = isSelected && !isCorrectAnswer;
 
                 return (
                   <div
                     key={oIdx}
                     className={cn(
-                      "p-3 rounded-xl border text-xs font-bold flex items-center gap-2.5",
+                      "p-3 rounded-xl border text-xs font-bold flex items-center justify-between gap-2.5 transition-all",
                       isCorrectAnswer
-                        ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-800 dark:text-emerald-300"
-                        : isSelected
-                          ? "bg-rose-500/10 border-rose-500/20 text-rose-800 dark:text-rose-300"
-                          : "bg-secondary/10 border-border/40 text-muted-foreground"
+                        ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-800 dark:text-emerald-300 ring-1 ring-emerald-500/20"
+                        : isUserWrongChoice
+                          ? "bg-rose-500/10 border-rose-500/30 text-rose-800 dark:text-rose-300 ring-1 ring-rose-500/20"
+                          : "bg-secondary/10 border-border/40 text-muted-foreground opacity-75"
                     )}
                   >
-                    <span className={cn(
-                      "w-6 h-6 rounded-lg flex items-center justify-center font-extrabold shadow-sm text-[11px] shrink-0",
-                      isCorrectAnswer
-                        ? "bg-emerald-500 text-white"
-                        : isSelected
-                          ? "bg-rose-500 text-white"
-                          : "bg-secondary text-foreground"
-                    )}>
-                      {letter}
-                    </span>
-                    <div className="leading-relaxed flex-1">
-                      <LatexRenderer text={cleanOpt} />
-                      {showTranslation && translatedOpt && (
-                        <div className="text-[11px] font-normal text-indigo-700 dark:text-indigo-300 mt-0.5 italic">
-                          ({translatedOpt})
-                        </div>
-                      )}
+                    <div className="flex items-center gap-2.5 flex-1 min-w-0">
+                      <span className={cn(
+                        "w-6 h-6 rounded-lg flex items-center justify-center font-extrabold shadow-sm text-[11px] shrink-0",
+                        isCorrectAnswer
+                          ? "bg-emerald-500 text-white"
+                          : isUserWrongChoice
+                            ? "bg-rose-500 text-white"
+                            : "bg-secondary text-foreground"
+                      )}>
+                        {letter}
+                      </span>
+                      <div className="leading-relaxed flex-1">
+                        <LatexRenderer text={cleanOpt} />
+                        {showTranslation && translatedOpt && (
+                          <div className="text-[11px] font-normal text-indigo-700 dark:text-indigo-300 mt-0.5 italic">
+                            ({translatedOpt})
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 );
@@ -211,102 +233,48 @@ export const ResultCard: React.FC<ResultCardProps> = ({
           )}
         </div>
 
-        <div className={cn(
-          "p-4 rounded-xl border flex items-center gap-3 text-left",
-          isCorrect
-            ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-700 dark:text-emerald-400'
-            : 'bg-rose-500/10 border-rose-500/20 text-rose-700 dark:text-rose-400'
-        )}>
-          {isMath ? (
-            existingAttempt && existingAttempt.gradingMode === 'auto' ? (
-              existingAttempt.isCorrect ? (
-                <>
-                  <CheckCircle size={24} className="text-emerald-500 shrink-0" />
-                  <div>
-                    <h4 className="font-extrabold text-sm">Kết quả: Đạt yêu cầu (Giáo viên đã duyệt) ✅</h4>
-                    {hasTypedAnswer && (
-                      <p className="text-xs font-bold opacity-90 mt-1">
-                        Đáp án bạn đã nhập: <span className="underline font-black">{userAnswerToShow}</span>
-                      </p>
-                    )}
-                    {showBannerFeedback && (
-                      <p className="text-xs font-bold opacity-90 mt-1.5 p-2 bg-emerald-500/10 rounded-lg text-emerald-800 dark:text-emerald-300">
-                        💬 Nhận xét của thầy cô: "{existingAttempt.teacherFeedback}"
-                      </p>
-                    )}
-                  </div>
-                </>
-              ) : (
-                <>
-                  <XCircle size={24} className="text-rose-500 shrink-0" />
-                  <div>
-                    <h4 className="font-extrabold text-sm">Kết quả: Cần sửa lại (Chấm sai) ❌</h4>
-                    {hasTypedAnswer && (
-                      <p className="text-xs font-bold opacity-90 mt-1">
-                        Đáp án bạn đã nhập: <span className="underline font-black">{userAnswerToShow}</span>
-                      </p>
-                    )}
-                    {showBannerFeedback && (
-                      <p className="text-xs font-bold opacity-90 mt-1.5 p-2 bg-rose-500/10 rounded-lg text-rose-800 dark:text-rose-300">
-                        💬 Nhận xét của thầy cô: "{existingAttempt.teacherFeedback}"
-                      </p>
-                    )}
-                  </div>
-                </>
-              )
-            ) : (
-              <>
-                <CheckCircle size={24} className="text-emerald-500 shrink-0" />
-                <div>
-                  <h4 className="font-extrabold text-sm">Đã nộp bài giải thành công!</h4>
-                  <p className="text-xs font-semibold opacity-90">Ảnh bài làm đã được lưu. Thầy cô sẽ sớm review và chấm bài cho bạn.</p>
-                </div>
-              </>
-            )
-          ) : existingAttempt && existingAttempt.gradingMode === 'manual' ? (
-            <>
-              <HelpCircle size={24} className="text-amber-500 shrink-0 animate-pulse" />
-              <div>
-                <h4 className="font-extrabold text-sm">Đã nộp đáp án thành công!</h4>
-                <p className="text-xs font-semibold opacity-90">Đáp án của bạn đang chờ thầy cô kiểm tra và phê duyệt. Bạn chưa thể làm lại câu này cho đến khi thầy cô duyệt.</p>
+        {/* Khối đối chiếu kết quả dành cho câu nhập đáp án */}
+        {!isMultipleChoice && (
+          isCorrect ? (
+            /* Học sinh làm ĐÚNG -> Khối 1 dòng xanh ngọc tinh gọn */
+            <div className="p-3 px-4 rounded-xl border border-emerald-500/20 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 text-xs font-bold flex items-center justify-between gap-3 text-left animate-fade-in">
+              <div className="flex items-center gap-2">
+                <CheckCircle size={18} className="text-emerald-500 shrink-0" />
+                <span>Chính xác! Đáp án của bạn:</span>
               </div>
-            </>
-          ) : isCorrect ? (
-            <>
-              <CheckCircle size={24} className="text-emerald-500 shrink-0" />
-              <div>
-                <h4 className="font-extrabold text-sm">Chính xác! Cực kỳ xuất sắc.</h4>
-                <p className="text-xs font-semibold opacity-90">Bạn đã tăng điểm số Mastery cho dạng bài này.</p>
-                <p className="text-xs font-bold opacity-90 mt-1">
-                  Đáp án bạn đã {displayOptions && displayOptions.length > 0 ? "chọn" : "nhập"}: <span className="underline font-black">{userAnswerToShow}</span>
-                </p>
-                {existingAttempt?.teacherFeedback && (
-                  <p className="text-xs font-bold opacity-90 mt-1.5 p-2 bg-emerald-500/10 rounded-lg text-emerald-800 dark:text-emerald-300">
-                    💬 Nhận xét của thầy cô: "{existingAttempt.teacherFeedback}"
-                  </p>
-                )}
-              </div>
-            </>
+              <span className="font-black text-xs px-2.5 py-1 rounded-lg bg-emerald-500 text-white shadow-xs">
+                <LatexRenderer text={userAnswerToShow || ''} />
+              </span>
+            </div>
           ) : (
-            <>
-              <XCircle size={24} className="text-rose-500 shrink-0" />
-              <div>
-                <h4 className="font-extrabold text-sm">Chưa đúng rồi! Nhưng không sao.</h4>
-                <p className="text-xs font-semibold opacity-90">
-                  Câu hỏi đã được lưu vào **Sổ lỗi sai**. Hãy xem kỹ lời giải chi tiết dưới đây để khắc phục nhé!
-                </p>
-                <p className="text-xs font-bold opacity-90 mt-1">
-                  Đáp án bạn đã {displayOptions && displayOptions.length > 0 ? "chọn" : "nhập"}: <span className="underline font-black">{userAnswerToShow || '(Trống)'}</span>
-                </p>
-                {existingAttempt?.teacherFeedback && (
-                  <p className="text-xs font-bold opacity-90 mt-1.5 p-2 bg-rose-500/10 rounded-lg text-rose-800 dark:text-rose-300">
-                    💬 Nhận xét của thầy cô: "{existingAttempt.teacherFeedback}"
-                  </p>
-                )}
+            /* Học sinh làm SAI -> Khối đối chiếu trực diện 2 cột */
+            <div className="p-2.5 sm:p-3 rounded-xl border border-rose-500/20 bg-rose-500/5 dark:bg-rose-950/20 text-xs font-bold text-left animate-fade-in">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {/* Đáp án học sinh nhập */}
+                <div className="p-2.5 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-800 dark:text-rose-300 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5">
+                    <XCircle size={16} className="text-rose-500 shrink-0" />
+                    <span className="font-bold text-[11px] text-muted-foreground">Bạn đã nhập:</span>
+                  </div>
+                  <span className="font-black text-xs px-2 py-0.5 rounded bg-rose-500/20 text-rose-700 dark:text-rose-300">
+                    <LatexRenderer text={userAnswerToShow || '(Trống)'} />
+                  </span>
+                </div>
+
+                {/* Đáp án chính xác */}
+                <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 dark:text-emerald-300 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle size={16} className="text-emerald-500 shrink-0" />
+                    <span className="font-bold text-[11px] text-muted-foreground">Đáp án đúng:</span>
+                  </div>
+                  <span className="font-black text-xs px-2 py-0.5 rounded bg-emerald-500 text-white shadow-xs">
+                    <LatexRenderer text={currentQuestion.correctAnswer || ''} />
+                  </span>
+                </div>
               </div>
-            </>
-          )}
-        </div>
+            </div>
+          )
+        )}
 
         {/* Nút xem nhanh lời giải cho thiết bị di động (Mobile Quick Jump) */}
         {solutionDetail && (
@@ -553,9 +521,13 @@ export const ResultCard: React.FC<ResultCardProps> = ({
             <Button
               disabled={currentIdx === 0}
               onClick={() => {
-                revokeLocalProofImages(proofImages);
-                setCurrentIdx(currentIdx - 1);
-                resetQuestionState();
+                if (onNavigateQuestion) {
+                  onNavigateQuestion(currentIdx - 1);
+                } else {
+                  revokeLocalProofImages(proofImages);
+                  setCurrentIdx(currentIdx - 1);
+                  resetQuestionState();
+                }
               }}
               variant="outline"
               className="flex-1 font-bold py-2.5 text-xs active:scale-[0.98] flex items-center justify-center gap-1.5 border border-border/50 text-muted-foreground hover:bg-secondary/40 cursor-pointer h-10.5 rounded-xl disabled:opacity-40 disabled:cursor-not-allowed"
@@ -567,15 +539,13 @@ export const ResultCard: React.FC<ResultCardProps> = ({
                 <span>⏱️ Làm lại sau {retryStatus.daysRemaining} ngày</span>
               </div>
             ) : (
-              (!existingAttempt || existingAttempt.gradingMode !== 'manual') && (
-                <Button
-                  onClick={handleRetry}
-                  variant="outline"
-                  className="flex-1 font-bold py-2.5 text-xs active:scale-[0.98] flex items-center justify-center gap-1.5 border border-border/50 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500/5 cursor-pointer h-10.5 rounded-xl"
-                >
-                  🔄 Làm lại
-                </Button>
-              )
+              <Button
+                onClick={handleRetry}
+                variant="outline"
+                className="flex-1 font-bold py-2.5 text-xs active:scale-[0.98] flex items-center justify-center gap-1.5 border border-border/50 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500/5 cursor-pointer h-10.5 rounded-xl"
+              >
+                🔄 Làm lại
+              </Button>
             )}
           </div>
         </div>
@@ -583,7 +553,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
 
       {/* Lời giải chi tiết hiện lên ở cột bên phải */}
       {solutionDetail && (
-        <div id="solution-detail-section" className="lg:col-span-5 xl:col-span-6 space-y-4 text-left animate-fade-in scroll-mt-6">
+        <div id="solution-detail-section" className="lg:col-span-5 xl:col-span-6 space-y-4 text-left scroll-mt-6">
           <h4 className="font-extrabold text-sm text-foreground">🔬 Lời giải chi tiết:</h4>
 
           {currentQuestionType && routeSubject !== 'history' && <QuestionTypeGuidance questionType={currentQuestionType} />}

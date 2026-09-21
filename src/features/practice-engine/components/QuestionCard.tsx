@@ -42,6 +42,7 @@ interface QuestionCardProps {
   structuredAnswer: StructuredAnswer;
   setStructuredAnswer: (val: StructuredAnswer) => void;
   disableHints?: boolean;
+  onNavigateQuestion?: (idx: number) => void;
 }
 
 /**
@@ -85,6 +86,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   structuredAnswer,
   setStructuredAnswer,
   disableHints = false,
+  onNavigateQuestion,
 }) => {
   const theme = getSubjectTheme(routeSubject);
   const mathInputRef = useRef<HTMLInputElement>(null);
@@ -408,11 +410,22 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                   );
                 })
               ) : (
-                // Điền từ tự do (Word Form / etc.)
+                // Điền từ tự do hoặc nhập số
                 <div className="space-y-2.5">
-                  <label className="text-xs font-black text-muted-foreground uppercase tracking-wider">
-                    {currentQuestion.questionTypeId === 'eng-qt11' ? 'Sửa lại từ sai:' : 'Đáp án của bạn:'}
-                  </label>
+                  <div className="flex flex-wrap items-center justify-between gap-1">
+                    <label className="text-xs font-black text-muted-foreground uppercase tracking-wider">
+                      {currentQuestion.questionTypeId === 'eng-qt11'
+                        ? 'Sửa lại từ sai:'
+                        : ['physics', 'chemistry', 'biology', 'math'].includes(routeSubject || '')
+                          ? 'Đáp án của bạn (Nhập giá trị số):'
+                          : 'Đáp án của bạn:'}
+                    </label>
+                    {['physics', 'chemistry', 'biology', 'math'].includes(routeSubject || '') && (
+                      <span className="text-[11px] text-muted-foreground font-semibold">
+                        Chấp nhận cả dấu phẩy (,) và dấu chấm (.)
+                      </span>
+                    )}
+                  </div>
                   <input
                     type="text"
                     value={selectedOption || ''}
@@ -422,7 +435,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                         ? "Nhập từ sửa lại (ví dụ: tired hoặc tiring -> tired)..."
                         : currentQuestion.questionTypeId === 'eng-qt15'
                           ? "Nhập phần viết lại (ví dụ: he knew the way)..."
-                          : "Nhập từ cần điền (ví dụ: inventions)..."
+                          : routeSubject === 'english'
+                            ? "Nhập từ cần điền (ví dụ: inventions)..."
+                            : "Nhập giá trị số (ví dụ: 10 hoặc 5,2)..."
                     }
                     className="w-full p-4.5 rounded-2xl text-xs font-extrabold border border-border/60 bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200"
                     onKeyDown={(e) => {
@@ -624,9 +639,13 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                 type="button"
                 disabled={currentIdx === 0}
                 onClick={() => {
-                  revokeLocalProofImages(proofImages);
-                  setCurrentIdx(currentIdx - 1);
-                  resetQuestionState();
+                  if (onNavigateQuestion) {
+                    onNavigateQuestion(currentIdx - 1);
+                  } else {
+                    revokeLocalProofImages(proofImages);
+                    setCurrentIdx(currentIdx - 1);
+                    resetQuestionState();
+                  }
                 }}
                 variant="outline"
                 className="flex-1 font-bold py-2.5 text-xs border border-border/50 text-muted-foreground hover:text-foreground active:scale-[0.98] flex items-center justify-center gap-1.5 h-10.5 rounded-xl cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed transition-all"
@@ -637,9 +656,13 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                 type="button"
                 disabled={currentIdx === questionsLength - 1}
                 onClick={() => {
-                  revokeLocalProofImages(proofImages);
-                  setCurrentIdx(currentIdx + 1);
-                  resetQuestionState();
+                  if (onNavigateQuestion) {
+                    onNavigateQuestion(currentIdx + 1);
+                  } else {
+                    revokeLocalProofImages(proofImages);
+                    setCurrentIdx(currentIdx + 1);
+                    resetQuestionState();
+                  }
                 }}
                 variant="outline"
                 className="flex-1 font-bold py-2.5 text-xs border border-border/50 text-muted-foreground hover:text-foreground active:scale-[0.98] flex items-center justify-center gap-1.5 h-10.5 rounded-xl cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed transition-all"
