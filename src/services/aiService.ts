@@ -1,10 +1,10 @@
 import { httpsCallable } from 'firebase/functions';
-import { functions } from './firebase';
+import { functions, auth } from './firebase';
 import { Question, Solution, AiEvaluation } from '../types';
 import { getSubjectName } from '../utils/subject';
 import { logger } from '../utils/logger';
 
-interface CallGeminiParams {
+export interface CallGeminiParams {
   prompt?: string;
   contents?: Array<{ role: 'user' | 'model'; parts: Array<{ text: string }> }>;
   systemInstruction?: string;
@@ -82,6 +82,170 @@ const normalizeAiEvaluation = (parsed: any): AiEvaluation => {
 };
 
 export const aiService = {
+  /**
+   * Gọi AI Tutor theo cơ chế Streaming (Server-Sent Events)
+   * Giúp văn bản hiển thị tức thì (dưới 1 giây) với hiệu ứng gõ chữ,
+   * tự động fallback sang callGeminiProxy nếu không thể mở stream.
+   */
+  async streamGemini(
+    params: CallGeminiParams,
+    onChunk: (chunk: string, fullText: string) => void,
+    signal?: AbortSignal
+  ): Promise<string> {
+    const cleanPayload: Record<string, unknown> = {};
+    for (const [key, value] of Object.entries(params)) {
+      if (value !== undefined && value !== null) {
+        cleanPayload[key] = value;
+      }
+    }
+
+    // 1. Lấy token xác thực
+    let idToken: string | null = null;
+    try {
+      const currentUser = auth.currentUser;
+      if (currentUser) {
+        idToken = await currentUser.getIdToken();
+      }
+    } catch (tokenErr) {
+      console.warn('[streamGemini] Không thể lấy ID Token:', tokenErr);
+    }
+
+    if (!idToken) {
+      // Fallback gọi callGeminiProxy nếu chưa lấy được token
+      const res = await this.callGemini(params);
+      onChunk(res, res);
+      return res;
+    }
+
+    // 2. Xác định URL Stream
+    let streamUrl = '/api/ai/stream';
+    if (typeof window !== 'undefined') {
+      const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      if (isDev && !import.meta.env.VITE_AI_STREAM_URL) {
+        streamUrl = '/api/ai/stream';
+      } else if (import.meta.env.VITE_AI_STREAM_URL) {
+        streamUrl = import.meta.env.VITE_AI_STREAM_URL;
+      }
+    }
+
+    let accumulatedText = '';
+    let hasEmittedChunk = false;
+
+    try {
+      const response = await fetch(streamUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${idToken}`,
+        },
+        body: JSON.stringify(cleanPayload),
+        signal,
+      });
+
+      // Nếu endpoint stream trả về lỗi trước khi stream:
+      // Tự động chuyển đổi sang callGeminiProxy truyền thống
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        const errMsg = errorData?.message || `HTTP ${response.status}`;
+
+        if (response.status === 401) {
+          throw new Error('Yêu cầu đăng nhập để sử dụng tính năng AI.');
+        }
+        if (response.status === 400 && errMsg.includes('hạn mức')) {
+          throw new Error('Bạn đã dùng hết hạn mức AI hàng ngày.');
+        }
+
+        console.warn(`[streamGemini] Endpoint stream không sẵn sàng (${errMsg}), chuyển sang callGeminiProxy...`);
+        const fallbackText = await this.callGemini(params);
+        onChunk(fallbackText, fallbackText);
+        return fallbackText;
+      }
+
+      if (!response.body) {
+        throw new Error('ReadableStream không được hỗ trợ bởi trình duyệt này.');
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+      let buffer = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split(/\r?\n/);
+        buffer = lines.pop() ?? '';
+
+        let currentEvent = '';
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed || trimmed.startsWith(':')) continue;
+          if (trimmed.startsWith('event:')) {
+            currentEvent = trimmed.slice(6).trim();
+          } else if (trimmed.startsWith('data:')) {
+            const dataStr = trimmed.slice(5).trim();
+            if (currentEvent === 'chunk' || !currentEvent) {
+              try {
+                const parsed = JSON.parse(dataStr);
+                const chunkText = parsed.text || '';
+                if (chunkText) {
+                  hasEmittedChunk = true;
+                  accumulatedText += chunkText;
+                  onChunk(chunkText, accumulatedText);
+                }
+              } catch {
+                // Ignore partial JSON
+              }
+            } else if (currentEvent === 'done') {
+              try {
+                const parsed = JSON.parse(dataStr);
+                if (parsed.text && !accumulatedText) {
+                  accumulatedText = parsed.text;
+                  onChunk(parsed.text, accumulatedText);
+                }
+              } catch {
+                // Ignore
+              }
+            } else if (currentEvent === 'error') {
+              try {
+                const parsed = JSON.parse(dataStr);
+                throw new Error(parsed.message || 'Lỗi xử lý từ Gia sư AI.');
+              } catch (parseErr: any) {
+                throw new Error(parseErr.message || 'Lỗi xử lý từ Gia sư AI.');
+              }
+            }
+            currentEvent = '';
+          }
+        }
+      }
+
+      if (accumulatedText.trim().length > 0) {
+        return accumulatedText;
+      }
+
+      console.warn('[streamGemini] Stream kết thúc rỗng, fallback sang callGeminiProxy...');
+      const fallbackText = await this.callGemini(params);
+      onChunk(fallbackText, fallbackText);
+      return fallbackText;
+    } catch (streamErr: any) {
+      if (hasEmittedChunk) {
+        console.warn('[streamGemini] Bị đứt đoạn giữa stream, giữ lại phần đã nhận:', streamErr);
+        return accumulatedText;
+      }
+
+      const msg = String(streamErr?.message || '');
+      if (msg.includes('hạn mức') || msg.includes('resource-exhausted') || msg.includes('đăng nhập')) {
+        throw streamErr;
+      }
+
+      console.warn('[streamGemini] Lỗi kết nối stream, tự động fallback sang callGeminiProxy:', streamErr);
+      const fallbackText = await this.callGemini(params);
+      onChunk(fallbackText, fallbackText);
+      return fallbackText;
+    }
+  },
+
   async callGemini(params: CallGeminiParams): Promise<string> {
     const callGeminiProxy = httpsCallable<CallGeminiParams, { text: string }>(
       functions,

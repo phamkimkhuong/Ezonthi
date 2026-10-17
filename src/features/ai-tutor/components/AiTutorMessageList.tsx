@@ -12,6 +12,7 @@ export interface Message {
 interface AiTutorMessageListProps {
   messages: Message[];
   isLoading: boolean;
+  isStreaming?: boolean;
   isUploadingImage: boolean;
   suggestions: string[];
   errorMsg: string | null;
@@ -30,6 +31,7 @@ interface AiTutorMessageListProps {
 export const AiTutorMessageList: React.FC<AiTutorMessageListProps> = ({
   messages,
   isLoading,
+  isStreaming = false,
   isUploadingImage,
   suggestions,
   errorMsg,
@@ -163,7 +165,14 @@ export const AiTutorMessageList: React.FC<AiTutorMessageListProps> = ({
                     />
                   </div>
                 )}
-                {m.text && <LatexRenderer text={m.text} />}
+                {m.text && (
+                  <div className="relative">
+                    <LatexRenderer text={m.text} />
+                    {isStreaming && isBot && idx === messages.length - 1 && (
+                      <span className="inline-block w-1.5 h-3.5 ml-1 bg-amber-500 animate-pulse rounded-xs align-middle" />
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           );

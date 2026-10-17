@@ -27,6 +27,10 @@
     "trailingSlash": true,
     "rewrites": [
       {
+        "source": "/api/ai/stream",
+        "function": "streamGeminiProxy"
+      },
+      {
         "source": "/app/**",
         "destination": "/index.html"
       }

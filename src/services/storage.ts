@@ -11,18 +11,67 @@ const KEYS = {
   ACTIVE_EXAM: 'otv10_active_exam'
 };
 
+export const MAX_LOCAL_SYNCED_ATTEMPTS = 200;
+
+export const pruneAttempts = (attempts: UserAttempt[], maxSynced: number = MAX_LOCAL_SYNCED_ATTEMPTS): UserAttempt[] => {
+  if (!Array.isArray(attempts)) return [];
+
+  const pending: UserAttempt[] = [];
+  const synced: UserAttempt[] = [];
+
+  for (const item of attempts) {
+    if (!item) continue;
+    if (item.synced !== true) {
+      pending.push(item);
+    } else {
+      synced.push(item);
+    }
+  }
+
+  let keptSynced = synced;
+  if (synced.length > maxSynced) {
+    synced.sort((a, b) => {
+      const timeA = Date.parse(a.createdAt) || 0;
+      const timeB = Date.parse(b.createdAt) || 0;
+      return timeB - timeA || (b.id || '').localeCompare(a.id || '');
+    });
+    keptSynced = synced.slice(0, maxSynced);
+  }
+
+  const combined = [...keptSynced, ...pending];
+  combined.sort((a, b) => {
+    const timeA = Date.parse(a.createdAt) || 0;
+    const timeB = Date.parse(b.createdAt) || 0;
+    return timeA - timeB || (a.id || '').localeCompare(b.id || '');
+  });
+
+  return combined;
+};
+
 // Helper để đọc từ localStorage và tự động migrate dữ liệu cũ nếu là Array
 const readAttemptsMap = (): Record<string, UserAttempt[]> => {
   try {
     const data = localStorage.getItem(KEYS.ATTEMPTS);
     if (!data) return {};
     const parsed = JSON.parse(data);
+    let map: Record<string, UserAttempt[]>;
     if (Array.isArray(parsed)) {
-      const migrated = { guest: parsed };
-      localStorage.setItem(KEYS.ATTEMPTS, JSON.stringify(migrated));
-      return migrated;
+      map = { guest: parsed };
+    } else {
+      map = parsed;
     }
-    return parsed;
+    // Tự động cắt tỉa dữ liệu cũ nếu vượt ngưỡng để giải phóng dung lượng LocalStorage
+    let needsWrite = Array.isArray(parsed);
+    for (const userId of Object.keys(map)) {
+      if (Array.isArray(map[userId]) && map[userId].length > MAX_LOCAL_SYNCED_ATTEMPTS + 50) {
+        map[userId] = pruneAttempts(map[userId]);
+        needsWrite = true;
+      }
+    }
+    if (needsWrite) {
+      localStorage.setItem(KEYS.ATTEMPTS, JSON.stringify(map));
+    }
+    return map;
   } catch (e) {
     console.error('Lỗi khi đọc attempts từ localStorage', e);
     return {};
@@ -140,8 +189,23 @@ const readActiveExamMap = (): Record<string, Record<string, ActiveExamSession>> 
 const writeToStorage = <T>(key: string, value: T): void => {
   try {
     localStorage.setItem(key, JSON.stringify(value));
-  } catch (e) {
+  } catch (e: any) {
     console.error(`Error writing ${key} to localStorage`, e);
+    // Xử lý phục hồi khẩn cấp khi gặp QuotaExceededError (5MB limit)
+    if (e?.name === 'QuotaExceededError' || e?.code === 22 || e?.code === 1014) {
+      try {
+        if (key === KEYS.ATTEMPTS && value && typeof value === 'object') {
+          const emergencyMap: Record<string, UserAttempt[]> = {};
+          for (const [uid, list] of Object.entries(value as Record<string, UserAttempt[]>)) {
+            emergencyMap[uid] = pruneAttempts(list, 50); // Cắt tỉa khẩn cấp xuống 50 bài gần nhất
+          }
+          localStorage.setItem(key, JSON.stringify(emergencyMap));
+          console.warn('Đã cắt tỉa khẩn cấp danh sách attempts sau lỗi QuotaExceededError');
+        }
+      } catch (retryError) {
+        console.error('Không thể phục hồi sau lỗi QuotaExceededError', retryError);
+      }
+    }
   }
 };
 
@@ -172,6 +236,8 @@ export const storageService = {
     } else {
       map[userId].push(attemptWithSyncFlag);
     }
+    // Cắt tỉa mảng attempts để giới hạn tối đa MAX_LOCAL_SYNCED_ATTEMPTS (200 bài đã sync)
+    map[userId] = pruneAttempts(map[userId]);
     writeToStorage(KEYS.ATTEMPTS, map);
 
     // Tự động cập nhật tiến độ học tập và sổ lỗi sai tương ứng với các bài làm được chấm tự động
@@ -190,13 +256,13 @@ export const storageService = {
     const map = readAttemptsMap();
     const remote = new Map(attempts.map(attempt => [attempt.id, { ...attempt, synced: true }]));
     const pending = (map[userId] || []).filter(attempt => attempt.synced === false && !remote.has(attempt.id));
-    map[userId] = [...remote.values(), ...pending];
+    map[userId] = pruneAttempts([...remote.values(), ...pending]);
     writeToStorage(KEYS.ATTEMPTS, map);
   },
 
   replaceAttemptsLocal(userId: string, attempts: UserAttempt[]): void {
     const map = readAttemptsMap();
-    map[userId] = attempts;
+    map[userId] = pruneAttempts(attempts);
     writeToStorage(KEYS.ATTEMPTS, map);
   },
 
@@ -222,7 +288,7 @@ export const storageService = {
     const map = readAttemptsMap();
     if (!map[userId]) return;
     const idsSet = new Set(attemptIds);
-    map[userId] = map[userId].map(a => idsSet.has(a.id) ? { ...a, synced: true } : a);
+    map[userId] = pruneAttempts(map[userId].map(a => idsSet.has(a.id) ? { ...a, synced: true } : a));
     writeToStorage(KEYS.ATTEMPTS, map);
   },
 

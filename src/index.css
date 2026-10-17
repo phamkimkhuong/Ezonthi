@@ -188,6 +188,20 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 93.75%; /* 15px: Cân bằng x-height và độ bè của Be Vietnam Pro trên màn hình laptop */
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 100%; /* Giữ 16px nguyên bản trên màn hình lớn 2K/4K */
+  }
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--background);

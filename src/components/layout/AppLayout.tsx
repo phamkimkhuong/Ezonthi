@@ -3,13 +3,14 @@ import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useAppStore } from '../../services/store';
 import {
-  BookOpen,
   Map,
   Bookmark,
   GraduationCap,
   Award,
   Menu,
   X,
+  PanelLeft,
+  PanelLeftClose,
   ChevronRight,
   ChevronDown,
   Check,
@@ -380,7 +381,6 @@ export const AppLayout: React.FC = () => {
   const menuItems = [
     { path: COURSE_ROUTES.dashboard(selectedGrade, selectedSubject), label: 'Bảng điều khiển', icon: GraduationCap },
     { path: COURSE_ROUTES.roadmap(selectedGrade, selectedSubject), label: 'Lộ trình học', icon: Map },
-    { path: COURSE_ROUTES.practice(selectedGrade, selectedSubject), label: 'Luyện tập', icon: BookOpen },
     ...(selectedGrade === 'grade10' && (selectedSubject === 'physics' || selectedSubject === 'math' || selectedSubject === 'chemistry' || selectedSubject === 'biology')
       ? [{
           path: COURSE_ROUTES.advanced(selectedGrade, selectedSubject),
@@ -568,17 +568,17 @@ export const AppLayout: React.FC = () => {
       `}>
         <div className={cn(
           "border-b border-border/40 hidden md:flex items-center justify-center cursor-pointer group",
-          effectiveCollapsed ? "p-4 h-20" : "px-4 py-4"
+          effectiveCollapsed ? "p-3 h-16" : "px-4 py-3"
         )} onClick={() => navigate(ROUTES.ABOUT)}>
           {effectiveCollapsed ? (
             <picture>
               <source srcSet={logoWebp} type="image/webp" />
-              <img src={logoPng} alt="ezonthi logo" width="240" height="131" className="w-12 h-auto object-contain shrink-0 group-hover:scale-105 transition-transform duration-300" />
+              <img src={logoPng} alt="ezonthi logo" width="240" height="131" className="w-10 h-auto object-contain shrink-0 group-hover:scale-105 transition-transform duration-300" />
             </picture>
           ) : (
             <picture>
               <source srcSet={logoWebp} type="image/webp" />
-              <img src={logoPng} alt="ezonthi logo" width="240" height="131" className="h-auto w-full max-w-[240px] object-contain shrink-0 group-hover:scale-105 transition-transform duration-300" />
+              <img src={logoPng} alt="ezonthi logo" width="240" height="131" className="h-auto w-full max-w-[200px] object-contain shrink-0 group-hover:scale-105 transition-transform duration-300" />
             </picture>
           )}
         </div>
@@ -590,7 +590,7 @@ export const AppLayout: React.FC = () => {
               aria-label="Chọn khối học và môn học"
               aria-haspopup="true"
               aria-expanded={isContextDropdownOpen}
-              className="w-full px-4 py-2.5 text-xs font-black rounded-2xl bg-secondary/50 border border-border/30 text-foreground transition-all flex items-center justify-between cursor-pointer shadow-sm active:scale-95"
+              className="w-full px-4 py-2.5 text-xs font-bold rounded-2xl bg-secondary/50 border border-border/30 text-foreground transition-all flex items-center justify-between cursor-pointer shadow-sm active:scale-95"
             >
               <span className="truncate">{getActiveContextLabel()}</span>
               <ChevronDown size={14} className={cn("transition-transform duration-200 shrink-0 ml-1.5", isContextDropdownOpen && "rotate-180")} />
@@ -642,7 +642,7 @@ export const AppLayout: React.FC = () => {
           </div>
         </div>
 
-        <nav className="flex-1 px-3 py-4 space-y-1.5">
+        <nav className="flex-1 px-3 py-2 space-y-1">
           {menuItems.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path ||
@@ -657,10 +657,10 @@ export const AppLayout: React.FC = () => {
                 }}
                 aria-label={item.label}
                 className={cn(
-                  "w-full flex items-center gap-3.5 px-4.5 py-3 rounded-2xl text-sm font-extrabold transition-all duration-300 cursor-pointer active:scale-98",
-                  effectiveCollapsed && "justify-center px-2 py-3.5 gap-0",
+                  "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-sm font-bold transition-all duration-200 cursor-pointer active:scale-98",
+                  effectiveCollapsed && "justify-center px-2 py-3 gap-0",
                   isActive
-                    ? 'bg-primary/10 text-primary border-l-[3px] border-primary pl-3.5 shadow-sm shadow-primary/5'
+                    ? 'bg-primary/10 text-primary border-l-[3px] border-primary pl-3 shadow-sm shadow-primary/5'
                     : 'text-muted-foreground hover:bg-secondary/50 hover:text-foreground'
                 )}
                 title={effectiveCollapsed ? item.label : undefined}
@@ -685,7 +685,7 @@ export const AppLayout: React.FC = () => {
                 }}
                 aria-label="Góc Giáo viên"
                 className={cn(
-                  "w-full flex items-center gap-3.5 px-4.5 py-3 rounded-2xl text-sm font-black transition-all duration-300 cursor-pointer border border-dashed relative active:scale-98",
+                  "w-full flex items-center gap-3.5 px-4.5 py-3 rounded-2xl text-sm font-bold transition-all duration-300 cursor-pointer border border-dashed relative active:scale-98",
                   effectiveCollapsed && "justify-center px-2 py-3.5 gap-0",
                   location.pathname === '/teacher'
                     ? "bg-brand-learning/10 text-brand-learning border-brand-learning/40"
@@ -721,7 +721,7 @@ export const AppLayout: React.FC = () => {
                     }}
                     aria-label="Khảo sát & Góp ý"
                     className={cn(
-                      "w-full flex items-center gap-3.5 px-4.5 py-3 rounded-xl text-sm font-black transition-all duration-300 cursor-pointer border border-dashed relative active:scale-98 text-brand-action hover:bg-brand-action/8 border-brand-action/30",
+                      "w-full flex items-center gap-3.5 px-4.5 py-3 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer border border-dashed relative active:scale-98 text-brand-action hover:bg-brand-action/8 border-brand-action/30",
                       effectiveCollapsed && "justify-center px-2 py-3.5 gap-0",
                       !isSurveyCompleted && "ring-2 ring-brand-action/20 bg-brand-action/7"
                     )}
@@ -844,19 +844,19 @@ export const AppLayout: React.FC = () => {
 
       <main className="flex-1 flex flex-col min-h-screen md:min-h-0 md:max-h-screen md:overflow-y-auto bg-background overscroll-contain">
 
-        <header className="hidden md:flex items-center justify-between px-8 py-4.5 bg-card/60 backdrop-blur-lg border-b border-border/30 shadow-sm sticky top-0 z-20">
-          <div className="flex items-center gap-4.5">
+        <header className="hidden md:flex items-center justify-between px-6 py-3.5 bg-card/60 backdrop-blur-lg border-b border-border/30 shadow-sm sticky top-0 z-20">
+          <div className="flex items-center gap-3.5">
             <button
               onClick={toggleSidebarCollapse}
               aria-label={isSidebarCollapsed ? "Mở rộng menu bên" : "Thu gọn menu bên"}
               aria-expanded={!isSidebarCollapsed}
-              className="p-2.5 rounded-xl bg-secondary/50 text-muted-foreground hover:text-foreground border border-border/50 hover:bg-secondary transition-all cursor-pointer hidden md:flex items-center justify-center shrink-0 active:scale-95"
-              title={isSidebarCollapsed ? "Mở rộng menu" : "Thu gọn menu"}
+              className="p-2 rounded-xl bg-secondary/50 text-muted-foreground hover:text-foreground border border-border/50 hover:bg-secondary transition-all cursor-pointer hidden md:flex items-center justify-center shrink-0 active:scale-95"
+              title={isSidebarCollapsed ? "Mở rộng menu bên" : "Thu gọn menu bên"}
             >
-              {isSidebarCollapsed ? <Menu size={18} /> : <X size={18} />}
+              {isSidebarCollapsed ? <PanelLeft size={18} /> : <PanelLeftClose size={18} />}
             </button>
             <div className="flex flex-col md:flex-row md:items-center gap-4">
-              <h1 className="text-xl font-black tracking-tight text-foreground capitalize leading-tight shrink-0">
+              <h1 className="text-lg font-bold tracking-tight text-foreground capitalize leading-tight shrink-0">
                 {getHeaderTitle()}
               </h1>
               <div className="relative">
@@ -865,7 +865,7 @@ export const AppLayout: React.FC = () => {
                   aria-label="Chọn khối học và môn học"
                   aria-haspopup="true"
                   aria-expanded={isContextDropdownOpen}
-                  className="px-3.5 py-1.5 text-xs font-black rounded-2xl bg-secondary/50 hover:bg-secondary border border-border/40 hover:border-primary/30 text-foreground transition-all duration-200 flex items-center gap-1.5 cursor-pointer shadow-sm active:scale-95"
+                  className="px-3.5 py-1.5 text-xs font-bold rounded-2xl bg-secondary/50 hover:bg-secondary border border-border/40 hover:border-primary/30 text-foreground transition-all duration-200 flex items-center gap-1.5 cursor-pointer shadow-sm active:scale-95"
                 >
                   <span>{getActiveContextLabel()}</span>
                   <ChevronDown size={14} className={cn("transition-transform duration-200 shrink-0", isContextDropdownOpen && "rotate-180")} />
@@ -977,8 +977,8 @@ export const AppLayout: React.FC = () => {
             </button>
 
             <div className="flex items-center gap-1.5 bg-secondary/40 backdrop-blur-sm px-3.5 py-2 rounded-2xl border border-border/20 shadow-sm">
-              <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">Mastery:</span>
-              <span className="text-xs font-black text-primary bg-primary/8 px-2 py-0.5 rounded-lg border border-primary/10">
+              <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Mastery:</span>
+              <span className="text-xs font-bold text-primary bg-primary/8 px-2 py-0.5 rounded-lg border border-primary/10">
                 {isLoadingData ? '... dạng' : `${currentCompletedCount}/${currentQuestionTypes.length} dạng`}
               </span>
             </div>

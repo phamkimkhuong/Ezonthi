@@ -139,3 +139,130 @@ export function deriveMistake(uid: string, questionId: string, attempts: UserAtt
     canonicalVersion: 2,
   } as UserMistake;
 }
+
+export interface ExistingLearningSummary {
+  masteryLevels?: Record<string, number>;
+  masteryEvidence?: Record<string, any>;
+  completedLessons?: string[];
+  completedCount?: number;
+  stats?: {
+    totalAttempts?: number;
+    correctAttempts?: number;
+    totalStudySeconds?: number;
+    dailyActivity?: Record<string, number>;
+    xpScore?: number;
+    source?: string;
+    timeSource?: string;
+  };
+}
+
+export function updateLearningSummaryIncremental(
+  existing: ExistingLearningSummary,
+  affectedTypeIds: string[],
+  pastAttemptsForAffectedTypes: UserAttempt[],
+  acceptedAttempts: UserAttempt[],
+  questions = getLearningCatalog(),
+  now = Date.now()
+) {
+  const typeCapacity = new Map<string, number>();
+  for (const question of Object.values(questions)) {
+    typeCapacity.set(question.questionTypeId, (typeCapacity.get(question.questionTypeId) ?? 0) + 1);
+  }
+
+  const masteryLevels = { ...(existing.masteryLevels || {}) };
+  const masteryEvidence = { ...(existing.masteryEvidence || {}) };
+  const completedLessonsSet = new Set(existing.completedLessons || []);
+  const oldStats = existing.stats || {};
+  let totalAttempts = oldStats.totalAttempts || 0;
+  let correctAttempts = oldStats.correctAttempts || 0;
+  let totalStudySeconds = oldStats.totalStudySeconds || 0;
+  const dailyActivity = { ...(oldStats.dailyActivity || {}) };
+
+  for (const typeId of affectedTypeIds) {
+    const pastForType = pastAttemptsForAffectedTypes.filter(
+      a => a && a.questionTypeId === typeId && (a as CanonicalAttempt).gradingStatus !== 'pending' && Object.hasOwn(questions, a.questionId)
+    );
+    const oldLatestByQuestion = new Map<string, UserAttempt>();
+    for (const attempt of pastForType) {
+      const prev = oldLatestByQuestion.get(attempt.questionId);
+      if (!prev || compareAttemptOrder(prev, attempt) < 0) {
+        oldLatestByQuestion.set(attempt.questionId, attempt);
+      }
+    }
+
+    const newForType = acceptedAttempts.filter(
+      a => a && a.questionTypeId === typeId && (a as CanonicalAttempt).gradingStatus !== 'pending' && Object.hasOwn(questions, a.questionId)
+    );
+
+    const combinedForType = [...pastForType, ...newForType];
+    const newLatestByQuestion = new Map<string, UserAttempt>();
+    for (const attempt of combinedForType) {
+      const prev = newLatestByQuestion.get(attempt.questionId);
+      if (!prev || compareAttemptOrder(prev, attempt) < 0) {
+        newLatestByQuestion.set(attempt.questionId, attempt);
+      }
+    }
+
+    for (const [qid, newLatest] of newLatestByQuestion.entries()) {
+      const oldLatest = oldLatestByQuestion.get(qid);
+      if (!oldLatest) {
+        totalAttempts++;
+        if (newLatest.isCorrect) correctAttempts++;
+        totalStudySeconds += Math.max(0, Math.min(600, Number(newLatest.timeSpent) || 0));
+        const date = new Date(newLatest.createdAt).toISOString().slice(0, 10);
+        dailyActivity[date] = (dailyActivity[date] ?? 0) + 1;
+      } else if (oldLatest.id !== newLatest.id) {
+        if (!oldLatest.isCorrect && newLatest.isCorrect) correctAttempts++;
+        else if (oldLatest.isCorrect && !newLatest.isCorrect) correctAttempts = Math.max(0, correctAttempts - 1);
+
+        const oldTime = Math.max(0, Math.min(600, Number(oldLatest.timeSpent) || 0));
+        const newTime = Math.max(0, Math.min(600, Number(newLatest.timeSpent) || 0));
+        totalStudySeconds = Math.max(0, totalStudySeconds + (newTime - oldTime));
+
+        const oldDate = new Date(oldLatest.createdAt).toISOString().slice(0, 10);
+        const newDate = new Date(newLatest.createdAt).toISOString().slice(0, 10);
+        if (oldDate !== newDate) {
+          dailyActivity[oldDate] = Math.max(0, (dailyActivity[oldDate] ?? 1) - 1);
+          if (dailyActivity[oldDate] === 0) delete dailyActivity[oldDate];
+          dailyActivity[newDate] = (dailyActivity[newDate] ?? 0) + 1;
+        }
+      }
+    }
+
+    const capacity = typeCapacity.get(typeId);
+    const evidence = calculateMasteryEvidence([...newLatestByQuestion.values()], capacity);
+    masteryEvidence[typeId] = evidence;
+    masteryLevels[typeId] = evidence.score;
+
+    if (evidence.hasEnoughEvidence && evidence.score >= 70) {
+      completedLessonsSet.add(typeId);
+    } else {
+      completedLessonsSet.delete(typeId);
+    }
+  }
+
+  const retentionCutoff = new Date(now - 180 * 86_400_000).toISOString().slice(0, 10);
+  for (const date of Object.keys(dailyActivity)) {
+    if (date < retentionCutoff) delete dailyActivity[date];
+  }
+
+  const completedLessons = [...completedLessonsSet];
+  const completedCount = completedLessons.length;
+  const xpScore = correctAttempts * 15 + completedCount * 100;
+
+  return {
+    masteryLevels,
+    masteryEvidence,
+    completedLessons,
+    completedCount,
+    stats: {
+      totalAttempts,
+      correctAttempts,
+      totalStudySeconds,
+      dailyActivity,
+      xpScore,
+      source: 'server-checked-v2',
+      timeSource: 'self-reported-capped',
+    },
+  };
+}

@@ -1,4 +1,5 @@
 export { callGeminiProxy } from "./handlers/callGeminiProxy.js";
+export { streamGeminiProxy } from "./handlers/streamGeminiProxy.js";
 export { createPaymentLink, payosWebhook, grantPremiumByEmail, validateAffiliateCode, requestPayout, processPayoutRequest } from "./handlers/payment.js";
 export { diagnoseSession } from "./handlers/diagnose.js";
 export { sendResendEmail, syncEmailDirectory, getEmailDirectory, sendBroadcastBatch } from "./handlers/email.js";

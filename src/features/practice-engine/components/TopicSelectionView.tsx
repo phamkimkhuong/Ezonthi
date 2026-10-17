@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Crown, ArrowLeft, ChevronDown, ChevronUp } from 'lucide-react';
+import { Crown, ArrowLeft, ChevronDown, ChevronUp, Search, X, List, LayoutGrid, BookOpen, PlayCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
@@ -15,6 +15,7 @@ import { authService } from '@/services/authService';
 import { buildCoursePath } from '@/utils/courseRoutes';
 import { buildAdaptivePracticeSequence } from '../utils/adaptivePracticeSequence';
 import { isQuestionTypePremiumLocked } from '@/utils/subject';
+import { matchesSearchKeyword } from '@/utils/searchHelper';
 
 interface TopicSelectionViewProps {
   routeSubject: SubjectCode;
@@ -60,6 +61,16 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
   const [premiumModalOpen, setPremiumModalOpen] = useState(false);
   const [showLoginConfirm, setShowLoginConfirm] = useState(false);
   const [collapsedTopics, setCollapsedTopics] = useState<Record<string, boolean>>({});
+  const [searchQuery, setSearchQuery] = useState('');
+  const [viewMode, setViewMode] = useState<'list' | 'grid'>(() => {
+    const saved = localStorage.getItem('otv10_practice_view_mode');
+    return saved === 'grid' ? 'grid' : 'list';
+  });
+
+  const handleToggleViewMode = (mode: 'list' | 'grid') => {
+    setViewMode(mode);
+    localStorage.setItem('otv10_practice_view_mode', mode);
+  };
 
   const toggleTopic = (topicId: string) => {
     setCollapsedTopics(prev => ({
@@ -141,7 +152,7 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
       <div className="space-y-6 max-w-4xl xl:max-w-7xl 2xl:max-w-[1440px] mx-auto pb-12 px-4 md:px-6 animate-fade-in">
         <button
           onClick={() => {
-            navigate('/practice');
+            navigate(buildCoursePath(effectiveGrade, routeSubject, 'roadmap'));
           }}
           className="p-2 text-xs font-bold text-muted-foreground hover:text-foreground flex items-center justify-center cursor-pointer bg-secondary/50 hover:bg-secondary rounded-xl transition-all self-start animate-fade-in"
           title="Quay lại"
@@ -553,10 +564,22 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
   const gradeText = isG9 ? 'tuyển sinh 10' : isG11 ? 'Lớp 11' : isG12 ? 'Lớp 12' : 'Lớp 10';
   const gradeTextLower = isG9 ? 'ôn thi vào 10' : isG11 ? 'lớp 11' : isG12 ? 'lớp 12' : 'lớp 10';
 
+  const totalMatchedCount = useMemo(() => {
+    if (!searchQuery.trim()) return qTypes.length;
+    return qTypes.filter(qt => {
+      const topic = topics.find(t => t.id === qt.topicId);
+      return (
+        matchesSearchKeyword(qt.name, searchQuery) ||
+        matchesSearchKeyword(qt.description || '', searchQuery) ||
+        matchesSearchKeyword(topic?.name || '', searchQuery)
+      );
+    }).length;
+  }, [qTypes, topics, searchQuery]);
+
   return (
     <div className="w-full max-w-7xl mx-auto space-y-6 px-3 sm:px-6 lg:px-8 py-3 animate-fade-in pb-12 font-sans">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-black text-foreground tracking-tight">
+        <h2 className="text-xl md:text-2xl font-extrabold text-foreground tracking-tight">
           {isMath
             ? (isG9 ? '📐 Luyện tập Toán tuyển sinh 10' : `📐 Học tốt Toán ${gradeText}`)
             : isChemistry
@@ -569,7 +592,7 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
                     ? `📜 Luyện tập Lịch sử ${gradeText}`
                     : (isG9 ? '🗣️ Luyện tập Tiếng Anh vào 10' : `🗣️ Học tốt Tiếng Anh ${gradeText}`)}
         </h2>
-        <p className="text-xs text-muted-foreground font-semibold">
+        <p className="text-xs text-muted-foreground font-medium">
           {isMath
             ? (isG9 ? 'Học sinh làm bài tự luận chi tiết ra giấy, chụp ảnh gửi bài để thầy cô chấm và nhận xét.' : `Bài tập tự luận ${gradeTextLower} bám sát chương trình mới, chụp ảnh để nhận xét chi tiết.`)
             : isChemistry
@@ -588,8 +611,8 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
       {!user && (
         <div className="bg-primary/7 border border-primary/20 border-l-4 border-l-primary rounded-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4 w-full mx-auto">
           <div className="space-y-1 text-left">
-            <h3 className="text-sm font-black text-foreground">Bạn đang luyện tập ở chế độ xem thử</h3>
-            <p className="text-[11px] text-muted-foreground font-semibold">
+            <h3 className="text-sm font-bold text-foreground">Bạn đang luyện tập ở chế độ xem thử</h3>
+            <p className="text-xs text-muted-foreground font-medium">
               Kết quả làm bài được lưu tạm trên máy. Đăng nhập tài khoản để đồng bộ tiến trình học tập lên đám mây và mở khóa lưu vết đầy đủ.
             </p>
           </div>
@@ -608,10 +631,80 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
         </div>
       )}
 
+      {/* 🔍 Learning Command Bar: Tìm kiếm tức thì & Chuyển đổi Mục lục / Thẻ */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-card/60 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl border border-border/40 shadow-xs">
+        <div className="relative flex-1 min-w-0">
+          <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Tìm nhanh dạng bài, chuyên đề luyện tập (ví dụ: chuyển động, vecto, hàm số...)"
+            className="w-full pl-10 pr-9 py-2 rounded-xl text-xs bg-secondary/50 border border-border/40 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-sans"
+          />
+          {searchQuery && (
+            <button
+              type="button"
+              onClick={() => setSearchQuery('')}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground cursor-pointer p-0.5"
+              title="Xóa tìm kiếm"
+            >
+              <X size={14} />
+            </button>
+          )}
+        </div>
+
+        <div className="flex items-center justify-between sm:justify-end gap-2.5 shrink-0">
+          {searchQuery.trim() && (
+            <span className="text-[11px] font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-lg border border-primary/20">
+              Khớp {totalMatchedCount} dạng bài
+            </span>
+          )}
+          <div className="inline-flex p-0.5 bg-secondary/60 rounded-xl border border-border/40">
+            <button
+              type="button"
+              onClick={() => handleToggleViewMode('list')}
+              className={cn(
+                "px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer",
+                viewMode === 'list'
+                  ? "bg-card text-foreground shadow-xs font-bold"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+              title="Xem dạng danh sách mục lục (Gọn gàng, dễ tìm)"
+            >
+              <List size={14} />
+              <span>Mục lục</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => handleToggleViewMode('grid')}
+              className={cn(
+                "px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer",
+                viewMode === 'grid'
+                  ? "bg-card text-foreground shadow-xs font-bold"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+              title="Xem dạng thẻ hộp"
+            >
+              <LayoutGrid size={14} />
+              <span>Thẻ hộp</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       {topics.map((topic) => {
-        const topicQTypes = qTypes.filter(qt => qt.topicId === topic.id);
+        const topicQTypes = qTypes.filter(qt => {
+          if (qt.topicId !== topic.id) return false;
+          if (!searchQuery.trim()) return true;
+          return (
+            matchesSearchKeyword(qt.name, searchQuery) ||
+            matchesSearchKeyword(qt.description || '', searchQuery) ||
+            matchesSearchKeyword(topic.name, searchQuery)
+          );
+        });
         if (topicQTypes.length === 0) return null;
-        const isCollapsed = Boolean(collapsedTopics[topic.id]);
+        const isCollapsed = Boolean(collapsedTopics[topic.id]) && !searchQuery.trim();
 
         return (
           <div key={topic.id} className="space-y-3">
@@ -631,10 +724,10 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
                           'bg-purple-500'
                 )} />
                 <div className="flex flex-wrap items-center gap-2 flex-1 min-w-0">
-                  <h3 className="text-sm font-black text-foreground tracking-tight group-hover/topic:text-primary transition-colors leading-snug">
+                  <h3 className="text-sm font-bold text-foreground tracking-tight group-hover/topic:text-primary transition-colors leading-snug font-sans">
                     {topic.name}
                   </h3>
-                  <span className="text-[9px] bg-secondary text-muted-foreground border border-border/40 font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider shrink-0 whitespace-nowrap">
+                  <span className="text-[9px] bg-secondary text-muted-foreground border border-border/40 font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider shrink-0 whitespace-nowrap">
                     {topicQTypes.length} dạng bài
                   </span>
                 </div>
@@ -650,174 +743,330 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
               </div>
             </div>
 
-            {/* Grid 3 cột rộng rãi thoáng đãng trên Laptop, 4 cột trên 2xl */}
             {!isCollapsed && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 xl:gap-5 animate-fade-in pt-1">
-                {topicQTypes.map((qType) => {
-                  const qTypeAttempts = attempts.filter(a => a.questionTypeId === qType.id);
-                  const qTypeQuestions = allQuestions.filter(q => q.questionTypeId === qType.id);
-                  const adaptiveStatus = (isChemistry || isPhysics || isBiology)
-                    ? buildAdaptivePracticeSequence(qTypeQuestions, qTypeAttempts)
-                    : null;
-                  const totalQuestions = adaptiveStatus?.learningQuestionCount ?? qTypeQuestions.length;
-                  const solvedQuestionIds = new Set(
-                    qTypeAttempts
-                      .filter(a => a.isCorrect)
-                      .filter(a => !qTypeQuestions.find(question => question.id === a.questionId)?.isMasteryHoldout)
-                      .map(a => a.questionId)
-                  );
-                  const solvedCount = adaptiveStatus
-                    ? adaptiveStatus.readiness.correctLearningCount
-                    : Math.min(solvedQuestionIds.size, totalQuestions);
-                  const progressPercent = totalQuestions > 0 ? Math.round((solvedCount / totalQuestions) * 100) : 0;
-                  const masteryScore = progress?.masteryLevels[qType.id] ?? 0;
-                  const starsCount = getStarsFromScore(masteryScore);
-                  const isLockedByPremium = isQuestionTypePremiumLocked(qType.id, topic.tier, routeSubject, selectedGrade) && !isPremium;
-
-                  const statusBadge = (() => {
-                    if (isLockedByPremium) {
-                      return (
-                        <span className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 animate-pulse flex items-center gap-0.5">
-                          👑 Khóa Premium
-                        </span>
-                      );
-                    }
-                    if (qTypeAttempts.length === 0) {
-                      return (
-                        <span className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-secondary text-muted-foreground border border-border/40 inline-flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-                          Sẵn sàng
-                        </span>
-                      );
-                    }
-                    if (
-                      adaptiveStatus
-                      && adaptiveStatus.holdoutQuestionCount > 0
-                      && adaptiveStatus.correctHoldoutCount === adaptiveStatus.holdoutQuestionCount
-                    ) {
-                      return (
-                        <span className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20 inline-flex items-center gap-1">
-                          🛡️ Đã vượt kiểm tra làm chủ
-                        </span>
-                      );
-                    }
-                    if (adaptiveStatus?.holdoutUnlocked && adaptiveStatus.holdoutQuestionCount > 0) {
-                      return (
-                        <span className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 inline-flex items-center gap-1">
-                          🛡️ Sẵn sàng kiểm tra
-                        </span>
-                      );
-                    }
-                    if (progressPercent === 100) {
-                      return (
-                        <span className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 inline-flex items-center gap-1">
-                          ✓ Đã hoàn thành
-                        </span>
-                      );
-                    }
-                    return (
-                      <span className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 inline-flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 shrink-0 animate-pulse" />
-                        Đang luyện ({solvedCount}/{totalQuestions})
-                      </span>
+              viewMode === 'list' ? (
+                /* 📑 Danh Sách Mục Lục Tinh Gọn (List View) */
+                <div className="space-y-2 animate-fade-in pt-1">
+                  {topicQTypes.map((qType, qIdx) => {
+                    const qTypeAttempts = attempts.filter(a => a.questionTypeId === qType.id);
+                    const qTypeQuestions = allQuestions.filter(q => q.questionTypeId === qType.id);
+                    const adaptiveStatus = (isChemistry || isPhysics || isBiology)
+                      ? buildAdaptivePracticeSequence(qTypeQuestions, qTypeAttempts)
+                      : null;
+                    const totalQuestions = adaptiveStatus?.learningQuestionCount ?? qTypeQuestions.length;
+                    const solvedQuestionIds = new Set(
+                      qTypeAttempts
+                        .filter(a => a.isCorrect)
+                        .filter(a => !qTypeQuestions.find(question => question.id === a.questionId)?.isMasteryHoldout)
+                        .map(a => a.questionId)
                     );
-                  })();
+                    const solvedCount = adaptiveStatus
+                      ? adaptiveStatus.readiness.correctLearningCount
+                      : Math.min(solvedQuestionIds.size, totalQuestions);
+                    const progressPercent = totalQuestions > 0 ? Math.round((solvedCount / totalQuestions) * 100) : 0;
+                    const masteryScore = progress?.masteryLevels[qType.id] ?? 0;
+                    const starsCount = getStarsFromScore(masteryScore);
+                    const isLockedByPremium = isQuestionTypePremiumLocked(qType.id, topic.tier, routeSubject, selectedGrade) && !isPremium;
 
-                  const handleTypeClick = () => {
-                    if (isLockedByPremium) {
-                      setPremiumModalOpen(true);
-                      return;
-                    }
-                    requireAuth(() => {
-                      if (qType.id === 'eng-qt6') {
-                        setGrammarSection('dang1');
-                      } else {
-                        navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice', qType.id));
+                    const statusBadge = (() => {
+                      if (isLockedByPremium) {
+                        return (
+                          <span className="text-[9px] font-bold px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                            👑 Premium
+                          </span>
+                        );
                       }
-                    });
-                  };
+                      if (qTypeAttempts.length === 0) {
+                        return (
+                          <span className="text-[9px] font-bold px-2 py-0.5 rounded-md bg-secondary text-muted-foreground border border-border/40 inline-flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                            Sẵn sàng
+                          </span>
+                        );
+                      }
+                      if (progressPercent === 100) {
+                        return (
+                          <span className="text-[9px] font-bold px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                            ✓ Hoàn thành
+                          </span>
+                        );
+                      }
+                      return (
+                        <span className="text-[9px] font-bold px-2 py-0.5 rounded-md bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+                          Đang luyện ({solvedCount}/{totalQuestions})
+                        </span>
+                      );
+                    })();
 
-                  return (
-                    <div
-                      key={qType.id}
-                      onClick={handleTypeClick}
-                      className={cn(
-                        "p-5 rounded-2xl border border-border/40 transition-all duration-300 flex flex-col justify-between h-full bg-card hover:shadow-md hover:-translate-y-0.5 cursor-pointer select-none relative overflow-hidden group font-sans",
-                        routeSubject === 'math' ? 'hover:border-indigo-500/50' :
-                          routeSubject === 'chemistry' ? 'hover:border-emerald-500/50' :
-                            routeSubject === 'physics' ? 'hover:border-cyan-500/50' :
-                              'hover:border-purple-500/50'
-                      )}
-                    >
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between gap-2">
-                          <div className="flex items-center gap-1.5 bg-secondary/80 px-2.5 py-1 rounded-full text-[9px] font-extrabold text-muted-foreground border border-border/30">
-                            <span>Luyện tập</span>
+                    const handleTypeClick = () => {
+                      if (isLockedByPremium) {
+                        setPremiumModalOpen(true);
+                        return;
+                      }
+                      requireAuth(() => {
+                        if (qType.id === 'eng-qt6') {
+                          setGrammarSection('dang1');
+                        } else {
+                          navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice', qType.id));
+                        }
+                      });
+                    };
+
+                    return (
+                      <div
+                        key={qType.id}
+                        className={cn(
+                          "p-3.5 sm:p-4 rounded-2xl border transition-all duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group bg-card shadow-xs",
+                          isLockedByPremium
+                            ? "border-border/40 opacity-70"
+                            : progressPercent === 100
+                              ? "border-emerald-500/25 bg-emerald-500/[0.03] hover:border-emerald-500/40"
+                              : "border-border/60 hover:border-primary/40 hover:bg-secondary/15"
+                        )}
+                      >
+                        <div className="flex items-start gap-3 flex-1 min-w-0">
+                          <span className="w-7 h-7 rounded-xl bg-secondary/80 flex items-center justify-center text-xs font-bold text-muted-foreground shrink-0 mt-0.5">
+                            {qIdx + 1}
+                          </span>
+                          <div className="space-y-1 min-w-0 flex-1">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <h4
+                                onClick={handleTypeClick}
+                                className="font-bold text-xs sm:text-sm text-foreground group-hover:text-primary transition-colors leading-snug font-sans cursor-pointer"
+                              >
+                                <LatexRenderer text={qType.name} />
+                              </h4>
+                              {statusBadge}
+                              {starsCount > 0 && (
+                                <span className="text-[10px] text-amber-500 font-bold">
+                                  {'⭐'.repeat(starsCount)}
+                                </span>
+                              )}
+                            </div>
+                            {qType.description && (
+                              <p className="text-[11px] text-muted-foreground line-clamp-1 leading-relaxed">
+                                <LatexRenderer text={qType.description} />
+                              </p>
+                            )}
                           </div>
-                          {statusBadge}
                         </div>
 
-                        {/* Hover text color đồng bộ môn học */}
-                        <h3 className={cn(
-                          "font-extrabold text-base text-foreground transition-colors",
-                          routeSubject === 'math' ? 'group-hover:text-indigo-600' :
-                            routeSubject === 'chemistry' ? 'group-hover:text-emerald-600' :
-                              routeSubject === 'physics' ? 'group-hover:text-cyan-600' :
-                                'group-hover:text-purple-600'
-                        )}>
-                          <LatexRenderer text={qType.name} />
-                        </h3>
-                        <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
-                          <LatexRenderer text={qType.description} />
-                        </p>
-                      </div>
+                        {/* Progress Bar + Dual Actions: Lý thuyết & Luyện tập */}
+                        <div className="flex items-center gap-2.5 shrink-0 self-end sm:self-center pt-2 sm:pt-0 border-t sm:border-t-0 border-border/20 w-full sm:w-auto justify-end">
+                          <div className="hidden lg:flex items-center gap-2 w-28">
+                            <div className="h-1.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                              <div className="h-full bg-primary rounded-full transition-all duration-300" style={{ width: `${progressPercent}%` }} />
+                            </div>
+                            <span className="text-[10px] font-bold text-muted-foreground shrink-0">{progressPercent}%</span>
+                          </div>
 
-                      <div className="space-y-3 pt-4">
-                        {/* Progress Bar & Stars */}
-                        <div className="space-y-1.5">
-                          <div className="flex items-center justify-between text-[10px] font-extrabold">
-                            <span className="text-muted-foreground">Tiến độ: {solvedCount}/{totalQuestions} ({progressPercent}%)</span>
-                            <div className="flex gap-0.5 text-amber-400">
-                              {[1, 2, 3].map((star) => (
-                                <span key={star} className={star <= starsCount ? 'opacity-100' : 'opacity-25'}>
-                                  ★
-                                </span>
-                              ))}
+                          <button
+                            type="button"
+                            onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'question-types', qType.id))}
+                            className="px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer border bg-secondary hover:bg-secondary/80 text-foreground border-border/40"
+                            title="Xem lý thuyết và phương pháp giải"
+                          >
+                            <BookOpen size={13} className="text-muted-foreground" />
+                            <span className="hidden sm:inline">Lý thuyết</span>
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={handleTypeClick}
+                            className={cn(
+                              "px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer text-white shadow-xs active:scale-95",
+                              isLockedByPremium ? "bg-amber-600 hover:bg-amber-700" : (theme.solid || "bg-primary")
+                            )}
+                          >
+                            <PlayCircle size={13} />
+                            <span>{progressPercent > 0 ? "Luyện tiếp" : "Luyện tập"}</span>
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                /* 🗂️ Chế độ Thẻ Hộp (Grid View) với Dual Actions */
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 xl:gap-5 animate-fade-in pt-1">
+                  {topicQTypes.map((qType) => {
+                    const qTypeAttempts = attempts.filter(a => a.questionTypeId === qType.id);
+                    const qTypeQuestions = allQuestions.filter(q => q.questionTypeId === qType.id);
+                    const adaptiveStatus = (isChemistry || isPhysics || isBiology)
+                      ? buildAdaptivePracticeSequence(qTypeQuestions, qTypeAttempts)
+                      : null;
+                    const totalQuestions = adaptiveStatus?.learningQuestionCount ?? qTypeQuestions.length;
+                    const solvedQuestionIds = new Set(
+                      qTypeAttempts
+                        .filter(a => a.isCorrect)
+                        .filter(a => !qTypeQuestions.find(question => question.id === a.questionId)?.isMasteryHoldout)
+                        .map(a => a.questionId)
+                    );
+                    const solvedCount = adaptiveStatus
+                      ? adaptiveStatus.readiness.correctLearningCount
+                      : Math.min(solvedQuestionIds.size, totalQuestions);
+                    const progressPercent = totalQuestions > 0 ? Math.round((solvedCount / totalQuestions) * 100) : 0;
+                    const masteryScore = progress?.masteryLevels[qType.id] ?? 0;
+                    const starsCount = getStarsFromScore(masteryScore);
+                    const isLockedByPremium = isQuestionTypePremiumLocked(qType.id, topic.tier, routeSubject, selectedGrade) && !isPremium;
+
+                    const statusBadge = (() => {
+                      if (isLockedByPremium) {
+                        return (
+                          <span className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 animate-pulse flex items-center gap-0.5">
+                            👑 Khóa Premium
+                          </span>
+                        );
+                      }
+                      if (qTypeAttempts.length === 0) {
+                        return (
+                          <span className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-secondary text-muted-foreground border border-border/40 inline-flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                            Sẵn sàng
+                          </span>
+                        );
+                      }
+                      if (progressPercent === 100) {
+                        return (
+                          <span className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 inline-flex items-center gap-1">
+                            ✓ Đã hoàn thành
+                          </span>
+                        );
+                      }
+                      return (
+                        <span className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 inline-flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 shrink-0 animate-pulse" />
+                          Đang luyện ({solvedCount}/{totalQuestions})
+                        </span>
+                      );
+                    })();
+
+                    const handleTypeClick = () => {
+                      if (isLockedByPremium) {
+                        setPremiumModalOpen(true);
+                        return;
+                      }
+                      requireAuth(() => {
+                        if (qType.id === 'eng-qt6') {
+                          setGrammarSection('dang1');
+                        } else {
+                          navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice', qType.id));
+                        }
+                      });
+                    };
+
+                    return (
+                      <div
+                        key={qType.id}
+                        className={cn(
+                          "p-5 rounded-2xl border border-border/40 transition-all duration-300 flex flex-col justify-between h-full bg-card hover:shadow-md hover:-translate-y-0.5 select-none relative overflow-hidden group font-sans",
+                          routeSubject === 'math' ? 'hover:border-indigo-500/50' :
+                            routeSubject === 'chemistry' ? 'hover:border-emerald-500/50' :
+                              routeSubject === 'physics' ? 'hover:border-cyan-500/50' :
+                                'hover:border-purple-500/50'
+                        )}
+                      >
+                        <div className="space-y-3 cursor-pointer" onClick={handleTypeClick}>
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-1.5 bg-secondary/80 px-2.5 py-1 rounded-full text-[9px] font-bold text-muted-foreground border border-border/30">
+                              <span>Luyện tập</span>
+                            </div>
+                            {statusBadge}
+                          </div>
+
+                          <h3 className={cn(
+                            "font-bold text-sm sm:text-base text-foreground transition-colors",
+                            routeSubject === 'math' ? 'group-hover:text-indigo-600' :
+                              routeSubject === 'chemistry' ? 'group-hover:text-emerald-600' :
+                                routeSubject === 'physics' ? 'group-hover:text-cyan-600' :
+                                  'group-hover:text-purple-600'
+                          )}>
+                            <LatexRenderer text={qType.name} />
+                          </h3>
+                          <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                            <LatexRenderer text={qType.description} />
+                          </p>
+                        </div>
+
+                        <div className="space-y-3 pt-4">
+                          <div className="space-y-1.5">
+                            <div className="flex items-center justify-between text-[10px] font-bold">
+                              <span className="text-muted-foreground">Tiến độ: {solvedCount}/{totalQuestions} ({progressPercent}%)</span>
+                              <div className="flex gap-0.5 text-amber-400">
+                                {[1, 2, 3].map((star) => (
+                                  <span key={star} className={star <= starsCount ? 'opacity-100' : 'opacity-25'}>
+                                    ★
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                            <div className="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                              <div
+                                className={cn(
+                                  "h-full rounded-full transition-all duration-500",
+                                  routeSubject === 'math' ? 'bg-indigo-500' :
+                                    routeSubject === 'chemistry' ? 'bg-emerald-500' :
+                                      routeSubject === 'physics' ? 'bg-cyan-500' :
+                                        'bg-purple-500'
+                                )}
+                                style={{ width: `${progressPercent}%` }}
+                              />
                             </div>
                           </div>
-                          <div className="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                            <div
+
+                          {/* Dual Actions Footer: Xem lý thuyết & Luyện tập */}
+                          <div className="flex items-center justify-between border-t border-border/20 pt-3 gap-2">
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                navigate(buildCoursePath(effectiveGrade, routeSubject, 'question-types', qType.id));
+                              }}
+                              className="text-[11px] font-semibold text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors cursor-pointer"
+                            >
+                              <BookOpen size={12} />
+                              <span>Lý thuyết</span>
+                            </button>
+
+                            <button
+                              type="button"
+                              onClick={handleTypeClick}
                               className={cn(
-                                "h-full rounded-full transition-all duration-500",
-                                routeSubject === 'math' ? 'bg-indigo-500' :
-                                  routeSubject === 'chemistry' ? 'bg-emerald-500' :
-                                    routeSubject === 'physics' ? 'bg-cyan-500' :
-                                      'bg-purple-500'
+                                "px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 transition-all cursor-pointer text-white shadow-xs active:scale-95",
+                                isLockedByPremium ? "bg-amber-600 hover:bg-amber-700" : (theme.solid || "bg-primary")
                               )}
-                              style={{ width: `${progressPercent}%` }}
-                            />
+                            >
+                              <PlayCircle size={12} />
+                              <span>Luyện tập</span>
+                            </button>
                           </div>
                         </div>
-
-                        {/* Text link đồng bộ màu môn học */}
-                        <div className={cn("flex items-center justify-between border-t border-border/20 pt-3 text-xs font-black", theme.text)}>
-                          <span>
-                            {qType.id === 'eng-qt6'
-                              ? 'Khám phá 6 chuyên đề →'
-                              : isLockedByPremium
-                                ? 'Mở khóa Premium 👑'
-                                : 'Luyện tập ngay →'}
-                          </span>
-                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
+                    );
+                  })}
+                </div>
+              )
             )}
           </div>
         );
       })}
+
+      {searchQuery.trim() && totalMatchedCount === 0 && (
+        <div className="text-center py-16 px-4 space-y-3 bg-secondary/15 rounded-3xl border border-dashed border-border/60 max-w-lg mx-auto">
+          <p className="text-sm font-semibold text-foreground">
+            Không tìm thấy dạng bài nào phù hợp với từ khóa "{searchQuery}"
+          </p>
+          <p className="text-xs text-muted-foreground">
+            Hãy thử tìm bằng từ khóa khác hoặc bấm nút bên dưới để xem lại toàn bộ.
+          </p>
+          <button
+            onClick={() => setSearchQuery('')}
+            className="px-4 py-2 text-xs font-bold bg-primary text-primary-foreground rounded-xl transition-all cursor-pointer active:scale-95"
+          >
+            Xóa tìm kiếm & Hiện tất cả
+          </button>
+        </div>
+      )}
 
       {isEnglish && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-border/50">

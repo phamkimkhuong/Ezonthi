@@ -24,6 +24,7 @@ import { LatexRenderer } from '../../components/common/LatexRenderer';
 import { authService } from '../../services/authService';
 import { LeaderboardWidget } from '../../components/dashboard/LeaderboardWidget';
 import { calculateStudentStats } from '../../utils/stats';
+import { buildCoursePath } from '../../utils/courseRoutes';
 
 export const Dashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -190,27 +191,57 @@ export const Dashboard: React.FC = () => {
     };
   }, [attempts]);
 
-  // Lấy câu trích dẫn ngẫu nhiên truyền động lực học
-  const quotes = [
-    "Hành trình vạn dặm bắt đầu từ những bước chân đầu tiên. Hãy giải quyết gọn gàng từng dạng bài hôm nay!",
-    "Thi đỗ vào lớp 10 không khó, chỉ cần bạn không lặp lại sai lầm cũ. Hãy ôn lại sổ lỗi sai thường xuyên nhé!",
-    "Chăm chỉ cộng phương pháp đúng là chìa khóa của thành công. Roadmap đã sẵn sàng, đi thôi!",
-    "Từng câu Toán rút gọn, từng cấu trúc bị động bạn luyện hôm nay chính là bậc thang dẫn tới cánh cổng trường cấp 3 mơ ước."
-  ];
+  // Định dạng tên học sinh viết hoa chỉn chu từng từ (Title Case)
+  const formattedDisplayName = useMemo(() => {
+    if (!user?.displayName || !user.displayName.trim()) return 'bạn';
+    return user.displayName
+      .trim()
+      .split(/\s+/)
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+  }, [user?.displayName]);
 
-  const [quote] = useState(() => quotes[Math.floor(Math.random() * quotes.length)]);
+  // Lấy câu trích dẫn truyền cảm hứng phù hợp với Khối lớp & Môn học thực tế
+  const quote = useMemo(() => {
+    const subjectName = getSubjectName(selectedSubject);
+    if (selectedGrade === 'grade10') {
+      const g10Quotes = [
+        `Nắm chắc từng dạng bài môn ${subjectName} lớp 10 là nền tảng vàng cho kỳ thi Tốt nghiệp THPT và Đại học mơ ước!`,
+        `Mỗi định luật, mỗi công thức bạn làm chủ hôm nay sẽ biến ${subjectName} thành thế mạnh vượt trội của bạn.`,
+        `Hành trình bứt phá điểm số bắt đầu từ việc hiểu sâu bản chất từng bài tập. Cùng luyện ngay nhé!`,
+        `Chăm chỉ cộng phương pháp bài bản là chìa khóa của thành công. Lộ trình môn ${subjectName} đã sẵn sàng!`
+      ];
+      return g10Quotes[Math.floor(Math.random() * g10Quotes.length)];
+    }
+    if (selectedGrade === 'grade11') {
+      const g11Quotes = [
+        `Lớp 11 là năm bản lề bứt phá kiến thức môn ${subjectName}. Nắm chắc từng dạng bài để tự tin về đích sớm!`,
+        `Hiểu sâu bản chất, làm chủ phương pháp - mục tiêu điểm 9, 10 môn ${subjectName} luôn trong tầm tay bạn!`,
+        `Kiên trì rèn luyện mỗi ngày là con đường ngắn nhất để biến bài toán khó thành chuyện nhỏ.`
+      ];
+      return g11Quotes[Math.floor(Math.random() * g11Quotes.length)];
+    }
+    // grade 9 default
+    const g9Quotes = [
+      `Từng dạng bài môn ${subjectName} bạn hoàn thành hôm nay chính là bậc thang dẫn tới cánh cổng trường cấp 3 mơ ước!`,
+      `Thi đỗ vào lớp 10 không khó khi bạn có lộ trình học bài bản. Hãy kiên trì từng bước một nhé!`,
+      `Hành trình vạn dặm bắt đầu từ những bước chân đầu tiên. Hãy giải quyết gọn gàng từng dạng bài hôm nay!`,
+      `Đừng sợ sai! Hãy thường xuyên ôn lại sổ lỗi sai để biến điểm yếu thành vũ khí lợi hại nhất.`
+    ];
+    return g9Quotes[Math.floor(Math.random() * g9Quotes.length)];
+  }, [selectedGrade, selectedSubject]);
 
   return (
-    <div className="space-y-8 max-w-6xl mx-auto animate-fade-in">
+    <div className="space-y-6 max-w-6xl mx-auto animate-fade-in pb-12">
 
       {/* 🌟 Minimalist Greeting Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="space-y-1.5">
-          <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground flex items-center gap-2 font-sans">
-            <Sparkles className="text-amber-500 fill-amber-500 shrink-0" size={24} />
-            Chào {user?.displayName || 'bạn'}, người chiến thắng!
+        <div className="space-y-1">
+          <h2 className="text-xl md:text-2xl font-extrabold tracking-tight text-foreground flex items-center gap-2 font-sans">
+            <Sparkles className="text-amber-500 fill-amber-500 shrink-0" size={20} />
+            Chào {formattedDisplayName}, người chiến thắng!
           </h2>
-          <p className="text-xs md:text-sm text-muted-foreground font-bold italic max-w-2xl leading-relaxed">
+          <p className="text-xs md:text-sm text-muted-foreground font-medium italic max-w-2xl leading-relaxed">
             "{quote}"
           </p>
         </div>
@@ -302,41 +333,6 @@ export const Dashboard: React.FC = () => {
         </>
       )}
 
-      {/* ⚡ Tần suất học tập 7 ngày qua (7-Day Learning Activity Grid) */}
-      <Card className="paper-panel rounded-xl overflow-hidden p-5 space-y-4">
-        <div className="flex items-center justify-between border-b border-border/20 pb-3 flex-wrap gap-2">
-          <h3 className="text-xs font-black uppercase text-foreground tracking-wider flex items-center gap-2 font-sans">
-            <Activity size={18} className="text-emerald-500 animate-pulse shrink-0" />
-            Tần suất học tập 7 ngày qua ({weeklyStats.activeDaysInLast7}/7 ngày hoạt động)
-          </h3>
-          <span className="text-xs font-extrabold text-muted-foreground bg-secondary/40 px-3 py-1 rounded-full border border-border/30">
-            Tổng cộng <strong className="text-emerald-500 font-black">{weeklyStats.totalLast7Attempts}</strong> câu đã làm
-          </span>
-        </div>
-
-        <div className="grid grid-cols-7 gap-2">
-          {weeklyStats.grid.map((day, dIdx) => (
-            <div
-              key={dIdx}
-              className="flex flex-col items-center gap-1.5 p-2.5 rounded-2xl bg-secondary/15 border border-border/30 hover:border-emerald-500/30 transition-all"
-            >
-              <span className="text-[10px] font-extrabold text-muted-foreground">{day.label.split(' ')[0]}</span>
-              <div
-                className={cn(
-                  "w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black transition-all shadow-xs",
-                  day.active
-                    ? "bg-emerald-500 text-white shadow-sm shadow-emerald-500/20"
-                    : "bg-slate-100 dark:bg-slate-800 text-muted-foreground/40 border border-dashed border-border/40"
-                )}
-                title={day.active ? `Đã làm ${day.count} câu vào ngày ${day.dateStr}` : 'Không có hoạt động'}
-              >
-                {day.count > 0 ? day.count : '-'}
-              </div>
-              <span className="text-[8px] font-extrabold text-muted-foreground/60">{day.label.split(' ')[1]?.replace(/[()]/g, '')}</span>
-            </div>
-          ))}
-        </div>
-      </Card>
 
       {/* 📐 Main Workspace Grid: 2 Columns (Left 2/3 - Core Study Actions, Right 1/3 - Stats & Weaknesses) */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -350,10 +346,10 @@ export const Dashboard: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <BookOpen size={18} className={getSubjectTheme(selectedSubject).iconColor} />
-                  <CardTitle className="text-foreground text-sm font-black uppercase tracking-wider font-sans">Lộ trình học (Lý thuyết)</CardTitle>
+                  <CardTitle className="text-foreground text-sm font-bold font-sans">Lộ trình học (Lý thuyết)</CardTitle>
                 </div>
                 <span className={cn(
-                  'text-[9px] font-black px-2.5 py-0.5 rounded-lg border',
+                  'text-[10px] font-bold px-2 py-0.5 rounded-lg border',
                   getSubjectTheme(selectedSubject).badge
                 )}>
                   {`${getSubjectIcon(selectedSubject)} ${getSubjectName(selectedSubject)}`}
@@ -387,10 +383,10 @@ export const Dashboard: React.FC = () => {
                     )}>
                       {activeTheoryStatus === 'inprogress' ? "⚡ Học tiếp dạng bài dở dang" : "🎯 Dạng bài tiếp theo cần học"}
                     </span>
-                    <h3 className="text-base md:text-lg font-black text-foreground leading-snug font-sans pt-1">
+                    <h3 className="text-sm md:text-base font-bold text-foreground leading-snug font-sans pt-1">
                       <LatexRenderer text={activeTheoryType.name} />
                     </h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed font-semibold max-w-2xl">
+                    <p className="text-xs text-muted-foreground leading-relaxed font-normal max-w-2xl">
                       {activeTheoryType.description || 'Đọc lý thuyết và cách giải dạng bài này để chuẩn bị làm bài tập.'}
                     </p>
                   </div>
@@ -415,10 +411,10 @@ export const Dashboard: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Zap size={18} className="text-amber-500 fill-amber-500 animate-pulse" />
-                  <CardTitle className="text-foreground text-sm font-black uppercase tracking-wider font-sans">Luyện tập (Bài tập)</CardTitle>
+                  <CardTitle className="text-foreground text-sm font-bold font-sans">Luyện tập (Bài tập)</CardTitle>
                 </div>
                 <span className={cn(
-                  'text-[9px] font-black px-2.5 py-0.5 rounded-lg border',
+                  'text-[10px] font-bold px-2 py-0.5 rounded-lg border',
                   getSubjectTheme(selectedSubject).badge
                 )}>
                   {`${getSubjectIcon(selectedSubject)} ${getSubjectName(selectedSubject)}`}
@@ -434,11 +430,11 @@ export const Dashboard: React.FC = () => {
                     Chúc mừng! Bạn đã đạt mức thành thạo tối thiểu 2 sao cho toàn bộ các dạng bài tập môn học này.
                   </p>
                   <Button
-                    onClick={() => navigate('/practice')}
+                    onClick={() => navigate(buildCoursePath(selectedGrade, selectedSubject, 'roadmap'))}
                     variant="outline"
                     className="mt-2 font-black py-2.5 px-6 text-xs border border-border text-foreground hover:text-primary rounded-xl cursor-pointer"
                   >
-                    Xem lại các dạng bài luyện tập <ArrowRight size={12} className="ml-1" />
+                    Xem lại toàn bộ Lộ trình học <ArrowRight size={12} className="ml-1" />
                   </Button>
                 </div>
               ) : (
@@ -452,10 +448,10 @@ export const Dashboard: React.FC = () => {
                     )}>
                       {activePracticeStatus === 'inprogress' ? "⚡ Luyện tiếp dạng bài dở dang" : "🎯 Dạng bài tiếp theo cần luyện"}
                     </span>
-                    <h3 className="text-base md:text-lg font-black text-foreground leading-snug font-sans pt-1">
+                    <h3 className="text-sm md:text-base font-bold text-foreground leading-snug font-sans pt-1">
                       <LatexRenderer text={activePracticeType.name} />
                     </h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed font-semibold max-w-2xl">
+                    <p className="text-xs text-muted-foreground leading-relaxed font-normal max-w-2xl">
                       {activePracticeType.description || 'Luyện tập dạng bài này ngay để tăng mức độ thành thạo và tích lũy sao.'}
                     </p>
                   </div>
@@ -482,7 +478,7 @@ export const Dashboard: React.FC = () => {
                   </div>
 
                   <Button
-                    onClick={() => navigate(`/practice/${activePracticeType.id}`)}
+                    onClick={() => navigate(buildCoursePath(selectedGrade, selectedSubject, 'practice', activePracticeType.id))}
                     className={cn(
                       "w-fit px-8 font-black py-3 text-xs text-white rounded-2xl shadow-md hover:shadow-lg active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-1.5 self-start",
                       subjectTheme.solid
@@ -495,6 +491,63 @@ export const Dashboard: React.FC = () => {
             </CardContent>
           </Card>
 
+          {/* ⚡ Tần suất học tập 7 ngày qua (7-Day Learning Activity Grid) */}
+          <Card className="bg-card border-border/40 rounded-3xl shadow-md overflow-hidden p-5 space-y-4">
+            <div className="flex items-center justify-between border-b border-border/20 pb-3 flex-wrap gap-2">
+              <h3 className="text-xs font-bold text-foreground flex items-center gap-2 font-sans">
+                <Activity size={18} className="text-emerald-500 shrink-0" />
+                Tần suất học tập 7 ngày qua ({weeklyStats.activeDaysInLast7}/7 ngày hoạt động)
+              </h3>
+              <span className="text-xs font-medium text-muted-foreground bg-secondary/40 px-2.5 py-1 rounded-full border border-border/30">
+                {weeklyStats.totalLast7Attempts > 0 ? (
+                  <>Tổng cộng <strong className="text-emerald-500 font-bold">{weeklyStats.totalLast7Attempts}</strong> câu đã làm</>
+                ) : (
+                  <span className="text-amber-600 dark:text-amber-400 font-bold flex items-center gap-1">
+                    🌱 Hãy làm 1 câu hôm nay để bật chuỗi học!
+                  </span>
+                )}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-7 gap-2">
+              {weeklyStats.grid.map((day, dIdx) => {
+                const isToday = dIdx === weeklyStats.grid.length - 1;
+                return (
+                  <div
+                    key={dIdx}
+                    className={cn(
+                      "flex flex-col items-center gap-1.5 p-2 rounded-2xl border transition-all",
+                      isToday
+                        ? "bg-amber-500/5 dark:bg-amber-500/10 border-amber-500/40 shadow-xs ring-1 ring-amber-500/20"
+                        : "bg-secondary/15 border-border/30 hover:border-emerald-500/30"
+                    )}
+                  >
+                    <span className={cn(
+                      "text-[9px] font-extrabold",
+                      isToday ? "text-amber-600 dark:text-amber-400 font-black" : "text-muted-foreground"
+                    )}>
+                      {isToday ? "Hôm nay" : day.label.split(' ')[0]}
+                    </span>
+                    <div
+                      className={cn(
+                        "w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black transition-all shadow-xs",
+                        day.active
+                          ? "bg-emerald-500 text-white shadow-sm shadow-emerald-500/20"
+                          : isToday
+                            ? "bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-dashed border-amber-500/40"
+                            : "bg-slate-100 dark:bg-slate-800 text-muted-foreground/40 border border-dashed border-border/40"
+                      )}
+                      title={day.active ? `Đã làm ${day.count} câu vào ngày ${day.dateStr}` : isToday ? 'Hôm nay: Hãy làm bài để kích hoạt chuỗi học tập!' : 'Không có hoạt động'}
+                    >
+                      {day.count > 0 ? day.count : isToday ? '⚡' : '-'}
+                    </div>
+                    <span className="text-[8px] font-extrabold text-muted-foreground/60">{day.label.split(' ')[1]?.replace(/[()]/g, '')}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </Card>
+
         </div>
 
         {/* 👉 Right Column (1/3 width) - Stats Widget & Weakness list */}
@@ -503,7 +556,7 @@ export const Dashboard: React.FC = () => {
           {/* Widget Thống kê tổng quan (Mastery Stats Widget) */}
           <Card className="border border-border/40 rounded-3xl shadow-md overflow-hidden">
             <CardHeader className="bg-secondary/15 p-5 border-b border-border/20">
-              <CardTitle className="text-foreground font-black text-sm uppercase tracking-wider font-sans">Thống kê tổng quan</CardTitle>
+              <CardTitle className="text-foreground font-bold text-sm font-sans">Thống kê tổng quan</CardTitle>
             </CardHeader>
             <CardContent className="p-5 space-y-4">
 
@@ -516,9 +569,9 @@ export const Dashboard: React.FC = () => {
                   <Bookmark size={20} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-[9px] text-muted-foreground font-black tracking-wider block uppercase mb-0.5">Sổ lỗi sai</span>
-                  <span className="text-sm font-black text-foreground">
-                    {mistakes.length} câu <span className="text-[10px] text-slate-400 font-bold">chờ ôn tập</span>
+                  <span className="text-[9px] text-muted-foreground font-bold tracking-wider block uppercase mb-0.5">Sổ lỗi sai</span>
+                  <span className="text-sm font-bold text-foreground">
+                    {mistakes.length} câu <span className="text-[10px] text-slate-400 font-medium">chờ ôn tập</span>
                   </span>
                 </div>
               </div>
@@ -529,8 +582,8 @@ export const Dashboard: React.FC = () => {
                   <Award size={20} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-[9px] text-muted-foreground font-black tracking-wider block uppercase mb-0.5">Đề thi mới nhất</span>
-                  <span className="text-sm font-black text-foreground">
+                  <span className="text-[9px] text-muted-foreground font-bold tracking-wider block uppercase mb-0.5">Đề thi mới nhất</span>
+                  <span className="text-sm font-bold text-foreground">
                     {examScore}
                   </span>
                 </div>
@@ -538,7 +591,7 @@ export const Dashboard: React.FC = () => {
 
               {/* Tiến độ Lộ trình học (Lý thuyết) */}
               <div className="p-4 rounded-2xl bg-secondary/25 border border-border/10 space-y-2">
-                <div className="flex items-center justify-between text-xs font-black text-foreground">
+                <div className="flex items-center justify-between text-xs font-bold text-foreground">
                   <span className="flex items-center gap-1">📖 Tiến độ Lộ trình học (Lý thuyết)</span>
                   <span>{roadmapPercent}%</span>
                 </div>
@@ -555,7 +608,7 @@ export const Dashboard: React.FC = () => {
 
               {/* Tiến độ Luyện tập (Bài tập) */}
               <div className="p-4 rounded-2xl bg-secondary/25 border border-border/10 space-y-2">
-                <div className="flex items-center justify-between text-xs font-black text-foreground">
+                <div className="flex items-center justify-between text-xs font-bold text-foreground">
                   <span className="flex items-center gap-1">🎯 Tiến độ Luyện tập (Bài tập)</span>
                   <span>{practicePercent}%</span>
                 </div>

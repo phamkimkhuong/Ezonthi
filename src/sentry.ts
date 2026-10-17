@@ -29,6 +29,9 @@ Sentry.init({
     'Fetch is aborted',
     /Fetch is aborted/i,
     /AbortError/i,
+    // Bot / CefSharp scanner noise (Microsoft Outlook SafeLinks / Security crawlers)
+    /Object Not Found Matching Id/i,
+    /MethodName:update/i,
   ],
   integrations: [
     Sentry.browserTracingIntegration(),

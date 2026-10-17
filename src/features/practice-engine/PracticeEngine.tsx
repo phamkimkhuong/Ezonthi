@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useLayoutEffect, useState, useMemo, useRef } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { useAppStore } from '@/services/store';
 import { storageService } from '@/services/storage';
 import { progressService } from '@/services/progressService';
@@ -947,7 +947,7 @@ export const PracticeEngine: React.FC = () => {
         } else if (questionTypeId === 'eng-qt6') {
           setSelectedSubTense(null);
         } else {
-          navigate('/practice');
+          navigate(buildCoursePath(effectiveGrade, routeSubject, 'roadmap'));
         }
       }
     }
@@ -1109,7 +1109,11 @@ export const PracticeEngine: React.FC = () => {
     );
   }
 
-  if ((questionTypeId === undefined && !isGrade10CustomReviewActive) || (questionTypeId === 'eng-qt6' && selectedSubTense === null)) {
+  if (questionTypeId === undefined && !isGrade10CustomReviewActive) {
+    return <Navigate to={buildCoursePath(effectiveGrade, routeSubject, 'roadmap')} replace />;
+  }
+
+  if (questionTypeId === 'eng-qt6' && selectedSubTense === null) {
     return (
       <TopicSelectionView
         routeSubject={routeSubject}
@@ -1170,7 +1174,7 @@ export const PracticeEngine: React.FC = () => {
         </p>
         <div className="flex items-center justify-center gap-3 pt-2">
           <Button
-            onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice'))}
+            onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'roadmap'))}
             variant="outline"
             className="text-xs font-bold border border-border/50"
           >
@@ -1216,7 +1220,7 @@ export const PracticeEngine: React.FC = () => {
         <AlertTriangle size={40} className="mx-auto text-amber-500" />
         <h3 className="text-lg font-bold text-foreground">Chưa có câu hỏi luyện tập</h3>
         <p className="text-xs text-muted-foreground">Hiện tại hệ thống đang cập nhật ngân hàng đề cho dạng bài này. Vui lòng chọn dạng bài khác.</p>
-        <Button onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice'))} variant="outline" className="text-xs font-bold border border-border/50">
+        <Button onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'roadmap'))} variant="outline" className="text-xs font-bold border border-border/50">
           Quay lại danh sách dạng bài
         </Button>
       </div>
@@ -1312,7 +1316,7 @@ export const PracticeEngine: React.FC = () => {
               } else if (questionTypeId === 'eng-qt6') {
                 setSelectedSubTense(null);
               } else {
-                navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice'));
+                navigate(buildCoursePath(effectiveGrade, routeSubject, 'roadmap'));
               }
             }}
             className="p-2 text-xs font-bold text-muted-foreground hover:text-foreground flex items-center justify-center cursor-pointer bg-secondary/50 hover:bg-secondary rounded-xl transition-all font-semibold"

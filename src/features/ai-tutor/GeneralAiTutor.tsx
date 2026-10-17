@@ -86,6 +86,7 @@ export const GeneralAiTutor: React.FC = () => {
   const [isLoadingOlderMessages, setIsLoadingOlderMessages] = useState(false);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isStreaming, setIsStreaming] = useState(false);
 
   const [profile, setProfile] = useState<StudentProfile | null>(null);
   const [isLoadingProfile, setIsLoadingProfile] = useState(false);
@@ -427,7 +428,7 @@ export const GeneralAiTutor: React.FC = () => {
       return;
     }
     const textToSend = customText !== undefined ? customText : input;
-    if ((!textToSend.trim() && !selectedFile) || isLoading || errorMsg === "LIMIT_EXHAUSTED") return;
+    if ((!textToSend.trim() && !selectedFile) || isLoading || isStreaming || errorMsg === "LIMIT_EXHAUSTED") return;
 
     const fileToSend = selectedFile;
     const previewToSend = previewUrl;
@@ -507,23 +508,39 @@ export const GeneralAiTutor: React.FC = () => {
         parts: [{ text: m.text }]
       }));
 
-      const reply = await aiService.callGemini({
-        contents,
-        systemInstruction,
-        useRag: true,
-        subjectId: subject,
-        gradeId: selectedGrade,
-        ragVersion: '2026.09',
-        taskType: 'tutor',
-        temperature: 0.7,
-        skipDiagnosis: true,
-        chatId: currentSessionId,
-        ...(base64Image ? { image: base64Image } : {})
-      });
+      setIsStreaming(true);
+      let streamedReply = '';
+      let hasReceivedFirstChunk = false;
 
-      const finalMessages = [...updatedMessages, { role: 'model', text: reply } as Message];
+      const reply = await aiService.streamGemini(
+        {
+          contents,
+          systemInstruction,
+          useRag: true,
+          subjectId: subject,
+          gradeId: selectedGrade,
+          ragVersion: '2026.09',
+          taskType: 'tutor',
+          temperature: 0.7,
+          skipDiagnosis: true,
+          chatId: currentSessionId,
+          ...(base64Image ? { image: base64Image } : {})
+        },
+        (_chunk, fullText) => {
+          streamedReply = fullText;
+          if (!hasReceivedFirstChunk) {
+            hasReceivedFirstChunk = true;
+            setIsLoading(false); // Ẩn "Gia sư đang suy nghĩ..." ngay khi có chữ đầu tiên
+          }
+          setMessages([...updatedMessages, { role: 'model', text: fullText } as Message]);
+        }
+      );
+
+      setIsStreaming(false);
+      const finalReply = reply || streamedReply;
+      const finalMessages = [...updatedMessages, { role: 'model', text: finalReply } as Message];
       setMessages(finalMessages);
-      await appendChatMessages(user.uid, chatPathKey, currentSessionId, [{ role: 'model', text: reply }]);
+      await appendChatMessages(user.uid, chatPathKey, currentSessionId, [{ role: 'model', text: finalReply }]);
     } catch (err: any) {
       console.error("Lỗi khi gửi tin nhắn cho AI:", err);
       setIsUploadingImage(false);
@@ -562,6 +579,7 @@ export const GeneralAiTutor: React.FC = () => {
       }
     } finally {
       setIsLoading(false);
+      setIsStreaming(false);
       setIsUploadingImage(false);
       if (previewToSend) {
         URL.revokeObjectURL(previewToSend);
@@ -627,6 +645,7 @@ export const GeneralAiTutor: React.FC = () => {
           <AiTutorMessageList
             messages={messages}
             isLoading={isLoading}
+            isStreaming={isStreaming}
             isUploadingImage={isUploadingImage}
             suggestions={suggestions}
             errorMsg={errorMsg}
@@ -647,7 +666,7 @@ export const GeneralAiTutor: React.FC = () => {
             setInput={setInput}
             selectedFile={selectedFile}
             previewUrl={previewUrl}
-            isLoading={isLoading}
+            isLoading={isLoading || isStreaming}
             isUploadingImage={isUploadingImage}
             errorMsg={errorMsg}
             placeholder={`Hỏi Gia sư ${getSubjectName(subject)} hoặc dán (Ctrl+V) ảnh bài làm...`}
