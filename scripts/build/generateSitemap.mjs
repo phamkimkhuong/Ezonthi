@@ -3,7 +3,10 @@ import path from 'node:path';
 import { loadSeoCatalog } from '../validators/lib/loadSeoCatalog.mjs';
 
 const DOMAIN = 'https://ezonthi.com';
-const PUBLIC_ROUTES = ['/about/', '/premium/', '/support/'];
+const monetizationEnabled = /export\s+const\s+MONETIZATION_ENABLED\s*=\s*true\b/.test(
+  fs.readFileSync(path.join(process.cwd(), 'src', 'utils', 'premium.ts'), 'utf8')
+);
+const PUBLIC_ROUTES = monetizationEnabled ? ['/about/', '/premium/', '/support/'] : ['/about/', '/support/'];
 
 const xmlEscape = value => value
   .replaceAll('&', '&amp;')

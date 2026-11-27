@@ -68,30 +68,8 @@ export const ResultCard: React.FC<ResultCardProps> = ({
     }
   }, [existingAttempt, currentQuestion.id]);
 
-  // Cơ chế giãn cách 3 ngày (Spaced Repetition)
-  const retryStatus = React.useMemo(() => {
-    if (!existingAttempt) return { canRetry: true, daysRemaining: 0, unlockDateStr: '' };
-
-    const attemptDate = new Date(existingAttempt.createdAt);
-    const currentDate = new Date();
-
-    // Loại bỏ giờ/phút/giây để so sánh ngày
-    const d1 = new Date(attemptDate.getFullYear(), attemptDate.getMonth(), attemptDate.getDate());
-    const d2 = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
-    const diffDays = Math.round((d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
-
-    const canRetry = diffDays >= 3;
-    const daysRemaining = Math.max(0, 3 - diffDays);
-
-    const unlockDate = new Date(d1.getFullYear(), d1.getMonth(), d1.getDate() + 3);
-    const unlockDateStr = unlockDate.toLocaleDateString('vi-VN', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
-    });
-
-    return { canRetry, daysRemaining, unlockDateStr };
-  }, [existingAttempt]);
+  // Cho phép học sinh làm lại câu hỏi ngay lập tức (không khóa giãn cách 3 ngày)
+  void existingAttempt;
 
   let displayOptions = currentQuestion.options;
   let cleanContent = currentQuestion.content;
@@ -534,19 +512,13 @@ export const ResultCard: React.FC<ResultCardProps> = ({
             >
               <ArrowLeft size={14} /> Câu trước
             </Button>
-            {existingAttempt && !retryStatus.canRetry ? (
-              <div className="flex-1 flex flex-col items-center justify-center p-2 bg-slate-500/10 border border-slate-500/20 rounded-xl text-[10px] text-muted-foreground font-extrabold text-center leading-tight">
-                <span>⏱️ Làm lại sau {retryStatus.daysRemaining} ngày</span>
-              </div>
-            ) : (
-              <Button
-                onClick={handleRetry}
-                variant="outline"
-                className="flex-1 font-bold py-2.5 text-xs active:scale-[0.98] flex items-center justify-center gap-1.5 border border-border/50 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500/5 cursor-pointer h-10.5 rounded-xl"
-              >
-                🔄 Làm lại
-              </Button>
-            )}
+            <Button
+              onClick={handleRetry}
+              variant="outline"
+              className="flex-1 font-bold py-2.5 text-xs active:scale-[0.98] flex items-center justify-center gap-1.5 border border-border/50 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500/5 cursor-pointer h-10.5 rounded-xl"
+            >
+              🔄 Làm lại
+            </Button>
           </div>
         </div>
       </div>

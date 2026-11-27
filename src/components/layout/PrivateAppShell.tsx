@@ -142,13 +142,8 @@ const PrivateAppShell: React.FC = () => {
 
                     if (hasProgressChanges) refreshProgress();
 
-                    if (typeof sessionStorage !== 'undefined') {
-                      const hasAutoOpened = sessionStorage.getItem('ezonthi_profile_auto_opened');
-                      if (!hasAutoOpened && (!data.birthYear || !data.gender || !data.province)) {
-                        sessionStorage.setItem('ezonthi_profile_auto_opened', 'true');
-                        useAppStore.setState({ isProfileModalOpen: true, isAutoProfileModal: true });
-                      }
-                    }
+                    // Không tự động bật ProfileModal ngay sau khi đăng nhập Google để học sinh vào học ngay.
+                    // Học sinh vẫn có thể chủ động mở Cài đặt tài khoản từ thanh bên.
                   } else {
                     setPremium(false);
                     useAppStore.setState({ userData: null, trialActivated: false, premiumUntil: null });

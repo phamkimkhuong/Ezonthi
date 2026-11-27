@@ -33,7 +33,7 @@
           "hint": "Nhập nghiệm của bất phương trình (Ví dụ: x >= 1)."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -83,7 +83,7 @@
           "hint": "Nhập giá trị nguyên của x để P nhận giá trị nguyên."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -129,7 +129,7 @@
           "placeholder": "15"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "orderMatters": true,
       "autoCheckMode": "keyed-numeric"
     },
@@ -172,7 +172,7 @@
           "hint": "Xác suất rút được thẻ ghi số chia hết cho 5."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -198,15 +198,16 @@
     "subjectId": "math",
     "topicId": "math-t5",
     "questionTypeId": "math-qt6",
-    "content": "Bài 5. (3,0 điểm)\n\nCho tam giác nhọn \\(ABC\\) (\\(AB < AC\\)) nội tiếp trong đường tròn \\((O)\\). Hai đường cao \\(BD\\) và \\(CE\\) (\\(D\\) thuộc \\(AC\\); \\(E\\) thuộc \\(AB\\)) của tam giác \\(ABC\\) cắt nhau tại \\(H\\).\n\n1. Chứng minh bốn điểm \\(A, D, H, E\\) cùng thuộc một đường tròn.\n\n2. Tia \\(BD\\) cắt đường tròn \\((O)\\) tại điểm thứ hai là \\(M\\) (\\(M\\) khác \\(B\\)). Gọi \\(K\\) là trung điểm của \\(BC\\). Chứng minh tam giác \\(MHC\\) cân và \\(AH = 2OK\\).\n\n3. Đường thẳng \\(AH\\) cắt đường thẳng \\(BC\\) tại \\(F\\), đường thẳng \\(DE\\) cắt đường thẳng \\(BC\\) tại \\(N\\). Chứng minh \\(BN \\cdot CF = CN \\cdot BF\\).",
+    "content": "Bài 5. (3,0 điểm)\\n\\nCho tam giác nhọn \\\\(ABC\\\\) (\\\\(AB < AC\\\\)) nội tiếp trong đường tròn \\\\((O)\\\\). Hai đường cao \\\\(BD\\\\) và \\\\(CE\\\\) (\\\\(D\\\\) thuộc \\\\(AC\\\\); \\\\(E\\\\) thuộc \\\\(AB\\\\)) của tam giác \\\\(ABC\\\\) cắt nhau tại \\\\(H\\\\).\\n\\n1. Chứng minh bốn điểm \\\\(A, D, H, E\\\\) cùng thuộc một đường tròn.\\n\\n2. Tia \\\\(BD\\\\) cắt đường tròn \\\\((O)\\\\) tại điểm thứ hai là \\\\(M\\\\) (\\\\(M\\\\) khác \\\\(B\\\\)). Gọi \\\\(K\\\\) là trung điểm của \\\\(BC\\\\). Chứng minh tam giác \\\\(MHC\\\\) cân và \\\\(AH = 2OK\\\\).\\n\\n3. Đường thẳng \\\\(AH\\\\) cắt đường thẳng \\\\(BC\\\\) tại \\\\(F\\\\), đường thẳng \\\\(DE\\\\) cắt đường thẳng \\\\(BC\\\\) tại \\\\(N\\\\). Chứng minh \\\\(BN \\\\cdot CF = CN \\\\cdot BF\\\\).\\n\\nTrong lời giải bài toán trên, khẳng định nào sau đây là ĐÚNG về lý do \\\\(ADHE\\\\) nội tiếp và cách chứng minh \\\\(AH = 2OK\\\\)?",
     "difficulty": "hard",
     "sourceType": "mock_exam",
-    "correctAnswer": "Chứng minh các tính chất hình học theo yêu cầu.",
-    "answerSchema": {
-      "type": "proof-upload",
-      "fields": [],
-      "proofImageRequired": true,
-      "autoCheckMode": "manual"
-    }
+    "correctAnswer": "Tứ giác \\\\(ADHE\\\\) có \\\\(\\\\widehat{ADH} + \\\\widehat{AEH} = 180^\\\\circ\\\\), và \\\\(OK\\\\) là đường trung bình của \\\\(\\\\triangle APH\\\\) (với \\\\(AP\\\\) là đường kính)",
+    "options": [
+      "Tứ giác \\\\(ADHE\\\\) có \\\\(\\\\widehat{ADH} + \\\\widehat{AEH} = 180^\\\\circ\\\\), và \\\\(OK\\\\) là đường trung bình của \\\\(\\\\triangle APH\\\\) (với \\\\(AP\\\\) là đường kính)",
+      "Tứ giác \\\\(ADHE\\\\) có \\\\(\\\\widehat{DAE} = \\\\widehat{DHE} = 60^\\\\circ\\\\), và \\\\(OK\\\\) là đường trung trực của đoạn \\\\(AH\\\\)",
+      "Điểm \\\\(K\\\\) là trọng tâm của \\\\(\\\\triangle ABC\\\\) nên \\\\(AH = 2OK\\\\) theo tính chất ba đường trung tuyến",
+      "Tứ giác \\\\(ADHE\\\\) là hình chữ nhật và \\\\(\\\\triangle MHC\\\\) luôn là tam giác đều"
+    ],
+    "validatorType": "choice"
   }
 ]

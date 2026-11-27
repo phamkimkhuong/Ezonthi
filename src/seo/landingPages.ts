@@ -24,17 +24,17 @@ export interface SeoLandingPageConfig {
 export const seoLandingPages: SeoLandingPageConfig[] = [
   {
     route: '/',
-    title: 'ezonthi | Ôn thi vào 10, học tốt lớp 10 và lớp 11',
-    description: 'Nền tảng ôn thi vào lớp 10 môn Toán, Tiếng Anh và học tốt lớp 10, lớp 11 theo từng dạng bài, có lý thuyết, luyện tập và lời giải.',
+    title: 'ezonthi | Học tốt lớp 10, ôn thi vào 10 và lớp 11',
+    description: 'Nền tảng học tốt lớp 10 đủ 6 môn, kèm lộ trình ôn thi vào lớp 10 và lớp 11 theo từng dạng bài, có lý thuyết, luyện tập tự động và lời giải chi tiết.',
     eyebrow: 'Học đúng trọng tâm, luyện đúng dạng',
-    h1: 'Ôn thi vào 10, học tốt lớp 10 và lớp 11 cùng ezonthi',
-    intro: 'Chọn đúng mục tiêu của em để học lý thuyết, nhận dạng bài và luyện câu hỏi theo mức độ tăng dần ngay trên một nền tảng.',
+    h1: 'Học tốt lớp 10, ôn thi vào 10 và lớp 11 cùng ezonthi',
+    intro: 'Chọn đúng khối lớp và môn học của em để học lý thuyết, nhận dạng bài và luyện câu hỏi chấm tự động theo mức độ tăng dần ngay trên một nền tảng.',
     sections: [
       {
         heading: 'Ba lộ trình, ba mục tiêu rõ ràng',
         paragraphs: [
-          'Lộ trình ôn thi vào 10 dành cho học sinh lớp 9 đang chuẩn bị kỳ thi tuyển sinh, hiện tập trung vào Toán và Tiếng Anh.',
-          'Lộ trình lớp 10 dành cho học sinh THPT, giúp ôn theo chương, dạng bài và kỳ kiểm tra các môn Toán, Tiếng Anh, Vật lý, Hóa học, Sinh học, Lịch sử.',
+          'Lộ trình lớp 10 trọng tâm dành cho học sinh THPT, ôn theo chương, dạng bài và kỳ kiểm tra đủ 6 môn Toán, Tiếng Anh, Vật lý, Hóa học, Sinh học, Lịch sử.',
+          'Lộ trình ôn thi vào 10 dành cho học sinh lớp 9 đang chuẩn bị kỳ thi tuyển sinh, tập trung vào Toán và Tiếng Anh.',
           'Lộ trình lớp 11 bám sát chương trình GDPT các môn Toán, Tiếng Anh, Vật lý, Hóa học, Sinh học giúp học sinh làm chủ kiến thức và dạng bài vận dụng.'
         ]
       },
@@ -44,8 +44,8 @@ export const seoLandingPages: SeoLandingPageConfig[] = [
       }
     ],
     links: [
-      { label: 'Ôn thi vào 10', href: '/on-thi-vao-10/', description: 'Lộ trình tuyển sinh lớp 10 môn Toán và Tiếng Anh.' },
       { label: 'Ôn tập lớp 10', href: '/lop-10/', description: 'Học theo môn và dạng bài trong chương trình lớp 10.' },
+      { label: 'Ôn thi vào 10', href: '/on-thi-vao-10/', description: 'Lộ trình tuyển sinh lớp 10 môn Toán và Tiếng Anh.' },
       { label: 'Ôn tập lớp 11', href: '/lop-11/', description: 'Học theo môn và dạng bài trong chương trình lớp 11.' },
       { label: 'Tìm hiểu ezonthi', href: '/about/', description: 'Cách nền tảng tổ chức lộ trình và dữ liệu học tập.' }
     ]

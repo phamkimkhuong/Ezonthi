@@ -3,8 +3,8 @@ import { HttpsError } from 'firebase-functions/v2/https';
 type Entitlement = Record<string, unknown> | undefined;
 const DAY = 86_400_000;
 
-import { hasActivePremium } from '../generated/premium.js';
-export { hasActivePremium };
+import { hasActivePremium, MONETIZATION_ENABLED } from '../generated/premium.js';
+export { hasActivePremium, MONETIZATION_ENABLED };
 
 export function premiumPatch(data: Entitlement, durationDays: number, now: number) {
   if (hasActivePremium(data, now) && data?.premiumPermanent === true) {

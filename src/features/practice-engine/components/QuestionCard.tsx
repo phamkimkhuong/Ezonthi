@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { LatexRenderer } from '@/components/common/LatexRenderer';
 import { QuestionStimulusRenderer } from '@/components/common/QuestionStimulusRenderer';
-import { ProofImageUploader } from '@/components/common/ProofImageUploader';
 import { MathKeyboard } from '@/components/common/MathKeyboard';
 import { Question, QuestionType, Solution, StructuredAnswer, SubjectCode } from '@/types';
 import { AnswerFormRenderer } from '@/components/common/AnswerFormRenderer';
@@ -24,10 +23,8 @@ interface QuestionCardProps {
   solutionDetail: Solution | null;
   isMath: boolean;
   proofImages: LocalProofImage[];
-  setProofImages: React.Dispatch<React.SetStateAction<LocalProofImage[]>>;
   isSubmitting: boolean;
   submitError: string | null;
-  user: any;
   totalUploadStats: any;
   handlePauseUpload: () => void;
   handleResumeUpload: () => void;
@@ -68,10 +65,8 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   solutionDetail,
   isMath,
   proofImages,
-  setProofImages,
   isSubmitting,
   submitError,
-  user,
   totalUploadStats,
   handlePauseUpload,
   handleResumeUpload,
@@ -543,16 +538,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             );
           })()}
 
-          {isMath && currentQuestion.validatorType === 'manual' && (
-            <ProofImageUploader
-              images={proofImages}
-              onChange={setProofImages}
-              disabled={isSubmitting}
-              required={true}
-              cloudEnabled={Boolean(user)}
-            />
-          )}
-
           {/* Vùng hiển thị tiến độ tải lên (Upload Progress UI) */}
           {isSubmitting && totalUploadStats && (
             <div className="bg-indigo-500/5 border border-indigo-500/15 p-4.5 rounded-2xl space-y-3.5 animate-fade-in my-3">
@@ -631,7 +616,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
               disabled={submitDisabled || isSubmitting}
               className="w-full font-black py-3.5 text-xs active:scale-[0.98] rounded-xl shadow-md cursor-pointer flex items-center justify-center gap-1.5 h-11"
             >
-              {isSubmitting ? (proofImages && proofImages.length > 0 ? 'Giáo viên đang chấm bài...' : 'Đang gửi bài làm...') : 'Nộp bài tập'}
+              {isSubmitting ? 'Đang chấm bài...' : 'Nộp bài tập'}
             </Button>
 
             <div className="flex gap-2.5 w-full">

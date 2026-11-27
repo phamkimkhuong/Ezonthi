@@ -526,8 +526,8 @@ for (const question of questions) {
     if (question.answerSchema?.scoringMode !== 'per_field') errors.push(`${question.id}: cụm Đúng/Sai phải chấm độc lập từng ý.`);
     if (Object.keys(question.correctFinalAnswer ?? {}).length !== 4) errors.push(`${question.id}: thiếu đáp án cấu trúc cho 4 ý Đúng/Sai.`);
   }
-  if (question.responseType === 'constructed_response') {
-    if (question.validatorType !== 'manual' || question.answerSchema?.autoCheckMode !== 'manual') errors.push(`${question.id}: câu tự luận phải cấu hình chấm thủ công.`);
+  if (question.responseType === 'constructed_response' || question.validatorType === 'manual' || question.answerSchema?.autoCheckMode === 'manual') {
+    errors.push(`${question.id}: nền tảng chấm tự động không hỗ trợ câu tự luận chấm thủ công.`);
   }
 }
 
@@ -537,10 +537,6 @@ for (const solution of solutions) {
   if (question && solution.finalAnswer !== question.correctAnswer) errors.push(`${solution.id}: đáp án lệch câu hỏi.`);
   if (String(solution.recognition).trim().length < 30) errors.push(`${solution.id}: nhận diện dạng bài quá ngắn.`);
   if ((solution.detailedSteps ?? []).length < 2) errors.push(`${solution.id}: cần ít nhất 2 bước giải.`);
-  if (question?.responseType === 'constructed_response') {
-    const rubricTotal = (solution.rubric ?? []).reduce((sum, criterion) => sum + criterion.points, 0);
-    if (rubricTotal !== question.points) errors.push(`${solution.id}: tổng rubric là ${rubricTotal}, không khớp ${question.points} điểm.`);
-  }
 }
 
 for (const outcome of outcomes) {

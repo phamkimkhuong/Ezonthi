@@ -13,6 +13,9 @@ if (!fs.existsSync(TEMPLATE_PATH)) {
 
 const htmlTemplate = fs.readFileSync(TEMPLATE_PATH, 'utf8');
 const { questionTypes, landingPages } = await loadSeoCatalog();
+const monetizationEnabled = /export\s+const\s+MONETIZATION_ENABLED\s*=\s*true\b/.test(
+  fs.readFileSync(path.join(process.cwd(), 'src', 'utils', 'premium.ts'), 'utf8')
+);
 
 const escapeHtml = value => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -144,15 +147,17 @@ const publicPages = [
       { label: 'Ôn tập lớp 11', href: '/lop-11/', description: 'Xem các môn học lớp 11.' }
     ]
   },
-  {
-    route: '/premium/',
-    title: 'Gói học tập Premium | ezonthi',
-    description: 'Tìm hiểu quyền lợi gói Premium trên ezonthi dành cho học sinh muốn mở rộng lộ trình và nội dung luyện tập.',
-    h1: 'Gói học tập Premium trên ezonthi',
-    intro: 'So sánh quyền lợi trước khi lựa chọn gói học phù hợp với nhu cầu.',
-    sections: [{ heading: 'Chỉ nâng cấp khi em cần', paragraphs: ['Học sinh vẫn có thể tìm hiểu lộ trình và nội dung nền tảng trước khi quyết định nâng cấp.'] }],
-    links: [{ label: 'Xem lộ trình', href: '/roadmap/', description: 'Kiểm tra nội dung học hiện có.' }]
-  },
+  ...(monetizationEnabled
+    ? [{
+        route: '/premium/',
+        title: 'Gói học tập Premium | ezonthi',
+        description: 'Tìm hiểu quyền lợi gói Premium trên ezonthi dành cho học sinh muốn mở rộng lộ trình và nội dung luyện tập.',
+        h1: 'Gói học tập Premium trên ezonthi',
+        intro: 'So sánh quyền lợi trước khi lựa chọn gói học phù hợp với nhu cầu.',
+        sections: [{ heading: 'Chỉ nâng cấp khi em cần', paragraphs: ['Học sinh vẫn có thể tìm hiểu lộ trình và nội dung nền tảng trước khi quyết định nâng cấp.'] }],
+        links: [{ label: 'Xem lộ trình', href: '/roadmap/', description: 'Kiểm tra nội dung học hiện có.' }]
+      }]
+    : []),
   {
     route: '/support/',
     title: 'Hỗ trợ và góp ý | ezonthi',
@@ -259,7 +264,8 @@ const noIndexPages = [
   ['/ai-tutor/', 'Gia sư học tập'],
   ['/mistakes/', 'Sổ lỗi sai'],
   ['/teacher/', 'Góc giáo viên'],
-  ['/affiliate/', 'Góc đối tác'],
+  ...(monetizationEnabled ? [] : [['/premium/', 'Mở khóa miễn phí 100%']]),
+  ...(monetizationEnabled ? [['/affiliate/', 'Góc đối tác']] : []),
   ['/vocabulary/', 'Luyện từ vựng'],
   ['/grammar/', 'Cẩm nang ngữ pháp'],
   ['/news/', 'Bảng tin']

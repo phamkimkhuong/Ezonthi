@@ -14,7 +14,7 @@ import {
 } from '../../data/allDataRegistry';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
-import { SimulatedStudent, UserAttempt, UserProgress, ExamResult, SupportTicket } from '../../types';
+import { SimulatedStudent, UserProgress, ExamResult, SupportTicket } from '../../types';
 import {
   Users,
   GraduationCap,
@@ -22,7 +22,6 @@ import {
   XCircle,
   Award,
   Activity,
-  UserCheck,
   Loader,
   LifeBuoy,
   Wallet,
@@ -39,21 +38,26 @@ import { StudentSummary } from './components/StudentSummary';
 import { StudentMasteryTab } from './components/StudentMasteryTab';
 import { StudentAdvancedTab } from './components/StudentAdvancedTab';
 import { StudentExamsTab } from './components/StudentExamsTab';
-import { GradingPanel } from './components/GradingPanel';
 import type { StudentAdvancedSubjectData } from '../../services/teacherService';
 import { MessageSquareHeart, Bell, MessageCircleCode } from 'lucide-react';
 import { TeacherSurveyReport } from './components/TeacherSurveyReport';
 import { TeacherNotificationManager } from './components/TeacherNotificationManager';
 import { TeacherAdminChatInbox } from './components/TeacherAdminChatInbox';
+import { MONETIZATION_ENABLED } from '../../utils/premium';
+import { toLocalDateKey } from '../../utils/stats';
 
-type TeacherTabKey = 'students' | 'grading' | 'premium' | 'ai_statistics' | 'support' | 'affiliate_admin' | 'email_broadcast' | 'survey_report' | 'system_notification' | 'admin_chat_inbox';
+type TeacherTabKey = 'students' | 'premium' | 'ai_statistics' | 'support' | 'affiliate_admin' | 'email_broadcast' | 'survey_report' | 'system_notification' | 'admin_chat_inbox';
 
 export const TeacherDashboard: React.FC = () => {
   const { user } = useAppStore();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const activeTab = (searchParams.get('tab') as TeacherTabKey) || 'students';
+  const rawTab = searchParams.get('tab') as TeacherTabKey | null;
+  const disabledTabs: TeacherTabKey[] = MONETIZATION_ENABLED ? [] : ['premium', 'affiliate_admin'];
+  const validTabs: TeacherTabKey[] = ['students', 'premium', 'ai_statistics', 'support', 'affiliate_admin', 'email_broadcast', 'survey_report', 'system_notification', 'admin_chat_inbox'];
+  const activeTab: TeacherTabKey =
+    rawTab && validTabs.includes(rawTab) && !disabledTabs.includes(rawTab) ? rawTab : 'students';
 
   const changeTab = useCallback((newTab: TeacherTabKey) => {
     setSearchParams({ tab: newTab }, { replace: true });
@@ -68,7 +72,6 @@ export const TeacherDashboard: React.FC = () => {
   const [premiumSubmitting, setPremiumSubmitting] = useState(false);
   const [premiumSuccessMsg, setPremiumSuccessMsg] = useState<string | null>(null);
   const [premiumErrorMsg, setPremiumErrorMsg] = useState<string | null>(null);
-  const [pendingAttempts, setPendingAttempts] = useState<Array<{ student: SimulatedStudent; attempt: UserAttempt }>>([]);
 
   // Support states
   const [tickets, setTickets] = useState<SupportTicket[]>([]);
@@ -156,7 +159,7 @@ export const TeacherDashboard: React.FC = () => {
     for (let i = 6; i >= 0; i--) {
       const d = new Date();
       d.setDate(d.getDate() - i);
-      const dateStr = d.toISOString().substring(0, 10);
+      const dateStr = toLocalDateKey(d);
       const count = dailyActivity[dateStr] || 0;
 
       const weekdayNames = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
@@ -246,53 +249,20 @@ export const TeacherDashboard: React.FC = () => {
     });
   }, [studentProgress]);
 
-  const pendingGroupsCount = useMemo(() => {
-    const uniqueKeys = new Set<string>();
-    pendingAttempts.forEach(({ student, attempt }) => {
-      let subTense = attempt.selectedSubTense || '';
-      if (!subTense && attempt.questionTypeId === 'eng-qt6') {
-        const num = parseInt(attempt.questionId.replace('eng-q', ''), 10);
-        if (!isNaN(num)) {
-          if ((num >= 5 && num <= 24) || (num >= 102 && num <= 121)) {
-            subTense = 'present_simple';
-          } else if ((num >= 25 && num <= 44) || (num >= 122 && num <= 141)) {
-            subTense = 'past_simple';
-          } else if ((num >= 45 && num <= 64) || (num >= 142 && num <= 161)) {
-            subTense = 'present_continuous';
-          } else if ((num >= 65 && num <= 84) || (num >= 162 && num <= 181)) {
-            subTense = 'past_continuous';
-          } else if (num >= 182 && num <= 201) {
-            subTense = 'present_perfect';
-          } else if (num >= 202 && num <= 221) {
-            subTense = 'future_simple';
-          } else if (num >= 222 && num <= 261) {
-            subTense = 'verb_combo';
-          } else if (num >= 262 && num <= 301) {
-            subTense = 'prep_phrasal';
-          }
-        }
-      }
-      uniqueKeys.add(`${student.id}-${attempt.questionTypeId}-${subTense}`);
-    });
-    return uniqueKeys.size;
-  }, [pendingAttempts]);
-
   const loadData = useCallback(async (teacherUserId = user?.uid) => {
     setIsLoading(true);
     setSelectedStudent(null);
     setStudentProgress(null);
 
     try {
-      const [res, pending, totalCount] = await Promise.all([
+      const [res, totalCount] = await Promise.all([
         teacherService.getRealStudents(teacherUserId ? [teacherUserId] : [], 10),
-        teacherService.getRealPendingManualAttempts(100),
         teacherService.getTotalStudentsCount()
       ]);
 
       setStudents(res.students);
       setLastActiveAtCursor(res.lastActiveAt);
       setHasMoreStudents(res.hasMore);
-      setPendingAttempts(pending);
       setTotalStudentsCount(totalCount);
     } catch (e) {
       console.error(
@@ -345,7 +315,7 @@ export const TeacherDashboard: React.FC = () => {
       }
 
       setAccessStatus('allowed');
-      if (activeTab === 'students' || activeTab === 'grading') {
+      if (activeTab === 'students') {
         loadData(user.uid);
       } else {
         setIsLoading(false);
@@ -358,7 +328,7 @@ export const TeacherDashboard: React.FC = () => {
   }, [user, loadData, activeTab]);
 
   useEffect(() => {
-    if (accessStatus === 'allowed' && user?.uid && (activeTab === 'students' || activeTab === 'grading') && students.length === 0) {
+    if (accessStatus === 'allowed' && user?.uid && activeTab === 'students' && students.length === 0) {
       loadData(user.uid);
     }
   }, [activeTab, accessStatus, user, students.length, loadData]);
@@ -509,10 +479,10 @@ export const TeacherDashboard: React.FC = () => {
           <div className="space-y-2">
             <h2 className="text-xl md:text-2xl font-black tracking-tight flex items-center gap-2">
               <Users className="text-amber-300" size={24} />
-              Hệ thống Quản lý & Chấm bài của Giáo viên
+              Hệ thống Quản lý & Phân tích Tiến độ Học sinh
             </h2>
             <p className="text-xs md:text-sm text-emerald-100 font-medium max-w-2xl leading-relaxed">
-              Theo dõi sát sao lộ trình tiến bộ của học sinh và chấm bài tự luận Toán bằng ảnh chụp lời giải thực tế.
+              Theo dõi sát sao lộ trình tiến bộ, điểm số, thống kê AI và hỗ trợ học sinh trên toàn hệ thống.
             </p>
           </div>
 
@@ -543,23 +513,6 @@ export const TeacherDashboard: React.FC = () => {
           Báo cáo Tiến độ Học sinh
         </button>
         <button
-          onClick={() => changeTab('grading')}
-          className={cn(
-            "px-4 py-2.5 text-xs font-bold transition-all border-b-2 flex items-center gap-1.5 cursor-pointer relative",
-            activeTab === 'grading'
-              ? "border-emerald-600 text-emerald-600 dark:text-emerald-400"
-              : "border-transparent text-muted-foreground hover:text-foreground"
-          )}
-        >
-          <UserCheck size={15} />
-          Hàng đợi Phê duyệt
-          {pendingGroupsCount > 0 && (
-            <span className="absolute -top-1 -right-1 bg-rose-500 text-white font-black text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center animate-bounce">
-              {pendingGroupsCount}
-            </span>
-          )}
-        </button>
-        <button
           onClick={() => changeTab('ai_statistics')}
           className={cn(
             "px-4 py-2.5 text-xs font-bold transition-all border-b-2 flex items-center gap-1.5 cursor-pointer",
@@ -571,18 +524,20 @@ export const TeacherDashboard: React.FC = () => {
           <Activity size={15} />
           Thống kê AI & Token
         </button>
-        <button
-          onClick={() => changeTab('premium')}
-          className={cn(
-            "px-4 py-2.5 text-xs font-bold transition-all border-b-2 flex items-center gap-1.5 cursor-pointer",
-            activeTab === 'premium'
-              ? "border-emerald-600 text-emerald-600 dark:text-emerald-400"
-              : "border-transparent text-muted-foreground hover:text-foreground"
-          )}
-        >
-          <Award size={15} />
-          Cấp Quyền Premium
-        </button>
+        {MONETIZATION_ENABLED && (
+          <button
+            onClick={() => changeTab('premium')}
+            className={cn(
+              "px-4 py-2.5 text-xs font-bold transition-all border-b-2 flex items-center gap-1.5 cursor-pointer",
+              activeTab === 'premium'
+                ? "border-emerald-600 text-emerald-600 dark:text-emerald-400"
+                : "border-transparent text-muted-foreground hover:text-foreground"
+            )}
+          >
+            <Award size={15} />
+            Cấp Quyền Premium
+          </button>
+        )}
         <button
           onClick={() => changeTab('support')}
           className={cn(
@@ -595,18 +550,20 @@ export const TeacherDashboard: React.FC = () => {
           <LifeBuoy size={15} />
           Yêu cầu Hỗ trợ
         </button>
-        <button
-          onClick={() => changeTab('affiliate_admin')}
-          className={cn(
-            "px-4 py-2.5 text-xs font-bold transition-all border-b-2 flex items-center gap-1.5 cursor-pointer",
-            activeTab === 'affiliate_admin'
-              ? "border-emerald-600 text-emerald-600 dark:text-emerald-400"
-              : "border-transparent text-muted-foreground hover:text-foreground"
-          )}
-        >
-          <Wallet size={15} />
-          Quản lý Affiliate
-        </button>
+        {MONETIZATION_ENABLED && (
+          <button
+            onClick={() => changeTab('affiliate_admin')}
+            className={cn(
+              "px-4 py-2.5 text-xs font-bold transition-all border-b-2 flex items-center gap-1.5 cursor-pointer",
+              activeTab === 'affiliate_admin'
+                ? "border-emerald-600 text-emerald-600 dark:text-emerald-400"
+                : "border-transparent text-muted-foreground hover:text-foreground"
+            )}
+          >
+            <Wallet size={15} />
+            Quản lý Affiliate
+          </button>
+        )}
         <button
           onClick={() => changeTab('email_broadcast')}
           className={cn(
@@ -693,7 +650,7 @@ export const TeacherDashboard: React.FC = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <CardTitle className="text-foreground text-sm font-black">{selectedStudent.name}</CardTitle>
-                        {selectedStudent.isPremium && (() => {
+                        {MONETIZATION_ENABLED && selectedStudent.isPremium && (() => {
                           const planName = selectedStudent.premiumPlan || (selectedStudent.trialActivated ? 'Gói Dùng Thử (Trial)' : 'Gói Premium VIP');
                           let expiryStr = 'Vĩnh viễn (VIP Trọn Đời)';
                           let isExpired = false;
@@ -833,15 +790,6 @@ export const TeacherDashboard: React.FC = () => {
           </div>
 
         </div>
-      ) : activeTab === 'grading' ? (
-        /* Hàng đợi chấm bài */
-        <GradingPanel
-          pendingAttempts={pendingAttempts}
-          loadData={loadData}
-          selectedStudent={selectedStudent}
-          onUpdateStudentProgress={setStudentProgress}
-          isLoading={isLoading}
-        />
       ) : activeTab === 'ai_statistics' ? (
         /* Thống kê AI & Token */
         <TeacherAiStatistics />
@@ -1074,7 +1022,7 @@ export const TeacherDashboard: React.FC = () => {
             )}
           </div>
         </div>
-      ) : activeTab === 'premium' ? (
+      ) : MONETIZATION_ENABLED && activeTab === 'premium' ? (
         /* Cấp Quyền Premium */
         <div className="max-w-xl mx-auto space-y-6">
           <Card className="border-border/50 bg-card shadow-sm">
@@ -1168,7 +1116,7 @@ export const TeacherDashboard: React.FC = () => {
             </CardContent>
           </Card>
         </div>
-      ) : activeTab === 'affiliate_admin' ? (
+      ) : MONETIZATION_ENABLED && activeTab === 'affiliate_admin' ? (
         <TeacherAffiliateManager />
       ) : activeTab === 'email_broadcast' ? (
         <EmailBroadcastManager />

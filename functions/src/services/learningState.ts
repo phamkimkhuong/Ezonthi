@@ -4,6 +4,19 @@ import { validateAnswer } from '../generated/answerValidator.js';
 import { calculateMasteryEvidence } from '../generated/theme.js';
 import type { Question, UserAttempt, UserMistake } from '../generated/types.js';
 
+const VIETNAM_DATE_FORMATTER = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Asia/Ho_Chi_Minh',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+
+function toVietnamDateKey(value: Date | string | number): string {
+  const date = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+  return VIETNAM_DATE_FORMATTER.format(date);
+}
+
 export interface CanonicalAttempt extends UserAttempt {
   canonicalVersion: 2;
   contentHash: string;
@@ -54,18 +67,15 @@ export function canonicalizeAttempt(uid: string, raw: unknown, now = Date.now(),
       Object.values(input.finalAnswer as Record<string, unknown>).some(value => typeof value !== 'string' || value.length > 2_000))) return null;
 
   const question = questions[input.questionId];
-  const manual = question.validatorType === 'manual' || question.answerSchema?.autoCheckMode === 'manual' || input.gradingMode === 'manual';
   const answer = question.answerSchema ? (input.finalAnswer ?? input.userAnswer) : input.userAnswer;
   let isCorrect = false;
-  if (!manual) {
-    try { isCorrect = validateAnswer(question, answer as never); } catch { return null; }
-  }
+  try { isCorrect = validateAnswer(question, answer as never); } catch { return null; }
   const core = {
     id: input.id, userId: uid, questionId: input.questionId, questionTypeId: question.questionTypeId,
     userAnswer: input.userAnswer, ...(input.finalAnswer ? { finalAnswer: input.finalAnswer as Record<string, string> } : {}),
     ...(safeProofImages(input.proofImages) ? { proofImages: safeProofImages(input.proofImages) } : {}),
-    gradingMode: manual ? 'manual' as const : 'auto' as const,
-    gradingStatus: manual ? 'pending' as const : 'graded' as const,
+    gradingMode: 'auto' as const,
+    gradingStatus: 'graded' as const,
     isCorrect, timeSpent: Math.max(0, Math.min(600, Number(input.timeSpent) || 0)),
     createdAt: new Date(createdAt).toISOString(),
     ...(typeof input.selectedSubTense === 'string' && input.selectedSubTense.length <= 100 ? { selectedSubTense: input.selectedSubTense } : {}),
@@ -102,10 +112,10 @@ export function summarizeLearning(attempts: UserAttempt[], questions = getLearni
     list.push(attempt); byType.set(attempt.questionTypeId, list);
     if (attempt.isCorrect) correctAttempts++;
     totalStudySeconds += Math.max(0, Math.min(600, Number(attempt.timeSpent) || 0));
-    const date = new Date(attempt.createdAt).toISOString().slice(0, 10);
-    dailyActivity[date] = (dailyActivity[date] ?? 0) + 1;
+    const date = toVietnamDateKey(attempt.createdAt);
+    if (date) dailyActivity[date] = (dailyActivity[date] ?? 0) + 1;
   }
-  const retentionCutoff = new Date(Date.now() - 180 * 86_400_000).toISOString().slice(0, 10);
+  const retentionCutoff = toVietnamDateKey(Date.now() - 180 * 86_400_000);
   for (const date of Object.keys(dailyActivity)) {
     if (date < retentionCutoff) delete dailyActivity[date];
   }
@@ -209,8 +219,8 @@ export function updateLearningSummaryIncremental(
         totalAttempts++;
         if (newLatest.isCorrect) correctAttempts++;
         totalStudySeconds += Math.max(0, Math.min(600, Number(newLatest.timeSpent) || 0));
-        const date = new Date(newLatest.createdAt).toISOString().slice(0, 10);
-        dailyActivity[date] = (dailyActivity[date] ?? 0) + 1;
+        const date = toVietnamDateKey(newLatest.createdAt);
+        if (date) dailyActivity[date] = (dailyActivity[date] ?? 0) + 1;
       } else if (oldLatest.id !== newLatest.id) {
         if (!oldLatest.isCorrect && newLatest.isCorrect) correctAttempts++;
         else if (oldLatest.isCorrect && !newLatest.isCorrect) correctAttempts = Math.max(0, correctAttempts - 1);
@@ -219,12 +229,14 @@ export function updateLearningSummaryIncremental(
         const newTime = Math.max(0, Math.min(600, Number(newLatest.timeSpent) || 0));
         totalStudySeconds = Math.max(0, totalStudySeconds + (newTime - oldTime));
 
-        const oldDate = new Date(oldLatest.createdAt).toISOString().slice(0, 10);
-        const newDate = new Date(newLatest.createdAt).toISOString().slice(0, 10);
+        const oldDate = toVietnamDateKey(oldLatest.createdAt);
+        const newDate = toVietnamDateKey(newLatest.createdAt);
         if (oldDate !== newDate) {
-          dailyActivity[oldDate] = Math.max(0, (dailyActivity[oldDate] ?? 1) - 1);
-          if (dailyActivity[oldDate] === 0) delete dailyActivity[oldDate];
-          dailyActivity[newDate] = (dailyActivity[newDate] ?? 0) + 1;
+          if (oldDate) {
+            dailyActivity[oldDate] = Math.max(0, (dailyActivity[oldDate] ?? 1) - 1);
+            if (dailyActivity[oldDate] === 0) delete dailyActivity[oldDate];
+          }
+          if (newDate) dailyActivity[newDate] = (dailyActivity[newDate] ?? 0) + 1;
         }
       }
     }
@@ -241,7 +253,7 @@ export function updateLearningSummaryIncremental(
     }
   }
 
-  const retentionCutoff = new Date(now - 180 * 86_400_000).toISOString().slice(0, 10);
+  const retentionCutoff = toVietnamDateKey(now - 180 * 86_400_000);
   for (const date of Object.keys(dailyActivity)) {
     if (date < retentionCutoff) delete dailyActivity[date];
   }

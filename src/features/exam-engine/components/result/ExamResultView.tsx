@@ -167,10 +167,10 @@ export const ExamResultView: React.FC<ExamResultViewProps> = ({
   const getPerformanceTier = (score: number, pending: boolean) => {
     if (pending) {
       return {
-        label: 'Chờ chấm tự luận',
+        label: 'Dữ liệu cũ chưa quy đổi',
         badgeClass: 'bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-800',
         dotColor: 'bg-amber-500',
-        desc: 'Bài thi có phần tự luận / thực nghiệm đang chờ giáo viên hoặc AI đánh giá theo rubric nên chưa kết luận mức độ làm chủ toàn bài.'
+        desc: 'Bài thi này chứa câu tự luận từ phiên bản trước; điểm tổng kết đang tính trên phần đã chấm tự động.'
       };
     }
     if (score >= 9.0) {
@@ -593,11 +593,10 @@ export const ExamResultView: React.FC<ExamResultViewProps> = ({
               {examQuestions.map((q, idx) => {
                 const attempt = examResult.attempts[q.id];
                 const isCorrect = attempt?.isCorrect;
-                const isManual = q.answerSchema?.autoCheckMode === 'manual' || q.validatorType === 'manual';
-                const isPartiallyCorrect = !isManual && !isCorrect && (attempt?.earnedPoints ?? 0) > 0;
+                const isPartiallyCorrect = !isCorrect && (attempt?.earnedPoints ?? 0) > 0;
 
                 let statusClass = "bg-rose-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-900";
-                if (isManual || isPartiallyCorrect) {
+                if (isPartiallyCorrect) {
                   statusClass = "bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-900";
                 } else if (isCorrect) {
                   statusClass = "bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-900";
@@ -674,8 +673,7 @@ export const ExamResultView: React.FC<ExamResultViewProps> = ({
               const globalIdx = examQuestions.findIndex(item => item.id === q.id);
               const attempt = examResult.attempts[q.id];
               const isCorrect = attempt?.isCorrect;
-              const isManual = q.answerSchema?.autoCheckMode === 'manual' || q.validatorType === 'manual';
-              const isPartiallyCorrect = !isManual && !isCorrect && (attempt?.earnedPoints ?? 0) > 0;
+              const isPartiallyCorrect = !isCorrect && (attempt?.earnedPoints ?? 0) > 0;
               const solution = getSolutionForQuestion(q.id);
               const isExpanded = expandedSolutionId[q.id];
               const hasSubmitted = !!(attempt && (attempt.userAnswer?.trim() !== '' || (attempt.proofImages && attempt.proofImages.length > 0)));
@@ -771,11 +769,7 @@ export const ExamResultView: React.FC<ExamResultViewProps> = ({
                             <BookOpen size={12} /> Xem bài đọc
                           </button>
                         )}
-                        {isManual ? (
-                          <span className="text-[10px] bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
-                            <AlertTriangle size={11} /> Chờ chấm tự luận
-                          </span>
-                        ) : isCorrect ? (
+                        {isCorrect ? (
                           <span className="text-[10px] bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
                             <CheckCircle size={11} /> Đúng
                           </span>

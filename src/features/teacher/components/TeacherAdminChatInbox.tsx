@@ -16,10 +16,11 @@ import {
   X
 } from 'lucide-react';
 import { cn } from '../../../utils/cn';
+import { MONETIZATION_ENABLED } from '../../../utils/premium';
 
 const QUICK_REPLIES = [
   '⚡ Chào em, thầy/cô ezonthi có thể giúp gì cho em?',
-  '👑 Em có thể nâng cấp gói VIP Premium tại trang Cài Đặt Tài Khoản nhé!',
+  ...(MONETIZATION_ENABLED ? ['👑 Em có thể nâng cấp gói VIP Premium tại trang Cài Đặt Tài Khoản nhé!'] : []),
   '📚 Thầy/cô đã ghi nhận thắc mắc và đang hỗ trợ kiểm tra giúp em.',
   '🎉 Chúc em ôn luyện thật tốt và bứt phá điểm số trong kỳ thi tới!'
 ];

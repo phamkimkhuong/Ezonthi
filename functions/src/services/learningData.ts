@@ -89,21 +89,9 @@ export async function syncCanonicalAttempts(uid: string, rawAttempts: unknown[],
         );
       }
 
-      // Lưu các attempt mới
+      // Lưu các attempt mới (100% chấm tự động, không còn hàng đợi giáo viên chấm)
       for (const attempt of accepted) {
         transaction.create(attemptsRef.doc(attempt.id), attempt);
-        if (attempt.gradingStatus === 'pending') {
-          const queueId = safeRecordId(`${uid}:${attempt.id}`);
-          const profile = userData || {};
-          transaction.set(db.collection('manual_attempts').doc(queueId), {
-            ...attempt,
-            queueId,
-            studentName: profile.name || 'Học sinh mới',
-            studentAvatar: profile.avatar || '',
-            studentEmail: profile.email || '',
-            queuedAt: FieldValue.serverTimestamp(),
-          });
-        }
       }
 
       // Cập nhật sổ lỗi sai cho các questionId bị ảnh hưởng
@@ -165,31 +153,19 @@ export async function migrateUserLearningData(uid: string, now = Date.now()) {
   const markerRef = userRef.collection('learning_migrations').doc('canonical-v2');
   const marker = await markerRef.get();
   if (marker.data()?.verified === true) return marker.data();
-  const [topics, legacyAttempts, activeMistakes, legacyMistakes, manual, legacyReviews] = await Promise.all([
+  const [topics, legacyAttempts, activeMistakes, legacyMistakes] = await Promise.all([
     userRef.collection('topic_attempts').get(), userRef.collection('attempts').get(),
     userRef.collection('active_mistakes').doc('current').get(), userRef.collection('mistakes').get(),
-    db.collection('manual_attempts').where('userId', '==', uid).get(),
-    userRef.collection('teacher_reviews').get(),
   ]);
   const rawAttempts = [
     ...topics.docs.flatMap(doc => Array.isArray(doc.data().attempts) ? doc.data().attempts : []),
     ...legacyAttempts.docs.map(doc => ({ id: doc.id, ...doc.data() })),
-    ...manual.docs.map(doc => ({ id: doc.data().id || doc.id, ...doc.data(), gradingMode: 'manual' })),
   ];
   const normalized = rawAttempts.map(item => canonicalizeAttempt(uid, item, now)).filter((item): item is CanonicalAttempt => item !== null);
   const unique = [...new Map(normalized.map(item => [item.id, item])).values()];
   for (let index = 0; index < unique.length; index += SYNC_BATCH_SIZE) await syncCanonicalAttempts(uid, unique.slice(index, index + SYNC_BATCH_SIZE), `migration-${index}-${recordHash(unique.slice(index, index + SYNC_BATCH_SIZE).map(item => item.id)).slice(0, 16)}`, now);
 
-  let migratedReviewCount = 0;
-  for (const reviewDoc of legacyReviews.docs) {
-    const review = reviewDoc.data();
-    const attemptId = typeof review.id === 'string' ? review.id : reviewDoc.id;
-    if (typeof review.isCorrect !== 'boolean' || !attemptId || attemptId.includes('/')) continue;
-    const attempt = await userRef.collection('learning_attempts').doc(attemptId).get();
-    if (!attempt.exists || (attempt.data() as CanonicalAttempt).gradingStatus !== 'pending') continue;
-    await gradeCanonicalAttempt('legacy-migration', uid, attemptId, review.isCorrect, typeof review.teacherFeedback === 'string' ? review.teacherFeedback.slice(0, 5_000) : '', now);
-    migratedReviewCount++;
-  }
+  const migratedReviewCount = 0;
 
   const currentMistakes = await userRef.collection('learning_mistakes').get();
   const existingQuestions = new Set(currentMistakes.docs.map(doc => doc.data().questionId));
@@ -230,47 +206,4 @@ export async function migrateUserLearningData(uid: string, now = Date.now()) {
   };
   await markerRef.set(report);
   return report;
-}
-
-export async function gradeCanonicalAttempt(teacherUid: string, uid: string, attemptId: string, isCorrect: boolean, feedback: string, now = Date.now()) {
-  const userRef = db.collection('users').doc(uid);
-  const attemptRef = userRef.collection('learning_attempts').doc(attemptId);
-  return db.runTransaction(async transaction => {
-    const [attemptDoc, userDoc] = await Promise.all([transaction.get(attemptRef), transaction.get(userRef)]);
-    if (!attemptDoc.exists) throw new Error('Attempt not found in canonical store');
-    const attempt = attemptDoc.data() as CanonicalAttempt;
-    if (attempt.gradingStatus === 'graded') {
-      if (attempt.isCorrect === isCorrect && (attempt.teacherFeedback || '') === feedback) return { status: 'duplicate' };
-      throw new Error('Attempt was already graded with a different result');
-    }
-    const reviewed: CanonicalAttempt = { ...attempt, isCorrect, gradingStatus: 'graded', teacherFeedback: feedback, reviewedAt: new Date(now).toISOString(), reviewedBy: teacherUid };
-
-    const pastSnapshot = await transaction.get(userRef.collection('learning_attempts').where('questionTypeId', '==', reviewed.questionTypeId));
-    const pastForType = pastSnapshot.docs.map(doc => doc.id === attemptId ? reviewed : doc.data() as CanonicalAttempt);
-
-    const userData = userDoc.data() || {};
-    let summary: any;
-    if (!userData.stats || typeof userData.stats.totalAttempts !== 'number' || !userData.masteryLevels) {
-      const allSnapshot = await transaction.get(userRef.collection('learning_attempts'));
-      const all = allSnapshot.docs.map(doc => doc.id === attemptId ? reviewed : doc.data() as CanonicalAttempt);
-      summary = summarizeLearning(all, getLearningCatalog());
-    } else {
-      summary = updateLearningSummaryIncremental(
-        userData,
-        [reviewed.questionTypeId],
-        pastForType.filter(a => a.id !== attemptId),
-        [reviewed],
-        getLearningCatalog(),
-        now
-      );
-    }
-    const mistake = deriveMistake(uid, reviewed.questionId, pastForType, now);
-    transaction.set(attemptRef, reviewed);
-    transaction.set(userRef.collection('learning_reviews').doc(attemptId), { attemptId, userId: uid, isCorrect, feedback, reviewedBy: teacherUid, reviewedAt: new Date(now).toISOString(), canonicalVersion: 2 });
-    if (mistake) transaction.set(userRef.collection('learning_mistakes').doc(safeRecordId(reviewed.questionId)), mistake);
-    transaction.delete(db.collection('manual_attempts').doc(safeRecordId(`${uid}:${attemptId}`)));
-    transaction.delete(db.collection('manual_attempts').doc(attemptId));
-    transaction.set(userRef, { ...summary, lastActiveAt: new Date(now).toISOString(), learningDataVersion: 2 }, { merge: true });
-    return { status: 'graded', summary };
-  });
 }

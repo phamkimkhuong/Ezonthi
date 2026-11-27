@@ -1,6 +1,6 @@
 import { db, DAILY_REQUEST_LIMIT } from '../config.js';
 import { GeminiProxyRequest, ChatContent, ChatPart } from '../types.js';
-import { hasActivePremium } from './entitlements.js';
+import { hasActivePremium, MONETIZATION_ENABLED } from './entitlements.js';
 import {
   AiTaskType,
   fetchWithTimeout,
@@ -151,7 +151,7 @@ export async function prepareAiContext(options: PrepareAiContextOptions): Promis
   }
 
   // 3. Giữ chỗ quota bằng transaction trước khi gọi provider
-  const dailyLimit = isPremium ? DAILY_REQUEST_LIMIT : 20;
+  const dailyLimit = !MONETIZATION_ENABLED ? 50 : isPremium ? DAILY_REQUEST_LIMIT : 20;
   const quotaReservation = await reserveAiQuota(uid, dailyLimit, taskType);
 
   // 4. Thực hiện RAG (Retrieval-Augmented Generation) nếu được yêu cầu

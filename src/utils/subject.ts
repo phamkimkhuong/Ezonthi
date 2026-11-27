@@ -1,4 +1,5 @@
 import type { SubjectCode, GradeCode } from '../types';
+import { MONETIZATION_ENABLED } from './premium';
 
 export const getSubjectFromQuestionTypeId = (questionTypeId?: string): SubjectCode | null => {
   if (!questionTypeId) return null;
@@ -253,6 +254,8 @@ export const isQuestionTypePremiumLocked = (
   subject?: string,
   grade?: string
 ): boolean => {
+  if (!MONETIZATION_ENABLED) return false;
+
   // 1. Với Vật lý 10: Khóa đúng 2 dạng cuối của các module 1-6
   if ((subject === 'physics' || questionTypeId.startsWith('phy10-')) && (grade === 'grade10' || !grade)) {
     return PHYSICS_10_PREMIUM_QUESTION_TYPE_IDS.has(questionTypeId);

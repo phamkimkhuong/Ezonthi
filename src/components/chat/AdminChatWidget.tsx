@@ -13,10 +13,11 @@ import {
   Image as ImageIcon
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { MONETIZATION_ENABLED } from '../../utils/premium';
 
 const QUICK_SUGGESTIONS = [
   '👋 Xin chào Admin ezonthi!',
-  '👑 Tư vấn kích hoạt VIP Premium',
+  ...(MONETIZATION_ENABLED ? ['👑 Tư vấn kích hoạt VIP Premium'] : []),
   '📚 Em cần hỗ trợ thắc mắc bài tập',
   '🐛 Báo lỗi giao diện ứng dụng'
 ];

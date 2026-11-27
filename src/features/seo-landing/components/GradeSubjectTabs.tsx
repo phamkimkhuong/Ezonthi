@@ -24,52 +24,9 @@ interface GradeTabConfig {
 
 const GRADE_DATA: GradeTabConfig[] = [
   {
-    id: 'grade-9',
-    label: 'Ôn thi vào 10',
-    badge: 'Mục tiêu đỗ NV1',
-    subjects: [
-      {
-        id: 'math-9',
-        name: 'Toán thi vào 10',
-        slug: 'toan',
-        href: '/on-thi-vao-10/toan/',
-        badge: 'Trọng tâm tuyển sinh',
-        sgkBadge: 'Chuẩn ma trận đề Sở GD&ĐT',
-        curriculumDepth: '14 Chuyên đề • 128 Dạng bài • 2,400+ Câu',
-        icon: <Calculator size={22} />,
-        description: 'Đại số, phương trình, hàm số bậc nhất - bậc hai, bài toán thực tế và hình học phẳng.',
-        colorClass: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20'
-      },
-      {
-        id: 'english-9',
-        name: 'Tiếng Anh thi vào 10',
-        slug: 'tieng-anh',
-        href: '/on-thi-vao-10/tieng-anh/',
-        badge: 'Phân hóa điểm 9+',
-        sgkBadge: 'Global Success & Friends Plus',
-        curriculumDepth: '12 Chủ điểm • 96 Dạng câu • 1,800+ Câu',
-        icon: <Globe size={22} />,
-        description: 'Ngữ pháp, từ vựng theo chủ đề, phát âm - trọng âm, đọc hiểu và dạng bài viết gián tiếp.',
-        colorClass: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20'
-      },
-      {
-        id: 'mock-exam-9',
-        name: 'Đề thi thử Tuyển sinh 63 Tỉnh',
-        slug: 'de-thi-thu',
-        href: '/exam/',
-        badge: 'Có lời giải chi tiết',
-        sgkBadge: 'Chuẩn cấu trúc đề Sở GD&ĐT',
-        curriculumDepth: '120+ Bộ đề • Bấm giờ & Phổ điểm tức thì',
-        icon: <GraduationCap size={22} />,
-        description: 'Tổng hợp đề thi thử chính thức mới nhất từ các Sở GD&ĐT và trường Chuyên, rèn luyện tốc độ làm bài.',
-        colorClass: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20'
-      }
-    ]
-  },
-  {
     id: 'grade-10',
     label: 'Học tốt Lớp 10',
-    badge: 'Chuẩn GDPT 2018',
+    badge: 'Trọng tâm GDPT 2018',
     subjects: [
       {
         id: 'math-10',
@@ -146,6 +103,49 @@ const GRADE_DATA: GradeTabConfig[] = [
     ]
   },
   {
+    id: 'grade-9',
+    label: 'Ôn thi vào 10',
+    badge: 'Mục tiêu đỗ NV1',
+    subjects: [
+      {
+        id: 'math-9',
+        name: 'Toán thi vào 10',
+        slug: 'toan',
+        href: '/on-thi-vao-10/toan/',
+        badge: 'Trọng tâm tuyển sinh',
+        sgkBadge: 'Chuẩn ma trận đề Sở GD&ĐT',
+        curriculumDepth: '14 Chuyên đề • 128 Dạng bài • 2,400+ Câu',
+        icon: <Calculator size={22} />,
+        description: 'Đại số, phương trình, hàm số bậc nhất - bậc hai, bài toán thực tế và hình học phẳng.',
+        colorClass: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20'
+      },
+      {
+        id: 'english-9',
+        name: 'Tiếng Anh thi vào 10',
+        slug: 'tieng-anh',
+        href: '/on-thi-vao-10/tieng-anh/',
+        badge: 'Phân hóa điểm 9+',
+        sgkBadge: 'Global Success & Friends Plus',
+        curriculumDepth: '12 Chủ điểm • 96 Dạng câu • 1,800+ Câu',
+        icon: <Globe size={22} />,
+        description: 'Ngữ pháp, từ vựng theo chủ đề, phát âm - trọng âm, đọc hiểu và dạng bài viết gián tiếp.',
+        colorClass: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20'
+      },
+      {
+        id: 'mock-exam-9',
+        name: 'Đề thi thử Tuyển sinh 63 Tỉnh',
+        slug: 'de-thi-thu',
+        href: '/exam/',
+        badge: 'Có lời giải chi tiết',
+        sgkBadge: 'Chuẩn cấu trúc đề Sở GD&ĐT',
+        curriculumDepth: '120+ Bộ đề • Bấm giờ & Phổ điểm tức thì',
+        icon: <GraduationCap size={22} />,
+        description: 'Tổng hợp đề thi thử chính thức mới nhất từ các Sở GD&ĐT và trường Chuyên, rèn luyện tốc độ làm bài.',
+        colorClass: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20'
+      }
+    ]
+  },
+  {
     id: 'grade-11',
     label: 'Học tốt Lớp 11',
     badge: 'Tăng tốc kiến thức',
@@ -215,7 +215,7 @@ const GRADE_DATA: GradeTabConfig[] = [
 ];
 
 export const GradeSubjectTabs: React.FC = () => {
-  const [activeGradeId, setActiveGradeId] = useState('grade-9');
+  const [activeGradeId, setActiveGradeId] = useState('grade-10');
 
   const currentGrade = GRADE_DATA.find(g => g.id === activeGradeId) || GRADE_DATA[0];
 

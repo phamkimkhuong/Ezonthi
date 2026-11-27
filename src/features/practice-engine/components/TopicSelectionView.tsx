@@ -93,6 +93,24 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
     () => getPracticeQuestions(selectedGrade, routeSubject),
     [selectedGrade, routeSubject]
   );
+
+  const topics = useMemo(
+    () => getTopics(selectedGrade, routeSubject),
+    [selectedGrade, routeSubject]
+  );
+  const qTypes = questionTypes;
+
+  const totalMatchedCount = useMemo(() => {
+    if (!searchQuery.trim()) return qTypes.length;
+    return qTypes.filter(qt => {
+      const topic = topics.find(t => t.id === qt.topicId);
+      return (
+        matchesSearchKeyword(qt.name, searchQuery) ||
+        matchesSearchKeyword(qt.description || '', searchQuery) ||
+        matchesSearchKeyword(topic?.name || '', searchQuery)
+      );
+    }).length;
+  }, [qTypes, topics, searchQuery]);
   const userId = user?.uid || 'guest';
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const progress = useMemo(() => storageService.getProgress(userId), [userId, progressVersion]);
@@ -555,26 +573,11 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
   }
 
   // Màn hình chọn dạng bài chính
-  const topics = getTopics(selectedGrade, routeSubject);
-  const qTypes = questionTypes;
-
   const isG9 = selectedGrade === 'grade9';
   const isG11 = selectedGrade === 'grade11';
   const isG12 = selectedGrade === 'grade12';
   const gradeText = isG9 ? 'tuyển sinh 10' : isG11 ? 'Lớp 11' : isG12 ? 'Lớp 12' : 'Lớp 10';
   const gradeTextLower = isG9 ? 'ôn thi vào 10' : isG11 ? 'lớp 11' : isG12 ? 'lớp 12' : 'lớp 10';
-
-  const totalMatchedCount = useMemo(() => {
-    if (!searchQuery.trim()) return qTypes.length;
-    return qTypes.filter(qt => {
-      const topic = topics.find(t => t.id === qt.topicId);
-      return (
-        matchesSearchKeyword(qt.name, searchQuery) ||
-        matchesSearchKeyword(qt.description || '', searchQuery) ||
-        matchesSearchKeyword(topic?.name || '', searchQuery)
-      );
-    }).length;
-  }, [qTypes, topics, searchQuery]);
 
   return (
     <div className="w-full max-w-7xl mx-auto space-y-6 px-3 sm:px-6 lg:px-8 py-3 animate-fade-in pb-12 font-sans">
@@ -594,7 +597,7 @@ export const TopicSelectionView: React.FC<TopicSelectionViewProps> = ({
         </h2>
         <p className="text-xs text-muted-foreground font-medium">
           {isMath
-            ? (isG9 ? 'Học sinh làm bài tự luận chi tiết ra giấy, chụp ảnh gửi bài để thầy cô chấm và nhận xét.' : `Bài tập tự luận ${gradeTextLower} bám sát chương trình mới, chụp ảnh để nhận xét chi tiết.`)
+            ? `Luyện tập Toán học ${gradeTextLower} chấm điểm tự động với lời giải chi tiết từng bước.`
             : isChemistry
               ? `Luyện tập các dạng bài Hóa học ${gradeTextLower} bám sát chương trình GDPT 2018 mới.`
               : isPhysics

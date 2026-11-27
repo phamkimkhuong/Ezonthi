@@ -36,7 +36,6 @@ import { UNIFIED_SURVEY } from '../../data/surveyData';
 import type { SurveyConfig } from '../../types/surveyTypes';
 import { storageService } from '../../services/storage';
 import { progressService } from '../../services/progressService';
-import { teacherService } from '../../services/teacherService';
 import { authService } from '../../services/authService';
 import { teacherAccessService } from '../../services/teacherAccessService';
 import { PolicyModal } from '../common/PolicyModal';
@@ -46,6 +45,7 @@ import { QuickLookupPopover } from '../dictionary/QuickLookupPopover';
 import { FloatingDictionaryWidget } from '../dictionary/FloatingDictionaryWidget';
 import { QuickLookupWrapper } from '../dictionary/QuickLookupWrapper';
 import { cn } from '../../utils/cn';
+import { MONETIZATION_ENABLED } from '../../utils/premium';
 import { getQuestionTypes, loadSubjectData, isSubjectDataLoaded } from '../../data';
 import { getSubjectName, getSubjectIcon, getSubjectFromQuestionTypeId } from '../../utils/subject';
 import { ROUTES } from '../../constants/routes';
@@ -91,7 +91,6 @@ export const AppLayout: React.FC = () => {
 
   const effectiveCollapsed = isMobile ? false : isSidebarCollapsed;
   const [isTeacher, setIsTeacher] = useState(false);
-  const [realPendingCount, setRealPendingCount] = useState(0);
   const [isContextDropdownOpen, setIsContextDropdownOpen] = useState(false);
   const [isAuthLoading, setIsAuthLoading] = useState(false);
   const [showPolicyModal, setShowPolicyModal] = useState(false);
@@ -107,14 +106,8 @@ export const AppLayout: React.FC = () => {
     }
   }, [user, selectedGrade, setNotifications]);
 
-  useEffect(() => {
-    if (user && surveyService.shouldShowSurvey()) {
-      const timer = setTimeout(() => {
-        setActiveSurvey(UNIFIED_SURVEY);
-      }, 1200);
-      return () => clearTimeout(timer);
-    }
-  }, [user]);
+  // Không tự động bật SurveyModal 9 bước khi vừa vào app để tránh ngắt luồng học.
+  // Học sinh có thể mở khảo sát bất cứ lúc nào qua nút "Khảo sát ý kiến" ở sidebar.
 
   const handleDirectGoogleSignIn = async () => {
     setIsAuthLoading(true);
@@ -150,16 +143,8 @@ export const AppLayout: React.FC = () => {
 
   const courseGroups = [
     {
-      grade: 'grade9',
-      gradeTitle: 'Lớp 9 Ôn vào 10',
-      courses: [
-        { code: 'math', name: 'Toán học', icon: '📐', isLocked: false },
-        { code: 'english', name: 'Tiếng Anh', icon: '🗣️', isLocked: false },
-      ]
-    },
-    {
       grade: 'grade10',
-      gradeTitle: 'Lớp 10',
+      gradeTitle: 'Lớp 10 (Trọng tâm)',
       courses: [
         { code: 'math', name: 'Toán học', icon: '📐', isLocked: false },
         { code: 'english', name: 'Tiếng Anh', icon: '🗣️', isLocked: false },
@@ -167,6 +152,14 @@ export const AppLayout: React.FC = () => {
         { code: 'chemistry', name: 'Hóa học', icon: '⚗️', isLocked: false },
         { code: 'biology', name: 'Sinh học', icon: '🧬', isLocked: false },
         { code: 'history', name: 'Lịch sử', icon: '📜', isLocked: false },
+      ]
+    },
+    {
+      grade: 'grade9',
+      gradeTitle: 'Lớp 9 Ôn vào 10',
+      courses: [
+        { code: 'math', name: 'Toán học', icon: '📐', isLocked: false },
+        { code: 'english', name: 'Tiếng Anh', icon: '🗣️', isLocked: false },
       ]
     },
     {
@@ -334,7 +327,6 @@ export const AppLayout: React.FC = () => {
   useEffect(() => {
     let cancelled = false;
     setIsTeacher(false);
-    setRealPendingCount(0);
 
     if (!user) {
       return () => {
@@ -353,48 +345,23 @@ export const AppLayout: React.FC = () => {
     };
   }, [user]);
 
-  // Lấy số lượng bài chờ chấm thực tế trên Firestore để hiển thị Badge ở góc Giáo viên
-  useEffect(() => {
-    if (!user || !isTeacher) {
-      setRealPendingCount(0);
-      return;
-    }
-
-    const fetchRealPendingCount = async () => {
-      try {
-        const count = await teacherService.getRealPendingCount();
-        setRealPendingCount(count);
-      } catch (e) {
-        console.error("Lỗi khi load real pending count ở sidebar:", e);
-      }
-    };
-
-    fetchRealPendingCount();
-
-    // Tự động tải lại mỗi 180 giây để báo bài mới cho Giáo viên (tiết kiệm Firestore read)
-    const interval = setInterval(fetchRealPendingCount, 180000);
-    return () => clearInterval(interval);
-  }, [user, isTeacher]);
-
-
-
   const menuItems = [
     { path: COURSE_ROUTES.dashboard(selectedGrade, selectedSubject), label: 'Bảng điều khiển', icon: GraduationCap },
     { path: COURSE_ROUTES.roadmap(selectedGrade, selectedSubject), label: 'Lộ trình học', icon: Map },
     ...(selectedGrade === 'grade10' && (selectedSubject === 'physics' || selectedSubject === 'math' || selectedSubject === 'chemistry' || selectedSubject === 'biology')
       ? [{
-          path: COURSE_ROUTES.advanced(selectedGrade, selectedSubject),
-          label: 'Chuyên đề nâng cao',
-          icon: Target
-        }]
+        path: COURSE_ROUTES.advanced(selectedGrade, selectedSubject),
+        label: 'Chuyên đề nâng cao',
+        icon: Target
+      }]
       : []),
     ...(selectedSubject === 'english'
       ? [
-          { path: COURSE_ROUTES.grammar(selectedGrade, selectedSubject), label: 'Ngữ pháp', icon: BookText },
-          ...(selectedGrade === 'grade10'
-            ? [{ path: COURSE_ROUTES.vocabulary(selectedGrade, selectedSubject), label: 'Từ vựng 10', icon: BookMarked }]
-            : [])
-        ]
+        { path: COURSE_ROUTES.grammar(selectedGrade, selectedSubject), label: 'Ngữ pháp', icon: BookText },
+        ...(selectedGrade === 'grade10'
+          ? [{ path: COURSE_ROUTES.vocabulary(selectedGrade, selectedSubject), label: 'Từ vựng 10', icon: BookMarked }]
+          : [])
+      ]
       : []),
     { path: COURSE_ROUTES.aiTutor(selectedGrade, selectedSubject), label: 'Gia sư', icon: Sparkles },
     { path: COURSE_ROUTES.mistakes(selectedGrade, selectedSubject), label: 'Sổ lỗi sai', icon: Bookmark },
@@ -403,7 +370,7 @@ export const AppLayout: React.FC = () => {
       label: selectedGrade === 'grade9' ? 'Thi thử vào 10' : 'Thi thử & Kiểm tra',
       icon: Award
     },
-    { path: ROUTES.AFFILIATE, label: 'Góc Đối Tác', icon: TrendingUp }
+    ...(MONETIZATION_ENABLED ? [{ path: ROUTES.AFFILIATE, label: 'Góc Đối Tác', icon: TrendingUp }] : [])
   ];
 
   // Tính toán nhanh tiến độ tổng quát
@@ -695,16 +662,6 @@ export const AppLayout: React.FC = () => {
               >
                 <Users size={19} className="text-brand-learning shrink-0" />
                 {!effectiveCollapsed && <span>Góc Giáo viên 👩‍🏫</span>}
-                {realPendingCount > 0 && (
-                  <span className={cn(
-                    "bg-rose-500 text-white font-black text-[9px] rounded-full flex items-center justify-center shrink-0",
-                    effectiveCollapsed
-                      ? "absolute top-1 right-1.5 w-4 h-4 text-[8px]"
-                      : "ml-auto w-5 h-5 shadow-md shadow-rose-500/20"
-                  )}>
-                    {realPendingCount}
-                  </span>
-                )}
               </button>
             </div>
           )}
@@ -748,7 +705,7 @@ export const AppLayout: React.FC = () => {
           )}
         </nav>
 
-        {user && !isPremium && !effectiveCollapsed && (
+        {MONETIZATION_ENABLED && user && !isPremium && !effectiveCollapsed && (
           <div className="mx-4 my-3.5 p-4.5 rounded-2xl glass-premium text-center shrink-0 border border-amber-500/25 shadow-md shadow-amber-500/5 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-12 h-12 bg-amber-400/20 rounded-full blur-xl -mr-3 -mt-3 group-hover:scale-125 transition-transform duration-500" />
             <span className="text-[10px] font-black text-amber-600 dark:text-amber-400 block mb-1 tracking-wider uppercase flex items-center justify-center gap-1">
@@ -1004,7 +961,7 @@ export const AppLayout: React.FC = () => {
                   </>
                 )}
               </button>
-            ) : !isPremium ? (
+            ) : MONETIZATION_ENABLED && !isPremium ? (
               <button
                 onClick={() => navigate(ROUTES.PREMIUM)}
                 aria-label="Nâng cấp tài khoản Premium"

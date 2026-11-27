@@ -154,7 +154,7 @@
         "result": "BN . CF = CN . BF."
       }
     ],
-    "finalAnswer": "Chứng minh các tính chất hình học theo yêu cầu.",
+    "finalAnswer": "Tứ giác \\\\(ADHE\\\\) có \\\\(\\\\widehat{ADH} + \\\\widehat{AEH} = 180^\\\\circ\\\\), và \\\\(OK\\\\) là đường trung bình của \\\\(\\\\triangle APH\\\\) (với \\\\(AP\\\\) là đường kính)",
     "commonMistakes": [
       "Không vẽ hình chính xác dẫn đến ngộ nhận các tính chất hình học.",
       "Không chứng minh được mối liên hệ trung điểm K trong hình bình hành BHCP."
@@ -333,7 +333,7 @@
         "result": "Do đó, \\(AHCK\\) là tứ giác nội tiếp."
       }
     ],
-    "finalAnswer": "Tứ giác AHCK nội tiếp.",
+    "finalAnswer": "Tổng hai góc đối \\\\(\\\\widehat{AHC} + \\\\widehat{KAC} = 90^\\\\circ + 90^\\\\circ = 180^\\\\circ\\\\)",
     "commonMistakes": [
       "Không nêu rõ lý do có góc vuông.",
       "Kết luận nội tiếp nhưng chưa chỉ ra dấu hiệu.",

@@ -277,7 +277,7 @@ export const MistakeNotebook: React.FC = () => {
 
     let aiEvaluation: AiEvaluation | undefined = undefined;
     let correct = validateAnswer(activeMistake.question, answerInput);
-    let gradingMode: 'auto' | 'manual' = activeMistake.question.answerSchema?.autoCheckMode === 'manual' ? 'manual' : 'auto';
+    const gradingMode = 'auto' as const;
 
     if ((selectedSubject === 'math' || selectedSubject === 'chemistry') && reProofImages.length > 0) {
       try {
@@ -290,11 +290,11 @@ export const MistakeNotebook: React.FC = () => {
         );
         aiEvaluation = evaluation;
         correct = evaluation.isCorrect;
-        gradingMode = 'auto';
       } catch (err) {
         console.error("Lỗi khi gọi AI chấm bài trong sổ lỗi:", err);
-        gradingMode = 'manual';
-        correct = true;
+        setReSubmitError('Hệ thống AI chấm ảnh đang bận. Vui lòng thử lại sau hoặc nhập đáp án trực tiếp.');
+        setIsReSubmitting(false);
+        return;
       }
     }
 
@@ -698,7 +698,7 @@ export const MistakeNotebook: React.FC = () => {
                   disabled={reviewSubmitDisabled || isReSubmitting}
                   className="w-full font-bold py-3 mt-4 text-xs active:scale-[0.98]"
                 >
-                  {isReSubmitting ? (reProofImages && reProofImages.length > 0 ? 'Giáo viên đang chấm lại bài...' : 'Đang gửi bài làm...') : 'Nộp bài giải lại'}
+                  {isReSubmitting ? (reProofImages && reProofImages.length > 0 ? 'AI đang chấm lại bài...' : 'Đang gửi bài làm...') : 'Nộp bài giải lại'}
                 </Button>
               </div>
             ) : (

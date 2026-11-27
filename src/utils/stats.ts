@@ -1,5 +1,21 @@
 import { UserAttempt } from '../types';
 
+const VIETNAM_DATE_FORMATTER = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Asia/Ho_Chi_Minh',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+
+/** Chuyển mốc thời gian sang chuỗi YYYY-MM-DD theo múi giờ Việt Nam (tránh lệch ngày UTC lúc sáng sớm). */
+export const toLocalDateKey = (value: Date | string | number): string => {
+  const date = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return typeof value === 'string' ? value.substring(0, 10) : '';
+  }
+  return VIETNAM_DATE_FORMATTER.format(date);
+};
+
 export const calculateStudentStats = (attempts: UserAttempt[], completedLessonsCount = 0): {
   totalStudySeconds: number;
   totalAttempts: number;
@@ -15,8 +31,10 @@ export const calculateStudentStats = (attempts: UserAttempt[], completedLessonsC
   const dailyActivity: Record<string, number> = {};
   attempts.forEach(a => {
     if (a.createdAt) {
-      const dateStr = a.createdAt.substring(0, 10);
-      dailyActivity[dateStr] = (dailyActivity[dateStr] || 0) + 1;
+      const dateStr = toLocalDateKey(a.createdAt);
+      if (dateStr) {
+        dailyActivity[dateStr] = (dailyActivity[dateStr] || 0) + 1;
+      }
     }
   });
 

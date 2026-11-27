@@ -223,7 +223,7 @@ class RoadmapServiceClass {
           return bundle;
         }
         return null;
-      } catch (err) {
+      } catch {
         // Fallback về local public
         if (R2_PUBLIC_BASE) {
           try {

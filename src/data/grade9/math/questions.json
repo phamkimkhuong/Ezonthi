@@ -33,7 +33,7 @@
           "hint": "Nhập nghiệm của bất phương trình (Ví dụ: x >= 1)."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -83,7 +83,7 @@
           "hint": "Nhập giá trị nguyên của x để P nhận giá trị nguyên."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -129,7 +129,7 @@
           "placeholder": "15"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "orderMatters": true,
       "autoCheckMode": "keyed-numeric"
     },
@@ -172,7 +172,7 @@
           "hint": "Xác suất rút được thẻ ghi số chia hết cho 5."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -198,16 +198,17 @@
     "subjectId": "math",
     "topicId": "math-t5",
     "questionTypeId": "math-qt6",
-    "content": "Bài 5. (3,0 điểm)\n\nCho tam giác nhọn \\(ABC\\) (\\(AB < AC\\)) nội tiếp trong đường tròn \\((O)\\). Hai đường cao \\(BD\\) và \\(CE\\) (\\(D\\) thuộc \\(AC\\); \\(E\\) thuộc \\(AB\\)) của tam giác \\(ABC\\) cắt nhau tại \\(H\\).\n\n1. Chứng minh bốn điểm \\(A, D, H, E\\) cùng thuộc một đường tròn.\n\n2. Tia \\(BD\\) cắt đường tròn \\((O)\\) tại điểm thứ hai là \\(M\\) (\\(M\\) khác \\(B\\)). Gọi \\(K\\) là trung điểm của \\(BC\\). Chứng minh tam giác \\(MHC\\) cân và \\(AH = 2OK\\).\n\n3. Đường thẳng \\(AH\\) cắt đường thẳng \\(BC\\) tại \\(F\\), đường thẳng \\(DE\\) cắt đường thẳng \\(BC\\) tại \\(N\\). Chứng minh \\(BN \\cdot CF = CN \\cdot BF\\).",
+    "content": "Bài 5. (3,0 điểm)\\n\\nCho tam giác nhọn \\\\(ABC\\\\) (\\\\(AB < AC\\\\)) nội tiếp trong đường tròn \\\\((O)\\\\). Hai đường cao \\\\(BD\\\\) và \\\\(CE\\\\) (\\\\(D\\\\) thuộc \\\\(AC\\\\); \\\\(E\\\\) thuộc \\\\(AB\\\\)) của tam giác \\\\(ABC\\\\) cắt nhau tại \\\\(H\\\\).\\n\\n1. Chứng minh bốn điểm \\\\(A, D, H, E\\\\) cùng thuộc một đường tròn.\\n\\n2. Tia \\\\(BD\\\\) cắt đường tròn \\\\((O)\\\\) tại điểm thứ hai là \\\\(M\\\\) (\\\\(M\\\\) khác \\\\(B\\\\)). Gọi \\\\(K\\\\) là trung điểm của \\\\(BC\\\\). Chứng minh tam giác \\\\(MHC\\\\) cân và \\\\(AH = 2OK\\\\).\\n\\n3. Đường thẳng \\\\(AH\\\\) cắt đường thẳng \\\\(BC\\\\) tại \\\\(F\\\\), đường thẳng \\\\(DE\\\\) cắt đường thẳng \\\\(BC\\\\) tại \\\\(N\\\\). Chứng minh \\\\(BN \\\\cdot CF = CN \\\\cdot BF\\\\).\\n\\nTrong lời giải bài toán trên, khẳng định nào sau đây là ĐÚNG về lý do \\\\(ADHE\\\\) nội tiếp và cách chứng minh \\\\(AH = 2OK\\\\)?",
     "difficulty": "hard",
     "sourceType": "mock_exam",
-    "correctAnswer": "Chứng minh các tính chất hình học theo yêu cầu.",
-    "answerSchema": {
-      "type": "proof-upload",
-      "fields": [],
-      "proofImageRequired": true,
-      "autoCheckMode": "manual"
-    }
+    "correctAnswer": "Tứ giác \\\\(ADHE\\\\) có \\\\(\\\\widehat{ADH} + \\\\widehat{AEH} = 180^\\\\circ\\\\), và \\\\(OK\\\\) là đường trung bình của \\\\(\\\\triangle APH\\\\) (với \\\\(AP\\\\) là đường kính)",
+    "options": [
+      "Tứ giác \\\\(ADHE\\\\) có \\\\(\\\\widehat{ADH} + \\\\widehat{AEH} = 180^\\\\circ\\\\), và \\\\(OK\\\\) là đường trung bình của \\\\(\\\\triangle APH\\\\) (với \\\\(AP\\\\) là đường kính)",
+      "Tứ giác \\\\(ADHE\\\\) có \\\\(\\\\widehat{DAE} = \\\\widehat{DHE} = 60^\\\\circ\\\\), và \\\\(OK\\\\) là đường trung trực của đoạn \\\\(AH\\\\)",
+      "Điểm \\\\(K\\\\) là trọng tâm của \\\\(\\\\triangle ABC\\\\) nên \\\\(AH = 2OK\\\\) theo tính chất ba đường trung tuyến",
+      "Tứ giác \\\\(ADHE\\\\) là hình chữ nhật và \\\\(\\\\triangle MHC\\\\) luôn là tam giác đều"
+    ],
+    "validatorType": "choice"
   },
   {
     "id": "math-q1",
@@ -243,7 +244,7 @@
           "hint": "Nhập giá trị x ở câu phụ."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -286,7 +287,7 @@
           "placeholder": "-4 + √31"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -329,7 +330,7 @@
           "placeholder": "15"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "orderMatters": true,
       "autoCheckMode": "keyed-numeric"
     },
@@ -343,17 +344,17 @@
     "subjectId": "math",
     "topicId": "math-t5",
     "questionTypeId": "math-qt6",
-    "content": "Cho đường tròn \\((O, R)\\) đường kính \\(AB\\). Lấy điểm \\(C\\) trên đường tròn sao cho \\(AC < BC\\). Kẻ đường cao \\(CH\\) của tam giác \\(ABC\\). Gọi \\(I\\) là trung điểm của \\(CH\\). Đường thẳng qua \\(A\\) vuông góc với \\(AB\\) cắt tia \\(BI\\) tại \\(K\\). Chứng minh tứ giác \\(AHCK\\) là tứ giác nội tiếp.",
+    "content": "Cho đường tròn \\\\((O, R)\\\\) đường kính \\\\(AB\\\\). Lấy điểm \\\\(C\\\\) trên đường tròn sao cho \\\\(AC < BC\\\\). Kẻ đường cao \\\\(CH\\\\) của tam giác \\\\(ABC\\\\). Gọi \\\\(I\\\\) là trung điểm của \\\\(CH\\\\). Đường thẳng qua \\\\(A\\\\) vuông góc với \\\\(AB\\\\) cắt tia \\\\(BI\\\\) tại \\\\(K\\\\). Dấu hiệu chính xác nhất để chứng minh tứ giác \\\\(AHCK\\\\) là tứ giác nội tiếp là gì?",
     "difficulty": "medium",
     "sourceType": "mock_exam",
-    "correctAnswer": "Chứng minh tứ giác AHCK nội tiếp.",
-    "validatorType": "manual",
-    "answerSchema": {
-      "type": "proof-upload",
-      "fields": [],
-      "proofImageRequired": true,
-      "autoCheckMode": "manual"
-    }
+    "correctAnswer": "Tổng hai góc đối \\\\(\\\\widehat{AHC} + \\\\widehat{KAC} = 90^\\\\circ + 90^\\\\circ = 180^\\\\circ\\\\)",
+    "validatorType": "choice",
+    "options": [
+      "Tổng hai góc đối \\\\(\\\\widehat{AHC} + \\\\widehat{KAC} = 90^\\\\circ + 90^\\\\circ = 180^\\\\circ\\\\)",
+      "Hai góc kề một cạnh \\\\(\\\\widehat{ACH}\\\\) và \\\\(\\\\widehat{HKC}\\\\) đều bằng \\\\(60^\\\\circ\\\\)",
+      "Tứ giác \\\\(AHCK\\\\) là hình thang cân có hai đường chéo vuông góc",
+      "Độ dài hai cạnh đối \\\\(AH\\\\) và \\\\(CK\\\\) luôn bằng đường kính \\\\(AB\\\\)"
+    ]
   },
   {
     "id": "math-q5",
@@ -385,7 +386,7 @@
           "placeholder": "7/3"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -430,7 +431,7 @@
           "placeholder": "không có"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -475,7 +476,7 @@
           "placeholder": "5"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -513,7 +514,7 @@
           "placeholder": "1"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "orderMatters": true,
       "autoCheckMode": "keyed-numeric"
     },
@@ -549,7 +550,7 @@
           "hint": "Nhập giá trị rút gọn của biểu thức A."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -588,7 +589,7 @@
           "hint": "Nhập điều kiện xác định của biến x."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -626,7 +627,7 @@
           "hint": "Nhập các giá trị x tìm được, cách nhau bằng dấu phẩy."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -664,7 +665,7 @@
           "placeholder": "0 <= x < 1"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -707,7 +708,7 @@
           "hint": "Nhập giá niêm yết của tủ lạnh (triệu đồng)."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "orderMatters": true,
       "autoCheckMode": "keyed-numeric"
     },
@@ -750,7 +751,7 @@
           "hint": "Nhập số học sinh của lớp 9B."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "orderMatters": true,
       "autoCheckMode": "keyed-numeric"
     },
@@ -788,7 +789,7 @@
           "hint": "Nhập số xe ban đầu (chấp nhận 8 hoặc 30)."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -835,7 +836,7 @@
           "hint": "Nhập vận tốc ô tô (km/h)."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "orderMatters": true,
       "autoCheckMode": "keyed-numeric"
     },
@@ -879,7 +880,7 @@
           "hint": "Nhập thời gian vòi thứ hai chảy riêng (giờ)."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "orderMatters": true,
       "autoCheckMode": "keyed-numeric"
     },
@@ -922,7 +923,7 @@
           "hint": "Nhập số sản phẩm theo kế hoạch của tổ II."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "orderMatters": true,
       "autoCheckMode": "keyed-numeric"
     },
@@ -956,7 +957,7 @@
           "hint": "Nhập số xe dự định ban đầu."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -988,7 +989,7 @@
           "hint": "Nhập vận tốc lúc đi của xe máy (km/h)."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1029,7 +1030,7 @@
           "hint": "Nhập thời gian tổ II hoàn thành công việc (giờ)."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "orderMatters": true,
       "autoCheckMode": "keyed-numeric"
     },
@@ -1067,7 +1068,7 @@
           "hint": "Nhập tập nghiệm của bất phương trình."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -1101,7 +1102,7 @@
           "hint": "Nhập tập nghiệm của bất phương trình."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -1135,7 +1136,7 @@
           "hint": "Nhập tập nghiệm của bất phương trình."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -1169,7 +1170,7 @@
           "hint": "Nhập tập nghiệm của bất phương trình."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -1203,7 +1204,7 @@
           "hint": "Nhập tập nghiệm của bất phương trình."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -1237,7 +1238,7 @@
           "hint": "Nhập tập nghiệm của bất phương trình."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -1271,7 +1272,7 @@
           "hint": "Nhập tập nghiệm của bất phương trình."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -1305,7 +1306,7 @@
           "hint": "Nhập tập nghiệm của bất phương trình."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "expression-loose"
     },
     "correctFinalAnswer": {
@@ -1347,7 +1348,7 @@
           "hint": "Nhập giá trị x để dấu bằng xảy ra."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1388,7 +1389,7 @@
           "hint": "Nhập giá trị x để dấu bằng xảy ra."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1421,7 +1422,7 @@
           "hint": "Nhập giá trị giới hạn của m."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1455,7 +1456,7 @@
           "hint": "Nhập giá trị m."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1487,7 +1488,7 @@
           "hint": "Nhập giá trị giới hạn của m."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1519,7 +1520,7 @@
           "hint": "Nhập giá trị tính được."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1551,7 +1552,7 @@
           "hint": "Nhập giá trị tính được."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1583,7 +1584,7 @@
           "hint": "Nhập giá trị tính được."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1615,7 +1616,7 @@
           "hint": "Nhập giá trị m tìm được."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1647,7 +1648,7 @@
           "hint": "Nhập giá trị giới hạn của m."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1679,7 +1680,7 @@
           "hint": "Nhập giá trị giới hạn của m."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1806,7 +1807,7 @@
           "placeholder": "-4"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -1905,7 +1906,7 @@
           "hint": "Nhập giá trị giới hạn của m."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -2059,7 +2060,7 @@
           "placeholder": "-6"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -2098,7 +2099,7 @@
           "hint": "Nhập giá trị m để d tiếp xúc với P."
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {
@@ -2275,7 +2276,7 @@
           "placeholder": "3/10"
         }
       ],
-      "proofImageRequired": true,
+      "proofImageRequired": false,
       "autoCheckMode": "keyed-numeric"
     },
     "correctFinalAnswer": {

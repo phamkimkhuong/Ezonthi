@@ -1,8 +1,9 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ErrorBoundary } from './components/common/ErrorBoundary';
 import { ROUTES } from './constants/routes';
+import { MONETIZATION_ENABLED } from './utils/premium';
 import { seoLandingPages } from './seo/landingPages';
 import PublicLayout from './components/layout/PublicLayout';
 import SeoLandingPage from './features/seo-landing/SeoLandingPage';
@@ -120,10 +121,10 @@ const router = createBrowserRouter([
       { path: ROUTES.MISTAKES.substring(1), element: <LegacyCourseRedirect section="mistakes" /> },
       { path: ROUTES.EXAM.substring(1), element: <LegacyCourseRedirect section="exam" /> },
       { path: ROUTES.TEACHER.substring(1), element: <TeacherDashboard /> },
-      { path: ROUTES.PREMIUM.substring(1), element: <PremiumPricing /> },
+      { path: ROUTES.PREMIUM.substring(1), element: MONETIZATION_ENABLED ? <PremiumPricing /> : <Navigate to={ROUTES.DASHBOARD} replace /> },
       { path: ROUTES.AI_TUTOR.substring(1), element: <LegacyCourseRedirect section="ai-tutor" /> },
       { path: ROUTES.SUPPORT.substring(1), element: <SupportPage /> },
-      { path: ROUTES.AFFILIATE.substring(1), element: <AffiliateDashboard /> },
+      { path: ROUTES.AFFILIATE.substring(1), element: MONETIZATION_ENABLED ? <AffiliateDashboard /> : <Navigate to={ROUTES.DASHBOARD} replace /> },
       { path: ROUTES.VOCABULARY.substring(1), element: <LegacyCourseRedirect section="vocabulary" /> },
       { path: ROUTES.GRAMMAR.substring(1), element: <LegacyCourseRedirect section="grammar" /> },
       { path: ROUTES.NEWS.substring(1), element: <NewsPage /> },

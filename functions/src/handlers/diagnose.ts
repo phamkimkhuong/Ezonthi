@@ -1,7 +1,7 @@
 import { onCall, HttpsError } from "firebase-functions/v2/https";
 import { updateStudentProfileFromSession, consolidateProfile } from "../services/profile.js";
 import { DAILY_REQUEST_LIMIT, db } from '../config.js';
-import { hasActivePremium } from '../services/entitlements.js';
+import { hasActivePremium, MONETIZATION_ENABLED } from '../services/entitlements.js';
 import { AiQuotaExceededError, finalizeAiUsage, reserveAiQuota } from '../services/aiControl.js';
 
 const SUBJECTS = new Set(['math', 'english', 'physics', 'chemistry', 'biology', 'history']);
@@ -38,7 +38,7 @@ export const diagnoseSession = onCall({
   }
 
   const user = await db.collection('users').doc(uid).get();
-  const dailyLimit = hasActivePremium(user.data()) ? DAILY_REQUEST_LIMIT : 20;
+  const dailyLimit = !MONETIZATION_ENABLED ? 50 : hasActivePremium(user.data()) ? DAILY_REQUEST_LIMIT : 20;
   let reservation;
   try {
     reservation = await reserveAiQuota(uid, dailyLimit, 'diagnose');

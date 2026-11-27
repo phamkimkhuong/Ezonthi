@@ -8,6 +8,7 @@ import { VIETNAM_PROVINCES } from '../../constants/provinces';
 import { useNavigate } from 'react-router-dom';
 import { ConfirmationModal } from './ConfirmationModal';
 import { cn } from '../../utils/cn';
+import { MONETIZATION_ENABLED } from '../../utils/premium';
 
 interface ProfileModalProps {
   isOpen: boolean;
@@ -162,8 +163,8 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({ isOpen, onClose }) =
         </div>
 
         <form onSubmit={handleSave} className="space-y-4 flex-1 overflow-y-auto pr-1">
-          {/* ⭐ ẨN Card Gói Premium cho trường hợp TỰ ĐỘNG BẬT ONBOARDING; HIỂN THỊ khi mở thủ công */}
-          {!isAutoProfileModal && (
+          {/* ⭐ ẨN Card Gói Premium cho trường hợp TỰ ĐỘNG BẬT ONBOARDING hoặc đang tắt thương mại hóa */}
+          {MONETIZATION_ENABLED && !isAutoProfileModal && (
             <div className="p-4 rounded-2xl bg-gradient-to-br from-amber-500/10 via-orange-500/10 to-amber-500/5 border border-amber-500/30 dark:border-amber-500/20 shadow-xs relative overflow-hidden">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-center gap-2.5">

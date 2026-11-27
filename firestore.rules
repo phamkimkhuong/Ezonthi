@@ -135,10 +135,9 @@ service cloud.firestore {
         && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['id', 'email']) || validIdentity());
       allow delete: if false;
 
-      // Trusted teacher reviews are stored separately from student-owned answer drafts.
+      // Hàng đợi/đánh giá giáo viên chấm tay đã bị gỡ bỏ.
       match /teacher_reviews/{attemptId} {
-        allow read: if isOwner(userId) || isTeacher();
-        allow write: if false;
+        allow read, write: if false;
       }
 
       match /learning_attempts/{attemptId} {
@@ -325,9 +324,9 @@ service cloud.firestore {
       allow delete: if isTeacher();
     }
 
+    // Hàng đợi giáo viên chấm đã bị gỡ bỏ hoàn toàn khỏi nền tảng tự học
     match /manual_attempts/{attemptId} {
-      allow read: if isTeacher();
-      allow write: if false;
+      allow read, write: if false;
     }
 
     match /announcement_posts/{postId} {

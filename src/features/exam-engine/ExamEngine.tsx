@@ -39,14 +39,12 @@ export const ExamEngine: React.FC = () => {
         examSections={engine.examSections}
         answers={engine.answers}
         finalAnswers={engine.finalAnswers}
-        proofImagesByQuestion={engine.proofImagesByQuestion}
         timeLeft={engine.timeLeft}
         isSubmittingExam={engine.isSubmittingExam}
         examSubmitError={engine.examSubmitError}
         onOptionSelect={engine.handleOptionSelect}
         onInputChange={engine.handleInputChange}
         onFinalAnswerChange={engine.handleFinalAnswerChange}
-        onProofImagesChange={engine.handleProofImagesChange}
         onPauseAndSave={engine.handlePauseAndSave}
         onSubmitExam={engine.handleSubmitExam}
         onDiscardAndExit={engine.handleDiscardAndExit}

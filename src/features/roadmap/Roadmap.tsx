@@ -9,6 +9,7 @@ import type { GradeCode, SubjectCode } from '@/types';
 import { BookOpen, Search, X, List, LayoutGrid, Lock, PlayCircle, RotateCcw, Sparkles, ChevronDown, ChevronUp, Check } from 'lucide-react';
 import { matchesSearchKeyword } from '@/utils/searchHelper';
 import { cn } from '@/utils/cn';
+import { MONETIZATION_ENABLED } from '@/utils/premium';
 import { getDifficultyTheme, getSubjectTheme, getTierTheme, getStarsFromScore } from '@/utils/theme';
 import { getSubjectName, getSubjectIcon, isQuestionTypePremiumLocked } from '@/utils/subject';
 import { LatexRenderer } from '../../components/common/LatexRenderer';
@@ -112,10 +113,18 @@ export const Roadmap: React.FC = () => {
   });
 
   const userId = user?.uid || 'guest';
-  const readLessons = storageService.getReadLessons(userId);
-  const readLessonsSet = new Set(readLessons);
-  const attempts = React.useMemo(() => storageService.getAttempts(userId), [userId, progressVersion]);
-  const progress = React.useMemo(() => storageService.getProgress(userId), [userId, progressVersion]);
+  const readLessonsSet = React.useMemo(() => {
+    void progressVersion;
+    return new Set(storageService.getReadLessons(userId));
+  }, [userId, progressVersion]);
+  const attempts = React.useMemo(() => {
+    void progressVersion;
+    return storageService.getAttempts(userId);
+  }, [userId, progressVersion]);
+  const progress = React.useMemo(() => {
+    void progressVersion;
+    return storageService.getProgress(userId);
+  }, [userId, progressVersion]);
   const allQuestions = React.useMemo(() => getPracticeQuestions(effectiveGrade, effectiveSubject), [effectiveGrade, effectiveSubject]);
 
   const [filterStatus, setFilterStatus] = useState<'all' | 'need_theory' | 'need_practice' | 'completed'>('all');
@@ -139,19 +148,9 @@ export const Roadmap: React.FC = () => {
     return isOptionalEnglishListeningTopic(questionTypes.find(type => type.id === typeId)?.topicId);
   };
 
-  const isUnlocked = (typeId: string) => {
-    if (isOptionalEnglishListeningType(typeId)) return true;
-    const qType = questionTypes.find(t => t.id === typeId);
-    if (!qType) return false;
-
-    const topicTypes = typesByTopic.get(qType.topicId) || [];
-    const idxInTopic = topicTypes.findIndex(t => t.id === typeId);
-    if (idxInTopic === -1) return false;
-    if (idxInTopic === 0) return true; // ⭐ Dạng bài đầu tiên của MỖI CHUYÊN ĐỀ luôn luôn mở khóa!
-
-    // Các bài tiếp theo trong chuyên đề mở khóa khi bài liền trước TRONG CÙNG CHUYÊN ĐỀ đã được đọc
-    return readLessonsSet.has(topicTypes[idxInTopic - 1].id);
-  };
+  // Mở tự do toàn bộ dạng bài trong lộ trình tự học (không ép đọc tuần tự từng bài)
+  void isOptionalEnglishListeningType;
+  const isUnlocked = React.useCallback((typeId: string) => Boolean(typeId), []);
 
   const getQuestionTypeMetrics = React.useCallback((typeId: string) => {
     const isRead = readLessonsSet.has(typeId);
@@ -283,7 +282,7 @@ export const Roadmap: React.FC = () => {
     setHasManuallyToggled(true);
     setCollapsedTopics(prev => ({
       ...prev,
-      [topicId]: !Boolean(prev[topicId])
+      [topicId]: !prev[topicId]
     }));
   }, []);
 
@@ -720,437 +719,437 @@ export const Roadmap: React.FC = () => {
             /* Render từng Chặng */
             <div className="space-y-16">
               {tiers.map((tier) => {
-              const tierTopics = topics.filter(t => t.tier === tier.id);
+                const tierTopics = topics.filter(t => t.tier === tier.id);
 
-              // Lọc ra các chuyên đề có ít nhất 1 dạng bài được hiển thị
-              const visibleTopics = tierTopics.filter(topic => {
-                const filteredTypes = questionTypes.filter(type => type.topicId === topic.id);
-                return filteredTypes.some(type => shouldShowType(type.id));
-              });
+                // Lọc ra các chuyên đề có ít nhất 1 dạng bài được hiển thị
+                const visibleTopics = tierTopics.filter(topic => {
+                  const filteredTypes = questionTypes.filter(type => type.topicId === topic.id);
+                  return filteredTypes.some(type => shouldShowType(type.id));
+                });
 
-              // Nếu chặng không có chuyên đề nào được hiển thị, ẩn cả chặng
-              if (visibleTopics.length === 0) return null;
+                // Nếu chặng không có chuyên đề nào được hiển thị, ẩn cả chặng
+                if (visibleTopics.length === 0) return null;
 
-              return (
-                <div key={tier.id} className="space-y-8">
-                  {/* Tiêu đề Chặng - Thiết kế viền trái tối giản kiểu Notion */}
-                  <div className={cn(
-                    'p-4 md:p-6 rounded-xl border border-border/80 border-l-4 bg-card text-foreground transition-all duration-300 shadow-sm relative overflow-hidden group',
-                    tier.id === 1 ? 'border-l-brand-learning' : tier.id === 2 ? 'border-l-brand-ink' : 'border-l-brand-action'
-                  )}>
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-current/5 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-500" />
-                    <div className="flex items-center justify-between gap-3 flex-wrap relative z-10">
-                      <h3 className="text-base font-black tracking-tight uppercase tracking-wider font-sans">{tier.title}</h3>
-                      {tier.id === 3 && !isPremium && visibleTopics.some(topic => !isOptionalEnglishListeningTopic(topic.id)) && (
-                        <span className="px-2.5 py-0.75 text-[8px] bg-brand-action text-white rounded-md font-black tracking-widest uppercase shadow-sm animate-pulse-glow">👑 Khóa Premium</span>
-                      )}
+                return (
+                  <div key={tier.id} className="space-y-8">
+                    {/* Tiêu đề Chặng - Thiết kế viền trái tối giản kiểu Notion */}
+                    <div className={cn(
+                      'p-4 md:p-6 rounded-xl border border-border/80 border-l-4 bg-card text-foreground transition-all duration-300 shadow-sm relative overflow-hidden group',
+                      tier.id === 1 ? 'border-l-brand-learning' : tier.id === 2 ? 'border-l-brand-ink' : 'border-l-brand-action'
+                    )}>
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-current/5 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-500" />
+                      <div className="flex items-center justify-between gap-3 flex-wrap relative z-10">
+                        <h3 className="text-base font-black tracking-tight uppercase tracking-wider font-sans">{tier.title}</h3>
+                        {MONETIZATION_ENABLED && tier.id === 3 && !isPremium && visibleTopics.some(topic => !isOptionalEnglishListeningTopic(topic.id)) && (
+                          <span className="px-2.5 py-0.75 text-[8px] bg-brand-action text-white rounded-md font-black tracking-widest uppercase shadow-sm animate-pulse-glow">👑 Khóa Premium</span>
+                        )}
+                      </div>
+                      <p className="text-xs text-muted-foreground font-bold mt-2 leading-relaxed relative z-10">
+                        {tier.description}
+                      </p>
                     </div>
-                    <p className="text-xs text-muted-foreground font-bold mt-2 leading-relaxed relative z-10">
-                      {tier.description}
-                    </p>
-                  </div>
 
-                  {/* Danh sách các chuyên đề trong chặng */}
-                  <div className={cn(
-                    'relative border-l-2 pl-5 md:pl-8 ml-2 md:ml-5 space-y-6 md:space-y-8',
-                    getTierTheme(tier.id).lineStyle
-                  )}>
-                    {visibleTopics.map((topic, topicIdx) => {
-                      const filteredTypes = questionTypes.filter(type => type.topicId === topic.id);
-                      const visibleTypes = filteredTypes.filter(type => shouldShowType(type.id));
-                      const isTopicUnlocked = filteredTypes.some(type => isUnlocked(type.id));
-                      const isCollapsed = isTopicCollapsed(topic.id);
+                    {/* Danh sách các chuyên đề trong chặng */}
+                    <div className={cn(
+                      'relative border-l-2 pl-5 md:pl-8 ml-2 md:ml-5 space-y-6 md:space-y-8',
+                      getTierTheme(tier.id).lineStyle
+                    )}>
+                      {visibleTopics.map((topic, topicIdx) => {
+                        const filteredTypes = questionTypes.filter(type => type.topicId === topic.id);
+                        const visibleTypes = filteredTypes.filter(type => shouldShowType(type.id));
+                        const isTopicUnlocked = filteredTypes.some(type => isUnlocked(type.id));
+                        const isCollapsed = isTopicCollapsed(topic.id);
 
-                      return (
-                        <div key={topic.id} className="relative group/topic">
-                          {/* Điểm nút trên trục thời gian - Đồng bộ màu theo môn học */}
-                          <div className={cn(
-                            "absolute -left-[31px] md:-left-[45px] top-3.5 w-7 h-7 md:w-8 md:h-8 rounded-full border-4 border-background flex items-center justify-center text-[10px] md:text-xs font-black shadow-md transition-all duration-300 group-hover/topic:scale-110",
-                            !isTopicUnlocked
-                              ? "bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border-slate-100 dark:border-slate-900 shadow-none"
-                              : subjectTheme.solid
-                          )}>
-                            {topicIdx + 1}
-                          </div>
+                        return (
+                          <div key={topic.id} className="relative group/topic">
+                            {/* Điểm nút trên trục thời gian - Đồng bộ màu theo môn học */}
+                            <div className={cn(
+                              "absolute -left-[31px] md:-left-[45px] top-3.5 w-7 h-7 md:w-8 md:h-8 rounded-full border-4 border-background flex items-center justify-center text-[10px] md:text-xs font-black shadow-md transition-all duration-300 group-hover/topic:scale-110",
+                              !isTopicUnlocked
+                                ? "bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border-slate-100 dark:border-slate-900 shadow-none"
+                                : subjectTheme.solid
+                            )}>
+                              {topicIdx + 1}
+                            </div>
 
-                          {/* Chi tiết chuyên đề */}
-                          <div className="space-y-3.5">
-                            {(() => {
-                              const completedCount = filteredTypes.filter(type => getQuestionTypeMetrics(type.id).isCompleted).length;
-                              const percent = filteredTypes.length > 0 ? Math.round((completedCount / filteredTypes.length) * 100) : 0;
-                              const topicOutcomes = learningOutcomes.filter(o => o.topicId === topic.id && o.textbook && o.textbook.pages.length > 0);
+                            {/* Chi tiết chuyên đề */}
+                            <div className="space-y-3.5">
+                              {(() => {
+                                const completedCount = filteredTypes.filter(type => getQuestionTypeMetrics(type.id).isCompleted).length;
+                                const percent = filteredTypes.length > 0 ? Math.round((completedCount / filteredTypes.length) * 100) : 0;
+                                const topicOutcomes = learningOutcomes.filter(o => o.topicId === topic.id && o.textbook && o.textbook.pages.length > 0);
 
-                              return (
-                                <div
-                                  onClick={() => toggleTopicCollapse(topic.id)}
-                                  className={cn(
-                                    "p-3 sm:p-3.5 rounded-2xl border transition-all duration-200 cursor-pointer shadow-xs group/header select-none",
-                                    isCollapsed
-                                      ? "bg-card/70 hover:bg-card border-border/70 hover:border-primary/40"
-                                      : "bg-card border-border/90 shadow-sm"
-                                  )}
-                                >
-                                  <div className="flex flex-wrap items-center justify-between gap-3">
-                                    <div className="flex items-center gap-2.5 min-w-0 flex-1">
-                                      <h4 className={cn(
-                                        "text-sm sm:text-base font-extrabold flex items-center gap-2 font-sans transition-colors truncate",
-                                        isTopicUnlocked
-                                          ? "text-foreground group-hover/header:text-primary"
-                                          : "text-muted-foreground/75"
-                                      )}>
-                                        {topic.name}
-                                      </h4>
-                                      <span className="text-[10px] text-muted-foreground font-bold px-2 py-0.5 rounded-full bg-secondary border border-border/40 shrink-0">
-                                        {completedCount}/{filteredTypes.length} bài
-                                      </span>
-                                      {completedCount === filteredTypes.length && filteredTypes.length > 0 && (
-                                        <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20 shrink-0">
-                                          ✓ Hoàn thành
+                                return (
+                                  <div
+                                    onClick={() => toggleTopicCollapse(topic.id)}
+                                    className={cn(
+                                      "p-3 sm:p-3.5 rounded-2xl border transition-all duration-200 cursor-pointer shadow-xs group/header select-none",
+                                      isCollapsed
+                                        ? "bg-card/70 hover:bg-card border-border/70 hover:border-primary/40"
+                                        : "bg-card border-border/90 shadow-sm"
+                                    )}
+                                  >
+                                    <div className="flex flex-wrap items-center justify-between gap-3">
+                                      <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                                        <h4 className={cn(
+                                          "text-sm sm:text-base font-extrabold flex items-center gap-2 font-sans transition-colors truncate",
+                                          isTopicUnlocked
+                                            ? "text-foreground group-hover/header:text-primary"
+                                            : "text-muted-foreground/75"
+                                        )}>
+                                          {topic.name}
+                                        </h4>
+                                        <span className="text-[10px] text-muted-foreground font-bold px-2 py-0.5 rounded-full bg-secondary border border-border/40 shrink-0">
+                                          {completedCount}/{filteredTypes.length} bài
                                         </span>
-                                      )}
-                                    </div>
+                                        {completedCount === filteredTypes.length && filteredTypes.length > 0 && (
+                                          <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20 shrink-0">
+                                            ✓ Hoàn thành
+                                          </span>
+                                        )}
+                                      </div>
 
-                                    <div className="flex items-center gap-3 shrink-0">
-                                      {/* Thanh tiến độ chương */}
-                                      <div className="flex items-center gap-2">
-                                        <div className="h-2 w-16 sm:w-24 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden shrink-0 shadow-inner">
-                                          <div className="h-full bg-primary rounded-full transition-all duration-300" style={{ width: `${percent}%` }} />
+                                      <div className="flex items-center gap-3 shrink-0">
+                                        {/* Thanh tiến độ chương */}
+                                        <div className="flex items-center gap-2">
+                                          <div className="h-2 w-16 sm:w-24 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden shrink-0 shadow-inner">
+                                            <div className="h-full bg-primary rounded-full transition-all duration-300" style={{ width: `${percent}%` }} />
+                                          </div>
+                                          <span className="text-[11px] text-primary font-black w-8 text-right">{percent}%</span>
                                         </div>
-                                        <span className="text-[11px] text-primary font-black w-8 text-right">{percent}%</span>
-                                      </div>
 
-                                      {/* Bảng đối chiếu SGK */}
-                                      {topicOutcomes.length > 0 && (
-                                        <button
-                                          type="button"
-                                          onClick={(e) => {
-                                            e.stopPropagation();
-                                            setMappingModalTopic({ id: topic.id, name: topic.name });
-                                          }}
-                                          className="hidden sm:inline-flex items-center gap-1 text-[10px] font-extrabold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 px-2 py-1 rounded-lg border border-emerald-500/20 transition-all cursor-pointer shadow-2xs active:scale-95"
-                                          title="Bảng đối chiếu SGK chuẩn"
-                                        >
-                                          <BookOpen size={11} />
-                                          <span className="hidden md:inline">SGK</span>
-                                        </button>
-                                      )}
-
-                                      {/* Icon Accordion Chevron */}
-                                      <div className={cn(
-                                        "w-7 h-7 rounded-lg flex items-center justify-center text-muted-foreground group-hover/header:text-foreground bg-secondary/70 transition-transform duration-200",
-                                        isCollapsed ? "" : "rotate-180"
-                                      )}>
-                                        <ChevronDown size={15} />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              );
-                            })()}
-
-                            {/* Danh sách bài học: Chỉ hiển thị khi chuyên đề ĐƯỢC MỞ RỘNG (!isCollapsed) */}
-                            {!isCollapsed && (
-                              <div className="space-y-3 pt-0.5 animate-in fade-in-50 duration-200">
-                                {viewMode === 'list' ? (
-                                  <div className="space-y-2">
-                                    {visibleTypes.map((type, typeIdx) => {
-                                      const diff = getDifficultyTheme(type.difficulty);
-                                      const unlocked = isUnlocked(type.id);
-                                      const isLockedByPremium = isQuestionTypePremiumLocked(type.id, topic.tier, selectedSubject, selectedGrade) && !isPremium && !isOptionalEnglishListeningTopic(topic.id);
-                                      const metrics = getQuestionTypeMetrics(type.id);
-
-                                      // Nút hành động chính thông minh (Single Dynamic Smart CTA)
-                                      const smartCtaButton = (() => {
-                                        if (!unlocked) {
-                                          return (
-                                            <button
-                                              type="button"
-                                              disabled
-                                              className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-secondary/80 text-muted-foreground cursor-not-allowed opacity-60 inline-flex items-center gap-1.5 border border-border/30 shrink-0"
-                                              title="Hoàn thành bài liền trước để mở khóa bài học này"
-                                            >
-                                              <Lock size={12} />
-                                              <span>Đang khóa</span>
-                                            </button>
-                                          );
-                                        }
-                                        if (isLockedByPremium) {
-                                          return (
-                                            <button
-                                              type="button"
-                                              onClick={(e) => { e.stopPropagation(); handleSelectType(type.id); }}
-                                              className="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30 inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all shrink-0"
-                                            >
-                                              <span>👑 Mở khóa</span>
-                                            </button>
-                                          );
-                                        }
-                                        if (!metrics.isRead) {
-                                          return (
-                                            <button
-                                              type="button"
-                                              onClick={(e) => { e.stopPropagation(); handleSelectType(type.id); }}
-                                              className="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all shrink-0"
-                                              title="Bắt đầu học lý thuyết bài giảng này"
-                                            >
-                                              <BookOpen size={13} />
-                                              <span>Học bài</span>
-                                            </button>
-                                          );
-                                        }
-                                        if (metrics.attemptsCount === 0 || metrics.practicePercent === 0) {
-                                          return (
-                                            <button
-                                              type="button"
-                                              onClick={(e) => handleSelectPractice(type.id, e)}
-                                              className={cn(
-                                                "px-3 py-1.5 rounded-xl text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all text-white shrink-0",
-                                                subjectTheme.solid
-                                              )}
-                                              title="Bắt đầu luyện tập bài tập của dạng này"
-                                            >
-                                              <PlayCircle size={13} />
-                                              <span>Luyện tập</span>
-                                            </button>
-                                          );
-                                        }
-                                        if (!metrics.isCompleted) {
-                                          return (
-                                            <button
-                                              type="button"
-                                              onClick={(e) => handleSelectPractice(type.id, e)}
-                                              className="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all shrink-0"
-                                              title="Luyện tập thêm để nâng cao điểm số và đạt 3 sao"
-                                            >
-                                              <PlayCircle size={13} />
-                                              <span>Luyện tiếp</span>
-                                            </button>
-                                          );
-                                        }
-                                        return (
+                                        {/* Bảng đối chiếu SGK */}
+                                        {topicOutcomes.length > 0 && (
                                           <button
                                             type="button"
-                                            onClick={(e) => handleSelectPractice(type.id, e)}
-                                            className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-secondary hover:bg-secondary/80 text-foreground border border-border/50 inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all shrink-0"
-                                            title="Ôn lại dạng bài đã hoàn thành"
+                                            onClick={(e) => {
+                                              e.stopPropagation();
+                                              setMappingModalTopic({ id: topic.id, name: topic.name });
+                                            }}
+                                            className="hidden sm:inline-flex items-center gap-1 text-[10px] font-extrabold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 px-2 py-1 rounded-lg border border-emerald-500/20 transition-all cursor-pointer shadow-2xs active:scale-95"
+                                            title="Bảng đối chiếu SGK chuẩn"
                                           >
-                                            <RotateCcw size={12} />
-                                            <span>Ôn lại</span>
+                                            <BookOpen size={11} />
+                                            <span className="hidden md:inline">SGK</span>
                                           </button>
-                                        );
-                                      })();
+                                        )}
 
-                                      return (
-                                        <div
-                                          key={type.id}
-                                          onClick={() => handleSelectType(type.id)}
-                                          className={cn(
-                                            "px-3.5 py-2.5 sm:py-3 rounded-xl border transition-all duration-200 flex items-center justify-between gap-3 group cursor-pointer",
-                                            !unlocked
-                                              ? "bg-secondary/15 border-border/40 opacity-70 hover:border-border/60"
-                                              : metrics.isCompleted
-                                                ? "bg-emerald-500/[0.03] border-emerald-500/25 hover:border-emerald-500/50 hover:bg-emerald-500/[0.06] shadow-xs"
-                                                : "bg-card border-border/70 hover:border-primary/50 hover:bg-secondary/20 shadow-xs"
-                                          )}
-                                        >
-                                          {/* Khối Trái: STT + Tên bài học + Huy hiệu độ khó */}
-                                          <div className="flex items-center gap-2.5 flex-1 min-w-0">
-                                            <span className={cn(
-                                              "w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold shrink-0",
-                                              !unlocked
-                                                ? "bg-secondary text-muted-foreground"
-                                                : metrics.isCompleted
-                                                  ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
-                                                  : "bg-primary/10 text-primary"
-                                            )}>
-                                              {!unlocked ? <Lock size={11} /> : metrics.isCompleted ? <Check size={12} /> : typeIdx + 1}
-                                            </span>
-                                            <div className="flex items-center gap-2 min-w-0 flex-1">
-                                              <h5 className="font-bold text-xs sm:text-sm text-foreground group-hover:text-primary transition-colors leading-snug font-sans truncate">
-                                                <LatexRenderer text={type.name} />
-                                              </h5>
-                                              <span className="hidden sm:inline-flex items-center gap-1 text-[9px] font-semibold px-1.5 py-0.5 rounded-md border border-border/30 bg-secondary/40 text-muted-foreground shrink-0">
-                                                <span className={cn("w-1.5 h-1.5 rounded-full shrink-0", diff.dotClass)} />
-                                                {diff.text}
-                                              </span>
-                                              {isLockedByPremium && (
-                                                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 shrink-0">
-                                                  👑
-                                                </span>
-                                              )}
-                                            </div>
-                                          </div>
-
-                                          {/* Khối Giữa & Phải: Trạng thái tinh gọn + Smart CTA */}
-                                          <div className="flex items-center gap-2.5 shrink-0">
-                                            {/* Trạng thái Lý thuyết vắn tắt */}
-                                            {metrics.isRead ? (
-                                              <span className="hidden md:inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
-                                                <Check size={11} /> Đã học
-                                              </span>
-                                            ) : (
-                                              <span className="hidden md:inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground/80 bg-secondary/50 px-2 py-0.5 rounded-md">
-                                                Chưa học
-                                              </span>
-                                            )}
-
-                                            {/* Trạng thái Luyện tập vắn tắt */}
-                                            {metrics.starsCount > 0 ? (
-                                              <span className="hidden lg:inline-flex items-center gap-1 text-[11px] font-semibold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md">
-                                                {'⭐'.repeat(metrics.starsCount)} {metrics.practicePercent}%
-                                              </span>
-                                            ) : metrics.attemptsCount > 0 ? (
-                                              <span className="hidden lg:inline-flex items-center gap-1 text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-md">
-                                                ⚡ {metrics.practicePercent}%
-                                              </span>
-                                            ) : (
-                                              <span className="hidden lg:inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground/80 bg-secondary/50 px-2 py-0.5 rounded-md">
-                                                Chưa làm
-                                              </span>
-                                            )}
-
-                                            {/* Smart CTA duy nhất */}
-                                            <div onClick={(e) => e.stopPropagation()}>
-                                              {smartCtaButton}
-                                            </div>
-                                          </div>
+                                        {/* Icon Accordion Chevron */}
+                                        <div className={cn(
+                                          "w-7 h-7 rounded-lg flex items-center justify-center text-muted-foreground group-hover/header:text-foreground bg-secondary/70 transition-transform duration-200",
+                                          isCollapsed ? "" : "rotate-180"
+                                        )}>
+                                          <ChevronDown size={15} />
                                         </div>
-                                      );
-                                    })}
+                                      </div>
+                                    </div>
                                   </div>
-                                ) : (
-                                  /* Chế độ Grid Thẻ hộp với đầy đủ Lý thuyết & Luyện tập */
-                                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 xl:gap-5">
-                                    {visibleTypes.map((type) => {
-                                      const diff = getDifficultyTheme(type.difficulty);
-                                      const unlocked = isUnlocked(type.id);
-                                      const isLockedByPremium = isQuestionTypePremiumLocked(type.id, topic.tier, selectedSubject, selectedGrade) && !isPremium && !isOptionalEnglishListeningTopic(topic.id);
-                                      const metrics = getQuestionTypeMetrics(type.id);
+                                );
+                              })()}
 
-                                      return (
-                                        <div
-                                          key={type.id}
-                                          className={cn(
-                                            "transition-all duration-300 border bg-card hover:shadow-md cursor-pointer rounded-2xl p-4.5 sm:p-5 flex flex-col justify-between space-y-4 shadow-xs",
-                                            !unlocked
-                                              ? "opacity-65 grayscale-[30%] bg-secondary/15 border-dashed border-border/70 hover:shadow-none"
-                                              : metrics.isCompleted
-                                                ? 'border-emerald-500/25 hover:border-emerald-500/40 bg-emerald-500/[0.02]'
-                                                : 'border-border/60 hover:border-primary/50'
-                                          )}
-                                          onClick={() => handleSelectType(type.id)}
-                                        >
-                                          <div className="space-y-2.5 flex-1">
-                                            <div className="flex items-center justify-between gap-2">
-                                              <span className="inline-flex items-center gap-1.5 text-[9px] font-bold px-2.5 py-0.75 rounded-lg border border-border/40 bg-secondary/50 text-muted-foreground">
-                                                <span className={cn("w-1.5 h-1.5 rounded-full shrink-0", diff.dotClass)} />
-                                                {diff.text}
-                                              </span>
-                                              {!unlocked ? (
-                                                <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-slate-500/10 border border-slate-500/20 text-slate-500">
-                                                  <Lock size={10} /> Đang khóa
-                                                </span>
-                                              ) : isLockedByPremium ? (
-                                                <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400">
-                                                  👑 Premium
-                                                </span>
-                                              ) : metrics.isCompleted ? (
-                                                <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400">
-                                                  ✓ Hoàn thành
-                                                </span>
-                                              ) : metrics.isRead ? (
-                                                <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400">
-                                                  ⚡ Đang luyện
-                                                </span>
-                                              ) : (
-                                                <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-primary/10 border border-primary/20 text-primary animate-pulse">
-                                                  ✨ Sẵn sàng học
-                                                </span>
-                                              )}
-                                            </div>
+                              {/* Danh sách bài học: Chỉ hiển thị khi chuyên đề ĐƯỢC MỞ RỘNG (!isCollapsed) */}
+                              {!isCollapsed && (
+                                <div className="space-y-3 pt-0.5 animate-in fade-in-50 duration-200">
+                                  {viewMode === 'list' ? (
+                                    <div className="space-y-2">
+                                      {visibleTypes.map((type, typeIdx) => {
+                                        const diff = getDifficultyTheme(type.difficulty);
+                                        const unlocked = isUnlocked(type.id);
+                                        const isLockedByPremium = isQuestionTypePremiumLocked(type.id, topic.tier, selectedSubject, selectedGrade) && !isPremium && !isOptionalEnglishListeningTopic(topic.id);
+                                        const metrics = getQuestionTypeMetrics(type.id);
 
-                                            <h5 className="font-bold text-xs sm:text-sm text-foreground flex items-center gap-1.5 leading-snug font-sans">
-                                              <LatexRenderer text={type.name} />
-                                            </h5>
-                                            <div className="text-[11px] text-muted-foreground leading-relaxed line-clamp-2">
-                                              <LatexRenderer text={type.description} />
-                                            </div>
-
-                                            {/* Thanh tiến độ bài tập */}
-                                            <div className="space-y-1 pt-1">
-                                              <div className="flex items-center justify-between text-[10px] font-bold text-muted-foreground">
-                                                <span>Tiến độ luyện tập</span>
-                                                <span className="text-primary">{metrics.starsCount > 0 ? `${'⭐'.repeat(metrics.starsCount)} ` : ''}{metrics.practicePercent}%</span>
-                                              </div>
-                                              <div className="h-1.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
-                                                <div className="h-full bg-primary rounded-full transition-all duration-300" style={{ width: `${metrics.practicePercent}%` }} />
-                                              </div>
-                                            </div>
-                                          </div>
-
-                                          <div className="flex items-center justify-between border-t border-border/20 pt-3 gap-2">
-                                            <button
-                                              type="button"
-                                              onClick={(e) => { e.stopPropagation(); handleSelectType(type.id); }}
-                                              className="text-[11px] font-semibold text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors cursor-pointer"
-                                            >
-                                              <BookOpen size={12} />
-                                              <span>{metrics.isRead ? 'Xem lại lý thuyết' : 'Lý thuyết'}</span>
-                                            </button>
-
+                                        // Nút hành động chính thông minh (Single Dynamic Smart CTA)
+                                        const smartCtaButton = (() => {
+                                          if (!unlocked) {
+                                            return (
+                                              <button
+                                                type="button"
+                                                disabled
+                                                className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-secondary/80 text-muted-foreground cursor-not-allowed opacity-60 inline-flex items-center gap-1.5 border border-border/30 shrink-0"
+                                                title="Hoàn thành bài liền trước để mở khóa bài học này"
+                                              >
+                                                <Lock size={12} />
+                                                <span>Đang khóa</span>
+                                              </button>
+                                            );
+                                          }
+                                          if (isLockedByPremium) {
+                                            return (
+                                              <button
+                                                type="button"
+                                                onClick={(e) => { e.stopPropagation(); handleSelectType(type.id); }}
+                                                className="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30 inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all shrink-0"
+                                              >
+                                                <span>👑 Mở khóa</span>
+                                              </button>
+                                            );
+                                          }
+                                          if (!metrics.isRead) {
+                                            return (
+                                              <button
+                                                type="button"
+                                                onClick={(e) => { e.stopPropagation(); handleSelectType(type.id); }}
+                                                className="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all shrink-0"
+                                                title="Bắt đầu học lý thuyết bài giảng này"
+                                              >
+                                                <BookOpen size={13} />
+                                                <span>Học bài</span>
+                                              </button>
+                                            );
+                                          }
+                                          if (metrics.attemptsCount === 0 || metrics.practicePercent === 0) {
+                                            return (
+                                              <button
+                                                type="button"
+                                                onClick={(e) => handleSelectPractice(type.id, e)}
+                                                className={cn(
+                                                  "px-3 py-1.5 rounded-xl text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all text-white shrink-0",
+                                                  subjectTheme.solid
+                                                )}
+                                                title="Bắt đầu luyện tập bài tập của dạng này"
+                                              >
+                                                <PlayCircle size={13} />
+                                                <span>Luyện tập</span>
+                                              </button>
+                                            );
+                                          }
+                                          if (!metrics.isCompleted) {
+                                            return (
+                                              <button
+                                                type="button"
+                                                onClick={(e) => handleSelectPractice(type.id, e)}
+                                                className="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all shrink-0"
+                                                title="Luyện tập thêm để nâng cao điểm số và đạt 3 sao"
+                                              >
+                                                <PlayCircle size={13} />
+                                                <span>Luyện tiếp</span>
+                                              </button>
+                                            );
+                                          }
+                                          return (
                                             <button
                                               type="button"
                                               onClick={(e) => handleSelectPractice(type.id, e)}
-                                              className={cn(
-                                                "px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 transition-all cursor-pointer text-white shadow-xs active:scale-95",
-                                                !unlocked ? "bg-slate-400 dark:bg-slate-700 opacity-60 cursor-not-allowed" : subjectTheme.solid
-                                              )}
+                                              className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-secondary hover:bg-secondary/80 text-foreground border border-border/50 inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all shrink-0"
+                                              title="Ôn lại dạng bài đã hoàn thành"
                                             >
-                                              <PlayCircle size={12} />
-                                              <span>{metrics.practicePercent > 0 ? (metrics.isCompleted ? 'Ôn lại' : 'Luyện tiếp') : 'Luyện tập'}</span>
+                                              <RotateCcw size={12} />
+                                              <span>Ôn lại</span>
                                             </button>
-                                          </div>
-                                        </div>
-                                      );
-                                    })}
-                                  </div>
-                                )}
+                                          );
+                                        })();
 
-                                {/* 🎲 Thẻ hành động kết thúc chương: Luyện tập tổng hợp chương */}
-                                {visibleTypes.length > 1 && isTopicUnlocked && (
-                                  <div className="p-3.5 sm:p-4 rounded-2xl bg-secondary/30 border border-border/50 flex flex-col sm:flex-row items-center justify-between gap-3 mt-3 hover:border-primary/30 transition-all">
-                                    <div className="flex items-center gap-3 text-left">
-                                      <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                                        <Sparkles size={16} />
-                                      </div>
-                                      <div>
-                                        <h5 className="text-xs font-bold text-foreground">Luyện tập tổng hợp: {topic.name}</h5>
-                                        <p className="text-[11px] text-muted-foreground">Ôn luyện phối hợp các dạng bài trong chương để củng cố phản xạ trước khi sang chương mới.</p>
-                                      </div>
+                                        return (
+                                          <div
+                                            key={type.id}
+                                            onClick={() => handleSelectType(type.id)}
+                                            className={cn(
+                                              "px-3.5 py-2.5 sm:py-3 rounded-xl border transition-all duration-200 flex items-center justify-between gap-3 group cursor-pointer",
+                                              !unlocked
+                                                ? "bg-secondary/15 border-border/40 opacity-70 hover:border-border/60"
+                                                : metrics.isCompleted
+                                                  ? "bg-emerald-500/[0.03] border-emerald-500/25 hover:border-emerald-500/50 hover:bg-emerald-500/[0.06] shadow-xs"
+                                                  : "bg-card border-border/70 hover:border-primary/50 hover:bg-secondary/20 shadow-xs"
+                                            )}
+                                          >
+                                            {/* Khối Trái: STT + Tên bài học + Huy hiệu độ khó */}
+                                            <div className="flex items-center gap-2.5 flex-1 min-w-0">
+                                              <span className={cn(
+                                                "w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold shrink-0",
+                                                !unlocked
+                                                  ? "bg-secondary text-muted-foreground"
+                                                  : metrics.isCompleted
+                                                    ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
+                                                    : "bg-primary/10 text-primary"
+                                              )}>
+                                                {!unlocked ? <Lock size={11} /> : metrics.isCompleted ? <Check size={12} /> : typeIdx + 1}
+                                              </span>
+                                              <div className="flex items-center gap-2 min-w-0 flex-1">
+                                                <h5 className="font-bold text-xs sm:text-sm text-foreground group-hover:text-primary transition-colors leading-snug font-sans truncate">
+                                                  <LatexRenderer text={type.name} />
+                                                </h5>
+                                                <span className="hidden sm:inline-flex items-center gap-1 text-[9px] font-semibold px-1.5 py-0.5 rounded-md border border-border/30 bg-secondary/40 text-muted-foreground shrink-0">
+                                                  <span className={cn("w-1.5 h-1.5 rounded-full shrink-0", diff.dotClass)} />
+                                                  {diff.text}
+                                                </span>
+                                                {isLockedByPremium && (
+                                                  <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 shrink-0">
+                                                    👑
+                                                  </span>
+                                                )}
+                                              </div>
+                                            </div>
+
+                                            {/* Khối Giữa & Phải: Trạng thái tinh gọn + Smart CTA */}
+                                            <div className="flex items-center gap-2.5 shrink-0">
+                                              {/* Trạng thái Lý thuyết vắn tắt */}
+                                              {metrics.isRead ? (
+                                                <span className="hidden md:inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
+                                                  <Check size={11} /> Đã học
+                                                </span>
+                                              ) : (
+                                                <span className="hidden md:inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground/80 bg-secondary/50 px-2 py-0.5 rounded-md">
+                                                  Chưa học
+                                                </span>
+                                              )}
+
+                                              {/* Trạng thái Luyện tập vắn tắt */}
+                                              {metrics.starsCount > 0 ? (
+                                                <span className="hidden lg:inline-flex items-center gap-1 text-[11px] font-semibold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md">
+                                                  {'⭐'.repeat(metrics.starsCount)} {metrics.practicePercent}%
+                                                </span>
+                                              ) : metrics.attemptsCount > 0 ? (
+                                                <span className="hidden lg:inline-flex items-center gap-1 text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-md">
+                                                  ⚡ {metrics.practicePercent}%
+                                                </span>
+                                              ) : (
+                                                <span className="hidden lg:inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground/80 bg-secondary/50 px-2 py-0.5 rounded-md">
+                                                  Chưa làm
+                                                </span>
+                                              )}
+
+                                              {/* Smart CTA duy nhất */}
+                                              <div onClick={(e) => e.stopPropagation()}>
+                                                {smartCtaButton}
+                                              </div>
+                                            </div>
+                                          </div>
+                                        );
+                                      })}
                                     </div>
-                                    <button
-                                      type="button"
-                                      onClick={(e) => handleSelectPractice(visibleTypes[0].id, e)}
-                                      className={cn(
-                                        "px-4 py-2 rounded-xl text-xs font-bold text-white shrink-0 shadow-xs active:scale-95 transition-all cursor-pointer flex items-center gap-1.5",
-                                        subjectTheme.solid
-                                      )}
-                                    >
-                                      <PlayCircle size={14} />
-                                      <span>Luyện tập chương</span>
-                                    </button>
-                                  </div>
-                                )}
-                              </div>
-                            )}
+                                  ) : (
+                                    /* Chế độ Grid Thẻ hộp với đầy đủ Lý thuyết & Luyện tập */
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 xl:gap-5">
+                                      {visibleTypes.map((type) => {
+                                        const diff = getDifficultyTheme(type.difficulty);
+                                        const unlocked = isUnlocked(type.id);
+                                        const isLockedByPremium = isQuestionTypePremiumLocked(type.id, topic.tier, selectedSubject, selectedGrade) && !isPremium && !isOptionalEnglishListeningTopic(topic.id);
+                                        const metrics = getQuestionTypeMetrics(type.id);
+
+                                        return (
+                                          <div
+                                            key={type.id}
+                                            className={cn(
+                                              "transition-all duration-300 border bg-card hover:shadow-md cursor-pointer rounded-2xl p-4.5 sm:p-5 flex flex-col justify-between space-y-4 shadow-xs",
+                                              !unlocked
+                                                ? "opacity-65 grayscale-[30%] bg-secondary/15 border-dashed border-border/70 hover:shadow-none"
+                                                : metrics.isCompleted
+                                                  ? 'border-emerald-500/25 hover:border-emerald-500/40 bg-emerald-500/[0.02]'
+                                                  : 'border-border/60 hover:border-primary/50'
+                                            )}
+                                            onClick={() => handleSelectType(type.id)}
+                                          >
+                                            <div className="space-y-2.5 flex-1">
+                                              <div className="flex items-center justify-between gap-2">
+                                                <span className="inline-flex items-center gap-1.5 text-[9px] font-bold px-2.5 py-0.75 rounded-lg border border-border/40 bg-secondary/50 text-muted-foreground">
+                                                  <span className={cn("w-1.5 h-1.5 rounded-full shrink-0", diff.dotClass)} />
+                                                  {diff.text}
+                                                </span>
+                                                {!unlocked ? (
+                                                  <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-slate-500/10 border border-slate-500/20 text-slate-500">
+                                                    <Lock size={10} /> Đang khóa
+                                                  </span>
+                                                ) : isLockedByPremium ? (
+                                                  <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400">
+                                                    👑 Premium
+                                                  </span>
+                                                ) : metrics.isCompleted ? (
+                                                  <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400">
+                                                    ✓ Hoàn thành
+                                                  </span>
+                                                ) : metrics.isRead ? (
+                                                  <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400">
+                                                    ⚡ Đang luyện
+                                                  </span>
+                                                ) : (
+                                                  <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-primary/10 border border-primary/20 text-primary animate-pulse">
+                                                    ✨ Sẵn sàng học
+                                                  </span>
+                                                )}
+                                              </div>
+
+                                              <h5 className="font-bold text-xs sm:text-sm text-foreground flex items-center gap-1.5 leading-snug font-sans">
+                                                <LatexRenderer text={type.name} />
+                                              </h5>
+                                              <div className="text-[11px] text-muted-foreground leading-relaxed line-clamp-2">
+                                                <LatexRenderer text={type.description} />
+                                              </div>
+
+                                              {/* Thanh tiến độ bài tập */}
+                                              <div className="space-y-1 pt-1">
+                                                <div className="flex items-center justify-between text-[10px] font-bold text-muted-foreground">
+                                                  <span>Tiến độ luyện tập</span>
+                                                  <span className="text-primary">{metrics.starsCount > 0 ? `${'⭐'.repeat(metrics.starsCount)} ` : ''}{metrics.practicePercent}%</span>
+                                                </div>
+                                                <div className="h-1.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                                                  <div className="h-full bg-primary rounded-full transition-all duration-300" style={{ width: `${metrics.practicePercent}%` }} />
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                            <div className="flex items-center justify-between border-t border-border/20 pt-3 gap-2">
+                                              <button
+                                                type="button"
+                                                onClick={(e) => { e.stopPropagation(); handleSelectType(type.id); }}
+                                                className="text-[11px] font-semibold text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors cursor-pointer"
+                                              >
+                                                <BookOpen size={12} />
+                                                <span>{metrics.isRead ? 'Xem lại lý thuyết' : 'Lý thuyết'}</span>
+                                              </button>
+
+                                              <button
+                                                type="button"
+                                                onClick={(e) => handleSelectPractice(type.id, e)}
+                                                className={cn(
+                                                  "px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 transition-all cursor-pointer text-white shadow-xs active:scale-95",
+                                                  !unlocked ? "bg-slate-400 dark:bg-slate-700 opacity-60 cursor-not-allowed" : subjectTheme.solid
+                                                )}
+                                              >
+                                                <PlayCircle size={12} />
+                                                <span>{metrics.practicePercent > 0 ? (metrics.isCompleted ? 'Ôn lại' : 'Luyện tiếp') : 'Luyện tập'}</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        );
+                                      })}
+                                    </div>
+                                  )}
+
+                                  {/* 🎲 Thẻ hành động kết thúc chương: Luyện tập tổng hợp chương */}
+                                  {visibleTypes.length > 1 && isTopicUnlocked && (
+                                    <div className="p-3.5 sm:p-4 rounded-2xl bg-secondary/30 border border-border/50 flex flex-col sm:flex-row items-center justify-between gap-3 mt-3 hover:border-primary/30 transition-all">
+                                      <div className="flex items-center gap-3 text-left">
+                                        <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                                          <Sparkles size={16} />
+                                        </div>
+                                        <div>
+                                          <h5 className="text-xs font-bold text-foreground">Luyện tập tổng hợp: {topic.name}</h5>
+                                          <p className="text-[11px] text-muted-foreground">Ôn luyện phối hợp các dạng bài trong chương để củng cố phản xạ trước khi sang chương mới.</p>
+                                        </div>
+                                      </div>
+                                      <button
+                                        type="button"
+                                        onClick={(e) => handleSelectPractice(visibleTypes[0].id, e)}
+                                        className={cn(
+                                          "px-4 py-2 rounded-xl text-xs font-bold text-white shrink-0 shadow-xs active:scale-95 transition-all cursor-pointer flex items-center gap-1.5",
+                                          subjectTheme.solid
+                                        )}
+                                      >
+                                        <PlayCircle size={14} />
+                                        <span>Luyện tập chương</span>
+                                      </button>
+                                    </div>
+                                  )}
+                                </div>
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
 
               {(searchQuery.trim() || filterStatus !== 'all') && totalMatchedCount === 0 && (
                 <div className="text-center py-16 px-4 space-y-3 bg-secondary/15 rounded-3xl border border-dashed border-border/60 max-w-lg mx-auto">
@@ -1173,7 +1172,7 @@ export const Roadmap: React.FC = () => {
                   </button>
                 </div>
               )}
-          </div>
+            </div>
           )}
         </>
       )}

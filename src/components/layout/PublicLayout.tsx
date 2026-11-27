@@ -34,8 +34,8 @@ const PublicLayout: React.FC = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { label: 'Ôn thi vào 10', href: '/on-thi-vao-10/' },
     { label: 'Học lớp 10', href: '/lop-10/' },
+    { label: 'Ôn thi vào 10', href: '/on-thi-vao-10/' },
     { label: 'Học lớp 11', href: '/lop-11/' },
     { label: 'Giới thiệu', href: '/about/' },
   ];

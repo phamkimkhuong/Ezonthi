@@ -262,9 +262,7 @@ export const progressService = {
   async saveAttempt(userId: string, attempt: UserAttempt): Promise<void> {
     // Local first is the durability boundary. Network failure cannot lose the answer.
     storageService.saveAttempt(userId, attempt);
-    if (userId !== 'guest' && attempt.gradingMode === 'manual') {
-      await this.flushPendingAttempts(userId);
-    }
+    void userId;
   },
 
   async saveExamSubmission(

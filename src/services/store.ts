@@ -7,14 +7,14 @@ import { AVAILABLE_SUBJECTS_BY_GRADE } from '../utils/courseRoutes';
 type GradeCode = 'grade9' | 'grade10' | 'grade11' | 'grade12';
 
 const getInitialCourseSelection = (): { grade: GradeCode; subject: SubjectCode } => {
-  if (typeof localStorage === 'undefined') return { grade: 'grade9', subject: 'math' };
+  if (typeof localStorage === 'undefined') return { grade: 'grade10', subject: 'math' };
 
   const storedGrade = localStorage.getItem('otv10_selected_grade') as GradeCode | null;
-  const grade = storedGrade && storedGrade in AVAILABLE_SUBJECTS_BY_GRADE ? storedGrade : 'grade9';
+  const grade = storedGrade && storedGrade in AVAILABLE_SUBJECTS_BY_GRADE ? storedGrade : 'grade10';
   const availableSubjects = AVAILABLE_SUBJECTS_BY_GRADE[grade];
 
   // Lớp chưa phát hành không được trở thành ngữ cảnh khởi động sau khi tải lại trang.
-  if (availableSubjects.length === 0) return { grade: 'grade9', subject: 'math' };
+  if (availableSubjects.length === 0) return { grade: 'grade10', subject: 'math' };
 
   const storedSubject = localStorage.getItem('otv10_selected_subject') as SubjectCode | null;
   const subject = storedSubject && availableSubjects.includes(storedSubject)

@@ -18,12 +18,13 @@ import {
   Activity
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { MONETIZATION_ENABLED } from '../../utils/premium';
 import { getSubjectTheme, getStarsFromScore } from '../../utils/theme';
 import { getSubjectName, getSubjectIcon, getSubjectFromQuestionTypeId } from '../../utils/subject';
 import { LatexRenderer } from '../../components/common/LatexRenderer';
 import { authService } from '../../services/authService';
 import { LeaderboardWidget } from '../../components/dashboard/LeaderboardWidget';
-import { calculateStudentStats } from '../../utils/stats';
+import { calculateStudentStats, toLocalDateKey } from '../../utils/stats';
 import { buildCoursePath } from '../../utils/courseRoutes';
 
 export const Dashboard: React.FC = () => {
@@ -167,7 +168,7 @@ export const Dashboard: React.FC = () => {
     for (let i = 6; i >= 0; i--) {
       const d = new Date();
       d.setDate(d.getDate() - i);
-      const dateStr = d.toISOString().substring(0, 10);
+      const dateStr = toLocalDateKey(d);
       const count = dailyActivity[dateStr] || 0;
 
       const weekdayNames = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
@@ -252,7 +253,11 @@ export const Dashboard: React.FC = () => {
         <div className="bg-primary/7 border border-primary/20 border-l-4 border-l-primary rounded-xl p-5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-left">
             <h3 className="text-sm font-black text-foreground">Bạn đang học ở chế độ xem thử (Guest Mode)</h3>
-            <p className="text-[11px] text-muted-foreground font-semibold">Đăng nhập tài khoản Google để nhận ngay 30 ngày dùng thử Premium miễn phí, học lý thuyết đầy đủ và lưu trữ toàn bộ tiến trình học.</p>
+            <p className="text-[11px] text-muted-foreground font-semibold">
+              {MONETIZATION_ENABLED
+                ? 'Đăng nhập tài khoản Google để nhận ngay 30 ngày dùng thử Premium miễn phí, học lý thuyết đầy đủ và lưu trữ toàn bộ tiến trình học.'
+                : 'Đăng nhập tài khoản Google để lưu trữ toàn bộ tiến trình học, Sổ lỗi sai và nhận hướng dẫn chi tiết từ Gia sư AI (100% miễn phí).'}
+            </p>
           </div>
           <button
             disabled={isAuthLoading}
@@ -262,14 +267,14 @@ export const Dashboard: React.FC = () => {
             {isAuthLoading ? (
               <Loader size={14} className="animate-spin" />
             ) : (
-              <>Kích hoạt Premium Free</>
+              <>{MONETIZATION_ENABLED ? 'Kích hoạt Premium Free' : 'Đăng nhập miễn phí'}</>
             )}
           </button>
         </div>
       )}
 
       {/* 🌟 Premium & Trial Status Banners */}
-      {user && (
+      {MONETIZATION_ENABLED && user && (
         <>
           {/* Chưa Premium & Chưa dùng thử */}
           {!isPremium && !trialActivated && !userData?.trialConsumed && (

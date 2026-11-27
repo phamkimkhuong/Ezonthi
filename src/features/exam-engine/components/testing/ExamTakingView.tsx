@@ -5,12 +5,10 @@ import { LatexRenderer } from '@/components/common/LatexRenderer';
 import { ConfirmationModal } from '@/components/common/ConfirmationModal';
 import { AnswerFormRenderer } from '@/components/common/AnswerFormRenderer';
 import { QuestionStimulusRenderer } from '@/components/common/QuestionStimulusRenderer';
-import { ProofImageUploader } from '@/components/common/ProofImageUploader';
 import { MockExam, Question, StructuredAnswer } from '@/types';
 import type { User } from 'firebase/auth';
 import { formatTime } from '../../utils/examFormatters';
 import { ExamSectionView } from '../../utils/examMatrix';
-import { LocalProofImage } from '@/utils/proofImages';
 import { isAnswerComplete } from '@/utils/answerValidator';
 import { cn } from '@/utils/cn';
 import { authService } from '@/services/authService';
@@ -35,14 +33,12 @@ export interface ExamTakingViewProps {
   examSections: ExamSectionView[];
   answers: Record<string, string>;
   finalAnswers: Record<string, StructuredAnswer>;
-  proofImagesByQuestion: Record<string, LocalProofImage[]>;
   timeLeft: number;
   isSubmittingExam: boolean;
   examSubmitError: string | null;
   onOptionSelect: (questionId: string, optLetter: string) => void;
   onInputChange: (questionId: string, val: string) => void;
   onFinalAnswerChange: (questionId: string, value: StructuredAnswer) => void;
-  onProofImagesChange: (questionId: string, images: LocalProofImage[]) => void;
   onPauseAndSave: () => void;
   onSubmitExam: () => Promise<void>;
   onDiscardAndExit: () => void;
@@ -57,14 +53,12 @@ export const ExamTakingView: React.FC<ExamTakingViewProps> = ({
   examSections,
   answers,
   finalAnswers,
-  proofImagesByQuestion,
   timeLeft,
   isSubmittingExam,
   examSubmitError,
   onOptionSelect,
   onInputChange,
   onFinalAnswerChange,
-  onProofImagesChange,
   onPauseAndSave,
   onSubmitExam,
   onDiscardAndExit
@@ -457,16 +451,6 @@ export const ExamTakingView: React.FC<ExamTakingViewProps> = ({
                                   className="w-full sm:max-w-md bg-secondary/30 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground font-semibold"
                                 />
                               </div>
-                            )}
-
-                            {selectedSubject === 'math' && q.answerSchema?.proofImageRequired && (
-                              <ProofImageUploader
-                                images={proofImagesByQuestion[q.id] ?? []}
-                                onChange={(images) => onProofImagesChange(q.id, images)}
-                                disabled={isSubmittingExam}
-                                required={q.answerSchema?.proofImageRequired ?? false}
-                                cloudEnabled={Boolean(user)}
-                              />
                             )}
                           </CardContent>
                         </Card>

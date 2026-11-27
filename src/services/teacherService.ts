@@ -1,4 +1,4 @@
-import { db, functions } from './firebase';
+import { db } from './firebase';
 import { 
   collection, 
   query, 
@@ -10,8 +10,7 @@ import {
   startAfter,
   getCountFromServer 
 } from 'firebase/firestore';
-import { UserAttempt, SimulatedStudent } from '../types';
-import { httpsCallable } from 'firebase/functions';
+import { SimulatedStudent } from '../types';
 import { hasActivePremium } from '../utils/premium';
 import { logger } from '../utils/logger';
 
@@ -80,85 +79,6 @@ export const teacherService = {
     } catch (e) {
       logger.error('Tải danh sách học sinh', e);
       return { students: [], hasMore: false };
-    }
-  },
-
-  /**
-   * Lấy danh sách bài làm tự luận cần chấm của học sinh
-   */
-  async getRealPendingManualAttempts(limitCount?: number): Promise<Array<{ student: SimulatedStudent; attempt: UserAttempt }>> {
-    try {
-      const q = collection(db, 'manual_attempts');
-      let queryRef = query(q);
-      
-      if (limitCount !== undefined) {
-        queryRef = query(q, limit(limitCount));
-      }
-      
-      const pendingSnapshot = await getDocs(queryRef);
-      logger.dbRead('Tải bài tự luận chờ chấm (manual_attempts)', pendingSnapshot.size || 1);
-      const pending: Array<{ student: SimulatedStudent; attempt: UserAttempt }> = [];
-      
-      pendingSnapshot.forEach(docRef => {
-        const data = docRef.data() as any;
-        const attempt = data as UserAttempt;
-        
-        // Trích xuất thông tin học sinh được phi chuẩn hóa nhúng kèm
-        const student: SimulatedStudent = {
-          id: attempt.userId,
-          name: data.studentName || 'Học sinh mới',
-          avatar: data.studentAvatar || `https://api.dicebear.com/7.x/adventurer/svg?seed=${attempt.userId}`,
-          email: data.studentEmail || '',
-          isPremium: hasActivePremium(data),
-          premiumUntil: data.premiumUntil || null,
-          premiumPlan: data.premiumPlan || data.planName || (data.trialActivated ? 'Gói Dùng Thử (Trial)' : 'Gói Premium VIP'),
-          trialActivated: data.trialActivated === true,
-          completedCount: data.completedCount ?? 0,
-          masteryLevels: data.masteryLevels || {},
-          completedLessons: data.completedLessons || [],
-          stats: data.stats || null
-        } as any;
-        
-        pending.push({ student, attempt });
-      });
-      
-      return pending.sort((a, b) => new Date(b.attempt.createdAt).getTime() - new Date(a.attempt.createdAt).getTime());
-    } catch (e) {
-      logger.error('Tải bài tự luận chờ chấm', e);
-      return [];
-    }
-  },
-
-  /**
-   * Giáo viên chấm điểm bài tự luận của học sinh
-   */
-  async gradeRealAttempt(studentId: string, attempt: UserAttempt, isCorrect: boolean, feedback?: string): Promise<void> {
-    try {
-      await httpsCallable(functions, 'gradeManualAttempt')({
-        userId: studentId,
-        attemptId: attempt.id,
-        isCorrect,
-        feedback: feedback || ''
-      });
-      logger.dbWrite('Chấm bài nguyên tử qua gradeManualAttempt', 1);
-    } catch (e) {
-      logger.error('Chấm điểm bài tự luận', e);
-      throw e;
-    }
-  },
-
-  /**
-   * Đếm số bài làm tự luận đang chờ chấm bằng API getCountFromServer (chỉ tốn 1 Read)
-   */
-  async getRealPendingCount(): Promise<number> {
-    try {
-      const q = collection(db, 'manual_attempts');
-      const snapshot = await getCountFromServer(q);
-      logger.dbRead('Đếm bài chờ chấm (getCountFromServer)', 1);
-      return snapshot.data().count;
-    } catch (e) {
-      logger.error('Đếm bài chờ chấm', e);
-      return 0;
     }
   },
 

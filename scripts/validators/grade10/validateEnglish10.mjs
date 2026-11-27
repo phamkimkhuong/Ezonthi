@@ -201,27 +201,19 @@ for (const question of questions) {
       errors.push(`${question.id}: correctAnswer không hợp lệ (${question.correctAnswer}).`);
     }
   } else if (question.validatorType === 'manual') {
-    if (question.responseType !== 'constructed_response') {
-      errors.push(`${question.id}: câu manual phải dùng constructed_response.`);
-    }
-    if (question.answerSchema?.autoCheckMode !== 'manual') {
-      errors.push(`${question.id}: câu manual thiếu answerSchema chấm rubric.`);
-    }
+    errors.push(`${question.id}: nền tảng chấm tự động không hỗ trợ câu validatorType='manual'.`);
   } else {
     warnings.push(`${question.id}: validatorType ${question.validatorType} chưa được audit chuyên biệt.`);
   }
   if (!solution) {
     errors.push(`${question.id}: thiếu lời giải.`);
   } else {
-    if (question.validatorType !== 'manual' && solution.finalAnswer !== question.correctAnswer) {
+    if (solution.finalAnswer !== question.correctAnswer) {
       errors.push(`${question.id}: đáp án câu hỏi ${question.correctAnswer} lệch lời giải ${solution.finalAnswer}.`);
     }
     if (!solution.recognition) errors.push(`${question.id}: lời giải thiếu recognition.`);
     if (!Array.isArray(solution.detailedSteps) || solution.detailedSteps.length === 0) {
       errors.push(`${question.id}: lời giải thiếu detailedSteps.`);
-    }
-    if (question.validatorType === 'manual' && (!Array.isArray(solution.rubric) || solution.rubric.length < 3)) {
-      errors.push(`${question.id}: câu tự luận/nói thiếu rubric tối thiểu 3 tiêu chí.`);
     }
   }
 

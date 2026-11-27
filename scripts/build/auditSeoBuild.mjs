@@ -5,6 +5,9 @@ import { loadSeoCatalog } from '../validators/lib/loadSeoCatalog.mjs';
 const DOMAIN = 'https://ezonthi.com';
 const DIST_DIR = path.join(process.cwd(), 'dist');
 const SITEMAP_PATH = path.join(process.cwd(), 'public', 'sitemap.xml');
+const monetizationEnabled = /export\s+const\s+MONETIZATION_ENABLED\s*=\s*true\b/.test(
+  fs.readFileSync(path.join(process.cwd(), 'src', 'utils', 'premium.ts'), 'utf8')
+);
 
 if (!fs.existsSync(SITEMAP_PATH) || !fs.existsSync(path.join(DIST_DIR, 'index.html'))) {
   throw new Error('Cần chạy npm run build trước khi audit SEO.');
@@ -15,7 +18,7 @@ const normalize = route => route === '/' ? '/' : `/${route.replace(/^\/+|\/+$/g,
 const expectedRoutes = new Set([
   ...landingPages.map(page => normalize(page.route)),
   '/about/',
-  '/premium/',
+  ...(monetizationEnabled ? ['/premium/'] : []),
   '/support/',
   ...questionTypes.map(item => `/question-types/${item.id}/`)
 ]);

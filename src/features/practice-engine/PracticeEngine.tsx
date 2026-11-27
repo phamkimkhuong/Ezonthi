@@ -63,10 +63,10 @@ export const PracticeEngine: React.FC = () => {
   const isGrade10English = routeSubject === 'english' && effectiveGrade === 'grade10';
   const grade10EnglishSelectionOptions = isGrade10English
     ? getTopics('grade10', 'english').map(topic => ({
-        id: topic.id,
-        name: topic.name.replace(/^Chuyên đề \d+:\s*/, ''),
-        desc: `Trộn toàn bộ dạng bài hiện có thuộc ${topic.name}.`
-      }))
+      id: topic.id,
+      name: topic.name.replace(/^Chuyên đề \d+:\s*/, ''),
+      desc: `Trộn toàn bộ dạng bài hiện có thuộc ${topic.name}.`
+    }))
     : undefined;
 
   useEffect(() => {
@@ -164,7 +164,6 @@ export const PracticeEngine: React.FC = () => {
 
   const {
     proofImages,
-    setProofImages,
     totalUploadStats,
     handlePauseUpload,
     handleResumeUpload,
@@ -637,6 +636,7 @@ export const PracticeEngine: React.FC = () => {
     examAnswers,
     selectedSubTense,
     user,
+    questionTypeId,
     routeSubject,
     refreshProgress,
     setIsExamSubmitted
@@ -874,7 +874,7 @@ export const PracticeEngine: React.FC = () => {
     }
 
     const correct = validateAnswer(currentQ, answerInput);
-    const gradingMode: 'auto' | 'manual' = 'auto';
+    const gradingMode = 'auto' as const;
 
     setIsCorrect(correct);
     setIsSubmitted(true);
@@ -906,7 +906,7 @@ export const PracticeEngine: React.FC = () => {
     setExistingAttempt(attemptData);
     storageService.saveAttempt(user?.uid || 'guest', attemptData);
 
-    logCustomEvent(gradingMode === 'auto' ? 'ai_grading_completed' : 'request_teacher_grading', {
+    logCustomEvent('ai_grading_completed', {
       subjectId: routeSubject,
       questionTypeId: currentQ.questionTypeId,
       questionId: currentQ.id,
@@ -1153,7 +1153,7 @@ export const PracticeEngine: React.FC = () => {
     requiredCheckpointIds.every(id => passedCheckpointIds.has(id));
   const hasCompletedTheory = questionTypeId
     ? storageService.getReadLessons(practiceUserId).includes(questionTypeId) &&
-      hasPassedRequiredCheckpoints
+    hasPassedRequiredCheckpoints
     : true;
 
   const isDirectPracticePremiumLocked = questionTypeId
@@ -1228,13 +1228,10 @@ export const PracticeEngine: React.FC = () => {
   }
 
   const currentQuestion = questions[currentIdx];
-  const isManualMath = isMath && currentQuestion?.validatorType === 'manual';
 
   const submitDisabled = currentQuestion?.answerSchema
     ? !isAnswerComplete(currentQuestion, structuredAnswer)
-    : isManualMath
-      ? proofImages.length === 0
-      : !selectedOption;
+    : !selectedOption;
 
   const practiceSubjectName = getSubjectName(routeSubject);
   const practiceGradeLabel = effectiveGrade === 'grade9' ? 'Lớp 9' : effectiveGrade === 'grade10' ? 'Lớp 10' : effectiveGrade === 'grade11' ? 'Lớp 11' : 'Phổ thông';
@@ -1391,10 +1388,8 @@ export const PracticeEngine: React.FC = () => {
           solutionDetail={solutionDetail}
           isMath={isMath}
           proofImages={proofImages}
-          setProofImages={setProofImages}
           isSubmitting={isSubmitting}
           submitError={submitError}
-          user={user}
           totalUploadStats={totalUploadStats}
           handlePauseUpload={handlePauseUpload}
           handleResumeUpload={handleResumeUpload}

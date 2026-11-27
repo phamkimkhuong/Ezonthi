@@ -4,6 +4,7 @@ import { Card, CardContent } from '../../../components/ui/card';
 import { Button } from '../../../components/ui/button';
 import { SimulatedStudent } from '../../../types';
 import { cn } from '../../../utils/cn';
+import { MONETIZATION_ENABLED } from '../../../utils/premium';
 
 interface StudentSidebarProps {
   students: SimulatedStudent[];
@@ -81,7 +82,7 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
                     <span className="text-[9px] bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-bold px-1.5 py-0.5 rounded">
                       Đã đạt: {completedCount} dạng bài
                     </span>
-                    {student.isPremium && (() => {
+                    {MONETIZATION_ENABLED && student.isPremium && (() => {
                       let statusText = 'Vĩnh viễn';
                       if (student.premiumUntil) {
                         const diffDays = Math.ceil((new Date(student.premiumUntil).getTime() - Date.now()) / (1000 * 60 * 60 * 24));

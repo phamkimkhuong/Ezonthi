@@ -7,8 +7,6 @@ import { logCustomEvent } from '@/services/firebase';
 import { getQuestionTypes, getMockExams, getAssessmentBlueprints, getTopics, getQuestions } from '@/data';
 import { Question, ExamResult, StructuredAnswer, UserAttempt, ActiveExamSession, ExamSummaryMap } from '@/types';
 import { formatAnswerForDisplay, scoreAnswer } from '@/utils/answerValidator';
-import { LocalProofImage, revokeLocalProofImages } from '@/utils/proofImages';
-import { proofImageService } from '@/services/proofImageService';
 import { buildExamSections, buildQuestionPointMap } from '../utils/examMatrix';
 import { useExamTimer } from './useExamTimer';
 
@@ -51,7 +49,6 @@ export const useExamEngine = () => {
   const [examQuestions, setExamQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [finalAnswers, setFinalAnswers] = useState<Record<string, StructuredAnswer>>({});
-  const [proofImagesByQuestion, setProofImagesByQuestion] = useState<Record<string, LocalProofImage[]>>({});
   const [selectedExamId, setSelectedExamId] = useState<string>('');
   const [activeSessions, setActiveSessions] = useState<ActiveExamSession[]>([]);
   const [examSummaryMap, setExamSummaryMap] = useState<ExamSummaryMap>({});
@@ -149,29 +146,6 @@ export const useExamEngine = () => {
     }
   }, [selectedSubject, selectedGrade]);
 
-  // Quản lý Blob URLs để tránh rò rỉ bộ nhớ
-  const proofImagesByQuestionRef = useRef(proofImagesByQuestion);
-  useEffect(() => {
-    proofImagesByQuestionRef.current = proofImagesByQuestion;
-  }, [proofImagesByQuestion]);
-
-  useEffect(() => {
-    return () => {
-      Object.values(proofImagesByQuestionRef.current).forEach(images => {
-        revokeLocalProofImages(images);
-      });
-    };
-  }, []);
-
-  const clearAllProofImages = () => {
-    setProofImagesByQuestion(prev => {
-      Object.values(prev).forEach(images => {
-        revokeLocalProofImages(images);
-      });
-      return {};
-    });
-  };
-
   const currentExam = useMemo(() => {
     return mockExamsList.find(exam => exam.id === selectedExamId) || mockExamsList[0];
   }, [mockExamsList, selectedExamId]);
@@ -203,7 +177,7 @@ export const useExamEngine = () => {
 
     let correctCount = 0;
     let earnedPoints = 0;
-    let pendingPoints = 0;
+    const pendingPoints = 0;
     let gradedMaxPoints = 0;
     let gradedCount = 0;
     const totalCount = examQuestions.length;
@@ -220,48 +194,24 @@ export const useExamEngine = () => {
     for (const q of examQuestions) {
       const answerInput = q.answerSchema ? (finalAnswers[q.id] ?? {}) : answers[q.id] || '';
       const userAns = formatAnswerForDisplay(q, answerInput);
-      const isManual = q.answerSchema?.autoCheckMode === 'manual' || q.validatorType === 'manual';
       const questionPoints = questionPointsById.get(q.id) ?? q.points ?? 1;
-      const answerScore = isManual
-        ? null
-        : scoreAnswer(q, answerInput, questionPoints);
-      const isCorrect = answerScore?.isCorrect ?? false;
-      const awardedPoints = answerScore?.earnedPoints ?? 0;
+      const answerScore = scoreAnswer(q, answerInput, questionPoints);
+      const isCorrect = answerScore.isCorrect;
+      const awardedPoints = answerScore.earnedPoints;
       const attemptId = `attempt-${examId}-${q.id}`;
-      const localProofImages = proofImagesByQuestion[q.id] ?? [];
-      let uploadedProofImages: UserAttempt['proofImages'] = [];
 
-      try {
-        if (user && localProofImages.length > 0) {
-          uploadedProofImages = await proofImageService.uploadProofImages(
-            user.uid,
-            attemptId,
-            localProofImages.map(image => ({ id: image.id, file: image.file }))
-          );
-        }
-      } catch (error) {
-        const message = error instanceof Error ? error.message : 'Không thể upload ảnh bài làm. Vui lòng thử lại.';
-        setExamSubmitError(message);
-        setIsSubmittingExam(false);
-        return;
-      }
-
-      if (isManual) pendingPoints += questionPoints;
-      else {
-        gradedCount++;
-        gradedMaxPoints += questionPoints;
-      }
-      if (!isManual && isCorrect) correctCount++;
+      gradedCount++;
+      gradedMaxPoints += questionPoints;
+      if (isCorrect) correctCount++;
       earnedPoints += awardedPoints;
       attemptResults[q.id] = {
         userAnswer: userAns,
         ...(q.answerSchema ? { finalAnswer: finalAnswers[q.id] ?? {} } : {}),
-        ...(uploadedProofImages.length > 0 ? { proofImages: uploadedProofImages } : {}),
         isCorrect,
-        gradingStatus: isManual ? 'pending' : 'graded',
+        gradingStatus: 'graded',
         earnedPoints: awardedPoints,
         maxPoints: questionPoints,
-        ...(answerScore?.partResults ? { partResults: answerScore.partResults } : {})
+        ...(answerScore.partResults ? { partResults: answerScore.partResults } : {})
       };
 
       const attemptData: UserAttempt = {
@@ -271,8 +221,7 @@ export const useExamEngine = () => {
         questionTypeId: q.questionTypeId,
         userAnswer: userAns,
         ...(q.answerSchema ? { finalAnswer: finalAnswers[q.id] ?? {} } : {}),
-        ...(uploadedProofImages.length > 0 ? { proofImages: uploadedProofImages } : {}),
-        gradingMode: q.answerSchema?.autoCheckMode === 'manual' ? 'manual' : 'auto',
+        gradingMode: 'auto',
         isCorrect,
         timeSpent: Math.round(timeSpent / totalCount),
         createdAt: completedAt
@@ -281,12 +230,12 @@ export const useExamEngine = () => {
       examAttempts.push(attemptData);
       storageService.saveAttempt(currentUserId, attemptData);
 
-      logCustomEvent('request_teacher_grading', {
+      logCustomEvent('exam_question_graded', {
         subjectId: selectedSubject,
         examId,
         questionTypeId: q.questionTypeId,
         questionId: q.id,
-        hasProofImages: localProofImages.length > 0
+        isCorrect
       });
     }
 
@@ -349,14 +298,14 @@ export const useExamEngine = () => {
       progressService.saveExamSubmission(user.uid, result, examAttempts, examMistakes);
     }
 
-    if (pendingPoints === 0 && score >= 8.0) {
+    if (score >= 8.0) {
       confetti({
         particleCount: 100,
         spread: 80,
         origin: { y: 0.6 }
       });
     }
-  }, [examQuestions, answers, finalAnswers, proofImagesByQuestion, selectedSubject, timeSpent, user, isSubmittingExam, currentExam, questionPointsById]);
+  }, [examQuestions, answers, finalAnswers, selectedSubject, timeSpent, user, isSubmittingExam, currentExam, questionPointsById]);
 
   useEffect(() => {
     handleSubmitExamRef.current = handleSubmitExam;
@@ -391,7 +340,6 @@ export const useExamEngine = () => {
         void progressService.deleteActiveExamSessionFromFirestore(user.uid, currentExam.id);
       }
     }
-    clearAllProofImages();
     if (currentExam) {
       const questionsForExam = currentExam.questionIds
         .map(id => getQuestions(selectedGrade, selectedSubject).find(q => q.id === id))
@@ -419,7 +367,6 @@ export const useExamEngine = () => {
       .map(id => allQuestions.find(q => q.id === id))
       .filter((q): q is Question => q !== undefined);
 
-    clearAllProofImages();
     setSelectedExamId(targetSession.sourceExamId);
     setExamQuestions(questionsForExam);
     setAnswers(targetSession.answers || {});
@@ -525,12 +472,7 @@ export const useExamEngine = () => {
     setFinalAnswers(prev => ({ ...prev, [questionId]: value }));
   };
 
-  const handleProofImagesChange = (questionId: string, images: LocalProofImage[]) => {
-    setProofImagesByQuestion(prev => ({ ...prev, [questionId]: images }));
-  };
-
   const handleBackToIntro = () => {
-    clearAllProofImages();
     setAnswers({});
     setFinalAnswers({});
     setExamState('intro');
@@ -554,7 +496,6 @@ export const useExamEngine = () => {
     examQuestions,
     answers,
     finalAnswers,
-    proofImagesByQuestion,
     selectedExamId,
     setSelectedExamId,
     activeSessions,
@@ -575,7 +516,6 @@ export const useExamEngine = () => {
     handleOptionSelect,
     handleInputChange,
     handleFinalAnswerChange,
-    handleProofImagesChange,
     handleBackToIntro,
     handleDiscardAndExit,
     handleSubmitExam

@@ -4,12 +4,22 @@ import { onCall, onRequest, HttpsError } from "firebase-functions/v2/https";
 import { db, payOS } from "../config.js";
 import { FieldValue } from "firebase-admin/firestore";
 import { requireTeacher } from "../services/access.js";
-import { premiumPatch, trialPatch } from "../services/entitlements.js";
+import { MONETIZATION_ENABLED, premiumPatch, trialPatch } from "../services/entitlements.js";
 import { settleVerifiedPayment } from "../services/paymentSettlement.js";
+
+const assertMonetizationEnabled = () => {
+  if (!MONETIZATION_ENABLED) {
+    throw new HttpsError(
+      "failed-precondition",
+      "Tính năng thanh toán, dùng thử và đối tác hiện đang tạm tắt trong giai đoạn miễn phí 100%."
+    );
+  }
+};
 
 export const validateAffiliateCode = onCall({
   cors: true,
 }, async (request) => {
+  assertMonetizationEnabled();
   if (!request.auth) {
     throw new HttpsError("unauthenticated", "Yêu cầu đăng nhập để sử dụng mã giảm giá.");
   }
@@ -77,6 +87,7 @@ export const validateAffiliateCode = onCall({
 export const createPaymentLink = onCall({
   cors: true,
 }, async (request) => {
+  assertMonetizationEnabled();
   if (!payOS) {
     throw new HttpsError("failed-precondition", "Cổng thanh toán PayOS chưa được cấu hình trên máy chủ.");
   }
@@ -200,6 +211,7 @@ export const payosWebhook = onRequest({ cors: false }, async (req, res) => {
 export const grantPremiumByEmail = onCall({
   cors: true,
 }, async (request) => {
+  assertMonetizationEnabled();
   const callerUid = await requireTeacher(request);
 
   const { studentEmail, packageType = "plan_12m" } = request.data;
@@ -271,6 +283,7 @@ export const grantPremiumByEmail = onCall({
 export const requestPayout = onCall({
   cors: true,
 }, async (request) => {
+  assertMonetizationEnabled();
   if (!request.auth) {
     throw new HttpsError("unauthenticated", "Bạn cần đăng nhập để thực hiện yêu cầu rút tiền.");
   }
@@ -351,6 +364,7 @@ export const requestPayout = onCall({
 export const processPayoutRequest = onCall({
   cors: true,
 }, async (request) => {
+  assertMonetizationEnabled();
   const callerUid = await requireTeacher(request);
 
   const { requestId, action, rejectReason } = request.data || {};
