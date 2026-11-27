@@ -1,4 +1,6 @@
 import type { Question } from '@/types';
+import { applyConvertedPracticeChoice } from '@/data/practiceChoiceUtils';
+import { g10ChemistryPracticeChoices } from './practiceChoices';
 import { g10ChemistryPracticeMetadata } from './practiceMetadata';
 import { normalizeChemistryPracticeChoice } from './practiceChoiceNormalizer';
 import { g10ChemistryRemediationQuestions } from './practiceRemediation';
@@ -20,7 +22,16 @@ const enrichedQuestions: Question[] = [...moduleQuestions, ...g10ChemistryRemedi
 });
 
 /** Câu hiển thị: chuẩn hóa options legacy và hoán vị ổn định theo ID để tránh học tủ vị trí đáp án. */
-export const g10ChemistryQuestions: Question[] = enrichedQuestions.map(normalizeChemistryPracticeChoice);
+const g10ChemistryChoiceById = new Map(
+  g10ChemistryPracticeChoices.map(choice => [choice.id, choice])
+);
+
+export const g10ChemistryQuestions: Question[] = enrichedQuestions.map(question => {
+  const convertedChoice = g10ChemistryChoiceById.get(question.id);
+  return convertedChoice
+    ? applyConvertedPracticeChoice(question, convertedChoice)
+    : normalizeChemistryPracticeChoice(question);
+});
 
 export const g10ChemistryDisplayAnswerByQuestionId = new Map(
   g10ChemistryQuestions.map(question => [question.id, question.correctAnswer])

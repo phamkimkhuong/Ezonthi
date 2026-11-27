@@ -315,32 +315,23 @@ export const getQuestions = (grade: GradeCode, subject: SubjectCode): Question[]
  *
  * Tách các câu hỏi bài kiểm tra định kỳ để không lọt vào lộ trình luyện tập thông thường.
  */
+const PRACTICE_EXCLUDED_ID_PREFIXES: Partial<Record<`${GradeCode}:${SubjectCode}`, readonly string[]>> = {
+  'grade11:math': ['math11-assess-'],
+  'grade10:math': ['mock-math10-', 'math10-assess-'],
+  'grade10:physics': ['phy10-assess-'],
+  'grade10:chemistry': ['chem10-assess-', 'chem10-theory-'],
+  'grade10:biology': ['bio10-assess-'],
+  'grade11:chemistry': ['chem11-assess-', 'chem11-theory-', 'chem11-sem-'],
+};
+
 export const getPracticeQuestions = (grade: GradeCode, subject: SubjectCode): Question[] => {
   const questions = getQuestions(grade, subject);
+  const excludedPrefixes = PRACTICE_EXCLUDED_ID_PREFIXES[`${grade}:${subject}`];
+  if (!excludedPrefixes?.length) return questions;
 
-  if (grade === 'grade11' && subject === 'math') {
-    return questions.filter(question => !question.id.startsWith('math11-assess-'));
-  }
-
-  if (grade === 'grade10' && subject === 'math') {
-    return questions.filter(question => (
-      !question.id.startsWith('mock-math10-')
-      && !question.id.startsWith('math10-assess-')
-    ));
-  }
-
-  if (grade === 'grade10' && subject === 'chemistry') {
-    return questions.filter(question => (
-      !question.id.startsWith('chem10-assess-')
-      && !question.id.startsWith('chem10-theory-')
-    ));
-  }
-
-  if (grade === 'grade10' && subject === 'biology') {
-    return questions.filter(question => !question.id.startsWith('bio10-assess-'));
-  }
-
-  return questions;
+  return questions.filter(
+    question => !excludedPrefixes.some(prefix => question.id.startsWith(prefix))
+  );
 };
 
 export const getSolutions = (grade: GradeCode, subject: SubjectCode): Solution[] => {

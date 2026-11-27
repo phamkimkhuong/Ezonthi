@@ -1,5 +1,7 @@
-import { Solution } from '@/types';
-import { g10ChemistryDisplayAnswerByQuestionId } from './questions';
+import type { Solution } from '@/types';
+import { applyConvertedPracticeChoiceSolution } from '@/data/practiceChoiceUtils';
+import { g10ChemistryPracticeChoices } from './practiceChoices';
+import { g10ChemistryDisplayAnswerByQuestionId, g10ChemistryQuestions } from './questions';
 import { normalizeChemistryPracticeSolution } from './practiceChoiceNormalizer';
 import { g10ChemistryRemediationSolutions } from './practiceRemediation';
 
@@ -10,6 +12,15 @@ const moduleSolutions: Solution[] = [
   ...g10ChemistryRemediationSolutions
 ];
 
+const g10ChemistryConvertedChoiceIds = new Set(
+  g10ChemistryPracticeChoices.map(choice => choice.id)
+);
+const g10ChemistryQuestionById = new Map(
+  g10ChemistryQuestions.map(question => [question.id, question])
+);
+
 export const g10ChemistrySolutions: Solution[] = moduleSolutions.map(solution => (
-  normalizeChemistryPracticeSolution(solution, g10ChemistryDisplayAnswerByQuestionId.get(solution.questionId))
+  g10ChemistryConvertedChoiceIds.has(solution.questionId)
+    ? applyConvertedPracticeChoiceSolution(solution, g10ChemistryQuestionById.get(solution.questionId))
+    : normalizeChemistryPracticeSolution(solution, g10ChemistryDisplayAnswerByQuestionId.get(solution.questionId))
 ));

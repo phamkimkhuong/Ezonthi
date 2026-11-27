@@ -10,7 +10,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 21",
       "D. 20"
     ]
@@ -21,7 +21,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 0.00025",
       "B. 0.0025",
-      "C. 0.00003",
+      "C. 0.000025",
       "D. 0.025"
     ]
   },
@@ -90,7 +90,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 54",
-      "B. 4.166667",
+      "B. 4.17",
       "C. 16",
       "D. 15"
     ]
@@ -360,7 +360,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 54",
-      "B. 4.166667",
+      "B. 4.17",
       "C. 15",
       "D. 16"
     ]
@@ -370,7 +370,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 0.025",
-      "B. 0.0003",
+      "B. 0.00025",
       "C. 0.25",
       "D. 0.0025"
     ]
@@ -461,7 +461,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 5",
       "B. 18",
-      "C. 1.388889",
+      "C. 1.39",
       "D. 6"
     ]
   },
@@ -541,7 +541,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 6",
       "B. 21.6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -551,7 +551,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 7.2",
       "B. 2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -570,7 +570,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 21.6",
-      "B. 1.666667",
+      "B. 1.67",
       "C. 7",
       "D. 6"
     ]
@@ -581,7 +581,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2",
       "B. 7.2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -600,7 +600,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -610,7 +610,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. -21.6",
-      "B. -1.666667",
+      "B. -1.67",
       "C. -5",
       "D. -6"
     ]
@@ -621,7 +621,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 14",
       "B. 50.4",
-      "C. 3.888889",
+      "C. 3.89",
       "D. 15"
     ]
   },
@@ -629,9 +629,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1-q074",
     "correctAnswer": "B",
     "options": [
-      "A. 32.4",
+      "A. 18",
       "B. 9",
-      "C. 2.5",
+      "C. 4.5",
       "D. 10"
     ]
   },
@@ -640,7 +640,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 18",
-      "B. 1.388889",
+      "B. 1.39",
       "C. 5",
       "D. 6"
     ]
@@ -650,7 +650,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 3",
       "D. 2"
     ]
@@ -661,7 +661,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2",
       "B. 7.2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -671,7 +671,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 72",
       "B. 20",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 21"
     ]
   },
@@ -680,7 +680,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 20",
       "D. 21"
     ]
@@ -690,7 +690,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 200",
       "D. 20"
     ]
@@ -700,8 +700,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 3",
-      "B. 10.8",
-      "C. 0.833333",
+      "B. 6",
+      "C. 1.5",
       "D. 30"
     ]
   },
@@ -711,7 +711,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 72",
       "B. 20",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 200"
     ]
   },
@@ -719,8 +719,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1-q110",
     "correctAnswer": "C",
     "options": [
-      "A. 7.2",
-      "B. 0.555556",
+      "A. 4",
+      "B. 1",
       "C. 2",
       "D. 20"
     ]
@@ -730,7 +730,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 108",
-      "B. 8.333333",
+      "B. 8.33",
       "C. 300",
       "D. 30"
     ]
@@ -741,7 +741,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2",
       "B. 7.2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -821,7 +821,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10",
       "B. 36",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -831,7 +831,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 21.6",
       "B. 6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -840,7 +840,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -850,7 +850,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 144",
-      "B. 11.111111",
+      "B. 11.11",
       "C. 41",
       "D. 40"
     ]
@@ -861,7 +861,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2",
       "B. 7.2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -890,7 +890,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 21",
       "D. 20"
     ]
@@ -901,7 +901,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 6",
       "B. 21.6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -911,7 +911,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 576",
       "B. 160",
-      "C. 44.444444",
+      "C. 44.44",
       "D. 161"
     ]
   },
@@ -920,7 +920,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 4",
       "D. 5"
     ]
@@ -930,7 +930,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 18",
-      "B. 1.388889",
+      "B. 1.39",
       "C. 6",
       "D. 5"
     ]
@@ -941,7 +941,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2",
       "B. 7.2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -970,7 +970,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. -7.2",
-      "B. -0.555556",
+      "B. -0.56",
       "C. -1",
       "D. -2"
     ]
@@ -981,7 +981,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 20",
       "B. 72",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 21"
     ]
   },
@@ -991,7 +991,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 18",
       "B. 5",
-      "C. 1.388889",
+      "C. 1.39",
       "D. 6"
     ]
   },
@@ -1000,7 +1000,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 25.2",
-      "B. 1.944444",
+      "B. 1.94",
       "C. 7",
       "D. 8"
     ]
@@ -1010,7 +1010,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 75.6",
-      "B. 5.833333",
+      "B. 5.83",
       "C. 22",
       "D. 21"
     ]
@@ -1031,7 +1031,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10.8",
       "B. 3",
-      "C. 0.833333",
+      "C. 0.83",
       "D. 4"
     ]
   },
@@ -1050,7 +1050,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 28.8",
-      "B. 2.222222",
+      "B. 2.22",
       "C. 9",
       "D. 8"
     ]
@@ -1060,8 +1060,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 10",
-      "B. 36",
-      "C. 2.777778",
+      "B. 20",
+      "C. 5",
       "D. 11"
     ]
   },
@@ -1080,7 +1080,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. -14.4",
-      "B. -1.111111",
+      "B. -1.11",
       "C. -4",
       "D. -3"
     ]
@@ -1090,7 +1090,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 50.4",
-      "B. 3.888889",
+      "B. 3.89",
       "C. 15",
       "D. 14"
     ]
@@ -1101,7 +1101,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 24",
       "B. 86.4",
-      "C. 6.666667",
+      "C. 6.67",
       "D. 25"
     ]
   },
@@ -1120,7 +1120,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 43.2",
-      "B. 3.333333",
+      "B. 3.33",
       "C. 12",
       "D. 13"
     ]
@@ -1130,7 +1130,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 5",
       "D. 4"
     ]
@@ -1140,8 +1140,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 80",
-      "B. 288",
-      "C. 22.222222",
+      "B. 160",
+      "C. 40",
       "D. 81"
     ]
   },
@@ -1151,7 +1151,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 144",
       "B. 40",
-      "C. 11.111111",
+      "C. 11.11",
       "D. 41"
     ]
   },
@@ -1160,7 +1160,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 10.8",
-      "B. 0.833333",
+      "B. 0.83",
       "C. 3",
       "D. 4"
     ]
@@ -1170,7 +1170,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 21",
       "D. 20"
     ]
@@ -1180,8 +1180,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 25",
-      "B. 90",
-      "C. 6.944444",
+      "B. 50",
+      "C. 12.5",
       "D. 26"
     ]
   },
@@ -1189,9 +1189,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1-q107",
     "correctAnswer": "B",
     "options": [
-      "A. 90",
+      "A. 50",
       "B. 25",
-      "C. 6.944444",
+      "C. 12.5",
       "D. 26"
     ]
   },
@@ -1200,7 +1200,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 108",
-      "B. 8.333333",
+      "B. 8.33",
       "C. 30",
       "D. 31"
     ]
@@ -1221,7 +1221,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 60",
       "B. 216",
-      "C. 16.666667",
+      "C. 16.67",
       "D. 61"
     ]
   },
@@ -1231,7 +1231,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 72",
       "B. 20",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 21"
     ]
   },
@@ -1240,7 +1240,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -1249,8 +1249,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1-q128",
     "correctAnswer": "D",
     "options": [
-      "A. 36",
-      "B. 2.777778",
+      "A. 20",
+      "B. 5",
       "C. 100",
       "D. 10"
     ]
@@ -1320,7 +1320,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 18",
-      "B. 1.388889",
+      "B. 1.39",
       "C. 5",
       "D. 6"
     ]
@@ -1330,7 +1330,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 10.8",
-      "B. 0.833333",
+      "B. 0.83",
       "C. 4",
       "D. 3"
     ]
@@ -1341,7 +1341,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 40",
       "B. 144",
-      "C. 11.111111",
+      "C. 11.11",
       "D. 41"
     ]
   },
@@ -1359,8 +1359,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1-q148",
     "correctAnswer": "C",
     "options": [
-      "A. 7.2",
-      "B. 0.555556",
+      "A. 4",
+      "B. 1",
       "C. 2",
       "D. 3"
     ]
@@ -1380,8 +1380,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 35",
-      "B. 126",
-      "C. 9.722222",
+      "B. 70",
+      "C. 17.5",
       "D. 36"
     ]
   },
@@ -1399,8 +1399,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1-q158",
     "correctAnswer": "C",
     "options": [
-      "A. 144",
-      "B. 11.111111",
+      "A. 80",
+      "B. 20",
       "C. 40",
       "D. 41"
     ]
@@ -1410,7 +1410,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 90",
-      "B. 6.944444",
+      "B. 6.94",
       "C. 26",
       "D. 25"
     ]
@@ -1421,7 +1421,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 8",
       "B. 28.8",
-      "C. 2.222222",
+      "C. 2.22",
       "D. 9"
     ]
   },
@@ -1431,7 +1431,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 54",
       "B. 15",
-      "C. 4.166667",
+      "C. 4.17",
       "D. 16"
     ]
   },
@@ -1461,7 +1461,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 13",
       "B. 46.8",
-      "C. 3.611111",
+      "C. 3.61",
       "D. 14"
     ]
   },
@@ -1471,7 +1471,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10.8",
       "B. 3",
-      "C. 0.833333",
+      "C. 0.83",
       "D. 4"
     ]
   },
@@ -1480,7 +1480,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 18",
-      "B. 1.388889",
+      "B. 1.39",
       "C. 5",
       "D. 6"
     ]
@@ -1490,7 +1490,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 28.8",
-      "B. 2.222222",
+      "B. 2.22",
       "C. 9",
       "D. 8"
     ]
@@ -1501,7 +1501,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10",
       "B. 36",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -1511,7 +1511,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 28.8",
       "B. 8",
-      "C. 2.222222",
+      "C. 2.22",
       "D. 9"
     ]
   },
@@ -1520,7 +1520,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -1529,8 +1529,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1r-q011",
     "correctAnswer": "D",
     "options": [
-      "A. 54",
-      "B. 4.166667",
+      "A. 30",
+      "B. 7.5",
       "C. 16",
       "D. 15"
     ]
@@ -1540,8 +1540,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 5",
-      "B. 18",
-      "C. 1.388889",
+      "B. 10",
+      "C. 2.5",
       "D. 6"
     ]
   },
@@ -1549,9 +1549,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1r-q013",
     "correctAnswer": "B",
     "options": [
-      "A. 14.4",
+      "A. 8",
       "B. 4",
-      "C. 1.111111",
+      "C. 2",
       "D. 5"
     ]
   },
@@ -1559,8 +1559,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1r-q014",
     "correctAnswer": "C",
     "options": [
-      "A. 36",
-      "B. 2.777778",
+      "A. 20",
+      "B. 5",
       "C. 10",
       "D. 11"
     ]
@@ -1569,8 +1569,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1r-q015",
     "correctAnswer": "D",
     "options": [
-      "A. 126",
-      "B. 9.722222",
+      "A. 70",
+      "B. 17.5",
       "C. 36",
       "D. 35"
     ]
@@ -1581,7 +1581,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 11",
       "B. 39.6",
-      "C. 3.055556",
+      "C. 3.06",
       "D. 12"
     ]
   },
@@ -1591,7 +1591,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 14.4",
       "B. 4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -1600,7 +1600,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 21.6",
-      "B. 1.666667",
+      "B. 1.67",
       "C. 6",
       "D. 7"
     ]
@@ -1610,7 +1610,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 21",
       "D. 20"
     ]
@@ -1631,7 +1631,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 28.8",
       "B. 8",
-      "C. 2.222222",
+      "C. 2.22",
       "D. 9"
     ]
   },
@@ -1640,7 +1640,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 144",
-      "B. 11.111111",
+      "B. 11.11",
       "C. 40",
       "D. 41"
     ]
@@ -1661,7 +1661,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 5",
       "B. 18",
-      "C. 1.388889",
+      "C. 1.39",
       "D. 6"
     ]
   },
@@ -1671,7 +1671,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 36",
       "B. 10",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -1680,7 +1680,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 122.4",
-      "B. 9.444444",
+      "B. 9.44",
       "C. 34",
       "D. 35"
     ]
@@ -1690,7 +1690,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 180",
-      "B. 13.888889",
+      "B. 13.89",
       "C. 51",
       "D. 50"
     ]
@@ -1700,8 +1700,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 64",
-      "B. 230.4",
-      "C. 17.777778",
+      "B. 128",
+      "C. 32",
       "D. 65"
     ]
   },
@@ -1711,7 +1711,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 90",
       "B. 25",
-      "C. 6.944444",
+      "C. 6.94",
       "D. 26"
     ]
   },
@@ -1719,8 +1719,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1r-q030",
     "correctAnswer": "C",
     "options": [
-      "A. 10.8",
-      "B. 0.833333",
+      "A. 6",
+      "B. 1.5",
       "C. 3",
       "D. 4"
     ]
@@ -1729,8 +1729,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1r-q031",
     "correctAnswer": "D",
     "options": [
-      "A. 14.4",
-      "B. 1.111111",
+      "A. 8",
+      "B. 2",
       "C. 5",
       "D. 4"
     ]
@@ -1740,8 +1740,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 61.25",
-      "B. 220.5",
-      "C. 17.01",
+      "B. 122.5",
+      "C. 30.63",
       "D. 61.26"
     ]
   },
@@ -1760,7 +1760,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 20",
       "D. 21"
     ]
@@ -1770,7 +1770,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 108",
-      "B. 8.333333",
+      "B. 8.33",
       "C. 31",
       "D. 30"
     ]
@@ -1800,7 +1800,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 115.2",
-      "B. 8.888889",
+      "B. 8.89",
       "C. 32",
       "D. 33"
     ]
@@ -1869,9 +1869,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1r-q048",
     "correctAnswer": "B",
     "options": [
-      "A. 36",
+      "A. 20",
       "B. 10",
-      "C. 2.777778",
+      "C. 5",
       "D. 100"
     ]
   },
@@ -1879,8 +1879,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1r-q049",
     "correctAnswer": "C",
     "options": [
-      "A. 34.27",
-      "B. 2.64",
+      "A. 19.04",
+      "B. 4.76",
       "C. 9.52",
       "D. 95.2"
     ]
@@ -1901,7 +1901,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 3",
       "B. 10.8",
-      "C. 0.833333",
+      "C. 0.83",
       "D. 4"
     ]
   },
@@ -1911,7 +1911,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10.8",
       "B. 3",
-      "C. 0.833333",
+      "C. 0.83",
       "D. 4"
     ]
   },
@@ -1991,7 +1991,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 14.4",
       "B. 4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -2021,7 +2021,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 4",
       "B. 14.4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -2031,7 +2031,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 21.6",
       "B. 6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -2040,7 +2040,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 108",
-      "B. 8.333333",
+      "B. 8.33",
       "C. 30",
       "D. 31"
     ]
@@ -2050,7 +2050,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 21",
       "D. 20"
     ]
@@ -2061,7 +2061,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 120",
       "B. 432",
-      "C. 33.333333",
+      "C. 33.33",
       "D. 121"
     ]
   },
@@ -2071,7 +2071,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 360",
       "B. 100",
-      "C. 27.777778",
+      "C. 27.78",
       "D. 101"
     ]
   },
@@ -2080,7 +2080,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 151.2",
-      "B. 11.666667",
+      "B. 11.67",
       "C. 42",
       "D. 43"
     ]
@@ -2090,7 +2090,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 18",
-      "B. 1.388889",
+      "B. 1.39",
       "C. 6",
       "D. 5"
     ]
@@ -2111,7 +2111,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 28.8",
       "B. 8",
-      "C. 2.222222",
+      "C. 2.22",
       "D. 9"
     ]
   },
@@ -2120,7 +2120,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 10.8",
-      "B. 0.833333",
+      "B. 0.83",
       "C. 3",
       "D. 4"
     ]
@@ -2141,7 +2141,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 40",
       "B. 144",
-      "C. 11.111111",
+      "C. 11.11",
       "D. 41"
     ]
   },
@@ -2151,7 +2151,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. -10.8",
       "B. -3",
-      "C. -0.833333",
+      "C. -0.83",
       "D. -2"
     ]
   },
@@ -2160,7 +2160,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -2170,7 +2170,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 10.8",
-      "B. 0.833333",
+      "B. 0.83",
       "C. 4",
       "D. 3"
     ]
@@ -2181,7 +2181,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2",
       "B. 7.2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -2191,7 +2191,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. -10.8",
       "B. -3",
-      "C. -0.833333",
+      "C. -0.83",
       "D. -2"
     ]
   },
@@ -2200,7 +2200,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 10.8",
-      "B. 0.833333",
+      "B. 0.83",
       "C. 3",
       "D. 4"
     ]
@@ -2221,7 +2221,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 22",
       "B. 79.2",
-      "C. 6.111111",
+      "C. 6.11",
       "D. 23"
     ]
   },
@@ -2231,7 +2231,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 36",
       "B. 10",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -2240,7 +2240,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -2250,7 +2250,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 21",
       "D. 20"
     ]
@@ -2260,8 +2260,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 5",
-      "B. 18",
-      "C. 1.388889",
+      "B. 10",
+      "C. 2.5",
       "D. 6"
     ]
   },
@@ -2289,8 +2289,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1r-q119",
     "correctAnswer": "D",
     "options": [
-      "A. 216",
-      "B. 16.666667",
+      "A. 120",
+      "B. 30",
       "C. 61",
       "D. 60"
     ]
@@ -2301,7 +2301,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 4",
       "B. 14.4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -2309,9 +2309,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m1r-q127",
     "correctAnswer": "B",
     "options": [
-      "A. 288",
+      "A. 160",
       "B. 80",
-      "C. 22.222222",
+      "C. 40",
       "D. 81"
     ]
   },
@@ -2349,9 +2349,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q037",
     "correctAnswer": "B",
     "options": [
-      "A. 14.4",
+      "A. 8",
       "B. 4",
-      "C. 1.111111",
+      "C. 2",
       "D. 5"
     ]
   },
@@ -2359,8 +2359,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q039",
     "correctAnswer": "C",
     "options": [
-      "A. 10.8",
-      "B. 0.833333",
+      "A. 6",
+      "B. 1.5",
       "C. 3",
       "D. 4"
     ]
@@ -2380,8 +2380,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 20",
-      "B. 72",
-      "C. 5.555556",
+      "B. 40",
+      "C. 10",
       "D. 21"
     ]
   },
@@ -2389,9 +2389,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q063",
     "correctAnswer": "B",
     "options": [
-      "A. 2160",
+      "A. 1200",
       "B. 600",
-      "C. 166.666667",
+      "C. 300",
       "D. 601"
     ]
   },
@@ -2429,9 +2429,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q076",
     "correctAnswer": "B",
     "options": [
-      "A. 18",
+      "A. 10",
       "B. 5",
-      "C. 1.388889",
+      "C. 2.5",
       "D. 50"
     ]
   },
@@ -2439,8 +2439,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q087",
     "correctAnswer": "C",
     "options": [
-      "A. 36",
-      "B. 2.777778",
+      "A. 20",
+      "B. 5",
       "C. 10",
       "D. 11"
     ]
@@ -2449,8 +2449,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q098",
     "correctAnswer": "D",
     "options": [
-      "A. 108",
-      "B. 8.333333",
+      "A. 60",
+      "B. 15",
       "C. 31",
       "D. 30"
     ]
@@ -2460,8 +2460,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 26",
-      "B. 93.6",
-      "C. 7.222222",
+      "B. 52",
+      "C. 13",
       "D. 27"
     ]
   },
@@ -2540,8 +2540,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 20000",
-      "B. 72000",
-      "C. 5555.555556",
+      "B. 40000",
+      "C. 10000",
       "D. 20001"
     ]
   },
@@ -2620,8 +2620,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 10",
-      "B. 36",
-      "C. 2.777778",
+      "B. 20",
+      "C. 5",
       "D. 11"
     ]
   },
@@ -2629,9 +2629,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q042",
     "correctAnswer": "B",
     "options": [
-      "A. 10.8",
+      "A. 6",
       "B. 3",
-      "C. 0.833333",
+      "C. 1.5",
       "D. 4"
     ]
   },
@@ -2639,8 +2639,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q043",
     "correctAnswer": "C",
     "options": [
-      "A. 72",
-      "B. 5.555556",
+      "A. 40",
+      "B. 10",
       "C. 20",
       "D. 21"
     ]
@@ -2650,7 +2650,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 43.2",
-      "B. 3.333333",
+      "B. 3.33",
       "C. 13",
       "D. 12"
     ]
@@ -2660,8 +2660,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 5",
-      "B. 18",
-      "C. 1.388889",
+      "B. 10",
+      "C. 2.5",
       "D. 6"
     ]
   },
@@ -2671,7 +2671,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 7.2",
       "B. 2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -2680,7 +2680,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 28.8",
-      "B. 2.222222",
+      "B. 2.22",
       "C. 8",
       "D. 9"
     ]
@@ -2700,8 +2700,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 5",
-      "B. 18",
-      "C. 1.388889",
+      "B. 10",
+      "C. 2.5",
       "D. 6"
     ]
   },
@@ -2709,9 +2709,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q066",
     "correctAnswer": "B",
     "options": [
-      "A. 18",
+      "A. 10",
       "B. 5",
-      "C. 1.388889",
+      "C. 2.5",
       "D. 6"
     ]
   },
@@ -2719,8 +2719,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q068",
     "correctAnswer": "C",
     "options": [
-      "A. 1440",
-      "B. 111.111111",
+      "A. 800",
+      "B. 200",
       "C. 400",
       "D. 401"
     ]
@@ -2740,8 +2740,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 20",
-      "B. 72",
-      "C. 5.555556",
+      "B. 40",
+      "C. 10",
       "D. 21"
     ]
   },
@@ -2769,8 +2769,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q080",
     "correctAnswer": "D",
     "options": [
-      "A. 360",
-      "B. 27.777778",
+      "A. 200",
+      "B. 50",
       "C. 1000",
       "D. 100"
     ]
@@ -2799,8 +2799,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q084",
     "correctAnswer": "C",
     "options": [
-      "A. 36",
-      "B. 2.777778",
+      "A. 20",
+      "B. 5",
       "C. 10",
       "D. 11"
     ]
@@ -2809,8 +2809,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q090",
     "correctAnswer": "D",
     "options": [
-      "A. 7.2",
-      "B. 0.555556",
+      "A. 4",
+      "B. 1",
       "C. 3",
       "D. 2"
     ]
@@ -2829,9 +2829,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q094",
     "correctAnswer": "B",
     "options": [
-      "A. 14.4",
+      "A. 8",
       "B. 4",
-      "C. 1.111111",
+      "C. 2",
       "D. 5"
     ]
   },
@@ -2879,8 +2879,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q106",
     "correctAnswer": "C",
     "options": [
-      "A. 7.2",
-      "B. 0.555556",
+      "A. 4",
+      "B. 1",
       "C. 2",
       "D. 3"
     ]
@@ -3060,8 +3060,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 5",
-      "B. 18",
-      "C. 1.388889",
+      "B. 10",
+      "C. 2.5",
       "D. 6"
     ]
   },
@@ -3069,9 +3069,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q155",
     "correctAnswer": "B",
     "options": [
-      "A. 9",
+      "A. 5",
       "B. 2.5",
-      "C. 0.7",
+      "C. 1.25",
       "D. 2.6"
     ]
   },
@@ -3079,8 +3079,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q156",
     "correctAnswer": "C",
     "options": [
-      "A. 14.4",
-      "B. 1.111111",
+      "A. 8",
+      "B. 2",
       "C. 4",
       "D. 5"
     ]
@@ -3089,8 +3089,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q160",
     "correctAnswer": "D",
     "options": [
-      "A. 86.4",
-      "B. 6.666667",
+      "A. 48",
+      "B. 12",
       "C. 25",
       "D. 24"
     ]
@@ -3100,8 +3100,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 1.67",
-      "B. 6.01",
-      "C. 0.46",
+      "B. 3.34",
+      "C. 0.84",
       "D. 1.68"
     ]
   },
@@ -3149,9 +3149,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q171",
     "correctAnswer": "B",
     "options": [
-      "A. 86.4",
+      "A. 48",
       "B. 24",
-      "C. 6.666667",
+      "C. 12",
       "D. 25"
     ]
   },
@@ -3209,8 +3209,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2-q180",
     "correctAnswer": "D",
     "options": [
-      "A. 410400",
-      "B. 31666.666667",
+      "A. 228000",
+      "B. 57000",
       "C. 114001",
       "D. 114000"
     ]
@@ -3349,9 +3349,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q028",
     "correctAnswer": "B",
     "options": [
-      "A. 10.8",
+      "A. 6",
       "B. 3",
-      "C. 0.833333",
+      "C. 1.5",
       "D. 4"
     ]
   },
@@ -3359,8 +3359,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q029",
     "correctAnswer": "C",
     "options": [
-      "A. 28.8",
-      "B. 2.222222",
+      "A. 16",
+      "B. 4",
       "C. 8",
       "D. 9"
     ]
@@ -3380,8 +3380,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 2.5",
-      "B. 9",
-      "C. 0.7",
+      "B. 5",
+      "C. 1.25",
       "D. 2.6"
     ]
   },
@@ -3389,9 +3389,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q033",
     "correctAnswer": "B",
     "options": [
-      "A. 100.8",
+      "A. 56",
       "B. 28",
-      "C. 7.777778",
+      "C. 14",
       "D. 29"
     ]
   },
@@ -3399,8 +3399,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q034",
     "correctAnswer": "C",
     "options": [
-      "A. 10.8",
-      "B. 0.833333",
+      "A. 6",
+      "B. 1.5",
       "C. 3",
       "D. 4"
     ]
@@ -3420,8 +3420,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 5",
-      "B. 18",
-      "C. 1.388889",
+      "B. 10",
+      "C. 2.5",
       "D. 6"
     ]
   },
@@ -3429,9 +3429,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q037",
     "correctAnswer": "B",
     "options": [
-      "A. 9",
+      "A. 5",
       "B. 2.5",
-      "C. 0.7",
+      "C. 1.25",
       "D. 2.6"
     ]
   },
@@ -3439,8 +3439,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q038",
     "correctAnswer": "C",
     "options": [
-      "A. 14.4",
-      "B. 1.111111",
+      "A. 8",
+      "B. 2",
       "C. 4",
       "D. 5"
     ]
@@ -3449,8 +3449,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q039",
     "correctAnswer": "D",
     "options": [
-      "A. 7.2",
-      "B. 0.555556",
+      "A. 4",
+      "B. 1",
       "C. 3",
       "D. 2"
     ]
@@ -3460,8 +3460,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 3",
-      "B. 10.8",
-      "C. 0.833333",
+      "B. 6",
+      "C. 1.5",
       "D. 4"
     ]
   },
@@ -3489,8 +3489,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q048",
     "correctAnswer": "D",
     "options": [
-      "A. 90",
-      "B. 6.944444",
+      "A. 50",
+      "B. 12.5",
       "C. 26",
       "D. 25"
     ]
@@ -3529,8 +3529,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q057",
     "correctAnswer": "D",
     "options": [
-      "A. 288",
-      "B. 22.222222",
+      "A. 160",
+      "B. 40",
       "C. 81",
       "D. 80"
     ]
@@ -3549,9 +3549,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q065",
     "correctAnswer": "B",
     "options": [
-      "A. 18",
+      "A. 10",
       "B. 5",
-      "C. 1.388889",
+      "C. 2.5",
       "D. 6"
     ]
   },
@@ -3559,7 +3559,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q066",
     "correctAnswer": "C",
     "options": [
-      "A. 0.07",
+      "A. 0.04",
       "B. 0.01",
       "C. 0.02",
       "D. 0.03"
@@ -3569,8 +3569,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q067",
     "correctAnswer": "D",
     "options": [
-      "A. 720",
-      "B. 55.555556",
+      "A. 400",
+      "B. 100",
       "C. 2000",
       "D. 200"
     ]
@@ -3580,8 +3580,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 2",
-      "B. 7.2",
-      "C. 0.555556",
+      "B. 4",
+      "C. 1",
       "D. 20"
     ]
   },
@@ -3599,8 +3599,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q070",
     "correctAnswer": "C",
     "options": [
-      "A. 18",
-      "B. 1.388889",
+      "A. 10",
+      "B. 2.5",
       "C. 5",
       "D. 6"
     ]
@@ -3609,8 +3609,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q071",
     "correctAnswer": "D",
     "options": [
-      "A. 7.2",
-      "B. 0.555556",
+      "A. 4",
+      "B. 1",
       "C. 3",
       "D. 2"
     ]
@@ -3680,7 +3680,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 21.6",
-      "B. 1.666667",
+      "B. 1.67",
       "C. 6",
       "D. 7"
     ]
@@ -3700,8 +3700,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 2",
-      "B. 7.2",
-      "C. 0.555556",
+      "B. 4",
+      "C. 1",
       "D. 3"
     ]
   },
@@ -3719,8 +3719,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q088",
     "correctAnswer": "C",
     "options": [
-      "A. 10.8",
-      "B. 0.833333",
+      "A. 6",
+      "B. 1.5",
       "C. 3",
       "D. 4"
     ]
@@ -3740,8 +3740,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 2",
-      "B. 7.2",
-      "C. 0.555556",
+      "B. 4",
+      "C. 1",
       "D. 3"
     ]
   },
@@ -3749,9 +3749,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m2r-q092",
     "correctAnswer": "B",
     "options": [
-      "A. 86.4",
+      "A. 48",
       "B. 24",
-      "C. 6.666667",
+      "C. 12",
       "D. 25"
     ]
   },
@@ -4060,8 +4060,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 30",
-      "B. 108",
-      "C. 8.333333",
+      "B. 60",
+      "C. 15",
       "D. 31"
     ]
   },
@@ -4080,7 +4080,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7200",
-      "B. 555.555556",
+      "B. 555.56",
       "C. 2000",
       "D. 2001"
     ]
@@ -4141,7 +4141,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10",
       "B. 36",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -4149,9 +4149,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m3-q061",
     "correctAnswer": "B",
     "options": [
-      "A. 360",
+      "A. 200",
       "B. 100",
-      "C. 27.777778",
+      "C. 50",
       "D. 101"
     ]
   },
@@ -4181,7 +4181,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10",
       "B. 36",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -4191,7 +4191,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 72",
       "B. 20",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 21"
     ]
   },
@@ -4289,8 +4289,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m3-q020",
     "correctAnswer": "D",
     "options": [
-      "A. -432",
-      "B. -33.333333",
+      "A. -240",
+      "B. -60",
       "C. -119",
       "D. -120"
     ]
@@ -4360,7 +4360,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 43200",
-      "B. 3333.333333",
+      "B. 3333.33",
       "C. 12000",
       "D. 12001"
     ]
@@ -4370,7 +4370,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 3600",
-      "B. 277.777778",
+      "B. 277.78",
       "C. 1001",
       "D. 1000"
     ]
@@ -4380,8 +4380,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 400",
-      "B. 1440",
-      "C. 111.111111",
+      "B. 800",
+      "C. 200",
       "D. 401"
     ]
   },
@@ -4391,7 +4391,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 14400",
       "B. 4000",
-      "C. 1111.111111",
+      "C. 1111.11",
       "D. 4001"
     ]
   },
@@ -4490,7 +4490,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 28.8",
-      "B. 2.222222",
+      "B. 2.22",
       "C. 9",
       "D. 8"
     ]
@@ -4501,7 +4501,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 6",
       "B. 21.6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -4520,7 +4520,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 144",
-      "B. 11.111111",
+      "B. 11.11",
       "C. 40",
       "D. 41"
     ]
@@ -4530,7 +4530,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 14400",
-      "B. 1111.111111",
+      "B. 1111.11",
       "C. 4001",
       "D. 4000"
     ]
@@ -4541,7 +4541,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 4000",
       "B. 14400",
-      "C. 1111.111111",
+      "C. 1111.11",
       "D. 4001"
     ]
   },
@@ -4631,7 +4631,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 18",
       "B. 5",
-      "C. 1.388889",
+      "C. 1.39",
       "D. 6"
     ]
   },
@@ -4640,7 +4640,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 36",
-      "B. 2.777778",
+      "B. 2.78",
       "C. 10",
       "D. 11"
     ]
@@ -4650,7 +4650,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 18",
-      "B. 1.388889",
+      "B. 1.39",
       "C. 6",
       "D. 5"
     ]
@@ -4791,7 +4791,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 3600",
       "B. 1000",
-      "C. 277.777778",
+      "C. 277.78",
       "D. 1001"
     ]
   },
@@ -4800,7 +4800,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 14400",
-      "B. 1111.111111",
+      "B. 1111.11",
       "C. 4000",
       "D. 4001"
     ]
@@ -4820,8 +4820,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 40000",
-      "B. 144000",
-      "C. 11111.111111",
+      "B. 80000",
+      "C. 20000",
       "D. 40001"
     ]
   },
@@ -4849,8 +4849,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m3-q112",
     "correctAnswer": "D",
     "options": [
-      "A. -216",
-      "B. -16.666667",
+      "A. -120",
+      "B. -30",
       "C. -59",
       "D. -60"
     ]
@@ -4880,7 +4880,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 36",
-      "B. 2.777778",
+      "B. 2.78",
       "C. 10",
       "D. 11"
     ]
@@ -4901,7 +4901,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 4",
       "B. 14.4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 40"
     ]
   },
@@ -4999,8 +4999,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m3-q133",
     "correctAnswer": "C",
     "options": [
-      "A. 216",
-      "B. 16.666667",
+      "A. 120",
+      "B. 30",
       "C. 60",
       "D. 61"
     ]
@@ -5010,7 +5010,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 18",
-      "B. 1.388889",
+      "B. 1.39",
       "C. 6",
       "D. 5"
     ]
@@ -5301,7 +5301,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 100",
       "B. 360",
-      "C. 27.777778",
+      "C. 27.78",
       "D. 101"
     ]
   },
@@ -5330,7 +5330,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 36",
-      "B. 2.777778",
+      "B. 2.78",
       "C. 11",
       "D. 10"
     ]
@@ -5370,7 +5370,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 115.2",
-      "B. 8.888889",
+      "B. 8.89",
       "C. 33",
       "D. 32"
     ]
@@ -5461,7 +5461,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 20",
       "B. 72",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 21"
     ]
   },
@@ -5471,7 +5471,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 18",
       "B. 5",
-      "C. 1.388889",
+      "C. 1.39",
       "D. 6"
     ]
   },
@@ -5480,7 +5480,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 36",
-      "B. 2.777778",
+      "B. 2.78",
       "C. 10",
       "D. 11"
     ]
@@ -5511,7 +5511,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 14.4",
       "B. 4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -5520,7 +5520,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -5560,7 +5560,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 25.2",
-      "B. 1.944444",
+      "B. 1.94",
       "C. 7",
       "D. 8"
     ]
@@ -5621,7 +5621,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 6",
       "B. 21.6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -5640,7 +5640,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 28.8",
-      "B. 2.222222",
+      "B. 2.22",
       "C. 8",
       "D. 9"
     ]
@@ -5661,7 +5661,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10",
       "B. 36",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -5671,7 +5671,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10.8",
       "B. 3",
-      "C. 0.833333",
+      "C. 0.83",
       "D. 4"
     ]
   },
@@ -5690,7 +5690,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. -18",
-      "B. -1.388889",
+      "B. -1.39",
       "C. -4",
       "D. -5"
     ]
@@ -5711,7 +5711,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 39.6",
       "B. 11",
-      "C. 3.055556",
+      "C. 3.06",
       "D. 12"
     ]
   },
@@ -5720,7 +5720,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -5730,7 +5730,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 3",
       "D. 2"
     ]
@@ -5741,7 +5741,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 4",
       "B. 14.4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -5751,7 +5751,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. -7.2",
       "B. -2",
-      "C. -0.555556",
+      "C. -0.56",
       "D. -1"
     ]
   },
@@ -5760,7 +5760,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. -14.4",
-      "B. -1.111111",
+      "B. -1.11",
       "C. -4",
       "D. -3"
     ]
@@ -5781,7 +5781,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 4",
       "B. 14.4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -5791,7 +5791,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 14.4",
       "B. 4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -5800,7 +5800,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 10.8",
-      "B. 0.833333",
+      "B. 0.83",
       "C. 3",
       "D. 4"
     ]
@@ -5821,7 +5821,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 5",
       "B. 18",
-      "C. 1.388889",
+      "C. 1.39",
       "D. 6"
     ]
   },
@@ -5831,7 +5831,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 18",
       "B. 5",
-      "C. 1.388889",
+      "C. 1.39",
       "D. 6"
     ]
   },
@@ -5840,7 +5840,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 4",
       "D. 5"
     ]
@@ -5850,7 +5850,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 72000",
-      "B. 5555.555556",
+      "B. 5555.56",
       "C. 20001",
       "D. 20000"
     ]
@@ -5861,7 +5861,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 1",
       "B. 3.6",
-      "C. 0.277778",
+      "C. 0.28",
       "D. 2"
     ]
   },
@@ -5880,7 +5880,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 21.6",
-      "B. 1.666667",
+      "B. 1.67",
       "C. 6",
       "D. 7"
     ]
@@ -5890,7 +5890,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 3.6",
-      "B. 0.277778",
+      "B. 0.28",
       "C. 2",
       "D. 1"
     ]
@@ -5901,7 +5901,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10",
       "B. 36",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -5920,7 +5920,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 36",
-      "B. 2.777778",
+      "B. 2.78",
       "C. 10",
       "D. 11"
     ]
@@ -5951,7 +5951,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 1800",
       "B. 500",
-      "C. 138.888889",
+      "C. 138.89",
       "D. 501"
     ]
   },
@@ -5960,7 +5960,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. -180",
-      "B. -13.888889",
+      "B. -13.89",
       "C. -50",
       "D. -49"
     ]
@@ -5970,7 +5970,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 21.6",
-      "B. 1.666667",
+      "B. 1.67",
       "C. 7",
       "D. 6"
     ]
@@ -5991,7 +5991,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. -1260",
       "B. -350",
-      "C. -97.222222",
+      "C. -97.22",
       "D. -349"
     ]
   },
@@ -6000,7 +6000,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 4",
       "D. 5"
     ]
@@ -6010,7 +6010,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 18",
-      "B. 1.388889",
+      "B. 1.39",
       "C. 6",
       "D. 5"
     ]
@@ -6021,7 +6021,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 1",
       "B. 3.6",
-      "C. 0.277778",
+      "C. 0.28",
       "D. 2"
     ]
   },
@@ -6040,7 +6040,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -6050,7 +6050,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 3",
       "D. 2"
     ]
@@ -6061,7 +6061,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2",
       "B. 7.2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -6071,7 +6071,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 14.4",
       "B. 4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -6090,7 +6090,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 5",
       "D. 4"
     ]
@@ -6101,7 +6101,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 3",
       "B. 10.8",
-      "C. 0.833333",
+      "C. 0.83",
       "D. 4"
     ]
   },
@@ -6111,7 +6111,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. -3.6",
       "B. -1",
-      "C. -0.277778",
+      "C. -0.28",
       "D. 0"
     ]
   },
@@ -6120,7 +6120,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. -7.2",
-      "B. -0.555556",
+      "B. -0.56",
       "C. -2",
       "D. -1"
     ]
@@ -6130,7 +6130,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. -7.2",
-      "B. -0.555556",
+      "B. -0.56",
       "C. -1",
       "D. -2"
     ]
@@ -6141,7 +6141,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. -4",
       "B. -14.4",
-      "C. -1.111111",
+      "C. -1.11",
       "D. -3"
     ]
   },
@@ -6151,7 +6151,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. -7.2",
       "B. -2",
-      "C. -0.555556",
+      "C. -0.56",
       "D. -1"
     ]
   },
@@ -6160,7 +6160,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 3.6",
-      "B. 0.277778",
+      "B. 0.28",
       "C. 1",
       "D. 2"
     ]
@@ -6181,7 +6181,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 6",
       "B. 21.6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -6221,7 +6221,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 6",
       "B. 21.6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -6240,7 +6240,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. -36",
-      "B. -2.777778",
+      "B. -2.78",
       "C. -10",
       "D. -9"
     ]
@@ -6250,7 +6250,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 3",
       "D. 2"
     ]
@@ -6261,7 +6261,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10",
       "B. 36",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -6271,7 +6271,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 43.2",
       "B. 12",
-      "C. 3.333333",
+      "C. 3.33",
       "D. 13"
     ]
   },
@@ -6311,7 +6311,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10.8",
       "B. 3",
-      "C. 0.833333",
+      "C. 0.83",
       "D. 4"
     ]
   },
@@ -6330,7 +6330,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 3.6",
-      "B. 0.277778",
+      "B. 0.28",
       "C. 2",
       "D. 1"
     ]
@@ -6351,7 +6351,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 36",
       "B. 10",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -6370,7 +6370,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 54",
-      "B. 4.166667",
+      "B. 4.17",
       "C. 16",
       "D. 15"
     ]
@@ -6391,7 +6391,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 28.8",
       "B. 8",
-      "C. 2.222222",
+      "C. 2.22",
       "D. 9"
     ]
   },
@@ -6431,7 +6431,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 7.2",
       "B. 2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -6440,7 +6440,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 4",
       "D. 5"
     ]
@@ -6461,7 +6461,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2",
       "B. 7.2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -6480,7 +6480,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -6490,7 +6490,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 36",
-      "B. 2.777778",
+      "B. 2.78",
       "C. 11",
       "D. 10"
     ]
@@ -6501,7 +6501,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10",
       "B. 36",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -6541,7 +6541,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 8",
       "B. 28.8",
-      "C. 2.222222",
+      "C. 2.22",
       "D. 9"
     ]
   },
@@ -6570,7 +6570,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. -21.6",
-      "B. -1.666667",
+      "B. -1.67",
       "C. -5",
       "D. -6"
     ]
@@ -6581,7 +6581,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 4",
       "B. 14.4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -6591,7 +6591,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 86400",
       "B. 24000",
-      "C. 6666.666667",
+      "C. 6666.67",
       "D. 24001"
     ]
   },
@@ -6600,7 +6600,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 36",
-      "B. 2.777778",
+      "B. 2.78",
       "C. 10",
       "D. 11"
     ]
@@ -6610,7 +6610,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 50.4",
-      "B. 3.888889",
+      "B. 3.89",
       "C. 15",
       "D. 14"
     ]
@@ -6621,7 +6621,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 20",
       "B. 72",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 21"
     ]
   },
@@ -6640,7 +6640,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. -7.2",
-      "B. -0.555556",
+      "B. -0.56",
       "C. -2",
       "D. -1"
     ]
@@ -6650,7 +6650,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 5",
       "D. 4"
     ]
@@ -6671,7 +6671,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 18",
       "B. 5",
-      "C. 1.388889",
+      "C. 1.39",
       "D. 6"
     ]
   },
@@ -6711,7 +6711,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 21.6",
       "B. 6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -6720,7 +6720,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. -18",
-      "B. -1.388889",
+      "B. -1.39",
       "C. -5",
       "D. -4"
     ]
@@ -6730,7 +6730,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 21",
       "D. 20"
     ]
@@ -6751,7 +6751,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 1080",
       "B. 300",
-      "C. 83.333333",
+      "C. 83.33",
       "D. 301"
     ]
   },
@@ -6810,7 +6810,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 28.8",
-      "B. 2.222222",
+      "B. 2.22",
       "C. 9",
       "D. 8"
     ]
@@ -6821,7 +6821,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 4",
       "B. 14.4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -6831,7 +6831,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 3.6",
       "B. 1",
-      "C. 0.277778",
+      "C. 0.28",
       "D. 2"
     ]
   },
@@ -6850,7 +6850,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 3.6",
-      "B. 0.277778",
+      "B. 0.28",
       "C. 2",
       "D. 1"
     ]
@@ -6861,7 +6861,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 3",
       "B. 10.8",
-      "C. 0.833333",
+      "C. 0.83",
       "D. 4"
     ]
   },
@@ -6871,7 +6871,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 21.6",
       "B. 6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -6880,7 +6880,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 3.6",
-      "B. 0.277778",
+      "B. 0.28",
       "C. 1",
       "D. 2"
     ]
@@ -6901,7 +6901,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2",
       "B. 7.2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -6930,7 +6930,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 5",
       "D. 4"
     ]
@@ -6960,7 +6960,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. -36",
-      "B. -2.777778",
+      "B. -2.78",
       "C. -10",
       "D. -9"
     ]
@@ -6981,7 +6981,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 5",
       "B. 18",
-      "C. 1.388889",
+      "C. 1.39",
       "D. 6"
     ]
   },
@@ -7000,7 +7000,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 36",
-      "B. 2.777778",
+      "B. 2.78",
       "C. 10",
       "D. 11"
     ]
@@ -7010,7 +7010,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 36",
-      "B. 2.777778",
+      "B. 2.78",
       "C. 11",
       "D. 10"
     ]
@@ -7031,7 +7031,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 3.6",
       "B. 1",
-      "C. 0.277778",
+      "C. 0.28",
       "D. 2"
     ]
   },
@@ -7040,7 +7040,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 18",
-      "B. 1.388889",
+      "B. 1.39",
       "C. 5",
       "D. 6"
     ]
@@ -7120,7 +7120,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 2",
       "D. 3"
     ]
@@ -7130,7 +7130,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 7.2",
-      "B. 0.555556",
+      "B. 0.56",
       "C. 3",
       "D. 2"
     ]
@@ -7141,7 +7141,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 8",
       "B. 28.8",
-      "C. 2.222222",
+      "C. 2.22",
       "D. 9"
     ]
   },
@@ -7160,7 +7160,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 43.2",
-      "B. 3.333333",
+      "B. 3.33",
       "C. 12",
       "D. 13"
     ]
@@ -7170,7 +7170,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 5",
       "D. 4"
     ]
@@ -7181,7 +7181,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2000",
       "B. 7200",
-      "C. 555.555556",
+      "C. 555.56",
       "D. 2001"
     ]
   },
@@ -7191,7 +7191,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 36",
       "B. 10",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -7290,7 +7290,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 3.6",
-      "B. 0.277778",
+      "B. 0.28",
       "C. 2",
       "D. 1"
     ]
@@ -7311,7 +7311,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 72",
       "B. 20",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 21"
     ]
   },
@@ -7330,7 +7330,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 28.8",
-      "B. 2.222222",
+      "B. 2.22",
       "C. 9",
       "D. 8"
     ]
@@ -7351,7 +7351,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 43.2",
       "B. 12",
-      "C. 3.333333",
+      "C. 3.33",
       "D. 13"
     ]
   },
@@ -7359,8 +7359,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m5-q042",
     "correctAnswer": "C",
     "options": [
-      "A. 14.4",
-      "B. 1.111111",
+      "A. 8",
+      "B. 2",
       "C. 4",
       "D. 5"
     ]
@@ -7370,7 +7370,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 18",
-      "B. 1.388889",
+      "B. 1.39",
       "C. 6",
       "D. 5"
     ]
@@ -7381,7 +7381,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 2",
       "B. 7.2",
-      "C. 0.555556",
+      "C. 0.56",
       "D. 3"
     ]
   },
@@ -7391,7 +7391,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 21.6",
       "B. 6",
-      "C. 1.666667",
+      "C. 1.67",
       "D. 7"
     ]
   },
@@ -7400,7 +7400,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 100.8",
-      "B. 7.777778",
+      "B. 7.78",
       "C. 28",
       "D. 29"
     ]
@@ -7410,7 +7410,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 28.8",
-      "B. 2.222222",
+      "B. 2.22",
       "C. 9",
       "D. 8"
     ]
@@ -7431,7 +7431,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 7200",
       "B. 2000",
-      "C. 555.555556",
+      "C. 555.56",
       "D. 2001"
     ]
   },
@@ -7440,7 +7440,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 36",
-      "B. 2.777778",
+      "B. 2.78",
       "C. 10",
       "D. 11"
     ]
@@ -7450,7 +7450,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 4320",
-      "B. 333.333333",
+      "B. 333.33",
       "C. 1201",
       "D. 1200"
     ]
@@ -7461,7 +7461,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 20",
       "B. 72",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 21"
     ]
   },
@@ -7581,7 +7581,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 20",
       "B. 72",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 21"
     ]
   },
@@ -7610,7 +7610,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 10.8",
-      "B. 0.833333",
+      "B. 0.83",
       "C. 4",
       "D. 3"
     ]
@@ -7629,9 +7629,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m5-q099",
     "correctAnswer": "B",
     "options": [
-      "A. 36",
+      "A. 20",
       "B. 10",
-      "C. 2.777778",
+      "C. 5",
       "D. 11"
     ]
   },
@@ -7650,7 +7650,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 5",
       "D. 4"
     ]
@@ -7701,7 +7701,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 10",
       "B. 36",
-      "C. 2.777778",
+      "C. 2.78",
       "D. 11"
     ]
   },
@@ -7709,9 +7709,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m5-q109",
     "correctAnswer": "B",
     "options": [
-      "A. 90",
+      "A. 50",
       "B. 25",
-      "C. 6.944444",
+      "C. 12.5",
       "D. 26"
     ]
   },
@@ -7840,7 +7840,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 20",
       "D. 21"
     ]
@@ -7850,7 +7850,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 3.6",
-      "B. 0.277778",
+      "B. 0.28",
       "C. 2",
       "D. 1"
     ]
@@ -7880,7 +7880,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "C",
     "options": [
       "A. 72",
-      "B. 5.555556",
+      "B. 5.56",
       "C. 20",
       "D. 21"
     ]
@@ -7901,7 +7901,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 8",
       "B. 28.8",
-      "C. 2.222222",
+      "C. 2.22",
       "D. 9"
     ]
   },
@@ -7930,7 +7930,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "D",
     "options": [
       "A. 14.4",
-      "B. 1.111111",
+      "B. 1.11",
       "C. 5",
       "D. 4"
     ]
@@ -7941,7 +7941,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 4",
       "B. 14.4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -7951,7 +7951,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 7200",
       "B. 2000",
-      "C. 555.555556",
+      "C. 555.56",
       "D. 2001"
     ]
   },
@@ -7981,7 +7981,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 4",
       "B. 14.4",
-      "C. 1.111111",
+      "C. 1.11",
       "D. 5"
     ]
   },
@@ -8021,7 +8021,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 14",
       "B. 50.4",
-      "C. 3.888889",
+      "C. 3.89",
       "D. 15"
     ]
   },
@@ -8031,7 +8031,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 72",
       "B. 20",
-      "C. 5.555556",
+      "C. 5.56",
       "D. 21"
     ]
   },
@@ -8171,7 +8171,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 0.02",
       "B. 0",
-      "C. 0.03",
+      "C. 0.1",
       "D. 0.01"
     ]
   },
@@ -8189,20 +8189,20 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m6-q015",
     "correctAnswer": "B",
     "options": [
-      "A. -0.003",
+      "A. -0.008",
       "B. -0.004",
-      "C. -0.005",
-      "D. -0.002"
+      "C. -0.002",
+      "D. -0.04"
     ]
   },
   {
     "id": "phy10-m6-q016",
     "correctAnswer": "C",
     "options": [
-      "A. 0.004",
+      "A. 0.006",
       "B. 0.002",
       "C. 0.003",
-      "D. 0.005"
+      "D. 0.03"
     ]
   },
   {
@@ -8359,7 +8359,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m6-q031",
     "correctAnswer": "C",
     "options": [
-      "A. 0.07",
+      "A. 0.04",
       "B. 0.01",
       "C. 0.02",
       "D. 0.03"
@@ -8389,9 +8389,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m6-q034",
     "correctAnswer": "B",
     "options": [
-      "A. 720",
+      "A. 400",
       "B. 200",
-      "C. 55.555556",
+      "C. 100",
       "D. 2000"
     ]
   },
@@ -8540,8 +8540,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "correctAnswer": "A",
     "options": [
       "A. 0.05",
-      "B. 0.18",
-      "C. 0.01",
+      "B. 0.1",
+      "C. 0.03",
       "D. 0.06"
     ]
   },
@@ -8629,9 +8629,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m6-q081",
     "correctAnswer": "B",
     "options": [
-      "A. 0.29",
+      "A. 0.16",
       "B. 0.08",
-      "C. 0.02",
+      "C. 0.04",
       "D. 0.09"
     ]
   },
@@ -8679,8 +8679,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m6-q090",
     "correctAnswer": "C",
     "options": [
-      "A. 7.2",
-      "B. 0.555556",
+      "A. 4",
+      "B. 1",
       "C. 2",
       "D. 20"
     ]
@@ -8689,8 +8689,8 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m6-q092",
     "correctAnswer": "D",
     "options": [
-      "A. 0.02",
-      "B. 0",
+      "A. 0.004",
+      "B. 0.001",
       "C. 0.2",
       "D. 0.002"
     ]
@@ -8751,7 +8751,7 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "options": [
       "A. 0.025",
       "B. 0.0025",
-      "C. 0.0003",
+      "C. 0.00025",
       "D. 0.25"
     ]
   },
@@ -8909,9 +8909,9 @@ export const g10PhysicsPracticeChoices: Physics10PracticeChoice[] = [
     "id": "phy10-m6r-q033",
     "correctAnswer": "B",
     "options": [
-      "A. 7.2",
+      "A. 4",
       "B. 2",
-      "C. 0.555556",
+      "C. 1",
       "D. 3"
     ]
   },
