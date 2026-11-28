@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { authService } from '@/services/authService';
 
 import { Question, Solution, StructuredAnswer, UserAttempt, SubjectCode, GradeCode } from '@/types';
-import { AlertTriangle, BookOpenCheck, ArrowLeft, Crown } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, Crown } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { getSubjectTheme } from '@/utils/theme';
 import { formatAnswerForDisplay, validateAnswer, isAnswerComplete } from '@/utils/answerValidator';
@@ -1139,22 +1139,6 @@ export const PracticeEngine: React.FC = () => {
   const requestedQuestionType = questionTypeId
     ? currentQuestionTypes.find(type => type.id === questionTypeId)
     : undefined;
-  const requiresPhysics11Theory =
-    effectiveGrade === 'grade11' &&
-    routeSubject === 'physics' &&
-    Boolean(requestedQuestionType?.theory?.length);
-  const practiceUserId = user?.uid || 'guest';
-  const requiredCheckpointIds = requestedQuestionType?.theoryCheckpoints?.map(item => item.id) ?? [];
-  const passedCheckpointIds = new Set(
-    storageService.getPassedTheoryCheckpoints(practiceUserId)
-  );
-  const hasPassedRequiredCheckpoints =
-    requiredCheckpointIds.length === 0 ||
-    requiredCheckpointIds.every(id => passedCheckpointIds.has(id));
-  const hasCompletedTheory = questionTypeId
-    ? storageService.getReadLessons(practiceUserId).includes(questionTypeId) &&
-    hasPassedRequiredCheckpoints
-    : true;
 
   const isDirectPracticePremiumLocked = questionTypeId
     ? isQuestionTypePremiumLocked(questionTypeId, 1, routeSubject, effectiveGrade) && !isPremium
@@ -1187,29 +1171,6 @@ export const PracticeEngine: React.FC = () => {
             <Crown size={14} /> Nâng cấp Premium
           </Button>
         </div>
-      </div>
-    );
-  }
-
-  if (requiresPhysics11Theory && !hasCompletedTheory && questionTypeId) {
-    return (
-      <div className="mx-auto max-w-lg space-y-4 px-4 py-10 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-600 dark:text-cyan-400">
-          <BookOpenCheck size={28} />
-        </div>
-        <h3 className="text-lg font-black text-foreground">
-          Hoàn thành bài học trước khi luyện tập
-        </h3>
-        <p className="text-xs font-semibold leading-relaxed text-muted-foreground">
-          Bài giảng đã có sẵn trên nền tảng, gồm định nghĩa, công thức, điều kiện áp dụng,
-          ví dụ và câu tự kiểm tra. Bạn không cần mở thêm tài liệu ở trang khác.
-        </p>
-        <Button
-          onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'question-types', questionTypeId))}
-          className="bg-cyan-600 text-xs font-bold text-white hover:bg-cyan-700"
-        >
-          <BookOpenCheck size={16} /> Quay lại học lý thuyết
-        </Button>
       </div>
     );
   }

@@ -124,11 +124,6 @@ export const QuestionTypeDetail: React.FC = () => {
   const outcomes = getLearningOutcomes(effectiveGrade, routeSubject);
   const currentOutcome = outcomes.find(o => o.questionTypeIds.includes(detail?.id || ''));
   const textbookData = currentOutcome?.textbook;
-  const requiresTheoryCompletion =
-    effectiveGrade === 'grade11' &&
-    routeSubject === 'physics' &&
-    Boolean(detail?.theory?.length);
-  const isPracticeLockedByTheory = requiresTheoryCompletion && !showLessonCompletedMsg;
   const isTypeLockedByPremium = detail
     ? isQuestionTypePremiumLocked(detail.id, 1, routeSubject, effectiveGrade) && !isPremium
     : false;
@@ -798,7 +793,7 @@ export const QuestionTypeDetail: React.FC = () => {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-1 py-1 select-none">
                 {showLessonCompletedMsg ? (
                   <div className="p-2.5 rounded-xl border border-emerald-500/20 bg-emerald-500/5 text-emerald-600 dark:text-emerald-400 font-extrabold text-[10px] flex items-center gap-1.5 animate-fade-in shadow-xs">
-                    <span>✓ Bạn đã hoàn thành lý thuyết và mở khóa bài tiếp theo!</span>
+                    <span>✓ Bạn đã hoàn thành đọc lý thuyết dạng bài này!</span>
                   </div>
                 ) : (
                   <div className="text-[10px] font-black text-muted-foreground pt-1">
@@ -924,27 +919,15 @@ export const QuestionTypeDetail: React.FC = () => {
                   <Crown size={16} /> Mở khóa Luyện tập (Gói Premium)
                 </Button>
               ) : (
-                <>
-                  <Button
-                    disabled={isPracticeLockedByTheory}
-                    onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice', detail.id))}
-                    className={cn(
-                      "w-full font-bold text-xs py-3.5 flex items-center justify-center gap-1.5 active:scale-[0.98] shadow-md transition-all hover:shadow-lg rounded-xl cursor-pointer",
-                      theme.solid
-                    )}
-                  >
-                    {isPracticeLockedByTheory ? (
-                      <><LockKeyhole size={16} /> Học xong lý thuyết để mở khóa</>
-                    ) : (
-                      <><PlayCircle size={16} /> Bắt đầu Luyện tập ngay</>
-                    )}
-                  </Button>
-                  {isPracticeLockedByTheory && (
-                    <p className="text-[10px] font-semibold leading-relaxed text-muted-foreground text-center">
-                      Xem đủ các phần lý thuyết, nhận dạng, phương pháp và ví dụ trước khi làm bài.
-                    </p>
+                <Button
+                  onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice', detail.id))}
+                  className={cn(
+                    "w-full font-bold text-xs py-3.5 flex items-center justify-center gap-1.5 active:scale-[0.98] shadow-md transition-all hover:shadow-lg rounded-xl cursor-pointer",
+                    theme.solid
                   )}
-                </>
+                >
+                  <PlayCircle size={16} /> Bắt đầu Luyện tập ngay
+                </Button>
               )}
 
               {requiresLoginForPractice && (
@@ -1002,14 +985,13 @@ export const QuestionTypeDetail: React.FC = () => {
           </Button>
         ) : (
           <Button
-            disabled={isPracticeLockedByTheory}
             onClick={() => navigate(buildCoursePath(effectiveGrade, routeSubject, 'practice', detail.id))}
             className={cn(
               "font-bold text-xs py-2.5 px-4 shrink-0 shadow-md text-white active:scale-95 transition-transform",
               theme.solid
             )}
           >
-            {isPracticeLockedByTheory ? 'Học xong để mở khóa' : 'Luyện tập ngay'}
+            Luyện tập ngay
           </Button>
         )}
       </div>

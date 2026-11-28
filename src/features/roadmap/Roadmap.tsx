@@ -167,9 +167,9 @@ export const Roadmap: React.FC = () => {
     const practicePercent = totalQ > 0 ? Math.round((solvedCount / totalQ) * 100) : 0;
     const masteryScore = progress?.masteryLevels[typeId] ?? 0;
     const starsCount = getStarsFromScore(masteryScore);
-    const isCompleted = isRead && (practicePercent === 100 || starsCount >= 3 || totalQ === 0);
+    const isCompleted = practicePercent === 100 || starsCount >= 3 || (totalQ === 0 && isRead);
     const needsTheory = !isRead;
-    const needsPractice = isRead && !isCompleted;
+    const needsPractice = !isCompleted;
 
     return {
       isRead,
@@ -858,7 +858,7 @@ export const Roadmap: React.FC = () => {
                                         const isLockedByPremium = isQuestionTypePremiumLocked(type.id, topic.tier, selectedSubject, selectedGrade) && !isPremium && !isOptionalEnglishListeningTopic(topic.id);
                                         const metrics = getQuestionTypeMetrics(type.id);
 
-                                        // Nút hành động chính thông minh (Single Dynamic Smart CTA)
+                                        // Nút hành động: cho phép vào Luyện tập ngay song song với xem Lý thuyết
                                         const smartCtaButton = (() => {
                                           if (!unlocked) {
                                             return (
@@ -884,58 +884,52 @@ export const Roadmap: React.FC = () => {
                                               </button>
                                             );
                                           }
-                                          if (!metrics.isRead) {
-                                            return (
+
+                                          const practiceAction = (metrics.attemptsCount === 0 || metrics.practicePercent === 0)
+                                            ? {
+                                                label: 'Luyện tập',
+                                                icon: <PlayCircle size={13} />,
+                                                className: cn('text-white font-bold shadow-xs', subjectTheme.solid),
+                                                title: 'Vào luyện tập ngay không cần học xong lý thuyết'
+                                              }
+                                            : !metrics.isCompleted
+                                              ? {
+                                                  label: 'Luyện tiếp',
+                                                  icon: <PlayCircle size={13} />,
+                                                  className: 'bg-amber-500 hover:bg-amber-600 text-white font-bold shadow-xs',
+                                                  title: 'Luyện tập thêm để nâng cao điểm số và đạt 3 sao'
+                                                }
+                                              : {
+                                                  label: 'Ôn lại',
+                                                  icon: <RotateCcw size={12} />,
+                                                  className: 'bg-secondary hover:bg-secondary/80 text-foreground border border-border/50 font-semibold',
+                                                  title: 'Ôn lại dạng bài đã hoàn thành'
+                                                };
+
+                                          return (
+                                            <div className="flex items-center gap-2 shrink-0">
                                               <button
                                                 type="button"
                                                 onClick={(e) => { e.stopPropagation(); handleSelectType(type.id); }}
-                                                className="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all shrink-0"
-                                                title="Bắt đầu học lý thuyết bài giảng này"
+                                                className="px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-secondary/60 hover:bg-secondary text-muted-foreground hover:text-foreground border border-border/40 inline-flex items-center gap-1 cursor-pointer active:scale-95 transition-all shrink-0"
+                                                title={metrics.isRead ? 'Xem lại lý thuyết dạng bài này' : 'Xem lý thuyết & ví dụ mẫu'}
                                               >
-                                                <BookOpen size={13} />
-                                                <span>Học bài</span>
+                                                <BookOpen size={12} />
+                                                <span className="hidden sm:inline">Lý thuyết</span>
                                               </button>
-                                            );
-                                          }
-                                          if (metrics.attemptsCount === 0 || metrics.practicePercent === 0) {
-                                            return (
                                               <button
                                                 type="button"
                                                 onClick={(e) => handleSelectPractice(type.id, e)}
                                                 className={cn(
-                                                  "px-3 py-1.5 rounded-xl text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all text-white shrink-0",
-                                                  subjectTheme.solid
+                                                  'px-3 py-1.5 rounded-xl text-xs inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all shrink-0',
+                                                  practiceAction.className
                                                 )}
-                                                title="Bắt đầu luyện tập bài tập của dạng này"
+                                                title={practiceAction.title}
                                               >
-                                                <PlayCircle size={13} />
-                                                <span>Luyện tập</span>
+                                                {practiceAction.icon}
+                                                <span>{practiceAction.label}</span>
                                               </button>
-                                            );
-                                          }
-                                          if (!metrics.isCompleted) {
-                                            return (
-                                              <button
-                                                type="button"
-                                                onClick={(e) => handleSelectPractice(type.id, e)}
-                                                className="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 transition-all shrink-0"
-                                                title="Luyện tập thêm để nâng cao điểm số và đạt 3 sao"
-                                              >
-                                                <PlayCircle size={13} />
-                                                <span>Luyện tiếp</span>
-                                              </button>
-                                            );
-                                          }
-                                          return (
-                                            <button
-                                              type="button"
-                                              onClick={(e) => handleSelectPractice(type.id, e)}
-                                              className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-secondary hover:bg-secondary/80 text-foreground border border-border/50 inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all shrink-0"
-                                              title="Ôn lại dạng bài đã hoàn thành"
-                                            >
-                                              <RotateCcw size={12} />
-                                              <span>Ôn lại</span>
-                                            </button>
+                                            </div>
                                           );
                                         })();
 
@@ -1057,7 +1051,7 @@ export const Roadmap: React.FC = () => {
                                                   <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400">
                                                     ✓ Hoàn thành
                                                   </span>
-                                                ) : metrics.isRead ? (
+                                                ) : metrics.isRead || metrics.attemptsCount > 0 ? (
                                                   <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.75 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400">
                                                     ⚡ Đang luyện
                                                   </span>
